@@ -13,7 +13,6 @@ from ..utils.sudo import sudo
 
 user_manager = UserManager()
 
-
 class Bot:
     def __init__(self):
         self.bot = telebot.TeleBot(TOKEN, parse_mode='HTML')
@@ -130,6 +129,8 @@ class Bot:
 
     def run(self):
         try:
+            from ..commands.start import cmd_start
+            cmd_start()
             self.set_my_configs()
 
             polling_thread = threading.Thread(target=self.polling_thread)
@@ -143,6 +144,9 @@ class Bot:
         except Exception as e:
             logger.error(f'Erro ao iniciar as threads: {e}')
 
+
+bot_instance = Bot()
+bot = bot_instance.bot
 
 if __name__ == '__main__':
     my_bot = Bot()
