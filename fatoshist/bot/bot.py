@@ -198,10 +198,10 @@ class Bot:
                             'Lista de comandos', callback_data='commands'
                         )
                         suppport = types.InlineKeyboardButton(
-                            'Suporte', url='https://t.me/updatehist'
+                            'Suporte', url='https://t.me/kylorensbot'
                         )
                         projeto = types.InlineKeyboardButton(
-                            '💰 Doações', url='https://t.me/updatehist'
+                            '💰 Doações', callback_data='donate'
                         )
 
                         markup.add(commands)
