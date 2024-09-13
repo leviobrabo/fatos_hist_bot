@@ -216,7 +216,6 @@ class Bot:
                             ),
                             reply_markup=markup,
                         )
-
                 elif call.data.startswith('donate'):
                     user_id = call.from_user.id
                     user = user_manager.search_user(user_id)
