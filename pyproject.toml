@@ -10,6 +10,7 @@ python = "3.12.*"
 pytelegrambotapi = "^4.22.1"
 schedule = "^1.2.2"
 pymongo = "^4.8.0"
+pytz = "^2024.2"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -20,21 +21,20 @@ ruff = "^0.6.4"
 black = "^24.8.0"
 
 [tool.black]
-line-length = 79
+line-length = 150
 
-[tool.ruff.lint]
+[tool.ruff]
+line-length = 150
+lint.select = ['I', 'F', 'E', 'W', 'PL', 'PT']
 preview = true
-select = ['I', 'F', 'E', 'W', 'PL', 'PT']
 
 [tool.ruff.format]
 preview = true
 quote-style = 'single'
 
-
 [tool.pytest.ini_options]
 pythonpath = "."
 addopts = '-p no:warnings'
-
 
 [tool.taskipy.tasks]
 lint = 'ruff check . && ruff check . --diff'
