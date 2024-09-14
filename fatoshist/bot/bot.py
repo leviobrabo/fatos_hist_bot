@@ -9,6 +9,7 @@ from telebot import types, util
 from ..commands.admin import cmd_fwdoff, cmd_fwdon, cmd_settopic, cmd_unsettopic
 from ..commands.help import cmd_help
 from ..commands.send import cmd_sendoff, cmd_sendon
+from ..commands.sudo import cmd_add_sudo, cmd_broadcast_pv, cmd_group, cmd_rem_sudo, cmd_stats, cmd_sys
 from ..commands.start import cmd_start
 from ..config import BOT_NAME, BOT_USERNAME, GROUP_LOG, OWNER_ID, TOKEN
 from ..database.users import UserManager
@@ -32,6 +33,12 @@ class Bot:
         cmd_unsettopic()
         cmd_sendoff()
         cmd_sendon()
+        cmd_add_sudo()
+        cmd_broadcast_pv()
+        cmd_group() 
+        cmd_rem_sudo()
+        cmd_stats()
+        cmd_sys()
         self.start_threads()
         self.register_handlers()
 
