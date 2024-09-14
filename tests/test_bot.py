@@ -8,7 +8,7 @@ from fatoshist.bot.bot import Bot
 # Mock do UserManager e do TeleBot antes da importação do Bot
 @pytest.fixture(autouse=True)
 def mock_user_manager():
-    with patch('fatoshist.bot.bot.UserManager') as mock_manager:
+    with patch("fatoshist.bot.bot.UserManager") as mock_manager:
         # Mock do método get_all_users para evitar conexão com MongoDB
         instance = mock_manager.return_value
         instance.get_all_users.return_value = []  # Simula uma lista vazia de usuários
@@ -17,14 +17,14 @@ def mock_user_manager():
 
 @pytest.fixture
 def mock_telebot():
-    with patch('fatoshist.bot.bot.telebot.TeleBot') as mock_bot:
+    with patch("fatoshist.bot.bot.telebot.TeleBot") as mock_bot:
         yield mock_bot
 
 
 @pytest.fixture
 def mock_logger():
     """Mock do logger."""
-    with patch('fatoshist.bot.bot.logger', autospec=True) as mock_log:
+    with patch("fatoshist.bot.bot.logger", autospec=True) as mock_log:
         yield mock_log
 
 

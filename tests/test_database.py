@@ -9,11 +9,11 @@ from fatoshist.database.users import UserManager
 # Mocks para evitar acesso ao MongoDB
 @pytest.fixture(autouse=True)
 def mock_config():
-    with patch('fatoshist.config') as mock_config:
-        mock_config.MONGO_CON = 'mongodb://localhost:27017/testdb'
-        mock_config.TOKEN = 'fake-token'
-        mock_config.GROUP_LOG = 'fake-group-log'
-        mock_config.BOT_NAME = 'fatoshistbot'
+    with patch("fatoshist.config") as mock_config:
+        mock_config.MONGO_CON = "mongodb://localhost:27017/testdb"
+        mock_config.TOKEN = "fake-token"
+        mock_config.GROUP_LOG = "fake-group-log"
+        mock_config.BOT_NAME = "fatoshistbot"
         yield mock_config
 
 
@@ -47,41 +47,45 @@ def user_manager(mock_db):
 
 # Testes para PresidentManager
 def test_add_presidente(president_manager, mock_db):
-    president_manager.add_presidente('123', '2024-09-01')
-    mock_db.presidentes.insert_one.assert_called_once_with({
-        'id': '123',
-        'date': '2024-09-01',
-    })
+    president_manager.add_presidente("123", "2024-09-01")
+    mock_db.presidentes.insert_one.assert_called_once_with(
+        {
+            "id": "123",
+            "date": "2024-09-01",
+        }
+    )
 
 
 def test_search_by_id(president_manager, mock_db):
-    expected_result = {'id': '123', 'date': '2024-09-01'}
+    expected_result = {"id": "123", "date": "2024-09-01"}
     mock_db.presidentes.find_one.return_value = expected_result
-    result = president_manager.search_by_id('123')
-    mock_db.presidentes.find_one.assert_called_once_with({'id': '123'})
+    result = president_manager.search_by_id("123")
+    mock_db.presidentes.find_one.assert_called_once_with({"id": "123"})
     assert result == expected_result
 
 
 # Testes para UserManager
 def test_add_user(user_manager, mock_db):
-    user_manager.add_new_user('123', 'John', 'Doe', 'johndoe')
-    mock_db.users.insert_one.assert_called_once_with({
-        'user_id': '123',
-        'first_name': 'John',
-        'last_name': 'Doe',
-        'username': 'johndoe',
-        'sudo': 'false',
-        'msg_private': 'true',
-        'message_id': '',
-        'hits': 0,
-        'questions': 0,
-        'progress': 0,
-    })
+    user_manager.add_new_user("123", "John", "Doe", "johndoe")
+    mock_db.users.insert_one.assert_called_once_with(
+        {
+            "user_id": "123",
+            "first_name": "John",
+            "last_name": "Doe",
+            "username": "johndoe",
+            "sudo": "false",
+            "msg_private": "true",
+            "message_id": "",
+            "hits": 0,
+            "questions": 0,
+            "progress": 0,
+        }
+    )
 
 
 def test_search_user(user_manager, mock_db):
-    expected_result = {'user_id': '123', 'first_name': 'John'}
+    expected_result = {"user_id": "123", "first_name": "John"}
     mock_db.users.find_one.return_value = expected_result
-    result = user_manager.search_user('123')
-    mock_db.users.find_one.assert_called_once_with({'user_id': '123'})
+    result = user_manager.search_user("123")
+    mock_db.users.find_one.assert_called_once_with({"user_id": "123"})
     assert result == expected_result
