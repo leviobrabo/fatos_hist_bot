@@ -1,5 +1,5 @@
 import datetime
-
+from ..loggers import logger
 import schedule
 
 from ..core.poll_channel import send_question
@@ -27,93 +27,98 @@ from ..handlers.prase_channel import hist_channel_frase
 from ..handlers.presidents import enviar_foto_presidente
 from ..handlers.stars import msg_alerta_stars
 
-# Alerta de canais
-schedule.every().friday.at('22:30').do(msg_inscricao_canais_historia)
+def schedule_tasks():
+    try:
+        # Alerta de canais
+        schedule.every().friday.at('22:30').do(msg_inscricao_canais_historia)
 
-# BOOTS
-schedule.every().monday.at('02:00').do(msg_alerta_boost)
+        # BOOTS
+        schedule.every().monday.at('02:00').do(msg_alerta_boost)
 
-# STARS
-schedule.every().wednesday.at('02:00').do(msg_alerta_stars)
+        # STARS
+        schedule.every().wednesday.at('02:00').do(msg_alerta_stars)
 
-# ADS
-schedule.every().saturday.at('04:30').do(ads_msg_job)
+        # ADS
+        schedule.every().saturday.at('04:30').do(ads_msg_job)
 
-# Quantidade de usuarios no canal
-# schedule.every(1).days.do(get_current_count)
-schedule.every().day.at('17:05').do(get_current_count)
+        # Quantidade de usuarios no canal
+        # schedule.every(1).days.do(get_current_count)
+        schedule.every().day.at('17:05').do(get_current_count)
 
-# remover todo db de imagem
-schedule.every().day.at('00:00').do(remove_all_url_photo)
+        # remover todo db de imagem
+        schedule.every().day.at('00:00').do(remove_all_url_photo)
 
-# Envio das poll channel
-schedule.every().day.at('09:30').do(send_question)
-schedule.every().day.at('12:00').do(send_question)
-schedule.every().day.at('15:00').do(send_question)
-schedule.every().day.at('17:30').do(send_question)
+        # Envio das poll channel
+        schedule.every().day.at('09:30').do(send_question)
+        schedule.every().day.at('12:00').do(send_question)
+        schedule.every().day.at('15:00').do(send_question)
+        schedule.every().day.at('17:30').do(send_question)
 
-# Envio das poll chats
-schedule.every().day.at('10:30').do(send_question_chat)
-schedule.every().day.at('13:30').do(send_question_chat)
-schedule.every().day.at('16:00').do(send_question_chat)
-schedule.every().day.at('18:00').do(send_question_chat)
+        # Envio das poll chats
+        schedule.every().day.at('10:30').do(send_question_chat)
+        schedule.every().day.at('13:30').do(send_question_chat)
+        schedule.every().day.at('16:00').do(send_question_chat)
+        schedule.every().day.at('18:00').do(send_question_chat)
 
-# Remove polls do banco de dados
-# schedule.every().day.at('00:00').do(remove_all_poll)
-
-
-# Envio eventos histórico no chats
-schedule.every().day.at('08:00').do(hist_chat_job)
-
-# Envio eventos histórico no users
-schedule.every().day.at('08:30').do(hist_user_job)
-
-# Envio eventos histórico no channel
-schedule.every().day.at('07:00').do(hist_channel_events)
-
-# Envio dos mortos do dia no canal
-schedule.every().day.at('15:30').do(hist_channel_death)
-
-# Envio dos nascidos do dia no canal
-schedule.every().day.at('19:00').do(hist_channel_birth)
-
-# Envio dos feriados do dia no canal
-schedule.every().day.at('18:00').do(hist_channel_holiday)
-
-# Envio de feriados brasileiros no canal
-schedule.every().day.at('07:30').do(hist_channel_holiday_br)
-
-# Envio de Fotos históricas no grupo
-schedule.every().day.at('15:00').do(hist_image_chat_job)
-
-# Envio de Fotos históricas no canal
-schedule.every().day.at('17:00').do(hist_channel_imgs)
-
-# Envio de curiosidade no canal
-schedule.every().day.at('10:00').do(hist_channel_curiosity)
-
-# Envio de frases no canal
-schedule.every().day.at('20:30').do(hist_channel_frase)
-
-# Envio dos presidentes no canal
-schedule.every().day.at('21:00').do(enviar_foto_presidente)
-
-# Envio da historia diaria
-schedule.every().day.at('14:00').do(hist_channel_history)
-
-# Envio de imagens historicas no canal de imagem
-schedule.every(1).hour.do(hist_channel_imgs)
+        # Remove polls do banco de dados
+        # schedule.every().day.at('00:00').do(remove_all_poll)
 
 
-# checar data
-def checar_datas_dia():
-    current_date = datetime.now()
-    if current_date.month == '12' and current_date.day == '25':
-        christmas_message()
-    elif current_date.month == '1' and current_date.day == '1':
-        new_year_message()
-    elif current_date.month == '11' and current_date.day == '19':
-        agendar_aniversario()
+        # Envio eventos histórico no chats
+        schedule.every().day.at('08:00').do(hist_chat_job)
+
+        # Envio eventos histórico no users
+        schedule.every().day.at('08:30').do(hist_user_job)
+
+        # Envio eventos histórico no channel
+        schedule.every().day.at('07:00').do(hist_channel_events)
+
+        # Envio dos mortos do dia no canal
+        schedule.every().day.at('15:30').do(hist_channel_death)
+
+        # Envio dos nascidos do dia no canal
+        schedule.every().day.at('19:00').do(hist_channel_birth)
+
+        # Envio dos feriados do dia no canal
+        schedule.every().day.at('18:00').do(hist_channel_holiday)
+
+        # Envio de feriados brasileiros no canal
+        schedule.every().day.at('07:30').do(hist_channel_holiday_br)
+
+        # Envio de Fotos históricas no grupo
+        schedule.every().day.at('15:00').do(hist_image_chat_job)
+
+        # Envio de Fotos históricas no canal
+        schedule.every().day.at('17:00').do(hist_channel_imgs)
+
+        # Envio de curiosidade no canal
+        schedule.every().day.at('10:00').do(hist_channel_curiosity)
+
+        # Envio de frases no canal
+        schedule.every().day.at('20:30').do(hist_channel_frase)
+
+        # Envio dos presidentes no canal
+        schedule.every().day.at('21:00').do(enviar_foto_presidente)
+
+        # Envio da historia diaria
+        schedule.every().day.at('14:00').do(hist_channel_history)
+
+        # Envio de imagens historicas no canal de imagem
+        schedule.every(1).hour.do(hist_channel_imgs)
 
 
-schedule.every().day.at('00:05').do(checar_datas_dia)
+        # checar data natal/ano novo/ aniversario do canal
+        def checar_datas_dia():
+            current_date = datetime.now()
+            if current_date.month == '12' and current_date.day == '25':
+                christmas_message()
+            elif current_date.month == '1' and current_date.day == '1':
+                new_year_message()
+            elif current_date.month == '11' and current_date.day == '19':
+                agendar_aniversario()
+
+
+        schedule.every().day.at('00:05').do(checar_datas_dia)
+
+    except Exception as e:
+        logger.error('Erro ao enviar o trabalho curiosidade:', str(e))
