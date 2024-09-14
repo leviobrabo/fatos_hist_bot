@@ -7,7 +7,9 @@ jobs:
 
     steps:
       - name: Copia os arquivos do repo
-        uses: actions/checkout@v4.1.7
+        uses: actions/checkout@v4
 
-      - name: Roda um comando!
-        run: echo $(ls)
+      - name: Instalar o python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
