@@ -20,15 +20,19 @@ def cmd_start(message):
             if not user:
                 user_manager.add_user_db(message)
                 user = user_manager.search_user(user_id)
-                
-            # Verifica se o usuário foi encontrado antes de acessar os atributos
+
             if user:
-                user_info = f"<b>#{BOT_USERNAME} #New_User</b>\n<b>User:</b> {user['first_name']}\n<b>ID:</b> <code>{user['user_id']}</code>\n<b>Username</b>: {user['username']}"
+                user_info = (
+                    f"<b>#{BOT_USERNAME} #New_User</b>\n"
+                    f"<b>User:</b> {user['first_name']}\n"
+                    f"<b>ID:</b> <code>{user['user_id']}</code>\n"
+                    f"<b>Username</b>: {user['username']}"
+                )
+
                 bot.send_message(GROUP_LOG, user_info, message_thread_id=38551)
 
                 logger.info(f'Novo usuário ID: {user["user_id"]} foi criado no banco de dados')
 
-            # Continuando com o envio da mensagem
             markup = types.InlineKeyboardMarkup()
             add_group = types.InlineKeyboardButton(
                 "✨ Adicione-me em seu grupo",
@@ -41,12 +45,8 @@ def cmd_start(message):
             channel_ofc = types.InlineKeyboardButton(
                 "Canal Oficial 🇧🇷", url="https://t.me/historia_br"
             )
-            how_to_use = types.InlineKeyboardButton(
-                "⚠️ Como usar o bot", callback_data="how_to_use"
-            )
-            config_pv = types.InlineKeyboardButton(
-                "🪪 Sua conta", callback_data="config"
-            )
+            how_to_use = types.InlineKeyboardButton("⚠️ Como usar o bot", callback_data="how_to_use")
+            config_pv = types.InlineKeyboardButton("🪪 Sua conta", callback_data="config")
 
             markup.add(add_group)
             markup.add(update_channel, channel_ofc)
@@ -57,8 +57,10 @@ def cmd_start(message):
             msg_start = (
                 f"Olá, <b>{first_name}</b>!\n\n"
                 "Eu sou <b>Fatos Históricos</b>, sou um bot que envia diariamente "
-                "mensagens com acontecimentos históricos que ocorreram no dia do envio da mensagem.\n\n"
-                "O envio da mensagem no chat privado é automático. Se você desejar parar de receber, digite /sendoff. "
+                "mensagens com acontecimentos históricos que ocorreram no dia "
+                "do envio da mensagem.\n\n"
+                "O envio da mensagem no chat privado é automático. "
+                "Se você desejar parar de receber, digite /sendoff. "
                 "Se quiser voltar a receber, digite /sendon\n\n"
                 "<b>A mensagem é enviada todos os dias às 8 horas</b>\n\n"
                 "Adicione-me em seu grupo para receber as mensagens lá.\n\n"
