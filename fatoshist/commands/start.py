@@ -9,10 +9,10 @@ from ..loggers import logger
 user_manager = UserManager()
 
 
-@bot.message_handler(commands=["start"])
+@bot.message_handler(commands=['start'])
 def cmd_start(message):
     try:
-        if message.chat.type == "private":
+        if message.chat.type == 'private':
             user_id = message.from_user.id
             user = user_manager.search_user(user_id)
             first_name = message.from_user.first_name
@@ -35,41 +35,37 @@ def cmd_start(message):
 
             markup = types.InlineKeyboardMarkup()
             add_group = types.InlineKeyboardButton(
-                "✨ Adicione-me em seu grupo",
-                url="https://t.me/fatoshistbot?startgroup=true",
+                '✨ Adicione-me em seu grupo',
+                url='https://t.me/fatoshistbot?startgroup=true',
             )
-            update_channel = types.InlineKeyboardButton(
-                "⚙️ Atualizações do bot", url="https://t.me/updatehist"
-            )
-            donate = types.InlineKeyboardButton("💰 Doações", callback_data="donate")
-            channel_ofc = types.InlineKeyboardButton(
-                "Canal Oficial 🇧🇷", url="https://t.me/historia_br"
-            )
-            how_to_use = types.InlineKeyboardButton("⚠️ Como usar o bot", callback_data="how_to_use")
-            config_pv = types.InlineKeyboardButton("🪪 Sua conta", callback_data="config")
+            update_channel = types.InlineKeyboardButton('⚙️ Atualizações do bot', url='https://t.me/updatehist')
+            donate = types.InlineKeyboardButton('💰 Doações', callback_data='donate')
+            channel_ofc = types.InlineKeyboardButton('Canal Oficial 🇧🇷', url='https://t.me/historia_br')
+            how_to_use = types.InlineKeyboardButton('⚠️ Como usar o bot', callback_data='how_to_use')
+            config_pv = types.InlineKeyboardButton('🪪 Sua conta', callback_data='config')
 
             markup.add(add_group)
             markup.add(update_channel, channel_ofc)
             markup.add(donate, how_to_use)
             markup.add(config_pv)
 
-            photo = "https://i.imgur.com/j3H3wvJ.png"
+            photo = 'https://i.imgur.com/j3H3wvJ.png'
             msg_start = (
-                f"Olá, <b>{first_name}</b>!\n\n"
-                "Eu sou <b>Fatos Históricos</b>, sou um bot que envia diariamente "
-                "mensagens com acontecimentos históricos que ocorreram no dia "
-                "do envio da mensagem.\n\n"
-                "O envio da mensagem no chat privado é automático. "
-                "Se você desejar parar de receber, digite /sendoff. "
-                "Se quiser voltar a receber, digite /sendon\n\n"
-                "<b>A mensagem é enviada todos os dias às 8 horas</b>\n\n"
-                "Adicione-me em seu grupo para receber as mensagens lá.\n\n"
-                "<b>Comandos:</b> /help\n\n"
+                f'Olá, <b>{first_name}</b>!\n\n'
+                'Eu sou <b>Fatos Históricos</b>, sou um bot que envia diariamente '
+                'mensagens com acontecimentos históricos que ocorreram no dia '
+                'do envio da mensagem.\n\n'
+                'O envio da mensagem no chat privado é automático. '
+                'Se você desejar parar de receber, digite /sendoff. '
+                'Se quiser voltar a receber, digite /sendon\n\n'
+                '<b>A mensagem é enviada todos os dias às 8 horas</b>\n\n'
+                'Adicione-me em seu grupo para receber as mensagens lá.\n\n'
+                '<b>Comandos:</b> /help\n\n'
                 "📦<b>Meu código-fonte:</b> <a href='https://github.com/leviobrabo/fatoshisbot'>GitHub</a>\n\n"
                 "🔗<b>Site:</b> <a href='https://www.historiadodia.com'>Aqui</a>"
             )
 
-            logger.debug("Enviando mensagem de start")
+            logger.debug('Enviando mensagem de start')
             bot.send_photo(
                 message.chat.id,
                 photo=photo,
@@ -80,4 +76,4 @@ def cmd_start(message):
             pass
 
     except Exception as e:
-        logger.error(f"Erro ao enviar o start: {e}")
+        logger.error(f'Erro ao enviar o start: {e}')

@@ -182,3 +182,5 @@ pyrightconfig.json
 bot.conf
 
 poetry.lock
+
+fatoshist/data/perguntas-corrigidas.json

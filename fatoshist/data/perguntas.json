@@ -1,15 +1,15 @@
 {
   "1-1": {
     "pergunta1": {
-      "enunciado": "A Segunda Guerra Mundial se desencadeou a partir de uma política de alianças diplomáticas que dividiram os blocos antagônicos entre Eixo e Aliados. Estes últimos, eram compostos por:",
+      "enunciado": "A Segunda Guerra Mundial se desencadeou a partir de uma política de alianças diplomáticas que dividiram os blocos antagônicos entre Eixo e Aliados. Estes últimos eram compostos por:",
       "alternativas": {
         "alt1": "Alemanha, Itália e Japão",
-        "alt2": "Alemanha, Itália, Japão e Brasil.",
-        "alt3": "Reino Unido, França, Estados Unidos e Alemanha.",
+        "alt2": "Alemanha, Itália, Japão e Brasil",
+        "alt3": "Reino Unido, França, Estados Unidos e Alemanha",
         "alt4": "Reino Unido, França, União Soviética e Estados Unidos"
       },
-      "correta": "alt1",
-      "explicacao": "Os Países do Eixo eram Alemanha, Japão e Itália. Essa aliança também era conhecida como Eixo Roma-Berlim-Tóquio."
+      "correta": "alt4",
+      "explicacao": "Os Aliados eram compostos principalmente por Reino Unido, França, União Soviética e Estados Unidos, que se opuseram às forças do Eixo durante a Segunda Guerra Mundial."
     },
     "pergunta2": {
       "enunciado": "Após a abdicação de D. Pedro I e a instauração da Regência, o Brasil passou por muita instabilidade política. No âmbito legislativo, uma das tentativas de mudar esse panorama foi a aprovação do Ato Adicional de 1834. A aprovação desse documento representou:",
@@ -25,13 +25,13 @@
     "pergunta3": {
       "enunciado": "Assinale a alternativa que apresenta, na ordem correta, a sequência de acontecimentos do contexto histórico que desencadeou o processo da Revolução Russa.",
       "alternativas": {
-        "alt1": "Domingo Sangrento – Governo Provisório – Sovietes – Teses de Abril.",
-        "alt2": "Governo Provisório – Domingo Sangrento – Teses de Abril – Sovietes.",
-        "alt3": "Teses de Abril – Domingo Sangrento – Sovietes – Governo Provisório.",
-        "alt4": "Domingo Sangrento – Sovietes – Governo Provisório – Teses de Abril."
+        "alt1": "Domingo Sangrento – Governo Provisório – Sovietes – Teses de Abril",
+        "alt2": "Governo Provisório – Domingo Sangrento – Teses de Abril – Sovietes",
+        "alt3": "Teses de Abril – Domingo Sangrento – Sovietes – Governo Provisório",
+        "alt4": "Domingo Sangrento – Sovietes – Governo Provisório – Teses de Abril"
       },
       "correta": "alt4",
-      "explicacao": "O 'Domingo Sangrento' 1905 iniciou os conflitos, seguido pelos Sovietes, Governo Provisório e, por fim, as Teses de Abril de Lenin, culminando na revolução de outubro de 1917."
+      "explicacao": "O 'Domingo Sangrento' de 1905 iniciou os conflitos, seguido pela formação dos Sovietes, a instalação do Governo Provisório em 1917 e, por fim, as Teses de Abril de Lenin, culminando na Revolução de Outubro."
     },
     "pergunta4": {
       "enunciado": "Qual foi o primeiro presidente do Brasil após a Proclamação da República?",
@@ -39,7 +39,7 @@
         "alt1": "Deodoro da Fonseca",
         "alt2": "Floriano Peixoto",
         "alt3": "Prudente de Morais",
-        "alt4": "Marechal Deodoro"
+        "alt4": "Campos Sales"
       },
       "correta": "alt1",
       "explicacao": "Deodoro da Fonseca foi o primeiro presidente do Brasil após a Proclamação da República, assumindo em 1889."
@@ -82,13 +82,13 @@
     "pergunta4": {
       "enunciado": "Qual civilização construiu a cidade de Teotihuacan, com pirâmides notáveis como a Pirâmide do Sol e da Lua?",
       "alternativas": {
-        "alt1": "Civilização Maia",
+        "alt1": "Civilização Teotihuacana",
         "alt2": "Civilização Inca",
         "alt3": "Civilização Asteca",
-        "alt4": "Civilização Tolteca"
+        "alt4": "Civilização Maia"
       },
-      "correta": "alt4",
-      "explicacao": "A cidade de Teotihuacan, com suas pirâmides notáveis, foi construída pela civilização Tolteca."
+      "correta": "alt1",
+      "explicacao": "A cidade de Teotihuacan foi construída pela Civilização Teotihuacana, uma cultura pré-colombiana cujo nome específico permanece desconhecido."
     }
   },
   "1-3": {
@@ -117,13 +117,13 @@
     "pergunta3": {
       "enunciado": "Quem foi o lendário rei da Mesopotâmia que criou um dos primeiros códigos de leis escritas?",
       "alternativas": {
-        "alt1": "Hammurabi",
+        "alt1": "Hamurábi",
         "alt2": "Nabucodonosor",
         "alt3": "Creso",
-        "alt4": "Sargão o Grande"
+        "alt4": "Sargão, o Grande"
       },
       "correta": "alt1",
-      "explicacao": "Hammurabi, rei da Babilônia, é conhecido por seu Código de Leis, um dos primeiros conjuntos de leis escritas."
+      "explicacao": "Hamurábi, rei da Babilônia, é conhecido por seu Código de Leis, um dos primeiros conjuntos de leis escritas."
     },
     "pergunta4": {
       "enunciado": "Qual país latino-americano enfrentou uma crise econômica e política severa em 2001, resultando em protestos massivos e mudanças de governo?",
@@ -147,7 +147,7 @@
         "alt4": "Ecbátana"
       },
       "correta": "alt3",
-      "explicacao": "Persépolis era a capital do Império Persa durante o reinado de Dario, o Grande, e era conhecida por sua grandiosidade arquitetônica."
+      "explicacao": "Persépolis era a capital cerimonial do Império Persa durante o reinado de Dario, o Grande, conhecida por sua grandiosidade arquitetônica."
     },
     "pergunta2": {
       "enunciado": "Quem foi o famoso líder espartano na Batalha das Termópilas durante as Guerras Persas?",
@@ -174,13 +174,13 @@
     "pergunta4": {
       "enunciado": "Qual foi o conflito étnico que resultou na fragmentação da Iugoslávia na década de 1990?",
       "alternativas": {
-        "alt1": "Guerra dos Bálcãs",
+        "alt1": "Guerras Iugoslavas",
         "alt2": "Conflito Árabe-Israelense",
         "alt3": "Guerra do Golfo",
         "alt4": "Conflito Armênio-Azerbaijano"
       },
       "correta": "alt1",
-      "explicacao": "A fragmentação da Iugoslávia na década de 1990 foi resultado do conflito étnico conhecido como 'Guerra dos Bálcãs'."
+      "explicacao": "A fragmentação da Iugoslávia na década de 1990 foi resultado das Guerras Iugoslavas, uma série de conflitos étnicos e nacionalistas."
     }
   },
   "1-5": {
@@ -190,10 +190,10 @@
         "alt1": "Batalha de Issos",
         "alt2": "Batalha de Gaugamela",
         "alt3": "Batalha de Arbela",
-        "alt4": "Batalha de Granicus"
+        "alt4": "Batalha de Granico"
       },
-      "correta": "alt1",
-      "explicacao": "A Batalha de Issos foi onde Alexandre, o Grande, obteve uma importante vitória sobre o rei persa Dario III."
+      "correta": "alt2",
+      "explicacao": "A Batalha de Gaugamela foi a batalha decisiva em que Alexandre, o Grande, derrotou Dario III, levando à queda do Império Persa."
     },
     "pergunta2": {
       "enunciado": "Qual filósofo grego é considerado o 'pai da medicina'?",
@@ -215,18 +215,18 @@
         "alt4": "Júlio César"
       },
       "correta": "alt1",
-      "explicacao": "Rômulo é considerado o fundador lendário de Roma, de acordo com a mitologia romana, juntamente com seu irmão Remo."
+      "explicacao": "Rômulo é considerado o fundador lendário de Roma, juntamente com seu irmão Remo."
     },
     "pergunta4": {
-      "enunciado": "Quem foi o líder da Revolução Mexicana em 1910?",
+      "enunciado": "Quem foi o líder inicial da Revolução Mexicana em 1910?",
       "alternativas": {
         "alt1": "Emiliano Zapata",
         "alt2": "Pancho Villa",
         "alt3": "Porfirio Díaz",
-        "alt4": "Venustiano Carranza"
+        "alt4": "Francisco I. Madero"
       },
-      "correta": "alt3",
-      "explicacao": "Porfirio Díaz era o presidente do México e foi deposto como resultado do início da Revolução Mexicana, liderada por diversos líderes, incluindo Zapata e Villa."
+      "correta": "alt4",
+      "explicacao": "Francisco I. Madero foi o líder inicial da Revolução Mexicana em 1910, lutando contra a ditadura de Porfirio Díaz."
     }
   },
   "1-6": {
@@ -244,13 +244,13 @@
     "pergunta2": {
       "enunciado": "Quem foi o famoso general cartaginês que desafiou Roma durante a Segunda Guerra Púnica?",
       "alternativas": {
-        "alt1": "Aníbal",
-        "alt2": "Cartago",
-        "alt3": "Escipião",
-        "alt4": "Hannibal"
+        "alt1": "Aníbal Barca",
+        "alt2": "Amílcar Barca",
+        "alt3": "Asdrúbal",
+        "alt4": "Magão Barca"
       },
       "correta": "alt1",
-      "explicacao": "Aníbal, o general cartaginês, foi conhecido por suas estratégias inovadoras durante a Segunda Guerra Púnica contra Roma."
+      "explicacao": "Aníbal Barca foi o general cartaginês que desafiou Roma durante a Segunda Guerra Púnica."
     },
     "pergunta3": {
       "enunciado": "Qual era o nome da antiga capital do Império Assírio?",
@@ -258,7 +258,7 @@
         "alt1": "Nínive",
         "alt2": "Babilônia",
         "alt3": "Susa",
-        "alt4": "Ninurta"
+        "alt4": "Assur"
       },
       "correta": "alt1",
       "explicacao": "Nínive era a antiga capital do Império Assírio, conhecida por sua grandeza e muralhas fortificadas."
@@ -266,13 +266,13 @@
     "pergunta4": {
       "enunciado": "Qual foi o nome dado ao período inicial da colonização do Brasil, caracterizado pela extração do pau-brasil?",
       "alternativas": {
-        "alt1": "Período das Capitanias Hereditárias",
-        "alt2": "Ciclo do Ouro",
-        "alt3": "Período Pré-Colonial",
-        "alt4": "Período da Exploração do Pau-Brasil"
+        "alt1": "Período Pré-Colonial",
+        "alt2": "Período Colonial",
+        "alt3": "Ciclo do Ouro",
+        "alt4": "Ciclo da Cana-de-Açúcar"
       },
-      "correta": "alt4",
-      "explicacao": "O período inicial da colonização do Brasil, caracterizado pela extração do pau-brasil, é conhecido como 'Período da Exploração do Pau-Brasil'."
+      "correta": "alt1",
+      "explicacao": "O período inicial da colonização do Brasil, caracterizado pela extração do pau-brasil, é conhecido como 'Período Pré-Colonial' (1500-1530)."
     }
   },
   "1-7": {
@@ -288,18 +288,18 @@
       "explicacao": "Aristóteles foi o tutor de Alexandre, o Grande, influenciando profundamente seu pensamento e suas ações."
     },
     "pergunta2": {
-      "enunciado": "Qual foi o primeiro código legal conhecido na história, criado pelo rei da Babilônia?",
+      "enunciado": "Qual foi um dos primeiros códigos legais conhecidos na história, criado pelo rei da Babilônia?",
       "alternativas": {
-        "alt1": "Código de Hamurabi",
+        "alt1": "Código de Hamurábi",
         "alt2": "Código de Ur-Nammu",
         "alt3": "Lei das Doze Tábuas",
         "alt4": "Código de Draco"
       },
       "correta": "alt1",
-      "explicacao": "O Código de Hamurabi, estabelecido por Hammurabi, é um dos primeiros conjuntos de leis escritas conhecidos na história."
+      "explicacao": "O Código de Hamurábi é um dos primeiros conjuntos de leis escritas conhecidos na história."
     },
     "pergunta3": {
-      "enunciado": "Qual era a antiga capital da Grécia conhecida por ser o berço dos Jogos Olímpicos?",
+      "enunciado": "Qual era a antiga cidade grega conhecida por ser o berço dos Jogos Olímpicos?",
       "alternativas": {
         "alt1": "Esparta",
         "alt2": "Atenas",
@@ -307,7 +307,7 @@
         "alt4": "Corinto"
       },
       "correta": "alt3",
-      "explicacao": "Olímpia, na Grécia Antiga, era famosa por sediar os Jogos Olímpicos, parte importante da cultura e tradição grega."
+      "explicacao": "Olímpia era famosa por sediar os Jogos Olímpicos na Grécia Antiga."
     },
     "pergunta4": {
       "enunciado": "Qual foi o período conhecido como 'Pax Romana'?",
@@ -318,12 +318,12 @@
         "alt4": "Após a queda do Império Romano"
       },
       "correta": "alt3",
-      "explicacao": "A 'Pax Romana' foi um período de relativa paz e estabilidade que ocorreu durante o governo de Augusto, aproximadamente de 27 a.C. a 180 d.C."
+      "explicacao": "A 'Pax Romana' foi um período de paz e estabilidade que durou de 27 a.C. a 180 d.C., iniciado sob o governo de Augusto."
     }
   },
   "1-8": {
     "pergunta1": {
-      "enunciado": "Qual foi o lendário fundador da civilização romana de acordo com a mitologia romana?",
+      "enunciado": "Quem foi o lendário fundador de Roma, de acordo com a mitologia romana?",
       "alternativas": {
         "alt1": "Rômulo",
         "alt2": "Júlio César",
@@ -331,7 +331,7 @@
         "alt4": "Marco Aurélio"
       },
       "correta": "alt1",
-      "explicacao": "Rômulo, juntamente com seu irmão Remo, é considerado o lendário fundador da cidade de Roma na mitologia romana."
+      "explicacao": "Rômulo, juntamente com seu irmão Remo, é considerado o fundador lendário de Roma."
     },
     "pergunta2": {
       "enunciado": "Qual era o nome do sistema de governo em que o poder era exercido por um pequeno grupo de pessoas em Esparta?",
@@ -342,18 +342,18 @@
         "alt4": "Oligarquia"
       },
       "correta": "alt4",
-      "explicacao": "Em Esparta, o poder era exercido por uma pequena elite de pessoas, caracterizando uma forma de governo chamada de oligarquia."
+      "explicacao": "Em Esparta, o poder era exercido por uma pequena elite, caracterizando uma oligarquia."
     },
     "pergunta3": {
       "enunciado": "Qual era o nome da famosa estrada romana que ligava Roma a Brindisi?",
       "alternativas": {
         "alt1": "Via Ápia",
-        "alt2": "Via Salaria",
+        "alt2": "Via Salária",
         "alt3": "Via Flaminia",
-        "alt4": "Via Egnatia"
+        "alt4": "Via Egnácia"
       },
       "correta": "alt1",
-      "explicacao": "A Via Ápia foi uma das mais importantes estradas romanas, conectando Roma à região sul da Itália até Brindisi."
+      "explicacao": "A Via Ápia conectava Roma ao sul da Itália, até Brindisi."
     },
     "pergunta4": {
       "enunciado": "Qual das seguintes civilizações foi conhecida por seu código de leis, incluindo a famosa Lei de Talião?",
@@ -364,7 +364,7 @@
         "alt4": "Civilização Hitita"
       },
       "correta": "alt3",
-      "explicacao": "A Civilização Babilônica foi conhecida por seu código de leis, o Código de Hamurabi, que incluía a famosa Lei de Talião (olho por olho, dente por dente)."
+      "explicacao": "A Civilização Babilônica é conhecida pelo Código de Hamurábi, que inclui a Lei de Talião."
     }
   },
   "1-9": {
@@ -374,21 +374,21 @@
         "alt1": "Maias",
         "alt2": "Astecas",
         "alt3": "Olmecas",
-        "alt4": "Toltecas"
+        "alt4": "Civilização Teotihuacana"
       },
-      "correta": "alt1",
-      "explicacao": "As pirâmides em Teotihuacan foram construídas pela civilização maia, refletindo sua avançada arquitetura."
+      "correta": "alt4",
+      "explicacao": "As pirâmides em Teotihuacan foram construídas pela Civilização Teotihuacana, cuja identidade específica permanece desconhecida."
     },
     "pergunta2": {
-      "enunciado": "Qual foi o famoso evento que marcou a passagem da Idade Antiga para a Idade Média?",
+      "enunciado": "Qual foi o famoso evento que marcou a passagem da Idade Média para a Idade Moderna?",
       "alternativas": {
         "alt1": "Revolução Francesa",
         "alt2": "Queda de Constantinopla",
-        "alt3": "Saque de Roma",
-        "alt4": "Grande Incêndio de Londres"
+        "alt3": "Descobrimento da América",
+        "alt4": "Reforma Protestante"
       },
       "correta": "alt2",
-      "explicacao": "A queda de Constantinopla em 1453 marcou o fim do Império Bizantino e é considerada um marco para a transição da Idade Antiga para a Idade Média."
+      "explicacao": "A queda de Constantinopla em 1453 marcou o fim da Idade Média e o início da Idade Moderna."
     },
     "pergunta3": {
       "enunciado": "Quem foi o filósofo grego conhecido por suas contribuições para a geometria?",
@@ -407,10 +407,10 @@
         "alt1": "Mineração",
         "alt2": "Agricultura",
         "alt3": "Comércio de especiarias",
-        "alt4": "Educação"
+        "alt4": "Educação e catequese"
       },
       "correta": "alt4",
-      "explicacao": "A principal atividade econômica desenvolvida pelos jesuítas no Brasil colonial foi a educação, através de escolas e missões educacionais."
+      "explicacao": "A principal atividade dos jesuítas no Brasil colonial foi a educação e a catequização dos indígenas."
     }
   },
   "1-10": {
@@ -423,7 +423,7 @@
         "alt4": "Xerxes"
       },
       "correta": "alt1",
-      "explicacao": "Alexandre, o Grande, foi o líder macedônio que conquistou o vasto Império Persa, estendendo seu próprio império até os limites da Índia."
+      "explicacao": "Alexandre, o Grande, foi o líder macedônio que conquistou o vasto Império Persa."
     },
     "pergunta2": {
       "enunciado": "Quem foi o lendário herói grego que derrotou o Minotauro no Labirinto?",
@@ -434,7 +434,7 @@
         "alt4": "Ulisses"
       },
       "correta": "alt1",
-      "explicacao": "Teseu é conhecido por derrotar o Minotauro no Labirinto de Creta, um dos feitos mais famosos da mitologia grega."
+      "explicacao": "Teseu é conhecido por derrotar o Minotauro no Labirinto de Creta."
     },
     "pergunta3": {
       "enunciado": "Qual antiga civilização construiu a cidade de Petra, na Jordânia?",
@@ -445,7 +445,7 @@
         "alt4": "Nabateus"
       },
       "correta": "alt4",
-      "explicacao": "A antiga cidade de Petra foi construída pelos Nabateus e é famosa por suas construções esculpidas em rocha."
+      "explicacao": "A cidade de Petra foi construída pelos Nabateus, conhecida por suas construções esculpidas em rocha."
     },
     "pergunta4": {
       "enunciado": "Qual foi o sistema econômico predominante durante a Idade Média?",
@@ -456,7 +456,7 @@
         "alt4": "Mercantilismo"
       },
       "correta": "alt3",
-      "explicacao": "O sistema econômico predominante durante a Idade Média foi o feudalismo, baseado na relação de servidão entre senhores e servos."
+      "explicacao": "O feudalismo foi o sistema econômico predominante durante a Idade Média."
     }
   },
   "1-11": {
@@ -469,21 +469,21 @@
         "alt4": "Escrita Linear A"
       },
       "correta": "alt2",
-      "explicacao": "Os antigos sumérios desenvolveram o sistema de escrita cuneiforme, uma das formas mais antigas de escrita conhecidas."
+      "explicacao": "Os sumérios desenvolveram a escrita cuneiforme, uma das formas mais antigas de escrita conhecidas."
     },
     "pergunta2": {
-      "enunciado": "Qual era o nome do lendário guerreiro troiano famoso pela Guerra de Troia?",
+      "enunciado": "Quem foi o lendário guerreiro grego famoso pela Guerra de Troia?",
       "alternativas": {
-        "alt1": "Hector",
+        "alt1": "Heitor",
         "alt2": "Agamenon",
         "alt3": "Paris",
         "alt4": "Aquiles"
       },
       "correta": "alt4",
-      "explicacao": "Aquiles foi um dos heróis gregos mais conhecidos da Guerra de Troia, famoso por suas habilidades em combate."
+      "explicacao": "Aquiles foi um dos heróis gregos mais conhecidos da Guerra de Troia."
     },
     "pergunta3": {
-      "enunciado": "Qual das seguintes antigas civilizações desenvolveu a escrita conhecida como heiroglífica?",
+      "enunciado": "Qual das seguintes antigas civilizações desenvolveu a escrita conhecida como hieroglífica?",
       "alternativas": {
         "alt1": "Egípcios",
         "alt2": "Sumérios",
@@ -491,18 +491,18 @@
         "alt4": "Babilônios"
       },
       "correta": "alt1",
-      "explicacao": "Os egípcios desenvolveram a escrita hieroglífica, um sistema complexo de escrita pictórica."
+      "explicacao": "Os egípcios desenvolveram a escrita hieroglífica."
     },
     "pergunta4": {
       "enunciado": "Quando ocorreu a Guerra dos Cem Anos?",
       "alternativas": {
-        "alt1": "Século XII ao Século XIII",
-        "alt2": "Século XI ao Século XII",
-        "alt3": "Século XIV ao Século XV",
+        "alt1": "Século XIV ao Século XV",
+        "alt2": "Século XII ao Século XIII",
+        "alt3": "Século XI ao Século XII",
         "alt4": "Século XIII ao Século XIV"
       },
-      "correta": "alt3",
-      "explicacao": "A Guerra dos Cem Anos foi um conflito entre a França e a Inglaterra que ocorreu aproximadamente entre os séculos XIV e XV."
+      "correta": "alt1",
+      "explicacao": "A Guerra dos Cem Anos ocorreu do século XIV ao século XV entre França e Inglaterra."
     }
   },
   "1-12": {
@@ -515,7 +515,7 @@
         "alt4": "Trajano"
       },
       "correta": "alt2",
-      "explicacao": "Augusto foi o primeiro imperador romano, antes conhecido como Otávio, após a vitória sobre Marco Antônio e Cleópatra."
+      "explicacao": "Augusto, também conhecido como Otaviano, foi o primeiro imperador romano."
     },
     "pergunta2": {
       "enunciado": "Qual foi o período da história romana que se caracterizou pela paz e estabilidade?",
@@ -526,29 +526,29 @@
         "alt4": "Guerras Civis"
       },
       "correta": "alt1",
-      "explicacao": "A Pax Romana foi um período de relativa paz e estabilidade que durou cerca de 200 anos no Império Romano."
+      "explicacao": "A Pax Romana foi um período de paz e prosperidade que durou cerca de 200 anos."
     },
     "pergunta3": {
       "enunciado": "Quem foi o líder cartaginês que travou as Guerras Púnicas contra Roma?",
       "alternativas": {
         "alt1": "Aníbal",
         "alt2": "Escipião",
-        "alt3": "Cartago",
-        "alt4": "Hannibal"
+        "alt3": "Amílcar Barca",
+        "alt4": "Magão"
       },
       "correta": "alt1",
-      "explicacao": "Aníbal foi o líder cartaginês que liderou as forças contra Roma durante as Guerras Púnicas, incluindo a famosa travessia dos Alpes."
+      "explicacao": "Aníbal foi o líder cartaginês famoso por suas estratégias contra Roma."
     },
     "pergunta4": {
       "enunciado": "Qual presidente brasileiro criou o programa social 'Minha Casa, Minha Vida'?",
       "alternativas": {
-        "alt1": "Dilma Rousseff",
-        "alt2": "Luiz Inácio Lula da Silva",
+        "alt1": "Luiz Inácio Lula da Silva",
+        "alt2": "Dilma Rousseff",
         "alt3": "Fernando Henrique Cardoso",
         "alt4": "Michel Temer"
       },
       "correta": "alt1",
-      "explicacao": "O programa social 'Minha Casa, Minha Vida' foi criado durante o governo da presidente Dilma Rousseff."
+      "explicacao": "O programa 'Minha Casa, Minha Vida' foi criado durante o governo de Lula."
     }
   },
   "1-13": {
@@ -561,18 +561,18 @@
         "alt4": "Commodus"
       },
       "correta": "alt2",
-      "explicacao": "Nero foi o imperador romano que supostamente incendiou Roma e culpou os cristãos, desencadeando perseguições contra eles."
+      "explicacao": "Nero foi o imperador associado ao Grande Incêndio de Roma em 64 d.C."
     },
     "pergunta2": {
       "enunciado": "Qual imperador romano foi conhecido por sua construção do Coliseu em Roma?",
       "alternativas": {
-        "alt1": "Trajano",
+        "alt1": "Vespasiano",
         "alt2": "Nero",
-        "alt3": "Vespasiano",
+        "alt3": "Trajano",
         "alt4": "Tito"
       },
-      "correta": "alt3",
-      "explicacao": "Vespasiano foi o imperador romano que iniciou a construção do Coliseu em Roma, embora tenha sido concluído sob o reinado de seu filho Tito."
+      "correta": "alt1",
+      "explicacao": "Vespasiano iniciou a construção do Coliseu, concluído por seu filho Tito."
     },
     "pergunta3": {
       "enunciado": "Quem foi o imperador romano que converteu o Império ao cristianismo?",
@@ -583,18 +583,18 @@
         "alt4": "Marco Aurélio"
       },
       "correta": "alt1",
-      "explicacao": "Constantino foi o imperador que promoveu o Édito de Milão, legalizando o cristianismo e contribuindo para sua expansão no Império Romano."
+      "explicacao": "Constantino legalizou o cristianismo com o Édito de Milão em 313 d.C."
     },
     "pergunta4": {
       "enunciado": "Quem foi o presidente argentino conhecido por sua liderança durante a Guerra das Malvinas/Falklands em 1982?",
       "alternativas": {
-        "alt1": "Carlos Menem",
-        "alt2": "Fernando de la Rúa",
-        "alt3": "Leopoldo Galtieri",
+        "alt1": "Leopoldo Galtieri",
+        "alt2": "Carlos Menem",
+        "alt3": "Fernando de la Rúa",
         "alt4": "Raúl Alfonsín"
       },
-      "correta": "alt3",
-      "explicacao": "Leopoldo Galtieri foi o presidente argentino durante a Guerra das Malvinas/Falklands em 1982."
+      "correta": "alt1",
+      "explicacao": "Leopoldo Galtieri foi o líder argentino durante a Guerra das Malvinas."
     }
   },
   "1-14": {
@@ -612,13 +612,13 @@
     "pergunta2": {
       "enunciado": "Qual foi a capital do Império Romano do Ocidente após a divisão do império?",
       "alternativas": {
-        "alt1": "Roma",
-        "alt2": "Constantinopla",
-        "alt3": "Cartago",
+        "alt1": "Ravena",
+        "alt2": "Roma",
+        "alt3": "Constantinopla",
         "alt4": "Milão"
       },
-      "correta": "alt4",
-      "explicacao": "Após a divisão do Império Romano, Milão tornou-se a capital do Império Romano do Ocidente sob o domínio do imperador romano Diocleciano."
+      "correta": "alt1",
+      "explicacao": "Após a divisão do Império Romano, Ravena tornou-se a capital do Império Romano do Ocidente em 402 d.C."
     },
     "pergunta3": {
       "enunciado": "Quem foi o último imperador romano do Ocidente?",
@@ -629,7 +629,7 @@
         "alt4": "Honório"
       },
       "correta": "alt1",
-      "explicacao": "Rômulo Augusto foi considerado o último imperador romano do Ocidente após sua deposição em 476 d.C., marcando o fim do Império Romano do Ocidente."
+      "explicacao": "Rômulo Augusto foi o último imperador romano do Ocidente, deposto em 476 d.C., marcando o fim do Império Romano do Ocidente."
     },
     "pergunta4": {
       "enunciado": "Quando ocorreu a Batalha de Austerlitz, onde Napoleão obteve uma vitória significativa sobre a Áustria e a Rússia?",
@@ -640,7 +640,7 @@
         "alt4": "1815"
       },
       "correta": "alt1",
-      "explicacao": "A Batalha de Austerlitz, onde Napoleão obteve uma vitória significativa sobre a Áustria e a Rússia, ocorreu em 1805."
+      "explicacao": "A Batalha de Austerlitz ocorreu em 1805, onde Napoleão obteve uma vitória decisiva."
     }
   },
   "1-15": {
@@ -653,18 +653,18 @@
         "alt4": "Teodorico"
       },
       "correta": "alt1",
-      "explicacao": "Átila, também conhecido como 'O Flagelo de Deus', liderou os hunos e invadiu o Império Romano durante o século V."
+      "explicacao": "Átila, conhecido como 'O Flagelo de Deus', liderou os hunos contra o Império Romano."
     },
     "pergunta2": {
       "enunciado": "Qual cidade foi a capital do Império Bizantino?",
       "alternativas": {
-        "alt1": "Roma",
-        "alt2": "Cartago",
-        "alt3": "Constantinopla",
+        "alt1": "Constantinopla",
+        "alt2": "Roma",
+        "alt3": "Cartago",
         "alt4": "Atenas"
       },
-      "correta": "alt3",
-      "explicacao": "Constantinopla, atualmente conhecida como Istambul, foi a capital do Império Bizantino, sucedendo a cidade de Bizâncio."
+      "correta": "alt1",
+      "explicacao": "Constantinopla, atual Istambul, foi a capital do Império Bizantino."
     },
     "pergunta3": {
       "enunciado": "Quem foi o imperador bizantino que liderou a reconquista de partes do Império Romano do Ocidente?",
@@ -672,34 +672,34 @@
         "alt1": "Justiniano",
         "alt2": "Constantino",
         "alt3": "Leão III",
-        "alt4": "Alexios I"
+        "alt4": "Basílio II"
       },
       "correta": "alt1",
-      "explicacao": "Justiniano foi o imperador bizantino responsável pela reconquista temporária de partes do Império Romano do Ocidente, incluindo a Itália."
+      "explicacao": "Justiniano tentou restaurar o Império Romano ao reconquistar territórios perdidos."
     },
     "pergunta4": {
       "enunciado": "Qual foi a ordem religiosa que desempenhou um papel importante na educação e na preservação do conhecimento durante a Idade Média?",
       "alternativas": {
-        "alt1": "Ordem dos Jesuítas",
+        "alt1": "Ordem dos Beneditinos",
         "alt2": "Ordem dos Franciscanos",
         "alt3": "Ordem dos Dominicanos",
-        "alt4": "Ordem dos Beneditinos"
+        "alt4": "Ordem dos Jesuítas"
       },
-      "correta": "alt4",
-      "explicacao": "A Ordem dos Beneditinos desempenhou um papel crucial na educação e na preservação do conhecimento durante a Idade Média, mantendo mosteiros e bibliotecas."
+      "correta": "alt1",
+      "explicacao": "A Ordem dos Beneditinos foi fundamental na preservação do conhecimento durante a Idade Média."
     }
   },
   "1-16": {
     "pergunta1": {
       "enunciado": "Quem fundou a dinastia Carolíngia?",
       "alternativas": {
-        "alt1": "Carlos Magno",
-        "alt2": "Carlos Martel",
-        "alt3": "Pipino, o Breve",
-        "alt4": "Carlos, o Calvo"
+        "alt1": "Carlos Martel",
+        "alt2": "Pipino, o Breve",
+        "alt3": "Carlos Magno",
+        "alt4": "Luís, o Piedoso"
       },
       "correta": "alt2",
-      "explicacao": "Carlos Martel, conhecido por suas vitórias na batalha de Tours, é frequentemente considerado o fundador da dinastia Carolíngia."
+      "explicacao": "Pipino, o Breve, pai de Carlos Magno, é considerado o fundador da dinastia Carolíngia."
     },
     "pergunta2": {
       "enunciado": "Quem foi o primeiro rei da Inglaterra?",
@@ -707,21 +707,21 @@
         "alt1": "Egberto",
         "alt2": "Alfredo, o Grande",
         "alt3": "Canuto, o Grande",
-        "alt4": "William, o Conquistador"
+        "alt4": "Guilherme, o Conquistador"
       },
-      "correta": "alt4",
-      "explicacao": "William, o Conquistador, foi o primeiro rei da Inglaterra após a conquista normanda na Batalha de Hastings em 1066."
+      "correta": "alt1",
+      "explicacao": "Egberto é frequentemente considerado o primeiro rei a governar toda a Inglaterra."
     },
     "pergunta3": {
       "enunciado": "Qual batalha marcou o fim da expansão muçulmana na Europa Ocidental?",
       "alternativas": {
-        "alt1": "Batalha de Poitiers",
-        "alt2": "Batalha de Tours",
+        "alt1": "Batalha de Poitiers (ou Tours)",
+        "alt2": "Batalha de Hastings",
         "alt3": "Batalha de Manzikert",
         "alt4": "Batalha de Guadalete"
       },
-      "correta": "alt2",
-      "explicacao": "A Batalha de Tours, em 732, foi um evento significativo que marcou o fim da expansão muçulmana na Europa Ocidental."
+      "correta": "alt1",
+      "explicacao": "A Batalha de Poitiers em 732 deteve a expansão muçulmana na Europa Ocidental."
     },
     "pergunta4": {
       "enunciado": "O que os Vikings chamavam de 'Althing'?",
@@ -732,20 +732,20 @@
         "alt4": "Tribunal Divino"
       },
       "correta": "alt2",
-      "explicacao": "O 'Althing' era uma assembleia geral realizada anualmente na Islândia, sendo uma das mais antigas formas de parlamento conhecidas."
+      "explicacao": "O 'Althing' era a assembleia geral, uma das mais antigas formas de parlamento."
     }
   },
   "1-17": {
     "pergunta1": {
       "enunciado": "Quem foi o general romano que emergiu como líder após as Guerras Civis e estabeleceu o Principado?",
       "alternativas": {
-        "alt1": "Júlio César",
-        "alt2": "Marco Antônio",
-        "alt3": "Augusto",
+        "alt1": "Augusto",
+        "alt2": "Júlio César",
+        "alt3": "Marco Antônio",
         "alt4": "Pompeu"
       },
-      "correta": "alt3",
-      "explicacao": "Augusto, originalmente conhecido como Octaviano, emergiu como líder após as Guerras Civis romanas e estabeleceu o Principado, dando início ao Império Romano."
+      "correta": "alt1",
+      "explicacao": "Augusto, ou Otaviano, estabeleceu o Principado após as Guerras Civis."
     },
     "pergunta2": {
       "enunciado": "Qual foi o título dado a Augusto que significa 'o venerável'?",
@@ -755,30 +755,30 @@
         "alt3": "Imperator",
         "alt4": "Pater Patriae"
       },
-      "correta": "alt4",
-      "explicacao": "Pater Patriae, que significa 'Pai da Pátria', foi um dos títulos honoríficos dados a Augusto durante seu reinado."
+      "correta": "alt1",
+      "explicacao": "O título 'Augusto' significa 'o venerável' ou 'o exaltado'."
     },
     "pergunta3": {
       "enunciado": "O que foi o 'Pax Romana'?",
       "alternativas": {
-        "alt1": "Um período de guerra civil",
+        "alt1": "Um período de paz e estabilidade no Império Romano",
         "alt2": "Um tratado de paz com os germanos",
         "alt3": "Um período de expansão militar",
-        "alt4": "Um período de paz e estabilidade no Império Romano"
+        "alt4": "Um período de guerra civil"
       },
-      "correta": "alt4",
-      "explicacao": "Pax Romana foi um período de aproximadamente 200 anos de paz relativa e estabilidade dentro do Império Romano, iniciado durante o governo de Augusto."
+      "correta": "alt1",
+      "explicacao": "A 'Pax Romana' foi um período de paz e prosperidade iniciado por Augusto."
     },
     "pergunta4": {
       "enunciado": "Quem foi o líder da Revolução Cubana em 1959?",
       "alternativas": {
-        "alt1": "Fulgencio Batista",
-        "alt2": "Raul Castro",
+        "alt1": "Fidel Castro",
+        "alt2": "Fulgencio Batista",
         "alt3": "Che Guevara",
-        "alt4": "Fidel Castro"
+        "alt4": "Raúl Castro"
       },
-      "correta": "alt4",
-      "explicacao": "Fidel Castro foi o líder proeminente da Revolução Cubana em 1959, estabelecendo um governo comunista que perdurou por décadas em Cuba."
+      "correta": "alt1",
+      "explicacao": "Fidel Castro liderou a Revolução Cubana que derrubou Batista."
     }
   },
   "1-18": {
@@ -791,29 +791,29 @@
         "alt4": "Cômodo"
       },
       "correta": "alt1",
-      "explicacao": "Diocleciano implementou reformas significativas, incluindo a divisão do Império Romano em partes oriental e ocidental para facilitar a administração."
+      "explicacao": "Diocleciano dividiu o Império Romano para melhor administração."
     },
     "pergunta2": {
       "enunciado": "Quem foi o último imperador romano a governar um império unificado antes da divisão definitiva do Império Romano?",
       "alternativas": {
-        "alt1": "Diocleciano",
+        "alt1": "Teodósio I",
         "alt2": "Constantino",
         "alt3": "Nero",
         "alt4": "Júlio César"
       },
-      "correta": "alt2",
-      "explicacao": "Constantino foi o último imperador a governar um império romano unificado antes da divisão definitiva entre o Império Romano do Ocidente e do Oriente."
+      "correta": "alt1",
+      "explicacao": "Teodósio I foi o último a governar um Império Romano unificado."
     },
     "pergunta3": {
       "enunciado": "Qual foi a cidade escolhida por Constantino como a nova capital do Império Romano?",
       "alternativas": {
-        "alt1": "Roma",
-        "alt2": "Milão",
-        "alt3": "Cartago",
-        "alt4": "Constantinopla"
+        "alt1": "Constantinopla",
+        "alt2": "Roma",
+        "alt3": "Milão",
+        "alt4": "Cartago"
       },
-      "correta": "alt4",
-      "explicacao": "Constantinopla, atualmente conhecida como Istambul, foi escolhida por Constantino como a nova capital do Império Romano."
+      "correta": "alt1",
+      "explicacao": "Constantino fundou Constantinopla como a nova capital em 330 d.C."
     },
     "pergunta4": {
       "enunciado": "Qual foi o nome dado à estratégia de extermínio em massa dos judeus pelos nazistas?",
@@ -824,7 +824,7 @@
         "alt4": "Cerco de Leningrado"
       },
       "correta": "alt2",
-      "explicacao": "A estratégia de extermínio em massa dos judeus pelos nazistas foi conhecida como 'Solução Final'."
+      "explicacao": "A 'Solução Final' foi o plano nazista para o genocídio dos judeus."
     }
   },
   "1-19": {
@@ -837,7 +837,7 @@
         "alt4": "Dinastia Severa"
       },
       "correta": "alt3",
-      "explicacao": "A dinastia Júlio-Claudiana incluiu os imperadores Júlio César, Augusto, Tibério, Calígula, Cláudio e Nero, governando durante o século I d.C."
+      "explicacao": "A Dinastia Júlio-Claudiana governou o Império Romano durante o século I d.C., incluindo imperadores como Augusto, Tibério, Calígula, Cláudio e Nero."
     },
     "pergunta2": {
       "enunciado": "Qual foi o famoso imperador romano que escreveu 'Meditações', um registro de seus pensamentos filosóficos?",
@@ -848,7 +848,7 @@
         "alt4": "Trajano"
       },
       "correta": "alt1",
-      "explicacao": "Marco Aurélio foi um imperador filósofo conhecido por suas 'Meditações', onde registrou seus pensamentos e reflexões filosóficas."
+      "explicacao": "Marco Aurélio foi um imperador e filósofo estoico que escreveu 'Meditações', compartilhando suas reflexões pessoais."
     },
     "pergunta3": {
       "enunciado": "Quem foi o imperador romano que construiu o famoso muro na fronteira norte da Bretanha?",
@@ -859,7 +859,7 @@
         "alt4": "Tito"
       },
       "correta": "alt3",
-      "explicacao": "Adriano foi o imperador romano responsável pela construção do Muro de Adriano, uma fronteira defensiva no norte da Bretanha."
+      "explicacao": "O imperador Adriano ordenou a construção do Muro de Adriano para proteger a fronteira norte da Bretanha."
     },
     "pergunta4": {
       "enunciado": "Quem foi o presidente do Brasil durante a realização da Rio-92, a Conferência das Nações Unidas sobre Meio Ambiente e Desenvolvimento?",
@@ -869,8 +869,8 @@
         "alt3": "José Sarney",
         "alt4": "Fernando Henrique Cardoso"
       },
-      "correta": "alt4",
-      "explicacao": "Fernando Henrique Cardoso era presidente do Brasil durante a Rio-92, uma conferência importante sobre meio ambiente e desenvolvimento sustentável."
+      "correta": "alt1",
+      "explicacao": "Fernando Collor era o presidente do Brasil durante a Rio-92, realizada em 1992."
     }
   },
   "1-20": {
@@ -880,10 +880,10 @@
         "alt1": "Nero",
         "alt2": "Constantino",
         "alt3": "Marco Aurélio",
-        "alt4": "Adriano"
+        "alt4": "Diocleciano"
       },
       "correta": "alt1",
-      "explicacao": "Nero foi conhecido por sua perseguição aos cristãos após o Grande Incêndio de Roma em 64 d.C."
+      "explicacao": "Nero é famoso por sua perseguição aos cristãos após o Grande Incêndio de Roma em 64 d.C."
     },
     "pergunta2": {
       "enunciado": "Qual imperador romano foi o primeiro a converter-se ao cristianismo?",
@@ -894,10 +894,10 @@
         "alt4": "Nero"
       },
       "correta": "alt1",
-      "explicacao": "Constantino foi o primeiro imperador romano a se converter ao cristianismo e legalizou a religião no Império Romano com o Édito de Milão."
+      "explicacao": "Constantino foi o primeiro imperador romano a se converter ao cristianismo, emitindo o Édito de Milão em 313 d.C."
     },
     "pergunta3": {
-      "enunciado": "Qual imperador romano dividiu o Império em duas partes após sua morte, estabelecendo a tetrarquia?",
+      "enunciado": "Qual imperador romano dividiu o Império em duas partes, estabelecendo a tetrarquia?",
       "alternativas": {
         "alt1": "Diocleciano",
         "alt2": "Marco Aurélio",
@@ -905,18 +905,18 @@
         "alt4": "Nero"
       },
       "correta": "alt1",
-      "explicacao": "Diocleciano dividiu o Império Romano em duas partes, Oriente e Ocidente, para facilitar a governança após sua morte, estabelecendo a tetrarquia."
+      "explicacao": "Diocleciano dividiu o Império Romano e estabeleceu a tetrarquia para melhorar a administração."
     },
     "pergunta4": {
       "enunciado": "Qual foi o nome dado à política de relaxamento das tensões entre Estados Unidos e União Soviética durante a Guerra Fria?",
       "alternativas": {
         "alt1": "Política de Contenção",
         "alt2": "Política da Boa Vizinhança",
-        "alt3": "Detente",
+        "alt3": "Détente",
         "alt4": "Doutrina Truman"
       },
       "correta": "alt3",
-      "explicacao": "A política de relaxamento das tensões entre EUA e URSS durante a Guerra Fria foi chamada de 'Detente'."
+      "explicacao": "A 'Détente' foi a política de relaxamento das tensões entre EUA e URSS nos anos 1970."
     }
   },
   "1-21": {
@@ -929,10 +929,10 @@
         "alt4": "Constantino"
       },
       "correta": "alt4",
-      "explicacao": "Constantino foi o imperador responsável pela construção do Arco de Constantino, erguido em comemoração à sua vitória sobre Maxêncio na Batalha da Ponte Mílvia."
+      "explicacao": "Constantino construiu o Arco de Constantino para celebrar sua vitória na Batalha da Ponte Mílvia."
     },
     "pergunta2": {
-      "enunciado": "O que foi o Edito de Milão?",
+      "enunciado": "O que foi o Édito de Milão?",
       "alternativas": {
         "alt1": "Uma batalha entre imperadores romanos",
         "alt2": "Uma reforma administrativa no Império Romano",
@@ -940,7 +940,7 @@
         "alt4": "Um decreto que concedeu liberdade religiosa aos cristãos no Império Romano"
       },
       "correta": "alt4",
-      "explicacao": "O Edito de Milão foi um decreto emitido por Constantino que concedeu liberdade religiosa aos cristãos no Império Romano."
+      "explicacao": "O Édito de Milão, emitido em 313 d.C., concedeu liberdade religiosa aos cristãos."
     },
     "pergunta3": {
       "enunciado": "Qual cidade foi renomeada para Constantinopla por Constantino?",
@@ -951,7 +951,7 @@
         "alt4": "Alexandria"
       },
       "correta": "alt2",
-      "explicacao": "Constantino renomeou a cidade de Bizâncio para Constantinopla, que se tornou a nova capital do Império Romano."
+      "explicacao": "Bizâncio foi renomeada para Constantinopla e tornou-se a nova capital."
     },
     "pergunta4": {
       "enunciado": "Qual evento levou à unificação da Alemanha em um único estado em 1871?",
@@ -962,7 +962,7 @@
         "alt4": "Guerra Franco-Prussiana"
       },
       "correta": "alt4",
-      "explicacao": "A Guerra Franco-Prussiana, em 1870-1871, levou à unificação da Alemanha sob a liderança da Prússia, culminando na formação do Império Alemão em 1871."
+      "explicacao": "A Guerra Franco-Prussiana resultou na unificação alemã sob liderança prussiana."
     }
   },
   "1-22": {
@@ -975,7 +975,7 @@
         "alt4": "Júlio César"
       },
       "correta": "alt2",
-      "explicacao": "Rômulo Augusto foi o último imperador romano do Ocidente, e sua deposição em 476 d.C. é frequentemente considerada o fim do Império Romano do Ocidente."
+      "explicacao": "Rômulo Augusto foi deposto em 476 d.C., marcando o fim do Império Romano do Ocidente."
     },
     "pergunta2": {
       "enunciado": "Qual foi o evento que marcou o fim da Idade Antiga e o início da Idade Média?",
@@ -986,7 +986,7 @@
         "alt4": "Invasões bárbaras e deposição de Rômulo Augusto"
       },
       "correta": "alt4",
-      "explicacao": "As invasões bárbaras e a deposição de Rômulo Augusto em 476 d.C. são eventos frequentemente considerados como o fim da Idade Antiga e o início da Idade Média."
+      "explicacao": "A deposição de Rômulo Augusto em 476 d.C. é considerada o início da Idade Média."
     },
     "pergunta3": {
       "enunciado": "Qual foi o nome dado às tribos germânicas que contribuíram para a queda do Império Romano do Ocidente?",
@@ -997,10 +997,10 @@
         "alt4": "Ostrogodos"
       },
       "correta": "alt3",
-      "explicacao": "Os visigodos foram uma das tribos germânicas que contribuíram para a queda do Império Romano do Ocidente, saqueando Roma em 410 d.C."
+      "explicacao": "Os visigodos foram uma das tribos que contribuíram para a queda de Roma."
     },
     "pergunta4": {
-      "enunciado": "Qual foi o conflito que teve origem nas disputas pelo trono francês entre as casas de Valois e de Plantageneta?",
+      "enunciado": "Qual foi o conflito que teve origem nas disputas pelo trono inglês entre as casas de York e Lancaster?",
       "alternativas": {
         "alt1": "Guerra dos Trinta Anos",
         "alt2": "Guerra das Duas Rosas",
@@ -1008,7 +1008,7 @@
         "alt4": "Guerra das Cruzadas"
       },
       "correta": "alt2",
-      "explicacao": "A Guerra das Duas Rosas foi um conflito na Inglaterra entre as casas de Valois e de Plantageneta pelo trono francês."
+      "explicacao": "A Guerra das Duas Rosas foi um conflito dinástico entre York e Lancaster pelo trono inglês."
     }
   },
   "1-23": {

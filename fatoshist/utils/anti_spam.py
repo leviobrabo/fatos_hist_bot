@@ -9,9 +9,9 @@ def handle_anti_spam(bot):
             bot.send_message()  # Tenta enviar a mensagem
             return
         except ApiTelegramException as ex:
-            if "error_code" in ex.result_json and ex.result_json["error_code"] == "429":
-                retry_after = ex.result_json["parameters"]["retry_after"]
-                print(f"Recebido 429, esperando {retry_after} segundos.")
+            if 'error_code' in ex.result_json and ex.result_json['error_code'] == '429':
+                retry_after = ex.result_json['parameters']['retry_after']
+                print(f'Recebido 429, esperando {retry_after} segundos.')
                 sleep(retry_after)
             else:
                 raise
