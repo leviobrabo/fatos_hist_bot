@@ -15,30 +15,34 @@ class PresidentManager:
         :param id: ID do presidente.
         :param date: Data associada ao presidente.
         """
-        return self.db.presidentes.insert_one({
-            'id': id,
-            'date': date,
-        })
+        return self.db.presidentes.insert_one(
+            {
+                "id": id,
+                "date": date,
+            }
+        )
 
     def remove_presidente(self, date):
         """
         Remove um presidente do banco de dados com base na data.
         :param date: Data para remoção.
         """
-        return self.db.presidentes.delete_one({
-            'date': date,
-        })
+        return self.db.presidentes.delete_one(
+            {
+                "date": date,
+            }
+        )
 
     def search_by_id(self, id):
         """
         Procura um presidente pelo ID.
         :param id: ID do presidente a ser buscado.
         """
-        return self.db.presidentes.find_one({'id': id})
+        return self.db.presidentes.find_one({"id": id})
 
     def search_by_date(self, date):
         """
         Procura um presidente pela data.
         :param date: Data associada ao presidente a ser buscado.
         """
-        return self.db.presidentes.find_one({'date': date})
+        return self.db.presidentes.find_one({"date": date})

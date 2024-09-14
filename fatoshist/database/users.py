@@ -16,20 +16,22 @@ class UserManager:
         Adiciona um novo usuário no banco de dados com base em uma mensagem recebida.
         """
         first_name = message.from_user.first_name
-        last_name = str(message.from_user.last_name).replace('None', '')
-        username = str(message.from_user.username).replace('None', '')
-        return self.db.users.insert_one({
-            'user_id': message.from_user.id,
-            'first_name': first_name,
-            'last_name': last_name,
-            'username': username,
-            'sudo': 'false',
-            'msg_private': 'true',
-            'message_id': '',
-            'hits': 0,
-            'questions': 0,
-            'progress': 0,
-        })
+        last_name = str(message.from_user.last_name).replace("None", "")
+        username = str(message.from_user.username).replace("None", "")
+        return self.db.users.insert_one(
+            {
+                "user_id": message.from_user.id,
+                "first_name": first_name,
+                "last_name": last_name,
+                "username": username,
+                "sudo": "false",
+                "msg_private": "true",
+                "message_id": "",
+                "hits": 0,
+                "questions": 0,
+                "progress": 0,
+            }
+        )
 
     def add_new_user(self, user_id, first_name, last_name=None, username=None):
         """
@@ -37,20 +39,22 @@ class UserManager:
         Se last_name ou username não forem fornecidos, serão definidos como
         strings vazias.
         """
-        last_name = last_name or ''
-        username = username or ''
-        return self.db.users.insert_one({
-            'user_id': user_id,
-            'first_name': first_name,
-            'last_name': last_name,
-            'username': username,
-            'sudo': 'false',
-            'msg_private': 'true',
-            'message_id': '',
-            'hits': 0,
-            'questions': 0,
-            'progress': 0,
-        })
+        last_name = last_name or ""
+        username = username or ""
+        return self.db.users.insert_one(
+            {
+                "user_id": user_id,
+                "first_name": first_name,
+                "last_name": last_name,
+                "username": username,
+                "sudo": "false",
+                "msg_private": "true",
+                "message_id": "",
+                "hits": 0,
+                "questions": 0,
+                "progress": 0,
+            }
+        )
 
     # Métodos de Busca, Atualização e Remoção de Usuários
 
@@ -58,21 +62,19 @@ class UserManager:
         """
         Procura e retorna um usuário no banco de dados com base no user_id.
         """
-        return self.db.users.find_one({'user_id': user_id})
+        return self.db.users.find_one({"user_id": user_id})
 
     def update_user(self, user_id):
         """
         Atualiza os campos 'hits' e 'questions' de um usuário para 0.
         """
-        return self.db.users.update_one(
-            {'user_id': user_id}, {'$set': {'hits': 0, 'questions': 0}}
-        )
+        return self.db.users.update_one({"user_id": user_id}, {"$set": {"hits": 0, "questions": 0}})
 
     def remove_user(self, user_id):
         """
         Remove um usuário do banco de dados com base no user_id.
         """
-        return self.db.users.delete_one({'user_id': user_id})
+        return self.db.users.delete_one({"user_id": user_id})
 
     # Métodos para Recuperar Todos os Usuários
 
@@ -89,23 +91,19 @@ class UserManager:
         """
         Retorna todos os usuários que possuem permissões 'sudo' (administrador).
         """
-        return self.db.users.find({'sudo': 'true'})
+        return self.db.users.find({"sudo": "true"})
 
     def set_user_sudo(self, user_id):
         """
         Define o status 'sudo' de um usuário como 'true'.
         """
-        return self.db.users.update_one(
-            {'user_id': user_id}, {'$set': {'sudo': 'true'}}
-        )
+        return self.db.users.update_one({"user_id": user_id}, {"$set": {"sudo": "true"}})
 
     def remove_user_sudo(self, user_id):
         """
         Remove o status 'sudo' de um usuário.
         """
-        return self.db.users.update_one(
-            {'user_id': user_id}, {'$set': {'sudo': 'false'}}
-        )
+        return self.db.users.update_one({"user_id": user_id}, {"$set": {"sudo": "false"}})
 
     # Métodos para Manipular o Campo 'message_id' de um Usuário
 
@@ -113,17 +111,13 @@ class UserManager:
         """
         Define o 'message_id' de um usuário, utilizado para rastrear mensagens enviadas.
         """
-        return self.db.users.update_one(
-            {'user_id': user_id}, {'$set': {'message_id': message_id}}
-        )
+        return self.db.users.update_one({"user_id": user_id}, {"$set": {"message_id": message_id}})
 
     def remove_user_message_id(self, user_id):
         """
         Remove o 'message_id' de um usuário, resetando-o para uma string vazia.
         """
-        return self.db.users.update_one(
-            {'user_id': user_id}, {'$set': {'message_id': ''}}
-        )
+        return self.db.users.update_one({"user_id": user_id}, {"$set": {"message_id": ""}})
 
     # Métodos para Buscar Acertos (Hits) e Questões Respondidas
 
@@ -131,13 +125,13 @@ class UserManager:
         """
         Procura e retorna um usuário com base no número de acertos (hits).
         """
-        return self.db.users.find_one({'hits': hits})
+        return self.db.users.find_one({"hits": hits})
 
     def search_questions(self, questions):
         """
         Procura e retorna um usuário com base no número de questões respondidas.
         """
-        return self.db.users.find_one({'questions': questions})
+        return self.db.users.find_one({"questions": questions})
 
     # Métodos para Atualizar Acertos (Hits) e Questões Respondidas
 
@@ -146,34 +140,36 @@ class UserManager:
         Incrementa o número de acertos (hits) de um usuário em 1.
         Se o usuário não tiver o campo 'hits', ele será inicializado.
         """
-        user = self.db.users.find_one({'user_id': user_id})
+        user = self.db.users.find_one({"user_id": user_id})
         if user:
-            if 'hits' in user:
-                self.db.users.update_one({'user_id': user_id}, {'$inc': {'hits': 1}})
+            if "hits" in user:
+                self.db.users.update_one({"user_id": user_id}, {"$inc": {"hits": 1}})
             else:
-                self.db.users.insert_one({
-                    'user_id': user_id,
-                    'hits': 1,
-                    'questions': 1,
-                })
+                self.db.users.insert_one(
+                    {
+                        "user_id": user_id,
+                        "hits": 1,
+                        "questions": 1,
+                    }
+                )
 
     def set_questions_user(self, user_id):
         """
         Incrementa o número de questões respondidas de um usuário em 1.
         Se o usuário não tiver o campo 'questions', ele será inicializado.
         """
-        user = self.db.users.find_one({'user_id': user_id})
+        user = self.db.users.find_one({"user_id": user_id})
         if user:
-            if 'questions' in user:
-                self.db.users.update_one(
-                    {'user_id': user_id}, {'$inc': {'questions': 1}}
-                )
+            if "questions" in user:
+                self.db.users.update_one({"user_id": user_id}, {"$inc": {"questions": 1}})
             else:
-                self.db.users.insert_one({
-                    'user_id': user_id,
-                    'hits': 1,
-                    'questions': 1,
-                })
+                self.db.users.insert_one(
+                    {
+                        "user_id": user_id,
+                        "hits": 1,
+                        "questions": 1,
+                    }
+                )
 
     # Método para Atualizar o Status de Mensagens Privadas
 
@@ -183,6 +179,6 @@ class UserManager:
         O campo 'msg_private' pode ser 'true' ou 'false'.
         """
         return self.db.users.update_one(
-            {'user_id': user_id},
-            {'$set': {'msg_private': new_status}},
+            {"user_id": user_id},
+            {"$set": {"msg_private": new_status}},
         )
