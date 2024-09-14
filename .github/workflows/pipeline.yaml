@@ -1,0 +1,13 @@
+name: Pipeline
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Copia os arquivos do repo
+        uses: actions/checkout@v4.1.7
+
+      - name: Roda um comando!
+        run: echo $(ls)
