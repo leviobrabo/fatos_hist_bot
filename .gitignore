@@ -180,3 +180,5 @@ pyrightconfig.json
 .coverage
 
 bot.conf
+
+poetry.lock
