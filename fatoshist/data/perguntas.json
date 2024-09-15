@@ -11265,8 +11265,8 @@
         "alt3": "Porfirio Díaz",
         "alt4": "Venustiano Carranza"
       },
-      "correta": "alt3",
-      "explicacao": "Porfirio Díaz era o presidente do México e foi deposto como resultado do início da Revolução Mexicana, liderada por diversos líderes, incluindo Zapata e Villa."
+      "correta": "alt1",
+      "explicacao": "Emiliano Zapata foi um dos principais líderes da Revolução Mexicana, lutando pelos direitos dos camponeses e reforma agrária, contribuindo para a queda do presidente Porfirio Díaz."
     }
   },
   "9-2": {
@@ -11311,8 +11311,8 @@
         "alt3": "Independência",
         "alt4": "Revolução"
       },
-      "correta": "alt1",
-      "explicacao": "O início do governo de Hugo Chávez na Venezuela foi marcado por um golpe de estado em 1992."
+      "correta": "alt2",
+      "explicacao": "Hugo Chávez iniciou seu governo na Venezuela após vencer as eleições democráticas em 1998, estabelecendo um governo de esquerda."
     }
   },
   "9-3": {
@@ -11350,15 +11350,15 @@
       "explicacao": "As trincheiras de guerra eram sistemas defensivos construídos ao longo do fronte, onde os soldados se abrigavam do fogo inimigo."
     },
     "pergunta4": {
-      "enunciado": "Qual foi o nome dado ao movimento político e militar que levou à Proclamação da República no Brasil em 1889?",
+      "enunciado": "Quem foi o líder da Revolução Francesa?",
       "alternativas": {
-        "alt1": "Lei Áurea",
-        "alt2": "Movimento Republicano",
-        "alt3": "República das Espadas",
-        "alt4": "Revolta da Armada"
+        "alt1": "Napoleão Bonaparte",
+        "alt2": "Jean-Paul Marat",
+        "alt3": "Luís XVI",
+        "alt4": "Maximilien de Robespierre"
       },
-      "correta": "alt3",
-      "explicacao": "O movimento político e militar que levou à Proclamação da República no Brasil em 1889 foi chamado de 'República das Espadas'."
+      "correta": "alt4",
+      "explicacao": "Maximilien de Robespierre foi uma figura proeminente na Revolução Francesa, liderando o período conhecido como o Reinado do Terror."
     }
   },
   "9-4": {
@@ -11389,8 +11389,8 @@
       "alternativas": {
         "alt1": "Tratado de Versalhes",
         "alt2": "Tratado de Tordesilhas",
-        "alt3": "Tratado de Varsóvia",
-        "alt4": "Tratado de Yalta"
+        "alt3": "Tratado de Westfália",
+        "alt4": "Tratado de Paris"
       },
       "correta": "alt1",
       "explicacao": "O Tratado de Versalhes, assinado em 1919, encerrou oficialmente a Primeira Guerra Mundial entre os Aliados e a Alemanha."
@@ -11399,7 +11399,7 @@
       "enunciado": "Quem foi o líder da Revolução Francesa?",
       "alternativas": {
         "alt1": "Napoleão Bonaparte",
-        "alt2": "Robespierre",
+        "alt2": "Jean-Paul Marat",
         "alt3": "Luís XVI",
         "alt4": "Maximilien de Robespierre"
       },
@@ -11442,7 +11442,7 @@
       "explicacao": "John J. Pershing liderou as forças americanas na Frente Ocidental durante a Primeira Guerra Mundial."
     },
     "pergunta4": {
-      "enunciado": "Qual foi o movimento político-militar que resultou na renúncia do presidente Jânio Quadros em 1961?",
+      "enunciado": "Que movimento político-militar que resultou na renúncia do presidente Jânio Quadros em 1961?",
       "alternativas": {
         "alt1": "Revolução Constitucionalista",
         "alt2": "Campanha da Legalidade",
@@ -11488,16 +11488,17 @@
       "explicacao": "A Revolução de Fevereiro, em 1917, foi o evento que levou à abdicação do Czar Nicolau II e ao fim da monarquia na Rússia."
     },
     "pergunta4": {
-      "enunciado": "Qual foi o acordo que encerrou oficialmente a Guerra Fria e reduziu as tensões entre os Estados Unidos e a União Soviética?",
-      "alternativas": {
-        "alt1": "Acordo de Varsóvia",
-        "alt2": "Tratado de Roma",
-        "alt3": "Tratado de Maastricht",
-        "alt4": "Tratado de Moscou"
-      },
-      "correta": "alt4",
-      "explicacao": "O Tratado de Moscou, assinado em 1991, encerrou oficialmente a Guerra Fria e reduziu as tensões entre os Estados Unidos e a União Soviética."
-    }
+  "enunciado": "Qual foi o acordo que contribuiu significativamente para o fim da Guerra Fria e reduziu as tensões entre os Estados Unidos e a União Soviética?",
+  "alternativas": {
+    "alt1": "Acordo de Varsóvia",
+    "alt2": "Tratado INF",
+    "alt3": "Tratado de Maastricht",
+    "alt4": "Dissolução da União Soviética"
+  },
+  "correta": "alt2",
+  "explicacao": "O Tratado INF, assinado em 1987, eliminou uma categoria inteira de armas nucleares de alcance intermediário e foi um passo significativo para a redução das tensões que caracterizaram a Guerra Fria."
+}
+
   },
   "9-7": {
     "pergunta1": {
@@ -11764,16 +11765,17 @@
       "explicacao": "O Acordo de Versalhes foi um tratado assinado após a Primeira Guerra Mundial para encerrar oficialmente o conflito entre as potências envolvidas."
     },
     "pergunta4": {
-      "enunciado": "Qual foi o nome do programa de aceleração do crescimento econômico implementado durante o governo de Luiz Inácio Lula da Silva?",
-      "alternativas": {
-        "alt1": "PAC",
-        "alt2": "PROUNI",
-        "alt3": "Fome Zero",
-        "alt4": "Mais Médicos"
-      },
-      "correta": "alt1",
-      "explicacao": "O programa de aceleração do crescimento econômico implementado durante o governo de Lula foi o 'PAC' (Programa de Aceleração do Crescimento)."
-    }
+  "enunciado": "Qual foi o nome do programa de combate à fome implementado durante o governo de Luiz Inácio Lula da Silva?",
+  "alternativas": {
+    "alt1": "PAC",
+    "alt2": "PROUNI",
+    "alt3": "Fome Zero",
+    "alt4": "Mais Médicos"
+  },
+  "correta": "alt3",
+  "explicacao": "O programa de combate à fome implementado durante o governo de Lula foi o 'Fome Zero', que visava erradicar a fome no Brasil por meio de diversas iniciativas sociais."
+}
+
   },
   "9-13": {
     "pergunta1": {
@@ -11863,7 +11865,7 @@
         "alt3": "José Sarney",
         "alt4": "Fernando Henrique Cardoso"
       },
-      "correta": "alt4",
+      "correta": "alt2",
       "explicacao": "Fernando Henrique Cardoso foi o presidente responsável pela instituição do Plano Real, que estabilizou a economia brasileira."
     }
   },
@@ -11948,16 +11950,17 @@
       "explicacao": "Durante a Grande Depressão, os governos adotaram medidas como a implementação de programas de assistência social e investimentos em obras públicas para tentar superar os impactos econômicos negativos."
     },
     "pergunta4": {
-      "enunciado": "Quem foi o presidente que ficou conhecido como 'O Pacificador'?",
-      "alternativas": {
-        "alt1": "Floriano Peixoto",
-        "alt2": "Deodoro da Fonseca",
-        "alt3": "Prudente de Morais",
-        "alt4": "Marechal Deodoro"
-      },
-      "correta": "alt1",
-      "explicacao": "Floriano Peixoto ficou conhecido como 'O Pacificador' devido a suas ações para conter revoltas e instabilidades políticas no país."
-    }
+  "enunciado": "Quem foi o presidente brasileiro conhecido como 'Marechal de Ferro'?",
+  "alternativas": {
+    "alt1": "Floriano Peixoto",
+    "alt2": "Deodoro da Fonseca",
+    "alt3": "Prudente de Morais",
+    "alt4": "Marechal Deodoro"
+  },
+  "correta": "alt1",
+  "explicacao": "Floriano Peixoto ficou conhecido como 'Marechal de Ferro' devido a suas ações para conter revoltas e instabilidades políticas no país."
+}
+
   },
   "9-17": {
     "pergunta1": {
@@ -12178,16 +12181,17 @@
       "explicacao": "A 'Noite dos Cristais' foi um pogrom anti-semita coordenado pelo governo nazista em 1938, que resultou em ataques generalizados a empresas judaicas, sinagogas e residências."
     },
     "pergunta4": {
-      "enunciado": "Qual foi o título que Napoleão adotou após o golpe de 18 de Brumário, que o tornou líder supremo da França?",
-      "alternativas": {
-        "alt1": "Imperador",
-        "alt2": "Rei",
-        "alt3": "Chanceler",
-        "alt4": "Presidente"
-      },
-      "correta": "alt1",
-      "explicacao": "Após o golpe de 18 de Brumário, Napoleão se autoproclamou Imperador, estabelecendo o Primeiro Império Francês."
-    }
+  "enunciado": "Qual foi o título que Napoleão adotou imediatamente após o golpe de 18 de Brumário, que o tornou líder supremo da França?",
+  "alternativas": {
+    "alt1": "Imperador",
+    "alt2": "Rei",
+    "alt3": "Primeiro Cônsul",
+    "alt4": "Presidente"
+  },
+  "correta": "alt3",
+  "explicacao": "Após o golpe de 18 de Brumário, Napoleão adotou o título de 'Primeiro Cônsul', estabelecendo-se como líder supremo da França antes de se autoproclamar Imperador em 1804."
+}
+
   },
   "9-22": {
     "pergunta1": {
@@ -12270,16 +12274,17 @@
       "explicacao": "O 'Anschluss' foi a anexação da Áustria pela Alemanha Nazista em março de 1938, uma ação que desafiou os tratados internacionais existentes e foi uma das primeiras expansões territoriais de Hitler."
     },
     "pergunta4": {
-      "enunciado": "Qual guerra foi travada entre gregos e persas no início do século V a.C.?",
-      "alternativas": {
-        "alt1": "Guerra do Peloponeso",
-        "alt2": "Guerra do Peloponeso",
-        "alt3": "Guerras Médicas",
-        "alt4": "Guerra das Rosas"
-      },
-      "correta": "alt3",
-      "explicacao": "As Guerras Médicas foram travadas entre gregos e persas no início do século V a.C., envolvendo conflitos como as batalhas de Maratona e Salamina."
-    }
+  "enunciado": "Qual guerra foi travada entre gregos e persas no início do século V a.C.?",
+  "alternativas": {
+    "alt1": "Guerra do Peloponeso",
+    "alt2": "Guerras Médicas",
+    "alt3": "Guerras Médicas",
+    "alt4": "Guerra das Rosas"
+  },
+  "correta": "alt2",
+  "explicacao": "As Guerras Médicas foram travadas entre gregos e persas no início do século V a.C., envolvendo conflitos como as batalhas de Maratona e Salamina."
+}
+
   },
   "9-24": {
     "pergunta1": {
