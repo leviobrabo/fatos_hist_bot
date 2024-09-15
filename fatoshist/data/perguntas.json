@@ -1426,1338 +1426,1338 @@
         }
     },
     "2-1": {
-        "pergunta1": {
-            "enunciado": "Quem foi o líder militar visigodo responsável pelo saque de Roma em 410 d.C.?",
-            "alternativas": {
-                "alt1": "Átila",
-                "alt2": "Alarico",
-                "alt3": "Odoacro",
-                "alt4": "Teodósio"
-            },
-            "correta": "alt2",
-            "explicacao": "Alarico, líder visigodo, foi responsável pelo saque de Roma em 410 d.C., um evento marcante na queda do Império Romano do Ocidente."
-        },
-        "pergunta2": {
-            "enunciado": "O que foi o Saque de Roma em 410 d.C.?",
-            "alternativas": {
-                "alt1": "Um conflito entre o Império Romano e o Império Persa",
-                "alt2": "Uma invasão liderada por Cartago",
-                "alt3": "O ataque e saque à cidade de Roma pelos visigodos",
-                "alt4": "Uma revolta de escravos na capital romana"
-            },
-            "correta": "alt3",
-            "explicacao": "O Saque de Roma em 410 d.C. foi o ataque e saque à cidade de Roma pelos visigodos liderados por Alarico, um evento que chocou o mundo romano."
-        },
-        "pergunta3": {
-            "enunciado": "Qual foi o último imperador romano do Ocidente?",
-            "alternativas": {
-                "alt1": "Constantino",
-                "alt2": "Augusto",
-                "alt3": "Marco Aurélio",
-                "alt4": "Rômulo Augusto"
-            },
-            "correta": "alt4",
-            "explicacao": "Rômulo Augusto foi o último imperador romano do Ocidente, deposto por Odoacro em 476 d.C., marcando o fim do Império Romano do Ocidente."
-        },
-        "pergunta4": {
-            "enunciado": "Quem foi o líder da Revolução Industrial?",
-            "alternativas": {
-                "alt1": "James Watt",
-                "alt2": "Thomas Edison",
-                "alt3": "Isaac Newton",
-                "alt4": "Nikola Tesla"
-            },
-            "correta": "alt1",
-            "explicacao": "James Watt foi um dos principais impulsionadores da Revolução Industrial ao aperfeiçoar a máquina a vapor, catalisando avanços na produção."
-        }
+    "pergunta1": {
+      "enunciado": "Quem foi o líder militar visigodo responsável pelo saque de Roma em 410 d.C.?",
+      "alternativas": {
+        "alt1": "Alarico",
+        "alt2": "Átila",
+        "alt3": "Odoacro",
+        "alt4": "Teodorico"
+      },
+      "correta": "alt1",
+      "explicacao": "Alarico foi o líder visigodo que saqueou Roma em 410 d.C., um evento marcante na queda do Império Romano do Ocidente."
     },
-    "2-2": {
-        "pergunta1": {
-            "enunciado": "Qual evento marcou o fim tradicional da Idade Antiga e o início da Idade Média?",
-            "alternativas": {
-                "alt1": "A queda de Constantinopla",
-                "alt2": "O Saque de Roma em 410 d.C.",
-                "alt3": "A Batalha de Adrianópolis",
-                "alt4": "A Queda de Cartago"
-            },
-            "correta": "alt2",
-            "explicacao": "O Saque de Roma em 410 d.C. é frequentemente considerado um marco que simboliza o fim da Idade Antiga e o início da Idade Média."
-        },
-        "pergunta2": {
-            "enunciado": "Qual grupo étnico contribuiu significativamente para o colapso do Império Romano do Ocidente?",
-            "alternativas": {
-                "alt1": "Persas",
-                "alt2": "Vikings",
-                "alt3": "Hunos",
-                "alt4": "Mongóis"
-            },
-            "correta": "alt3",
-            "explicacao": "Os hunos foram um grupo étnico cujas invasões e pressões sobre o Império Romano contribuíram para o seu colapso, marcando o fim da Idade Antiga."
-        },
-        "pergunta3": {
-            "enunciado": "Qual evento encerrou o domínio romano sobre a Britânia em 410 d.C.?",
-            "alternativas": {
-                "alt1": "A morte do imperador Augusto",
-                "alt2": "A Batalha de Áccio",
-                "alt3": "A Revolta dos Bárbaros",
-                "alt4": "A retirada das legiões romanas"
-            },
-            "correta": "alt4",
-            "explicacao": "A retirada das legiões romanas da Britânia em 410 d.C. marcou o fim do domínio romano na ilha."
-        },
-        "pergunta4": {
-            "enunciado": "Quem foi o líder da Revolução Russa em 1917?",
-            "alternativas": {
-                "alt1": "Vladimir Lenin",
-                "alt2": "Joseph Stalin",
-                "alt3": "Leon Trotsky",
-                "alt4": "Mikhail Gorbachev"
-            },
-            "correta": "alt1",
-            "explicacao": "Vladimir Lenin foi o líder da Revolução Russa em 1917 e um dos principais líderes do movimento comunista na Rússia."
-        }
+    "pergunta2": {
+      "enunciado": "O que foi o Saque de Roma em 410 d.C.?",
+      "alternativas": {
+        "alt1": "Uma invasão liderada pelos visigodos que resultou no saque da cidade",
+        "alt2": "Um conflito interno entre senadores romanos",
+        "alt3": "A conquista de Roma pelos cartagineses",
+        "alt4": "Uma rebelião de escravos liderada por Espártaco"
+      },
+      "correta": "alt1",
+      "explicacao": "O Saque de Roma em 410 d.C. foi realizado pelos visigodos sob a liderança de Alarico."
     },
-    "2-3": {
-        "pergunta1": {
-            "enunciado": "Qual foi o evento que marcou a queda de Roma em 476 d.C.?",
-            "alternativas": {
-                "alt1": "A invasão dos hunos",
-                "alt2": "A invasão dos visigodos",
-                "alt3": "A invasão dos vândalos",
-                "alt4": "A deposição de Júlio César"
-            },
-            "correta": "alt1",
-            "explicacao": "A queda de Roma em 476 d.C. foi marcada pela invasão dos hunos e a deposição do último imperador romano do Ocidente, Rômulo Augusto."
-        },
-        "pergunta2": {
-            "enunciado": "Qual líder germânico foi responsável pela deposição do último imperador romano do Ocidente?",
-            "alternativas": {
-                "alt1": "Átila",
-                "alt2": "Odoacro",
-                "alt3": "Alarico",
-                "alt4": "Teodósio"
-            },
-            "correta": "alt2",
-            "explicacao": "Odoacro, líder germânico, foi responsável pela deposição do último imperador romano do Ocidente, Rômulo Augusto, em 476 d.C."
-        },
-        "pergunta3": {
-            "enunciado": "Qual evento historicamente marca o fim do Império Romano do Ocidente?",
-            "alternativas": {
-                "alt1": "A queda de Constantinopla",
-                "alt2": "O Saque de Roma em 410 d.C.",
-                "alt3": "A deposição de Júlio César",
-                "alt4": "A divisão do Império Romano"
-            },
-            "correta": "alt2",
-            "explicacao": "O Saque de Roma em 410 d.C. é historicamente considerado um marco do fim do Império Romano do Ocidente."
-        },
-        "pergunta4": {
-            "enunciado": "Qual foi o evento que desencadeou a Primeira Guerra Mundial?",
-            "alternativas": {
-                "alt1": "Assassinato de Franz Ferdinand",
-                "alt2": "Invasão da Polônia",
-                "alt3": "Batalha de Verdun",
-                "alt4": "Assassinato de Lenin"
-            },
-            "correta": "alt1",
-            "explicacao": "O assassinato do Arquiduque Franz Ferdinand, em Sarajevo, foi o evento que desencadeou a Primeira Guerra Mundial em 1914."
-        }
+    "pergunta3": {
+      "enunciado": "Qual foi o último imperador romano do Ocidente?",
+      "alternativas": {
+        "alt1": "Rômulo Augusto",
+        "alt2": "Júlio Nepos",
+        "alt3": "Constantino",
+        "alt4": "Honório"
+      },
+      "correta": "alt1",
+      "explicacao": "Rômulo Augusto foi o último imperador romano do Ocidente, deposto em 476 d.C."
     },
-    "2-4": {
-        "pergunta1": {
-            "enunciado": "Qual foi o líder visigodo que saqueou Roma em 410 d.C.?",
-            "alternativas": {
-                "alt1": "Átila",
-                "alt2": "Odoacro",
-                "alt3": "Alarico",
-                "alt4": "Teodósio"
-            },
-            "correta": "alt3",
-            "explicacao": "Alarico, líder visigodo, saqueou Roma em 410 d.C., um evento que simbolizou a queda de uma cidade considerada eterna e segura por séculos."
-        },
-        "pergunta2": {
-            "enunciado": "Qual foi o último imperador romano do Ocidente, deposto em 476 d.C.?",
-            "alternativas": {
-                "alt1": "Constantino",
-                "alt2": "Augusto",
-                "alt3": "Marco Aurélio",
-                "alt4": "Rômulo Augusto"
-            },
-            "correta": "alt4",
-            "explicacao": "Rômulo Augusto foi o último imperador romano do Ocidente, deposto por Odoacro em 476 d.C., marcando o fim do Império Romano do Ocidente."
-        },
-        "pergunta3": {
-            "enunciado": "O que marcou a queda de Roma em 476 d.C.?",
-            "alternativas": {
-                "alt1": "A invasão dos visigodos",
-                "alt2": "A deposição de Júlio César",
-                "alt3": "A invasão dos hunos",
-                "alt4": "A vitória dos romanos sobre os bárbaros"
-            },
-            "correta": "alt3",
-            "explicacao": "A queda de Roma em 476 d.C. foi marcada pela invasão dos hunos e a deposição do último imperador romano do Ocidente, Rômulo Augusto."
-        },
-        "pergunta4": {
-            "enunciado": "Qual foi o evento que marcou o fim da Primeira Guerra Mundial?",
-            "alternativas": {
-                "alt1": "Tratado de Versalhes",
-                "alt2": "Invasão da Polônia",
-                "alt3": "Ataque a Pearl Harbor",
-                "alt4": "Tratado de Tordesilhas"
-            },
-            "correta": "alt1",
-            "explicacao": "O Tratado de Versalhes foi o evento que marcou o fim da Primeira Guerra Mundial em 1919, impondo condições severas à Alemanha e seus aliados."
-        }
+    "pergunta4": {
+      "enunciado": "Quem foi um dos principais inventores que impulsionaram a Revolução Industrial ao aperfeiçoar a máquina a vapor?",
+      "alternativas": {
+        "alt1": "James Watt",
+        "alt2": "Thomas Edison",
+        "alt3": "Isaac Newton",
+        "alt4": "Nikola Tesla"
+      },
+      "correta": "alt1",
+      "explicacao": "James Watt aperfeiçoou a máquina a vapor, sendo fundamental para a Revolução Industrial."
+    }
+  },
+  "2-2": {
+    "pergunta1": {
+      "enunciado": "Qual evento é considerado o marco inicial da Idade Média?",
+      "alternativas": {
+        "alt1": "A queda do Império Romano do Ocidente em 476 d.C.",
+        "alt2": "A fundação de Constantinopla",
+        "alt3": "A Reforma Protestante",
+        "alt4": "A descoberta da América"
+      },
+      "correta": "alt1",
+      "explicacao": "A queda do Império Romano do Ocidente em 476 d.C. marca o início da Idade Média."
     },
-    "2-5": {
-        "pergunta1": {
-            "enunciado": "Qual evento histórico é frequentemente considerado o início da Idade Média?",
-            "alternativas": {
-                "alt1": "O Saque de Roma em 410 d.C.",
-                "alt2": "A fundação de Constantinopla",
-                "alt3": "A Queda de Cartago",
-                "alt4": "A deposição de Júlio César"
-            },
-            "correta": "alt1",
-            "explicacao": "O Saque de Roma em 410 d.C. é frequentemente apontado como o marco inicial da Idade Média, marcando o declínio do Império Romano e o início de uma nova era."
-        },
-        "pergunta2": {
-            "enunciado": "Qual foi o efeito do Saque de Roma em 410 d.C. na percepção da segurança e estabilidade do Império Romano?",
-            "alternativas": {
-                "alt1": "Não afetou a percepção",
-                "alt2": "Reforçou a ideia de invulnerabilidade do Império",
-                "alt3": "Chocou a percepção de segurança e estabilidade do Império",
-                "alt4": "Contribuiu para a expansão do Império"
-            },
-            "correta": "alt3",
-            "explicacao": "O Saque de Roma em 410 d.C. chocou a percepção de segurança e estabilidade do Império Romano, pois Roma era considerada uma cidade eterna e impenetrável."
-        },
-        "pergunta3": {
-            "enunciado": "Qual mudança significativa na estrutura política ocorreu no início da Idade Média?",
-            "alternativas": {
-                "alt1": "Centralização do poder político",
-                "alt2": "Descentralização do poder político",
-                "alt3": "Manutenção da estrutura política romana",
-                "alt4": "Extinção das monarquias"
-            },
-            "correta": "alt2",
-            "explicacao": "O início da Idade Média viu a descentralização do poder político, com o enfraquecimento do governo central e o surgimento de estruturas políticas locais."
-        },
-        "pergunta4": {
-            "enunciado": "Qual monarca francês é frequentemente associado ao conceito de 'Rei Sol'?",
-            "alternativas": {
-                "alt1": "Henrique IV",
-                "alt2": "Luís XIV",
-                "alt3": "Francisco I",
-                "alt4": "Carlos II"
-            },
-            "correta": "alt2",
-            "explicacao": "Luís XIV, o 'Rei Sol', é frequentemente associado ao apogeu do absolutismo na França durante o século XVII."
-        }
+    "pergunta2": {
+      "enunciado": "Qual grupo liderado por Átila ameaçou o Império Romano no século V?",
+      "alternativas": {
+        "alt1": "Os Hunos",
+        "alt2": "Os Visigodos",
+        "alt3": "Os Vândalos",
+        "alt4": "Os Ostrogodos"
+      },
+      "correta": "alt1",
+      "explicacao": "Os Hunos, liderados por Átila, foram uma grande ameaça ao Império Romano."
     },
-    "2-6": {
-        "pergunta1": {
-            "enunciado": "Quem foi o líder franco que recebeu o título de 'Protetor da Igreja' do Papa Leão III?",
-            "alternativas": {
-                "alt1": "Carlos Magno",
-                "alt2": "Otto I",
-                "alt3": "Carlos Martel",
-                "alt4": "Carlomano"
-            },
-            "correta": "alt1",
-            "explicacao": "Carlos Magno, o rei franco, recebeu o título de 'Protetor da Igreja' do Papa Leão III, destacando sua influência na Europa Ocidental durante a Idade Média."
-        },
-        "pergunta2": {
-            "enunciado": "Qual período histórico sucedeu imediatamente a Idade Antiga?",
-            "alternativas": {
-                "alt1": "Renascimento",
-                "alt2": "Idade Média",
-                "alt3": "Idade Moderna",
-                "alt4": "Idade Contemporânea"
-            },
-            "correta": "alt2",
-            "explicacao": "A Idade Média foi o período histórico que sucedeu imediatamente a Idade Antiga, marcando um período de transição na Europa após o declínio do Império Romano."
-        },
-        "pergunta3": {
-            "enunciado": "Qual foi o sistema político predominante durante a Idade Média?",
-            "alternativas": {
-                "alt1": "Monarquia absolutista",
-                "alt2": "Feudalismo",
-                "alt3": "Democracia",
-                "alt4": "Socialismo"
-            },
-            "correta": "alt2",
-            "explicacao": "O sistema político predominante durante a Idade Média foi o Feudalismo, caracterizado por relações de vassalagem e feudos entre senhores e servos."
-        },
-        "pergunta4": {
-            "enunciado": "Qual foi a consequência do neocolonialismo para as estruturas sociais das regiões colonizadas?",
-            "alternativas": {
-                "alt1": "Fortalecimento das instituições democráticas",
-                "alt2": "Aumento da igualdade social",
-                "alt3": "Aprofundamento das desigualdades e hierarquias sociais",
-                "alt4": "Adoção de políticas de inclusão social"
-            },
-            "correta": "alt3",
-            "explicacao": "O neocolonialismo aprofundou as desigualdades e hierarquias sociais nas regiões colonizadas, em vez de promover a igualdade."
-        }
+    "pergunta3": {
+      "enunciado": "Qual evento encerrou o domínio romano sobre a Britânia em 410 d.C.?",
+      "alternativas": {
+        "alt1": "A retirada das legiões romanas da Britânia",
+        "alt2": "A invasão dos vikings",
+        "alt3": "A conquista pelos normandos",
+        "alt4": "A Batalha de Hastings"
+      },
+      "correta": "alt1",
+      "explicacao": "Em 410 d.C., Roma retirou suas legiões da Britânia, encerrando seu domínio na região."
     },
-    "2-7": {
-        "pergunta1": {
-            "enunciado": "Quem foi o líder germânico que depôs o último imperador romano do Ocidente?",
-            "alternativas": {
-                "alt1": "Alarico",
-                "alt2": "Átila",
-                "alt3": "Odoacro",
-                "alt4": "Teodósio"
-            },
-            "correta": "alt3",
-            "explicacao": "Odoacro, um líder germânico, depôs o último imperador romano do Ocidente, Rômulo Augusto, em 476 d.C., marcando o fim do Império Romano do Ocidente."
-        },
-        "pergunta2": {
-            "enunciado": "Qual cidade foi a capital do Império Romano do Ocidente até sua queda?",
-            "alternativas": {
-                "alt1": "Constantinopla",
-                "alt2": "Roma",
-                "alt3": "Cartago",
-                "alt4": "Atenas"
-            },
-            "correta": "alt2",
-            "explicacao": "Roma foi a capital do Império Romano do Ocidente até sua queda em 476 d.C., quando Odoacro depôs o último imperador romano do Ocidente."
-        },
-        "pergunta3": {
-            "enunciado": "Quem foi o último imperador romano do Ocidente?",
-            "alternativas": {
-                "alt1": "Constantino",
-                "alt2": "Augusto",
-                "alt3": "Marco Aurélio",
-                "alt4": "Rômulo Augusto"
-            },
-            "correta": "alt4",
-            "explicacao": "Rômulo Augusto foi o último imperador romano do Ocidente, deposto por Odoacro em 476 d.C., marcando o fim do Império Romano do Ocidente."
-        },
-        "pergunta4": {
-            "enunciado": "Quem foi o líder da Revolução Industrial?",
-            "alternativas": {
-                "alt1": "James Watt",
-                "alt2": "Thomas Edison",
-                "alt3": "Isaac Newton",
-                "alt4": "Nikola Tesla"
-            },
-            "correta": "alt1",
-            "explicacao": "James Watt foi um dos principais impulsionadores da Revolução Industrial ao aperfeiçoar a máquina a vapor, catalisando avanços na produção."
-        }
+    "pergunta4": {
+      "enunciado": "Quem liderou a Revolução Russa de 1917?",
+      "alternativas": {
+        "alt1": "Vladimir Lenin",
+        "alt2": "Joseph Stalin",
+        "alt3": "Leon Trotsky",
+        "alt4": "Mikhail Gorbachev"
+      },
+      "correta": "alt1",
+      "explicacao": "Vladimir Lenin foi o líder principal da Revolução Russa de 1917."
+    }
+  },
+  "2-3": {
+    "pergunta1": {
+      "enunciado": "Quem depôs o último imperador romano do Ocidente em 476 d.C.?",
+      "alternativas": {
+        "alt1": "Odoacro",
+        "alt2": "Alarico",
+        "alt3": "Átila",
+        "alt4": "Teodorico"
+      },
+      "correta": "alt1",
+      "explicacao": "Odoacro, líder dos hérulos, depôs Rômulo Augusto, marcando o fim do Império Romano do Ocidente."
     },
-    "2-8": {
-        "pergunta1": {
-            "enunciado": "Qual civilização antiga é conhecida por sua construção das Pirâmides de Gizé?",
-            "alternativas": {
-                "alt1": "Civilização Maia",
-                "alt2": "Império Persa",
-                "alt3": "Antigo Egito",
-                "alt4": "Império Romano"
-            },
-            "correta": "alt3",
-            "explicacao": "As Pirâmides de Gizé são uma criação do Antigo Egito, representando uma das grandes realizações arquitetônicas da antiguidade."
-        },
-        "pergunta2": {
-            "enunciado": "Quem foi o líder da Revolução Russa em 1917, que liderou o Partido Bolchevique?",
-            "alternativas": {
-                "alt1": "Josef Stalin",
-                "alt2": "Vladimir Lenin",
-                "alt3": "Leon Trotsky",
-                "alt4": "Mikhail Gorbachev"
-            },
-            "correta": "alt2",
-            "explicacao": "Vladimir Lenin foi o líder da Revolução Russa em 1917 e o principal líder do Partido Bolchevique, levando à criação da União Soviética."
-        },
-        "pergunta3": {
-            "enunciado": "Qual foi o evento que marcou o fim da Segunda Guerra Mundial na Europa?",
-            "alternativas": {
-                "alt1": "Bombardeio de Pearl Harbor",
-                "alt2": "Desembarque da Normandia",
-                "alt3": "Rendição da Alemanha",
-                "alt4": "Ataque a Hiroshima e Nagasaki"
-            },
-            "correta": "alt3",
-            "explicacao": "A rendição da Alemanha marcou o fim da Segunda Guerra Mundial na Europa, sendo assinada em maio de 1945."
-        },
-        "pergunta4": {
-            "enunciado": "Em que ano foi promulgada a Constituição Federal atualmente em vigor no Brasil?",
-            "alternativas": {
-                "alt1": 1988,
-                "alt2": 1992,
-                "alt3": 1998,
-                "alt4": 2000
-            },
-            "correta": "alt1",
-            "explicacao": "A Constituição Federal atualmente em vigor no Brasil foi promulgada em 1988, conhecida como 'Constituição Cidadã'."
-        }
+    "pergunta2": {
+      "enunciado": "Qual evento simboliza o fim do Império Romano do Ocidente?",
+      "alternativas": {
+        "alt1": "A deposição de Rômulo Augusto em 476 d.C.",
+        "alt2": "A Batalha de Actium",
+        "alt3": "A divisão do Império Romano em 395 d.C.",
+        "alt4": "O Saque de Roma em 410 d.C."
+      },
+      "correta": "alt1",
+      "explicacao": "A deposição de Rômulo Augusto por Odoacro em 476 d.C. é considerada o fim do Império Romano do Ocidente."
     },
-    "2-9": {
-        "pergunta1": {
-            "enunciado": "Qual imperador romano foi conhecido por implementar uma política de tolerância religiosa no Império Romano?",
-            "alternativas": {
-                "alt1": "Júlio César",
-                "alt2": "Augusto",
-                "alt3": "Constantino",
-                "alt4": "Nero"
-            },
-            "correta": "alt3",
-            "explicacao": "Constantino foi conhecido por implementar uma política de tolerância religiosa com o Édito de Milão em 313 d.C., permitindo a liberdade de culto no Império Romano."
-        },
-        "pergunta2": {
-            "enunciado": "Qual era o nome do lendário rei da Bretanha que supostamente lutou contra as invasões anglo-saxônicas?",
-            "alternativas": {
-                "alt1": "Arthur",
-                "alt2": "Edward",
-                "alt3": "William",
-                "alt4": "Alfred"
-            },
-            "correta": "alt1",
-            "explicacao": "Arthur é o lendário rei da Bretanha que, segundo a lenda, liderou os britânicos contra as invasões anglo-saxônicas no século V."
-        },
-        "pergunta3": {
-            "enunciado": "Qual evento histórico marcou o fim da Guerra Fria?",
-            "alternativas": {
-                "alt1": "Queda do Muro de Berlim",
-                "alt2": "Ataque a Pearl Harbor",
-                "alt3": "Tratado de Versalhes",
-                "alt4": "Revolução Russa"
-            },
-            "correta": "alt1",
-            "explicacao": "A queda do Muro de Berlim, em 1989, simbolizou o fim da Guerra Fria e a reunificação da Alemanha."
-        },
-        "pergunta4": {
-            "enunciado": "Qual foi o tratado que estabeleceu a Liga das Nações após a Primeira Guerra Mundial?",
-            "alternativas": {
-                "alt1": "Tratado de Versalhes",
-                "alt2": "Tratado de Tordesilhas",
-                "alt3": "Tratado de Paris",
-                "alt4": "Tratado de Brest-Litovsk"
-            },
-            "correta": "alt1",
-            "explicacao": "O Tratado de Versalhes, assinado em 1919, estabeleceu a Liga das Nações após a Primeira Guerra Mundial."
-        }
+    "pergunta3": {
+      "enunciado": "Quem foi o líder dos Hunos conhecido como 'O Flagelo de Deus'?",
+      "alternativas": {
+        "alt1": "Átila",
+        "alt2": "Genghis Khan",
+        "alt3": "Tamerlão",
+        "alt4": "Kublai Khan"
+      },
+      "correta": "alt1",
+      "explicacao": "Átila foi o temido líder dos Hunos, chamado de 'O Flagelo de Deus' pelos romanos."
     },
-    "2-10": {
-        "pergunta1": {
-            "enunciado": "Quem foi o imperador bizantino conhecido por codificar as leis romanas em um compêndio chamado 'Corpus Juris Civilis'?",
-            "alternativas": {
-                "alt1": "Justiniano",
-                "alt2": "Constantino",
-                "alt3": "Leão III",
-                "alt4": "Teodósio"
-            },
-            "correta": "alt1",
-            "explicacao": "Justiniano foi o imperador bizantino conhecido por ordenar a codificação das leis romanas no 'Corpus Juris Civilis', um importante marco legal na história."
-        },
-        "pergunta2": {
-            "enunciado": "Qual foi a principal cidade e centro político, econômico e cultural do Império Bizantino?",
-            "alternativas": {
-                "alt1": "Roma",
-                "alt2": "Atenas",
-                "alt3": "Alexandria",
-                "alt4": "Constantinopla"
-            },
-            "correta": "alt4",
-            "explicacao": "Constantinopla, atual Istambul, foi a principal cidade e o centro político, econômico e cultural do Império Bizantino."
-        },
-        "pergunta3": {
-            "enunciado": "Quem foi a imperatriz bizantina famosa por suas intrigas políticas e por sua influência na política e religião?",
-            "alternativas": {
-                "alt1": "Teodora",
-                "alt2": "Pulquéria",
-                "alt3": "Irene",
-                "alt4": "Zoe"
-            },
-            "correta": "alt1",
-            "explicacao": "Teodora, esposa de Justiniano, foi uma influente imperatriz bizantina conhecida por suas habilidades políticas e influência na política e religião."
-        },
-        "pergunta4": {
-            "enunciado": "Quando ocorreu a Guerra dos Cem Anos?",
-            "alternativas": {
-                "alt1": "Século XII ao Século XIII",
-                "alt2": "Século XI ao Século XII",
-                "alt3": "Século XIV ao Século XV",
-                "alt4": "Século XIII ao Século XIV"
-            },
-            "correta": "alt3",
-            "explicacao": "A Guerra dos Cem Anos foi um conflito entre a França e a Inglaterra que ocorreu aproximadamente entre os séculos XIV e XV."
-        }
+    "pergunta4": {
+      "enunciado": "Qual evento desencadeou a Primeira Guerra Mundial?",
+      "alternativas": {
+        "alt1": "O assassinato do arquiduque Franz Ferdinand",
+        "alt2": "A invasão da Polônia",
+        "alt3": "A Revolução Russa",
+        "alt4": "A Batalha de Verdun"
+      },
+      "correta": "alt1",
+      "explicacao": "O assassinato do arquiduque austríaco Franz Ferdinand em 1914 foi o estopim da Primeira Guerra Mundial."
+    }
+  },
+  "2-4": {
+    "pergunta1": {
+      "enunciado": "O que representou o Saque de Roma em 410 d.C. para o Império Romano?",
+      "alternativas": {
+        "alt1": "Um choque ao prestígio e segurança de Roma",
+        "alt2": "A vitória definitiva sobre os bárbaros",
+        "alt3": "A expansão territorial de Roma",
+        "alt4": "A unificação do Império Romano"
+      },
+      "correta": "alt1",
+      "explicacao": "O saque abalou a percepção de invulnerabilidade de Roma e evidenciou a fragilidade do Império."
     },
-    "2-11": {
-        "pergunta1": {
-            "enunciado": "Qual foi a principal religião oficial do Império Bizantino?",
-            "alternativas": {
-                "alt1": "Cristianismo Ortodoxo",
-                "alt2": "Zoroastrismo",
-                "alt3": "Islamismo",
-                "alt4": "Judaísmo"
-            },
-            "correta": "alt1",
-            "explicacao": "O Cristianismo Ortodoxo foi a principal religião oficial e desempenhou um papel central na vida e cultura do Império Bizantino."
-        },
-        "pergunta2": {
-            "enunciado": "O que foi o 'Cisma do Oriente'?",
-            "alternativas": {
-                "alt1": "A separação do Império Bizantino em duas metades",
-                "alt2": "A conversão forçada ao Islã",
-                "alt3": "O conflito entre papas e reis",
-                "alt4": "A divisão entre o Cristianismo Ortodoxo e o Catolicismo"
-            },
-            "correta": "alt4",
-            "explicacao": "O 'Cisma do Oriente' foi a divisão entre o Cristianismo Ortodoxo e o Catolicismo, resultando na separação das igrejas oriental e ocidental."
-        },
-        "pergunta3": {
-            "enunciado": "Qual era o nome do corpo de elite dos guardas do imperador bizantino?",
-            "alternativas": {
-                "alt1": "Pretorianos",
-                "alt2": "Espartanos",
-                "alt3": "Hoplitas",
-                "alt4": "Varangianos"
-            },
-            "correta": "alt4",
-            "explicacao": "Os Varangianos eram um corpo de elite de guardas do imperador bizantino, compostos principalmente por guerreiros nórdicos e escandinavos."
-        },
-        "pergunta4": {
-            "enunciado": "Quem foi o líder da Revolução Mexicana em 1910?",
-            "alternativas": {
-                "alt1": "Pancho Villa",
-                "alt2": "Emiliano Zapata",
-                "alt3": "Porfirio Díaz",
-                "alt4": "Benito Juárez"
-            },
-            "correta": "alt2",
-            "explicacao": "Emiliano Zapata foi um dos líderes proeminentes da Revolução Mexicana, lutando por reformas sociais e direitos dos camponeses."
-        }
+    "pergunta2": {
+      "enunciado": "Quem liderou o saque de Roma em 410 d.C.?",
+      "alternativas": {
+        "alt1": "Alarico, líder dos Visigodos",
+        "alt2": "Átila, líder dos Hunos",
+        "alt3": "Odoacro, líder dos Hérulos",
+        "alt4": "Genserico, líder dos Vândalos"
+      },
+      "correta": "alt1",
+      "explicacao": "Alarico, rei dos Visigodos, liderou o saque de Roma em 410 d.C."
     },
-    "2-12": {
-        "pergunta1": {
-            "enunciado": "Qual foi o imperador bizantino que restaurou temporariamente o Império Romano do Ocidente no século IX?",
-            "alternativas": {
-                "alt1": "Constantino VI",
-                "alt2": "Alexios I Komnenos",
-                "alt3": "Leão III",
-                "alt4": "Basil II"
-            },
-            "correta": "alt2",
-            "explicacao": "Alexios I Komnenos foi um imperador bizantino que, no século IX, restaurou temporariamente territórios do antigo Império Romano do Ocidente, mas não durou muito tempo."
-        },
-        "pergunta2": {
-            "enunciado": "O que foi a Batalha de Manzikert em 1071?",
-            "alternativas": {
-                "alt1": "Uma vitória bizantina sobre os persas",
-                "alt2": "Uma batalha entre bizantinos e cruzados",
-                "alt3": "Uma derrota bizantina para os turcos seljúcidas",
-                "alt4": "Um confronto entre bizantinos e mongóis"
-            },
-            "correta": "alt3",
-            "explicacao": "A Batalha de Manzikert em 1071 foi uma importante derrota bizantina para os turcos seljúcidas, levando à perda de territórios e ao enfraquecimento do Império Bizantino."
-        },
-        "pergunta3": {
-            "enunciado": "Qual dinastia governou o Império Bizantino durante a maior parte do século X?",
-            "alternativas": {
-                "alt1": "Dinastia Amoriana",
-                "alt2": "Dinastia Heracliana",
-                "alt3": "Dinastia Isáurica",
-                "alt4": "Dinastia Macedônica"
-            },
-            "correta": "alt4",
-            "explicacao": "A Dinastia Macedônica governou o Império Bizantino durante a maior parte do século X, caracterizada por um período de prosperidade e conquistas territoriais."
-        },
-        "pergunta4": {
-            "enunciado": "Quem foi o famoso líder viking que é considerado o primeiro europeu a chegar na América do Norte?",
-            "alternativas": {
-                "alt1": "Leif Eriksson",
-                "alt2": "Ragnar Lothbrok",
-                "alt3": "Erik, o Vermelho",
-                "alt4": "Harald Hardrada"
-            },
-            "correta": "alt1",
-            "explicacao": "Leif Eriksson, um líder viking, é considerado o primeiro europeu a chegar na América do Norte, estabelecendo uma colônia na região que é hoje conhecida como Terra Nova, no Canadá."
-        }
+    "pergunta3": {
+      "enunciado": "Qual foi a consequência imediata do saque de Roma em 410 d.C.?",
+      "alternativas": {
+        "alt1": "A queda imediata do Império Romano do Ocidente",
+        "alt2": "O início das Guerras Púnicas",
+        "alt3": "O fortalecimento do Império",
+        "alt4": "O abalo psicológico e político sobre Roma"
+      },
+      "correta": "alt4",
+      "explicacao": "O saque teve um forte impacto psicológico e político, mas o Império ainda persistiu por mais algumas décadas."
     },
-    "2-13": {
-        "pergunta1": {
-            "enunciado": "Qual imperador bizantino foi conhecido por sua reconquista temporária de partes do antigo Império Romano do Ocidente no século VI?",
-            "alternativas": {
-                "alt1": "Justiniano",
-                "alt2": "Constantino XI",
-                "alt3": "Heráclio",
-                "alt4": "Leão III"
-            },
-            "correta": "alt1",
-            "explicacao": "Justiniano foi o imperador bizantino que, no século VI, buscou reconquistar temporariamente partes do antigo Império Romano do Ocidente, incluindo a Itália e o norte da África."
-        },
-        "pergunta2": {
-            "enunciado": "Qual foi o evento que resultou na divisão do Império Romano em Império Romano do Ocidente e Império Romano do Oriente?",
-            "alternativas": {
-                "alt1": "O Édito de Tessalônica",
-                "alt2": "O Cisma do Oriente",
-                "alt3": "A Batalha de Adrianópolis",
-                "alt4": "A divisão de Diocleciano"
-            },
-            "correta": "alt4",
-            "explicacao": "A divisão do Império Romano em Império Romano do Ocidente e Império Romano do Oriente foi realizada por Diocleciano no final do século III para facilitar a administração do império."
-        },
-        "pergunta3": {
-            "enunciado": "Qual foi o período de conflitos entre as igrejas cristãs oriental e ocidental que culminou no Cisma de 1054?",
-            "alternativas": {
-                "alt1": "As Guerras Macedônicas",
-                "alt2": "O Grande Cisma",
-                "alt3": "A Questão Iconoclasta",
-                "alt4": "A Controvérsia Monofisista"
-            },
-            "correta": "alt2",
-            "explicacao": "O período de conflitos entre as igrejas cristãs oriental e ocidental que culminou no Cisma de 1054 é conhecido como o Grande Cisma."
-        },
-        "pergunta4": {
-            "enunciado": "Quem foi o líder da Revolução Inglesa que resultou na execução de Carlos I?",
-            "alternativas": {
-                "alt1": "Oliver Cromwell",
-                "alt2": "William Shakespeare",
-                "alt3": "Henry VIII",
-                "alt4": "James II"
-            },
-            "correta": "alt1",
-            "explicacao": "Oliver Cromwell emergiu como líder da Revolução Inglesa e da Guerra Civil, resultando na execução do rei Carlos I e estabelecendo um período de governo conhecido como Commonwealth."
-        }
+    "pergunta4": {
+      "enunciado": "Qual tratado oficializou o fim da Primeira Guerra Mundial?",
+      "alternativas": {
+        "alt1": "Tratado de Versalhes",
+        "alt2": "Tratado de Tordesilhas",
+        "alt3": "Tratado de Paris",
+        "alt4": "Tratado de Viena"
+      },
+      "correta": "alt1",
+      "explicacao": "O Tratado de Versalhes, assinado em 1919, encerrou oficialmente a Primeira Guerra Mundial."
+    }
+  },
+  "2-5": {
+    "pergunta1": {
+      "enunciado": "Qual sistema socioeconômico predominou na Europa durante a Idade Média?",
+      "alternativas": {
+        "alt1": "Feudalismo",
+        "alt2": "Capitalismo",
+        "alt3": "Socialismo",
+        "alt4": "Mercantilismo"
+      },
+      "correta": "alt1",
+      "explicacao": "O feudalismo foi o sistema que estruturou a sociedade europeia medieval."
     },
-    "2-14": {
-        "pergunta1": {
-            "enunciado": "Qual foi o nome do imperador bizantino que tentou restaurar o politeísmo romano, mas foi forçado a desistir?",
-            "alternativas": {
-                "alt1": "Constantino XI",
-                "alt2": "Heráclio",
-                "alt3": "Leão III",
-                "alt4": "Juliano, o Apóstata"
-            },
-            "correta": "alt4",
-            "explicacao": "Juliano, também conhecido como Juliano, o Apóstata, tentou restaurar o politeísmo romano após o Cristianismo se tornar a religião oficial, mas sua tentativa foi interrompida."
-        },
-        "pergunta2": {
-            "enunciado": "Qual foi a principal contribuição de Basílio II para o Império Bizantino?",
-            "alternativas": {
-                "alt1": "A expansão territorial",
-                "alt2": "A conversão ao Cristianismo",
-                "alt3": "A conquista de Constantinopla",
-                "alt4": "A implementação do Código Civil"
-            },
-            "correta": "alt1",
-            "explicacao": "Basílio II foi conhecido por suas conquistas territoriais, expandindo significativamente as fronteiras do Império Bizantino durante seu reinado."
-        },
-        "pergunta3": {
-            "enunciado": "Qual foi o resultado da Quarta Cruzada em 1204?",
-            "alternativas": {
-                "alt1": "A tomada de Constantinopla pelos muçulmanos",
-                "alt2": "A unificação das igrejas oriental e ocidental",
-                "alt3": "O fortalecimento do Império Bizantino",
-                "alt4": "O saque e a pilhagem de Constantinopla pelos cruzados"
-            },
-            "correta": "alt4",
-            "explicacao": "A Quarta Cruzada resultou no saque e na pilhagem de Constantinopla pelos cruzados em 1204, enfraquecendo o Império Bizantino."
-        },
-        "pergunta4": {
-            "enunciado": "Qual evento histórico ocorreu em 1º de janeiro?",
-            "alternativas": {
-                "alt1": "Independência do Brasil",
-                "alt2": "Assinatura da Declaração de Independência dos Estados Unidos",
-                "alt3": "Proclamação da República no Brasil",
-                "alt4": "Abolição da Escravatura nos Estados Unidos"
-            },
-            "correta": "alt2",
-            "explicacao": "Em 1º de janeiro de 1776, foi assinada a Declaração de Independência dos Estados Unidos, um evento histórico crucial para a formação do país como nação independente."
-        }
+    "pergunta2": {
+      "enunciado": "O que foi a Peste Negra?",
+      "alternativas": {
+        "alt1": "Uma pandemia que dizimou grande parte da população europeia",
+        "alt2": "Uma guerra entre França e Inglaterra",
+        "alt3": "Um movimento artístico",
+        "alt4": "Uma revolta camponesa"
+      },
+      "correta": "alt1",
+      "explicacao": "A Peste Negra foi uma pandemia no século XIV que matou milhões de pessoas na Europa."
     },
-    "2-15": {
-        "pergunta1": {
-            "enunciado": "Qual foi o imperador bizantino conhecido por sua reforma militar e administrativa, criando a temida guarda varegue?",
-            "alternativas": {
-                "alt1": "Justiniano",
-                "alt2": "Alexios I Komnenos",
-                "alt3": "Leão III",
-                "alt4": "Basil II"
-            },
-            "correta": "alt2",
-            "explicacao": "Alexios I Komnenos foi responsável por reformas militares e administrativas, incluindo a criação da Guarda Varegue, composta por guerreiros nórdicos."
-        },
-        "pergunta2": {
-            "enunciado": "O que foi o 'Cisma do Oriente'?",
-            "alternativas": {
-                "alt1": "A separação do Império Bizantino em duas metades",
-                "alt2": "A conversão forçada ao Islã",
-                "alt3": "O conflito entre papas e reis",
-                "alt4": "A divisão entre o Cristianismo Ortodoxo e o Catolicismo"
-            },
-            "correta": "alt4",
-            "explicacao": "O 'Cisma do Oriente' foi a divisão entre o Cristianismo Ortodoxo e o Catolicismo, resultando na separação das igrejas oriental e ocidental."
-        },
-        "pergunta3": {
-            "enunciado": "Quem foi o imperador que restaurou a veneração de ícones após um período de iconoclastia?",
-            "alternativas": {
-                "alt1": "Basil II",
-                "alt2": "Teodoro I Láscaris",
-                "alt3": "Leão III",
-                "alt4": "Constantino VI"
-            },
-            "correta": "alt2",
-            "explicacao": "Teodoro I Láscaris restaurou a veneração de ícones após um período de iconoclastia, permitindo novamente o uso de ícones na religião."
-        },
-        "pergunta4": {
-            "enunciado": "Quem foi o presidente que liderou o Brasil durante a Era Vargas?",
-            "alternativas": {
-                "alt1": "Getúlio Vargas",
-                "alt2": "Juscelino Kubitschek",
-                "alt3": "Washington Luís",
-                "alt4": "Eurico Gaspar Dutra"
-            },
-            "correta": "alt1",
-            "explicacao": "Getúlio Vargas foi o presidente que liderou o Brasil durante a Era Vargas, em diferentes períodos."
-        }
+    "pergunta3": {
+      "enunciado": "Qual instituição teve grande poder e influência durante a Idade Média?",
+      "alternativas": {
+        "alt1": "A Igreja Católica",
+        "alt2": "O Parlamento Europeu",
+        "alt3": "A Organização das Nações Unidas",
+        "alt4": "A Monarquia Constitucional"
+      },
+      "correta": "alt1",
+      "explicacao": "A Igreja Católica era uma instituição central, influenciando diversos aspectos da vida medieval."
     },
-    "2-16": {
-        "pergunta1": {
-            "enunciado": "Qual foi o nome do último profeta do Islã, de acordo com a tradição muçulmana?",
-            "alternativas": {
-                "alt1": "Abu Bakr",
-                "alt2": "Ali ibn Abi Talib",
-                "alt3": "Maomé",
-                "alt4": "Umar ibn al-Khattab"
-            },
-            "correta": "alt3",
-            "explicacao": "Maomé é considerado o último profeta do Islã, de acordo com a tradição muçulmana, sendo o fundador e mensageiro da religião islâmica."
-        },
-        "pergunta2": {
-            "enunciado": "Qual batalha foi um ponto de virada na expansão islâmica, em que os muçulmanos derrotaram o exército bizantino?",
-            "alternativas": {
-                "alt1": "Batalha de Yarmouk",
-                "alt2": "Batalha de Tours",
-                "alt3": "Batalha de Badr",
-                "alt4": "Batalha de Uhud"
-            },
-            "correta": "alt1",
-            "explicacao": "A Batalha de Yarmouk foi uma batalha crucial na expansão islâmica, onde os muçulmanos derrotaram o exército bizantino, abrindo caminho para a conquista da Síria."
-        },
-        "pergunta3": {
-            "enunciado": "Qual foi a primeira capital do Império Islâmico após a morte de Maomé?",
-            "alternativas": {
-                "alt1": "Meca",
-                "alt2": "Damasco",
-                "alt3": "Medina",
-                "alt4": "Bagdá"
-            },
-            "correta": "alt3",
-            "explicacao": "Medina foi a primeira capital do Império Islâmico após a morte de Maomé, servindo como centro político e religioso."
-        },
-        "pergunta4": {
-            "enunciado": "Qual foi a cidade onde Calvino estabeleceu uma comunidade religiosa com base em seus ensinamentos?",
-            "alternativas": {
-                "alt1": "Londres",
-                "alt2": "Genebra",
-                "alt3": "Paris",
-                "alt4": "Amsterdã"
-            },
-            "correta": "alt2",
-            "explicacao": "Calvino estabeleceu uma comunidade religiosa em Genebra, na Suíça, baseada em seus ensinamentos reformados."
-        }
+    "pergunta4": {
+      "enunciado": "Quem foi o monarca francês conhecido como 'Rei Sol'?",
+      "alternativas": {
+        "alt1": "Luís XIV",
+        "alt2": "Luís XVI",
+        "alt3": "Carlos Magno",
+        "alt4": "Francisco I"
+      },
+      "correta": "alt1",
+      "explicacao": "Luís XIV recebeu o apelido de 'Rei Sol' e reinou na França de 1643 a 1715."
+    }
+  },
+  "2-6": {
+    "pergunta1": {
+      "enunciado": "Quem foi coroado Imperador do Sacro Império Romano-Germânico em 800 d.C.?",
+      "alternativas": {
+        "alt1": "Carlos Magno",
+        "alt2": "Otão I",
+        "alt3": "Frederico Barbarossa",
+        "alt4": "Henrique IV"
+      },
+      "correta": "alt1",
+      "explicacao": "Carlos Magno foi coroado pelo Papa Leão III, unificando grande parte da Europa Ocidental."
     },
-    "2-17": {
-        "pergunta1": {
-            "enunciado": "Quem foi o primeiro califa após a morte do profeta Maomé?",
-            "alternativas": {
-                "alt1": "Abu Bakr",
-                "alt2": "Ali ibn Abi Talib",
-                "alt3": "Umar ibn al-Khattab",
-                "alt4": "Uthman ibn Affan"
-            },
-            "correta": "alt1",
-            "explicacao": "Abu Bakr foi o primeiro califa após a morte do profeta Maomé, sucedendo-o como líder da comunidade muçulmana."
-        },
-        "pergunta2": {
-            "enunciado": "Em que século ocorreu a Batalha de Tours, considerada crucial na história da Europa, pois interrompeu a expansão muçulmana na região?",
-            "alternativas": {
-                "alt1": "Século VIII",
-                "alt2": "Século X",
-                "alt3": "Século VII",
-                "alt4": "Século IX"
-            },
-            "correta": "alt1",
-            "explicacao": "A Batalha de Tours ocorreu no século VIII, em 732 d.C., interrompendo a expansão muçulmana na Europa Ocidental e central."
-        },
-        "pergunta3": {
-            "enunciado": "Qual cidade foi a primeira capital do califado após a conquista da Síria?",
-            "alternativas": {
-                "alt1": "Damasco",
-                "alt2": "Bagdá",
-                "alt3": "Cairo",
-                "alt4": "Córdoba"
-            },
-            "correta": "alt1",
-            "explicacao": "Damasco foi a primeira capital do califado após a conquista da Síria pelos muçulmanos, sendo um importante centro político e cultural."
-        },
-        "pergunta4": {
-            "enunciado": "Qual foi o movimento literário e cultural que emergiu após a Primeira Guerra Mundial, expressando desilusão e questionamento dos valores tradicionais?",
-            "alternativas": {
-                "alt1": "Romantismo",
-                "alt2": "Modernismo",
-                "alt3": "Classicismo",
-                "alt4": "Barroco"
-            },
-            "correta": "alt2",
-            "explicacao": "O Modernismo emergiu após a Primeira Guerra Mundial, expressando desilusão e questionamento dos valores tradicionais."
-        }
+    "pergunta2": {
+      "enunciado": "O que foi a Renascença Carolíngia?",
+      "alternativas": {
+        "alt1": "Um renascimento cultural e intelectual durante o reinado de Carlos Magno",
+        "alt2": "Um movimento artístico do século XV",
+        "alt3": "Uma revolta camponesa",
+        "alt4": "A expansão marítima europeia"
+      },
+      "correta": "alt1",
+      "explicacao": "A Renascença Carolíngia promoveu a educação, as artes e a cultura na Europa medieval."
     },
-    "2-18": {
-        "pergunta1": {
-            "enunciado": "O Califado Omíada foi sucedido por qual outra dinastia no mundo islâmico?",
-            "alternativas": {
-                "alt1": "Dinastia Abássida",
-                "alt2": "Dinastia Omíada de Córdoba",
-                "alt3": "Dinastia Fatímida",
-                "alt4": "Dinastia Almorávida"
-            },
-            "correta": "alt1",
-            "explicacao": "O Califado Omíada foi sucedido pela Dinastia Abássida, que assumiu o controle do mundo islâmico após uma revolta contra os Omíadas."
-        },
-        "pergunta2": {
-            "enunciado": "Qual era o nome da capital do Califado Abássida durante seu auge?",
-            "alternativas": {
-                "alt1": "Meca",
-                "alt2": "Damasco",
-                "alt3": "Cairo",
-                "alt4": "Bagdá"
-            },
-            "correta": "alt4",
-            "explicacao": "Bagdá foi a capital do Califado Abássida durante seu auge, conhecida por seu florescimento cultural, científico e intelectual."
-        },
-        "pergunta3": {
-            "enunciado": "Quem foi o famoso explorador muçulmano que viajou extensivamente pela Ásia Central e China durante o século XIII?",
-            "alternativas": {
-                "alt1": "Avicena",
-                "alt2": "Ibn Battuta",
-                "alt3": "Al-Idrisi",
-                "alt4": "Zheng He"
-            },
-            "correta": "alt2",
-            "explicacao": "Ibn Battuta foi um famoso explorador muçulmano que viajou por vastas áreas da Ásia Central e China no século XIII, registrando suas viagens em um livro conhecido como 'Rihla'."
-        },
-        "pergunta4": {
-            "enunciado": "Qual evento deu início à Idade Moderna?",
-            "alternativas": {
-                "alt1": "Renascimento",
-                "alt2": "Queda de Constantinopla",
-                "alt3": "Revolução Industrial",
-                "alt4": "Descobrimento da América"
-            },
-            "correta": "alt2",
-            "explicacao": "A queda de Constantinopla em 1453 é frequentemente considerada o marco inicial da Idade Moderna devido ao impacto significativo na história e mudança cultural."
-        }
+    "pergunta3": {
+      "enunciado": "Qual era a capital do Império Carolíngio sob Carlos Magno?",
+      "alternativas": {
+        "alt1": "Aachen (Aquisgrano)",
+        "alt2": "Paris",
+        "alt3": "Roma",
+        "alt4": "Constantinopla"
+      },
+      "correta": "alt1",
+      "explicacao": "Aachen foi escolhida por Carlos Magno como centro administrativo de seu império."
     },
-    "2-19": {
-        "pergunta1": {
-            "enunciado": "O que é a 'Jihad' no contexto islâmico?",
-            "alternativas": {
-                "alt1": "A peregrinação a Meca",
-                "alt2": "Oramentos obrigatórios",
-                "alt3": "Um esforço ou luta pela fé",
-                "alt4": "Um festival religioso"
-            },
-            "correta": "alt3",
-            "explicacao": "A 'Jihad' no contexto islâmico se refere a um esforço ou luta pela fé, que pode ser interpretado de várias maneiras, incluindo uma luta espiritual ou defesa armada."
-        },
-        "pergunta2": {
-            "enunciado": "Quem liderou a conquista de Jerusalém em nome dos muçulmanos no século VII?",
-            "alternativas": {
-                "alt1": "Harun al-Rashid",
-                "alt2": "Umar ibn al-Khattab",
-                "alt3": "Saladin",
-                "alt4": "Ali ibn Abi Talib"
-            },
-            "correta": "alt2",
-            "explicacao": "Umar ibn al-Khattab, o segundo califa após Maomé, liderou a conquista de Jerusalém em nome dos muçulmanos no século VII."
-        },
-        "pergunta3": {
-            "enunciado": "Qual foi a consequência da expansão islâmica para a cultura e a ciência?",
-            "alternativas": {
-                "alt1": "Estagnação cultural",
-                "alt2": "Preservação do conhecimento antigo e avanços significativos na ciência",
-                "alt3": "Declínio na educação",
-                "alt4": "Desinteresse pelas artes"
-            },
-            "correta": "alt2",
-            "explicacao": "A expansão islâmica resultou na preservação do conhecimento antigo e em avanços significativos na ciência, contribuindo para o florescimento cultural e científico durante o período islâmico."
-        },
-        "pergunta4": {
-            "enunciado": "Qual foi o político brasileiro que liderou o movimento conhecido como 'Caras Pintadas'?",
-            "alternativas": {
-                "alt1": "Luiz Inácio Lula da Silva",
-                "alt2": "Fernando Collor",
-                "alt3": "José Sarney",
-                "alt4": "Itamar Franco"
-            },
-            "correta": "alt2",
-            "explicacao": "Fernando Collor foi o político que enfrentou o movimento dos 'Caras Pintadas', protestos estudantis que pediam seu impeachment."
-        }
+    "pergunta4": {
+      "enunciado": "Qual foi uma das principais consequências da Revolução Industrial?",
+      "alternativas": {
+        "alt1": "Desenvolvimento de máquinas e produção em massa",
+        "alt2": "Fim da escravidão",
+        "alt3": "Descobrimento da América",
+        "alt4": "Reforma Protestante"
+      },
+      "correta": "alt1",
+      "explicacao": "A Revolução Industrial levou ao uso de máquinas e à produção em larga escala."
+    }
+  },
+  "2-7": {
+    "pergunta1": {
+      "enunciado": "Qual documento assinado em 1215 limitou os poderes do rei na Inglaterra?",
+      "alternativas": {
+        "alt1": "Magna Carta",
+        "alt2": "Declaração de Independência",
+        "alt3": "Bill of Rights",
+        "alt4": "Tratado de Versalhes"
+      },
+      "correta": "alt1",
+      "explicacao": "A Magna Carta foi um marco na limitação do poder monárquico e no estabelecimento de direitos."
     },
-    "2-20": {
-        "pergunta1": {
-            "enunciado": "O que é o 'Hégira' no contexto islâmico?",
-            "alternativas": {
-                "alt1": "O livro sagrado do Islã",
-                "alt2": "A migração de Maomé de Meca para Medina",
-                "alt3": "O período de jejum durante o Ramadã",
-                "alt4": "A peregrinação anual a Meca"
-            },
-            "correta": "alt2",
-            "explicacao": "A 'Hégira' refere-se à migração de Maomé de Meca para Medina em 622 d.C., um evento fundamental na história islâmica que marca o início do calendário islâmico."
-        },
-        "pergunta2": {
-            "enunciado": "Qual foi a principal razão para a rápida expansão do Islã no século VII?",
-            "alternativas": {
-                "alt1": "Conquista militar e estratégias de guerra",
-                "alt2": "A influência cultural do Islã",
-                "alt3": "A riqueza e os recursos naturais das terras conquistadas",
-                "alt4": "A diplomacia e acordos pacíficos"
-            },
-            "correta": "alt1",
-            "explicacao": "A rápida expansão do Islã no século VII foi impulsionada principalmente por conquistas militares e estratégias de guerra eficazes."
-        },
-        "pergunta3": {
-            "enunciado": "Quem foi o fundador da Dinastia Omíada?",
-            "alternativas": {
-                "alt1": "Ali ibn Abi Talib",
-                "alt2": "Uthman ibn Affan",
-                "alt3": "Muawiya I",
-                "alt4": "Abu Bakr"
-            },
-            "correta": "alt3",
-            "explicacao": "Muawiya I foi o fundador da Dinastia Omíada, sendo o primeiro califa omíada e estabelecendo esta dinastia como uma das primeiras no mundo islâmico."
-        },
-        "pergunta4": {
-            "enunciado": "Napoleão foi derrotado na Batalha de Waterloo por qual coalizão de nações?",
-            "alternativas": {
-                "alt1": "Inglaterra, Rússia, Prússia e Áustria",
-                "alt2": "Inglaterra, Rússia, Prússia e Espanha",
-                "alt3": "Inglaterra, Rússia, Áustria e França",
-                "alt4": "Inglaterra, Rússia, Espanha e França"
-            },
-            "correta": "alt1",
-            "explicacao": "Napoleão foi derrotado na Batalha de Waterloo por uma coalizão de nações, incluindo Inglaterra, Rússia, Prússia e Áustria."
-        }
+    "pergunta2": {
+      "enunciado": "Quem liderou a Reforma Protestante na Alemanha?",
+      "alternativas": {
+        "alt1": "Martinho Lutero",
+        "alt2": "João Calvino",
+        "alt3": "Henrique VIII",
+        "alt4": "Erasmo de Rotterdam"
+      },
+      "correta": "alt1",
+      "explicacao": "Martinho Lutero iniciou a Reforma Protestante ao publicar as 95 teses em 1517."
     },
-    "2-21": {
-        "pergunta1": {
-            "enunciado": "Qual período histórico é comumente associado à designação 'Idade das Trevas'?",
-            "alternativas": {
-                "alt1": "Idade Antiga",
-                "alt2": "Renascimento",
-                "alt3": "Idade Média",
-                "alt4": "Idade Moderna"
-            },
-            "correta": "alt3",
-            "explicacao": "A 'Idade das Trevas' é frequentemente associada à Idade Média, um período histórico que vai aproximadamente do século V ao XV, caracterizado por desafios sociais, políticos e culturais na Europa."
-        },
-        "pergunta2": {
-            "enunciado": "Quais eventos contribuíram para a visão negativa da Idade das Trevas na história?",
-            "alternativas": {
-                "alt1": "Colapso do Império Romano e instabilidade política",
-                "alt2": "Renascimento e inovação cultural",
-                "alt3": "A Reforma Protestante e a Revolução Industrial",
-                "alt4": "A expansão do Império Otomano"
-            },
-            "correta": "alt1",
-            "explicacao": "O colapso do Império Romano e a subsequente instabilidade política na Europa contribuíram para a visão negativa da Idade das Trevas na história."
-        },
-        "pergunta3": {
-            "enunciado": "O termo 'Idade das Trevas' é frequentemente criticado por historiadores modernos por qual motivo?",
-            "alternativas": {
-                "alt1": "Por representar um período de ignorância e estagnação",
-                "alt2": "Por ignorar realizações culturais e avanços históricos",
-                "alt3": "Por desconsiderar a influência da Igreja Católica",
-                "alt4": "Por exaltar demais o período medieval"
-            },
-            "correta": "alt2",
-            "explicacao": "Historiadores modernos criticam o termo 'Idade das Trevas' por ignorar muitas realizações culturais, avanços científicos e intelectuais significativos que ocorreram durante a Idade Média."
-        },
-        "pergunta4": {
-            "enunciado": "Qual era o nome da escrita utilizada pelos Vikings?",
-            "alternativas": {
-                "alt1": "Rúnica",
-                "alt2": "Hieroglífica",
-                "alt3": "Cuneiforme",
-                "alt4": "Alfabeto Viking"
-            },
-            "correta": "alt1",
-            "explicacao": "A escrita usada pelos Vikings era a escrita rúnica, composta por caracteres chamados de runas, utilizada para gravar inscrições em objetos, pedras e outros."
-        }
+    "pergunta3": {
+      "enunciado": "O que foi a Guerra dos Cem Anos?",
+      "alternativas": {
+        "alt1": "Um conflito entre França e Inglaterra pelo trono francês",
+        "alt2": "Uma guerra civil na Espanha",
+        "alt3": "Um conflito entre Roma e Cartago",
+        "alt4": "Uma série de cruzadas no Oriente Médio"
+      },
+      "correta": "alt1",
+      "explicacao": "A Guerra dos Cem Anos foi um conflito entre França e Inglaterra de 1337 a 1453."
     },
-    "2-22": {
-        "pergunta1": {
-            "enunciado": "Quais avanços arquitetônicos marcaram o período da Idade das Trevas na Europa?",
-            "alternativas": {
-                "alt1": "Construção de catedrais góticas",
-                "alt2": "Desenvolvimento da arquitetura romana",
-                "alt3": "Construção de palácios renascentistas",
-                "alt4": "Invenção do concreto armado"
-            },
-            "correta": "alt1",
-            "explicacao": "O período da Idade das Trevas testemunhou a construção de catedrais góticas impressionantes, que foram uma expressão artística e arquitetônica notável da época."
-        },
-        "pergunta2": {
-            "enunciado": "Qual foi o impacto do sistema feudal na sociedade durante a Idade das Trevas?",
-            "alternativas": {
-                "alt1": "A centralização do poder político",
-                "alt2": "A abolição das classes sociais",
-                "alt3": "A descentralização do poder e a divisão em estratos sociais",
-                "alt4": "O aumento do comércio internacional"
-            },
-            "correta": "alt3",
-            "explicacao": "O sistema feudal durante a Idade das Trevas resultou na descentralização do poder político, com a sociedade dividida em estratos sociais baseados na posse de terra e na servidão."
-        },
-        "pergunta3": {
-            "enunciado": "Quais foram as principais contribuições culturais da Idade das Trevas?",
-            "alternativas": {
-                "alt1": "Preservação e transmissão de conhecimento antigo",
-                "alt2": "Declínio total da produção artística",
-                "alt3": "Desenvolvimento de novas formas de governo",
-                "alt4": "Abandono completo das práticas religiosas"
-            },
-            "correta": "alt1",
-            "explicacao": "Na Idade das Trevas, monges e mosteiros desempenharam um papel crucial na preservação e transmissão do conhecimento antigo, mantendo vivas obras literárias e filosóficas da Antiguidade."
-        },
-        "pergunta4": {
-            "enunciado": "Qual foi o grande avanço tecnológico na agricultura durante a Idade Média?",
-            "alternativas": {
-                "alt1": "Arado de ferro",
-                "alt2": "Prensa móvel",
-                "alt3": "Imprensa de tipos móveis",
-                "alt4": "Moinho de vento"
-            },
-            "correta": "alt1",
-            "explicacao": "O arado de ferro foi um grande avanço tecnológico na agricultura durante a Idade Média, facilitando a preparação do solo para cultivo."
-        }
+    "pergunta4": {
+      "enunciado": "Qual invenção de Johannes Gutenberg revolucionou a disseminação do conhecimento?",
+      "alternativas": {
+        "alt1": "Imprensa de tipos móveis",
+        "alt2": "Telégrafo",
+        "alt3": "Bússola",
+        "alt4": "Microscópio"
+      },
+      "correta": "alt1",
+      "explicacao": "A imprensa de tipos móveis permitiu a produção em massa de livros e a difusão do conhecimento."
+    }
+  },
+  "2-8": {
+    "pergunta1": {
+      "enunciado": "Qual foi o período de renovação cultural e artística que surgiu na Itália no século XIV?",
+      "alternativas": {
+        "alt1": "Renascimento",
+        "alt2": "Iluminismo",
+        "alt3": "Barroco",
+        "alt4": "Romantismo"
+      },
+      "correta": "alt1",
+      "explicacao": "O Renascimento marcou o retorno aos valores clássicos e inovações artísticas."
     },
-    "2-23": {
-        "pergunta1": {
-            "enunciado": "Durante a Idade das Trevas, qual atividade econômica foi fundamental para a Europa?",
-            "alternativas": {
-                "alt1": "Agricultura",
-                "alt2": "Comércio marítimo internacional",
-                "alt3": "Indústria automobilística",
-                "alt4": "Mineração de metais preciosos"
-            },
-            "correta": "alt1",
-            "explicacao": "A agricultura foi uma atividade econômica fundamental durante a Idade das Trevas na Europa, sendo a principal fonte de sustento e produção."
-        },
-        "pergunta2": {
-            "enunciado": "Quais eram as principais características da vida urbana durante a Idade das Trevas?",
-            "alternativas": {
-                "alt1": "Grande população urbana, com centros de comércio e cultura",
-                "alt2": "Desenvolvimento de grandes indústrias",
-                "alt3": "Declínio total das cidades",
-                "alt4": "Foco exclusivo em atividades agrícolas"
-            },
-            "correta": "alt1",
-            "explicacao": "Embora em menor escala do que na Antiguidade, algumas cidades na Europa medieval durante a Idade das Trevas mantiveram populações urbanas, centros de comércio e cultura."
-        },
-        "pergunta3": {
-            "enunciado": "Como a vida e a cultura monásticas influenciaram a Idade das Trevas?",
-            "alternativas": {
-                "alt1": "Contribuindo para a preservação do conhecimento, arte e educação",
-                "alt2": "Enfatizando o militarismo e a expansão territorial",
-                "alt3": "Defendendo a repressão intelectual e cultural",
-                "alt4": "Desconsiderando totalmente a educação e o conhecimento"
-            },
-            "correta": "alt1",
-            "explicacao": "A vida monástica na Idade das Trevas foi essencial para a preservação do conhecimento, arte e educação, através da cópia de manuscritos e práticas educacionais nos mosteiros."
-        },
-        "pergunta4": {
-            "enunciado": "Qual era o lema frequentemente associado ao absolutismo?",
-            "alternativas": {
-                "alt1": "Liberdade, Igualdade, Fraternidade",
-                "alt2": "Governo do Povo, pelo Povo, para o Povo",
-                "alt3": "Um Rei, uma lei, uma fé",
-                "alt4": "Paz e Justiça"
-            },
-            "correta": "alt3",
-            "explicacao": "O lema frequentemente associado ao absolutismo era 'Um Rei, uma lei, uma fé', refletindo a concentração de poder no monarca."
-        }
+    "pergunta2": {
+      "enunciado": "Quem pintou a obra 'A Última Ceia'?",
+      "alternativas": {
+        "alt1": "Leonardo da Vinci",
+        "alt2": "Michelangelo",
+        "alt3": "Rafael",
+        "alt4": "Donatello"
+      },
+      "correta": "alt1",
+      "explicacao": "Leonardo da Vinci é o autor de 'A Última Ceia', uma das pinturas mais famosas do mundo."
     },
-    "2-24": {
-        "pergunta1": {
-            "enunciado": "Qual foi o papel dos castelos na sociedade da Idade das Trevas?",
-            "alternativas": {
-                "alt1": "Centros religiosos",
-                "alt2": "Fortalezas militares e residências senhoriais",
-                "alt3": "Escolas de filosofia",
-                "alt4": "Mercados e centros comerciais"
-            },
-            "correta": "alt2",
-            "explicacao": "Os castelos durante a Idade das Trevas eram principalmente fortalezas militares que serviam como residências para senhores feudais e suas famílias, além de serem centros de defesa."
-        },
-        "pergunta2": {
-            "enunciado": "Quem eram os servos na sociedade feudal da Idade das Trevas?",
-            "alternativas": {
-                "alt1": "Os governantes das cidades",
-                "alt2": "Os comerciantes e artesãos",
-                "alt3": "A classe nobreza",
-                "alt4": "Pessoas que trabalhavam nas terras dos senhores"
-            },
-            "correta": "alt4",
-            "explicacao": "Os servos na sociedade feudal da Idade das Trevas eram pessoas que trabalhavam nas terras dos senhores feudais, geralmente agricultores ou artesãos ligados à terra e ao senhor feudal."
-        },
-        "pergunta3": {
-            "enunciado": "Quais foram as principais causas do declínio das cidades romanas durante a Idade das Trevas?",
-            "alternativas": {
-                "alt1": "Paz e estabilidade política",
-                "alt2": "Desenvolvimento econômico e cultural",
-                "alt3": "Migrações bárbaras e declínio do comércio",
-                "alt4": "Invenção da imprensa"
-            },
-            "correta": "alt3",
-            "explicacao": "O declínio das cidades romanas durante a Idade das Trevas foi influenciado por fatores como migrações bárbaras, instabilidade e declínio do comércio, levando à decadência urbana."
-        },
-        "pergunta4": {
-            "enunciado": "Qual foi o primeiro ciclo econômico do Brasil colonial, baseado na extração de uma árvore de grande valor comercial?",
-            "alternativas": {
-                "alt1": "Ciclo do Açúcar",
-                "alt2": "Ciclo do Ouro",
-                "alt3": "Ciclo do Pau-Brasil",
-                "alt4": "Ciclo da Borracha"
-            },
-            "correta": "alt3",
-            "explicacao": "O primeiro ciclo econômico do Brasil colonial foi o 'Ciclo do Pau-Brasil', baseado na extração do pau-brasil, árvore de grande valor comercial."
-        }
+    "pergunta3": {
+      "enunciado": "Qual foi a principal motivação para as Grandes Navegações europeias?",
+      "alternativas": {
+        "alt1": "Encontrar novas rotas comerciais para as Índias",
+        "alt2": "Explorar novas terras por curiosidade",
+        "alt3": "Expandir o cristianismo",
+        "alt4": "Estabelecer colônias penais"
+      },
+      "correta": "alt1",
+      "explicacao": "A busca por novas rotas comerciais para as Índias motivou as explorações marítimas."
     },
-    "2-25": {
-        "pergunta1": {
-            "enunciado": "Qual foi o impacto das invasões bárbaras na Europa durante a Idade das Trevas?",
-            "alternativas": {
-                "alt1": "Fortalecimento do Império Romano",
-                "alt2": "Estabilidade política e social",
-                "alt3": "Desestabilização e queda do Império Romano",
-                "alt4": "Florescimento cultural e econômico"
-            },
-            "correta": "alt3",
-            "explicacao": "As invasões bárbaras causaram desestabilização e contribuíram significativamente para o declínio e a queda do Império Romano no Ocidente durante a Idade das Trevas."
-        },
-        "pergunta2": {
-            "enunciado": "Quais foram algumas das contribuições importantes da Igreja Católica durante a Idade das Trevas?",
-            "alternativas": {
-                "alt1": "Preservação de conhecimento e educação",
-                "alt2": "Promoção da liberdade de expressão",
-                "alt3": "Redução do poder político",
-                "alt4": "Desvalorização da educação e da cultura"
-            },
-            "correta": "alt1",
-            "explicacao": "A Igreja Católica desempenhou um papel importante na preservação do conhecimento, na educação e na conservação de manuscritos durante a Idade das Trevas."
-        },
-        "pergunta3": {
-            "enunciado": "Quem eram os vikings e qual foi seu impacto na Europa durante a Idade das Trevas?",
-            "alternativas": {
-                "alt1": "Comerciantes árabes",
-                "alt2": "Povos nômades da Ásia Central",
-                "alt3": "Povos germânicos do norte da Europa",
-                "alt4": "Invasores escandinavos que atacaram e colonizaram terras europeias"
-            },
-            "correta": "alt4",
-            "explicacao": "Os vikings eram invasores escandinavos conhecidos por atacar e colonizar terras europeias, tendo um impacto significativo na história europeia durante a Idade das Trevas."
-        },
-        "pergunta4": {
-            "enunciado": "Qual presidente brasileiro foi sucedido pelo vice-presidente José Sarney após sua morte?",
-            "alternativas": {
-                "alt1": "Juscelino Kubitschek",
-                "alt2": "João Goulart",
-                "alt3": "Tancredo Neves",
-                "alt4": "Itamar Franco"
-            },
-            "correta": "alt3",
-            "explicacao": "Tancredo Neves foi eleito presidente, porém faleceu antes de assumir, sendo sucedido pelo vice José Sarney."
-        }
+    "pergunta4": {
+      "enunciado": "Quem foi o navegador português que chegou ao Brasil em 1500?",
+      "alternativas": {
+        "alt1": "Pedro Álvares Cabral",
+        "alt2": "Vasco da Gama",
+        "alt3": "Cristóvão Colombo",
+        "alt4": "Fernão de Magalhães"
+      },
+      "correta": "alt1",
+      "explicacao": "Pedro Álvares Cabral liderou a expedição que chegou ao Brasil em 1500."
+    }
+  },
+  "2-9": {
+    "pergunta1": {
+      "enunciado": "O que foi a Reforma Protestante?",
+      "alternativas": {
+        "alt1": "Um movimento religioso que contestou práticas da Igreja Católica",
+        "alt2": "Um movimento artístico",
+        "alt3": "Uma reforma política na França",
+        "alt4": "A expansão das universidades europeias"
+      },
+      "correta": "alt1",
+      "explicacao": "A Reforma Protestante, iniciada por Martinho Lutero, contestou diversas práticas da Igreja Católica."
     },
-    "2-26": {
-        "pergunta1": {
-            "enunciado": "Quem foi o governante responsável pela formação do Sacro Império Romano?",
-            "alternativas": {
-                "alt1": "Carlos Magno (Charlemagne)",
-                "alt2": "Otto I",
-                "alt3": "Júlio César",
-                "alt4": "Luís XIV"
-            },
-            "correta": "alt1",
-            "explicacao": "Carlos Magno, também conhecido como Charlemagne, foi o governante responsável pela formação do Sacro Império Romano, coroado Imperador do Ocidente em 800 d.C."
-        },
-        "pergunta2": {
-            "enunciado": "Qual foi a capital do Império Carolíngio de Charlemagne?",
-            "alternativas": {
-                "alt1": "Paris",
-                "alt2": "Aachen (Aquisgrano)",
-                "alt3": "Roma",
-                "alt4": "Viena"
-            },
-            "correta": "alt2",
-            "explicacao": "A capital do Império Carolíngio de Charlemagne era Aachen (Aquisgrano), onde ele estabeleceu seu palácio principal e realizou várias reformas políticas e culturais."
-        },
-        "pergunta3": {
-            "enunciado": "Qual foi o título oficial de Charlemagne após ser coroado Imperador do Ocidente?",
-            "alternativas": {
-                "alt1": "Rei dos Francos",
-                "alt2": "Czar da Rússia",
-                "alt3": "Sultão do Império Otomano",
-                "alt4": "Imperador dos Romanos"
-            },
-            "correta": "alt4",
-            "explicacao": "O título oficial de Charlemagne após sua coroação foi 'Imperador dos Romanos', estabelecendo uma continuidade com o Império Romano."
-        },
-        "pergunta4": {
-            "enunciado": "Quantas cruzadas principais ocorreram entre os séculos XI e XIII?",
-            "alternativas": {
-                "alt1": "Quatro",
-                "alt2": "Seis",
-                "alt3": "Oito",
-                "alt4": "Dez"
-            },
-            "correta": "alt1",
-            "explicacao": "Entre os séculos XI e XIII, ocorreram quatro cruzadas principais, além de outras campanhas e expedições menores."
-        }
+    "pergunta2": {
+      "enunciado": "Quem foi o rei inglês que rompeu com a Igreja Católica e fundou o anglicanismo?",
+      "alternativas": {
+        "alt1": "Henrique VIII",
+        "alt2": "Henrique VII",
+        "alt3": "Carlos I",
+        "alt4": "Eduardo VI"
+      },
+      "correta": "alt1",
+      "explicacao": "Henrique VIII rompeu com a Igreja Católica após a negação do divórcio por parte do Papa."
     },
-    "2-27": {
-        "pergunta1": {
-            "enunciado": "Qual foi o período aproximado do reinado de Charlemagne como Imperador do Ocidente?",
-            "alternativas": {
-                "alt1": "Século VI",
-                "alt2": "Século VIII e início do século IX",
-                "alt3": "Século XI",
-                "alt4": "Século XV"
-            },
-            "correta": "alt2",
-            "explicacao": "Charlemagne reinou como Imperador do Ocidente durante o final do século VIII e início do século IX, sendo uma figura importante no período carolíngio."
-        },
-        "pergunta2": {
-            "enunciado": "Quais foram as principais conquistas de Charlemagne durante seu reinado?",
-            "alternativas": {
-                "alt1": "Expansão territorial, promoção da educação e unificação religiosa",
-                "alt2": "Estabelecimento de colônias na África, Ásia e América",
-                "alt3": "Domínio marítimo e conquistas navais",
-                "alt4": "Desenvolvimento de tecnologias agrícolas"
-            },
-            "correta": "alt1",
-            "explicacao": "Durante seu reinado, Charlemagne realizou conquistas territoriais significativas, promoveu a educação e tentou unificar religiosamente o império."
-        },
-        "pergunta3": {
-            "enunciado": "Qual foi a importância do Sacro Império Romano na história europeia?",
-            "alternativas": {
-                "alt1": "Teve pouco impacto na história europeia",
-                "alt2": "Foi um período de conflitos constantes e desunião",
-                "alt3": "Contribuiu para a formação de uma identidade europeia e influenciou eventos posteriores",
-                "alt4": "Resultou no completo isolamento da Europa"
-            },
-            "correta": "alt3",
-            "explicacao": "O Sacro Império Romano contribuiu significativamente para a formação de uma identidade europeia comum e influenciou eventos posteriores na história do continente."
-        },
-        "pergunta4": {
-            "enunciado": "Qual foi o tratado que encerrou a Primeira Guerra Mundial?",
-            "alternativas": {
-                "alt1": "Tratado de Versalhes",
-                "alt2": "Tratado de Tordesilhas",
-                "alt3": "Tratado de Westfália",
-                "alt4": "Tratado de Viena"
-            },
-            "correta": "alt1",
-            "explicacao": "O Tratado de Versalhes, assinado em 1919, foi o tratado que encerrou oficialmente a Primeira Guerra Mundial."
-        }
+    "pergunta3": {
+      "enunciado": "O que foi o Concílio de Trento?",
+      "alternativas": {
+        "alt1": "Um concílio que definiu a Contrarreforma Católica",
+        "alt2": "Uma reunião para organizar as Cruzadas",
+        "alt3": "Um encontro que iniciou a Inquisição",
+        "alt4": "A assinatura da Paz de Westfália"
+      },
+      "correta": "alt1",
+      "explicacao": "O Concílio de Trento (1545-1563) estabeleceu medidas para reformar a Igreja Católica."
     },
-    "2-28": {
-        "pergunta1": {
-            "enunciado": "Quem foi coroado como o primeiro imperador do Sacro Império Romano-Germânico no século X?",
-            "alternativas": {
-                "alt1": "Otto I",
-                "alt2": "Carlos Martel",
-                "alt3": "Carlos Magno",
-                "alt4": "Carlos V"
-            },
-            "correta": "alt1",
-            "explicacao": "Otto I foi coroado como o primeiro imperador do Sacro Império Romano-Germânico no século X, continuando a influência e legado de Carlos Magno."
-        },
-        "pergunta2": {
-            "enunciado": "Qual foi o significado da coroação de Carlos Magno como Imperador do Ocidente em 800 d.C.?",
-            "alternativas": {
-                "alt1": "Consolidação do poder do Papa sobre o Império",
-                "alt2": "Revitalização do Império Romano do Ocidente",
-                "alt3": "Aumento da influência bizantina na Europa",
-                "alt4": "Decadência do poder do Imperador"
-            },
-            "correta": "alt2",
-            "explicacao": "A coroação de Carlos Magno como Imperador do Ocidente em 800 d.C. foi vista como uma tentativa de revitalizar o Império Romano do Ocidente e de unificar o mundo cristão sob um único governante."
-        },
-        "pergunta3": {
-            "enunciado": "Qual foi o papel da Lex Salica no império de Carlos Magno?",
-            "alternativas": {
-                "alt1": "Um código de leis unificador para o império",
-                "alt2": "Uma coletânea de contos populares",
-                "alt3": "Um tratado de paz com os vizinhos do império",
-                "alt4": "Um manual de etiqueta para a corte imperial"
-            },
-            "correta": "alt1",
-            "explicacao": "A Lex Salica foi um código de leis usado no império de Carlos Magno, contribuindo para a unificação legal e o fortalecimento do império."
-        },
-        "pergunta4": {
-            "enunciado": "Qual foi a batalha decisiva em 1241 entre os mongóis e os europeus orientais, resultando na paralisação da expansão mongol?",
-            "alternativas": {
-                "alt1": "Batalha de Mohi",
-                "alt2": "Batalha de Ain Jalut",
-                "alt3": "Batalha de Legnica",
-                "alt4": "Batalha de Wadi al-Khazandar"
-            },
-            "correta": "alt3",
-            "explicacao": "A Batalha de Legnica, em 1241, foi decisiva entre mongóis e europeus orientais, resultando na paralisação da expansão mongol."
-        }
+    "pergunta4": {
+      "enunciado": "Quem escreveu 'O Príncipe', obra fundamental da ciência política?",
+      "alternativas": {
+        "alt1": "Nicolau Maquiavel",
+        "alt2": "Thomas Hobbes",
+        "alt3": "Jean-Jacques Rousseau",
+        "alt4": "John Locke"
+      },
+      "correta": "alt1",
+      "explicacao": "Nicolau Maquiavel escreveu 'O Príncipe', abordando a política de forma realista."
+    }
+  },
+  "2-10": {
+    "pergunta1": {
+      "enunciado": "Qual evento marcou o início da Idade Moderna?",
+      "alternativas": {
+        "alt1": "A queda de Constantinopla em 1453",
+        "alt2": "O descobrimento da América em 1492",
+        "alt3": "A Revolução Francesa em 1789",
+        "alt4": "A Reforma Protestante em 1517"
+      },
+      "correta": "alt1",
+      "explicacao": "A queda de Constantinopla em 1453 é considerada o marco inicial da Idade Moderna."
     },
-    "2-29": {
-        "pergunta1": {
-            "enunciado": "Qual foi a importância da coroação de Carlos Magno como Imperador do Ocidente em 800 d.C.?",
-            "alternativas": {
-                "alt1": "Reafirmou a autoridade política do Papado sobre o Império",
-                "alt2": "Consolidou a separação entre Igreja e Estado",
-                "alt3": "Instituiu o feudalismo como sistema político",
-                "alt4": "Unificou o mundo cristão sob um único governante"
-            },
-            "correta": "alt4",
-            "explicacao": "A coroação de Carlos Magno em 800 d.C. simbolizou a tentativa de unificar o mundo cristão e revitalizar o Império Romano do Ocidente sob um único governante."
-        },
-        "pergunta2": {
-            "enunciado": "O que caracterizou a Renascença Carolíngia durante o reinado de Carlos Magno?",
-            "alternativas": {
-                "alt1": "Um período de estagnação cultural",
-                "alt2": "Um renascimento cultural e educacional",
-                "alt3": "Um período de instabilidade política",
-                "alt4": "Declínio do comércio e da produção artística"
-            },
-            "correta": "alt2",
-            "explicacao": "A Renascença Carolíngia foi um período marcado pelo renascimento cultural e educacional sob o patrocínio de Carlos Magno, buscando revitalizar a educação, arte e cultura."
-        },
-        "pergunta3": {
-            "enunciado": "Qual foi a influência de Carlos Magno no desenvolvimento do sistema feudal?",
-            "alternativas": {
-                "alt1": "Promoveu a centralização do poder monárquico",
-                "alt2": "Estabeleceu uma economia baseada no comércio internacional",
-                "alt3": "Contribuiu para a descentralização do poder político",
-                "alt4": "Favoreceu a igualdade social entre camponeses e nobres"
-            },
-            "correta": "alt3",
-            "explicacao": "Carlos Magno teve influência na descentralização do poder político ao conceder terras aos nobres em troca de apoio militar e administrativo, promovendo o desenvolvimento do sistema feudal."
-        },
-        "pergunta4": {
-            "enunciado": "Qual evento pôs fim à Idade Média e deu início à Idade Moderna na Europa?",
-            "alternativas": {
-                "alt1": "Revolução Francesa",
-                "alt2": "Queda do Império Romano",
-                "alt3": "Renascimento",
-                "alt4": "Descobrimento da América"
-            },
-            "correta": "alt4",
-            "explicacao": "O Descobrimento da América por Cristóvão Colombo em 1492 marcou o fim da Idade Média e o início da Idade Moderna na Europa."
-        }
+    "pergunta2": {
+      "enunciado": "Quem liderou a Reforma Protestante na Suíça?",
+      "alternativas": {
+        "alt1": "Ulrich Zwingli",
+        "alt2": "Martinho Lutero",
+        "alt3": "João Calvino",
+        "alt4": "John Knox"
+      },
+      "correta": "alt1",
+      "explicacao": "Ulrich Zwingli liderou a Reforma Protestante na cidade de Zurique, Suíça."
+    },
+    "pergunta3": {
+      "enunciado": "Qual país se tornou uma potência marítima durante o século XVI graças às Grandes Navegações?",
+      "alternativas": {
+        "alt1": "Portugal",
+        "alt2": "Espanha",
+        "alt3": "Inglaterra",
+        "alt4": "França"
+      },
+      "correta": "alt1",
+      "explicacao": "Portugal se destacou como potência marítima, explorando novas rotas e territórios."
+    },
+    "pergunta4": {
+      "enunciado": "Quem pintou o teto da Capela Sistina?",
+      "alternativas": {
+        "alt1": "Michelangelo",
+        "alt2": "Leonardo da Vinci",
+        "alt3": "Rafael",
+        "alt4": "Botticelli"
+      },
+      "correta": "alt1",
+      "explicacao": "Michelangelo foi o artista responsável pela obra-prima no teto da Capela Sistina."
+    }
+  },
+  "2-11": {
+    "pergunta1": {
+      "enunciado": "Qual foi a principal religião oficial do Império Bizantino?",
+      "alternativas": {
+        "alt1": "Cristianismo Ortodoxo",
+        "alt2": "Islamismo",
+        "alt3": "Judaísmo",
+        "alt4": "Zoroastrismo"
+      },
+      "correta": "alt1",
+      "explicacao": "O Cristianismo Ortodoxo era a religião oficial do Império Bizantino, influenciando sua cultura e política."
+    },
+    "pergunta2": {
+      "enunciado": "O que foi o 'Cisma do Oriente'?",
+      "alternativas": {
+        "alt1": "A separação entre a Igreja Católica e a Igreja Ortodoxa",
+        "alt2": "A divisão do Império Romano em Ocidente e Oriente",
+        "alt3": "A invasão dos bárbaros ao Império Romano",
+        "alt4": "A queda de Constantinopla"
+      },
+      "correta": "alt1",
+      "explicacao": "O 'Cisma do Oriente' em 1054 resultou na separação entre a Igreja Católica Romana e a Igreja Ortodoxa Oriental."
+    },
+    "pergunta3": {
+      "enunciado": "Qual era o nome da guarda de elite dos imperadores bizantinos composta por guerreiros escandinavos?",
+      "alternativas": {
+        "alt1": "Guarda Pretoriana",
+        "alt2": "Guarda Suíça",
+        "alt3": "Guarda Varangiana",
+        "alt4": "Hoplitas"
+      },
+      "correta": "alt3",
+      "explicacao": "A Guarda Varangiana era a unidade de elite composta principalmente por guerreiros vikings que serviam como guardas pessoais dos imperadores bizantinos."
+    },
+    "pergunta4": {
+      "enunciado": "Quem foi o líder revolucionário mexicano conhecido por lutar pelos direitos dos camponeses durante a Revolução Mexicana?",
+      "alternativas": {
+        "alt1": "Pancho Villa",
+        "alt2": "Emiliano Zapata",
+        "alt3": "Porfirio Díaz",
+        "alt4": "Benito Juárez"
+      },
+      "correta": "alt2",
+      "explicacao": "Emiliano Zapata foi um dos líderes da Revolução Mexicana, lutando pela reforma agrária e pelos direitos dos camponeses."
+    }
+  },
+  "2-12": {
+    "pergunta1": {
+      "enunciado": "Qual foi a consequência da Batalha de Manzikert em 1071 para o Império Bizantino?",
+      "alternativas": {
+        "alt1": "Uma grande vitória sobre os turcos seljúcidas",
+        "alt2": "A perda da Anatólia para os turcos seljúcidas",
+        "alt3": "A reconquista de Jerusalém",
+        "alt4": "A união com o Império Romano do Ocidente"
+      },
+      "correta": "alt2",
+      "explicacao": "A derrota na Batalha de Manzikert resultou na perda de grande parte da Anatólia para os turcos seljúcidas, enfraquecendo o Império Bizantino."
+    },
+    "pergunta2": {
+      "enunciado": "Quem foi o imperador bizantino conhecido por seu extenso trabalho de codificação das leis romanas?",
+      "alternativas": {
+        "alt1": "Justino I",
+        "alt2": "Justiniano I",
+        "alt3": "Constantino I",
+        "alt4": "Heráclio"
+      },
+      "correta": "alt2",
+      "explicacao": "Justiniano I encomendou o Corpus Juris Civilis, uma compilação das leis romanas que influenciou o direito ocidental."
+    },
+    "pergunta3": {
+      "enunciado": "Qual foi a capital do Império Bizantino?",
+      "alternativas": {
+        "alt1": "Roma",
+        "alt2": "Atenas",
+        "alt3": "Constantinopla",
+        "alt4": "Alexandria"
+      },
+      "correta": "alt3",
+      "explicacao": "Constantinopla, hoje Istambul, foi a capital do Império Bizantino."
+    },
+    "pergunta4": {
+      "enunciado": "Quem foi o explorador europeu que chegou à América do Norte por volta do ano 1000, antes de Colombo?",
+      "alternativas": {
+        "alt1": "Cristóvão Colombo",
+        "alt2": "Leif Eriksson",
+        "alt3": "Vasco da Gama",
+        "alt4": "John Cabot"
+      },
+      "correta": "alt2",
+      "explicacao": "Leif Eriksson, um explorador viking, é considerado o primeiro europeu a chegar à América do Norte."
+    }
+  },
+  "2-13": {
+    "pergunta1": {
+      "enunciado": "Qual evento em 1054 d.C. dividiu permanentemente a cristandade em Ocidental e Oriental?",
+      "alternativas": {
+        "alt1": "A Reforma Protestante",
+        "alt2": "O Grande Cisma",
+        "alt3": "A Quarta Cruzada",
+        "alt4": "O Concílio de Niceia"
+      },
+      "correta": "alt2",
+      "explicacao": "O Grande Cisma de 1054 d.C. dividiu a Igreja em Católica Romana (Ocidental) e Ortodoxa (Oriental)."
+    },
+    "pergunta2": {
+      "enunciado": "Qual imperador bizantino reconquistou temporariamente partes do antigo Império Romano do Ocidente no século VI?",
+      "alternativas": {
+        "alt1": "Justino I",
+        "alt2": "Justiniano I",
+        "alt3": "Constantino XI",
+        "alt4": "Basílio II"
+      },
+      "correta": "alt2",
+      "explicacao": "Justiniano I liderou campanhas que reconquistaram partes da Itália, África do Norte e Espanha."
+    },
+    "pergunta3": {
+      "enunciado": "O que foi o Código de Justiniano?",
+      "alternativas": {
+        "alt1": "Um conjunto de leis que serviu de base para o direito civil",
+        "alt2": "Um tratado militar",
+        "alt3": "Uma obra literária",
+        "alt4": "Um manual de medicina"
+      },
+      "correta": "alt1",
+      "explicacao": "O Código de Justiniano foi uma compilação de leis que influenciou o desenvolvimento do direito na Europa."
+    },
+    "pergunta4": {
+      "enunciado": "Quem liderou a Revolução Inglesa e tornou-se Lorde Protetor da Inglaterra?",
+      "alternativas": {
+        "alt1": "Oliver Cromwell",
+        "alt2": "Carlos I",
+        "alt3": "Guilherme de Orange",
+        "alt4": "Thomas Cromwell"
+      },
+      "correta": "alt1",
+      "explicacao": "Oliver Cromwell liderou as forças parlamentares contra a monarquia e governou como Lorde Protetor."
+    }
+  },
+  "2-14": {
+    "pergunta1": {
+      "enunciado": "Quem foi a esposa influente do imperador Justiniano I que teve papel significativo na política do Império Bizantino?",
+      "alternativas": {
+        "alt1": "Teodora",
+        "alt2": "Helena",
+        "alt3": "Irene",
+        "alt4": "Zoe"
+      },
+      "correta": "alt1",
+      "explicacao": "A Imperatriz Teodora foi uma conselheira importante de Justiniano I e influenciou decisões políticas e religiosas."
+    },
+    "pergunta2": {
+      "enunciado": "Qual foi o resultado da Quarta Cruzada para o Império Bizantino em 1204?",
+      "alternativas": {
+        "alt1": "A reconquista de Jerusalém",
+        "alt2": "A conquista de Constantinopla pelos cruzados",
+        "alt3": "A união das igrejas Católica e Ortodoxa",
+        "alt4": "A derrota definitiva dos turcos"
+      },
+      "correta": "alt2",
+      "explicacao": "Em 1204, durante a Quarta Cruzada, os cruzados saquearam e ocuparam Constantinopla, enfraquecendo o Império Bizantino."
+    },
+    "pergunta3": {
+      "enunciado": "O que foi a Questão Iconoclasta no Império Bizantino?",
+      "alternativas": {
+        "alt1": "Um conflito sobre o uso de imagens religiosas",
+        "alt2": "Uma disputa territorial com o Império Persa",
+        "alt3": "Uma reforma agrária",
+        "alt4": "Uma epidemia que assolou Constantinopla"
+      },
+      "correta": "alt1",
+      "explicacao": "A Questão Iconoclasta foi uma controvérsia religiosa sobre a proibição ou veneração de ícones religiosos."
+    },
+    "pergunta4": {
+      "enunciado": "Em que data é comemorada a independência dos Estados Unidos?",
+      "alternativas": {
+        "alt1": "4 de julho",
+        "alt2": "1º de janeiro",
+        "alt3": "14 de julho",
+        "alt4": "25 de dezembro"
+      },
+      "correta": "alt1",
+      "explicacao": "A independência dos Estados Unidos é comemorada em 4 de julho, data da Declaração de Independência em 1776."
+    }
+  },
+  "2-15": {
+    "pergunta1": {
+      "enunciado": "Quem foi o imperador bizantino conhecido como 'Matador de Búlgaros'?",
+      "alternativas": {
+        "alt1": "Basílio II",
+        "alt2": "Justiniano I",
+        "alt3": "Constantino XI",
+        "alt4": "Leão III"
+      },
+      "correta": "alt1",
+      "explicacao": "Basílio II ganhou o apelido após vitórias militares significativas contra o Primeiro Império Búlgaro."
+    },
+    "pergunta2": {
+      "enunciado": "Qual evento marcou o fim do Império Bizantino?",
+      "alternativas": {
+        "alt1": "A Queda de Constantinopla em 1453",
+        "alt2": "A Batalha de Manzikert",
+        "alt3": "O Grande Cisma de 1054",
+        "alt4": "A Terceira Cruzada"
+      },
+      "correta": "alt1",
+      "explicacao": "A Queda de Constantinopla em 1453 para os turcos otomanos marcou o fim do Império Bizantino."
+    },
+    "pergunta3": {
+      "enunciado": "Quem foi o último imperador bizantino?",
+      "alternativas": {
+        "alt1": "Constantino XI",
+        "alt2": "Justiniano II",
+        "alt3": "Basílio II",
+        "alt4": "Miguel VIII"
+      },
+      "correta": "alt1",
+      "explicacao": "Constantino XI Paleólogo foi o último imperador bizantino, morrendo durante a defesa de Constantinopla em 1453."
+    },
+    "pergunta4": {
+      "enunciado": "Quem foi o presidente brasileiro que liderou o país durante a Era Vargas?",
+      "alternativas": {
+        "alt1": "Getúlio Vargas",
+        "alt2": "Juscelino Kubitschek",
+        "alt3": "Washington Luís",
+        "alt4": "Eurico Gaspar Dutra"
+      },
+      "correta": "alt1",
+      "explicacao": "Getúlio Vargas foi presidente do Brasil em dois períodos, incluindo o Estado Novo, conhecido como Era Vargas."
+    }
+  },
+  "2-16": {
+    "pergunta1": {
+      "enunciado": "Qual é o nome dado à migração de Maomé de Meca para Medina em 622 d.C.?",
+      "alternativas": {
+        "alt1": "Jihad",
+        "alt2": "Hégira",
+        "alt3": "Ramadã",
+        "alt4": "Califado"
+      },
+      "correta": "alt2",
+      "explicacao": "A Hégira marca o início do calendário islâmico e representa a migração de Maomé para Medina."
+    },
+    "pergunta2": {
+      "enunciado": "Qual é o livro sagrado do Islamismo?",
+      "alternativas": {
+        "alt1": "Torá",
+        "alt2": "Bíblia",
+        "alt3": "Alcorão",
+        "alt4": "Vedas"
+      },
+      "correta": "alt3",
+      "explicacao": "O Alcorão é o livro sagrado dos muçulmanos, contendo as revelações feitas a Maomé."
+    },
+    "pergunta3": {
+      "enunciado": "Quem foi o primeiro califa após a morte de Maomé?",
+      "alternativas": {
+        "alt1": "Abu Bakr",
+        "alt2": "Ali",
+        "alt3": "Umar",
+        "alt4": "Uthman"
+      },
+      "correta": "alt1",
+      "explicacao": "Abu Bakr, sogro de Maomé, foi escolhido como o primeiro califa após a morte do profeta."
+    },
+    "pergunta4": {
+      "enunciado": "Em que cidade João Calvino estabeleceu uma comunidade baseada em seus princípios religiosos?",
+      "alternativas": {
+        "alt1": "Genebra",
+        "alt2": "Paris",
+        "alt3": "Londres",
+        "alt4": "Zurique"
+      },
+      "correta": "alt1",
+      "explicacao": "João Calvino estabeleceu em Genebra uma comunidade que seguia seus ensinamentos reformados."
+    }
+  },
+  "2-17": {
+    "pergunta1": {
+      "enunciado": "Qual é a cidade sagrada para o Islamismo onde Maomé nasceu?",
+      "alternativas": {
+        "alt1": "Jerusalém",
+        "alt2": "Medina",
+        "alt3": "Meca",
+        "alt4": "Bagdá"
+      },
+      "correta": "alt3",
+      "explicacao": "Meca é a cidade natal de Maomé e o local mais sagrado do Islamismo."
+    },
+    "pergunta2": {
+      "enunciado": "Qual batalha em 732 d.C. deteve a expansão islâmica na Europa Ocidental?",
+      "alternativas": {
+        "alt1": "Batalha de Poitiers",
+        "alt2": "Batalha de Hastings",
+        "alt3": "Batalha de Tours",
+        "alt4": "Batalha de Agincourt"
+      },
+      "correta": "alt3",
+      "explicacao": "A Batalha de Tours (ou Poitiers) foi liderada por Carlos Martel, detendo a expansão muçulmana na Europa."
+    },
+    "pergunta3": {
+      "enunciado": "Qual dinastia islâmica transferiu a capital para Damasco?",
+      "alternativas": {
+        "alt1": "Abássida",
+        "alt2": "Omíada",
+        "alt3": "Fatímida",
+        "alt4": "Otomanos"
+      },
+      "correta": "alt2",
+      "explicacao": "A dinastia Omíada estabeleceu Damasco como capital do califado."
+    },
+    "pergunta4": {
+      "enunciado": "Qual movimento literário e artístico surgiu no início do século XX, caracterizado pela ruptura com as tradições?",
+      "alternativas": {
+        "alt1": "Romantismo",
+        "alt2": "Modernismo",
+        "alt3": "Classicismo",
+        "alt4": "Barroco"
+      },
+      "correta": "alt2",
+      "explicacao": "O Modernismo buscou inovar nas artes e literatura, rompendo com estilos tradicionais."
+    }
+  },
+  "2-18": {
+    "pergunta1": {
+      "enunciado": "Qual foi a capital do Califado Abássida, conhecida por seu florescimento cultural e científico?",
+      "alternativas": {
+        "alt1": "Bagdá",
+        "alt2": "Cairo",
+        "alt3": "Damasco",
+        "alt4": "Córdova"
+      },
+      "correta": "alt1",
+      "explicacao": "Bagdá tornou-se um centro de conhecimento durante o Califado Abássida."
+    },
+    "pergunta2": {
+      "enunciado": "Quem foi o famoso cientista e filósofo islâmico conhecido no Ocidente como Avicena?",
+      "alternativas": {
+        "alt1": "Ibn Sina",
+        "alt2": "Al-Khwarizmi",
+        "alt3": "Ibn Battuta",
+        "alt4": "Al-Farabi"
+      },
+      "correta": "alt1",
+      "explicacao": "Ibn Sina, conhecido como Avicena, contribuiu significativamente para a medicina e filosofia."
+    },
+    "pergunta3": {
+      "enunciado": "O que foi a Casa da Sabedoria em Bagdá?",
+      "alternativas": {
+        "alt1": "Um palácio real",
+        "alt2": "Uma biblioteca e centro de tradução",
+        "alt3": "Uma mesquita",
+        "alt4": "Uma fortaleza militar"
+      },
+      "correta": "alt2",
+      "explicacao": "A Casa da Sabedoria era um centro intelectual onde obras eram traduzidas e estudadas."
+    },
+    "pergunta4": {
+      "enunciado": "Qual evento é considerado o marco inicial da Idade Moderna?",
+      "alternativas": {
+        "alt1": "Queda de Constantinopla em 1453",
+        "alt2": "Descobrimento da América em 1492",
+        "alt3": "Reforma Protestante em 1517",
+        "alt4": "Revolução Francesa em 1789"
+      },
+      "correta": "alt1",
+      "explicacao": "A Queda de Constantinopla é frequentemente considerada o fim da Idade Média e início da Idade Moderna."
+    }
+  },
+  "2-19": {
+    "pergunta1": {
+      "enunciado": "O que significa 'Jihad' no contexto islâmico?",
+      "alternativas": {
+        "alt1": "Guerra santa contra os infiéis",
+        "alt2": "Esforço ou luta no caminho de Deus",
+        "alt3": "Peregrinação a Meca",
+        "alt4": "Jejum durante o Ramadã"
+      },
+      "correta": "alt2",
+      "explicacao": "Jihad refere-se a um esforço espiritual ou físico no caminho de Deus, podendo ter várias interpretações."
+    },
+    "pergunta2": {
+      "enunciado": "Quem reconquistou Jerusalém dos cruzados em 1187?",
+      "alternativas": {
+        "alt1": "Saladino",
+        "alt2": "Ricardo Coração de Leão",
+        "alt3": "Frederico Barbarossa",
+        "alt4": "Godofredo de Bulhão"
+      },
+      "correta": "alt1",
+      "explicacao": "Saladino, líder muçulmano, reconquistou Jerusalém, levando à Terceira Cruzada."
+    },
+    "pergunta3": {
+      "enunciado": "Qual foi o impacto cultural da civilização islâmica na Idade Média?",
+      "alternativas": {
+        "alt1": "Estagnação científica",
+        "alt2": "Desenvolvimento de matemáticas, medicina e filosofia",
+        "alt3": "Isolamento cultural",
+        "alt4": "Destruição de conhecimentos antigos"
+      },
+      "correta": "alt2",
+      "explicacao": "A civilização islâmica preservou e expandiu conhecimentos em diversas áreas, influenciando o Renascimento europeu."
+    },
+    "pergunta4": {
+      "enunciado": "Qual presidente brasileiro sofreu impeachment em 1992?",
+      "alternativas": {
+        "alt1": "Fernando Henrique Cardoso",
+        "alt2": "Itamar Franco",
+        "alt3": "Fernando Collor de Mello",
+        "alt4": "José Sarney"
+      },
+      "correta": "alt3",
+      "explicacao": "Fernando Collor de Mello foi o primeiro presidente brasileiro a sofrer impeachment."
+    }
+  },
+  "2-20": {
+    "pergunta1": {
+      "enunciado": "O que é o Ramadã no Islamismo?",
+      "alternativas": {
+        "alt1": "A peregrinação a Meca",
+        "alt2": "O mês sagrado de jejum",
+        "alt3": "A festa do sacrifício",
+        "alt4": "A leitura do Alcorão"
+      },
+      "correta": "alt2",
+      "explicacao": "O Ramadã é o nono mês do calendário islâmico, durante o qual os muçulmanos jejuam do amanhecer ao pôr do sol."
+    },
+    "pergunta2": {
+      "enunciado": "Qual dinastia islâmica foi responsável pela construção da Mesquita de Córdoba?",
+      "alternativas": {
+        "alt1": "Abássida",
+        "alt2": "Omíada",
+        "alt3": "Fatímida",
+        "alt4": "Otomanos"
+      },
+      "correta": "alt2",
+      "explicacao": "A dinastia Omíada, após estabelecer-se na Península Ibérica, construiu a Mesquita de Córdoba."
+    },
+    "pergunta3": {
+      "enunciado": "Quem foi o fundador da Dinastia Abássida?",
+      "alternativas": {
+        "alt1": "Abu al-Abbas as-Saffah",
+        "alt2": "Harun al-Rashid",
+        "alt3": "Al-Mansur",
+        "alt4": "Al-Mamun"
+      },
+      "correta": "alt1",
+      "explicacao": "Abu al-Abbas as-Saffah liderou a revolta contra os Omíadas e fundou a Dinastia Abássida."
+    },
+    "pergunta4": {
+      "enunciado": "Em que ano ocorreu a Batalha de Waterloo, que marcou a derrota final de Napoleão Bonaparte?",
+      "alternativas": {
+        "alt1": "1812",
+        "alt2": "1814",
+        "alt3": "1815",
+        "alt4": "1821"
+      },
+      "correta": "alt3",
+      "explicacao": "A Batalha de Waterloo ocorreu em 1815, resultando na derrota definitiva de Napoleão."
+    }
+  },
+  "2-21": {
+    "pergunta1": {
+      "enunciado": "O termo 'Idade das Trevas' é frequentemente associado a qual período histórico?",
+      "alternativas": {
+        "alt1": "Alta Idade Média",
+        "alt2": "Renascimento",
+        "alt3": "Idade Moderna",
+        "alt4": "Iluminismo"
+      },
+      "correta": "alt1",
+      "explicacao": "A 'Idade das Trevas' refere-se geralmente à Alta Idade Média (séculos V ao X), marcada por instabilidade na Europa."
+    },
+    "pergunta2": {
+      "enunciado": "Por que o termo 'Idade das Trevas' é considerado inadequado por alguns historiadores?",
+      "alternativas": {
+        "alt1": "Porque a época foi de grande progresso",
+        "alt2": "Porque houve avanços culturais e preservação de conhecimento",
+        "alt3": "Porque não existiu tal período",
+        "alt4": "Porque foi uma época de iluminismo"
+      },
+      "correta": "alt2",
+      "explicacao": "O termo é visto como pejorativo, pois ignora os avanços e a complexidade do período."
+    },
+    "pergunta3": {
+      "enunciado": "Qual foi uma das principais instituições responsáveis pela preservação do conhecimento durante a Idade Média?",
+      "alternativas": {
+        "alt1": "As universidades",
+        "alt2": "Os mosteiros",
+        "alt3": "As guildas",
+        "alt4": "As cortes reais"
+      },
+      "correta": "alt2",
+      "explicacao": "Os mosteiros eram centros de estudo e cópia de manuscritos, preservando obras antigas."
+    },
+    "pergunta4": {
+      "enunciado": "Qual é o alfabeto utilizado pelos vikings para escrever suas inscrições?",
+      "alternativas": {
+        "alt1": "Alfabeto cirílico",
+        "alt2": "Runas",
+        "alt3": "Hieróglifos",
+        "alt4": "Alfabeto latino"
+      },
+      "correta": "alt2",
+      "explicacao": "Os vikings utilizavam as runas, um alfabeto próprio, para inscrições em pedras e objetos."
+    }
+  },
+  "2-22": {
+    "pergunta1": {
+      "enunciado": "Qual estilo arquitetônico é característico das catedrais europeias construídas durante a Idade Média?",
+      "alternativas": {
+        "alt1": "Gótico",
+        "alt2": "Barroco",
+        "alt3": "Rococó",
+        "alt4": "Neoclássico"
+      },
+      "correta": "alt1",
+      "explicacao": "O estilo gótico, com arcos ogivais e vitrais, predominou nas catedrais medievais."
+    },
+    "pergunta2": {
+      "enunciado": "O que era o feudalismo?",
+      "alternativas": {
+        "alt1": "Um sistema político-econômico baseado na posse da terra",
+        "alt2": "Uma religião",
+        "alt3": "Uma filosofia econômica moderna",
+        "alt4": "Um movimento artístico"
+      },
+      "correta": "alt1",
+      "explicacao": "O feudalismo era um sistema em que a terra era a principal fonte de poder e riqueza."
+    },
+    "pergunta3": {
+      "enunciado": "Qual foi o impacto das Cruzadas na Europa medieval?",
+      "alternativas": {
+        "alt1": "Nenhum impacto significativo",
+        "alt2": "Aumento do isolamento europeu",
+        "alt3": "Estímulo ao comércio e intercâmbio cultural",
+        "alt4": "Destruição completa da economia europeia"
+      },
+      "correta": "alt3",
+      "explicacao": "As Cruzadas abriram rotas comerciais e permitiram o contato com outras culturas."
+    },
+    "pergunta4": {
+      "enunciado": "Qual avanço tecnológico agrícola aumentou a produtividade na Idade Média?",
+      "alternativas": {
+        "alt1": "Rotação de culturas de três campos",
+        "alt2": "Uso de fertilizantes químicos",
+        "alt3": "Tratores a vapor",
+        "alt4": "Irrigação por pivô central"
+      },
+      "correta": "alt1",
+      "explicacao": "A rotação trienal permitiu melhor uso do solo e aumento da produção."
+    }
+  },
+  "2-23": {
+    "pergunta1": {
+      "enunciado": "O que eram as guildas na Europa medieval?",
+      "alternativas": {
+        "alt1": "Associações de artesãos e comerciantes",
+        "alt2": "Grupos militares",
+        "alt3": "Sociedades secretas religiosas",
+        "alt4": "Famílias nobres"
+      },
+      "correta": "alt1",
+      "explicacao": "As guildas regulavam profissões, protegiam interesses e garantiam qualidade dos produtos."
+    },
+    "pergunta2": {
+      "enunciado": "O que foi a Peste Negra?",
+      "alternativas": {
+        "alt1": "Uma revolta camponesa",
+        "alt2": "Uma guerra entre nações europeias",
+        "alt3": "Uma pandemia que dizimou parte da população europeia",
+        "alt4": "Um tratado de paz"
+      },
+      "correta": "alt3",
+      "explicacao": "A Peste Negra foi uma pandemia no século XIV que reduziu drasticamente a população da Europa."
+    },
+    "pergunta3": {
+      "enunciado": "Qual foi o papel dos mosteiros na Europa medieval?",
+      "alternativas": {
+        "alt1": "Centros comerciais",
+        "alt2": "Instituições militares",
+        "alt3": "Focos de preservação cultural e educação",
+        "alt4": "Sedes governamentais"
+      },
+      "correta": "alt3",
+      "explicacao": "Os mosteiros eram importantes na preservação de manuscritos e na educação."
+    },
+    "pergunta4": {
+      "enunciado": "Qual lema está associado ao absolutismo monárquico?",
+      "alternativas": {
+        "alt1": "Liberdade, Igualdade, Fraternidade",
+        "alt2": "Tudo pelo povo, nada através do povo",
+        "alt3": "O Estado sou eu",
+        "alt4": "Ordem e Progresso"
+      },
+      "correta": "alt3",
+      "explicacao": "O lema 'O Estado sou eu' é atribuído a Luís XIV, refletindo o absolutismo."
+    }
+  },
+  "2-24": {
+    "pergunta1": {
+      "enunciado": "Qual foi o papel dos castelos na sociedade feudal durante a Idade Média?",
+      "alternativas": {
+        "alt1": "Serviam como centros religiosos",
+        "alt2": "Eram fortalezas militares e residências dos senhores feudais",
+        "alt3": "Eram locais de comércio e mercado",
+        "alt4": "Funcionavam como escolas para a nobreza"
+      },
+      "correta": "alt2",
+      "explicacao": "Os castelos eram fortalezas que serviam de residência para os senhores feudais e protegiam os habitantes locais em tempos de invasão."
+    },
+    "pergunta2": {
+      "enunciado": "Quem eram os servos na sociedade feudal?",
+      "alternativas": {
+        "alt1": "Camponeses que trabalhavam nas terras dos senhores em troca de proteção",
+        "alt2": "Membros da nobreza que serviam ao rei",
+        "alt3": "Comerciantes que viajavam entre feudos",
+        "alt4": "Soldados profissionais contratados pelos senhores"
+      },
+      "correta": "alt1",
+      "explicacao": "Os servos eram camponeses ligados à terra que trabalhavam para os senhores feudais em troca de proteção e direito de uso de parte das terras."
+    },
+    "pergunta3": {
+      "enunciado": "Quais foram as principais causas do declínio das cidades romanas durante a Alta Idade Média?",
+      "alternativas": {
+        "alt1": "Invasões bárbaras e colapso do comércio",
+        "alt2": "Desenvolvimento econômico e comercial",
+        "alt3": "Fortalecimento do Império Romano",
+        "alt4": "Paz e estabilidade política"
+      },
+      "correta": "alt1",
+      "explicacao": "As invasões bárbaras e o colapso do comércio contribuíram para o declínio das cidades romanas na Alta Idade Média."
+    },
+    "pergunta4": {
+      "enunciado": "Qual foi o primeiro ciclo econômico do Brasil colonial, baseado na exploração de uma árvore nativa?",
+      "alternativas": {
+        "alt1": "Ciclo da Borracha",
+        "alt2": "Ciclo do Pau-brasil",
+        "alt3": "Ciclo do Café",
+        "alt4": "Ciclo da Cana-de-açúcar"
+      },
+      "correta": "alt2",
+      "explicacao": "O Ciclo do Pau-brasil foi o primeiro ciclo econômico do Brasil, baseado na exploração do pau-brasil, uma árvore nativa utilizada para extração de corante."
+    }
+  },
+  "2-25": {
+    "pergunta1": {
+      "enunciado": "Qual foi o impacto das invasões bárbaras na Europa durante a Idade Média?",
+      "alternativas": {
+        "alt1": "Contribuíram para a queda do Império Romano do Ocidente",
+        "alt2": "Fortaleceram o poder do Império Romano",
+        "alt3": "Promoveram a unificação política da Europa",
+        "alt4": "Estabeleceram a democracia na região"
+      },
+      "correta": "alt1",
+      "explicacao": "As invasões bárbaras desestabilizaram a Europa e contribuíram significativamente para a queda do Império Romano do Ocidente."
+    },
+    "pergunta2": {
+      "enunciado": "Qual foi o papel da Igreja Católica durante a Idade Média?",
+      "alternativas": {
+        "alt1": "Preservou o conhecimento e foi uma das principais instituições de poder",
+        "alt2": "Teve pouca influência na sociedade",
+        "alt3": "Promoveu a separação entre Estado e religião",
+        "alt4": "Foi responsável pela industrialização da Europa"
+      },
+      "correta": "alt1",
+      "explicacao": "A Igreja Católica preservou grande parte do conhecimento antigo e exerceu forte influência política, social e cultural durante a Idade Média."
+    },
+    "pergunta3": {
+      "enunciado": "Quem eram os vikings e qual foi seu impacto na Europa medieval?",
+      "alternativas": {
+        "alt1": "Navegadores escandinavos que realizaram incursões e comércio",
+        "alt2": "Comerciantes árabes que estabeleceram rotas na Europa",
+        "alt3": "Guerreiros mongóis que invadiram o leste europeu",
+        "alt4": "Filósofos gregos que influenciaram a educação medieval"
+      },
+      "correta": "alt1",
+      "explicacao": "Os vikings eram navegadores e guerreiros da Escandinávia que, entre os séculos VIII e XI, realizaram incursões, saques e estabeleceram rotas comerciais na Europa."
+    },
+    "pergunta4": {
+      "enunciado": "Qual presidente brasileiro foi sucedido por José Sarney após sua morte antes de assumir o cargo?",
+      "alternativas": {
+        "alt1": "Tancredo Neves",
+        "alt2": "Juscelino Kubitschek",
+        "alt3": "João Goulart",
+        "alt4": "Itamar Franco"
+      },
+      "correta": "alt1",
+      "explicacao": "Tancredo Neves foi eleito presidente em 1985, mas faleceu antes de tomar posse, sendo sucedido por seu vice, José Sarney."
+    }
+  },
+  "2-26": {
+    "pergunta1": {
+      "enunciado": "Quem foi o governante responsável pela formação do Sacro Império Romano no ano 800 d.C.?",
+      "alternativas": {
+        "alt1": "Carlos Magno",
+        "alt2": "Otão I",
+        "alt3": "Júlio César",
+        "alt4": "Luís IX"
+      },
+      "correta": "alt1",
+      "explicacao": "Carlos Magno foi coroado imperador pelo Papa Leão III, formando o Sacro Império Romano."
+    },
+    "pergunta2": {
+      "enunciado": "Qual era a capital do Império Carolíngio sob o reinado de Carlos Magno?",
+      "alternativas": {
+        "alt1": "Paris",
+        "alt2": "Roma",
+        "alt3": "Aachen (Aquisgrano)",
+        "alt4": "Constantinopla"
+      },
+      "correta": "alt3",
+      "explicacao": "Aachen, também conhecida como Aquisgrano, foi escolhida por Carlos Magno como capital de seu império."
+    },
+    "pergunta3": {
+      "enunciado": "Qual foi o título oficial concedido a Carlos Magno pelo Papa Leão III?",
+      "alternativas": {
+        "alt1": "Rei dos Francos",
+        "alt2": "Imperador dos Romanos",
+        "alt3": "César",
+        "alt4": "Príncipe da Cristandade"
+      },
+      "correta": "alt2",
+      "explicacao": "Carlos Magno foi coroado como 'Imperador dos Romanos', simbolizando a restauração do Império Romano no Ocidente."
+    },
+    "pergunta4": {
+      "enunciado": "Quantas Cruzadas principais ocorreram entre os séculos XI e XIII?",
+      "alternativas": {
+        "alt1": "Quatro",
+        "alt2": "Seis",
+        "alt3": "Oito",
+        "alt4": "Nove"
+      },
+      "correta": "alt3",
+      "explicacao": "Ocorreram oito Cruzadas principais entre os séculos XI e XIII, com o objetivo de retomar a Terra Santa."
+    }
+  },
+  "2-27": {
+    "pergunta1": {
+      "enunciado": "Em qual período Carlos Magno reinou como Imperador do Ocidente?",
+      "alternativas": {
+        "alt1": "Século VI",
+        "alt2": "Final do século VIII e início do século IX",
+        "alt3": "Século XI",
+        "alt4": "Século XV"
+      },
+      "correta": "alt2",
+      "explicacao": "Carlos Magno reinou de 768 a 814, sendo coroado imperador em 800 d.C."
+    },
+    "pergunta2": {
+      "enunciado": "Quais foram as principais conquistas de Carlos Magno?",
+      "alternativas": {
+        "alt1": "Expansão territorial, promoção da educação e unificação religiosa",
+        "alt2": "Descobrimento da América e reforma agrária",
+        "alt3": "Reforma protestante e unificação da Itália",
+        "alt4": "Desenvolvimento da imprensa e revolução científica"
+      },
+      "correta": "alt1",
+      "explicacao": "Carlos Magno expandiu seu império, promoveu a educação através da Renascença Carolíngia e buscou unificar o cristianismo."
+    },
+    "pergunta3": {
+      "enunciado": "Qual foi a importância do Sacro Império Romano-Germânico na história europeia?",
+      "alternativas": {
+        "alt1": "Estabeleceu as bases para a atual União Europeia",
+        "alt2": "Contribuiu para a formação de uma identidade europeia e influenciou a política medieval",
+        "alt3": "Levou ao isolamento completo dos países europeus",
+        "alt4": "Foi irrelevante e não impactou a história"
+      },
+      "correta": "alt2",
+      "explicacao": "O Sacro Império Romano-Germânico foi uma entidade política que influenciou a estruturação política e social da Europa medieval."
+    },
+    "pergunta4": {
+      "enunciado": "Qual tratado encerrou oficialmente a Primeira Guerra Mundial?",
+      "alternativas": {
+        "alt1": "Tratado de Versalhes",
+        "alt2": "Tratado de Tordesilhas",
+        "alt3": "Tratado de Westfália",
+        "alt4": "Tratado de Viena"
+      },
+      "correta": "alt1",
+      "explicacao": "O Tratado de Versalhes, assinado em 1919, oficializou o fim da Primeira Guerra Mundial."
+    }
+  },
+  "2-28": {
+    "pergunta1": {
+      "enunciado": "Quem foi coroado como o primeiro imperador do Sacro Império Romano-Germânico no século X?",
+      "alternativas": {
+        "alt1": "Otão I",
+        "alt2": "Carlos Magno",
+        "alt3": "Frederico II",
+        "alt4": "Henrique II"
+      },
+      "correta": "alt1",
+      "explicacao": "Otão I foi coroado imperador em 962, estabelecendo o Sacro Império Romano-Germânico."
+    },
+    "pergunta2": {
+      "enunciado": "Qual foi o significado da coroação de Carlos Magno como imperador em 800 d.C.?",
+      "alternativas": {
+        "alt1": "Tentativa de revitalizar o Império Romano do Ocidente",
+        "alt2": "Início da Reforma Protestante",
+        "alt3": "Divisão definitiva do Império Romano",
+        "alt4": "Fundação da República Francesa"
+      },
+      "correta": "alt1",
+      "explicacao": "A coroação simbolizou a restauração do Império Romano no Ocidente e a união entre Igreja e Estado."
+    },
+    "pergunta3": {
+      "enunciado": "Qual foi o papel da 'Lex Salica' no Império Carolíngio?",
+      "alternativas": {
+        "alt1": "Código legal que unificou leis francas",
+        "alt2": "Tratado de paz com povos vizinhos",
+        "alt3": "Manual de agricultura",
+        "alt4": "Coletânea de canções épicas"
+      },
+      "correta": "alt1",
+      "explicacao": "A 'Lex Salica' era um código de leis que serviu para unificar e regular as práticas legais do Império Carolíngio."
+    },
+    "pergunta4": {
+      "enunciado": "Qual foi a batalha em que os mongóis foram detidos na Europa Oriental em 1241?",
+      "alternativas": {
+        "alt1": "Batalha de Legnica",
+        "alt2": "Batalha de Hastings",
+        "alt3": "Batalha de Poitiers",
+        "alt4": "Batalha de Manzikert"
+      },
+      "correta": "alt1",
+      "explicacao": "Na Batalha de Legnica, forças europeias tentaram deter a invasão mongol, mas foram derrotadas; no entanto, a morte do grão-cã mongol impediu o avanço."
+    }
+  },
+  "2-29": {
+    "pergunta1": {
+      "enunciado": "Qual foi a importância da coroação de Carlos Magno como imperador em 800 d.C.?",
+      "alternativas": {
+        "alt1": "Unificou o mundo cristão ocidental sob um único governante",
+        "alt2": "Iniciou a Guerra dos Cem Anos",
+        "alt3": "Provocou a queda do Império Bizantino",
+        "alt4": "Estabeleceu a primeira república na Europa"
+      },
+      "correta": "alt1",
+      "explicacao": "A coroação de Carlos Magno buscou unificar o mundo cristão ocidental e fortalecer a aliança entre o trono e a Igreja."
+    },
+    "pergunta2": {
+      "enunciado": "O que caracterizou a Renascença Carolíngia?",
+      "alternativas": {
+        "alt1": "Renovação cultural e intelectual promovida por Carlos Magno",
+        "alt2": "Movimento artístico do século XV na Itália",
+        "alt3": "Reforma religiosa liderada por Martinho Lutero",
+        "alt4": "Período de declínio econômico na Europa"
+      },
+      "correta": "alt1",
+      "explicacao": "A Renascença Carolíngia foi um período de revitalização das artes, cultura e educação no Império Carolíngio."
+    },
+    "pergunta3": {
+      "enunciado": "Como Carlos Magno influenciou o desenvolvimento do sistema feudal?",
+      "alternativas": {
+        "alt1": "Ao conceder terras em troca de serviços militares, fortalecendo laços de vassalagem",
+        "alt2": "Abolindo a propriedade privada",
+        "alt3": "Estabelecendo uma economia baseada no comércio marítimo",
+        "alt4": "Centralizando todo o poder em si mesmo sem delegar autoridade"
+      },
+      "correta": "alt1",
+      "explicacao": "Carlos Magno distribuiu terras a nobres que lhe deviam lealdade e serviços militares, estabelecendo bases para o feudalismo."
+    },
+    "pergunta4": {
+      "enunciado": "Qual evento marcou o fim da Idade Média e o início da Idade Moderna na Europa?",
+      "alternativas": {
+        "alt1": "A tomada de Constantinopla pelos turcos otomanos em 1453",
+        "alt2": "A Revolução Francesa em 1789",
+        "alt3": "A Reforma Protestante em 1517",
+        "alt4": "O descobrimento da América em 1492"
+      },
+      "correta": "alt1",
+      "explicacao": "A queda de Constantinopla em 1453 é frequentemente considerada o fim da Idade Média e o início da Idade Moderna."
+    }
     },
     "3-1": {
         "pergunta1": {
