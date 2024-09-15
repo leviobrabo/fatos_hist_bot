@@ -1,5 +1,5 @@
 import datetime
-from ..loggers import logger
+
 import schedule
 
 from ..core.poll_channel import send_question
@@ -26,6 +26,8 @@ from ..handlers.new_year_message import new_year_message
 from ..handlers.prase_channel import hist_channel_frase
 from ..handlers.presidents import enviar_foto_presidente
 from ..handlers.stars import msg_alerta_stars
+from ..loggers import logger
+
 
 def schedule_tasks():
     try:
@@ -62,7 +64,6 @@ def schedule_tasks():
 
         # Remove polls do banco de dados
         # schedule.every().day.at('00:00').do(remove_all_poll)
-
 
         # Envio eventos histórico no chats
         schedule.every().day.at('08:00').do(hist_chat_job)
@@ -106,7 +107,6 @@ def schedule_tasks():
         # Envio de imagens historicas no canal de imagem
         schedule.every(1).hour.do(hist_channel_imgs)
 
-
         # checar data natal/ano novo/ aniversario do canal
         def checar_datas_dia():
             current_date = datetime.now()
@@ -116,7 +116,6 @@ def schedule_tasks():
                 new_year_message()
             elif current_date.month == '11' and current_date.day == '19':
                 agendar_aniversario()
-
 
         schedule.every().day.at('00:05').do(checar_datas_dia)
 
