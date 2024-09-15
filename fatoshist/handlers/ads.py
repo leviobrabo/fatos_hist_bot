@@ -70,7 +70,8 @@ def ads_msg_job():
                 'Gostou do conteúdo? 🕰️📚 Que tal nos dar uma força? Ao clicar nos anúncios, você nos ajuda a '
                 'continuar trazendo histórias incríveis todos os dias, sem nenhum custo para você! 🚀✨\n\n'
                 'Cada clique faz a diferença e nos permite manter o canal ativo e sempre atualizado. 😊🙏\n\n'
-                '<b>Clique e apoie o canal com apenas um toque!</b> 🙌'
+                '<b>Clique e apoie o canal com apenas um toque!</b> 🙌\n\n'
+                '#historia #ads #ajude_canal'
             )
 
             bot.send_message(channel_id, msg_text, parse_mode='HTML', reply_markup=markup)

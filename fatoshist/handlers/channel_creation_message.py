@@ -16,9 +16,9 @@ def enviar_mensagem_aniversario(CHANNEL):
             anos_de_criacao = data_atual.year - data_criacao.year
 
             if anos_de_criacao == 1:
-                mensagem = 'Hoje o canal Hoje na história está completando 1 ano de criação! 🎉🎂🎈\n\n#anivesario_do_canal'
+                mensagem = 'Hoje o canal Hoje na história está completando 1 ano de criação! 🎉🎂🎈\n\n#anivesario_do_canal #historia'
             else:
-                mensagem = f'Hoje o canal Hoje na história está completando {anos_de_criacao} anos de criação! 🎉🎂🎈 \n\n#anivesario_do_canal'
+                mensagem = f'Hoje o canal Hoje na história está completando {anos_de_criacao} anos de criação! 🎉🎂🎈 \n\n#anivesario_do_canal #historia'
 
             bot.send_message(CHANNEL, mensagem)
             msg_text_owner = 'Mensagem de anivesário de canal enviada com sucesso'

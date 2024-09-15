@@ -29,7 +29,7 @@ def get_holiday_br_of_the_day(CHANNEL):
 
                 message = f'<b>🎊 | Data comemorativa do dia 🇧🇷</b> \n\n<b><i>{day} de {get_month_name(month)}</i></b>\n\n'
                 message += '\n'.join(message_parts)
-                message += '\n\n#feriados_brasil'
+                message += '\n\n#feriados_brasil #historia #feriados'
                 message += '\n\n<blockquote>💬 Você sabia? Siga o @historia_br e acesse nosso site historiadodia.com.</blockquote>'
                 bot.send_message(CHANNEL, message)
             else:

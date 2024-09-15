@@ -12,6 +12,7 @@ def msg_inscricao_canais_historia():
             'em uma emocionante jornada pelas profundezas da história.\n\n'
             'Viva aventuras antigas, fatos intrigantes e eventos cruciais que moldaram o nosso mundo. '
             'Junte-se a nós hoje para uma experiência educativa divertida e esclarecedora!\n\n'
+            '#historia #history #historia_em_todo_lugar\n\n'
             '<blockquote>🌍 Clique no link para acessar a lista de canais de História: [@history_channels]</blockquote>'
         )
         bot.send_message(

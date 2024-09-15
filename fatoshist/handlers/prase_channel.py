@@ -21,7 +21,7 @@ def get_frase(CHANNEL):
                 quote = frase.get('quote', '')
                 author = frase.get('author', '')
 
-                message = f'<b>💡 Citação para refletir</b>\n\n<blockquote><i>"{quote}"</i> - <b>{author}</b></blockquote>\n\n#Cultura'
+                message = f'<b>💡 Citação para refletir</b>\n\n<blockquote><i>"{quote}"</i> - <b>{author}</b></blockquote>\n\n#cultura #historia #citacao #refletir #frases'
                 bot.send_message(CHANNEL, message)
             else:
                 logger.info('Não há informações para o dia de hoje.')

@@ -17,7 +17,7 @@ def send_historical_events_channel(CHANNEL):
             message = (
                 f'<b>HOJE NA HISTÓRIA</b>\n\n'
                 f'📅 | Acontecimento em <b>{day}/{month}</b>\n\n'
-                f'{events}\n\n#NesteDia\n\n'
+                f'{events}\n\n#NesteDia #hoje_na_historia #historia #hoje #historia_do_dia\n\n'
                 f'<blockquote>💬 Você sabia? Siga o @historia_br e acesse nosso site historiadodia.com.</blockquote>'
             )
             bot.send_message(CHANNEL, message)

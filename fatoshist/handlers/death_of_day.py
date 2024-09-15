@@ -39,7 +39,7 @@ def get_deaths_of_the_day(CHANNEL):
 
                 message = f'<b>⚰️ |  Mortes neste dia: {day} de {get_month_name(month)}</b>\n\n'
                 message += '\n\n'.join(death_messages)
-                message += '\n\n#mortes_historicas'
+                message += '\n\n#mortes_historicas #historia #falecimentos'
                 message += '\n\n<blockquote>💬 Você sabia? Siga o @historia_br e acesse nosso site historiadodia.com.</blockquote>'
 
                 bot.send_message(CHANNEL, message, disable_web_page_preview=False)

@@ -43,7 +43,7 @@ def send_historical_events_CHANNEL_IMG_image(CHANNEL_IMG):
         caption = f'<b>🖼 | História ilustrada </b>\n\nEm <b>{day} de {get_month_name(month)} de {event_year}</b>\n\n<code>{event_text}</code>'
         if event_extract:
             caption += f'\n\n\n\n{event_extract}'
-        caption += '\n\n#fotos_historicas'
+        caption += '\n\n#fotos_historicas #historia #ilustracoes_historia #imagem_historicas'
 
         inline_keyboard = types.InlineKeyboardMarkup()
         inline_keyboard.add(

@@ -40,7 +40,7 @@ def get_births_of_the_day(CHANNEL):
 
                 message = f'<b>🎂 | Nascimentos neste dia: {day} de {get_month_name(month)}</b>\n\n'
                 message += '\n\n'.join(birth_messages)
-                message += '\n\n#nascimentos_historicos'
+                message += '\n\n#nascimentos_historicos #historia #nascimentos'
                 message += '\n\n<blockquote>💬 Você sabia? Siga o @historia_br e acesse nosso site historiadodia.com.</blockquote>'
                 bot.send_message(CHANNEL, message, disable_web_page_preview=False)
                 msg_text_owner = 'Mensagem de anivesário de canal enviada com sucesso'

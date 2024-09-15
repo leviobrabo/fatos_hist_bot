@@ -11,7 +11,8 @@ def msg_alerta_boost():
             '🌟 📺 <b>Impulsionem o nosso canal para que possamos começar a postar stories.</b> 📺 🌟\n\n'
             'Estamos prontos para trazer conteúdo ainda mais interativo para vocês! Com o impulso de vocês, '
             'podemos liberar novos recursos e começar a postar histórias diariamente. '
-            'Clique no botão abaixo e nos ajude a melhorar ainda mais nosso canal!'
+            'Clique no botão abaixo e nos ajude a melhorar ainda mais nosso canal!\n\n'
+            '#boost #impulsionar #stories #historia'
         )
 
         markup = types.InlineKeyboardMarkup()

@@ -20,7 +20,7 @@ def get_curiosity(CHANNEL):
                 message = (
                     f'<b>Curiosidades Históricas 📜</b>\n\n'
                     f'<code>{info}</code>\n\n'
-                    f'#curiosidades_históricas\n\n'
+                    f'#curiosidades_históricas #historia #curiosidade #voce_sabia\n\n'
                     f'<blockquote>💬 Você sabia? Siga o @historia_br e acesse nosso site historiadodia.com.</blockquote>'
                 )
                 bot.send_message(CHANNEL, message)

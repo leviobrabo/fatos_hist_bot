@@ -11,7 +11,7 @@ def new_year_message():
             'O canal Hoje na história lhes deseja um Feliz Ano Novo! 🎉🎆✨\n\n'
             'Que o ano que se inicia seja repleto de alegria, sucesso e novas conquistas. '
             'Que possamos aprender mais e continuar a jornada pelo conhecimento!\n\n'
-            'E vamos explorar mais sobre a história juntos!\n\n#feliz_ano_novo'
+            'E vamos explorar mais sobre a história juntos!\n\n#feliz_ano_novo #ano_novo #historia'
         )
 
         bot.send_photo(CHANNEL, photo_url, caption=caption)
