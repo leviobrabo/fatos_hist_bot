@@ -11,9 +11,10 @@ from ..commands.help import cmd_help
 from ..commands.send import cmd_sendoff, cmd_sendon
 from ..commands.start import cmd_start
 from ..commands.sudo import cmd_add_sudo, cmd_broadcast_pv, cmd_group, cmd_rem_sudo, cmd_stats, cmd_sys
-from ..config import BOT_NAME, BOT_USERNAME, GROUP_LOG, OWNER_ID, TOKEN
+from ..config import BOT_NAME, BOT_USERNAME, GROUP_LOG, OWNER, TOKEN
 from ..database.users import UserManager
 from ..loggers import logger
+from ..scheduled import scripts
 from ..utils.sudo import sudo
 
 user_manager = UserManager()
@@ -137,6 +138,7 @@ class Bot:
 
     def start_threads(self):
         """Inicia as threads de polling e scheduling."""
+        scripts.schedule_tasks()
         threading.Thread(target=self.polling_thread, name='polling', daemon=True).start()
         threading.Thread(target=self.schedule_thread, name='schedule', daemon=True).start()
 
@@ -195,7 +197,7 @@ class Bot:
                     f"<b>Valor:</b> {payload}\n"
                 )
                 self.bot.send_message(GROUP_LOG, user_info)
-                self.bot.send_message(OWNER_ID, user_info)
+                self.bot.send_message(OWNER, user_info)
             except Exception as e:
                 logger.error(f'Erro em got_payment: {e}')
 
@@ -435,14 +437,5 @@ class Bot:
             reply_markup=markup,
         )
 
-    @staticmethod
-    def run_bot():
-        bot_instance = Bot()
-        bot_instance.bot.infinity_polling()
-
-
 bot_instance = Bot()
 bot = bot_instance.bot
-
-if __name__ == '__main__':
-    Bot.run_bot()
