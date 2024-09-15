@@ -15594,17 +15594,17 @@
         }
     },
     "12-5": {
-        "pergunta1": {
-            "enunciado": "Em que ano ocorreu a queda do Muro de Berlim?",
-            "alternativas": {
-                "alt1": 1987,
-                "alt2": 1989,
-                "alt3": 1991,
-                "alt4": 1993
-            },
-            "correta": "alt2",
-            "explicacao": "A queda do Muro de Berlim aconteceu em 1989, especificamente em 9 de novembro, marcando um momento histórico de grande importância para a Alemanha e o mundo."
+    "pergunta1": {
+        "enunciado": "Qual das características a seguir está associada aos déspotas esclarecidos do século XVIII?",
+        "alternativas": {
+            "alt1": "Defesa do absolutismo sem reformas",
+            "alt2": "Adoção de ideias iluministas para promover reformas",
+            "alt3": "Resistência às influências iluministas",
+            "alt4": "Separação total entre Igreja e Estado"
         },
+        "correta": "alt2",
+        "explicacao": "Os déspotas esclarecidos, como Frederico II da Prússia e Catarina, a Grande, adotaram ideias iluministas para promover reformas, mantendo, no entanto, seu poder absoluto."
+            },
         "pergunta2": {
             "enunciado": "Quem foi o líder soviético que implementou reformas políticas que influenciaram o contexto da queda do Muro de Berlim?",
             "alternativas": {
@@ -15643,10 +15643,10 @@
         "pergunta1": {
             "enunciado": "Em que ano a União Soviética foi oficialmente dissolvida?",
             "alternativas": {
-                "alt1": 1990,
-                "alt2": 1991,
-                "alt3": 1992,
-                "alt4": 1993
+                "alt1": "1990",
+                "alt2": "1991",
+                "alt3": "1992",
+                "alt4": "1993"
             },
             "correta": "alt2",
             "explicacao": "A União Soviética foi oficialmente dissolvida em 1991, em um processo que começou com a independência das repúblicas soviéticas ao longo daquele ano."
@@ -15665,10 +15665,10 @@
         "pergunta3": {
             "enunciado": "Quantas repúblicas formavam a União Soviética antes de sua dissolução?",
             "alternativas": {
-                "alt1": 12,
-                "alt2": 15,
-                "alt3": 18,
-                "alt4": 21
+                "alt1": "12",
+                "alt2": "15",
+                "alt3": "18",
+                "alt4": "21"
             },
             "correta": "alt2",
             "explicacao": "Antes de sua dissolução, a União Soviética era composta por 15 repúblicas, incluindo a Rússia, Ucrânia, Bielorrússia e outras."
@@ -15941,10 +15941,10 @@
         "pergunta3": {
             "enunciado": "Qual foi o ano em que as tropas dos EUA se retiraram oficialmente do Afeganistão?",
             "alternativas": {
-                "alt1": 2011,
-                "alt2": 2014,
-                "alt3": 2017,
-                "alt4": 2021
+                "alt1": "2011",
+                "alt2": "2014",
+                "alt3": "2017",
+                "alt4": "2021"
             },
             "correta": "alt4",
             "explicacao": "As tropas dos EUA se retiraram oficialmente do Afeganistão em 2021, encerrando oficialmente a presença militar após duas décadas de guerra."
@@ -16195,10 +16195,10 @@
         "pergunta1": {
             "enunciado": "Quando começou a Guerra no Afeganistão?",
             "alternativas": {
-                "alt1": 2001,
-                "alt2": 2003,
-                "alt3": 1999,
-                "alt4": 2005
+                "alt1": "2001",
+                "alt2": "2003",
+                "alt3": "1999",
+                "alt4": "2005"
             },
             "correta": "alt1",
             "explicacao": "A Guerra no Afeganistão começou em 2001."
@@ -16287,13 +16287,13 @@
         "pergunta1": {
             "enunciado": "Qual foi o objetivo da operação 'Libertação Duradoura' liderada pelos EUA em 2001?",
             "alternativas": {
-                "alt1": "Capturar líderes terroristas",
+                "alt1": "Promover líderes terroristas",
                 "alt2": "Derrubar o regime Talibã",
                 "alt3": "Estabelecer bases militares permanentes",
                 "alt4": "Interferir no comércio local"
             },
-            "correta": "alt1",
-            "explicacao": "A operação tinha como objetivo capturar líderes terroristas, principalmente Osama bin Laden."
+            "correta": "alt2",
+            "explicacao": "O principal objetivo da Operação Liberdade Duradoura era derrubar o regime Talibã no Afeganistão"
         },
         "pergunta2": {
             "enunciado": "Qual foi o principal desafio enfrentado pelas tropas da coalizão no Afeganistão?",
@@ -16358,10 +16358,10 @@
                 "alt1": "Mudanças nas políticas de imigração",
                 "alt2": "Aumento da vigilância aérea",
                 "alt3": "Guerra contra o terrorismo",
-                "alt4": "Medo e pânico na população"
+                "alt4": "Coragem e felicidade na população"
             },
-            "correta": "alt4",
-            "explicacao": "O impacto imediato mais significativo foi o medo e pânico generalizado na população dos EUA."
+            "correta": "alt3",
+            "explicacao": "O impacto imediato mais significativo foi o início da 'Guerra contra o terrorismo'"
         },
         "pergunta4": {
             "enunciado": "Quem foi o líder da Ordem dos Templários durante a Idade Média?",
@@ -16390,13 +16390,13 @@
         "pergunta2": {
             "enunciado": "Qual era o alvo do Voo 93 da United Airlines antes de ser desviado pelos sequestradores?",
             "alternativas": {
-                "alt1": "A Casa Branca",
+                "alt1": "Central Park",
                 "alt2": "O Capitólio dos EUA",
                 "alt3": "A Estátua da Liberdade",
-                "alt4": "A Casa Branca e o Capitólio dos EUA"
+                "alt4": "McDonald's"
             },
-            "correta": "alt4",
-            "explicacao": "O alvo planejado pelo Voo 93 da United Airlines era a Casa Branca e o Capitólio dos EUA."
+            "correta": "alt2",
+            "explicacao": "O Capitólio é amplamente aceito como o alvo principal, não havendo confirmação de que ambos (Casa Branca e Capitólio) fossem o objetivo."
         },
         "pergunta3": {
             "enunciado": "Quais foram as consequências imediatas dos ataques de 11 de setembro no setor aéreo dos EUA?",
@@ -16426,7 +16426,7 @@
             "enunciado": "Quais foram os principais alvos dos ataques de 11 de setembro de 2001 nos Estados Unidos?",
             "alternativas": {
                 "alt1": "As Torres Gêmeas do World Trade Center, o Pentágono e a Casa Branca",
-                "alt2": "O Capitólio, a Casa Branca e o Pentágono",
+                "alt2": "O Capitólio, a Casa Branca e o Central Park",
                 "alt3": "O Empire State Building, o Capitólio e o Pentágono",
                 "alt4": "O World Trade Center, a Estátua da Liberdade e o Pentágono"
             },
@@ -16482,13 +16482,13 @@
         "pergunta2": {
             "enunciado": "Além dos Estados Unidos, outro país foi alvo dos ataques de 11 de setembro. Qual foi esse país?",
             "alternativas": {
-                "alt1": "Canadá",
+                "alt1": "Nenhuma das alternativas",
                 "alt2": "Reino Unido",
                 "alt3": "México",
-                "alt4": "Afeganistão"
+                "alt4": "Canadá"
             },
             "correta": "alt1",
-            "explicacao": "Além dos Estados Unidos, houve um plano para atacar o Canadá, mas foi interrompido antes de ser executado."
+            "explicacao": "Nenhum outro país foi alvo direto dos ataques de 11 de setembro. Todos os atentados ocorreram nos EUA"
         },
         "pergunta3": {
             "enunciado": "Como ficou conhecido o avião que caiu na Pensilvânia durante os ataques?",
