@@ -13573,10 +13573,10 @@
         "pergunta1": {
             "enunciado": "Quando a Guerra da Coreia terminou?",
             "alternativas": {
-                "alt1": "1952",
-                "alt2": "1953",
-                "alt3": "1955",
-                "alt4": "1957"
+                "alt1": 1952,
+                "alt2": 1953,
+                "alt3": 1955,
+                "alt4": 1957
             },
             "correta": "alt2",
             "explicacao": "A Guerra da Coreia terminou em 1953, com a assinatura do Armistício de Panmunjom."
@@ -14134,15 +14134,15 @@
             "explicacao": "O Levante de Wuchang foi o evento que marcou o início da Revolução Chinesa em 1911, resultando na queda da dinastia Qing."
         },
         "pergunta2": {
-            "enunciado": "Qual foi o líder fundador do Partido Comunista Chinês, que mais tarde se tornou o primeiro presidente da República Popular da China?",
+            "enunciado": "Qual foi o líder do Partido Comunista Chinês, que mais tarde se tornou o primeiro presidente da República Popular da China?",
             "alternativas": {
                 "alt1": "Chiang Kai-shek",
                 "alt2": "Mao Tsé-Tung",
                 "alt3": "Sun Yat-sen",
                 "alt4": "Deng Xiaoping"
             },
-            "correta": "alt3",
-            "explicacao": "Sun Yat-sen foi o líder fundador do Partido Comunista Chinês e mais tarde se tornou o primeiro presidente da República Popular da China."
+            "correta": "alt2",
+            "explicacao": "Mao Tsé-Tung foi o líder comunista que se tornou o primeiro presidente da República Popular da China em 1949."
         },
         "pergunta3": {
             "enunciado": "Qual foi o nome do movimento de protesto estudantil ocorrido em 1989 na Praça Tiananmen, em Pequim, que foi reprimido pelo governo chinês?",
@@ -14296,13 +14296,13 @@
         "pergunta4": {
             "enunciado": "Qual foi o evento que marcou o início da Revolução Cultural na China durante a década de 1960?",
             "alternativas": {
-                "alt1": "Grande Salto Adiante",
+                "alt1": "Circular 16 de Maio",
                 "alt2": "Proclamação da República Popular da China",
                 "alt3": "Manifesto Comunista",
                 "alt4": "Discurso de Deng Xiaoping"
             },
             "correta": "alt1",
-            "explicacao": "O Grande Salto Adiante, uma campanha de modernização econômica, marcou o início da Revolução Cultural na China sob o governo de Mao Zedong."
+            "explicacao": "A Circular de 16 de Maio convocou a população a combater 'elementos burgueses' infiltrados no Partido Comunista Chinês, com Mao incitando ataques aos opositores e 'quartéis-generais'."
         }
     },
     "11-7": {
@@ -14748,10 +14748,10 @@
                 "alt1": "Acordo de Helsinque",
                 "alt2": "Tratado de Não Proliferação Nuclear",
                 "alt3": "Acordo de Varsóvia",
-                "alt4": "Acordo de Paz de Paris"
+                "alt4": "Nenhuma das alternativas anteriores"
             },
             "correta": "alt2",
-            "explicacao": "O acordo que encerrou a Crise dos Mísseis foi o Tratado de Não Proliferação Nuclear, assinado posteriormente, em 1968."
+            "explicacao": "Nenhuma das alternativas anteriores, pois a crise terminou com um acordo informal: os EUA prometeram não invadir Cuba e retiraram mísseis da Turquia, enquanto a URSS retirou os mísseis de Cuba."
         },
         "pergunta4": {
             "enunciado": "Napoleão foi exilado pela primeira vez para qual ilha após a abdicação em 1814?",
@@ -14975,10 +14975,10 @@
         "pergunta3": {
             "enunciado": "Quando a Revolução Cultural começou na China?",
             "alternativas": {
-                "alt1": 1958,
-                "alt2": 1966,
-                "alt3": 1973,
-                "alt4": 1980
+                "alt1": "1958",
+                "alt2": "1966",
+                "alt3": "1973",
+                "alt4": "1980"
             },
             "correta": "alt2",
             "explicacao": "A Revolução Cultural começou na China em 1966, quando Mao Zedong lançou oficialmente o movimento para reafirmar o comunismo e eliminar influências burguesas."
@@ -15021,10 +15021,10 @@
         "pergunta3": {
             "enunciado": "Quando a Revolução Cultural na China chegou oficialmente ao fim?",
             "alternativas": {
-                "alt1": 1976,
-                "alt2": 1989,
-                "alt3": 1966,
-                "alt4": 1980
+                "alt1": "1976",
+                "alt2": "1989",
+                "alt3": "1966",
+                "alt4": "1980"
             },
             "correta": "alt1",
             "explicacao": "A Revolução Cultural chegou oficialmente ao fim em 1976, após a morte de Mao Zedong, embora seu impacto tenha perdurado por muito tempo na sociedade chinesa."
@@ -15065,15 +15065,15 @@
             "explicacao": "O principal objetivo da Revolução Cultural era reafirmar o poder de Mao Zedong e eliminar opositores políticos dentro do Partido Comunista Chinês."
         },
         "pergunta3": {
-            "enunciado": "Quando a Revolução Cultural na China teve início?",
+            "enunciado": "Em que ano ocorreu a primeira invasão registrada dos vikings na Inglaterra?",
             "alternativas": {
-                "alt1": 1949,
-                "alt2": 1966,
-                "alt3": 1976,
-                "alt4": 1989
+                "alt1": "793",
+                "alt2": "820",
+                "alt3": "911",
+                "alt4": "1066"
             },
-            "correta": "alt2",
-            "explicacao": "A Revolução Cultural na China teve início em 1966, quando Mao Zedong lançou o movimento com o objetivo de reafirmar sua autoridade e ideologia."
+            "correta": "alt1",
+            "explicacao": "A primeira invasão registrada dos vikings na Inglaterra ocorreu em 793, com o ataque ao mosteiro de Lindisfarne, marcando o início da Era Viking."
         },
         "pergunta4": {
             "enunciado": "Qual foi a capital do Império Romano do Ocidente antes de sua queda?",
@@ -15183,10 +15183,10 @@
         "pergunta1": {
             "enunciado": "Quando teve início a Guerra do Yom Kippur?",
             "alternativas": {
-                "alt1": 1970,
-                "alt2": 1971,
-                "alt3": 1972,
-                "alt4": 1973
+                "alt1": "1970",
+                "alt2": "1971",
+                "alt3": "1972",
+                "alt4": "1973"
             },
             "correta": "alt4",
             "explicacao": "A Guerra do Yom Kippur teve início em 1973, quando Egito e Síria lançaram ataques surpresa contra Israel no dia do Yom Kippur, o Dia do Perdão judaico."
@@ -15313,8 +15313,8 @@
                 "alt3": "Itamar Franco",
                 "alt4": "José Sarney"
             },
-            "correta": "alt3",
-            "explicacao": "Itamar Franco foi o primeiro presidente do Brasil após a redemocratização, assumindo após o impeachment de Fernando Collor."
+            "correta": "alt4",
+            "explicacao": "José Sarney foi o primeiro presidente do Brasil após a redemocratização, tendo assumido após a morte de Tancredo Neves, que havia sido eleito indiretamente pelo Colégio Eleitoral."
         }
     },
     "11-29": {
@@ -15413,10 +15413,10 @@
         "pergunta1": {
             "enunciado": "Em que ano ocorreu a queda do Muro de Berlim?",
             "alternativas": {
-                "alt1": 1985,
-                "alt2": 1989,
-                "alt3": 1991,
-                "alt4": 1993
+                "alt1": "1985",
+                "alt2": "1989",
+                "alt3": "1991",
+                "alt4": "1993"
             },
             "correta": "alt2",
             "explicacao": "A queda do Muro de Berlim ocorreu em 1989, marcando o fim da Guerra Fria e simbolizando a reunificação da Alemanha."
