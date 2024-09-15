@@ -437,5 +437,6 @@ class Bot:
             reply_markup=markup,
         )
 
+
 bot_instance = Bot()
 bot = bot_instance.bot
