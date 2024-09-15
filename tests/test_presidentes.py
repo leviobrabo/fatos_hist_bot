@@ -12,7 +12,7 @@ def presidentes():
     try:
         with json_path.open('r', encoding='utf-8') as file:
             data = json.load(file)
-        print(f'Conteúdo carregado: {len(data.keys())} presidentes') 
+        print(f'Conteúdo carregado: {len(data.keys())} presidentes')
     except FileNotFoundError:
         data = {}
         print(f'Arquivo {json_path} não encontrado.')

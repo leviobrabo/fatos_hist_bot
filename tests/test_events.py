@@ -13,7 +13,7 @@ try:
     with open(json_path, 'r', encoding='utf-8') as f:
         events = json.load(f)
 except FileNotFoundError:
-    print(f"Erro: Arquivo {json_path} não encontrado.")
+    print(f'Erro: Arquivo {json_path} não encontrado.')
     events = {}
 
 

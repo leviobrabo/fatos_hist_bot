@@ -4,9 +4,9 @@ from telebot.apihelper import ApiTelegramException
 
 
 def handle_anti_spam(bot):
-    for _ in range(4): 
+    for _ in range(4):
         try:
-            bot.send_message() 
+            bot.send_message()
             return
         except ApiTelegramException as ex:
             if 'error_code' in ex.result_json and ex.result_json['error_code'] == '429':

@@ -13,7 +13,7 @@ def historias():
     try:
         with json_path.open('r', encoding='utf-8') as file:
             data = json.load(file)
-        print(f'Conteúdo carregado: {data.keys()}')  
+        print(f'Conteúdo carregado: {data.keys()}')
     except FileNotFoundError:
         data = {}
         print(f'Arquivo {json_path} não encontrado.')
@@ -30,7 +30,7 @@ def all_dates():
     for month in range(1, 13):
         for day in range(1, 32):
             try:
-                datetime(year=2020, month=month, day=day)  
+                datetime(year=2020, month=month, day=day)
                 dates.append(f'{month}-{day}')
             except ValueError:
                 continue
