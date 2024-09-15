@@ -1,4 +1,5 @@
 import json
+import os
 
 # Definindo constantes para os valores mágicos
 FEBRUARY = 2
@@ -6,9 +7,16 @@ FEBRUARY_DAYS = 29
 MONTHS_WITH_30_DAYS = {4, 6, 9, 11}
 MAX_DAYS_30 = 30
 
-# Carregar o arquivo JSON contendo os eventos
-with open(r'fatoshist\data\eventos.json', 'r', encoding='utf-8') as f:
-    events = json.load(f)
+current_dir = os.path.dirname(os.path.abspath(__file__))
+json_path = os.path.join(current_dir, 'fatoshist', 'data', 'eventos.json')
+
+# Carregar o arquivo JSON contendo os eventos com tratamento de erro
+try:
+    with open(json_path, 'r', encoding='utf-8') as f:
+        events = json.load(f)
+except FileNotFoundError:
+    print(f"Erro: Arquivo {json_path} não encontrado.")
+    events = {}
 
 
 # Função para verificar se o evento contém todas as datas de 1-1 a 12-31, incluindo 2-29 (ano bissexto)
