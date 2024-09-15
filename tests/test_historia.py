@@ -10,11 +10,10 @@ def historias():
     json_path = Path(__file__).resolve().parent.parent / 'fatoshist' / 'data' / 'historia.json'
     json_path = json_path.resolve()
 
-    # Carregar o arquivo JSON
     try:
         with json_path.open('r', encoding='utf-8') as file:
             data = json.load(file)
-        print(f'Conteúdo carregado: {data.keys()}')  # Para verificar as chaves carregadas
+        print(f'Conteúdo carregado: {data.keys()}')  
     except FileNotFoundError:
         data = {}
         print(f'Arquivo {json_path} não encontrado.')
@@ -31,11 +30,9 @@ def all_dates():
     for month in range(1, 13):
         for day in range(1, 32):
             try:
-                # Verifica se a data é válida
-                datetime(year=2020, month=month, day=day)  # Usando um ano bissexto para incluir 29 de fevereiro
+                datetime(year=2020, month=month, day=day)  
                 dates.append(f'{month}-{day}')
             except ValueError:
-                # Ignorar datas inválidas como 2-30, 4-31, etc.
                 continue
     return dates
 
@@ -54,12 +51,10 @@ def test_historias_structure(historias, all_dates):
 
         historia_data = historias[date]
 
-        # Verifica 'photo'
         assert 'photo' in historia_data, f"'photo' não encontrada na data {date}."
         assert isinstance(historia_data['photo'], str), f"'photo' deve ser uma string na data {date}."
         assert historia_data['photo'].strip(), f"'photo' está vazio na data {date}."
 
-        # Verifica 'text'
         assert 'text' in historia_data, f"'text' não encontrado na data {date}."
         assert isinstance(historia_data['text'], str), f"'text' deve ser uma string na data {date}."
         assert historia_data['text'].strip(), f"'text' está vazio na data {date}."

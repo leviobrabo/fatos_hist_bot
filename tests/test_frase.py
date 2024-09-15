@@ -10,11 +10,10 @@ def frases():
     json_path = Path(__file__).resolve().parent.parent / 'fatoshist' / 'data' / 'frases.json'
     json_path = json_path.resolve()
 
-    # Carregar o arquivo JSON
     try:
         with json_path.open('r', encoding='utf-8') as file:
             data = json.load(file)
-        print(f'Conteúdo carregado: {data.keys()}')  # Para verificar as chaves carregadas
+        print(f'Conteúdo carregado: {data.keys()}') 
     except FileNotFoundError:
         data = {}
         print(f'Arquivo {json_path} não encontrado.')
@@ -31,11 +30,9 @@ def all_dates():
     for month in range(1, 13):
         for day in range(1, 32):
             try:
-                # Verifica se a data é válida
-                datetime(year=2020, month=month, day=day)  # Usando um ano bissexto para incluir 29 de fevereiro
+                datetime(year=2020, month=month, day=day)  
                 dates.append(f'{month}-{day}')
             except ValueError:
-                # Ignorar datas inválidas como 2-30, 4-31, etc.
                 continue
     return dates
 
@@ -54,12 +51,10 @@ def test_frases_structure(frases, all_dates):
 
         frase_data = frases[date]
 
-        # Verifica 'quote'
         assert 'quote' in frase_data, f"'quote' não encontrada na data {date}."
         assert isinstance(frase_data['quote'], str), f"'quote' deve ser uma string na data {date}."
         assert frase_data['quote'].strip(), f"'quote' está vazia na data {date}."
 
-        # Verifica 'author'
         assert 'author' in frase_data, f"'author' não encontrado na data {date}."
         assert isinstance(frase_data['author'], str), f"'author' deve ser uma string na data {date}."
         assert frase_data['author'].strip(), f"'author' está vazio na data {date}."

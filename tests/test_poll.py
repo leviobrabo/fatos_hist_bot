@@ -4,7 +4,6 @@ from pathlib import Path
 
 import pytest
 
-# Definindo as constantes para os limites de caracteres
 MAX_ALT_CHARS = 300
 MAX_EXPLICACAO_CHARS = 200
 
@@ -14,13 +13,12 @@ def perguntas():
     json_path = Path(__file__).resolve().parent.parent / 'fatoshist' / 'data' / 'perguntas.json'
     json_path = json_path.resolve()
 
-    print(f'Looking for perguntas.json at: {json_path}')  # Para verificação
+    print(f'Looking for perguntas.json at: {json_path}') 
 
-    # Carregar o arquivo JSON
     try:
         with json_path.open('r', encoding='utf-8') as file:
             data = json.load(file)
-        print(f'Conteúdo carregado: {data.keys()}')  # Para verificar as chaves carregadas
+        print(f'Conteúdo carregado: {data.keys()}')  
     except FileNotFoundError:
         data = {}
         print(f'Arquivo {json_path} não encontrado.')
@@ -37,7 +35,7 @@ def all_dates():
     for month in range(1, 13):
         for day in range(1, 32):
             try:
-                datetime(year=2020, month=month, day=day)  # Ano bissexto para incluir 2-29
+                datetime(year=2020, month=month, day=day)  
                 dates.append(f'{month}-{day}')
             except ValueError:
                 continue
@@ -62,12 +60,10 @@ def test_questions_structure(perguntas, all_dates):
 
             pergunta = perguntas_date[pergunta_key]
 
-            # Verifica 'enunciado'
             assert 'enunciado' in pergunta, f"'enunciado' não encontrado em {pergunta_key} na data {date}."
             assert isinstance(pergunta['enunciado'], str), f"'enunciado' deve ser uma string em {pergunta_key} na data {date}."
             assert pergunta['enunciado'].strip(), f"'enunciado' está vazio em {pergunta_key} na data {date}."
 
-            # Verifica 'alternativas'
             assert 'alternativas' in pergunta, f"'alternativas' não encontrado em {pergunta_key} na data {date}."
             assert isinstance(pergunta['alternativas'], dict), f"'alternativas' deve ser um dicionário em {pergunta_key} na data {date}."
 
@@ -78,11 +74,9 @@ def test_questions_structure(perguntas, all_dates):
                     len(pergunta['alternativas'][alt]) <= MAX_ALT_CHARS
                 ), f"'{alt}' excede {MAX_ALT_CHARS} caracteres em {pergunta_key} na data {date}."
 
-            # Verifica 'correta'
             assert 'correta' in pergunta, f"'correta' não encontrado em {pergunta_key} na data {date}."
             assert pergunta['correta'] in {'alt1', 'alt2', 'alt3', 'alt4'}, f"'correta' inválido em {pergunta_key} na data {date}."
 
-            # Verifica 'explicacao'
             if 'explicacao' in pergunta:
                 assert isinstance(pergunta['explicacao'], str), f"'explicacao' deve ser uma string em {pergunta_key} na data {date}."
                 assert (

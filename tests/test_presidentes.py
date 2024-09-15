@@ -9,11 +9,10 @@ def presidentes():
     json_path = Path(__file__).resolve().parent.parent / 'fatoshist' / 'data' / 'presidentes.json'
     json_path = json_path.resolve()
 
-    # Carregar o arquivo JSON
     try:
         with json_path.open('r', encoding='utf-8') as file:
             data = json.load(file)
-        print(f'Conteúdo carregado: {len(data.keys())} presidentes')  # Para verificar a quantidade de presidentes
+        print(f'Conteúdo carregado: {len(data.keys())} presidentes') 
     except FileNotFoundError:
         data = {}
         print(f'Arquivo {json_path} não encontrado.')
@@ -46,7 +45,6 @@ def test_presidents_structure(presidentes, all_president_ids):
 
         presidente_data = presidentes[id]
 
-        # Verifica se todas as chaves obrigatórias estão presentes e não estão vazias
         for field in required_fields:
             assert field in presidente_data, f"'{field}' não encontrado no presidente com ID {id}."
             assert isinstance(presidente_data[field], str), f"'{field}' deve ser uma string no presidente com ID {id}."
