@@ -20,7 +20,7 @@ jobs:
       - name: Instalar as dependências do projeto
         run: poetry install --without doc
 
-        - name: Rodar os testes
+      - name: Rodar os testes
         run: poetry run task test --cov-report=xml
 
       - name: Subir cobertura para o codecov
