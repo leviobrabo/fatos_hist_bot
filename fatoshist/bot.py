@@ -8,9 +8,10 @@ import telebot
 from telebot import types, util
 
 from fatoshist import scheduled
+from fatoshist.config import GROUP_LOG
 from fatoshist.database.users import UserManager
 from fatoshist.handlers import callback_handlers, chat_handlers, commands_handlers, poll_handlers
-from fatoshist.config import GROUP_LOG
+
 
 class Bot:
     def __init__(self, token: str):
