@@ -60,7 +60,7 @@ class Bot:
         try:
             logging.info('Iniciando Telegram BOT...')
             threading.Thread(target=self.schedule_thread, name='schedule', daemon=True).start()
-            # self.set_commands()
+            self.set_commands()
             logging.info('Registrando comandos e handlers...')
             self.set_commands_and_register_handlers()
             python_version = platform.python_version()
