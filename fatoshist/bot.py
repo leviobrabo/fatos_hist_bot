@@ -61,11 +61,13 @@ class Bot:
             logging.info('Iniciando Telegram BOT...')
             threading.Thread(target=self.schedule_thread, name='schedule', daemon=True).start()
             # self.set_commands()
+            logging.info('Registrando comandos e handlers...')
             self.set_commands_and_register_handlers()
             python_version = platform.python_version()
             telebot_version = getattr(telebot, '__version__', 'Versão desconhecida')
             fatoshist_version = '1.0.0'
 
+            logging.info('Enviando mensagem de inicialização ao grupo...')
             self.bot.send_message(
                 GROUP_LOG,
                 (
@@ -77,6 +79,8 @@ class Bot:
                 message_thread_id=38551,
                 parse_mode='HTML',
             )
+            logging.info('Mensagem enviada ao grupo com sucesso!')
+            
             logging.info('Telegram BOT iniciado!')
             self.bot.infinity_polling(allowed_updates=util.update_types)
 
