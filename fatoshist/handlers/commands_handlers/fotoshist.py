@@ -4,7 +4,7 @@ from datetime import datetime
 
 import pytz
 import requests
-from telebot import TeleBot
+from telebot import TeleBot, types
 
 from fatoshist.utils.month import get_month_name
 
@@ -44,6 +44,9 @@ def register(bot: TeleBot):
                 parse_mode='HTML',
                 reply_to_message_id=message.message_id,
             )
-
         except Exception as e:
             logging.error(f'Erro ao enviar a imagem histórica: {e}')
+            
+    return [
+        types.BotCommand('/fotoshist', 'Fotos históricas 🙂')
+        ]

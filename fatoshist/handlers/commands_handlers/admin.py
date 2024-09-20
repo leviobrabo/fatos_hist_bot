@@ -187,3 +187,10 @@ def register(bot: TeleBot):
             parse_mode='html',
             disable_web_page_preview=True,
         )
+    
+    return [
+        types.BotCommand('/fwdoff', 'Desativar encaminhamento no grupo'),
+        types.BotCommand('/fwdon', 'Ativar encaminhamento no grupo'),
+        types.BotCommand('/settopic', 'Definir chat como tópico para mensagens diárias'),
+        types.BotCommand('/unsettopic', 'Remover chat como tópico (retorna para General)')
+    ]

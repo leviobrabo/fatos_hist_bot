@@ -17,9 +17,38 @@ class Bot:
         self.bot = telebot.TeleBot(token, parse_mode='HTML')
         self.chat_log = chat_log
 
-    def register_handlers(self):
-        """Registra todos os handlers do bot."""
-        commands_handlers.register(self.bot)
+    def set_commands_and_register_handlers(self):
+        """Registra todos os handlers do bot."""    
+        try:
+            self.bot.set_my_commands(
+                [
+                *commands_handlers.register_chat_private(self.bot)
+                ],
+                scope=types.BotCommandScopeAllPrivateChats(),
+            )    
+        except Exception as e:
+            logging.error(f'Erro ao definir comandos para chats privados: {e}')
+        
+        try:
+            self.bot.set_my_commands(
+                [
+                    *commands_handlers.register_chat_group(self.bot)
+                ],
+                scope=types.BotCommandScopeAllGroupChats(),
+            )
+        except Exception as ex:
+            logging.error(f'Erro ao definir comandos para chats em grupo: {ex}')
+            
+        try:
+            self.bot.set_my_commands(
+                [
+                    *commands_handlers.register_admin_chat_group(self.bot)
+                ],
+                scope=types.BotCommandScopeAllChatAdministrators(),
+            )
+        except Exception as ex:
+            logging.error(f'Erro ao definir comandos para administradores de chat: {ex}')
+        
         poll_handlers.register(self.bot)
         callback_handlers.register(self.bot)
         chat_handlers.register(self.bot)
@@ -34,44 +63,6 @@ class Bot:
             logging.error(f'Erro em schedule_thread: {e}')
 
     def set_commands(self):
-        try:
-            self.bot.set_my_commands(
-                [
-                    types.BotCommand('/start', 'Iniciar'),
-                    types.BotCommand('/fotoshist', 'Fotos históricas 🙂'),
-                    types.BotCommand('/help', 'Ajuda'),
-                    types.BotCommand('/sendon', 'Receber mensagens diárias às 8:00'),
-                    types.BotCommand('/sendoff', 'Parar de receber mensagens diárias às 8:00'),
-                ],
-                scope=types.BotCommandScopeAllPrivateChats(),
-            )
-        except Exception as ex:
-            logging.error(f'Erro ao definir comandos para chats privados: {ex}')
-
-        try:
-            self.bot.set_my_commands(
-                [
-                    types.BotCommand('/fotoshist', 'Fotos históricas 🙂'),
-                ],
-                scope=types.BotCommandScopeAllGroupChats(),
-            )
-        except Exception as ex:
-            logging.error(f'Erro ao definir comandos para chats em grupo: {ex}')
-
-        try:
-            self.bot.set_my_commands(
-                [
-                    types.BotCommand('/settopic', 'Definir chat como tópico para mensagens diárias'),
-                    types.BotCommand('/unsettopic', 'Remover chat como tópico (retorna para General)'),
-                    types.BotCommand('/fotoshist', 'Fotos históricas 🙂'),
-                    types.BotCommand('/fwdon', 'Ativar encaminhamento no grupo'),
-                    types.BotCommand('/fwdoff', 'Desativar encaminhamento no grupo'),
-                ],
-                scope=types.BotCommandScopeAllChatAdministrators(),
-            )
-        except Exception as ex:
-            logging.error(f'Erro ao definir comandos para administradores de chat: {ex}')
-
         try:
             all_users = UserManager().get_all_users()
             for user in all_users:
@@ -96,8 +87,8 @@ class Bot:
         try:
             logging.info('Iniciando Telegram BOT...')
             threading.Thread(target=self.schedule_thread, name='schedule', daemon=True).start()
-            self.set_commands()
-            self.register_handlers()
+            # self.set_commands()
+            self.set_commands_and_register_handlers()
             python_version = platform.python_version()
             telebot_version = getattr(telebot, '__version__', 'Versão desconhecida')
             fatoshist_version = '1.0.0'
@@ -114,6 +105,7 @@ class Bot:
             )
             logging.info('Telegram BOT iniciado!')
             self.bot.infinity_polling(allowed_updates=util.update_types)
+            
         except Exception as e:
             logging.error(f'Erro em polling_thread: {e}')
             self.bot.stop_polling()

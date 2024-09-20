@@ -260,3 +260,5 @@ def register(bot: TeleBot):
                 )
         except Exception as e:
             logging.error(f'Erro ao enviar a lista de comandos do sistema: {e}')
+
+    return []

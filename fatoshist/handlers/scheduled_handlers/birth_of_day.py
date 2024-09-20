@@ -47,15 +47,15 @@ def get_births_of_the_day(bot, CHANNEL):
             else:
                 logging.info('Não há informações sobre nascidos hoje.')
         else:
-            logging.warning('Erro ao obter informações:', response.status_code)
+            logging.warning(f'Erro ao obter informações: {response.status_code}')
 
     except Exception as e:
-        logging.error(f'Erro ao obter informações:')
+        logging.error(f'Erro ao obter informações: {e}')
 
 
-def hist_channel_birth():
+def hist_channel_birth(bot):
     try:
-        get_births_of_the_day(CHANNEL)
+        get_births_of_the_day(bot,CHANNEL)
         logging.info(f'Nascidos enviada o canal {CHANNEL}')
     except Exception as e:
-        logging.error(f'Erro ao enviar o trabalho nascido:')
+        logging.error(f'Erro ao enviar o trabalho nascido: {e}')

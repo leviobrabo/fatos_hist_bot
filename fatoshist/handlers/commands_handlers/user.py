@@ -80,7 +80,7 @@ def register(bot: TeleBot):
 
         except Exception as e:
             logging.error(f'Erro ao enviar o start: {e}')
-
+            
     @bot.message_handler(commands=['help'])
     def cmd_help(message):
         try:
@@ -113,3 +113,7 @@ def register(bot: TeleBot):
                 )
         except Exception as e:
             logging.error(f'Erro ao enviar o help: {e}')
+    return [
+        types.BotCommand('/start', 'Iniciar'),
+        types.BotCommand('/help', 'Ajuda')
+    ]
