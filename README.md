@@ -60,9 +60,10 @@ $ cd fatos_hist_bot
 $ pip3 install -r requirements.txt
 
 # altere o nome do conf
-$ cp sample.bot.conf bot.conf
+$ cp sample.bot.conf bot.config
 
 # Variáveis ambientes
+$ cd bot.config
 
 # Crie um arquivo com bot.conf com qualquer editor de texto e coloque:
 [FATOSHIST]
@@ -76,7 +77,7 @@ HIST_CHANNEL_POST =
 MONGO_CON=
 
 # Execute a aplicação
-$ python3 fatoshistoricos.py
+$ python3 main.py
 
 ```
 
