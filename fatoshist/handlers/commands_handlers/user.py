@@ -18,12 +18,12 @@ def register(bot: TeleBot):
                 first_name = message.from_user.first_name
 
                 if not user:
-                    user_manager.add_user(
+                    user = user_manager.add_user(
                         user_id=message.from_user.id,
                         username=message.from_user.username,
                         first_name=message.from_user.first_name,
                     )
-                    user = user_manager.get_user(user_id)
+                    logging.info(f'Novo usuário ID: {user["user_id"]} foi criado no banco de dados')
 
                 if user:
                     user_info = (
@@ -35,7 +35,6 @@ def register(bot: TeleBot):
 
                     bot.send_message(GROUP_LOG, user_info)
 
-                    logging.info(f'Novo usuário ID: {user["user_id"]} foi criado no banco de dados')
 
                 markup = types.InlineKeyboardMarkup()
                 add_group = types.InlineKeyboardButton(

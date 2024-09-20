@@ -5,30 +5,30 @@ from functools import partial
 import schedule
 from telebot import TeleBot
 
-from fatoshist.handlers.ads import ads_msg_job
-from fatoshist.handlers.birth_of_day import hist_channel_birth
-from fatoshist.handlers.boots import msg_alerta_boost
-from fatoshist.handlers.channel_creation_message import agendar_aniversario
-from fatoshist.handlers.christmas_message import christmas_message
-from fatoshist.handlers.count_user_channel import get_current_count
-from fatoshist.handlers.curiosity_channel import hist_channel_curiosity
-from fatoshist.handlers.death_of_day import hist_channel_death
-from fatoshist.handlers.event_hist_channel import hist_channel_events
-from fatoshist.handlers.event_hist_chats import hist_chat_job
-from fatoshist.handlers.event_hist_users import hist_user_job
-from fatoshist.handlers.event_img_chn import remove_all_url_photo
-from fatoshist.handlers.follow_channels import msg_inscricao_canais_historia
-from fatoshist.handlers.historys import hist_channel_history
-from fatoshist.handlers.holiday import hist_channel_holiday
-from fatoshist.handlers.holiday_brazil import hist_channel_holiday_br
-from fatoshist.handlers.image_hist_events_channel import hist_channel_imgs
-from fatoshist.handlers.image_hist_events_chat import hist_image_chat_job
-from fatoshist.handlers.new_year_message import new_year_message
-from fatoshist.handlers.poll_channel import send_question
-from fatoshist.handlers.poll_chats import send_question_chat
-from fatoshist.handlers.prase_channel import hist_channel_frase
-from fatoshist.handlers.presidents import enviar_foto_presidente
-from fatoshist.handlers.stars import msg_alerta_stars
+from fatoshist.handlers.scheduled_handlers.ads import ads_msg_job
+from fatoshist.handlers.scheduled_handlers.birth_of_day import hist_channel_birth
+from fatoshist.handlers.scheduled_handlers.boots import msg_alerta_boost
+from fatoshist.handlers.scheduled_handlers.channel_creation_message import agendar_aniversario
+from fatoshist.handlers.scheduled_handlers.christmas_message import christmas_message
+from fatoshist.handlers.scheduled_handlers.count_user_channel import get_current_count
+from fatoshist.handlers.scheduled_handlers.curiosity_channel import hist_channel_curiosity
+from fatoshist.handlers.scheduled_handlers.death_of_day import hist_channel_death
+from fatoshist.handlers.scheduled_handlers.event_hist_channel import hist_channel_events
+from fatoshist.handlers.scheduled_handlers.event_hist_chats import hist_chat_job
+from fatoshist.handlers.scheduled_handlers.event_hist_users import hist_user_job
+from fatoshist.handlers.scheduled_handlers.event_img_chn import remove_all_url_photo
+from fatoshist.handlers.scheduled_handlers.follow_channels import msg_inscricao_canais_historia
+from fatoshist.handlers.scheduled_handlers.historys import hist_channel_history
+from fatoshist.handlers.scheduled_handlers.holiday import hist_channel_holiday
+from fatoshist.handlers.scheduled_handlers.holiday_brazil import hist_channel_holiday_br
+from fatoshist.handlers.scheduled_handlers.image_hist_events_channel import hist_channel_imgs
+from fatoshist.handlers.scheduled_handlers.image_hist_events_chat import hist_image_chat_job
+from fatoshist.handlers.scheduled_handlers.new_year_message import new_year_message
+from fatoshist.handlers.scheduled_handlers.poll_channel import send_question
+from fatoshist.handlers.scheduled_handlers.poll_chats import send_question_chat
+from fatoshist.handlers.scheduled_handlers.prase_channel import hist_channel_frase
+from fatoshist.handlers.scheduled_handlers.presidents import enviar_foto_presidente
+from fatoshist.handlers.scheduled_handlers.stars import msg_alerta_stars
 
 
 # checar data natal/ano novo/ aniversario do canal
@@ -54,7 +54,7 @@ def schedule_tasks(bot: TeleBot):
         schedule.every().wednesday.at('02:00').do(lambda: msg_alerta_stars(bot))
 
         # ADS
-        schedule.every().saturday.at('04:30').do(ads_msg_job)
+        schedule.every().saturday.at('04:30').do(lambda: ads_msg_job(bot))
 
         # Quantidade de usuarios no canal
         # schedule.every(1).days.do(get_current_count)
