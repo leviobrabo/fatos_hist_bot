@@ -105,7 +105,7 @@ def schedule_tasks(bot: TeleBot):
         schedule.every().day.at('15:00').do(lambda: hist_image_chat_job(bot))
 
         # Envio de Fotos históricas no canal
-        schedule.every().day.at('16:35').do(lambda: hist_channel_imgs(bot))
+        schedule.every().day.at('17:00').do(lambda: hist_channel_imgs(bot))
         # Envio de imagens historicas no canal de imagem
         schedule.every(1).hour.do(lambda: hist_channel_imgs(bot))
 
