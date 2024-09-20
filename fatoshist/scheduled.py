@@ -93,10 +93,10 @@ def schedule_tasks(bot: TeleBot):
         schedule.every().day.at('15:30').do(lambda: hist_channel_death(bot))
 
         # Envio dos nascidos do dia no canal
-        schedule.every().day.at('19:00').do(lambda: hist_channel_birth(bot))
+        schedule.every().day.at('20:19').do(lambda: hist_channel_birth(bot))
 
         # Envio dos feriados do dia no canal
-        schedule.every().day.at('18:00').do(lambda: hist_channel_holiday(bot))
+        schedule.every().day.at('20:30').do(lambda: hist_channel_holiday(bot))
 
         # Envio de feriados brasileiros no canal
         schedule.every().day.at('07:30').do(lambda: hist_channel_holiday_br(bot))
@@ -113,7 +113,7 @@ def schedule_tasks(bot: TeleBot):
         schedule.every().day.at('10:00').do(lambda: hist_channel_curiosity(bot))
 
         # Envio de frases no canal
-        schedule.every().day.at('20:30').do(lambda: hist_channel_frase(bot))
+        schedule.every().day.at('20:45').do(lambda: hist_channel_frase(bot))
 
         # Envio dos presidentes no canal
         schedule.every().day.at('21:00').do(lambda: enviar_foto_presidente(bot))
