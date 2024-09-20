@@ -1,5 +1,6 @@
-from fatoshist.config import CHANNEL
 import logging
+
+from fatoshist.config import CHANNEL
 
 
 def msg_alerta_stars(bot):

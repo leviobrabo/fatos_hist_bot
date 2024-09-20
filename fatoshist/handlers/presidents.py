@@ -1,11 +1,11 @@
 import json
+import logging
 from datetime import datetime
 
 import pytz
 
 from fatoshist.config import CHANNEL
 from fatoshist.database.president_manager import PresidentManager
-import logging
 
 president_manager = PresidentManager()
 
@@ -20,7 +20,7 @@ def enviar_foto_presidente(bot):
             id_new = 1
             date_new = datetime.now(pytz.timezone('America/Sao_Paulo')).strftime('%Y-%m-%d')
             president_manager.add_presidentes_db(id_new, date_new)
-            enviar_info_pelo_canal(bot,presidente)
+            enviar_info_pelo_canal(bot, presidente)
 
         else:
             ultimo_presidente = president_manager.db.presidentes.find().sort([('_id', -1)]).limit(1)[0]
@@ -50,7 +50,7 @@ def enviar_foto_presidente(bot):
         logging.error(f'Ocorreu um erro ao enviar informações do presidente: {str(e)}')
 
 
-def enviar_info_pelo_canal(bot,info_presidente):
+def enviar_info_pelo_canal(bot, info_presidente):
     try:
         titulo = info_presidente.get('titulo', '')
         nome = info_presidente.get('nome', '')

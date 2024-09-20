@@ -1,15 +1,16 @@
 import logging
-from telebot import types, TeleBot
+
+from telebot import TeleBot, types
 
 from fatoshist.config import GROUP_LOG
 from fatoshist.database.users import UserManager
 
 user_manager = UserManager()
 
-def register(bot:TeleBot):
-    
+
+def register(bot: TeleBot):
     @bot.message_handler(commands=['start'])
-    def cmd_start(message:types.Message):
+    def cmd_start(message: types.Message):
         try:
             if message.chat.type == 'private':
                 user_id = message.from_user.id

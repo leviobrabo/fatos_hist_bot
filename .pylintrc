@@ -1,0 +1,11 @@
+[MESSAGES CONTROL]
+disable=
+    missing-module-docstring,      # Permite módulos sem docstring
+    broad-except,                  # Permite exceções amplas
+    global-statement,              # Permite uso de variáveis globais
+    broad-exception-raised,        # Permite o uso de exceções amplas em raise
+    trailing-whitespace,           # Ignora espaços em branco no final das linhas
+    missing-final-newline,         # Ignora a ausência de nova linha no final dos arquivos
+    import-outside-toplevel,       # Permite imports fora de toplevel
+    logging-fstring-interpolation, # Permite ignorar aviso de formatação preguiçosa
+    arguments-renamed              # Ignora sobrecargas de métodos com argumentos diferentes

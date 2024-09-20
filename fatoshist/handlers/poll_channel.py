@@ -1,10 +1,11 @@
-import logging
 import json
+import logging
 from datetime import datetime
 
 from fatoshist.config import CHANNEL_POST
 
-def send_poll(bot,chat_id, question, options, correct_option_id, explanation):
+
+def send_poll(bot, chat_id, question, options, correct_option_id, explanation):
     try:
         bot.send_poll(
             chat_id,

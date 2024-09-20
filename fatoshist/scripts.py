@@ -1,11 +1,10 @@
-from datetime import datetime
-from telebot import TeleBot
-import schedule
 import logging
+from datetime import datetime
 from functools import partial
 
-from fatoshist.handlers.poll_channel import send_question
-from fatoshist.handlers.poll_chats import send_question_chat
+import schedule
+from telebot import TeleBot
+
 from fatoshist.handlers.ads import ads_msg_job
 from fatoshist.handlers.birth_of_day import hist_channel_birth
 from fatoshist.handlers.boots import msg_alerta_boost
@@ -25,6 +24,8 @@ from fatoshist.handlers.holiday_brazil import hist_channel_holiday_br
 from fatoshist.handlers.image_hist_events_channel import hist_channel_imgs
 from fatoshist.handlers.image_hist_events_chat import hist_image_chat_job
 from fatoshist.handlers.new_year_message import new_year_message
+from fatoshist.handlers.poll_channel import send_question
+from fatoshist.handlers.poll_chats import send_question_chat
 from fatoshist.handlers.prase_channel import hist_channel_frase
 from fatoshist.handlers.presidents import enviar_foto_presidente
 from fatoshist.handlers.stars import msg_alerta_stars
@@ -40,7 +41,8 @@ def checar_datas_dia(bot):
     elif current_date.month == '11' and current_date.day == '19':
         agendar_aniversario(bot)
 
-def schedule_tasks(bot:TeleBot):
+
+def schedule_tasks(bot: TeleBot):
     try:
         # Alerta de canais
         schedule.every().friday.at('22:30').do(msg_inscricao_canais_historia)
@@ -49,27 +51,27 @@ def schedule_tasks(bot:TeleBot):
         schedule.every().monday.at('02:00').do(msg_alerta_boost)
 
         # STARS
-        schedule.every().wednesday.at('02:00').do(lambda:msg_alerta_stars(bot))
+        schedule.every().wednesday.at('02:00').do(lambda: msg_alerta_stars(bot))
 
         # ADS
         schedule.every().saturday.at('04:30').do(ads_msg_job)
 
         # Quantidade de usuarios no canal
         # schedule.every(1).days.do(get_current_count)
-        schedule.every().day.at('17:05').do(lambda:get_current_count(bot))
+        schedule.every().day.at('17:05').do(lambda: get_current_count(bot))
 
         # remover todo db de imagem
         schedule.every().day.at('00:00').do(remove_all_url_photo)
 
         # Envio das poll channel
-        send_question_with = partial(send_question,bot)
+        send_question_with = partial(send_question, bot)
         schedule.every().day.at('09:30').do(send_question_with)
         schedule.every().day.at('12:00').do(send_question_with)
         schedule.every().day.at('15:00').do(send_question_with)
         schedule.every().day.at('17:30').do(send_question_with)
 
         # Envio das poll chats
-        send_question_chat_with_args = partial(send_question_chat,bot)
+        send_question_chat_with_args = partial(send_question_chat, bot)
         schedule.every().day.at('10:30').do(send_question_chat_with_args)
         schedule.every().day.at('13:30').do(send_question_chat_with_args)
         schedule.every().day.at('16:00').do(send_question_chat_with_args)
@@ -79,48 +81,47 @@ def schedule_tasks(bot:TeleBot):
         # schedule.every().day.at('00:00').do(remove_all_poll)
 
         # Envio eventos histórico no chats
-        schedule.every().day.at('08:00').do(lambda:hist_chat_job(bot))
+        schedule.every().day.at('08:00').do(lambda: hist_chat_job(bot))
 
         # Envio eventos histórico no users
-        schedule.every().day.at('08:30').do(lambda:hist_user_job(bot))
+        schedule.every().day.at('08:30').do(lambda: hist_user_job(bot))
 
         # Envio eventos histórico no channel
-        schedule.every().day.at('07:00').do(lambda:hist_channel_events(bot))
+        schedule.every().day.at('07:00').do(lambda: hist_channel_events(bot))
 
         # Envio dos mortos do dia no canal
-        schedule.every().day.at('15:30').do(lambda:hist_channel_death(bot))
+        schedule.every().day.at('15:30').do(lambda: hist_channel_death(bot))
 
         # Envio dos nascidos do dia no canal
         schedule.every().day.at('19:00').do(hist_channel_birth)
 
         # Envio dos feriados do dia no canal
-        schedule.every().day.at('18:00').do(lambda:hist_channel_holiday(bot))
+        schedule.every().day.at('18:00').do(lambda: hist_channel_holiday(bot))
 
         # Envio de feriados brasileiros no canal
         schedule.every().day.at('07:30').do(hist_channel_holiday_br)
 
         # Envio de Fotos históricas no grupo
-        schedule.every().day.at('15:00').do(lambda:hist_image_chat_job(bot))
+        schedule.every().day.at('15:00').do(lambda: hist_image_chat_job(bot))
 
         # Envio de Fotos históricas no canal
-        schedule.every().day.at('17:00').do(lambda:hist_channel_imgs(bot))
+        schedule.every().day.at('17:00').do(lambda: hist_channel_imgs(bot))
         # Envio de imagens historicas no canal de imagem
-        schedule.every(1).hour.do(lambda:hist_channel_imgs(bot))
+        schedule.every(1).hour.do(lambda: hist_channel_imgs(bot))
 
         # Envio de curiosidade no canal
-        schedule.every().day.at('10:00').do(lambda:hist_channel_curiosity(bot))
+        schedule.every().day.at('10:00').do(lambda: hist_channel_curiosity(bot))
 
         # Envio de frases no canal
-        schedule.every().day.at('20:30').do(lambda:hist_channel_frase(bot))
+        schedule.every().day.at('20:30').do(lambda: hist_channel_frase(bot))
 
         # Envio dos presidentes no canal
         schedule.every().day.at('21:00').do(enviar_foto_presidente)
 
         # Envio da historia diaria
-        schedule.every().day.at('14:00').do(lambda:hist_channel_history(bot))
+        schedule.every().day.at('14:00').do(lambda: hist_channel_history(bot))
 
-        
-        schedule.every().day.at('00:05').do(lambda:checar_datas_dia(bot))
+        schedule.every().day.at('00:05').do(lambda: checar_datas_dia(bot))
 
     except Exception as e:
         logging.error(f'Erro ao enviar o trabalho curiosidade: {e}')

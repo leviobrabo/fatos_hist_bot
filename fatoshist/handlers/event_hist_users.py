@@ -1,15 +1,15 @@
+import logging
 from datetime import datetime
 
 from telebot import types
 
 from fatoshist.database.users import UserManager
-import logging
 from fatoshist.utils.get_historical import get_historical_events
 
 user_manager = UserManager()
 
 
-def send_historical_events_user(bot,user_id):
+def send_historical_events_user(bot, user_id):
     try:
         today = datetime.now()
         day = today.day
@@ -58,7 +58,7 @@ def hist_user_job(bot):
 
                     pass
 
-            send_historical_events_user(bot,user_id)
+            send_historical_events_user(bot, user_id)
 
             logging.info(f'Mensagem enviada ao usuário {user_id}')
 

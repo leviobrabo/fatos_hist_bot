@@ -1,7 +1,8 @@
 import logging
+
 import psutil
 import telebot
-from telebot import types, TeleBot
+from telebot import TeleBot, types
 
 from fatoshist.config import GROUP_LOG, OWNER
 from fatoshist.database.groups import GroupManager
@@ -10,8 +11,10 @@ from fatoshist.database.users import UserManager
 user_manager = UserManager()
 group_manager = GroupManager()
 
-def register(bot:TeleBot):
+
+def register(bot: TeleBot):
     bot.message_handler(commands=['add_sudo'])
+
     def cmd_add_sudo(message):
         try:
             if message.chat.type != 'private' and message.from_user.id != OWNER:
@@ -65,7 +68,6 @@ def register(bot:TeleBot):
 
         except Exception as e:
             logging.error(f'Erro ao adicionar um usuário sudo: {e}')
-
 
     @bot.message_handler(commands=['rem_sudo'])
     def cmd_rem_sudo(message):
@@ -121,7 +123,6 @@ def register(bot:TeleBot):
 
         except Exception as e:
             logging.error(f'Erro ao remover um usuário sudo: {e}')
-
 
     @bot.message_handler(commands=['grupos'])
     def cmd_group(message):
@@ -188,7 +189,6 @@ def register(bot:TeleBot):
         except Exception as e:
             logging.error(f'Erro ao enviar a lista de grupos: {e}')
 
-
     @bot.message_handler(commands=['stats'])
     def cmd_stats(message):
         try:
@@ -199,7 +199,6 @@ def register(bot:TeleBot):
                 bot.reply_to(message, f'\n──❑ 「 Bot Stats 」 ❑──\n\n{user_stats}')
         except Exception as e:
             logging.error(f'Erro ao enviar o stats do bot: {e}')
-
 
     @bot.message_handler(commands=['bcusers'])
     def cmd_broadcast_pv(message):
@@ -250,7 +249,6 @@ def register(bot:TeleBot):
 
         except Exception as e:
             logging.error(f'Erro ao enviar o broadcast para user: {e}')
-
 
     @bot.message_handler(commands=['sys'])
     def cmd_sys(message: types.Message):

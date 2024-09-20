@@ -1,13 +1,15 @@
 import logging
 import random
 from datetime import datetime
-from telebot import TeleBot
+
 import pytz
 import requests
+from telebot import TeleBot
 
 from fatoshist.utils.month import get_month_name
 
-def register(bot:TeleBot):
+
+def register(bot: TeleBot):
     @bot.message_handler(commands=['fotoshist'])
     def cmd_photo_hist(message):
         try:

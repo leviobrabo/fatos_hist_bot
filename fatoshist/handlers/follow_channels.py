@@ -1,8 +1,11 @@
 import logging
+
 from telebot import TeleBot
+
 from fatoshist.config import CHANNEL
 
-def msg_inscricao_canais_historia(bot:TeleBot):
+
+def msg_inscricao_canais_historia(bot: TeleBot):
     try:
         msg = (
             '🌟 📺 <b>Junte-se ao nosso incrível canal de História</b> 📺 🌟\n\n'

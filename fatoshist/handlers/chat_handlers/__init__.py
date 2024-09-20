@@ -1,23 +1,28 @@
-from telebot import types, TeleBot
+import logging
+
+from telebot import TeleBot, types
 
 from fatoshist.config import CHANNEL, CHANNEL_IMG, CHANNEL_POST, GROUP_LOG
 from fatoshist.database.groups import GroupManager
-import logging
 
 group_manager = GroupManager()
 
 
-def send_new_group_message(bot:TeleBot, chat):
+def send_new_group_message(bot: TeleBot, chat):
     try:
         chatusername = f'@{chat.username}' if chat.username else 'Private Group'
         bot.send_message(
             GROUP_LOG,
-            text=f'#{bot.get_me().username} #New_Group\n' f'<b>Chat:</b> {chat.title}\n' f'<b>ID:</b> <code>{chat.id}</code>\n' f'<b>Link:</b> {chatusername}',
+            text=f'#{bot.get_me().username} #New_Group\n'
+            f'<b>Chat:</b> {chat.title}\n'
+            f'<b>ID:</b> <code>{chat.id}</code>\n'
+            f'<b>Link:</b> {chatusername}',
             parse_mode='html',
-            disable_web_page_preview=True
+            disable_web_page_preview=True,
         )
     except Exception as e:
         logging.error(f'Erro ao adicionador grupo no banco de dados: {e}')
+
 
 def register(bot):
     @bot.my_chat_member_handler()
@@ -40,7 +45,7 @@ def register(bot):
                 group_manager.add_chat_db(chat_id, chat_name)
                 logging.info(f'⭐️ O bot foi adicionado no grupo {chat_name} - ({chat_id})')
 
-                send_new_group_message(bot,message.chat)
+                send_new_group_message(bot, message.chat)
 
                 try:
                     if message.chat.type in {'group', 'supergroup', 'channel'}:
@@ -68,7 +73,6 @@ def register(bot):
         except Exception as e:
             logging.error(f'Erro ao envias boas vindas no grupo: {e}')
 
-
     @bot.message_handler(content_types=['text'])
     def handle_text_messages(message):
         try:
@@ -87,7 +91,7 @@ def register(bot):
                 group_manager.add_chat_db(chat_id, chat_name)
                 logging.info(f'⭐️ O bot foi adicionado no grupo {chat_name} - ({chat_id})')
 
-                send_new_group_message(message.chat)
+                send_new_group_message(bot,message.chat)
 
                 try:
                     markup = types.InlineKeyboardMarkup()
@@ -112,7 +116,6 @@ def register(bot):
                     logging.error(f'Erro ao lidar com saudação de grupo: {e}')
         except Exception as e:
             logging.error(f'Erro ao envias boas vindas no grupo: {e}')
-
 
     @bot.message_handler(content_types=['left_chat_member'])
     def on_left_chat_member(message):

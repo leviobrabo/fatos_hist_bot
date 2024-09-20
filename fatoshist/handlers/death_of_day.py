@@ -7,7 +7,7 @@ from fatoshist.config import CHANNEL
 from fatoshist.utils.month import get_month_name
 
 
-def get_deaths_of_the_day(bot,CHANNEL):
+def get_deaths_of_the_day(bot, CHANNEL):
     try:
         today = datetime.now()
         day = today.day
@@ -54,7 +54,7 @@ def get_deaths_of_the_day(bot,CHANNEL):
 
 def hist_channel_death(bot):
     try:
-        get_deaths_of_the_day(bot,CHANNEL)
+        get_deaths_of_the_day(bot, CHANNEL)
         logging.info(f'Mortos enviada o canal {CHANNEL}')
     except Exception as e:
         logging.info(f'Erro ao enviar o trabalho mortes: {e}')

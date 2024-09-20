@@ -1,11 +1,11 @@
 import json
+import logging
 from datetime import datetime
 
 from fatoshist.config import CHANNEL, OWNER
-import logging
 
 
-def get_history(bot,CHANNEL):
+def get_history(bot, CHANNEL):
     try:
         today = datetime.now()
         day = today.day
@@ -43,7 +43,7 @@ def get_history(bot,CHANNEL):
 
 def hist_channel_history(bot):
     try:
-        get_history(bot,CHANNEL)
+        get_history(bot, CHANNEL)
         logging.info(f'História enviada ao canal {CHANNEL}')
     except Exception as e:
         logging.error(f'Erro ao enviar a história: {str(e)}')

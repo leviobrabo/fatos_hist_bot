@@ -1,7 +1,7 @@
 import configparser
 
 config = configparser.ConfigParser()
-config.read("bot.config")
+config.read('bot.config')
 
 TOKEN = config['FATOSHIST']['TOKEN']
 GROUP_LOG = int(config['FATOSHIST']['HIST_LOG'])

@@ -1,11 +1,11 @@
-import logging
 import json
+import logging
 from datetime import datetime
 
 from fatoshist.config import CHANNEL
 
 
-def get_curiosity(bot,CHANNEL):
+def get_curiosity(bot, CHANNEL):
     try:
         today = datetime.now()
         day = today.day
@@ -32,7 +32,7 @@ def get_curiosity(bot,CHANNEL):
 
 def hist_channel_curiosity(bot):
     try:
-        get_curiosity(bot,CHANNEL)
+        get_curiosity(bot, CHANNEL)
 
         logging.info(f'Curiosidade enviada o canal {CHANNEL}')
 

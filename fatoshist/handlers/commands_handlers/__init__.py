@@ -1,4 +1,5 @@
-from fatoshist.handlers.commands_handlers import user, send, admin, sudo,fotoshist
+from fatoshist.handlers.commands_handlers import admin, fotoshist, send, sudo, user
+
 
 def register(bot):
     user.register(bot)

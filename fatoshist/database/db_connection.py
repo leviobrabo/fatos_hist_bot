@@ -1,4 +1,5 @@
 import logging
+
 from pymongo import MongoClient
 
 from fatoshist.config import MONGO_CON

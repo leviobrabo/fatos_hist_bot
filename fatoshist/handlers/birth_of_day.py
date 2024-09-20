@@ -8,7 +8,7 @@ from fatoshist.config import CHANNEL, OWNER
 from fatoshist.utils.month import get_month_name
 
 
-def get_births_of_the_day(bot,CHANNEL):
+def get_births_of_the_day(bot, CHANNEL):
     try:
         today = datetime.now(pytz.timezone('America/Sao_Paulo'))
         day = today.day

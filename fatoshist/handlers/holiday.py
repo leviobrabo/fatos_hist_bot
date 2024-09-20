@@ -1,14 +1,14 @@
+import logging
 from datetime import datetime
 
 import pytz
 import requests
 
 from fatoshist.config import CHANNEL
-import logging
 from fatoshist.utils.month import get_month_name
 
 
-def get_holidays_of_the_day(bot,CHANNEL):
+def get_holidays_of_the_day(bot, CHANNEL):
     try:
         today = datetime.now(pytz.timezone('America/Sao_Paulo'))
         day = today.day
@@ -51,7 +51,7 @@ def get_holidays_of_the_day(bot,CHANNEL):
 
 def hist_channel_holiday(bot):
     try:
-        get_holidays_of_the_day(bot,CHANNEL)
+        get_holidays_of_the_day(bot, CHANNEL)
 
         logging.info(f'Feriados enviada o canal {CHANNEL}')
 

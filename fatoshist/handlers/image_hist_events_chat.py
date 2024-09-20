@@ -1,3 +1,4 @@
+import logging
 import random
 from datetime import datetime
 
@@ -7,13 +8,12 @@ from telebot import types
 
 from fatoshist.config import GROUP_LOG
 from fatoshist.database.groups import GroupManager
-import logging
 from fatoshist.utils.month import get_month_name
 
 group_manager = GroupManager()
 
 
-def send_historical_events_group_image(bot,chat_id):
+def send_historical_events_group_image(bot, chat_id):
     try:
         today = datetime.now(pytz.timezone('America/Sao_Paulo'))
         day = today.day
@@ -76,7 +76,7 @@ def hist_image_chat_job(bot):
             chat_id = chat_model['chat_id']
             if chat_id != GROUP_LOG:
                 try:
-                    send_historical_events_group_image(bot,chat_id)
+                    send_historical_events_group_image(bot, chat_id)
                 except Exception as e:
                     logging.error(f'Error sending imgs historical events to group {chat_id}: {str(e)}')
 

@@ -1,11 +1,11 @@
+import logging
 from datetime import datetime
 
 from fatoshist.config import CHANNEL
-import logging
 from fatoshist.utils.get_historical import get_historical_events
 
 
-def send_historical_events_channel(bot,CHANNEL):
+def send_historical_events_channel(bot, CHANNEL):
     try:
         today = datetime.now()
         day = today.day
@@ -35,7 +35,7 @@ def send_historical_events_channel(bot,CHANNEL):
 
 def hist_channel_events(bot):
     try:
-        send_historical_events_channel(bot,CHANNEL)
+        send_historical_events_channel(bot, CHANNEL)
 
         logging.info(f'Eventos históricos enviada o canal {CHANNEL}')
 

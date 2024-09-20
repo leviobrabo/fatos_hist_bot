@@ -1,12 +1,14 @@
 import logging
-from telebot import types, TeleBot
+
+from telebot import TeleBot, types
 
 from fatoshist.config import GROUP_LOG
 from fatoshist.database.groups import GroupManager
 
 groups_manager = GroupManager()
 
-def register(bot:TeleBot):
+
+def register(bot: TeleBot):
     @bot.message_handler(commands=['fwdoff'])
     def cmd_fwdoff(message):
         try:
@@ -58,7 +60,6 @@ def register(bot:TeleBot):
         except Exception as e:
             logging.error(f'Erro ao desativar o encaminhamento do chat: {str(e)}')
 
-
     @bot.message_handler(commands=['fwdon'])
     def cmd_fwdon(message):
         try:
@@ -109,7 +110,6 @@ def register(bot:TeleBot):
         except Exception as e:
             logging.error(f'Erro ao ativar o encaminhamento do chat: {str(e)}')
 
-
     @bot.message_handler(commands=['settopic'])
     def cmd_settopic(message):
         try:
@@ -149,7 +149,6 @@ def register(bot:TeleBot):
         except Exception as e:
             logging.error(f'Erro ao definir o tópico: {str(e)}')
 
-
     @bot.message_handler(commands=['unsettopic'])
     def cmd_unsettopic(message):
         try:
@@ -176,12 +175,15 @@ def register(bot:TeleBot):
         except Exception as e:
             logging.error(f'Erro ao remover o tópico: {str(e)}')
 
-
     def send_new_group_message(chat):
         chatusername = f'@{chat.username}' if chat.username else 'Private Group'
         bot.send_message(
             GROUP_LOG,
-            text=(f'#{bot.get_me().username} #New_Group\n' f'<b>Chat:</b> {chat.title}\n<b>ID:</b> <code>{chat.id}</code>\n' f'<b>Link:</b> {chatusername}'),
+            text=(
+                f'#{bot.get_me().username} #New_Group\n'
+                f'<b>Chat:</b> {chat.title}\n<b>ID:</b> <code>{chat.id}</code>\n'
+                f'<b>Link:</b> {chatusername}'
+            ),
             parse_mode='html',
             disable_web_page_preview=True,
         )

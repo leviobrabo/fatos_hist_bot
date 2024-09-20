@@ -10,10 +10,4 @@ if not os.path.exists(log_directory):
 
 format_log = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 
-logging.basicConfig(
-    filename=LOG_PATH,
-    filemode='a',
-    format=format_log,
-    level=logging.INFO,
-    encoding='utf-8'
-)
+logging.basicConfig(filename=LOG_PATH, filemode='a', format=format_log, level=logging.INFO, encoding='utf-8')

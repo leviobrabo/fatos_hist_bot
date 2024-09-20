@@ -43,12 +43,7 @@ def get_current_count(bot):
                 else:
                     message = '<b>Hoje na história a quantidade de membros permaneceu a mesma.</b>\n' f'<b>Usuários:</b> {current_count}'
 
-                bot.send_message(
-                    GROUP_LOG,
-                    message,
-                    parse_mode='html',
-                    disable_web_page_preview=True
-                )
+                bot.send_message(GROUP_LOG, message, parse_mode='html', disable_web_page_preview=True)
 
                 bot.send_message(OWNER, message)
 
@@ -57,12 +52,7 @@ def get_current_count(bot):
         else:
             message = '<b>Esta é a primeira verificação da quantidade de membros:</b>\n' f'<b>Usuários:</b> {current_count}'
 
-            bot.send_message(
-                GROUP_LOG,
-                message,
-                parse_mode='html',
-                disable_web_page_preview=True
-            )
+            bot.send_message(GROUP_LOG, message, parse_mode='html', disable_web_page_preview=True)
 
             bot.send_message(OWNER, message)
 

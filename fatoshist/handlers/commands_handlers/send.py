@@ -1,13 +1,15 @@
 import logging
-from telebot import TeleBot,types
+
+from telebot import TeleBot, types
 
 from fatoshist.database.users import UserManager
 
 user_manager = UserManager()
 
-def register(bot:TeleBot):
+
+def register(bot: TeleBot):
     @bot.message_handler(commands=['sendon'])
-    def cmd_sendon(message:types.Message):
+    def cmd_sendon(message: types.Message):
         try:
             if message.chat.type != 'private':
                 return
@@ -27,16 +29,11 @@ def register(bot:TeleBot):
                         '<b>Eventos históricos no chat privado ATIVADO</b>. Você receberá fatos históricos todos os dias às 8 horas.',
                     )
             else:
-                user_manager.add_user(
-                    user_id=message.from_user.id,
-                    username=message.from_user.username,
-                    first_name=message.from_user.first_name
-                )
+                user_manager.add_user(user_id=message.from_user.id, username=message.from_user.username, first_name=message.from_user.first_name)
                 bot.reply_to(message, 'Envie o comando novamente.')
 
         except Exception as e:
             logging.error(f'Erro ao ativar o recebimento dos eventos históricos: {str(e)}')
-
 
     @bot.message_handler(commands=['sendoff'])
     def cmd_sendoff(message):
@@ -59,11 +56,7 @@ def register(bot:TeleBot):
                         '<b>Eventos históricos no chat privado DESATIVADO</b>. Você não receberá fatos históricos todos os dias às 8 horas.',
                     )
             else:
-                user_manager.add_user(
-                    user_id=message.from_user.id,
-                    username=message.from_user.username,
-                    first_name=message.from_user.first_name
-                )
+                user_manager.add_user(user_id=message.from_user.id, username=message.from_user.username, first_name=message.from_user.first_name)
                 bot.reply_to(message, 'Envie o comando novamente.')
 
         except Exception as e:

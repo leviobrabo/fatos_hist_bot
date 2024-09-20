@@ -1,18 +1,19 @@
-from telebot import TeleBot, types
 import logging
+
+from telebot import TeleBot, types
 
 from fatoshist.database.groups import GroupManager
 from fatoshist.database.poll_manager import PollManager
 from fatoshist.database.users import UserManager
 
-
 group_manager = GroupManager()
 poll_manager = PollManager()
 user_manager = UserManager()
 
-def register(bot:TeleBot):
+
+def register(bot: TeleBot):
     @bot.poll_answer_handler()
-    def handle_poll_answer(poll_answer:types.PollAnswer):
+    def handle_poll_answer(poll_answer: types.PollAnswer):
         try:
             user_id = poll_answer.user.id
             first_name = poll_answer.user.first_name
@@ -32,11 +33,7 @@ def register(bot:TeleBot):
 
             user = user_manager.get_user(user_id)
             if not user:
-                user_manager.add_user(
-                    user_id=user_id,
-                    username=username,
-                    first_name=first_name
-                )
+                user_manager.add_user(user_id=user_id, username=username, first_name=first_name)
 
             poll_manager.set_questions_user(user_id)
 

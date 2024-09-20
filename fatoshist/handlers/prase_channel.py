@@ -1,13 +1,13 @@
 import json
+import logging
 from datetime import datetime
 
 import pytz
 
 from fatoshist.config import CHANNEL
-import logging
 
 
-def get_frase(bot,CHANNEL):
+def get_frase(bot, CHANNEL):
     try:
         today = datetime.now(pytz.timezone('America/Sao_Paulo'))
         day = today.day
@@ -35,7 +35,7 @@ def get_frase(bot,CHANNEL):
 
 def hist_channel_frase(bot):
     try:
-        get_frase(bot,CHANNEL)
+        get_frase(bot, CHANNEL)
 
         logging.info(f'Frase enviada o canal {CHANNEL}')
 

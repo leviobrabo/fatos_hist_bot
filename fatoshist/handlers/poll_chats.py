@@ -1,18 +1,17 @@
-import logging
 import json
+import logging
 from datetime import datetime
 
 from fatoshist.database.groups import GroupManager
 from fatoshist.database.poll_manager import PollManager
 from fatoshist.database.users import UserManager
 
-
 group_manager = GroupManager()
 poll_manager = PollManager()
 user_manager = UserManager()
 
 
-def send_poll_chat(bot,chat_id, poll_data, message_thread_id):
+def send_poll_chat(bot, chat_id, poll_data, message_thread_id):
     try:
         today = datetime.now()
         current_date = today.strftime('%d/%m/%Y')
@@ -106,6 +105,7 @@ def send_question_chat(bot):
 
     except Exception as e:
         logging.error(f'Erro ao enviar a pergunta: {e}')
+
 
 def remove_all_poll():
     try:

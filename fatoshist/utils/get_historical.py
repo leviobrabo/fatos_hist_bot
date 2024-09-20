@@ -1,7 +1,6 @@
 import json
-from datetime import datetime
-
 import logging
+from datetime import datetime
 
 
 def get_historical_events():

@@ -1,3 +1,4 @@
+import logging
 import random
 from datetime import datetime
 
@@ -7,13 +8,12 @@ from telebot import types
 
 from fatoshist.config import CHANNEL_IMG
 from fatoshist.database.imgs import PhotoManager
-import logging
 from fatoshist.utils.month import get_month_name
 
 photo_manager = PhotoManager()
 
 
-def send_historical_events_CHANNEL_IMG_image(bot,CHANNEL_IMG):
+def send_historical_events_CHANNEL_IMG_image(bot, CHANNEL_IMG):
     """Busca um evento histórico com uma imagem e envia para o canal."""
     try:
         today = datetime.now(pytz.timezone('America/Sao_Paulo'))
@@ -68,7 +68,7 @@ def send_historical_events_CHANNEL_IMG_image(bot,CHANNEL_IMG):
 
 def hist_channel_imgs_chn(bot):
     try:
-        send_historical_events_CHANNEL_IMG_image(bot,CHANNEL_IMG)
+        send_historical_events_CHANNEL_IMG_image(bot, CHANNEL_IMG)
         logging.info(f'Mensagem enviada para o canal {CHANNEL_IMG}')
 
     except Exception as e:

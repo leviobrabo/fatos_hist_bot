@@ -1,31 +1,35 @@
 import logging
+
 from telebot import TeleBot, types
-from fatoshist.handlers.payment_handlers import handle_stars_donation
+
 from fatoshist.config import GROUP_LOG
 from fatoshist.database.users import UserManager
+from fatoshist.handlers.payment_handlers import handle_stars_donation
 
-def register(bot:TeleBot):
+
+def register(bot: TeleBot):
     @bot.callback_query_handler(func=lambda call: True)
     def callback_handler(call):
         try:
             if call.data.startswith('menu_start'):
-                handle_menu_start(bot,call)
+                handle_menu_start(bot, call)
             elif call.data.startswith('menu_help'):
-                handle_menu_help(bot,call)
+                handle_menu_help(bot, call)
             elif call.data.startswith('donate'):
-                handle_donate(bot,call)
+                handle_donate(bot, call)
             elif call.data in {'50_estrelas', '100_estrelas', '200_estrelas', '500_estrelas', '1000_estrelas'}:
-                handle_stars_donation(bot,call)
+                handle_stars_donation(bot, call)
             elif call.data.startswith('how_to_use'):
-                handle_how_to_use(bot,call)
+                handle_how_to_use(bot, call)
             elif call.data.startswith('config'):
-                handle_config(bot,call)
+                handle_config(bot, call)
             elif call.data.startswith('commands'):
-                handle_commands(bot,call)
+                handle_commands(bot, call)
         except Exception as e:
             logging.error(e)
-            
-def handle_menu_start(bot:TeleBot,call:types.CallbackQuery):
+
+
+def handle_menu_start(bot: TeleBot, call: types.CallbackQuery):
     if call.message.chat.type == 'private':
         user_id = call.from_user.id
         first_name = call.from_user.first_name
@@ -34,9 +38,7 @@ def handle_menu_start(bot:TeleBot,call:types.CallbackQuery):
 
         if not user:
             user_manager.add_user(
-                user_id=call.message.from_user.id,
-                username=call.message.from_user.username,
-                first_name=call.message.from_user.first_name
+                user_id=call.message.from_user.id, username=call.message.from_user.username, first_name=call.message.from_user.first_name
             )
             user = user_manager.get_user(user_id)
             user_info = (
@@ -81,32 +83,34 @@ def handle_menu_start(bot:TeleBot,call:types.CallbackQuery):
             media=types.InputMediaPhoto(media=photo, caption=msg_start, parse_mode='HTML'),
             reply_markup=markup,
         )
-        
+
+
 def handle_menu_help(bot, call):
-        if call.message.chat.type == 'private':
-            text = (
-                'Olá! Eu sou um bot programado para enviar fatos históricos '
-                'todos os dias às 8h.\n\n'
-                'Além disso, tenho comandos incríveis que podem ser úteis para você. '
-                'Fique à vontade para interagir comigo e descobrir mais sobre o mundo que '
-                'nos cerca!\n\n<b>Basta clicar em um deles:</b>'
-            )
+    if call.message.chat.type == 'private':
+        text = (
+            'Olá! Eu sou um bot programado para enviar fatos históricos '
+            'todos os dias às 8h.\n\n'
+            'Além disso, tenho comandos incríveis que podem ser úteis para você. '
+            'Fique à vontade para interagir comigo e descobrir mais sobre o mundo que '
+            'nos cerca!\n\n<b>Basta clicar em um deles:</b>'
+        )
 
-            markup = types.InlineKeyboardMarkup()
-            commands = types.InlineKeyboardButton('Lista de comandos', callback_data='commands')
-            support = types.InlineKeyboardButton('Suporte', url='https://t.me/kylorensbot')
-            donate = types.InlineKeyboardButton('💰 Doações', callback_data='donate')
+        markup = types.InlineKeyboardMarkup()
+        commands = types.InlineKeyboardButton('Lista de comandos', callback_data='commands')
+        support = types.InlineKeyboardButton('Suporte', url='https://t.me/kylorensbot')
+        donate = types.InlineKeyboardButton('💰 Doações', callback_data='donate')
 
-            markup.add(commands)
-            markup.add(support, donate)
+        markup.add(commands)
+        markup.add(support, donate)
 
-            photo = 'https://i.imgur.com/j3H3wvJ.png'
-            bot.edit_message_media(
-                chat_id=call.message.chat.id,
-                message_id=call.message.message_id,
-                media=types.InputMediaPhoto(media=photo, caption=text, parse_mode='HTML'),
-                reply_markup=markup,
-            )
+        photo = 'https://i.imgur.com/j3H3wvJ.png'
+        bot.edit_message_media(
+            chat_id=call.message.chat.id,
+            message_id=call.message.message_id,
+            media=types.InputMediaPhoto(media=photo, caption=text, parse_mode='HTML'),
+            reply_markup=markup,
+        )
+
 
 def handle_donate(bot, call):
     user_id = call.from_user.id
@@ -133,43 +137,45 @@ def handle_donate(bot, call):
         media=types.InputMediaPhoto(media=photo, caption=caption_nws, parse_mode='HTML'),
         reply_markup=values_btn,
     )
-    
+
+
 def handle_how_to_use(bot, call):
-        user_id = call.from_user.id
-        markup = types.InlineKeyboardMarkup()
-        back_to_home = types.InlineKeyboardButton('↩️ Voltar', callback_data='menu_start')
-        markup.add(back_to_home)
-        msg_text = (
-            '🤖 <b>Como usar o bot Fatos Históricos:</b>\n\n'
-            '1️⃣ <b>/start</b> - Inicie a interação com o bot e receba uma mensagem de boas-vindas.\n'
-            '2️⃣ <b>/help</b> - Obtenha informações sobre como usar o bot e veja os comandos disponíveis.\n'
-            '3️⃣ <b>/fotoshist</b> - Envia fotos históricas\n'
-            '4️⃣ <b>/sendon</b> - Para receber mensagens históricas todos os dias às 8 horas.\n'
-            '5️⃣ <b>/sendoff</b> - Não receberá mensagens históricas todos os dias às 8 horas.\n\n'
-            '🌐 O bot funcionará melhor em canais ou grupos, então adicione o bot em um para o melhor aprendizado.\n\n'
-            '❇️ Novidades em breve.\n\n'
-            '📅 <b>Principais Funcionalidades:</b>\n'
-            '- Receba fatos históricos diários.\n'
-            '- Notificações de feriados e eventos importantes.\n'
-            '- Mensagens personalizadas para ocasiões especiais.\n'
-            '- Pesquisa histórica e curiosidades.\n\n'
-            '🔧 <b>Utilitários:</b> Anti-spam, dados históricos, boas-vindas automáticas, '
-            'questões diárias e muito mais!'
-        )
-        photo = 'https://i.imgur.com/j3H3wvJ.png'
-        bot.edit_message_media(
-            chat_id=user_id,
-            message_id=call.message.message_id,
-            media=types.InputMediaPhoto(media=photo, caption=msg_text, parse_mode='HTML'),
-            reply_markup=markup,
-        )
-        
+    user_id = call.from_user.id
+    markup = types.InlineKeyboardMarkup()
+    back_to_home = types.InlineKeyboardButton('↩️ Voltar', callback_data='menu_start')
+    markup.add(back_to_home)
+    msg_text = (
+        '🤖 <b>Como usar o bot Fatos Históricos:</b>\n\n'
+        '1️⃣ <b>/start</b> - Inicie a interação com o bot e receba uma mensagem de boas-vindas.\n'
+        '2️⃣ <b>/help</b> - Obtenha informações sobre como usar o bot e veja os comandos disponíveis.\n'
+        '3️⃣ <b>/fotoshist</b> - Envia fotos históricas\n'
+        '4️⃣ <b>/sendon</b> - Para receber mensagens históricas todos os dias às 8 horas.\n'
+        '5️⃣ <b>/sendoff</b> - Não receberá mensagens históricas todos os dias às 8 horas.\n\n'
+        '🌐 O bot funcionará melhor em canais ou grupos, então adicione o bot em um para o melhor aprendizado.\n\n'
+        '❇️ Novidades em breve.\n\n'
+        '📅 <b>Principais Funcionalidades:</b>\n'
+        '- Receba fatos históricos diários.\n'
+        '- Notificações de feriados e eventos importantes.\n'
+        '- Mensagens personalizadas para ocasiões especiais.\n'
+        '- Pesquisa histórica e curiosidades.\n\n'
+        '🔧 <b>Utilitários:</b> Anti-spam, dados históricos, boas-vindas automáticas, '
+        'questões diárias e muito mais!'
+    )
+    photo = 'https://i.imgur.com/j3H3wvJ.png'
+    bot.edit_message_media(
+        chat_id=user_id,
+        message_id=call.message.message_id,
+        media=types.InputMediaPhoto(media=photo, caption=msg_text, parse_mode='HTML'),
+        reply_markup=markup,
+    )
+
+
 def handle_config(bot, call):
     user_id = call.from_user.id
     markup = types.InlineKeyboardMarkup()
     back_to_home = types.InlineKeyboardButton('↩️ Voltar', callback_data='menu_start')
     markup.add(back_to_home)
-    
+
     user_manager = UserManager()
     user_info = user_manager.get_user(user_id)
     if user_info:
@@ -201,7 +207,8 @@ def handle_config(bot, call):
             media=types.InputMediaPhoto(media=photo, caption=msg_text, parse_mode='HTML'),
             reply_markup=markup,
         )
-            
+
+
 def handle_commands(bot, call):
     user_id = call.from_user.id
     markup = types.InlineKeyboardMarkup()

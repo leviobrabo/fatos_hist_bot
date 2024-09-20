@@ -2,6 +2,7 @@ import logging
 
 from fatoshist.config import CHANNEL, OWNER
 
+
 def christmas_message(bot):
     try:
         photo_url = 'https://i.imgur.com/0znRX8g.png'

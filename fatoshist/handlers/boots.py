@@ -1,10 +1,11 @@
 import logging
-from telebot import types, TeleBot
+
+from telebot import TeleBot, types
 
 from fatoshist.config import CHANNEL, OWNER
 
 
-def msg_alerta_boost(bot:TeleBot):
+def msg_alerta_boost(bot: TeleBot):
     try:
         msg = (
             '🌟 📺 <b>Impulsionem o nosso canal para que possamos começar a postar stories.</b> 📺 🌟\n\n'

@@ -1,4 +1,5 @@
 import logging
+
 from fatoshist.database.db_connection import DBConnection
 
 
@@ -9,15 +10,15 @@ class UserManager:
         """Inicializa a conexão com o banco de dados usando DBConnection."""
         self.db_connection = DBConnection()
         self.db = self.db_connection.get_db()
-        
-    def add_user(self, user_id,username,first_name=''):
+
+    def add_user(self, user_id, username, first_name=''):
         """
         Adiciona um novo usuário no banco de dados com base em uma mensagem recebida.
         """
         if self.get_user(user_id):
-            logging.warning(f"Usuário com id {user_id} já cadastrado.")
+            logging.warning(f'Usuário com id {user_id} já cadastrado.')
             return None
-        
+
         return self.db.users.insert_one({
             'user_id': user_id,
             'username': username,

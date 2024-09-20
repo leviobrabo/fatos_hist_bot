@@ -1,3 +1,4 @@
+import logging
 import random
 from datetime import datetime
 
@@ -5,11 +6,10 @@ import pytz
 import requests
 
 from fatoshist.config import CHANNEL
-import logging
 from fatoshist.utils.month import get_month_name
 
 
-def send_historical_events_channel_image(bot,CHANNEL):
+def send_historical_events_channel_image(bot, CHANNEL):
     try:
         today = datetime.now(pytz.timezone('America/Sao_Paulo'))
         day = today.day
@@ -47,7 +47,7 @@ def send_historical_events_channel_image(bot,CHANNEL):
 
 def hist_channel_imgs(bot):
     try:
-        send_historical_events_channel_image(bot,CHANNEL)
+        send_historical_events_channel_image(bot, CHANNEL)
         logging.info(f'Mensagem enviada para o canal {CHANNEL}')
 
     except Exception as e:

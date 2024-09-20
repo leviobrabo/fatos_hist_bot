@@ -7,23 +7,24 @@ import schedule
 import telebot
 from telebot import types, util
 
-from fatoshist.handlers import callback_handlers,poll_handlers, chat_handlers, commands_handlers
-from fatoshist.database.users import UserManager
 from fatoshist import scripts
+from fatoshist.database.users import UserManager
+from fatoshist.handlers import callback_handlers, chat_handlers, commands_handlers, poll_handlers
 from fatoshist.utils.sudo import sudo
 
+
 class Bot:
-    def __init__(self,token:str,chat_log:int):
+    def __init__(self, token: str, chat_log: int):
         self.bot = telebot.TeleBot(token, parse_mode='HTML')
         self.chat_log = chat_log
-        
+
     def register_handlers(self):
         """Registra todos os handlers do bot."""
         commands_handlers.register(self.bot)
         poll_handlers.register(self.bot)
         callback_handlers.register(self.bot)
         chat_handlers.register(self.bot)
-        
+
     def schedule_thread(self):
         scripts.schedule_tasks(self.bot)
         try:
@@ -90,7 +91,7 @@ class Bot:
                     )
         except Exception as e:
             logging.error(f'Erro ao definir comandos para usuários sudo: {e}')
-            
+
     def start(self):
         """Inicia o bot e todas as suas funções."""
         try:
@@ -110,11 +111,10 @@ class Bot:
                     f'<b>Versão do Python:</b> {python_version}\n'
                     f'<b>Versão da Biblioteca:</b> {telebot_version}'
                 ),
-                parse_mode='HTML'
+                parse_mode='HTML',
             )
             logging.info('Telegram bot iniciado!')
             self.bot.infinity_polling(allowed_updates=util.update_types)
         except Exception as e:
             logging.error(f'Erro em polling_thread: {e}')
             self.bot.stop_polling()
-
