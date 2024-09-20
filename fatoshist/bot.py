@@ -94,7 +94,7 @@ class Bot:
     def start(self):
         """Inicia o bot e todas as suas funções."""
         try:
-            logging.info('Iniciando...')
+            logging.info('Iniciando Telegram BOT...')
             threading.Thread(target=self.schedule_thread, name='schedule', daemon=True).start()
             self.set_commands()
             self.register_handlers()
@@ -112,7 +112,7 @@ class Bot:
                 ),
                 parse_mode='HTML',
             )
-            logging.info('Telegram bot iniciado!')
+            logging.info('Telegram BOT iniciado!')
             self.bot.infinity_polling(allowed_updates=util.update_types)
         except Exception as e:
             logging.error(f'Erro em polling_thread: {e}')

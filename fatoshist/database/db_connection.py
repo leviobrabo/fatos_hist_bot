@@ -10,7 +10,7 @@ class DBConnection:
 
     def __init__(self):
         try:
-            logging.info('INICIANDO CONEXÃO COM O MONGODB')
+            logging.info('INICIANDO CONEXÃO COM O MONGODB...')
             self.client = MongoClient(MONGO_CON)  # Conexão com o MongoDB
             self.db = self.client.fatoshistbot  # Acessa o banco de dados 'fatoshistbot'
             logging.info('Conexão com o MongoDB estabelecida com sucesso!')

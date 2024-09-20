@@ -1,13 +1,11 @@
-from fatoshist.database.db_connection import DBConnection
+from fatoshist import db_connection
 
 
 class PresidentManager:
     """Classe responsável por gerenciar a coleção de presidentes no banco de dados."""
 
     def __init__(self):
-        """Inicializa a conexão com o banco de dados usando DBConnection."""
-        self.db_connection = DBConnection()
-        self.db = self.db_connection.get_db()
+        self.db = db_connection
 
     def add_presidente(self, id, date):
         """

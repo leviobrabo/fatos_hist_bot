@@ -1,10 +1,9 @@
-from fatoshist.database.db_connection import DBConnection
+from fatoshist import db_connection
 
 
 class GroupManager:
     def __init__(self):
-        self.db_connection = DBConnection()
-        self.db = self.db_connection.get_db()
+        self.db = db_connection
 
     def add_chat_db(self, chat_id, chat_name):
         return self.db.chats.insert_one({
