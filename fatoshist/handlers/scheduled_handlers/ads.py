@@ -15,7 +15,7 @@ ads_links = [
 ]
 
 
-def ads_message_channel_user(bot,user_id):
+def ads_message_channel_user(bot, user_id):
     try:
         random_link = random.choice(ads_links)
 
@@ -43,7 +43,7 @@ def ads_msg_job(bot):
             user_id = user_model['user_id']
 
             try:
-                ads_message_channel_user(bot,user_id)
+                ads_message_channel_user(bot, user_id)
                 logging.info(f'Mensagem enviada ao usuário {user_id}')
             except Exception as e:
                 if '403' in str(e) and 'user is deactivated' in str(e):

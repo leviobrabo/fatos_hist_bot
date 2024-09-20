@@ -91,7 +91,7 @@ def register(bot):
                 group_manager.add_chat_db(chat_id, chat_name)
                 logging.info(f'⭐️ O bot foi adicionado no grupo {chat_name} - ({chat_id})')
 
-                send_new_group_message(bot,message.chat)
+                send_new_group_message(bot, message.chat)
 
                 try:
                     markup = types.InlineKeyboardMarkup()

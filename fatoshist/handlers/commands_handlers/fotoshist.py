@@ -46,7 +46,5 @@ def register(bot: TeleBot):
             )
         except Exception as e:
             logging.error(f'Erro ao enviar a imagem histórica: {e}')
-            
-    return [
-        types.BotCommand('/fotoshist', 'Fotos históricas 🙂')
-        ]
+
+    return [types.BotCommand('/fotoshist', 'Fotos históricas 🙂')]

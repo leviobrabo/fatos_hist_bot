@@ -1,5 +1,6 @@
 from fatoshist import db_connection
 
+
 class CounterManager:
     def __init__(self):
         self.db = db_connection

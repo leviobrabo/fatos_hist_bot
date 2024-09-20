@@ -35,7 +35,6 @@ def register(bot: TeleBot):
 
                     bot.send_message(GROUP_LOG, user_info)
 
-
                 markup = types.InlineKeyboardMarkup()
                 add_group = types.InlineKeyboardButton(
                     '✨ Adicione-me em seu grupo',
@@ -80,7 +79,7 @@ def register(bot: TeleBot):
 
         except Exception as e:
             logging.error(f'Erro ao enviar o start: {e}')
-            
+
     @bot.message_handler(commands=['help'])
     def cmd_help(message):
         try:
@@ -113,7 +112,5 @@ def register(bot: TeleBot):
                 )
         except Exception as e:
             logging.error(f'Erro ao enviar o help: {e}')
-    return [
-        types.BotCommand('/start', 'Iniciar'),
-        types.BotCommand('/help', 'Ajuda')
-    ]
+
+    return [types.BotCommand('/start', 'Iniciar'), types.BotCommand('/help', 'Ajuda')]

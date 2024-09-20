@@ -15,6 +15,7 @@ group_manager = GroupManager()
 def register(bot: TeleBot):
     bot.message_handler(commands=['add_sudo'])
 
+    @bot.message_handler(commands=['sudo'])
     def cmd_add_sudo(message):
         try:
             if message.chat.type != 'private' and message.from_user.id != OWNER:
@@ -92,7 +93,7 @@ def register(bot: TeleBot):
                 )
                 return
 
-            result = user_manager.un_set_user_sudo(user_id)
+            result = user_manager.set_user_sudo(user_id)
 
             if result.modified_count > 0:
                 username = '@' + message.from_user.username if message.from_user.username else 'Não tem um nome de usuário'
@@ -261,4 +262,12 @@ def register(bot: TeleBot):
         except Exception as e:
             logging.error(f'Erro ao enviar a lista de comandos do sistema: {e}')
 
-    return []
+    return [
+        types.BotCommand('/sys', 'Uso do servidor'),
+        types.BotCommand('/sudo', 'Elevar usuário'),
+        types.BotCommand('/ban', 'Banir usuário do bot'),
+        types.BotCommand('/sudolist', 'Lista de usuários sudo'),
+        types.BotCommand('/banneds', 'Lista de usuários banidos'),
+        types.BotCommand('/bcusers', 'Broadcast para usuários'),
+        types.BotCommand('/bcgps', 'Broadcast para grupos'),
+    ]

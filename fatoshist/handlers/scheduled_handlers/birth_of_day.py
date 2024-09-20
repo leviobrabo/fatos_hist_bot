@@ -55,7 +55,7 @@ def get_births_of_the_day(bot, CHANNEL):
 
 def hist_channel_birth(bot):
     try:
-        get_births_of_the_day(bot,CHANNEL)
+        get_births_of_the_day(bot, CHANNEL)
         logging.info(f'Nascidos enviada o canal {CHANNEL}')
     except Exception as e:
         logging.error(f'Erro ao enviar o trabalho nascido: {e}')
