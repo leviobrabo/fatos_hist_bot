@@ -56,6 +56,9 @@ coverage.xml
 *.py,cover
 .hypothesis/
 .pytest_cache/
+/__pycache__/*
+*.pyc
+tests\__pycache__\__init__.cpython-312.pyc
 cover/
 
 # Translations

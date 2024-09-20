@@ -66,6 +66,13 @@ class UserManager:
         """
         return self.db.users.update_one({'user_id': user_id}, {'$set': {'sudo': 'true'}})
 
+    def is_sudo(self,user_id):
+        user_manager = UserManager()
+        user = user_manager.get_user(user_id)
+        if user and user.get('sudo') == 'true':
+            return True
+        return False
+    
     def remove_user_sudo(self, user_id):
         """
         Remove o status 'sudo' de um usuário.

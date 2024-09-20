@@ -10,7 +10,6 @@ from telebot import types, util
 from fatoshist import scripts
 from fatoshist.database.users import UserManager
 from fatoshist.handlers import callback_handlers, chat_handlers, commands_handlers, poll_handlers
-from fatoshist.utils.sudo import sudo
 
 
 class Bot:
@@ -76,7 +75,7 @@ class Bot:
         try:
             all_users = UserManager().get_all_users()
             for user in all_users:
-                if sudo(user.get('user_id')):
+                if UserManager().is_sudo(user.get('user_id')):
                     self.bot.set_my_commands(
                         [
                             types.BotCommand('/sys', 'Uso do servidor'),
