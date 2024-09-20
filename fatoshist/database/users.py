@@ -1,49 +1,26 @@
-from ..database.db_connection import DBConnection
+import logging
+
+from fatoshist import db_connection
 
 
 class UserManager:
     """Classe responsável por gerenciar os usuários no banco de dados."""
 
     def __init__(self):
-        """Inicializa a conexão com o banco de dados usando DBConnection."""
-        self.db_connection = DBConnection()
-        self.db = self.db_connection.get_db()
+        self.db = db_connection
 
-    # Métodos de Gerenciamento de Usuários
-
-    def add_user_db(self, message):
+    def add_user(self, user_id, username, first_name=''):
         """
         Adiciona um novo usuário no banco de dados com base em uma mensagem recebida.
         """
-        first_name = message.from_user.first_name
-        last_name = str(message.from_user.last_name).replace('None', '')
-        username = str(message.from_user.username).replace('None', '')
-        return self.db.users.insert_one({
-            'user_id': message.from_user.id,
-            'first_name': first_name,
-            'last_name': last_name,
-            'username': username,
-            'sudo': 'false',
-            'msg_private': 'true',
-            'message_id': '',
-            'hits': 0,
-            'questions': 0,
-            'progress': 0,
-        })
+        if self.get_user(user_id):
+            logging.warning(f'Usuário com id {user_id} já cadastrado.')
+            return None
 
-    def add_new_user(self, user_id, first_name, last_name=None, username=None):
-        """
-        Adiciona um novo usuário com base em informações fornecidas diretamente.
-        Se last_name ou username não forem fornecidos, serão definidos como
-        strings vazias.
-        """
-        last_name = last_name or ''
-        username = username or ''
         return self.db.users.insert_one({
             'user_id': user_id,
-            'first_name': first_name,
-            'last_name': last_name,
             'username': username,
+            'first_name': first_name,
             'sudo': 'false',
             'msg_private': 'true',
             'message_id': '',
@@ -52,19 +29,11 @@ class UserManager:
             'progress': 0,
         })
 
-    # Métodos de Busca, Atualização e Remoção de Usuários
-
-    def search_user(self, user_id):
+    def get_user(self, user_id):
         """
         Procura e retorna um usuário no banco de dados com base no user_id.
         """
         return self.db.users.find_one({'user_id': user_id})
-
-    def update_user(self, user_id):
-        """
-        Atualiza os campos 'hits' e 'questions' de um usuário para 0.
-        """
-        return self.db.users.update_one({'user_id': user_id}, {'$set': {'hits': 0, 'questions': 0}})
 
     def remove_user(self, user_id):
         """
@@ -95,6 +64,13 @@ class UserManager:
         """
         return self.db.users.update_one({'user_id': user_id}, {'$set': {'sudo': 'true'}})
 
+    def is_sudo(self, user_id):
+        user_manager = UserManager()
+        user = user_manager.get_user(user_id)
+        if user and user.get('sudo') == 'true':
+            return True
+        return False
+
     def remove_user_sudo(self, user_id):
         """
         Remove o status 'sudo' de um usuário.
@@ -114,22 +90,6 @@ class UserManager:
         Remove o 'message_id' de um usuário, resetando-o para uma string vazia.
         """
         return self.db.users.update_one({'user_id': user_id}, {'$set': {'message_id': ''}})
-
-    # Métodos para Buscar Acertos (Hits) e Questões Respondidas
-
-    def search_hits(self, hits):
-        """
-        Procura e retorna um usuário com base no número de acertos (hits).
-        """
-        return self.db.users.find_one({'hits': hits})
-
-    def search_questions(self, questions):
-        """
-        Procura e retorna um usuário com base no número de questões respondidas.
-        """
-        return self.db.users.find_one({'questions': questions})
-
-    # Métodos para Atualizar Acertos (Hits) e Questões Respondidas
 
     def set_hit_user(self, user_id):
         """

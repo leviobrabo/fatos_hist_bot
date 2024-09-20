@@ -1,13 +1,11 @@
-from ..database.db_connection import DBConnection
+from fatoshist import db_connection
 
 
 class PhotoManager:
     """Classe responsável por gerenciar a coleção de imagens no banco de dados."""
 
     def __init__(self):
-        """Inicializa a conexão com o banco de dados usando DBConnection."""
-        self.db_connection = DBConnection()
-        self.db = self.db_connection.get_db()
+        self.db = db_connection
 
     def add_url_photo(self, photo_url):
         return self.db.cphoto.insert_one({'photo_url': photo_url})

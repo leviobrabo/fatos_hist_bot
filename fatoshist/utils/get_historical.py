@@ -1,7 +1,6 @@
 import json
+import logging
 from datetime import datetime
-
-from ..loggers import logger
 
 
 def get_historical_events():
@@ -17,6 +16,6 @@ def get_historical_events():
             else:
                 return None
     except Exception as e:
-        logger.error('Error reading events from JSON:', str(e))
+        logging.error(f'Error reading events from JSON: {e}')
 
         return None

@@ -1,10 +1,9 @@
-from ..database.db_connection import DBConnection
+from fatoshist import db_connection
 
 
 class CounterManager:
     def __init__(self):
-        self.db_connection = DBConnection()
-        self.db = self.db_connection.get_db()
+        self.db = db_connection
 
     def count_user_channel(self, count, date):
         """Insere uma nova entrada de contagem de usuários."""

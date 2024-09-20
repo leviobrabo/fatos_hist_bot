@@ -2,6 +2,9 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=python
 
 ### Python ###
+# project
+bot.config
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -53,6 +56,9 @@ coverage.xml
 *.py,cover
 .hypothesis/
 .pytest_cache/
+/__pycache__/*
+*.pyc
+tests\__pycache__\__init__.cpython-312.pyc
 cover/
 
 # Translations

@@ -1,20 +1,22 @@
 import logging
 import os
-import sys
-from logging.handlers import RotatingFileHandler
 
-from .config import LOG_PATH
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+LOG_PATH = os.path.join(BASE_DIR, 'logs', 'fatoshistbot.log')
 
-log_directory = os.path.dirname(LOG_PATH)
-if not os.path.exists(log_directory):
-    os.makedirs(log_directory)
 
-handler = RotatingFileHandler(LOG_PATH, maxBytes=5000000, backupCount=5)
-formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-handler.setFormatter(formatter)
-handler.setLevel(logging.INFO)
+def start_logs():
+    log_directory = os.path.dirname(LOG_PATH)
+    if not os.path.exists(log_directory):
+        os.makedirs(log_directory)
 
-logger = logging.getLogger('fatoshistbot')
-logger.setLevel(logging.INFO)
-logger.addHandler(handler)
-logging.basicConfig(stream=sys.stdout, encoding='utf-8')
+    format_log = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+
+    logging.basicConfig(filename=LOG_PATH, filemode='a', format=format_log, level=logging.INFO, encoding='utf-8')
+
+    console_handler = logging.StreamHandler()
+    console_handler.setLevel(logging.INFO)
+    console_handler.setFormatter(logging.Formatter(format_log))
+
+    logger = logging.getLogger()
+    logger.addHandler(console_handler)

@@ -1,10 +1,9 @@
-from ..database.db_connection import DBConnection
+from fatoshist import db_connection
 
 
 class PollManager:
     def __init__(self):
-        self.db_connection = DBConnection()
-        self.db = self.db_connection.get_db()
+        self.db = db_connection
 
     def add_poll(self, chat_id, poll_id, correct_option_id, date):
         return self.db.poll.insert_one({
