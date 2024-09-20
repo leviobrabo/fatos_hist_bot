@@ -19,7 +19,7 @@ def get_births_of_the_day(bot, CHANNEL):
             headers={'accept': 'application/json; charset=utf-8; profile="https://www.mediawiki.org/wiki/Specs/onthisday/0.3.3"'},
         )
 
-        if response.status_code == '200':
+        if response.status_code == 200:
             data = response.json()
             births = data.get('births', [])
 
