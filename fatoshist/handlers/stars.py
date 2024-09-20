@@ -1,9 +1,8 @@
-from ..bot.bot import bot
-from ..config import CHANNEL
-from ..loggers import logger
+from fatoshist.config import CHANNEL
+import logging
 
 
-def msg_alerta_stars():
+def msg_alerta_stars(bot):
     try:
         caption = (
             '🌟 📺 <b>Apoiem o nosso canal reagindo às publicações com estrelas!</b> 📺 🌟\n\n'
@@ -18,4 +17,4 @@ def msg_alerta_stars():
             bot.send_video(CHANNEL, video, caption=caption, parse_mode='HTML')
 
     except Exception as e:
-        logger.error('Erro ao enviar vídeo com legenda no canal:', str(e))
+        logging.error(f'Erro ao enviar vídeo com legenda no canal: {e}')

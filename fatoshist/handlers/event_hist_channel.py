@@ -1,12 +1,11 @@
 from datetime import datetime
 
-from ..bot.bot import bot
-from ..config import CHANNEL
-from ..loggers import logger
-from ..utils.get_historical import get_historical_events
+from fatoshist.config import CHANNEL
+import logging
+from fatoshist.utils.get_historical import get_historical_events
 
 
-def send_historical_events_channel(CHANNEL):
+def send_historical_events_channel(bot,CHANNEL):
     try:
         today = datetime.now()
         day = today.day
@@ -28,17 +27,17 @@ def send_historical_events_channel(CHANNEL):
                 parse_mode='HTML',
             )
 
-            logger.info(f'Nenhum evento histórico para hoje no grupo {CHANNEL}')
+            logging.info(f'Nenhum evento histórico para hoje no grupo {CHANNEL}')
 
     except Exception as e:
-        logger.error('Erro ao enviar fatos históricos para o canal:', str(e))
+        logging.error(f'Erro ao enviar fatos históricos para o canal: {e}')
 
 
-def hist_channel_events():
+def hist_channel_events(bot):
     try:
-        send_historical_events_channel(CHANNEL)
+        send_historical_events_channel(bot,CHANNEL)
 
-        logger.success(f'Eventos históricos enviada o canal {CHANNEL}')
+        logging.info(f'Eventos históricos enviada o canal {CHANNEL}')
 
     except Exception as e:
-        logger.error('Erro no trabalho de enviar fatos hist no canal:', str(e))
+        logging.error(f'Erro no trabalho de enviar fatos hist no canal: {e}')

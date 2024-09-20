@@ -5,16 +5,15 @@ import pytz
 import requests
 from telebot import types
 
-from ..bot.bot import bot
-from ..config import CHANNEL_IMG
-from ..database.imgs import PhotoManager
-from ..loggers import logger
-from ..utils.month import get_month_name
+from fatoshist.config import CHANNEL_IMG
+from fatoshist.database.imgs import PhotoManager
+import logging
+from fatoshist.utils.month import get_month_name
 
 photo_manager = PhotoManager()
 
 
-def send_historical_events_CHANNEL_IMG_image(CHANNEL_IMG):
+def send_historical_events_CHANNEL_IMG_image(bot,CHANNEL_IMG):
     """Busca um evento histórico com uma imagem e envia para o canal."""
     try:
         today = datetime.now(pytz.timezone('America/Sao_Paulo'))
@@ -26,14 +25,14 @@ def send_historical_events_CHANNEL_IMG_image(CHANNEL_IMG):
         events_with_photo = [event for event in events if event.get('pages') and event['pages'][0].get('thumbnail')]
 
         if not events_with_photo:
-            logger.info('Não há eventos com fotos para enviar hoje.')
+            logging.info('Não há eventos com fotos para enviar hoje.')
             return
 
         random_event = random.choice(events_with_photo)
         photo_url = random_event['pages'][0]['thumbnail']['source']
 
         if photo_manager.db.cphoto.find_one({'photo_url': photo_url}):
-            logger.info(f'Imagem já utilizada: {photo_url}. Buscando outra...')
+            logging.info(f'Imagem já utilizada: {photo_url}. Buscando outra...')
             return
 
         event_text = random_event.get('text', '')
@@ -61,24 +60,24 @@ def send_historical_events_CHANNEL_IMG_image(CHANNEL_IMG):
 
         photo_manager.add_url_photo(photo_url)
 
-        logger.success(f'Evento histórico em foto enviado com sucesso para o canal ID {CHANNEL_IMG}.')
+        logging.info(f'Evento histórico em foto enviado com sucesso para o canal ID {CHANNEL_IMG}.')
 
     except Exception as e:
-        logger.error(f'Falha ao enviar evento histórico: {e}')
+        logging.error(f'Falha ao enviar evento histórico: {e}')
 
 
-def hist_channel_imgs_chn():
+def hist_channel_imgs_chn(bot):
     try:
-        send_historical_events_CHANNEL_IMG_image(CHANNEL_IMG)
-        logger.success(f'Mensagem enviada para o canal {CHANNEL_IMG}')
+        send_historical_events_CHANNEL_IMG_image(bot,CHANNEL_IMG)
+        logging.info(f'Mensagem enviada para o canal {CHANNEL_IMG}')
 
     except Exception as e:
-        logger.error('Erro ao enviar o trabalho de imagens:', str(e))
+        logging.error(f'Erro ao enviar o trabalho de imagens: {e}')
 
 
 def remove_all_url_photo():
     try:
         result = photo_manager.remove_all_url_photo()
-        logger.info(f'Removidas {result.deleted_count} fotos do banco de dados.')
+        logging.info(f'Removidas {result.deleted_count} fotos do banco de dados.')
     except Exception as e:
-        logger.error(f'Erro ao remover fotos: {e}')
+        logging.error(f'Erro ao remover fotos: {e}')

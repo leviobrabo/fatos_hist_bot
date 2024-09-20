@@ -3,13 +3,12 @@ from datetime import datetime
 
 import pytz
 
-from ..bot.bot import bot
-from ..config import CHANNEL
-from ..loggers import logger
-from ..utils.month import get_month_name
+from fatoshist.config import CHANNEL
+import logging
+from fatoshist.utils.month import get_month_name
 
 
-def get_holiday_br_of_the_day(CHANNEL):
+def get_holiday_br_of_the_day(bot,CHANNEL):
     try:
         today = datetime.now(pytz.timezone('America/Sao_Paulo'))
         day = today.day
@@ -33,17 +32,17 @@ def get_holiday_br_of_the_day(CHANNEL):
                 message += '\n\n<blockquote>💬 Você sabia? Siga o @historia_br e acesse nosso site historiadodia.com.</blockquote>'
                 bot.send_message(CHANNEL, message)
             else:
-                logger.warning('Não há informações sobre nascidos hoje.')
+                logging.warning('Não há informações sobre nascidos hoje.')
 
     except Exception as e:
-        logger.error('Erro ao obter informações:', str(e))
+        logging.error(f'Erro ao obter informações: {e}')
 
 
-def hist_channel_holiday_br():
+def hist_channel_holiday_br(bot):
     try:
-        get_holiday_br_of_the_day(CHANNEL)
+        get_holiday_br_of_the_day(bot,CHANNEL)
 
-        logger.success(f'Feriados brasileiro enviada o canal {CHANNEL}')
+        logging.info(f'Feriados brasileiro enviada o canal {CHANNEL}')
 
     except Exception as e:
-        logger.error('Erro ao enviar o trabalho feriados:', str(e))
+        logging.error(f'Erro ao enviar o trabalho feriados: {e}')

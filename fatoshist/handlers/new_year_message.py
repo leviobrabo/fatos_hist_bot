@@ -1,9 +1,8 @@
-from ..bot.bot import bot
-from ..config import CHANNEL, OWNER
-from ..loggers import logger
+import logging
+from fatoshist.config import CHANNEL, OWNER
 
 
-def new_year_message():
+def new_year_message(bot):
     try:
         photo_url = 'https://i.imgur.com/yRsKO9J.jpeg'
 
@@ -19,4 +18,4 @@ def new_year_message():
         bot.send_message(OWNER, msg_text_owner)
 
     except Exception as e:
-        logger.error('Erro ao enviar mensagem de natal:', str(e))
+        logging.error(f'Erro ao enviar mensagem de natal: {e}')

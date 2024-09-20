@@ -69,8 +69,6 @@ $ cp sample.bot.conf bot.conf
 TOKEN=
 HIST_LOG=
 HIST_CHANNEL=
-BOT_NAME=
-BOT_USERNAME=
 OWNER_ID=
 HIST_CHANNEL_POST =
 

@@ -2,16 +2,15 @@ from datetime import datetime
 
 from telebot import types
 
-from ..bot.bot import bot
-from ..config import GROUP_LOG
-from ..database.groups import GroupManager
-from ..loggers import logger
-from ..utils.get_historical import get_historical_events
+from fatoshist.config import GROUP_LOG
+from fatoshist.database.groups import GroupManager
+import logging
+from fatoshist.utils.get_historical import get_historical_events
 
 group_manager = GroupManager()
 
 
-def send_historical_events_group(chat_id):
+def send_historical_events_group(bot,chat_id):
     try:
         today = datetime.now()
         day = today.day
@@ -38,7 +37,7 @@ def send_historical_events_group(chat_id):
                 message_thread_id=topic,
             )
 
-            logger.success(f'Eventos históricos enviada com sucesso para o grupo {chat_id}')
+            logging.info(f'Eventos históricos enviada com sucesso para o grupo {chat_id}')
 
         else:
             bot.send_message(
@@ -49,26 +48,26 @@ def send_historical_events_group(chat_id):
                 message_thread_id=topic,
             )
 
-            logger.warning(f'Nenhum evento histórico para hoje no grupo {chat_id}')
+            logging.warning(f'Nenhum evento histórico para hoje no grupo {chat_id}')
 
     except Exception as e:
-        logger.error('Erro ao enviar fatos históricos para os chats:', str(e))
+        logging.error(f'Erro ao enviar fatos históricos para os chats:')
 
         group_manager.remove_chat_db(chat_id)
 
-        logger.warning(f'Chat {chat_id} removido do banco de dados devido a erro ao enviar mensagem de eventos históricos.')
+        logging.warning(f'Chat {chat_id} removido do banco de dados devido a erro ao enviar mensagem de eventos históricos.')
 
 
-def hist_chat_job():
+def hist_chat_job(bot):
     try:
         chat_models = group_manager.get_all_chats()
         for chat_model in chat_models:
             chat_id = chat_model['chat_id']
             if chat_id != GROUP_LOG:
                 try:
-                    send_historical_events_group(chat_id)
+                    send_historical_events_group(bot,chat_id)
                 except Exception as e:
-                    logger.error(f'Error sending historical events to group {chat_id}: {str(e)}')
+                    logging.error(f'Error sending historical events to group {chat_id}: {str(e)}')
 
     except Exception as e:
-        logger.error('Erro ao fazer o envio para chats:', str(e))
+        logging.error(f'Erro ao fazer o envio para chats: {e}')

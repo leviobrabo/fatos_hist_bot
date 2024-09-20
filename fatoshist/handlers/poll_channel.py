@@ -1,12 +1,10 @@
+import logging
 import json
 from datetime import datetime
 
-from ..bot.bot import bot
-from ..config import CHANNEL_POST
-from ..loggers import logger
+from fatoshist.config import CHANNEL_POST
 
-
-def send_poll(chat_id, question, options, correct_option_id, explanation):
+def send_poll(bot,chat_id, question, options, correct_option_id, explanation):
     try:
         bot.send_poll(
             chat_id,
@@ -18,13 +16,13 @@ def send_poll(chat_id, question, options, correct_option_id, explanation):
             explanation=explanation[:200] if explanation else None,
         )
 
-        logger.success(f'Enviada pergunta para o chat {chat_id}')
+        logging.info(f'Enviada pergunta para o chat {chat_id}')
 
     except Exception as e:
-        logger.error(f'Erro ao enviar a pergunta: {e}')
+        logging.error(f'Erro ao enviar a pergunta: {e}')
 
 
-def send_question():
+def send_question(bot):
     try:
         today = datetime.now()
         current_time = today.time()
@@ -36,6 +34,7 @@ def send_question():
 
         if current_time.hour == '9' and current_time.minute == '30':
             send_poll(
+                bot,
                 CHANNEL_POST,
                 events['pergunta1']['enunciado'],
                 list(events['pergunta1']['alternativas'].values()),
@@ -45,6 +44,7 @@ def send_question():
 
         elif current_time.hour == '12' and current_time.minute == '00':
             send_poll(
+                bot,
                 CHANNEL_POST,
                 events['pergunta2']['enunciado'],
                 list(events['pergunta2']['alternativas'].values()),
@@ -54,6 +54,7 @@ def send_question():
 
         elif current_time.hour == '15' and current_time.minute == '00':
             send_poll(
+                bot,
                 CHANNEL_POST,
                 events['pergunta3']['enunciado'],
                 list(events['pergunta3']['alternativas'].values()),
@@ -63,6 +64,7 @@ def send_question():
 
         elif current_time.hour == '17' and current_time.minute == '30':
             send_poll(
+                bot,
                 CHANNEL_POST,
                 events['pergunta4']['enunciado'],
                 list(events['pergunta4']['alternativas'].values()),
@@ -70,4 +72,4 @@ def send_question():
                 events['pergunta4'].get('explicacao', ''),
             )
     except Exception as e:
-        logger.error(f'Erro ao enviar a pergunta: {e}')
+        logging.error(f'Erro ao enviar a pergunta: {e}')

@@ -1,11 +1,10 @@
-from telebot import types
+import logging
+from telebot import types, TeleBot
 
-from ..bot.bot import bot
-from ..config import CHANNEL, OWNER
-from ..loggers import logger
+from fatoshist.config import CHANNEL, OWNER
 
 
-def msg_alerta_boost():
+def msg_alerta_boost(bot:TeleBot):
     try:
         msg = (
             '🌟 📺 <b>Impulsionem o nosso canal para que possamos começar a postar stories.</b> 📺 🌟\n\n'
@@ -23,4 +22,4 @@ def msg_alerta_boost():
         msg_text_owner = 'Mensagem de Boots de canal enviada com sucesso'
         bot.send_message(OWNER, msg_text_owner)
     except Exception as e:
-        logger.error('Erro ao enviar mensagens históricas no canal:', str(e))
+        logging.error(f'Erro ao enviar mensagens históricas no canal: {e}')

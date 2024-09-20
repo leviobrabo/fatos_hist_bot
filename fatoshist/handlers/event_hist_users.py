@@ -2,15 +2,14 @@ from datetime import datetime
 
 from telebot import types
 
-from ..bot.bot import bot
-from ..database.users import UserManager
-from ..loggers import logger
-from ..utils.get_historical import get_historical_events
+from fatoshist.database.users import UserManager
+import logging
+from fatoshist.utils.get_historical import get_historical_events
 
 user_manager = UserManager()
 
 
-def send_historical_events_user(user_id):
+def send_historical_events_user(bot,user_id):
     try:
         today = datetime.now()
         day = today.day
@@ -38,13 +37,13 @@ def send_historical_events_user(user_id):
                 reply_markup=markup,
             )
 
-            logger.warning(f'Nenhum evento histórico para hoje no grupo {user_id}')
+            logging.warning(f'Nenhum evento histórico para hoje no grupo {user_id}')
 
     except Exception as e:
-        logger.error('Erro ao enviar fatos históricos para os usuários:', str(e))
+        logging.error(f'Erro ao enviar fatos históricos para os usuários:')
 
 
-def hist_user_job():
+def hist_user_job(bot):
     try:
         user_models = user_manager.get_all_users({'msg_private': 'true'})
         for user_model in user_models:
@@ -55,13 +54,13 @@ def hist_user_job():
                 try:
                     bot.delete_message(user_id, message_id)
                 except Exception:
-                    logger.warning(f'Não foi possível deletar {user_id}')
+                    logging.warning(f'Não foi possível deletar {user_id}')
 
                     pass
 
-            send_historical_events_user(user_id)
+            send_historical_events_user(bot,user_id)
 
-            logger.success(f'Mensagem enviada ao usuário {user_id}')
+            logging.info(f'Mensagem enviada ao usuário {user_id}')
 
     except Exception as e:
-        logger.error('Erro ao enviar para os usuários:', str(e))
+        logging.error(f'Erro ao enviar para os usuários:')

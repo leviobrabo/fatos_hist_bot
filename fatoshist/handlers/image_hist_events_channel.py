@@ -4,13 +4,12 @@ from datetime import datetime
 import pytz
 import requests
 
-from ..bot.bot import bot
-from ..config import CHANNEL
-from ..loggers import logger
-from ..utils.month import get_month_name
+from fatoshist.config import CHANNEL
+import logging
+from fatoshist.utils.month import get_month_name
 
 
-def send_historical_events_channel_image(CHANNEL):
+def send_historical_events_channel_image(bot,CHANNEL):
     try:
         today = datetime.now(pytz.timezone('America/Sao_Paulo'))
         day = today.day
@@ -21,7 +20,7 @@ def send_historical_events_channel_image(CHANNEL):
         events_with_photo = [event for event in events if event.get('pages') and event['pages'][0].get('thumbnail')]
 
         if not events_with_photo:
-            logger.info('Não há eventos com fotos para enviar hoje.')
+            logging.info('Não há eventos com fotos para enviar hoje.')
             return
 
         random_event = random.choice(events_with_photo)
@@ -40,16 +39,16 @@ def send_historical_events_channel_image(CHANNEL):
         photo_url = random_event['pages'][0]['thumbnail']['source']
         bot.send_photo(CHANNEL, photo_url, caption=caption, **options)
 
-        logger.success(f'Evento histórico em foto enviado com sucesso para o canal ID {CHANNEL}.')
+        logging.info(f'Evento histórico em foto enviado com sucesso para o canal ID {CHANNEL}.')
 
     except Exception as e:
-        logger.error(f'Falha ao enviar evento histórico: {e}')
+        logging.error(f'Falha ao enviar evento histórico: {e}')
 
 
-def hist_channel_imgs():
+def hist_channel_imgs(bot):
     try:
-        send_historical_events_channel_image(CHANNEL)
-        logger.success(f'Mensagem enviada para o canal {CHANNEL}')
+        send_historical_events_channel_image(bot,CHANNEL)
+        logging.info(f'Mensagem enviada para o canal {CHANNEL}')
 
     except Exception as e:
-        logger.error('Erro ao enviar o trabalho de imagens:', str(e))
+        logging.error(f'Erro ao enviar o trabalho de imagens: {e}')

@@ -3,12 +3,11 @@ from datetime import datetime
 
 import pytz
 
-from ..bot.bot import bot
-from ..config import CHANNEL
-from ..loggers import logger
+from fatoshist.config import CHANNEL
+import logging
 
 
-def get_frase(CHANNEL):
+def get_frase(bot,CHANNEL):
     try:
         today = datetime.now(pytz.timezone('America/Sao_Paulo'))
         day = today.day
@@ -28,17 +27,17 @@ def get_frase(CHANNEL):
                 )
                 bot.send_message(CHANNEL, message)
             else:
-                logger.info('Não há informações para o dia de hoje.')
+                logging.info('Não há informações para o dia de hoje.')
 
     except Exception as e:
-        logger.error('Erro ao obter informações:', str(e))
+        logging.error(f'Erro ao obter informações:')
 
 
-def hist_channel_frase():
+def hist_channel_frase(bot):
     try:
-        get_frase(CHANNEL)
+        get_frase(bot,CHANNEL)
 
-        logger.success(f'Frase enviada o canal {CHANNEL}')
+        logging.info(f'Frase enviada o canal {CHANNEL}')
 
     except Exception as e:
-        logger.error('Erro ao enviar o trabalho curiosidade:', str(e))
+        logging.error(f'Erro ao enviar o trabalho curiosidade: {e}')

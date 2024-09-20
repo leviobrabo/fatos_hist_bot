@@ -1,18 +1,18 @@
+import logging
 import json
 from datetime import datetime
 
-from ..bot.bot import bot
-from ..database.groups import GroupManager
-from ..database.poll_manager import PollManager
-from ..database.users import UserManager
-from ..loggers import logger
+from fatoshist.database.groups import GroupManager
+from fatoshist.database.poll_manager import PollManager
+from fatoshist.database.users import UserManager
+
 
 group_manager = GroupManager()
 poll_manager = PollManager()
 user_manager = UserManager()
 
 
-def send_poll_chat(chat_id, poll_data, message_thread_id):
+def send_poll_chat(bot,chat_id, poll_data, message_thread_id):
     try:
         today = datetime.now()
         current_date = today.strftime('%d/%m/%Y')
@@ -35,15 +35,15 @@ def send_poll_chat(chat_id, poll_data, message_thread_id):
 
         poll_id = sent_poll.poll.id
 
-        poll_manager.add_poll_db(chat_id, poll_id, poll_data['correct_option_id'], current_date)
+        poll_manager.add_poll(chat_id, poll_id, poll_data['correct_option_id'], current_date)
 
-        logger.success(f'Enviada pergunta para o chat {chat_id}')
+        logging.info(f'Enviada pergunta para o chat {chat_id}')
 
     except Exception as e:
-        logger.error(f'Erro ao enviar a pergunta: {e}')
+        logging.error(f'Erro ao enviar a pergunta: {e}')
 
 
-def send_question_chat():
+def send_question_chat(bot):
     try:
         today = datetime.now()
         current_time = today.time()
@@ -62,6 +62,7 @@ def send_question_chat():
             if chat_id:
                 if current_time.hour == '10' and current_time.minute == '30':
                     send_poll_chat(
+                        bot,
                         chat_id,
                         events['pergunta1']['enunciado'],
                         list(events['pergunta1']['alternativas'].values()),
@@ -72,6 +73,7 @@ def send_question_chat():
 
                 elif current_time.hour == '13' and current_time.minute == '30':
                     send_poll_chat(
+                        bot,
                         chat_id,
                         events['pergunta2']['enunciado'],
                         list(events['pergunta2']['alternativas'].values()),
@@ -82,6 +84,7 @@ def send_question_chat():
 
                 elif current_time.hour == '16' and current_time.minute == '00':
                     send_poll_chat(
+                        bot,
                         chat_id,
                         events['pergunta3']['enunciado'],
                         list(events['pergunta3']['alternativas'].values()),
@@ -92,6 +95,7 @@ def send_question_chat():
 
                 elif current_time.hour == '18' and current_time.minute == '00':
                     send_poll_chat(
+                        bot,
                         chat_id,
                         events['pergunta4']['enunciado'],
                         list(events['pergunta4']['alternativas'].values()),
@@ -101,46 +105,12 @@ def send_question_chat():
                     )
 
     except Exception as e:
-        logger.error(f'Erro ao enviar a pergunta: {e}')
-
-
-@bot.poll_answer_handler()
-def handle_poll_answer(poll_answer):
-    try:
-        user_id = poll_answer.user.id
-        first_name = poll_answer.user.first_name
-        last_name = poll_answer.user.last_name
-        username = poll_answer.user.username
-
-        poll_id = poll_answer.poll_id
-        option_id = poll_answer.option_ids[0]
-
-        poll_db = poll_manager.search_poll(poll_id)
-        correto = None
-
-        try:
-            if poll_db:
-                correto = poll_db.get('correct_option_id')
-        except AttributeError as e:
-            logger.warning(f'Erro ao obter a opção correta da enquete: {e}')
-
-        user = user_manager.search_user(user_id)
-        if not user:
-            user_manager.add_new_user(user_id, first_name, last_name, username)
-
-        poll_manager.set_questions_user(user_id)
-
-        if correto is not None and option_id == correto:
-            poll_manager.set_hit_user(user_id)
-
-    except Exception as e:
-        logger.error(f'Erro ao processar a resposta da enquete: {e}')
-
+        logging.error(f'Erro ao enviar a pergunta: {e}')
 
 def remove_all_poll():
     try:
-        logger.success('Removido as polls do banco de dados!')
+        logging.info('Removido as polls do banco de dados!')
 
         poll_manager.remove_all_poll_db()
     except Exception as e:
-        logger.error(f'Erro ao processar a resposta da enquete: {e}')
+        logging.error(f'Erro ao processar a resposta da enquete: {e}')

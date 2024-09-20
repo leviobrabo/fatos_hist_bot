@@ -3,25 +3,25 @@ from datetime import datetime
 
 import pytz
 
-from ..bot.bot import bot
-from ..config import CHANNEL
-from ..database.president_manager import PresidentManager
-from ..loggers import logger
+from fatoshist.config import CHANNEL
+from fatoshist.database.president_manager import PresidentManager
+import logging
 
 president_manager = PresidentManager()
 
-with open('./fatoshistoricos/data/presidentes.json', 'r', encoding='utf-8') as file:
+with open('./fatoshist/data/presidentes.json', 'r', encoding='utf-8') as file:
     presidentes = json.load(file)
 
 
-def enviar_foto_presidente():
+def enviar_foto_presidente(bot):
     try:
         if president_manager.db.presidentes.count_documents({}) == 0:
             presidente = presidentes.get('1')
             id_new = 1
             date_new = datetime.now(pytz.timezone('America/Sao_Paulo')).strftime('%Y-%m-%d')
             president_manager.add_presidentes_db(id_new, date_new)
-            enviar_info_pelo_canal(presidente)
+            enviar_info_pelo_canal(bot,presidente)
+
         else:
             ultimo_presidente = president_manager.db.presidentes.find().sort([('_id', -1)]).limit(1)[0]
             ultimo_id = ultimo_presidente['id']
@@ -30,7 +30,7 @@ def enviar_foto_presidente():
             today_str = today.strftime('%Y-%m-%d')
 
             if ultimo_presidente['date'] != today_str:
-                logger.info('Atualizando informações do último presidente para a data atual.')
+                logging.info('Atualizando informações do último presidente para a data atual.')
 
                 proximo_id = ultimo_id + 1
                 proximo_presidente = presidentes.get(str(proximo_id))
@@ -41,16 +41,16 @@ def enviar_foto_presidente():
                     )
                     enviar_info_pelo_canal(proximo_presidente)
                 else:
-                    logger.error('Não há mais presidentes para enviar.')
+                    logging.error(f'Não há mais presidentes para enviar.')
 
             else:
-                logger.info('Já existe um presidente registrado para hoje.')
+                logging.info('Já existe um presidente registrado para hoje.')
 
     except Exception as e:
-        logger.error(f'Ocorreu um erro ao enviar informações do presidente: {str(e)}')
+        logging.error(f'Ocorreu um erro ao enviar informações do presidente: {str(e)}')
 
 
-def enviar_info_pelo_canal(info_presidente):
+def enviar_info_pelo_canal(bot,info_presidente):
     try:
         titulo = info_presidente.get('titulo', '')
         nome = info_presidente.get('nome', '')
@@ -71,8 +71,8 @@ def enviar_info_pelo_canal(info_presidente):
             f'<blockquote>💬 Você sabia? Siga o @historia_br e acesse nosso site historiadodia.com.</blockquote>'
         )
 
-        logger.success('Envio de presidente concluído com sucesso!')
+        logging.info('Envio de presidente concluído com sucesso!')
 
         bot.send_photo(CHANNEL, photo=foto, caption=caption, parse_mode='HTML')
     except Exception as e:
-        logger.error(f'Erro ao enviar foto do presidente: {str(e)}')
+        logging.error(f'Erro ao enviar foto do presidente: {e}')

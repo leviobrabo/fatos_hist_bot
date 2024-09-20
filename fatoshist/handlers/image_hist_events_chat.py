@@ -5,16 +5,15 @@ import pytz
 import requests
 from telebot import types
 
-from ..bot.bot import bot
-from ..config import GROUP_LOG
-from ..database.groups import GroupManager
-from ..loggers import logger
-from ..utils.month import get_month_name
+from fatoshist.config import GROUP_LOG
+from fatoshist.database.groups import GroupManager
+import logging
+from fatoshist.utils.month import get_month_name
 
 group_manager = GroupManager()
 
 
-def send_historical_events_group_image(chat_id):
+def send_historical_events_group_image(bot,chat_id):
     try:
         today = datetime.now(pytz.timezone('America/Sao_Paulo'))
         day = today.day
@@ -61,25 +60,25 @@ def send_historical_events_group_image(chat_id):
                     message_thread_id=topic,
                 )
 
-            logger.success(f'Evento histórico em foto enviado com sucesso para o chat ID {chat_id}.')
+            logging.info(f'Evento histórico em foto enviado com sucesso para o chat ID {chat_id}.')
 
         else:
-            logger.info('Não há eventos históricos para o dia atual.')
+            logging.info('Não há eventos históricos para o dia atual.')
 
     except Exception as e:
-        logger.error(f'Falha ao enviar evento histórico: {e}')
+        logging.error(f'Falha ao enviar evento histórico: {e}')
 
 
-def hist_image_chat_job():
+def hist_image_chat_job(bot):
     try:
         chat_models = group_manager.get_all_chats({'forwarding': 'true'})
         for chat_model in chat_models:
             chat_id = chat_model['chat_id']
             if chat_id != GROUP_LOG:
                 try:
-                    send_historical_events_group_image(chat_id)
+                    send_historical_events_group_image(bot,chat_id)
                 except Exception as e:
-                    logger.error(f'Error sending imgs historical events to group {chat_id}: {str(e)}')
+                    logging.error(f'Error sending imgs historical events to group {chat_id}: {str(e)}')
 
     except Exception as e:
-        logger.error('Erro ao fazer o envio das imagens para chats:', str(e))
+        logging.error(f'Erro ao fazer o envio das imagens para chats: {e}')

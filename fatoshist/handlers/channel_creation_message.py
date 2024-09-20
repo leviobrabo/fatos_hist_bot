@@ -1,14 +1,14 @@
+import logging
 import time
 from datetime import datetime
 
-from ..bot.bot import bot
-from ..config import CHANNEL, OWNER
-from ..loggers import logger
+from fatoshist.config import CHANNEL, OWNER
+import logging
 
 data_criacao = datetime(2022, 11, 19)
 
 
-def enviar_mensagem_aniversario(CHANNEL):
+def enviar_mensagem_aniversario(bot,CHANNEL):
     try:
         data_atual = datetime.now()
 
@@ -29,10 +29,10 @@ def enviar_mensagem_aniversario(CHANNEL):
             bot.send_message(OWNER, msg_text_owner)
 
     except Exception as e:
-        logger.error('Erro ao enviar mensagem de aniversário:', str(e))
+        logging.error(f'Erro ao enviar mensagem de aniversário: {e}')
 
 
-def agendar_aniversario():
+def agendar_aniversario(bot):
     while True:
         agora = datetime.now()
         proximo_aniversario = datetime(agora.year, data_criacao.month, data_criacao.day, 0, 0, 0)
@@ -43,4 +43,4 @@ def agendar_aniversario():
         espera = (proximo_aniversario - agora).total_seconds()
         time.sleep(espera)
 
-        enviar_mensagem_aniversario(CHANNEL)
+        enviar_mensagem_aniversario(bot,CHANNEL)

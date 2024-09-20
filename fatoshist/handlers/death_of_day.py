@@ -1,14 +1,13 @@
+import logging
 from datetime import datetime
 
 import requests
 
-from ..bot.bot import bot
-from ..config import CHANNEL
-from ..loggers import logger
-from ..utils.month import get_month_name
+from fatoshist.config import CHANNEL
+from fatoshist.utils.month import get_month_name
 
 
-def get_deaths_of_the_day(CHANNEL):
+def get_deaths_of_the_day(bot,CHANNEL):
     try:
         today = datetime.now()
         day = today.day
@@ -44,18 +43,18 @@ def get_deaths_of_the_day(CHANNEL):
 
                 bot.send_message(CHANNEL, message, disable_web_page_preview=False)
             else:
-                logger.info('Não há informações sobre mortos para o dia atual.')
+                logging.info('Não há informações sobre mortos para o dia atual.')
 
         else:
-            logger.warning('Erro ao obter informações:', response.status_code)
+            logging.warning('Erro ao obter informações:', response.status_code)
 
     except Exception as e:
-        logger.error('Erro ao enviar mortos para os canal:', str(e))
+        logging.error(f'Erro ao enviar mortos para os canal:')
 
 
-def hist_channel_death():
+def hist_channel_death(bot):
     try:
-        get_deaths_of_the_day(CHANNEL)
-        logger.success(f'Mortos enviada o canal {CHANNEL}')
+        get_deaths_of_the_day(bot,CHANNEL)
+        logging.info(f'Mortos enviada o canal {CHANNEL}')
     except Exception as e:
-        logger.info('Erro ao enviar o trabalho mortes:', str(e))
+        logging.info(f'Erro ao enviar o trabalho mortes: {e}')

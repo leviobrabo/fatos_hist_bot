@@ -1,15 +1,14 @@
+import logging
 from datetime import datetime
 
 import pytz
 import requests
 
-from ..bot.bot import bot
-from ..config import CHANNEL, OWNER
-from ..loggers import logger
-from ..utils.month import get_month_name
+from fatoshist.config import CHANNEL, OWNER
+from fatoshist.utils.month import get_month_name
 
 
-def get_births_of_the_day(CHANNEL):
+def get_births_of_the_day(bot,CHANNEL):
     try:
         today = datetime.now(pytz.timezone('America/Sao_Paulo'))
         day = today.day
@@ -46,17 +45,17 @@ def get_births_of_the_day(CHANNEL):
                 msg_text_owner = 'Mensagem de anivesário de canal enviada com sucesso'
                 bot.send_message(OWNER, msg_text_owner)
             else:
-                logger.info('Não há informações sobre nascidos hoje.')
+                logging.info('Não há informações sobre nascidos hoje.')
         else:
-            logger.warning('Erro ao obter informações:', response.status_code)
+            logging.warning('Erro ao obter informações:', response.status_code)
 
     except Exception as e:
-        logger.error('Erro ao obter informações:', str(e))
+        logging.error(f'Erro ao obter informações:')
 
 
 def hist_channel_birth():
     try:
         get_births_of_the_day(CHANNEL)
-        logger.success(f'Nascidos enviada o canal {CHANNEL}')
+        logging.info(f'Nascidos enviada o canal {CHANNEL}')
     except Exception as e:
-        logger.error('Erro ao enviar o trabalho nascido:', str(e))
+        logging.error(f'Erro ao enviar o trabalho nascido:')

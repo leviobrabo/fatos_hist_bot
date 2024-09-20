@@ -1,12 +1,12 @@
+import logging
 import random
 import time
 
 from telebot import types
 
-from ..bot.bot import bot
-from ..config import CHANNEL, CHANNEL_IMG, OWNER
-from ..database.users import UserManager
-from ..loggers import logger
+from fatoshist import bot
+from fatoshist.config import CHANNEL, CHANNEL_IMG, OWNER
+from fatoshist.database.users import UserManager
 
 user_manager = UserManager()
 
@@ -34,7 +34,7 @@ def ads_message_channel_user(user_id):
 
         bot.send_message(user_id, msg_text, parse_mode='HTML', reply_markup=markup)
     except Exception as e:
-        logger.error(f'Erro ao preparar a mensagem para os usuários e canais: {e}')
+        logging.error(f'Erro ao preparar a mensagem para os usuários e canais: {e}')
 
 
 def ads_msg_job():
@@ -45,7 +45,7 @@ def ads_msg_job():
 
             try:
                 ads_message_channel_user(user_id)
-                logger.success(f'Mensagem enviada ao usuário {user_id}')
+                logging.info(f'Mensagem enviada ao usuário {user_id}')
             except Exception as e:
                 if '403' in str(e) and 'user is deactivated' in str(e):
                     pass
@@ -56,7 +56,7 @@ def ads_msg_job():
                 elif '403' in str(e) and 'bot was blocked by the user' in str(e):
                     pass
                 else:
-                    logger.error(f'Erro ao enviar mensagem para o usuário {user_id}: {e}')
+                    logging.error(f'Erro ao enviar mensagem para o usuário {user_id}: {e}')
             time.sleep(10)
 
         for channel_id in [CHANNEL, CHANNEL_IMG]:
@@ -78,7 +78,7 @@ def ads_msg_job():
             msg_text_owner = 'Mensagem de ADS enviado com sucesso para o canal'
             bot.send_message(OWNER, msg_text_owner)
 
-            logger.success(f'Mensagem enviada ao canal {channel_id}')
+            logging.info(f'Mensagem enviada ao canal {channel_id}')
             time.sleep(10)
     except Exception as e:
-        logger.error(f'Erro ao enviar para os usuários e canais: {e}')
+        logging.error(f'Erro ao enviar para os usuários e canais: {e}')

@@ -1,4 +1,4 @@
-from ..database.db_connection import DBConnection
+from fatoshist.database.db_connection import DBConnection
 
 
 class PresidentManager:

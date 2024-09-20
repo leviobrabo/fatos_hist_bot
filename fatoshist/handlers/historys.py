@@ -1,12 +1,11 @@
 import json
 from datetime import datetime
 
-from ..bot.bot import bot
-from ..config import CHANNEL, OWNER
-from ..loggers import logger
+from fatoshist.config import CHANNEL, OWNER
+import logging
 
 
-def get_history(CHANNEL):
+def get_history(bot,CHANNEL):
     try:
         today = datetime.now()
         day = today.day
@@ -29,22 +28,22 @@ def get_history(CHANNEL):
                     )
                     bot.send_photo(CHANNEL, photo=photo_url, caption=message, parse_mode='HTML')
                 else:
-                    logger.info('Informações incompletas para o dia de hoje.')
+                    logging.info('Informações incompletas para o dia de hoje.')
                     warning_message = (
                         f'A legenda da história para o dia {day}/{month} é muito longa '
                         f'({len(caption)} caracteres). Por favor, corrija para que não exceda 1024 caracteres.'
                     )
                     bot.send_message(OWNER, warning_message)
             else:
-                logger.info('Não há informações para o dia de hoje.')
+                logging.info('Não há informações para o dia de hoje.')
 
     except Exception as e:
-        logger.error(f'Erro ao obter informações: {str(e)}', exc_info=True)
+        logging.error(f'Erro ao obter informações: {str(e)}', exc_info=True)
 
 
-def hist_channel_history():
+def hist_channel_history(bot):
     try:
-        get_history(CHANNEL)
-        logger.success(f'História enviada ao canal {CHANNEL}')
+        get_history(bot,CHANNEL)
+        logging.info(f'História enviada ao canal {CHANNEL}')
     except Exception as e:
-        logger.error(f'Erro ao enviar a história: {str(e)}', exc_info=True)
+        logging.error(f'Erro ao enviar a história: {str(e)}')

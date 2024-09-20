@@ -1,17 +1,16 @@
+import logging
 from datetime import datetime
 
-from ..bot.bot import bot
-from ..config import CHANNEL_POST, GROUP_LOG, OWNER
-from ..database.counter_manager import CounterManager
-from ..loggers import logger
+from fatoshist.config import CHANNEL_POST, GROUP_LOG, OWNER
+from fatoshist.database.counter_manager import CounterManager
 
 counter_manager = CounterManager()
 
 
-def get_current_count():
+def get_current_count(bot):
     try:
         current_count = bot.get_chat_members_count(CHANNEL_POST)
-        logger.info(f'contador: {current_count}')
+        logging.info(f'contador: {current_count}')
         current_date = datetime.now()
 
         last_entry = counter_manager.get_last_entry()
@@ -48,8 +47,7 @@ def get_current_count():
                     GROUP_LOG,
                     message,
                     parse_mode='html',
-                    disable_web_page_preview=True,
-                    message_thread_id=38551,
+                    disable_web_page_preview=True
                 )
 
                 bot.send_message(OWNER, message)
@@ -63,8 +61,7 @@ def get_current_count():
                 GROUP_LOG,
                 message,
                 parse_mode='html',
-                disable_web_page_preview=True,
-                message_thread_id=38551,
+                disable_web_page_preview=True
             )
 
             bot.send_message(OWNER, message)
@@ -72,4 +69,4 @@ def get_current_count():
             counter_manager.count_user_channel(current_count, current_date)
 
     except Exception as e:
-        logger.error('Erro ao obter informações:', str(e))
+        logging.error(f'Erro ao obter informações:')

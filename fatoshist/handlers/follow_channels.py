@@ -1,9 +1,8 @@
-from ..bot.bot import bot
-from ..config import CHANNEL
-from ..loggers import logger
+import logging
+from telebot import TeleBot
+from fatoshist.config import CHANNEL
 
-
-def msg_inscricao_canais_historia():
+def msg_inscricao_canais_historia(bot:TeleBot):
     try:
         msg = (
             '🌟 📺 <b>Junte-se ao nosso incrível canal de História</b> 📺 🌟\n\n'
@@ -21,4 +20,4 @@ def msg_inscricao_canais_historia():
             parse_mode='HTML',
         )
     except Exception as e:
-        logger.error('Erro ao enviar mensagens históricas no canal:', str(e))
+        logging.error(f'Erro ao enviar mensagens históricas no canal: {e}')
