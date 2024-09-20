@@ -93,7 +93,7 @@ def schedule_tasks(bot: TeleBot):
         schedule.every().day.at('15:30').do(lambda: hist_channel_death(bot))
 
         # Envio dos nascidos do dia no canal
-        schedule.every().day.at('20:19').do(lambda: hist_channel_birth(bot))
+        schedule.every().day.at('20:24').do(lambda: hist_channel_birth(bot))
 
         # Envio dos feriados do dia no canal
         schedule.every().day.at('20:30').do(lambda: hist_channel_holiday(bot))
