@@ -28,7 +28,13 @@ def get_holidays_of_the_day(bot, CHANNEL):
 
                 for index, holiday in enumerate(holidays[:5], start=1):
                     name = f"<b>{holiday.get('text', '')}</b>"
-                    info = holiday.get('pages', [{}])[0].get('extract', 'Informações não disponíveis.')
+                    pages = holiday.get('pages', [])
+
+                    # Check if there are pages and extract information
+                    if len(pages) > 0:
+                        info = pages[0].get('extract', 'Informações não disponíveis.')
+                    else:
+                        info = 'Informações não disponíveis.'
 
                     holiday_message = f'<i>{index}.</i> <b>Nome:</b> {name}\n<b>Informações:</b> {info}'
                     holiday_messages.append(holiday_message)
@@ -47,6 +53,7 @@ def get_holidays_of_the_day(bot, CHANNEL):
 
     except Exception as e:
         logging.error(f'Erro ao obter informações: {e}')
+
 
 
 def hist_channel_holiday(bot):
