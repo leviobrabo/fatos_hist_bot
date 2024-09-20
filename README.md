@@ -49,10 +49,10 @@ Você vai precisar ter instalado em sua máquina as seguintes ferramentas:
 
 ```bash
 # Clone este repositório
-$ git clone https://github.com/leviobrabo/fatoshisbot.git
+$ git clone https://github.com/leviobrabo/fatos_hist_bot.git
 
 # Acesse a pasta do projeto no terminal/cmd
-$ cd fatoshisbot
+$ cd fatos_hist_bot
 
 # Instale as dependências
 
