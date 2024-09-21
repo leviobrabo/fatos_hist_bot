@@ -38,7 +38,7 @@ def register(bot: TeleBot):
             user_manager.set_questions_user(user_id)
 
             if correto is not None and option_id == correto:
-                poll_manager.set_hit_user(user_id)
+                user_manager.set_hit_user(user_id)
 
         except Exception as e:
             logging.error(f'Erro ao processar a resposta da enquete: {e}')
