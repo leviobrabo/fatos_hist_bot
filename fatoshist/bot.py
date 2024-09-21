@@ -69,7 +69,6 @@ class Bot:
         try:
             logging.info('Iniciando Telegram BOT...')
             threading.Thread(target=self.schedule_thread, name='schedule', daemon=True).start()
-            # self.set_commands()
             self.set_commands_and_register_handlers()
             python_version = platform.python_version()
             telebot_version = getattr(telebot, '__version__', 'Versão desconhecida')
@@ -83,7 +82,7 @@ class Bot:
                     f'<b>Versão do Python:</b> {python_version}\n'
                     f'<b>Versão da Biblioteca:</b> {telebot_version}'
                 ),
-                message_thread_id=38551,
+                # message_thread_id=38551,
                 parse_mode='HTML',
             )
             

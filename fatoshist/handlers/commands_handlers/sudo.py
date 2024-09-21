@@ -192,8 +192,8 @@ def register(bot: TeleBot):
     def cmd_stats(message):
         try:
             if message.from_user.id == OWNER:
-                count_users = len(user_manager.get_all_users())
-                count_groups = len(group_manager.get_all_chats())
+                count_users = user_manager.get_all_users().count()
+                count_groups = group_manager.get_all_chats().count()
                 user_stats = f' ☆ {count_users} usuários\n ☆ {count_groups} Grupos'
                 bot.reply_to(message, f'\n──❑ 「 Bot Stats 」 ❑──\n\n{user_stats}')
         except Exception as e:
@@ -252,7 +252,6 @@ def register(bot: TeleBot):
     @bot.message_handler(commands=["bcgps"])
     def cmd_broadcast_chat(message):
         try:
-            user_id = message.from_user.id
             if message.from_user.id != OWNER:
                 return
             if message.chat.type != "private":
@@ -357,11 +356,11 @@ def register(bot: TeleBot):
             logging.error(f'Erro ao enviar a lista de comandos do sistema: {e}')
 
     return [
-        types.BotCommand('/sys', 'Uso do servidor'),
         types.BotCommand('/add_sudo', 'Elevar usuário'),
         types.BotCommand('/rem_sudo', 'Remover usuário'),
         types.BotCommand('/grupos', 'Lista de grupos'),
         types.BotCommand('/stats', 'Estatística do bot'),
         types.BotCommand('/bcusers', 'Broadcast para usuários'),
         types.BotCommand('/bcgps', 'Broadcast para grupos'),
+        types.BotCommand('/sys', 'Uso do servidor'),
     ]
