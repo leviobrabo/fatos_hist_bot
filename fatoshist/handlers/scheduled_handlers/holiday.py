@@ -49,10 +49,10 @@ def get_holidays_of_the_day(bot, CHANNEL):
                 logging.info('Não há informações sobre feriados mundiais para o dia atual.')
 
         else:
-            logging.warning(f'Erro ao obter informações: {response.status_code}')
+            logging.warning(f'Erro ao obter informações (holiday): {response.status_code}')
 
     except Exception as e:
-        logging.error(f'Erro ao obter informações: {e}')
+        logging.error(f'Erro ao obter informações (holiday): {e}')
 
 
 

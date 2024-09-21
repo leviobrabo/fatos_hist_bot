@@ -59,4 +59,4 @@ def get_current_count(bot):
             counter_manager.count_user_channel(current_count, current_date)
 
     except Exception as e:
-        logging.error(f'Erro ao obter informações:')
+        logging.error(f'Erro ao obter informações (count): {e}')

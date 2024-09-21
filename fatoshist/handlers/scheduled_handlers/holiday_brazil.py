@@ -35,7 +35,7 @@ def get_holiday_br_of_the_day(bot, CHANNEL):
                 logging.warning('Não há informações sobre nascidos hoje.')
 
     except Exception as e:
-        logging.error(f'Erro ao obter informações: {e}')
+        logging.error(f'Erro ao obter informações (holiday_brazil): {e}')
 
 
 def hist_channel_holiday_br(bot):

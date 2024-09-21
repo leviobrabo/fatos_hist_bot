@@ -24,10 +24,10 @@ def get_curiosity(bot, CHANNEL):
                 )
                 bot.send_message(CHANNEL, message)
             else:
-                logging.info('Não há informações para o dia de hoje.')
+                logging.info('Não há informações para o dia de hoje. (curiosity)')
 
     except Exception as e:
-        logging.error(f'Erro ao obter informações: {e}')
+        logging.error(f'Erro ao obter informações (curiosity): {e}')
 
 
 def hist_channel_curiosity(bot):

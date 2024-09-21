@@ -46,7 +46,7 @@ def get_deaths_of_the_day(bot, CHANNEL):
                 logging.info('Não há informações sobre mortos para o dia atual.')
 
         else:
-            logging.warning('Erro ao obter informações:', response.status_code)
+            logging.warning('Erro ao obter informações (death_of_day):', response.status_code)
 
     except Exception as e:
         logging.error(f'Erro ao enviar mortos para os canal:')

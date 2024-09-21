@@ -35,10 +35,10 @@ def get_history(bot, CHANNEL):
                     )
                     bot.send_message(OWNER, warning_message)
             else:
-                logging.info('Não há informações para o dia de hoje.')
+                logging.info('Não há informações para o dia de hoje. (historys)')
 
     except Exception as e:
-        logging.error(f'Erro ao obter informações: {str(e)}', exc_info=True)
+        logging.error(f'Erro ao obter informações (historys): {str(e)}', exc_info=True)
 
 
 def hist_channel_history(bot):

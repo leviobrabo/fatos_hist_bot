@@ -27,10 +27,10 @@ def get_frase(bot, CHANNEL):
                 )
                 bot.send_message(CHANNEL, message)
             else:
-                logging.info('Não há informações para o dia de hoje.')
+                logging.info('Não há informações para o dia de hoje. (frase)')
 
     except Exception as e:
-        logging.error(f'Erro ao obter informações: {e}')
+        logging.error(f'Erro ao obter informações (prase): {e}')
 
 
 

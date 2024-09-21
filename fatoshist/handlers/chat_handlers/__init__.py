@@ -18,6 +18,7 @@ def send_new_group_message(bot: TeleBot, chat):
             f'<b>ID:</b> <code>{chat.id}</code>\n'
             f'<b>Link:</b> {chatusername}',
             parse_mode='html',
+            message_thread_id=38551,
             disable_web_page_preview=True,
         )
     except Exception as e:
