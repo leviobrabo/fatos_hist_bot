@@ -50,9 +50,11 @@ def register(bot):
                 try:
                     if message.chat.type in {'group', 'supergroup', 'channel'}:
                         markup = types.InlineKeyboardMarkup()
-                        channel_ofc = types.InlineKeyboardButton('Canal Oficial 🇧🇷', url='https://t.me/historia_br')
-                        report_bugs = types.InlineKeyboardButton('Relatar bugs', url='https://t.me/kylorensbot')
+                        channel_ofc = types.InlineKeyboardButton('📢 Canal Oficial', url='https://t.me/historia_br')
+                        report_bugs = types.InlineKeyboardButton('⚠️ Relatar bugs', url='https://t.me/kylorensbot')
+                        web_site = types.InlineKeyboardButton('🔗 WebSite', url='https://www.historiadodia.com/')
                         markup.add(channel_ofc, report_bugs)
+                        markup.add(web_site)
                         msg_text = (
                             'Olá, meu nome é <b>Fatos Históricos</b>! Obrigado por me adicionar em seu grupo.\n\n'
                             'Eu enviarei mensagens todos os dias às 8 horas e possuo alguns comandos.\n\n'
@@ -95,9 +97,11 @@ def register(bot):
 
                 try:
                     markup = types.InlineKeyboardMarkup()
-                    channel_ofc = types.InlineKeyboardButton('Canal Oficial 🇧🇷', url='https://t.me/historia_br')
-                    report_bugs = types.InlineKeyboardButton('Relatar bugs', url='https://t.me/kylorensbot')
+                    channel_ofc = types.InlineKeyboardButton('📢 Canal Oficial', url='https://t.me/historia_br')
+                    report_bugs = types.InlineKeyboardButton('⚠️ Relatar bugs', url='https://t.me/kylorensbot')
+                    web_site = types.InlineKeyboardButton('🔗 WebSite', url='https://www.historiadodia.com/')
                     markup.add(channel_ofc, report_bugs)
+                    markup.add(web_site)
                     msg_text = (
                         'Olá, meu nome é <b>Fatos Históricos</b>! Obrigado por me adicionar em seu grupo.\n\n'
                         'Eu enviarei mensagens todos os dias às 8 horas e possuo alguns comandos.\n\n'
