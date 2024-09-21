@@ -82,7 +82,7 @@ class Bot:
                     f'<b>Versão do Python:</b> {python_version}\n'
                     f'<b>Versão da Biblioteca:</b> {telebot_version}'
                 ),
-                # message_thread_id=38551,
+                message_thread_id=38551,
                 parse_mode='HTML',
             )
             
