@@ -20,13 +20,14 @@ def register(bot: TeleBot):
                 if user.get('msg_private') == 'true':
                     bot.reply_to(
                         message,
-                        'Você já ATIVOU a função de receber eventos históricos no chat privado.',
+                        '🎉👏 Você já ATIVOU a função de receber 📜 <b>eventos históricos</b> diretamente no seu chat privado! 📲✨',
                     )
                 else:
                     user_manager.update_msg_private(user_id, 'true')
                     bot.reply_to(
                         message,
-                        '<b>Eventos históricos no chat privado ATIVADO</b>. Você receberá fatos históricos todos os dias às 8 horas.',
+                        '<b>🎉 Eventos Históricos no Chat Privado ATIVADO! 📜</b>\n\n⏰ Você receberá fatos históricos todos os dias às 8 horas. Não perca essa viagem no tempo! 🚀',
+
                     )
             else:
                 user_manager.add_user(user_id=message.from_user.id, username=message.from_user.username, first_name=message.from_user.first_name)
@@ -47,13 +48,13 @@ def register(bot: TeleBot):
                 if user.get('msg_private') == 'false':
                     bot.reply_to(
                         message,
-                        'Você já DESATIVOU a função de receber eventos históricos no chat privado.',
+                        '⚠️ Você DESATIVOU a função de receber 📜 <b>eventos históricos</b> no chat privado. Se mudar de ideia, é só ativar novamente! 😉',
                     )
                 else:
                     user_manager.update_msg_private(user_id, 'false')
                     bot.reply_to(
                         message,
-                        '<b>Eventos históricos no chat privado DESATIVADO</b>. Você não receberá fatos históricos todos os dias às 8 horas.',
+                        '<b>⚠️ Eventos Históricos no Chat Privado DESATIVADO 📜</b>\n\n🔕 Você não receberá mais fatos históricos diariamente às 8 horas. Se mudar de ideia, é só reativar! 😉',
                     )
             else:
                 user_manager.add_user(user_id=message.from_user.id, username=message.from_user.username, first_name=message.from_user.first_name)
