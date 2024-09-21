@@ -10,7 +10,7 @@ def get_curiosity(bot, CHANNEL):
         today = datetime.now()
         day = today.day
         month = today.month
-        with open('./fatoshistoricos/data/curiosidade.json', 'r', encoding='utf-8') as file:
+        with open('./fatoshist/data/curiosidade.json', 'r', encoding='utf-8') as file:
             json_events = json.load(file)
             curiosidade = json_events.get(f'{month}-{day}', {})
             if curiosidade:

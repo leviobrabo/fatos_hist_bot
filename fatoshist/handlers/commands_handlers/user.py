@@ -11,7 +11,6 @@ user_manager = UserManager()
 def register(bot: TeleBot):
     @bot.message_handler(commands=['start'])
     def cmd_start(message: types.Message):
-        logging.info(f"Comando /start recebido de {message.from_user.id}")
         try:
             if message.chat.type == 'private':
                 user_id = message.from_user.id

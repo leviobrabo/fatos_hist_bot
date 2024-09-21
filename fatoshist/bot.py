@@ -18,33 +18,43 @@ class Bot:
         self.bot = telebot.TeleBot(token, parse_mode='HTML')
 
     def set_commands_and_register_handlers(self):
-        """Registra todos os handlers do bot."""
-        self.bot.set_my_commands(
-            [*commands_handlers.register_chat_private(self.bot)],
-            scope=types.BotCommandScopeAllPrivateChats(),
-        )
+        try:
+            self.bot.set_my_commands(
+                [*commands_handlers.register_chat_private(self.bot)],
+                scope=types.BotCommandScopeAllPrivateChats(),
+            )
 
-        self.bot.set_my_commands(
-            [*commands_handlers.register_chat_group(self.bot)],
-            scope=types.BotCommandScopeAllGroupChats(),
-        )
+            self.bot.set_my_commands(
+                [*commands_handlers.register_chat_group(self.bot)],
+                scope=types.BotCommandScopeAllGroupChats(),
+            )
 
-        self.bot.set_my_commands(
-            [*commands_handlers.register_admin_chat_group(self.bot)],
-            scope=types.BotCommandScopeAllChatAdministrators(),
-        )
+            self.bot.set_my_commands(
+                [*commands_handlers.register_admin_chat_group(self.bot)],
+                scope=types.BotCommandScopeAllChatAdministrators(),
+            )
 
-        all_users = UserManager().get_all_users()
-        for user in all_users:
-            if UserManager().is_sudo(user.get('user_id')):
-                self.bot.set_my_commands(
-                    [*commands_handlers.register_sudo(self.bot)],
-                    scope=types.BotCommandScopeChat(chat_id=user.get('user_id')),
-                )
+            all_users = UserManager().get_all_users()
+            for user in all_users:
+                try:
+                    user_id = int(user.get('user_id'))
+                    if UserManager().is_sudo(user.get('user_id')):
+                        logging.info(f'Registrando comandos sudo para o usuário {user.get("user_id")}')
+                        self.bot.set_my_commands(
+                            [*commands_handlers.register_sudo(self.bot)],
+                            scope=types.BotCommandScopeChat(chat_id=user.get('user_id')),
+                        )
+                except Exception as e:
+                    logging.error(f'Erro ao registrar comandos sudo para o usuário {user_id}: {e}')
 
-        poll_handlers.register(self.bot)
-        callback_handlers.register(self.bot)
-        chat_handlers.register(self.bot)
+            poll_handlers.register(self.bot)
+            logging.info(f'pool')
+            callback_handlers.register(self.bot)
+
+            chat_handlers.register(self.bot)
+        except Exception as e:
+            logging.error(f'Erro ao registrar comandos e handlers: {e}')
+
 
     def schedule_thread(self):
         scheduled.schedule_tasks(self.bot)
@@ -61,7 +71,6 @@ class Bot:
             logging.info('Iniciando Telegram BOT...')
             threading.Thread(target=self.schedule_thread, name='schedule', daemon=True).start()
             # self.set_commands()
-            logging.info('Registrando comandos e handlers...')
             self.set_commands_and_register_handlers()
             python_version = platform.python_version()
             telebot_version = getattr(telebot, '__version__', 'Versão desconhecida')

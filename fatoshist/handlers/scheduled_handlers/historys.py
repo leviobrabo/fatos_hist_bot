@@ -11,7 +11,7 @@ def get_history(bot, CHANNEL):
         day = today.day
         month = today.month
 
-        with open('./fatoshistoricos/data/historia.json', 'r', encoding='utf-8') as file:
+        with open('./fatoshist/data/historia.json', 'r', encoding='utf-8') as file:
             json_events = json.load(file)
             historia = json_events.get(f'{month}-{day}', {})
 

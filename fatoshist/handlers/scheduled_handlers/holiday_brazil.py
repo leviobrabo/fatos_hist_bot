@@ -14,7 +14,7 @@ def get_holiday_br_of_the_day(bot, CHANNEL):
         day = today.day
         month = today.month
 
-        with open('./fatoshistoricos/data/holidayBr.json', 'r', encoding='utf-8') as file:
+        with open('./fatoshist/data/holidayBr.json', 'r', encoding='utf-8') as file:
             json_events = json.load(file)
             births = json_events.get(f'{month}-{day}', {}).get('births', [])
 

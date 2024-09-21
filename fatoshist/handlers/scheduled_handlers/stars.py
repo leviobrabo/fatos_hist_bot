@@ -13,7 +13,7 @@ def msg_alerta_stars(bot):
             '#historia #ajude_canal #stars #estrelas #doe'
         )
 
-        video_path = r'./fatoshistoricos/assets/stars_video.mp4'
+        video_path = r'./fatoshist/assets/stars_video.mp4'
         with open(video_path, 'rb') as video:
             bot.send_video(CHANNEL, video, caption=caption, parse_mode='HTML')
 

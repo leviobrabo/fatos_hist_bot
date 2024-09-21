@@ -28,7 +28,7 @@ def send_question(bot):
         today = datetime.now()
         current_time = today.time()
 
-        with open('./fatoshistoricos/data/perguntas.json', 'r', encoding='utf-8') as file:
+        with open('./fatoshist/data/perguntas.json', 'r', encoding='utf-8') as file:
             json_events = json.load(file)
 
         events = json_events[f'{today.month}-{today.day}']
@@ -63,7 +63,7 @@ def send_question(bot):
                 events['pergunta3'].get('explicacao', ''),
             )
 
-        elif current_time.hour == '17' and current_time.minute == '30':
+        elif current_time.hour == '21' and current_time.minute == '50':
             send_poll(
                 bot,
                 CHANNEL_POST,

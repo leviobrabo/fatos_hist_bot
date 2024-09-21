@@ -47,7 +47,7 @@ def send_question_chat(bot):
         today = datetime.now()
         current_time = today.time()
 
-        with open('./fatoshistoricos/data/perguntas.json', 'r', encoding='utf-8') as file:
+        with open('./fatoshist/data/perguntas.json', 'r', encoding='utf-8') as file:
             json_events = json.load(file)
 
         events = json_events[f'{today.month}-{today.day}']

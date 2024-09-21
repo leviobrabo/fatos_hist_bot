@@ -75,7 +75,7 @@ def handle_menu_start(bot: TeleBot, call: types.CallbackQuery):
             f'<b>A mensagem é enviada todos os dias às 8 horas</b>\n\n'
             f'Adicione-me em seu grupo para receber as mensagens lá.\n\n<b>Comandos:</b> /help\n\n'
             f'📦<b>Meu código-fonte:</b> '
-            f"<a href='https://github.com/leviobrabo/fatoshistoricos'>GitHub</a>"
+            f"<a href='https://github.com/leviobrabo/fatos_hist_bot'>GitHub</a>"
         )
         bot.edit_message_media(
             chat_id=call.message.chat.id,
