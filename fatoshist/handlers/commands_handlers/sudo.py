@@ -13,9 +13,7 @@ group_manager = GroupManager()
 
 
 def register(bot: TeleBot):
-    bot.message_handler(commands=['add_sudo'])
-
-    @bot.message_handler(commands=['sudo'])
+    @bot.message_handler(commands=['add_sudo'])
     def cmd_add_sudo(message):
         try:
             if message.chat.type != 'private' and message.from_user.id != OWNER:
@@ -251,6 +249,102 @@ def register(bot: TeleBot):
         except Exception as e:
             logging.error(f'Erro ao enviar o broadcast para user: {e}')
 
+    @bot.message_handler(commands=["bcgps"])
+    def cmd_broadcast_chat(message):
+        try:
+            user_id = message.from_user.id
+            if message.from_user.id != OWNER:
+                return
+            if message.chat.type != "private":
+                return
+
+            command_parts = message.text.split(" ")
+            sent_message = bot.send_message(
+                message.chat.id, "<i>Processing...</i>", parse_mode="HTML"
+            )
+
+            if message.reply_to_message:
+                reply_msg = message.reply_to_message
+                ulist = group_manager.get_all_chats()
+                success_br = 0
+                no_success = 0
+                block_num = 0
+
+                for chat in ulist:
+                    try:
+                        if message.text.startswith("/bc"):
+                            bot.forward_message(
+                                chat["chat_id"],
+                                reply_msg.chat.id,
+                                reply_msg.message_id,
+                            )
+                        elif message.text.startswith("/bc"):
+                            bot.send_message(chat["chat_id"], reply_msg.text)
+                        success_br += 1
+                    except telebot.apihelper.ApiException as err:
+                        if err.result.status_code == 403:
+                            block_num += 1
+                        else:
+                            no_success += 1
+
+                bot.send_message(
+                    message.chat.id,
+                    f"╭─❑ 「 <b>Broadcast Concluído</b> 」 ❑──\n"
+                    f"│- <b>Total grupos:</b> `{sum(1 for _ in ulist)}`\n"
+                    f"│- <b>Ativos:</b> `{success_br}`\n"
+                    f"│- <b>Inativos:</b> `{block_num}`\n"
+                    f"│- <b>Falha:</b> `{no_success}`\n"
+                    f"╰❑",
+                )
+            else:
+                if len(command_parts) < 2:
+                    bot.send_message(
+                        message.chat.id,
+                        "<i>I need text to broadcast.</i>",
+                        parse_mode="HTML",
+                    )
+                    return
+
+                query = " ".join(command_parts[1:])
+                web_preview = query.startswith("-d")
+                query_ = query[2:].strip() if web_preview else query
+                ulist = group_manager.get_all_chats()
+                success_br = 0
+                no_success = 0
+                block_num = 0
+
+                for chat in ulist:
+                    try:
+                        bot.send_message(
+                            chat["chat_id"],
+                            query_,
+                            disable_web_page_preview=not web_preview,
+                            parse_mode="HTML",
+                        )
+                        success_br += 1
+                    except telebot.apihelper.ApiException as err:
+                        if err.result.status_code == 403:
+                            block_num += 1
+                        else:
+                            no_success += 1
+
+                bot.edit_message_text(
+                    chat_id=sent_message.chat.id,
+                    message_id=sent_message.message_id,
+                    text=(
+                        f"╭─❑ 「 <b>Broadcast Concluído</b> 」 ❑──\n"
+                        f"│- <b>Total grupos:</b> `{sum(1 for _ in ulist)}`\n"
+                        f"│- <b>Ativos:</b> `{success_br}`\n"
+                        f"│- <b>Inativos:</b> `{block_num}`\n"
+                        f"│- <b>Falha:</b> `{no_success}`\n"
+                        f"╰❑"
+                    ),
+                    parse_mode="HTML",
+                )
+        except Exception as e:
+
+            logging.error(f"Erro ao enviar o broadcast para grupos: {e}")
+
     @bot.message_handler(commands=['sys'])
     def cmd_sys(message: types.Message):
         try:
@@ -264,10 +358,10 @@ def register(bot: TeleBot):
 
     return [
         types.BotCommand('/sys', 'Uso do servidor'),
-        types.BotCommand('/sudo', 'Elevar usuário'),
-        types.BotCommand('/ban', 'Banir usuário do bot'),
-        types.BotCommand('/sudolist', 'Lista de usuários sudo'),
-        types.BotCommand('/banneds', 'Lista de usuários banidos'),
+        types.BotCommand('/add_sudo', 'Elevar usuário'),
+        types.BotCommand('/rem_sudo', 'Remover usuário'),
+        types.BotCommand('/grupos', 'Lista de grupos'),
+        types.BotCommand('/stats', 'Estatística do bot'),
         types.BotCommand('/bcusers', 'Broadcast para usuários'),
         types.BotCommand('/bcgps', 'Broadcast para grupos'),
     ]
