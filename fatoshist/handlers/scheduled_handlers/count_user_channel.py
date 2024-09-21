@@ -18,7 +18,7 @@ def get_current_count(bot):
         if last_entry:
             difference_days = (current_date - last_entry['date']).days
 
-            if difference_days >= '3':
+            if difference_days >= 3:
                 count_difference = current_count - last_entry['count']
                 percentage_increase = ((count_difference) / last_entry['count']) * 100 if last_entry['count'] != 0 else 0
 
