@@ -34,18 +34,17 @@ class Bot:
                 scope=types.BotCommandScopeAllChatAdministrators(),
             )
 
-            # all_users = UserManager().get_all_users()
-            # for user in all_users:
-            #     try:
-            #         user_id = int(user.get('user_id'))
-            #         if UserManager().is_sudo(user.get('user_id')):
-            #             logging.info(f'Registrando comandos sudo para o usuário {user.get("user_id")}')
-            #             self.bot.set_my_commands(
-            #                 [*commands_handlers.register_sudo(self.bot)],
-            #                 scope=types.BotCommandScopeChat(chat_id=user.get('user_id')),
-            #             )
-            #     except Exception as e:
-            #         logging.error(f'Erro ao registrar comandos sudo para o usuário {user_id}: {e}')
+            all_users = UserManager().get_all_users()
+            for user in all_users:
+                try:
+                    user_id = int(user.get('user_id'))
+                    if UserManager().is_sudo(user.get('user_id')):
+                        self.bot.set_my_commands(
+                            [*commands_handlers.register_sudo(self.bot)],
+                            scope=types.BotCommandScopeChat(chat_id=user.get('user_id')),
+                        )
+                except Exception as e:
+                    logging.error(f'Erro ao registrar comandos sudo para o usuário {user_id}: {e}')
 
             poll_handlers.register(self.bot)
             callback_handlers.register(self.bot)
