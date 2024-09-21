@@ -16,7 +16,7 @@ from fatoshist.handlers.scheduled_handlers.death_of_day import hist_channel_deat
 from fatoshist.handlers.scheduled_handlers.event_hist_channel import hist_channel_events
 from fatoshist.handlers.scheduled_handlers.event_hist_chats import hist_chat_job
 from fatoshist.handlers.scheduled_handlers.event_hist_users import hist_user_job
-from fatoshist.handlers.scheduled_handlers.event_img_chn import remove_all_url_photo
+from fatoshist.handlers.scheduled_handlers.event_img_chn import remove_all_url_photo, hist_channel_imgs_chn
 from fatoshist.handlers.scheduled_handlers.follow_channels import msg_inscricao_canais_historia
 from fatoshist.handlers.scheduled_handlers.historys import hist_channel_history
 from fatoshist.handlers.scheduled_handlers.holiday import hist_channel_holiday
@@ -107,7 +107,7 @@ def schedule_tasks(bot: TeleBot):
         # Envio de Fotos históricas no canal
         schedule.every().day.at('17:00').do(lambda: hist_channel_imgs(bot))
         # Envio de imagens historicas no canal de imagem
-        schedule.every(1).hour.do(lambda: hist_channel_imgs(bot))
+        schedule.every(1).hour.do(lambda: hist_channel_imgs_chn(bot))
 
         # Envio de curiosidade no canal
         schedule.every().day.at('10:00').do(lambda: hist_channel_curiosity(bot))

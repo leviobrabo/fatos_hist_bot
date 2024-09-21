@@ -192,8 +192,8 @@ def register(bot: TeleBot):
     def cmd_stats(message):
         try:
             if message.from_user.id == OWNER:
-                count_users = user_manager.get_all_users().count()
-                count_groups = group_manager.get_all_chats().count()
+                count_users = len(user_manager.get_all_users())
+                count_groups = len(group_manager.get_all_chats())
                 user_stats = f' ☆ {count_users} usuários\n ☆ {count_groups} Grupos'
                 bot.reply_to(message, f'\n──❑ 「 Bot Stats 」 ❑──\n\n{user_stats}')
         except Exception as e:
