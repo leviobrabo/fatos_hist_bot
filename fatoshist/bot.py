@@ -34,18 +34,18 @@ class Bot:
                 scope=types.BotCommandScopeAllChatAdministrators(),
             )
 
-            all_users = UserManager().get_all_users()
-            for user in all_users:
-                try:
-                    user_id = int(user.get('user_id'))
-                    if UserManager().is_sudo(user.get('user_id')):
-                        logging.info(f'Registrando comandos sudo para o usuário {user.get("user_id")}')
-                        self.bot.set_my_commands(
-                            [*commands_handlers.register_sudo(self.bot)],
-                            scope=types.BotCommandScopeChat(chat_id=user.get('user_id')),
-                        )
-                except Exception as e:
-                    logging.error(f'Erro ao registrar comandos sudo para o usuário {user_id}: {e}')
+        #    all_users = UserManager().get_all_users()
+          #  for user in all_users:
+          #      try:
+         #           user_id = int(user.get('user_id'))
+         #           if UserManager().is_sudo(user.get('user_id')):
+          #              logging.info(f'Registrando comandos sudo para o usuário {user.get("user_id")}')
+          #              self.bot.set_my_commands(
+           #                 [*commands_handlers.register_sudo(self.bot)],
+           #                 scope=types.BotCommandScopeChat(chat_id=user.get('user_id')),
+           #             )
+            #    except Exception as e:
+             #       logging.error(f'Erro ao registrar comandos sudo para o usuário {user_id}: {e}')
 
             poll_handlers.register(self.bot)
             logging.info(f'pool')
@@ -76,7 +76,6 @@ class Bot:
             telebot_version = getattr(telebot, '__version__', 'Versão desconhecida')
             fatoshist_version = '1.0.0'
 
-            logging.info('Enviando mensagem de inicialização ao grupo...')
             self.bot.send_message(
                 GROUP_LOG,
                 (
@@ -88,7 +87,6 @@ class Bot:
                 message_thread_id=38551,
                 parse_mode='HTML',
             )
-            logging.info('Mensagem enviada ao grupo com sucesso!')
             
             logging.info('Telegram BOT iniciado!')
             self.bot.infinity_polling(allowed_updates=util.update_types)
