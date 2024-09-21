@@ -79,7 +79,8 @@ def register(bot: TeleBot):
             else:
                 pass
                 
-                if message.chat.type != 'private':
+                expected_command = f'/start@{bot.get_me().username}'
+                if message.text and message.text.startswith(expected_command):
                     if message.chat.type in {'group', 'supergroup', 'channel'}:
                         markup = types.InlineKeyboardMarkup()
                         channel_ofc = types.InlineKeyboardButton('📢 Canal Oficial', url='https://t.me/historia_br')
@@ -94,13 +95,15 @@ def register(bot: TeleBot):
                             'convidar usuários via link.'
                         )
 
-                        bot.send_message(
-                            message.chat.id,
+                        bot.reply_to(
+                            message,
                             msg_text,
                             reply_markup=markup,
-                            reply_to_message_id=message.message_id,
                             parse_mode='HTML',
                         )
+                
+                else:
+                    pass
 
 
         except Exception as e:
