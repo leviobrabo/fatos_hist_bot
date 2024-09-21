@@ -45,7 +45,7 @@ def checar_datas_dia(bot):
 def schedule_tasks(bot: TeleBot):
     try:
         # Alerta de canais
-        schedule.every().friday.at('22:30').do(msg_inscricao_canais_historia)
+        schedule.every().friday.at('22:30').do(msg_inscricao_canais_historia, bot)
 
         # BOOTS
         schedule.every().monday.at('02:00').do(msg_alerta_boost)
