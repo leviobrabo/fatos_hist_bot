@@ -24,8 +24,7 @@ def register(bot: TeleBot):
                         first_name=message.from_user.first_name,
                     )
                     logging.info(f'Novo usuário ID: {user["user_id"]} foi criado no banco de dados')
-
-                if user:
+                    
                     user_info = (
                         f"<b>#{bot.get_me().username} #New_User</b>\n"
                         f"<b>User:</b> {user['first_name']}\n"
@@ -33,8 +32,11 @@ def register(bot: TeleBot):
                         f"<b>Username</b>: {user['username']}"
                     )
 
-                    bot.send_message(GROUP_LOG, user_info)
+                    bot.send_message(GROUP_LOG, user_info, message_thread_id=38551)
 
+                if user:
+                    pass
+                    
                 markup = types.InlineKeyboardMarkup()
                 add_group = types.InlineKeyboardButton(
                     '✨ Adicione-me em seu grupo',
@@ -76,6 +78,30 @@ def register(bot: TeleBot):
                 )
             else:
                 pass
+                
+                if message.chat.type != 'private':
+                    if message.chat.type in {'group', 'supergroup', 'channel'}:
+                        markup = types.InlineKeyboardMarkup()
+                        channel_ofc = types.InlineKeyboardButton('📢 Canal Oficial', url='https://t.me/historia_br')
+                        report_bugs = types.InlineKeyboardButton('⚠️ Relatar bugs', url='https://t.me/kylorensbot')
+                        web_site = types.InlineKeyboardButton('🔗 WebSite', url='https://www.historiadodia.com/')
+                        markup.add(channel_ofc, report_bugs)
+                        markup.add(web_site)
+                        msg_text = (
+                            'Olá, meu nome é <b>Fatos Históricos</b>! Obrigado por me adicionar em seu grupo.\n\n'
+                            'Eu enviarei mensagens todos os dias às 8 horas e possuo alguns comandos.\n\n'
+                            'Se quiser receber mais fatos históricos, conceda-me as permissões de administrador para fixar mensagens e '
+                            'convidar usuários via link.'
+                        )
+
+                        bot.send_message(
+                            message.chat.id,
+                            msg_text,
+                            reply_markup=markup,
+                            reply_to_message_id=message.message_id,
+                            parse_mode='HTML',
+                        )
+
 
         except Exception as e:
             logging.error(f'Erro ao enviar o start: {e}')
