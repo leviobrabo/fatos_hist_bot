@@ -35,7 +35,7 @@ def register(bot: TeleBot):
             if not user:
                 user_manager.add_user(user_id=user_id, username=username, first_name=first_name)
 
-            poll_manager.set_questions_user(user_id)
+            user_manager.set_questions_user(user_id)
 
             if correto is not None and option_id == correto:
                 poll_manager.set_hit_user(user_id)
