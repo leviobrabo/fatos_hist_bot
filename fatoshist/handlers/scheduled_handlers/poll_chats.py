@@ -59,7 +59,7 @@ def send_question_chat(bot):
             chat_db = group_manager.search_group(chat_id)
             thread_id = chat_db.get('thread_id')
             if chat_id:
-                if current_time.hour == '10' and current_time.minute == '30':
+                if current_time.hour == 10 and current_time.minute == 30:
                     send_poll_chat(
                         bot,
                         chat_id,
@@ -70,7 +70,7 @@ def send_question_chat(bot):
                         thread_id,
                     )
 
-                elif current_time.hour == '13' and current_time.minute == '30':
+                elif current_time.hour == 13 and current_time.minute == 30:
                     send_poll_chat(
                         bot,
                         chat_id,
@@ -81,7 +81,7 @@ def send_question_chat(bot):
                         thread_id,
                     )
 
-                elif current_time.hour == '16' and current_time.minute == '00':
+                elif current_time.hour == 16 and current_time.minute == 00:
                     send_poll_chat(
                         bot,
                         chat_id,
@@ -92,7 +92,7 @@ def send_question_chat(bot):
                         thread_id,
                     )
 
-                elif current_time.hour == '18' and current_time.minute == '00':
+                elif current_time.hour == 18 and current_time.minute == 00:
                     send_poll_chat(
                         bot,
                         chat_id,
