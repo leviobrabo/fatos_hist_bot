@@ -30,7 +30,6 @@ def get_holidays_of_the_day(bot, CHANNEL):
                     name = f"<b>{holiday.get('text', '')}</b>"
                     pages = holiday.get('pages', [])
 
-                    # Check if there are pages and extract information
                     if len(pages) > 0:
                         info = pages[0].get('extract', 'Informações não disponíveis.')
                     else:
@@ -42,6 +41,7 @@ def get_holidays_of_the_day(bot, CHANNEL):
                 message = f'<b>📆 | Datas comemorativas neste dia: {day} de {get_month_name(month)}</b>\n\n'
                 message += '\n\n'.join(holiday_messages)
                 message += '\n\n#feriados #historia #datas_comemorativas'
+                message += '\n#HistóriaParaTodos #DivulgueAHistória #CompartilheConhecimento #HistóriaDoBrasil #HistóriaMundial'
                 message += '\n\n<blockquote>💬 Você sabia? Siga o @historia_br e acesse nosso site historiadodia.com.</blockquote>'
 
                 bot.send_message(CHANNEL, message)

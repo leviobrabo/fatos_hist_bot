@@ -23,7 +23,8 @@ def get_frase(bot, CHANNEL):
                 message = (
                     f'<b>💡 Citação para refletir</b>\n\n'
                     f'<blockquote><i>"{quote}"</i> - <b>{author}</b></blockquote>\n\n'
-                    f'#cultura #historia #citacao #refletir #frases'
+                    f'#cultura #historia #citacao #refletir #frases\n'
+                    f'#HistóriaParaTodos #DivulgueAHistória #CompartilheConhecimento #HistóriaDoBrasil #HistóriaMundial'
                 )
                 bot.send_message(CHANNEL, message)
             else:

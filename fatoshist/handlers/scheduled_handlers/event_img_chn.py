@@ -43,6 +43,7 @@ def send_historical_events_CHANNEL_IMG_image(bot, CHANNEL_IMG):
         if event_extract:
             caption += f'\n\n\n\n{event_extract}'
         caption += '\n\n#fotos_historicas #historia #ilustracoes_historia #imagem_historicas'
+        caption += '\n#HistóriaParaTodos #DivulgueAHistória #CompartilheConhecimento #HistóriaDoBrasil #HistóriaMundial'
 
         inline_keyboard = types.InlineKeyboardMarkup()
         inline_keyboard.add(

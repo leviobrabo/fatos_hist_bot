@@ -23,7 +23,9 @@ def get_history(bot, CHANNEL):
                     message = (
                         f'<b>História narrada 📰</b>\n\n'
                         f'<code>{caption}</code>\n\n'
-                        f'#historia #historia_narrada\n\n'
+                        f'#historia #historia_narrada\n'
+                        f'#HistóriaParaTodos #DivulgueAHistória #CompartilheConhecimento\n' 
+                        f'#HistóriaDoBrasil #HistóriaMundial\n\n'
                         f'<blockquote>💬 Você sabia? Siga o @historia_br e acesse nosso site historiadodia.com.</blockquote>'
                     )
                     bot.send_photo(CHANNEL, photo=photo_url, caption=message, parse_mode='HTML')
