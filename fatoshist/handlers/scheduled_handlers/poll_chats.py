@@ -11,7 +11,7 @@ poll_manager = PollManager()
 user_manager = UserManager()
 
 
-def send_poll_chat(bot, chat_id, poll_data, message_thread_id):
+def send_poll_chat(bot, chat_id, question, options, correct_option_id, explanation, message_thread_id):
     try:
         today = datetime.now()
         current_date = today.strftime('%d/%m/%Y')
@@ -23,18 +23,18 @@ def send_poll_chat(bot, chat_id, poll_data, message_thread_id):
 
         sent_poll = bot.send_poll(
             chat_id,
-            poll_data['question'],
-            poll_data['options'],
+            question,
+            options,
             is_anonymous=is_anonymous,
-            type='quiz',
-            correct_option_id=poll_data['correct_option_id'],
-            explanation=poll_data.get('explanation', '')[:200],
+            type="quiz",
+            correct_option_id=correct_option_id,
+            explanation=explanation[:200] if explanation else None,
             message_thread_id=message_thread_id,
         )
 
         poll_id = sent_poll.poll.id
 
-        poll_manager.add_poll(chat_id, poll_id, poll_data['correct_option_id'], current_date)
+        poll_manager.add_poll(chat_id, poll_id, correct_option_id, current_date)
 
         logging.info(f'Enviada pergunta para o chat {chat_id}')
 
@@ -60,6 +60,7 @@ def send_question_chat(bot):
             thread_id = chat_db.get('thread_id')
             if chat_id:
                 if current_time.hour == 10 and current_time.minute == 30:
+                    logging.info('envio das questões')
                     send_poll_chat(
                         bot,
                         chat_id,
