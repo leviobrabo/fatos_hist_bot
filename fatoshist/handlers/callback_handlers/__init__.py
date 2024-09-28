@@ -4,7 +4,6 @@ from telebot import TeleBot, types
 
 from fatoshist.config import GROUP_LOG
 from fatoshist.database.users import UserManager
-from fatoshist.handlers.payment_handlers import handle_stars_donation
 
 
 def register(bot: TeleBot):
@@ -138,6 +137,36 @@ def handle_donate(bot, call):
         reply_markup=values_btn,
     )
 
+def handle_stars_donation(bot, call):
+    user_id = call.from_user.id
+    stars_map = {
+        '50_estrelas': 50,
+        '100_estrelas': 100,
+        '200_estrelas': 200,
+        '500_estrelas': 500,
+        '1000_estrelas': 1000,
+    }
+
+    selected_stars = stars_map.get(call.data)
+    if not selected_stars:
+        logging.error(f'Estrelas inválidas selecionadas: {call.data}')
+        return
+
+    bot.send_invoice(
+        user_id,
+        provider_token=None,
+        title=f'Doação de {selected_stars} Estrelas',
+        description=f'Você está comprando {selected_stars} estrelas para ajudar no projeto de história @historia_br.',
+        currency='USD',
+        prices=[
+            types.LabeledPrice(
+                label=f'{selected_stars} Estrelas',
+                amount=selected_stars * 100,
+            )
+        ],
+        start_parameter=f'stars_{selected_stars}',
+        invoice_payload=f'stars_{selected_stars}',
+    )
 
 def handle_how_to_use(bot, call):
     user_id = call.from_user.id
