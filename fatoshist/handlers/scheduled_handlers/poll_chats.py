@@ -71,7 +71,7 @@ def send_question_chat(bot):
                         thread_id,
                     )
 
-                elif current_time.hour == 13 and current_time.minute == 30:
+                elif current_time.hour == 13 and current_time.minute == 10:
                     send_poll_chat(
                         bot,
                         chat_id,
@@ -82,7 +82,7 @@ def send_question_chat(bot):
                         thread_id,
                     )
 
-                elif current_time.hour == 16 and current_time.minute == 00:
+                elif current_time.hour == 13 and current_time.minute == 30:
                     send_poll_chat(
                         bot,
                         chat_id,
