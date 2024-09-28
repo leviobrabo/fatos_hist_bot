@@ -73,8 +73,8 @@ def schedule_tasks(bot: TeleBot):
         # Envio das poll chats
         send_question_chat_with_args = partial(send_question_chat, bot)
         schedule.every().day.at('10:30').do(send_question_chat_with_args)
-        schedule.every().day.at('13:10').do(send_question_chat_with_args)
         schedule.every().day.at('13:30').do(send_question_chat_with_args)
+        schedule.every().day.at('16:00').do(send_question_chat_with_args)
         schedule.every().day.at('18:00').do(send_question_chat_with_args)
 
         # Remove polls do banco de dados
