@@ -139,6 +139,7 @@ def handle_donate(bot, call):
 
 def handle_stars_donation(bot, call):
     user_id = call.from_user.id
+    bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id) 
     stars_map = {
         '50_estrelas': 50,
         '100_estrelas': 100,
@@ -151,6 +152,12 @@ def handle_stars_donation(bot, call):
     if not selected_stars:
         logging.error(f'Estrelas inválidas selecionadas: {call.data}')
         return
+    markup = types.InlineKeyboardMarkup()
+    back_to_pay_again = types.InlineKeyboardButton('↩️ Voltar', callback_data='donate')
+    pay_button = types.InlineKeyboardButton(f'Pagar ⭐{selected_stars}', pay=True)
+
+    markup.add(pay_button)
+    markup.add(back_to_pay_again)
 
     bot.send_invoice(
         user_id,
@@ -163,6 +170,7 @@ def handle_stars_donation(bot, call):
                 ],
                 start_parameter=f'stars_{selected_stars}',
                 invoice_payload=f'stars_{selected_stars}',
+                reply_markup=markup
     )
 
 def handle_how_to_use(bot, call):
