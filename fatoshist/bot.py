@@ -34,12 +34,11 @@ class Bot:
                 scope=types.BotCommandScopeAllChatAdministrators(),
             )
 
-            all_users = UserManager().get_all_users()
-            for user in all_users:
+            sudo_users = UserManager().get_all_sudo_users()
+            for user in sudo_users:
                 try:
                     user_id = int(user.get('user_id'))
-                    if UserManager().is_sudo(user.get('user_id')):
-                        self.bot.set_my_commands(
+                    self.bot.set_my_commands(
                             [*commands_handlers.register_sudo(self.bot)],
                             scope=types.BotCommandScopeChat(chat_id=user.get('user_id')),
                         )
