@@ -195,10 +195,11 @@ def handle_edit_donate(bot, call):
     values_btn.row(btn_cancel)
 
     caption_nws = 'Escolha quantas estrelas você quer doar'
-    bot.edit_message_media(
+    bot.send_photo(
         chat_id=user_id,
-        message_id=call.message.message_id,
-        media=types.InputMediaPhoto(media=photo, caption=caption_nws, parse_mode='HTML'),
+        photo=photo, 
+        caption=caption_nws, 
+        parse_mode='HTML',
         reply_markup=values_btn,
     )
 
