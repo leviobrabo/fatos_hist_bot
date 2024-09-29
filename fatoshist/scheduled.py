@@ -124,4 +124,4 @@ def schedule_tasks(bot: TeleBot):
         schedule.every().day.at('00:05').do(lambda: checar_datas_dia(bot))
 
     except Exception as e:
-        logging.error(f'Erro ao enviar o trabalho curiosidade: {e}')
+        logging.error(f'Erro ao enviar o trabalho scheduled: {e}')

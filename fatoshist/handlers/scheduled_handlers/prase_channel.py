@@ -42,4 +42,4 @@ def hist_channel_frase(bot):
         logging.info(f'Frase enviada o canal {CHANNEL}')
 
     except Exception as e:
-        logging.error(f'Erro ao enviar o trabalho curiosidade: {e}')
+        logging.error(f'Erro ao enviar o trabalho frase: {e}')
