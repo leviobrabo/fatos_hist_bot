@@ -51,7 +51,8 @@ class UserManager:
         return list(self.db.users.find({}))
 
     def get_all_sudo_users(self):
-        return self.collection.find({'is_sudo': True})
+        return self.db.users.find({'sudo': 'true'})
+
     # Métodos de Gerenciamento de Permissões Sudo
 
     def users_with_sudo(self):
