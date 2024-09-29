@@ -16,6 +16,8 @@ def register(bot: TeleBot):
                 handle_menu_help(bot, call)
             elif call.data.startswith('donate'):
                 handle_donate(bot, call)
+            elif call.data.startswith('edit_donate'):
+                handle_edit_donate(bot, call)
             elif call.data in {'50_estrelas', '100_estrelas', '200_estrelas', '500_estrelas', '1000_estrelas'}:
                 handle_stars_donation(bot, call)
             elif call.data.startswith('how_to_use'):
@@ -153,7 +155,7 @@ def handle_stars_donation(bot, call):
         logging.error(f'Estrelas inválidas selecionadas: {call.data}')
         return
     markup = types.InlineKeyboardMarkup()
-    back_to_pay_again = types.InlineKeyboardButton('↩️ Voltar', callback_data='donate')
+    back_to_pay_again = types.InlineKeyboardButton('↩️ Voltar', callback_data='edit_donate')
     pay_button = types.InlineKeyboardButton(f'Pagar ⭐{selected_stars}', pay=True)
 
     markup.add(pay_button)
@@ -171,6 +173,33 @@ def handle_stars_donation(bot, call):
                 start_parameter=f'stars_{selected_stars}',
                 invoice_payload=f'stars_{selected_stars}',
                 reply_markup=markup
+    )
+
+def handle_edit_donate(bot, call):
+    user_id = call.from_user.id
+    bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id) 
+    photo = 'https://i.imgur.com/j3H3wvJ.png'
+
+    values_btn = types.InlineKeyboardMarkup()
+    btn_50 = types.InlineKeyboardButton('⭐️ 50 Estrelas', callback_data='50_estrelas')
+    btn_100 = types.InlineKeyboardButton('⭐️ 100 Estrelas', callback_data='100_estrelas')
+    btn_200 = types.InlineKeyboardButton('⭐️ 200 Estrelas', callback_data='200_estrelas')
+    btn_500 = types.InlineKeyboardButton('⭐️ 500 Estrelas', callback_data='500_estrelas')
+    btn_1000 = types.InlineKeyboardButton('⭐️ 1000 Estrelas', callback_data='1000_estrelas')
+    btn_cancel = types.InlineKeyboardButton('Cancelar', callback_data='menu_start')
+    values_btn.row(btn_50)
+    values_btn.row(btn_100)
+    values_btn.row(btn_200)
+    values_btn.row(btn_500)
+    values_btn.row(btn_1000)
+    values_btn.row(btn_cancel)
+
+    caption_nws = 'Escolha quantas estrelas você quer doar'
+    bot.edit_message_media(
+        chat_id=user_id,
+        message_id=call.message.message_id,
+        media=types.InputMediaPhoto(media=photo, caption=caption_nws, parse_mode='HTML'),
+        reply_markup=values_btn,
     )
 
 def handle_how_to_use(bot, call):
