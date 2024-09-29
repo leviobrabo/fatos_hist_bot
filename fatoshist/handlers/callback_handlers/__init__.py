@@ -157,15 +157,12 @@ def handle_stars_donation(bot, call):
         provider_token=None,
         title=f'Doação de {selected_stars} Estrelas',
         description=f'Você está comprando {selected_stars} estrelas para ajudar no projeto de história @historia_br.',
-        currency='USD',
-        prices=[
-            types.LabeledPrice(
-                label=f'{selected_stars} Estrelas',
-                amount=selected_stars * 100,
-            )
-        ],
-        start_parameter=f'stars_{selected_stars}',
-        invoice_payload=f'stars_{selected_stars}',
+        currency='XTR',  
+                prices=[
+                    types.LabeledPrice(label=f'{selected_stars} Estrelas', amount=selected_stars )  
+                ],
+                start_parameter=f'stars_{selected_stars}',
+                invoice_payload=f'stars_{selected_stars}',
     )
 
 def handle_how_to_use(bot, call):
