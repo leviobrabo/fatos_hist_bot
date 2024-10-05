@@ -31,9 +31,11 @@ def enviar_info_pelo_canal(bot, info_presidente):
             f'<b>Partido:</b> {partido}\n'
             f'<b>Ano de mandato:</b> {ano_de_mandato}\n'
             f'<b>Vice-Presidente:</b> {vice_presidente}\n\n'
-            f'#presidente #historia\n'
-            f'#HistóriaParaTodos #DivulgueAHistória #CompartilheConhecimento #HistóriaDoBrasil #HistóriaMundial\n\n'
-            f'<blockquote>💬 Você sabia? Siga o @historia_br e acesse nosso site historiadodia.com.</blockquote>'
+            f'#presidente #historia '
+            f'#HistóriaParaTodos #DivulgueAHistória #CompartilheConhecimento '
+            f'#HistóriaDoBrasil #HistóriaMundial\n\n'
+            f'<blockquote>💬 Você sabia? Siga o @historia_br e '
+            f'acesse nosso site historiadodia.com.</blockquote>'
         )
 
         logging.info('Enviando foto do presidente...')
