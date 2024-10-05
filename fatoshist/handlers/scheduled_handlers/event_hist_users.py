@@ -2,7 +2,7 @@ import logging
 from datetime import datetime
 
 from telebot import types
-
+import time
 from fatoshist.database.users import UserManager
 from fatoshist.utils.get_historical import get_historical_events
 
@@ -58,9 +58,24 @@ def hist_user_job(bot):
 
                     pass
 
-            send_historical_events_user(bot, user_id)
+            try:
+                send_historical_events_user(bot, user_id)
+                logging.info(f'Mensagem de eventos históricos enviada ao usuário {user_id}.')
+            except Exception as e:
+                error_message = str(e).lower()
+                if '403' in error_message and 'user is deactivated' in error_message:
+                    logging.info(f'Usuário {user_id} está desativado.')
+                elif '400' in error_message and 'chat not found' in error_message:
+                    logging.info(f'Chat não encontrado para o usuário {user_id}.')
+                elif '403' in error_message and "bot can't initiate conversation with a user" in error_message:
+                    logging.info(f'Bot não pode iniciar conversa com o usuário {user_id}.')
+                elif '403' in error_message and 'bot was blocked by the user' in error_message:
+                    logging.info(f'Bot foi bloqueado pelo usuário {user_id}.')
+                else:
+                    logging.error(f'Erro ao enviar mensagem de eventos históricos para o usuário {user_id}: {e}')
 
-            logging.info(f'Mensagem de eventos historicos enviada ao usuário {user_id}')
+                user_manager.update_user(user_id, {'msg_private': 'false'})
 
+            time.sleep(10)
     except Exception as e:
         logging.error(f'Erro ao enviar para os usuários:')
