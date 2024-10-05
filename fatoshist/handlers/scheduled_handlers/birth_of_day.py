@@ -43,7 +43,6 @@ def get_births_of_the_day(bot, CHANNEL):
                 message += '\n#DivulgueAHistória #CompartilheConhecimento #HistóriaDoBrasil #HistóriaMundial'
                 message += '\n\n<blockquote>💬 Você sabia? Siga o @historia_br e acesse nosso site historiadodia.com.</blockquote>'
                 bot.send_message(CHANNEL, message, disable_web_page_preview=False)
-                bot.send_message(OWNER, msg_text_owner)
             else:
                 logging.info('Não há informações sobre nascidos hoje.')
         else:
