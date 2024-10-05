@@ -33,7 +33,7 @@ def ads_message_channel_user(bot, user_id):
 
         bot.send_message(user_id, msg_text, parse_mode='HTML', reply_markup=markup)
     except Exception as e:
-        logging.error(f'Erro ao preparar a mensagem para os usuários e canais: {e}')
+        logging.error(f'Erro ao preparar a mensagem ADS para os usuários e canais: {e}')
 
 
 def ads_msg_job(bot):
@@ -81,7 +81,7 @@ def ads_msg_job(bot):
             msg_text_owner = 'Mensagem de ADS enviado com sucesso para o canal'
             bot.send_message(OWNER, msg_text_owner)
 
-            logging.info(f'Mensagem enviada ao canal {channel_id}')
+            logging.info(f'Mensagem ADS enviada ao canal {channel_id}')
             time.sleep(10)
     except Exception as e:
-        logging.error(f'Erro ao enviar para os usuários e canais: {e}')
+        logging.error(f'Erro ao enviar ADS para os usuários e canais: {e}')
