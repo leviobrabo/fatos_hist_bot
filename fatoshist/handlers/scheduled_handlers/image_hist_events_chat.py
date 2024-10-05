@@ -79,6 +79,6 @@ def hist_image_chat_job(bot):
                     send_historical_events_group_image(bot, chat_id)
                 except Exception as e:
                     logging.error(f'Error sending imgs historical events to group {chat_id}: {str(e)}')
-
+                    group_manager.update_forwarding_status(chat_id, {'forwarding': 'false'})
     except Exception as e:
         logging.error(f'Erro ao fazer o envio das imagens para chats: {e}')
