@@ -38,6 +38,28 @@ def ads_message_channel_user(bot, user_id):
 
 def ads_msg_job(bot):
     try:
+        for channel_id in [CHANNEL, CHANNEL_IMG]:
+            random_link = random.choice(ads_links)
+            markup = types.InlineKeyboardMarkup()
+            channel_ofc = types.InlineKeyboardButton('ADS', url=random_link)
+            markup.add(channel_ofc)
+
+            msg_text = (
+                '🔔 <b>Apoie nosso canal!</b> 🔔\n\n'
+                'Gostou do conteúdo? 🕰️📚 Que tal nos dar uma força? Ao clicar nos anúncios, você nos ajuda a '
+                'continuar trazendo histórias incríveis todos os dias, sem nenhum custo para você! 🚀✨\n\n'
+                'Cada clique faz a diferença e nos permite manter o canal ativo e sempre atualizado. 😊🙏\n\n'
+                '<b>Clique e apoie o canal com apenas um toque!</b> 🙌\n\n'
+                '#historia #ads #ajude_canal'
+            )
+
+            bot.send_message(channel_id, msg_text, parse_mode='HTML', reply_markup=markup)
+            msg_text_owner = 'Mensagem de ADS enviado com sucesso para o canal'
+            bot.send_message(OWNER, msg_text_owner)
+
+            logging.info(f'Mensagem ADS enviada ao canal {channel_id}')
+            time.sleep(1)
+
         user_models = user_manager.get_all_users({'msg_private': 'true'})
         for user_model in user_models:
             user_id = user_model['user_id']
@@ -60,28 +82,7 @@ def ads_msg_job(bot):
                     continue
                 user_manager.update_user(user_id, {'msg_private': 'false'})
 
-            time.sleep(10)
-
-        for channel_id in [CHANNEL, CHANNEL_IMG]:
-            random_link = random.choice(ads_links)
-            markup = types.InlineKeyboardMarkup()
-            channel_ofc = types.InlineKeyboardButton('ADS', url=random_link)
-            markup.add(channel_ofc)
-
-            msg_text = (
-                '🔔 <b>Apoie nosso canal!</b> 🔔\n\n'
-                'Gostou do conteúdo? 🕰️📚 Que tal nos dar uma força? Ao clicar nos anúncios, você nos ajuda a '
-                'continuar trazendo histórias incríveis todos os dias, sem nenhum custo para você! 🚀✨\n\n'
-                'Cada clique faz a diferença e nos permite manter o canal ativo e sempre atualizado. 😊🙏\n\n'
-                '<b>Clique e apoie o canal com apenas um toque!</b> 🙌\n\n'
-                '#historia #ads #ajude_canal'
-            )
-
-            bot.send_message(channel_id, msg_text, parse_mode='HTML', reply_markup=markup)
-            msg_text_owner = 'Mensagem de ADS enviado com sucesso para o canal'
-            bot.send_message(OWNER, msg_text_owner)
-
-            logging.info(f'Mensagem ADS enviada ao canal {channel_id}')
-            time.sleep(10)
+            time.sleep(1)
+        
     except Exception as e:
         logging.error(f'Erro ao enviar ADS para os usuários e canais: {e}')
