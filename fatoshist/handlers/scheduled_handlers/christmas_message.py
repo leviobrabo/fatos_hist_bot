@@ -16,7 +16,7 @@ def christmas_message(bot):
         )
 
         bot.send_photo(CHANNEL, photo_url, caption=caption)
-        msg_text_owner = 'Mensagem de anivesário de canal enviada com sucesso'
+        msg_text_owner = 'Mensagem de natal de canal enviada com sucesso'
         bot.send_message(OWNER, msg_text_owner)
 
     except Exception as e:
