@@ -1,6 +1,6 @@
 import logging
 
-from fatoshist.config import CHANNEL
+from fatoshist.config import CHANNEL, OWNER
 
 
 def msg_alerta_stars(bot):
@@ -16,6 +16,7 @@ def msg_alerta_stars(bot):
         video_path = r'./fatoshist/assets/stars_video.mp4'
         with open(video_path, 'rb') as video:
             bot.send_video(CHANNEL, video, caption=caption, parse_mode='HTML')
-
+            msg_text_owner = 'Mensagem de STARS enviado com sucesso para o canal'
+            bot.send_message(OWNER, msg_text_owner)
     except Exception as e:
         logging.error(f'Erro ao enviar vídeo com legenda no canal: {e}')
