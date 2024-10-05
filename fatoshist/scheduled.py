@@ -99,7 +99,7 @@ def schedule_tasks(bot: TeleBot):
         schedule.every().day.at('18:00').do(lambda: hist_channel_holiday(bot))
 
         # Envio de feriados brasileiros no canal
-        schedule.every().day.at('09:50').do(lambda: hist_channel_holiday_br(bot))
+        schedule.every().day.at('19:40').do(lambda: hist_channel_holiday_br(bot))
 
         # Envio de Fotos históricas no grupo
         schedule.every().day.at('15:00').do(lambda: hist_image_chat_job(bot))
