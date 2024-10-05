@@ -34,13 +34,13 @@ def get_births_of_the_day(bot, CHANNEL):
                     info = birth.get('pages', [{}])[0].get('extract', 'Informações não disponíveis.')
                     date = birth.get('year', 'Data desconhecida.')
 
-                    birth_message_text = f'<i>{index}.</i> <b>Nome:</b> {birth_name}\n<b>Informações:</b> {info}\n<b>Data de nascimento:</b> {date}'
+                    birth_message_text = f'<i>{index}.</i> <b>Nome:</b> {birth_name}\n<b>Data de nascimento:</b> {date}\n<b>Informações:</b> {info}'
                     birth_messages.append(birth_message_text)
 
                 message = f'<b>🎂 | Nascimentos neste dia: {day} de {get_month_name(month)}</b>\n\n'
                 message += '\n\n'.join(birth_messages)
-                message += '\n\n#nascimentos_historicos #historia #nascimentos #HistóriaParaTodos'
-                message += '\n#DivulgueAHistória #CompartilheConhecimento #HistóriaDoBrasil #HistóriaMundial'
+                message += '\n\n#nascimentos_historicos #historia #nascimentos #HistoriaParaTodos'
+                message += ' #DivulgueAHistória #CompartilheConhecimento #HistóriaDoBrasil #HistóriaMundial'
                 message += '\n\n<blockquote>💬 Você sabia? Siga o @historia_br e acesse nosso site historiadodia.com.</blockquote>'
                 bot.send_message(CHANNEL, message, disable_web_page_preview=False)
             else:
