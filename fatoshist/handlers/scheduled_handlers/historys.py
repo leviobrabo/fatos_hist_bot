@@ -30,7 +30,7 @@ def get_history(bot, CHANNEL):
                     )
                     bot.send_photo(CHANNEL, photo=photo_url, caption=message, parse_mode='HTML')
                 else:
-                    logging.info('Informações incompletas para o dia de hoje.')
+                    logging.info('Informações históricas incompletas para o dia de hoje.')
                     warning_message = (
                         f'A legenda da história para o dia {day}/{month} é muito longa '
                         f'({len(caption)} caracteres). Por favor, corrija para que não exceda 1024 caracteres.'
