@@ -77,7 +77,7 @@ def ads_msg_job(bot):
                 elif '403' in str(e) and 'bot was blocked by the user' in str(e):
                     pass
                 else:
-                    logging.error(f'Erro ao enviar mensagem para o usuário {user_id}: {e}')
+                    logging.error(f'Erro ao enviar mensagem de ADS para o usuário {user_id}: {e}')
                     user_manager.update_user(user_id, {'msg_private': 'false'})
                     continue
                 user_manager.update_user(user_id, {'msg_private': 'false'})
