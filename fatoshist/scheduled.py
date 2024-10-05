@@ -81,13 +81,13 @@ def schedule_tasks(bot: TeleBot):
         # schedule.every().day.at('00:00').do(remove_all_poll)
 
         # Envio eventos histórico no chats
-        schedule.every().day.at('09:07').do(lambda: hist_chat_job(bot))
+        schedule.every().day.at('08:00').do(lambda: hist_chat_job(bot))
 
         # Envio eventos histórico no users
-        schedule.every().day.at('09:30').do(lambda: hist_user_job(bot))
+        schedule.every().day.at('08:30').do(lambda: hist_user_job(bot))
 
         # Envio eventos histórico no channel
-        schedule.every().day.at('09:05').do(lambda: hist_channel_events(bot))
+        schedule.every().day.at('07:00').do(lambda: hist_channel_events(bot))
 
         # Envio dos mortos do dia no canal
         schedule.every().day.at('15:30').do(lambda: hist_channel_death(bot))
@@ -99,7 +99,7 @@ def schedule_tasks(bot: TeleBot):
         schedule.every().day.at('18:00').do(lambda: hist_channel_holiday(bot))
 
         # Envio de feriados brasileiros no canal
-        schedule.every().day.at('07:30').do(lambda: hist_channel_holiday_br(bot))
+        schedule.every().day.at('09:50').do(lambda: hist_channel_holiday_br(bot))
 
         # Envio de Fotos históricas no grupo
         schedule.every().day.at('15:00').do(lambda: hist_image_chat_job(bot))
