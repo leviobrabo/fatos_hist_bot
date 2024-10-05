@@ -30,7 +30,7 @@ def send_historical_events_channel_image(bot, CHANNEL):
         caption = (
             f'<b>🖼 | História ilustrada </b>\n\n'
             f'Em <b>{day} de {get_month_name(month)} de {event_year}</b>\n\n'
-            f'<code>{event_text}</code>\n\n#fotos_historicas #historia\n'
+            f'<code>{event_text}</code>\n\n#fotos_historicas #historia '
             f'#HistóriaParaTodos #DivulgueAHistória #CompartilheConhecimento #HistóriaDoBrasil #HistóriaMundial\n\n'
             f'<blockquote>💬 Você sabia? Siga o @historia_br e acesse nosso site historiadodia.com.</blockquote>'
         )
