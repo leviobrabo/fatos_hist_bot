@@ -56,6 +56,10 @@ def ads_msg_job(bot):
                     pass
                 else:
                     logging.error(f'Erro ao enviar mensagem para o usuário {user_id}: {e}')
+                    user_manager.update_user(user_id, {'msg_private': 'false'})
+                    continue
+                user_manager.update_user(user_id, {'msg_private': 'false'})
+
             time.sleep(10)
 
         for channel_id in [CHANNEL, CHANNEL_IMG]:

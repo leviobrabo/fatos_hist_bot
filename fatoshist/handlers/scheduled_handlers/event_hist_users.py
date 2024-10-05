@@ -60,7 +60,7 @@ def hist_user_job(bot):
 
             send_historical_events_user(bot, user_id)
 
-            logging.info(f'Mensagem enviada ao usuário {user_id}')
+            logging.info(f'Mensagem de eventos historicos enviada ao usuário {user_id}')
 
     except Exception as e:
         logging.error(f'Erro ao enviar para os usuários:')
