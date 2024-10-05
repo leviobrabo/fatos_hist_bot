@@ -54,7 +54,7 @@ def schedule_tasks(bot: TeleBot):
         schedule.every().wednesday.at('02:00').do(lambda: msg_alerta_stars(bot))
 
         # ADS
-        schedule.every().saturday.at('04:30').do(lambda: ads_msg_job(bot))
+        schedule.every().saturday.at('02:30').do(lambda: ads_msg_job(bot))
 
         # Quantidade de usuarios no canal
         # schedule.every(1).days.do(get_current_count)
@@ -81,13 +81,13 @@ def schedule_tasks(bot: TeleBot):
         # schedule.every().day.at('00:00').do(remove_all_poll)
 
         # Envio eventos histórico no chats
-        schedule.every().day.at('08:00').do(lambda: hist_chat_job(bot))
+        schedule.every().day.at('09:07').do(lambda: hist_chat_job(bot))
 
         # Envio eventos histórico no users
-        schedule.every().day.at('08:30').do(lambda: hist_user_job(bot))
+        schedule.every().day.at('09:30').do(lambda: hist_user_job(bot))
 
         # Envio eventos histórico no channel
-        schedule.every().day.at('07:00').do(lambda: hist_channel_events(bot))
+        schedule.every().day.at('09:05').do(lambda: hist_channel_events(bot))
 
         # Envio dos mortos do dia no canal
         schedule.every().day.at('15:30').do(lambda: hist_channel_death(bot))
