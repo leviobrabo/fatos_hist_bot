@@ -18,6 +18,9 @@ def get_holidays_br_and_world_of_the_day(bot):
             json_events = json.load(file)
             births = json_events.get(f'{month}-{day}', {}).get('births', [])  # Voltando para 'births' conforme o original
 
+        # Inicializa a lista `message_parts` para feriados brasileiros
+        message_parts = []
+
         # Obtendo feriados mundiais da API da Wikipedia
         response = requests.get(
             f'https://pt.wikipedia.org/api/rest_v1/feed/onthisday/holidays/{month}/{day}',
@@ -33,7 +36,6 @@ def get_holidays_br_and_world_of_the_day(bot):
 
         # Processando feriados brasileiros
         if births:
-            message_parts = []
             for index, birth in enumerate(births, start=1):
                 name = birth.get('name', 'Nome não disponível')
                 bullet = '•'
