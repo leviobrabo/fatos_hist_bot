@@ -32,13 +32,13 @@ def get_holidays_br_and_world_of_the_day(bot):
             logging.warning(f'Erro ao obter informações (holiday): {response.status_code}')
 
         # Processando feriados brasileiros
-        brazil_holiday_messages = []
         if births:
+            message_parts = []
             for index, birth in enumerate(births, start=1):
                 name = birth.get('name', 'Nome não disponível')
                 bullet = '•'
-                holiday_message = f'<i>{bullet}</i> {name}'
-                brazil_holiday_messages.append(holiday_message)
+                birth_message = f'<i>{bullet}</i> {name}'
+                message_parts.append(birth_message)
 
         # Processando feriados mundiais
         world_holiday_messages = []
@@ -56,13 +56,13 @@ def get_holidays_br_and_world_of_the_day(bot):
                 world_holiday_messages.append(holiday_message)
 
         # Montando a mensagem final
-        if brazil_holiday_messages or world_holiday_messages:
+        if message_parts or world_holiday_messages:
             message = f'<b>📅 | Datas comemorativas do dia {day} de {get_month_name(month)}</b>\n\n'
 
             # Se houver feriados brasileiros
-            if brazil_holiday_messages:
+            if message_parts:
                 message += f'<blockquote expandable><b>🎊 | Feriados no Brasil 🇧🇷</b>\n\n'
-                message += '\n'.join(brazil_holiday_messages)
+                message += '\n'.join(message_parts)
                 message += '</blockquote>\n\n'
 
             # Se houver feriados mundiais
