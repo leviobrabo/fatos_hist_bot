@@ -15,7 +15,7 @@ def get_holidays_br_and_world_of_the_day(bot):
 
         with open('./fatoshist/data/holidayBr.json', 'r', encoding='utf-8') as file:
             json_events = json.load(file)
-            brazil_holidays = json_events.get(f'{month}-{day}', {}).get('births', [])
+            brazil_holidays = json_events.get(f'{month}-{day}', {}).get('births', [])  
 
         response = requests.get(
             f'https://pt.wikipedia.org/api/rest_v1/feed/onthisday/holidays/{month}/{day}',
@@ -32,7 +32,7 @@ def get_holidays_br_and_world_of_the_day(bot):
         brazil_holiday_messages = []
         if brazil_holidays:
             for index, holiday in enumerate(brazil_holidays, start=1):
-                name = holiday.get('name', '')
+                name = holiday.get('name', 'Nome não disponível')
                 bullet = '•'
                 holiday_message = f'<i>{bullet}</i> {name}'
                 brazil_holiday_messages.append(holiday_message)
@@ -40,7 +40,7 @@ def get_holidays_br_and_world_of_the_day(bot):
         world_holiday_messages = []
         if len(world_holidays) > 0:
             for index, holiday in enumerate(world_holidays[:5], start=1):
-                name = f"<b>{holiday.get('text', '')}</b>"
+                name = f"<b>{holiday.get('text', 'Nome não disponível')}</b>"
                 pages = holiday.get('pages', [])
 
                 if len(pages) > 0:
