@@ -13,10 +13,12 @@ def get_holidays_br_and_world_of_the_day(bot):
         day = today.day
         month = today.month
 
+        # Abrindo o arquivo JSON de feriados brasileiros
         with open('./fatoshist/data/holidayBr.json', 'r', encoding='utf-8') as file:
             json_events = json.load(file)
-            brazil_holidays = json_events.get(f'{month}-{day}', {}).get('births', [])  
+            brazil_holidays = json_events.get(f'{month}-{day}', {}).get('births', [])  # Voltando para 'births' conforme o original
 
+        # Obtendo feriados mundiais da API da Wikipedia
         response = requests.get(
             f'https://pt.wikipedia.org/api/rest_v1/feed/onthisday/holidays/{month}/{day}',
             headers={'accept': 'application/json; charset=utf-8; profile="https://www.mediawiki.org/wiki/Specs/onthisday/0.3.3"'},
@@ -29,6 +31,7 @@ def get_holidays_br_and_world_of_the_day(bot):
         else:
             logging.warning(f'Erro ao obter informações (holiday): {response.status_code}')
 
+        # Processando feriados brasileiros
         brazil_holiday_messages = []
         if brazil_holidays:
             for index, holiday in enumerate(brazil_holidays, start=1):
@@ -37,6 +40,7 @@ def get_holidays_br_and_world_of_the_day(bot):
                 holiday_message = f'<i>{bullet}</i> {name}'
                 brazil_holiday_messages.append(holiday_message)
 
+        # Processando feriados mundiais
         world_holiday_messages = []
         if len(world_holidays) > 0:
             for index, holiday in enumerate(world_holidays[:5], start=1):
@@ -51,14 +55,17 @@ def get_holidays_br_and_world_of_the_day(bot):
                 holiday_message = f'<i>{index}.</i> <b>Nome:</b> {name}\n<b>Informações:</b> {info}'
                 world_holiday_messages.append(holiday_message)
 
+        # Montando a mensagem final
         if brazil_holiday_messages or world_holiday_messages:
             message = f'<b>📅 | Datas comemorativas do dia {day} de {get_month_name(month)}</b>\n\n'
 
+            # Se houver feriados brasileiros
             if brazil_holiday_messages:
                 message += f'<blockquote expandable><b>🎊 | Feriados no Brasil 🇧🇷</b>\n\n'
                 message += '\n'.join(brazil_holiday_messages)
                 message += '</blockquote>\n\n'
 
+            # Se houver feriados mundiais
             if world_holiday_messages:
                 message += f'<blockquote expandable><b>🌍 | Feriados no mundo</b>\n\n'
                 message += '\n\n'.join(world_holiday_messages)
