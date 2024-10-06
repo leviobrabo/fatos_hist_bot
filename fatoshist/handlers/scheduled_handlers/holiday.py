@@ -16,7 +16,7 @@ def get_holidays_br_and_world_of_the_day(bot):
         # Abrindo o arquivo JSON de feriados brasileiros
         with open('./fatoshist/data/holidayBr.json', 'r', encoding='utf-8') as file:
             json_events = json.load(file)
-            brazil_holidays = json_events.get(f'{month}-{day}', {}).get('births', [])  # Voltando para 'births' conforme o original
+            births = json_events.get(f'{month}-{day}', {}).get('births', [])  # Voltando para 'births' conforme o original
 
         # Obtendo feriados mundiais da API da Wikipedia
         response = requests.get(
@@ -33,9 +33,9 @@ def get_holidays_br_and_world_of_the_day(bot):
 
         # Processando feriados brasileiros
         brazil_holiday_messages = []
-        if brazil_holidays:
-            for index, holiday in enumerate(brazil_holidays, start=1):
-                name = holiday.get('name', 'Nome não disponível')
+        if births:
+            for index, birth in enumerate(births, start=1):
+                name = birth.get('name', 'Nome não disponível')
                 bullet = '•'
                 holiday_message = f'<i>{bullet}</i> {name}'
                 brazil_holiday_messages.append(holiday_message)
