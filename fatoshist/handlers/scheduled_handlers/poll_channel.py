@@ -33,7 +33,7 @@ def send_question(bot):
 
         events = json_events[f'{today.month}-{today.day}']
 
-        if current_time.hour == 9 and current_time.minute == 30:
+        if current_time.hour == 9 and current_time.minute == 00:
             send_poll(
                 bot,
                 CHANNEL_POST,
