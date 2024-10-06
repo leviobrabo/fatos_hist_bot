@@ -6,21 +6,19 @@ import schedule
 from telebot import TeleBot
 
 from fatoshist.handlers.scheduled_handlers.ads import ads_msg_job
-from fatoshist.handlers.scheduled_handlers.birth_of_day import hist_channel_birth
+from fatoshist.handlers.scheduled_handlers.birth_and_death import hist_channel_birth_and_death
 from fatoshist.handlers.scheduled_handlers.boots import msg_alerta_boost
 from fatoshist.handlers.scheduled_handlers.channel_creation_message import agendar_aniversario
 from fatoshist.handlers.scheduled_handlers.christmas_message import christmas_message
 from fatoshist.handlers.scheduled_handlers.count_user_channel import get_current_count
 from fatoshist.handlers.scheduled_handlers.curiosity_channel import hist_channel_curiosity
-from fatoshist.handlers.scheduled_handlers.death_of_day import hist_channel_death
 from fatoshist.handlers.scheduled_handlers.event_hist_channel import hist_channel_events
 from fatoshist.handlers.scheduled_handlers.event_hist_chats import hist_chat_job
 from fatoshist.handlers.scheduled_handlers.event_hist_users import hist_user_job
 from fatoshist.handlers.scheduled_handlers.event_img_chn import remove_all_url_photo, hist_channel_imgs_chn
 from fatoshist.handlers.scheduled_handlers.follow_channels import msg_inscricao_canais_historia
 from fatoshist.handlers.scheduled_handlers.historys import hist_channel_history
-from fatoshist.handlers.scheduled_handlers.holiday import hist_channel_holiday
-from fatoshist.handlers.scheduled_handlers.holiday_brazil import hist_channel_holiday_br
+from fatoshist.handlers.scheduled_handlers.holiday import get_holidays_br_and_world_of_the_day
 from fatoshist.handlers.scheduled_handlers.image_hist_events_channel import hist_channel_imgs
 from fatoshist.handlers.scheduled_handlers.image_hist_events_chat import hist_image_chat_job
 from fatoshist.handlers.scheduled_handlers.new_year_message import new_year_message
@@ -89,26 +87,20 @@ def schedule_tasks(bot: TeleBot):
         # Envio eventos histórico no channel
         schedule.every().day.at('07:00').do(lambda: hist_channel_events(bot))
 
-        # Envio dos mortos do dia no canal
-        schedule.every().day.at('15:30').do(lambda: hist_channel_death(bot))
+        # Envio dos nascidos e mortos do dia no canal
+        schedule.every().day.at('00:00').do(lambda: hist_channel_birth_and_death(bot))
 
-        # Envio dos nascidos do dia no canal
-        schedule.every().day.at('19:00').do(lambda: hist_channel_birth(bot))
-
-        # Envio dos feriados do dia no canal
-        schedule.every().day.at('18:00').do(lambda: hist_channel_holiday(bot))
-
-        # Envio de feriados brasileiros no canal
-        schedule.every().day.at('19:40').do(lambda: hist_channel_holiday_br(bot))
+        # Envio dos feriados brasil e geral do dia no canal
+        schedule.every().day.at('00:02').do(lambda: get_holidays_br_and_world_of_the_day(bot))
 
         # Envio de Fotos históricas no grupo
         schedule.every().day.at('15:00').do(lambda: hist_image_chat_job(bot))
 
         # Envio de Fotos históricas no canal
         schedule.every().day.at('17:00').do(lambda: hist_channel_imgs(bot))
+        
         # Envio de imagens historicas no canal de imagem
         schedule.every(8).hours.do(lambda: hist_channel_imgs_chn(bot))
-
 
         # Envio de curiosidade no canal
         schedule.every().day.at('10:00').do(lambda: hist_channel_curiosity(bot))
