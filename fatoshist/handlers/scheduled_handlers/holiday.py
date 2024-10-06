@@ -7,7 +7,7 @@ from fatoshist.config import CHANNEL
 from fatoshist.utils.month import get_month_name
 
 
-def get_holidays_br_and_world_of_the_day(bot, CHANNEL):
+def get_holidays_br_and_world_of_the_day(bot):
     try:
         today = datetime.now(pytz.timezone('America/Sao_Paulo'))
         day = today.day
@@ -77,7 +77,7 @@ def get_holidays_br_and_world_of_the_day(bot, CHANNEL):
 
 def hist_channel_holiday_br_and_world(bot):
     try:
-        get_holidays_br_and_world_of_the_day(bot, CHANNEL)
+        get_holidays_br_and_world_of_the_day(bot)
         logging.info(f'Feriados brasileiros e mundiais enviados para o canal {CHANNEL}')
     except Exception as e:
         logging.error(f'Erro ao enviar o trabalho de feriados: {e}')
