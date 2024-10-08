@@ -63,17 +63,17 @@ def schedule_tasks(bot: TeleBot):
 
         # Envio das poll channel
         send_question_with = partial(send_question, bot)
-        schedule.every().day.at('09:00').do(send_question_with)
-        schedule.every().day.at('12:00').do(send_question_with)
-        schedule.every().day.at('15:00').do(send_question_with)
-        schedule.every().day.at('17:30').do(send_question_with)
+        schedule.every().day.at('21:16').do(send_question_with)
+        schedule.every().day.at('21:17').do(send_question_with)
+        schedule.every().day.at('21:18').do(send_question_with)
+        schedule.every().day.at('21:19').do(send_question_with)
 
         # Envio das poll chats
         send_question_chat_with_args = partial(send_question_chat, bot)
-        schedule.every().day.at('10:30').do(send_question_chat_with_args)
-        schedule.every().day.at('13:30').do(send_question_chat_with_args)
-        schedule.every().day.at('16:00').do(send_question_chat_with_args)
-        schedule.every().day.at('18:00').do(send_question_chat_with_args)
+        schedule.every().day.at('21:30').do(send_question_chat_with_args)
+        schedule.every().day.at('21:45').do(send_question_chat_with_args)
+        schedule.every().day.at('21:55').do(send_question_chat_with_args)
+        schedule.every().day.at('22:00').do(send_question_chat_with_args)
 
         # Remove polls do banco de dados
         # schedule.every().day.at('00:00').do(remove_all_poll)
