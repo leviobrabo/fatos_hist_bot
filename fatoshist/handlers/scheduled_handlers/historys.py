@@ -4,7 +4,6 @@ from datetime import datetime
 
 from fatoshist.config import CHANNEL, OWNER
 
-
 def get_history(bot, CHANNEL):
     try:
         today = datetime.now()
@@ -28,20 +27,40 @@ def get_history(bot, CHANNEL):
                         f'#HistóriaDoBrasil #HistóriaMundial\n\n'
                         f'<blockquote>💬 Você sabia? Siga o @historia_br e acesse nosso site historiadodia.com.</blockquote>'
                     )
+
+                    # Check if the message exceeds Telegram's caption limit
+                    if len(message) > 1024:
+                        # Truncate the caption to fit within the limit
+                        truncated_caption = caption[:800] + '... (truncated)'
+                        message = (
+                            f'<b>História narrada 📰</b>\n\n'
+                            f'<code>{truncated_caption}</code>\n\n'
+                            f'#historia #historia_narrada\n'
+                            f'#HistóriaParaTodos #DivulgueAHistória #CompartilheConhecimento\n' 
+                            f'#HistóriaDoBrasil #HistóriaMundial\n\n'
+                            f'<blockquote>💬 Você sabia? Siga o @historia_br e acesse nosso site historiadodia.com.</blockquote>'
+                        )
+                        # Notify the owner about the truncation
+                        warning_message = (
+                            f'A legenda da história para o dia {day}/{month} foi truncada '
+                            f'para caber no limite de 1024 caracteres.'
+                        )
+                        bot.send_message(OWNER, warning_message)
+
                     bot.send_photo(CHANNEL, photo=photo_url, caption=message, parse_mode='HTML')
                 else:
                     logging.info('Informações históricas incompletas para o dia de hoje.')
-                    warning_message = (
-                        f'A legenda da história para o dia {day}/{month} é muito longa '
-                        f'({len(caption)} caracteres). Por favor, corrija para que não exceda 1024 caracteres.'
-                    )
-                    bot.send_message(OWNER, warning_message)
+                    if len(caption) > 1024:
+                        warning_message = (
+                            f'A legenda da história para o dia {day}/{month} é muito longa '
+                            f'({len(caption)} caracteres). Por favor, corrija para que não exceda 1024 caracteres.'
+                        )
+                        bot.send_message(OWNER, warning_message)
             else:
                 logging.info('Não há informações para o dia de hoje. (historys)')
 
     except Exception as e:
         logging.error(f'Erro ao obter informações (historys): {str(e)}', exc_info=True)
-
 
 def hist_channel_history(bot):
     try:
