@@ -25,6 +25,8 @@ def register(bot: TeleBot):
                     )
                     logging.info(f'Novo usuário ID: {user["user_id"]} foi criado no banco de dados')
                     
+                    user = user_manager.get_user(user_id)
+                    
                     user_info = (
                         f"<b>#{bot.get_me().username} #New_User</b>\n"
                         f"<b>User:</b> {user['first_name']}\n"
