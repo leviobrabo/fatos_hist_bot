@@ -634,10 +634,10 @@
         "pergunta4": {
             "enunciado": "Quando ocorreu a Batalha de Austerlitz, onde Napoleão obteve uma vitória significativa sobre a Áustria e a Rússia?",
             "alternativas": {
-                "alt1": 1805,
-                "alt2": 1809,
-                "alt3": 1812,
-                "alt4": 1815
+                "alt1": "1805",
+                "alt2": "1809",
+                "alt3": "1812",
+                "alt4": "1815"
             },
             "correta": "alt1",
             "explicacao": "A Batalha de Austerlitz ocorreu em 1805, onde Napoleão obteve uma vitória decisiva."
