@@ -6338,10 +6338,10 @@
         "pergunta4": {
             "enunciado": "Em que ano o Brasil sediou a Copa do Mundo de Futebol pela primeira vez?",
             "alternativas": {
-                "alt1": 1958,
-                "alt2": 1962,
-                "alt3": 1970,
-                "alt4": 1950
+                "alt1": "1958",
+                "alt2": "1962",
+                "alt3": "1970",
+                "alt4": "1950"
             },
             "correta": "alt4",
             "explicacao": "O Brasil sediou a Copa do Mundo de Futebol pela primeira vez em 1950."
@@ -6660,10 +6660,10 @@
         "pergunta4": {
             "enunciado": "Em que ano o Brasil sediou pela primeira vez os Jogos Olímpicos?",
             "alternativas": {
-                "alt1": 2012,
-                "alt2": 2016,
-                "alt3": 2008,
-                "alt4": 2004
+                "alt1": "2012",
+                "alt2": "2016",
+                "alt3": "2008",
+                "alt4": "2004"
             },
             "correta": "alt2",
             "explicacao": "O Brasil sediou os Jogos Olímpicos pela primeira vez em 2016, na cidade do Rio de Janeiro."
@@ -7442,10 +7442,10 @@
         "pergunta4": {
             "enunciado": "Quando ocorreu a Revolução Francesa?",
             "alternativas": {
-                "alt1": 1756,
-                "alt2": 1789,
-                "alt3": 1820,
-                "alt4": 1848
+                "alt1": "1756",
+                "alt2": "1789",
+                "alt3": "1820",
+                "alt4": "1848"
             },
             "correta": "alt2",
             "explicacao": "A Revolução Francesa teve início em 1789, marcada pela queda da Bastilha em 14 de julho, e foi um marco importante na história política e social da França."
@@ -8408,10 +8408,10 @@
         "pergunta4": {
             "enunciado": "Em que ano ocorreu a Batalha de Hastings, decisiva para a conquista normanda da Inglaterra?",
             "alternativas": {
-                "alt1": 1066,
-                "alt2": 1099,
-                "alt3": 1138,
-                "alt4": 1014
+                "alt1": "1066",
+                "alt2": "1099",
+                "alt3": "1138",
+                "alt4": "1014"
             },
             "correta": "alt1",
             "explicacao": "A Batalha de Hastings ocorreu em 1066, culminando na vitória de Guilherme, o Conquistador, e na conquista normanda da Inglaterra."
@@ -10283,10 +10283,10 @@
         "pergunta3": {
             "enunciado": "Quando a Guerra Civil Americana terminou?",
             "alternativas": {
-                "alt1": 1863,
-                "alt2": 1865,
-                "alt3": 1867,
-                "alt4": 1870
+                "alt1": "1863",
+                "alt2": "1865",
+                "alt3": "1867",
+                "alt4": "1870"
             },
             "correta": "alt2",
             "explicacao": "A Guerra Civil Americana terminou em 1865, com a rendição do Exército Confederado e a aprovação da Décima Terceira Emenda à Constituição, que aboliu a escravidão."
@@ -10502,10 +10502,10 @@
         "pergunta2": {
             "enunciado": "Que ano marcou o início oficial da Era Meiji no Japão?",
             "alternativas": {
-                "alt1": 1868,
-                "alt2": 1872,
-                "alt3": 1885,
-                "alt4": 1890
+                "alt1": "1868",
+                "alt2": "1872",
+                "alt3": "1885",
+                "alt4": "1890"
             },
             "correta": "alt1",
             "explicacao": "A Era Meiji começou oficialmente em 1868, após o fim do xogunato e a restauração do poder imperial."
@@ -12207,7 +12207,7 @@
                 "alt1": "Mein Kampf",
                 "alt2": "O Manifesto Comunista",
                 "alt3": "O Príncipe",
-                "alt4": 1984
+                "alt4": "1984"
             },
             "correta": "alt1",
             "explicacao": "O livro escrito por Adolf Hitler que serviu de base para a ideologia nazista e expressava suas ideias políticas e filosóficas foi 'Mein Kampf' (Minha Luta)."
@@ -12285,10 +12285,10 @@
         "pergunta1": {
             "enunciado": "Quando ocorreu o 'Putsch da Cervejaria'?",
             "alternativas": {
-                "alt1": 1933,
-                "alt2": 1923,
-                "alt3": 1938,
-                "alt4": 1941
+                "alt1": "1933",
+                "alt2": "1923",
+                "alt3": "1938",
+                "alt4": "1941"
             },
             "correta": "alt2",
             "explicacao": "O 'Putsch da Cervejaria' foi uma tentativa fracassada de golpe de estado liderada por Hitler em novembro de 1923, em Munique, que resultou em sua prisão."
@@ -12399,10 +12399,10 @@
         "pergunta3": {
             "enunciado": "Em que ano os Estados Unidos lançaram bombas atômicas sobre Hiroshima e Nagasaki?",
             "alternativas": {
-                "alt1": 1942,
-                "alt2": 1944,
-                "alt3": 1945,
-                "alt4": 1941
+                "alt1": "1942",
+                "alt2": "1944",
+                "alt3": "1945",
+                "alt4": "1941"
             },
             "correta": "alt3",
             "explicacao": "Os Estados Unidos lançaram as bombas atômicas sobre as cidades japonesas de Hiroshima e Nagasaki em agosto de 1945, encerrando a Segunda Guerra Mundial."
@@ -13573,10 +13573,10 @@
         "pergunta1": {
             "enunciado": "Quando a Guerra da Coreia terminou?",
             "alternativas": {
-                "alt1": 1952,
-                "alt2": 1953,
-                "alt3": 1955,
-                "alt4": 1957
+                "alt1": "1952",
+                "alt2": "1953",
+                "alt3": "1955",
+                "alt4": "1957"
             },
             "correta": "alt2",
             "explicacao": "A Guerra da Coreia terminou em 1953, com a assinatura do Armistício de Panmunjom."
