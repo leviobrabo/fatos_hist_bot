@@ -1,8 +1,10 @@
 import json
 import logging
 from datetime import datetime
+
 import pytz
 import requests
+
 from fatoshist.config import CHANNEL
 from fatoshist.utils.month import get_month_name
 
@@ -63,13 +65,13 @@ def get_holidays_br_and_world_of_the_day(bot):
 
             # Se houver feriados brasileiros
             if message_parts:
-                message += f'<blockquote expandable><b>🎊 | Feriados no Brasil 🇧🇷</b>\n\n'
+                message += '<blockquote expandable><b>🎊 | Feriados no Brasil 🇧🇷</b>\n\n'
                 message += '\n'.join(message_parts)
                 message += '</blockquote>\n\n'
 
             # Se houver feriados mundiais
             if world_holiday_messages:
-                message += f'<blockquote expandable><b>🌍 | Feriados no mundo</b>\n\n'
+                message += '<blockquote expandable><b>🌍 | Feriados no mundo</b>\n\n'
                 message += '\n\n'.join(world_holiday_messages)
                 message += '</blockquote>\n\n'
 

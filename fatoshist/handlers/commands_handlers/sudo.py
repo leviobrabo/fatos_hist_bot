@@ -249,18 +249,16 @@ def register(bot: TeleBot):
         except Exception as e:
             logging.error(f'Erro ao enviar o broadcast para user: {e}')
 
-    @bot.message_handler(commands=["bcgps"])
+    @bot.message_handler(commands=['bcgps'])
     def cmd_broadcast_chat(message):
         try:
             if message.from_user.id != OWNER:
                 return
-            if message.chat.type != "private":
+            if message.chat.type != 'private':
                 return
 
-            command_parts = message.text.split(" ")
-            sent_message = bot.send_message(
-                message.chat.id, "<i>Processing...</i>", parse_mode="HTML"
-            )
+            command_parts = message.text.split(' ')
+            sent_message = bot.send_message(message.chat.id, '<i>Processing...</i>', parse_mode='HTML')
 
             if message.reply_to_message:
                 reply_msg = message.reply_to_message
@@ -271,14 +269,14 @@ def register(bot: TeleBot):
 
                 for chat in ulist:
                     try:
-                        if message.text.startswith("/bc"):
+                        if message.text.startswith('/bc'):
                             bot.forward_message(
-                                chat["chat_id"],
+                                chat['chat_id'],
                                 reply_msg.chat.id,
                                 reply_msg.message_id,
                             )
-                        elif message.text.startswith("/bc"):
-                            bot.send_message(chat["chat_id"], reply_msg.text)
+                        elif message.text.startswith('/bc'):
+                            bot.send_message(chat['chat_id'], reply_msg.text)
                         success_br += 1
                     except telebot.apihelper.ApiException as err:
                         if err.result.status_code == 403:
@@ -288,24 +286,24 @@ def register(bot: TeleBot):
 
                 bot.send_message(
                     message.chat.id,
-                    f"╭─❑ 「 <b>Broadcast Concluído</b> 」 ❑──\n"
-                    f"│- <b>Total grupos:</b> `{sum(1 for _ in ulist)}`\n"
-                    f"│- <b>Ativos:</b> `{success_br}`\n"
-                    f"│- <b>Inativos:</b> `{block_num}`\n"
-                    f"│- <b>Falha:</b> `{no_success}`\n"
-                    f"╰❑",
+                    f'╭─❑ 「 <b>Broadcast Concluído</b> 」 ❑──\n'
+                    f'│- <b>Total grupos:</b> `{sum(1 for _ in ulist)}`\n'
+                    f'│- <b>Ativos:</b> `{success_br}`\n'
+                    f'│- <b>Inativos:</b> `{block_num}`\n'
+                    f'│- <b>Falha:</b> `{no_success}`\n'
+                    f'╰❑',
                 )
             else:
                 if len(command_parts) < 2:
                     bot.send_message(
                         message.chat.id,
-                        "<i>I need text to broadcast.</i>",
-                        parse_mode="HTML",
+                        '<i>I need text to broadcast.</i>',
+                        parse_mode='HTML',
                     )
                     return
 
-                query = " ".join(command_parts[1:])
-                web_preview = query.startswith("-d")
+                query = ' '.join(command_parts[1:])
+                web_preview = query.startswith('-d')
                 query_ = query[2:].strip() if web_preview else query
                 ulist = group_manager.get_all_chats()
                 success_br = 0
@@ -315,10 +313,10 @@ def register(bot: TeleBot):
                 for chat in ulist:
                     try:
                         bot.send_message(
-                            chat["chat_id"],
+                            chat['chat_id'],
                             query_,
                             disable_web_page_preview=not web_preview,
-                            parse_mode="HTML",
+                            parse_mode='HTML',
                         )
                         success_br += 1
                     except telebot.apihelper.ApiException as err:
@@ -331,18 +329,17 @@ def register(bot: TeleBot):
                     chat_id=sent_message.chat.id,
                     message_id=sent_message.message_id,
                     text=(
-                        f"╭─❑ 「 <b>Broadcast Concluído</b> 」 ❑──\n"
-                        f"│- <b>Total grupos:</b> `{sum(1 for _ in ulist)}`\n"
-                        f"│- <b>Ativos:</b> `{success_br}`\n"
-                        f"│- <b>Inativos:</b> `{block_num}`\n"
-                        f"│- <b>Falha:</b> `{no_success}`\n"
-                        f"╰❑"
+                        f'╭─❑ 「 <b>Broadcast Concluído</b> 」 ❑──\n'
+                        f'│- <b>Total grupos:</b> `{sum(1 for _ in ulist)}`\n'
+                        f'│- <b>Ativos:</b> `{success_br}`\n'
+                        f'│- <b>Inativos:</b> `{block_num}`\n'
+                        f'│- <b>Falha:</b> `{no_success}`\n'
+                        f'╰❑'
                     ),
-                    parse_mode="HTML",
+                    parse_mode='HTML',
                 )
         except Exception as e:
-
-            logging.error(f"Erro ao enviar o broadcast para grupos: {e}")
+            logging.error(f'Erro ao enviar o broadcast para grupos: {e}')
 
     @bot.message_handler(commands=['sys'])
     def cmd_sys(message: types.Message):

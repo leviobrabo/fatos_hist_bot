@@ -24,9 +24,9 @@ def register(bot: TeleBot):
                         first_name=message.from_user.first_name,
                     )
                     logging.info(f'Novo usuário ID: {user["user_id"]} foi criado no banco de dados')
-                    
+
                     user = user_manager.get_user(user_id)
-                    
+
                     user_info = (
                         f"<b>#{bot.get_me().username} #New_User</b>\n"
                         f"<b>User:</b> {user['first_name']}\n"
@@ -38,7 +38,7 @@ def register(bot: TeleBot):
 
                 if user:
                     pass
-                    
+
                 markup = types.InlineKeyboardMarkup()
                 add_group = types.InlineKeyboardButton(
                     '✨ Adicione-me em seu grupo',
@@ -80,7 +80,7 @@ def register(bot: TeleBot):
                 )
             else:
                 pass
-                
+
                 expected_command = f'/start@{bot.get_me().username}'
                 if message.text and message.text.startswith(expected_command):
                     if message.chat.type in {'group', 'supergroup', 'channel'}:
@@ -103,10 +103,9 @@ def register(bot: TeleBot):
                             reply_markup=markup,
                             parse_mode='HTML',
                         )
-                
+
                 else:
                     pass
-
 
         except Exception as e:
             logging.error(f'Erro ao enviar o start: {e}')

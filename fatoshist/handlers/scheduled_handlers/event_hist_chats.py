@@ -50,8 +50,8 @@ def send_historical_events_group(bot, chat_id):
 
             logging.warning(f'Nenhum evento histórico para hoje no grupo {chat_id}')
 
-    except Exception as e:
-        logging.error(f'Erro ao enviar fatos históricos para os chats:')
+    except Exception:
+        logging.error('Erro ao enviar fatos históricos para os chats:')
 
         group_manager.remove_chat_db(chat_id)
 

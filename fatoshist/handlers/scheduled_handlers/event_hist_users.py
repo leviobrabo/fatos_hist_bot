@@ -1,8 +1,9 @@
 import logging
+import time
 from datetime import datetime
 
 from telebot import types
-import time
+
 from fatoshist.database.users import UserManager
 from fatoshist.utils.get_historical import get_historical_events
 
@@ -39,8 +40,8 @@ def send_historical_events_user(bot, user_id):
 
             logging.warning(f'Nenhum evento histórico para hoje no users {user_id}')
 
-    except Exception as e:
-        logging.error(f'Erro ao enviar fatos históricos para os usuários:')
+    except Exception:
+        logging.error('Erro ao enviar fatos históricos para os usuários:')
 
 
 def hist_user_job(bot):
@@ -77,5 +78,5 @@ def hist_user_job(bot):
                 user_manager.update_user(user_id, {'msg_private': 'false'})
 
             time.sleep(10)
-    except Exception as e:
-        logging.error(f'Erro ao enviar eventos históricos para os usuários:')
+    except Exception:
+        logging.error('Erro ao enviar eventos históricos para os usuários:')

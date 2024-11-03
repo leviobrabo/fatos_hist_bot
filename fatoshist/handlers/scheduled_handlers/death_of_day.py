@@ -49,8 +49,8 @@ def get_deaths_of_the_day(bot, CHANNEL):
         else:
             logging.warning('Erro ao obter informações (death_of_day):', response.status_code)
 
-    except Exception as e:
-        logging.error(f'Erro ao enviar mortos para os canal:')
+    except Exception:
+        logging.error('Erro ao enviar mortos para os canal:')
 
 
 def hist_channel_death(bot):

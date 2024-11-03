@@ -26,7 +26,7 @@ def send_poll_chat(bot, chat_id, question, options, correct_option_id, explanati
             question,
             options,
             is_anonymous=is_anonymous,
-            type="quiz",
+            type='quiz',
             correct_option_id=correct_option_id,
             explanation=explanation[:200] if explanation else None,
             message_thread_id=message_thread_id,

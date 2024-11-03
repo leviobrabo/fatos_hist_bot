@@ -12,6 +12,7 @@ president_manager = PresidentManager()
 with open('./fatoshist/data/presidentes.json', 'r', encoding='utf-8') as file:
     presidentes = json.load(file)
 
+
 def enviar_info_pelo_canal(bot, info_presidente):
     try:
         titulo = info_presidente.get('titulo', '')
@@ -44,11 +45,12 @@ def enviar_info_pelo_canal(bot, info_presidente):
     except Exception as e:
         logging.error(f'Erro ao enviar foto do presidente: {e}')
 
+
 def enviar_foto_presidente(bot):
     try:
         count = president_manager.db.presidentes.count_documents({})
         logging.info(f'Número de presidentes no banco de dados: {count}')
-        
+
         if count == 0:
             logging.info('Nenhum presidente no banco de dados. Adicionando o primeiro presidente.')
             presidente = presidentes.get('1')

@@ -63,7 +63,6 @@ def send_question(bot):
                 events['pergunta3'].get('explicacao', ''),
             )
 
-
         elif current_time.hour == 17 and current_time.minute == 30:
             send_poll(
                 bot,

@@ -19,7 +19,7 @@ class GroupManager:
         return self.db.chats.find_one({'chat_id': chat_id})
 
     def get_all_chats(self, query=None):
-            return self.db.chats.find({})
+        return self.db.chats.find({})
 
     def remove_chat_db(self, chat_id):
         self.db.chats.delete_one({'chat_id': chat_id})

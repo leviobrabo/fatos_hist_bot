@@ -83,6 +83,6 @@ def ads_msg_job(bot):
                 user_manager.update_user(user_id, {'msg_private': 'false'})
 
             time.sleep(1)
-        
+
     except Exception as e:
         logging.error(f'Erro ao enviar ADS para os usuários e canais: {e}')

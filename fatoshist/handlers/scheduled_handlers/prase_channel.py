@@ -34,7 +34,6 @@ def get_frase(bot, CHANNEL):
         logging.error(f'Erro ao obter informações (prase): {e}')
 
 
-
 def hist_channel_frase(bot):
     try:
         get_frase(bot, CHANNEL)

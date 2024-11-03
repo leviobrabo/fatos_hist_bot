@@ -60,5 +60,3 @@ def register(bot: TeleBot):
             )
         except Exception as e:
             logging.error(f'Erro em checkout: {e}')
-
-

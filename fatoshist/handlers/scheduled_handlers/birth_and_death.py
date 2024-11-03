@@ -1,7 +1,9 @@
 import logging
 from datetime import datetime
+
 import pytz
 import requests
+
 from fatoshist.config import CHANNEL
 from fatoshist.utils.month import get_month_name
 
@@ -16,7 +18,7 @@ def get_births_and_deaths_of_the_day(bot, CHANNEL):
             f'https://pt.wikipedia.org/api/rest_v1/feed/onthisday/deaths/{month}/{day}',
             headers={'accept': 'application/json; charset=utf-8; profile="https://www.mediawiki.org/wiki/Specs/onthisday/0.3.3"'},
         )
-        
+
         births_response = requests.get(
             f'https://pt.wikipedia.org/api/rest_v1/feed/onthisday/births/{month}/{day}',
             headers={'accept': 'application/json; charset=utf-8; profile="https://www.mediawiki.org/wiki/Specs/onthisday/0.3.3"'},
@@ -65,7 +67,7 @@ def get_births_and_deaths_of_the_day(bot, CHANNEL):
                 birth_messages.append(birth_message_text)
 
         if death_messages or birth_messages:
-            message = f'<b>Vida e Legado: Nascimentos e Falecimentos do Dia</b>\n\n'
+            message = '<b>Vida e Legado: Nascimentos e Falecimentos do Dia</b>\n\n'
 
             if death_messages:
                 message += f'<blockquote expandable><b>⚰️ |  Mortes neste dia: {day} de {get_month_name(month)}</b>\n\n'

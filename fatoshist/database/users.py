@@ -71,7 +71,6 @@ class UserManager:
         user = self.get_user(user_id)
         return user is not None and user.get('sudo') == 'true'
 
-    
     def update_user(self, user_id, update_fields):
         return self.collection.update_one({'user_id': user_id}, {'$set': update_fields})
 

@@ -139,9 +139,10 @@ def handle_donate(bot, call):
         reply_markup=values_btn,
     )
 
+
 def handle_stars_donation(bot, call):
     user_id = call.from_user.id
-    bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id) 
+    bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id)
     stars_map = {
         '50_estrelas': 50,
         '100_estrelas': 100,
@@ -166,18 +167,17 @@ def handle_stars_donation(bot, call):
         provider_token=None,
         title=f'Doação de {selected_stars} Estrelas',
         description=f'Você está comprando {selected_stars} estrelas para ajudar no projeto de história @historia_br.',
-        currency='XTR',  
-                prices=[
-                    types.LabeledPrice(label=f'{selected_stars} Estrelas', amount=selected_stars )  
-                ],
-                start_parameter=f'stars_{selected_stars}',
-                invoice_payload=f'stars_{selected_stars}',
-                reply_markup=markup
+        currency='XTR',
+        prices=[types.LabeledPrice(label=f'{selected_stars} Estrelas', amount=selected_stars)],
+        start_parameter=f'stars_{selected_stars}',
+        invoice_payload=f'stars_{selected_stars}',
+        reply_markup=markup,
     )
+
 
 def handle_edit_donate(bot, call):
     user_id = call.from_user.id
-    bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id) 
+    bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id)
     photo = 'https://i.imgur.com/j3H3wvJ.png'
 
     values_btn = types.InlineKeyboardMarkup()
@@ -197,11 +197,12 @@ def handle_edit_donate(bot, call):
     caption_nws = 'Escolha quantas estrelas você quer doar'
     bot.send_photo(
         chat_id=user_id,
-        photo=photo, 
-        caption=caption_nws, 
+        photo=photo,
+        caption=caption_nws,
         parse_mode='HTML',
         reply_markup=values_btn,
     )
+
 
 def handle_how_to_use(bot, call):
     user_id = call.from_user.id

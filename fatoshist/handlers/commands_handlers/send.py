@@ -27,7 +27,6 @@ def register(bot: TeleBot):
                     bot.reply_to(
                         message,
                         '<b>🎉 Eventos Históricos no Chat Privado ATIVADO! 📜</b>\n\n⏰ Você receberá fatos históricos todos os dias às 8 horas. Não perca essa viagem no tempo! 🚀',
-
                     )
             else:
                 user_manager.add_user(user_id=message.from_user.id, username=message.from_user.username, first_name=message.from_user.first_name)

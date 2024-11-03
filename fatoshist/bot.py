@@ -39,9 +39,9 @@ class Bot:
                 try:
                     user_id = int(user.get('user_id'))
                     self.bot.set_my_commands(
-                            [*commands_handlers.register_sudo(self.bot)],
-                            scope=types.BotCommandScopeChat(chat_id=user.get('user_id')),
-                        )
+                        [*commands_handlers.register_sudo(self.bot)],
+                        scope=types.BotCommandScopeChat(chat_id=user.get('user_id')),
+                    )
                 except Exception as e:
                     logging.error(f'Erro ao registrar comandos sudo para o usuário {user_id}: {e}')
 
@@ -51,7 +51,6 @@ class Bot:
             chat_handlers.register(self.bot)
         except Exception as e:
             logging.error(f'Erro ao registrar comandos e handlers: {e}')
-
 
     def schedule_thread(self):
         scheduled.schedule_tasks(self.bot)
@@ -83,7 +82,7 @@ class Bot:
                 message_thread_id=38551,
                 parse_mode='HTML',
             )
-            
+
             logging.info('Telegram BOT iniciado!')
             self.bot.infinity_polling(allowed_updates=util.update_types)
 
