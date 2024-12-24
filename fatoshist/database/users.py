@@ -61,6 +61,10 @@ class UserManager:
         """
         return self.db.users.find({'sudo': 'true'})
 
+    def remove_user_db(self, user_id):
+        """Remove usuário do banco de dados"""
+        self.db.users.delete_one({"user_id": user_id})
+        
     def set_user_sudo(self, user_id):
         """
         Define o status 'sudo' de um usuário como 'true'.
