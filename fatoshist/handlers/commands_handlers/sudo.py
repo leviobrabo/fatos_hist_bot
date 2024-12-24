@@ -2,6 +2,7 @@ import logging
 
 import psutil
 import telebot
+import time
 from telebot import TeleBot, types
 
 from fatoshist.config import GROUP_LOG, OWNER
