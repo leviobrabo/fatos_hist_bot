@@ -351,7 +351,63 @@ def register(bot: TeleBot):
                 )
         except Exception as e:
             logging.error(f'Erro ao enviar a lista de comandos do sistema: {e}')
+            
+    @bot.message_handler(commands=['bc'])
+    def broadcast_handler(message):
+        """Handler para o comando /bc. Encaminha uma mensagem para todos os usuários com delay e atualização do status."""
+        if not user_manager.is_sudo(message.from_user.id):
+            bot.reply_to(message, "Você não tem permissão para usar este comando.")
+            return
+    
+        if not message.reply_to_message:
+            bot.reply_to(message, "Por favor, responda a uma mensagem para enviá-la como broadcast.")
+            return
+    
+        broadcast_message = message.reply_to_message
+        users = user_manager.get_all_users()
+        sent_count = 0
+        failed_count = 0
+    
+        status_message = bot.reply_to(message, f"Iniciando envio...\nEnviadas: {sent_count}\nFalhas: {failed_count}")
+        
+        for idx, user in enumerate(users):
+            try:
+                bot.forward_message(chat_id=user["user_id"], from_chat_id=broadcast_message.chat.id, message_id=broadcast_message.message_id)
+                sent_count += 1
+            except Exception as e:
+                logging.error(f"Erro ao enviar mensagem para {user['user_id']}: {e}")
+                failed_count += 1
+                
+                if "Too Many Requests" in str(e):
+                    retry_after = int(str(e).split('retry after ')[-1].split()[0])
+                    logging.warning(f"Erro 429. Aguardando {retry_after} segundos antes de continuar...")
+                    time.sleep(retry_after)
+                else:
+                    user_manager.remove_user_db(user["user_id"])
+                    logging.warning(f"Usuário {user['user_id']} bloqueou o bot e foi removido do banco de dados.")
+            
+            if idx % 100 == 0 or idx == len(users) - 1:
+                try:
+                    bot.edit_message_text(
+                        chat_id=status_message.chat.id,
+                        message_id=status_message.message_id,
+                        text=f"Broadcast em andamento...\nEnviadas: {sent_count}\nFalhas: {failed_count}\nUsuários processados: {idx + 1}/{len(users)}"
+                    )
+                except Exception as e:
+                    logging.error(f"Erro ao atualizar status do broadcast: {e}")
+    
+            time.sleep(2)
+    
+        try:
+            bot.edit_message_text(
+                chat_id=status_message.chat.id,
+                message_id=status_message.message_id,
+                text=f"Broadcast concluído.\nEnviadas: {sent_count}\nFalhas: {failed_count}"
+            )
+        except Exception as e:
+            logging.error(f"Erro ao finalizar mensagem de status do broadcast: {e}")
 
+    
     return [
         types.BotCommand('/add_sudo', 'Elevar usuário'),
         types.BotCommand('/rem_sudo', 'Remover usuário'),
@@ -359,5 +415,6 @@ def register(bot: TeleBot):
         types.BotCommand('/stats', 'Estatística do bot'),
         types.BotCommand('/bcusers', 'Broadcast para usuários'),
         types.BotCommand('/bcgps', 'Broadcast para grupos'),
+        types.BotCommand('/bc', 'Broadcast para todos users'),
         types.BotCommand('/sys', 'Uso do servidor'),
     ]
