@@ -1,0 +1,403 @@
+[
+  {
+    "posicao": 1,
+    "nome": "ADOLF HITLER",
+    "terra_natal": "Braunau Am Inn, Áustria",
+    "nascimento": "20/4/1889",
+    "morte": "30/4/1945",
+    "texto": "Com uma ascensão meteórica no partido nazista alemão, virou chanceler em 1933 e lançou o mundo no caos da 2ª Guerra Mundial, maior conflito armado da história. Pregando a superioridade racial, sistematizou a eliminação de cerca de 8 milhões de judeus e membros de outras minorias em campos de extermínio\nContinua após a publicidade\n+ Quem eram os braços direito de Hitler?"
+  },
+  {
+    "posicao": 2,
+    "nome": "NAPOLEÃO BONAPARTE",
+    "terra_natal": "Ajaccio, na ilha de Córsega, França",
+    "nascimento": "15/8/1769",
+    "morte": "5/5/1821",
+    "texto": "Líder político e militar que ascendeu ao poder no final da Revolução Francesa, tornou-se imperador e governou entre 1804 e 1814. Ignorou tratados internacionais e a morte de 6 milhões de europeus durante suas conquistas. Foi vencido por sua ambição, ao esgotar o poderio de suas forças militares\n+ Afinal, como Napoleão perdeu a guerra?"
+  },
+  {
+    "posicao": 3,
+    "nome": "ÁTILA",
+    "terra_natal": "Desconhecida",
+    "nascimento": "Desconhecido",
+    "morte": "453",
+    "texto": "O rei dos hunos governou grande parte da Europa de 434 a 453. Suas campanhas militares aniquilavam nações inteiras e eram tão devastadoras que rivais o consideravam uma punição divina: “o Flagelo de Deus”. Inimigo jurado dos romanos, chegou a conquistar parte do norte da Itália, mas sua morte interrompeu o avanço huno\n+ Quem foi Átila, o Huno? Conheça mais de sua biografia"
+  },
+  {
+    "posicao": 4,
+    "nome": "HERODES, O GRANDE",
+    "terra_natal": "Desconhecida",
+    "nascimento": "Entre 74 e 73 a.C.",
+    "morte": "4 a.C.",
+    "texto": "Continua após a publicidade\nConhecido como um louco que matou sua própria família e mandou assassinar centenas de rabinos, o rei romano da Judeia também era tirano e corrupto. Organizou uma espécie de polícia secreta que investigava qualquer início de rebelião entre os judeus controlados. Qualquer suspeito era torturado e executado publicamente"
+  },
+  {
+    "posicao": 5,
+    "nome": "BASÍLIO II",
+    "terra_natal": "Constantinopla, Turquia",
+    "nascimento": "958",
+    "morte": "15/12/1025",
+    "texto": "Líder do Império Bizantino entre 976 e 1025, virou o “matador de búlgaros” após uma guerra que durou 30 anos. Em uma das batalhas, matou 15 mil e cegou outros 15 mil (incluindo crianças e mulheres) com adagas em brasa. Também torturava, prendia ou confiscava os bens dos inimigos\nContinua após a publicidade"
+  },
+  {
+    "posicao": 6,
+    "nome": "RAINHA RANAVALONA I",
+    "terra_natal": "Ambatomarina, Madagascar",
+    "nascimento": "1778",
+    "morte": "16/8/1861",
+    "texto": "Castigou a ilha africana entre 1828 e 1861 com uma política isolacionista baseada em trabalhos forçados. Altos impostos patrocinavam seus luxos e sustentavam o exército, que ela usava para reprimir o povo. A falta de contato com os europeus vitimou milhares de pessoas por falta de estrutura e saúde"
+  },
+  {
+    "posicao": 7,
+    "nome": "KIM IL-SUNG",
+    "terra_natal": "Pyongan, antiga Coreia",
+    "nascimento": "15/4/1912",
+    "morte": "8/7/1994",
+    "texto": "No poder de 1948 a 1972, deu início à Guerra da Coreia, que vitimou 3 milhões de pessoas. Mais 900 mil morreram por perseguição política ou pela falta de infraestrutura. Só quem era da cúpula de Sung dispunha de grana e recursos. E até os “amigos” sofriam: ele exilou ou executou 90% de seus generais\n+ O que foi a Guerra da Coreia?"
+  },
+  {
+    "posicao": 8,
+    "nome": "MUAMMAR AL-GADDAFI",
+    "terra_natal": "Abu Hadi, na época, colônia italiana na Líbia",
+    "nascimento": "Entre 1940 e 1943",
+    "morte": "20/10/2011",
+    "texto": "Quando assumiu o controle da Líbia, em 1969, o país prosperou, devido à intensa produção de petróleo. Mas boa parte da riqueza ficava com o “Coronel” – sua fortuna chegou a US$ 200 bilhões. Gaddafi censurava a mídia, dava cargo a parentes e, claro, pedia a cabeça dos opositores"
+  },
+  {
+    "posicao": 9,
+    "nome": "FRANCISCO FRANCO",
+    "terra_natal": "Ferrol, Espanha",
+    "nascimento": "4/12/1892",
+    "morte": "20/11/1975",
+    "texto": "Diga-me com quem andas… O Generalíssimo, que controlou a Espanha com mão de ferro de 1939 até sua morte, alinhou seus ideais políticos com os de Hitler e Mussolini. Chegou ao poder com uma guerra civil que custou a vida de 500 mil espanhóis e ainda matou mais 200 mil de fome, após desviar dinheiro para os esforços militares"
+  },
+  {
+    "posicao": 10,
+    "nome": "AUGUSTO PINOCHET",
+    "terra_natal": "Valparaíso, Chile",
+    "nascimento": "25/11/1915",
+    "morte": "10/12/2006",
+    "texto": "O golpe de Estado que o colocou à frente do Chile em 1973 foi o início de um período negro no país, com perseguições políticas, assassinatos, inflação e desigualdade social. Estudos indicam que, até o fim de seu governo, em 1990, Pinochet havia mandado prender 80 mil pessoas. Pior: estima-se que 30% delas foram torturadas"
+  },
+  {
+    "posicao": 11,
+    "nome": "JOSEF STALIN",
+    "terra_natal": "Gori, antigo Império Russo",
+    "nascimento": "18/12/1878",
+    "morte": "5/3/1953",
+    "texto": "Imagine você, depois de um comentário criticando o governo no trabalho ou na escola, ser preso na saída do expediente, torturado e enviado a campos de trabalho. Aplique isso a seus amigos e parentes, e só assim começará a ter noção do que era viver sob o regime de\nStalin\n– ditador da União Soviética de 1922 a 1953. Sua paranoia custou a vida de cerca de 60 milhões de pessoas\n+ O que eram os gulags, na União Soviética?"
+  },
+  {
+    "posicao": 12,
+    "nome": "KIM JONG-IL",
+    "terra_natal": "Montanha Baekdu, Coreia controlada pelo Japão",
+    "nascimento": "16/2/1942",
+    "morte": "17/12/2011",
+    "texto": "O penúltimo líder da Coreia do Norte cortou quase totalmente o comércio, a imigração e a comunicação com o mundo, o que pode ter causado, indiretamente, a morte de milhões de coreanos. Segundo o Fórum Mundial de Direitos Humanos, outros 150 mil foram presos sem julgamento em campos de trabalho"
+  },
+  {
+    "posicao": 13,
+    "nome": "MARIA I DA INGLATERRA",
+    "terra_natal": "Greenwich, Inglaterra",
+    "nascimento": "18/2/1516",
+    "morte": "17/11/1558",
+    "texto": "Católica fervorosa, recebeu o apelido de “Blood Mary” por tratar com crueldade os cristãos protestantes. Queimou os mais ricos em fogueiras, acusando-os de heresia, e decretou leis que dificultavam ou extinguiam a prática dessa religião. Ironia: quando morreu, passou a coroa à meia-irmã protestante, Elizabete"
+  },
+  {
+    "posicao": 14,
+    "nome": "NERO",
+    "terra_natal": "Anzio, Itália",
+    "nascimento": "15/12/37",
+    "morte": "9/6/68",
+    "texto": "O quinto imperador romano adorava torturar, crucificar ou dar banhos ferventes em cristãos. Também reservou um pouco de sua loucura para parte de sua família (que ele matou por pura paranoia, incluindo a mãe), para os romanos (com o famoso incêndio que durou seis dias, em 64) e até para o apóstolo Paulo (que ele mandou matar)\n+ Por que Nero mandou por fogo em Roma?"
+  },
+  {
+    "posicao": 15,
+    "nome": "SLOBODAN MILOSEVIC",
+    "terra_natal": "Pozarevac, antiga Iugoslávia",
+    "nascimento": "20/8/1941",
+    "morte": "11/3/2006",
+    "texto": "O presidente da Sérvia de 1989 a 1997 promoveu a limpeza étnica de bósnios e muçulmanos na região de Kosovo. Para isso, iniciou quatro guerras nos anos 90, que vitimaram 250 mil pessoas e criaram 2 milhões de refugiados. Foi acusado de genocídio e perseguição política, racial e religiosa pelo Tribunal Criminal Internacional\n+ Se a Iugoslávia tivesse vencido a Copa, que país atual ficaria com a taça?"
+  },
+  {
+    "posicao": 16,
+    "nome": "REINHARD HEYDRICH",
+    "terra_natal": "Halle an der Saale, Império Germânico",
+    "nascimento": "7/3/1904",
+    "morte": "4/6/1942",
+    "texto": "Imagine alguém que o próprio Hitler definiu como “um homem com coração de ferro”. Heydrich era o segundo em comando na SS, organização paramilitar nazista que coordenou o Holocausto. Ele criou uma polícia secreta para eliminar dissidentes nos territórios alemães e ordenou o massacre da cidade checa de Lídice, um dos piores da história\n+ O que era a Gestapo?"
+  },
+  {
+    "posicao": 17,
+    "nome": "OMAR AL-BASHIR",
+    "terra_natal": "Hosh Bannaga, Sudão",
+    "nascimento": "1/1/1944",
+    "morte": "Ainda vivo",
+    "texto": "Um golpe militar o colocou na presidência do Sudão em 1989 – de onde não saiu até hoje. É procurado pelo Tribunal Criminal Internacional por crimes contra a humanidade, como a limpeza étnica de não árabes na região de Darfur. Em meio a estupros, execuções sumárias e expulsões da população tribal de suas terras, a contagem de corpos de Al-Bashir já chegou a 400 mil"
+  },
+  {
+    "posicao": 18,
+    "nome": "TALAT PASHA",
+    "terra_natal": "Kircaali, Império Otomano",
+    "nascimento": "1874",
+    "morte": "15/3/1921",
+    "texto": "Ficou só pouco mais de um ano (entre 1917 e 1918) no comando do Império Otomano, mas tocou o terror. Roubos, torturas e estupros iniciaram um massacre que eliminou mais de 1 milhão de armênios (sendo que a população armênia na época era de 2,5 milhões). Foi assassinado por um sobrevivente dessa atrocidade"
+  },
+  {
+    "posicao": 19,
+    "nome": "QIN SHI HUANG",
+    "terra_natal": "Handan, China",
+    "nascimento": "260 a.C.",
+    "morte": "210 a.C.",
+    "texto": "O primeiro imperador chinês foi também um dos mais brutais: segundo registros, ele ordenou a morte de mais de 1 milhão de pessoas. Entre elas, pesquisadores que não conseguiram torná-lo imortal (uma de suas maiores obsessões). Impôs trabalhos forçados à população, como a construção de um mausoléu que custou a vida de milhares"
+  },
+  {
+    "posicao": 20,
+    "nome": "REI JOÃO DA INGLATERRA",
+    "terra_natal": "Oxford, Inglaterra",
+    "nascimento": "24/12/1166",
+    "morte": "19/10/1216",
+    "texto": "Após perder territórios para a França em uma guerra iniciada em 1202, João tornou-se obcecado em recuperar seus recursos. Para isso, impôs taxas pesadas, inclusive para nobres próximos a seu círculo mais íntimo. Os franceses aproveitaram o clima ruim e incitaram uma guerra civil, liderada pelos ex-aliados de João na nobreza"
+  },
+  {
+    "posicao": 21,
+    "nome": "MAO TSÉ-TUNG",
+    "terra_natal": "Shaoshan, China",
+    "nascimento": "26/12/1893",
+    "morte": "9/9/1976",
+    "texto": "De 1943 a 1976, Mao seguiu a cartilha dos ditadores comunistas: eliminou quem criticava sua liderança e forçou o povo a trabalhar em regime de escravidão (tudo em nome do “progresso”). Segundo a Organização de Direitos Humanos da ONU, ele causou a morte de 45 milhões de pessoas – incluindo cerca de 700 mil que se suicidaram diante da situação do país\n+ O que foi a Revolução Cultural Chinesa?"
+  },
+  {
+    "posicao": 22,
+    "nome": "VLADIMIR LENIN",
+    "terra_natal": "Simbirsk, Império Russo",
+    "nascimento": "22/4/1870",
+    "morte": "21/1/1924",
+    "texto": "Líder na Revolução Bolchevique de 1917 que transformou a Rússia monárquica no primeiro Estado socialista do mundo. Após sofrer uma tentativa de assassinato, mandou executar mais de 800 servidores públicos. Estimulou a censura e criou uma polícia secreta que intimidava seus opositores\n+ O que foi a Revolução Russa?"
+  },
+  {
+    "posicao": 23,
+    "nome": "ROBERT MUGABE",
+    "terra_natal": "Salisbury, Rodésia do Sul",
+    "nascimento": "21/2/1924",
+    "morte": "Ainda vivo",
+    "texto": "Violência, intimidação e pobreza extrema maltratam o povo do Zimbábue desde o início do governo de Mugabe, em 1980. Metade da população (cerca de 6 milhões) necessita de ajuda internacional para sobreviver. Enquanto isso, o ditador está mais preocupado em roubar as riquezas minerais do país, perseguir homossexuais, tomar propriedades privadas…"
+  },
+  {
+    "posicao": 24,
+    "nome": "ELIZABETH BÁTHORY",
+    "terra_natal": "Nyirbátor, Reino Húngaro",
+    "nascimento": "8/8/1560",
+    "morte": "21/8/1614",
+    "texto": "Essa condessa foi uma mulher de grande fortuna que supostamente enlouqueceu depois de perder o marido em combate. Foi acusada de matar e torturar 650 garotas capturadas próximas a seu castelo. Camponeses acreditavam que ela se banhava com o sangue de suas vítimas – o que a deixou eternamente associada ao vampirismo"
+  },
+  {
+    "posicao": 25,
+    "nome": "ADOLF EICHMANN",
+    "terra_natal": "Solingen, Império Germânico",
+    "nascimento": "19/3/1906",
+    "morte": "31/5/1962",
+    "texto": "Tinha como função primária reunir os judeus das áreas controladas pelos nazistas e organizá-los para enviá-los para campos de extermínio. Tudo era conduzido como uma fábrica, com metas e objetivos de produção. A eliminação das evidências (as câmaras de gás e as cremações) também eram parte de sua responsabilidade\n+ Caça aos Nazistas: descubra como Eichmann fugiu após a guerra e foi preso, na Argentina, graças a uma coincidência"
+  },
+  {
+    "posicao": 26,
+    "nome": "CALÍGULA",
+    "terra_natal": "Anzio, Itália",
+    "nascimento": "12",
+    "morte": "41",
+    "texto": "Extravagante, promíscuo e sádico, imperou sobre Roma entre os anos de 37 e 41. Acreditava piamente que era um deus e tinha uma noção bem estranha de diversão: curtia assistir a espancamentos, mutilações e torturas sexuais.Também adorava tirar a virgindade de noivas recém-casadas diante do marido. Foi assassinado em uma conspiração dos oficiais de sua guarda\n+ Quais foram as maiores loucuras dos imperadores romanos?"
+  },
+  {
+    "posicao": 27,
+    "nome": "GODOFREDO DE BOUILLON",
+    "terra_natal": "Boulogne-sur-Mer, França",
+    "nascimento": "1060",
+    "morte": "1100",
+    "texto": "Para dominar Jerusalém, em 1099, durante a primeira cruzada, aniquilou soldados, civis, judeus e muçulmanos. Mesmo locais religiosos, onde inimigos buscaram refúgio, foram incendiados. Mãos, pés e cabeças foram espalhados por Jerusalém para demonstrar a supremacia dos cruzados"
+  },
+  {
+    "posicao": 28,
+    "nome": "TAMERLÃO, O GRANDE",
+    "terra_natal": "Kesh, Mongólia",
+    "nascimento": "9/4/1336",
+    "morte": "18/2/1405",
+    "texto": "Também conhecido como Timur, foi o fundador da dinastia Timúrida, no oeste e centro da Ásia. Acreditava ser descendente de Gêngis Khan e foi igualmente implacável com os inimigos: executou mais de 400 mil em suas campanhas entre a Índia e Bagdá, a maioria decapitada ou forçada a se lançar de penhascos. Tinha o hábito de empilhar os corpos de seus inimigos\n+ Retrato Falado: Tamerlão, o Grande"
+  },
+  {
+    "posicao": 29,
+    "nome": "IVAN IV, O TERRÍVEL",
+    "terra_natal": "Kolomenskoye, Rússia",
+    "nascimento": "25/8/1530",
+    "morte": "28/3/1584",
+    "texto": "Primeiro czar e soberano russo, Ivan era dado a ataques de raiva e comportamento errático, que provavelmente indicavam algum distúrbio mental. Assassinou o filho, acusou nobres próximos a ele de traição e criou uma guarda pessoal que, entre outros absurdos, massacrou a cidade de Novgorod (na época, com 3 mil habitantes)\n+ Retrato Falado: Ivan, O Terrível"
+  },
+  {
+    "posicao": 30,
+    "nome": "PORFIRIO DÍAZ",
+    "terra_natal": "Oaxaca de Juáez, México",
+    "nascimento": "15/9/1830",
+    "morte": "2/7/1915",
+    "texto": "Repressão política, estatização de propriedades privadas, criação de uma guarda particular ultraviolenta… Quando assumiu o poder no México, após um golpe de Estado, em 1876, Porfirio cometeu todos os abusos típicos de um ditador. O resultado também não foi diferente: estagnação econômica, fome e revolta popular"
+  },
+  {
+    "posicao": 31,
+    "nome": "GÊNGIS KHAN",
+    "terra_natal": "Montanhas de Khentii, Mongólia",
+    "nascimento": "1162",
+    "morte": "1227",
+    "texto": "Imagine alguém que, sozinho, consegue eliminar 30%da população mundial. Foi a façanha macabra de Khan. Após unificar as tribos nômades das estepes e se tornar o fundador de um dos mais poderosos impérios da antiguidade, Khan conquistou grande parte da China até o mar Cáspio, deixando um rastro de inacreditáveis 60 milhões de mortes\n+ Quem conquistou mais territórios: Napoleão, Hitler, Gêngis Khan ou Alexandre, O Grande?"
+  },
+  {
+    "posicao": 32,
+    "nome": "JOSEF MENGELE",
+    "terra_natal": "Günzburg, Império Germânico",
+    "nascimento": "16/3/1911",
+    "morte": "7/2/1979",
+    "texto": "+ Caça aos Nazistas: a aposentadoria de Mengele escondido no Brasil"
+  },
+  {
+    "posicao": 33,
+    "nome": "BENITO MUSSOLINI",
+    "terra_natal": "Forli, Reino da Itália",
+    "nascimento": "29/7/1883",
+    "morte": "28/4/1945",
+    "texto": "Líder do Partido Nacional Fascista, o primeiro-ministro da Itália entre 1922 e 1943 foi o principal aliado estrangeiro de Hitler durante a 2ª Guerra Mundial. Auxiliou-o em seus planos de extermínio e ações militares. Na Itália, criminalizou greves e intimidou a oposição com sua própria polícia secreta"
+  },
+  {
+    "posicao": 34,
+    "nome": "HEINRICH HIMMLER",
+    "terra_natal": "Munique, Alemanha",
+    "nascimento": "7/10/1900",
+    "morte": "23/5/1945",
+    "texto": "+ Como funcionavam as câmaras de gás dos campos de concentração nazistas?"
+  },
+  {
+    "posicao": 35,
+    "nome": "SADDAM HUSSEIN",
+    "terra_natal": "Tikrit, Iraque",
+    "nascimento": "28/4/1937",
+    "morte": "30/12/2006",
+    "texto": "Ditador militar iraquiano entre 1979 e 2003, o bigodudo perseguiu e eliminou seus oponentes políticos (40 deles eram seus próprios parentes!). Também promoveu uma “limpeza” na região curda, no norte do país. Até armas químicas contra essa etnia ele usou. Em 1990, deflagrou a Guerra do Golfo ao invadir o vizinho Kuwait\n+ Retrato Falado: Saddam Hussein"
+  },
+  {
+    "posicao": 36,
+    "nome": "LEOPOLDO II",
+    "terra_natal": "Bruxelas, Bélgica",
+    "nascimento": "9/4/1835",
+    "morte": "17/12/1909",
+    "texto": "O rei belga é conhecido pela sua exploração brutal do marfim e da borracha no Estado Livre do Congo, a partir de 1884. Para obter eficiência máxima, determinou um rígido sistema de trabalhos forçados, que matou 3 milhões de congoleses – muitos deles, só porque não conseguiam cumprir sua cota de produtividade diária"
+  },
+  {
+    "posicao": 37,
+    "nome": "IMPERADOR HIROHITO",
+    "terra_natal": "Tóquio, Japão",
+    "nascimento": "29/4/1901",
+    "morte": "7/1/1989",
+    "texto": "Imperador do Japão durante a 2ª Guerra Mundial, Hirohito pegou pesado com a população chinesa na 2ª Guerra Sino-Japonesa. Um dos maiores exemplos foi o ataque de suas tropas à região de Nanquim, em 1937: uma “maratona” de pilhagens, incêndios e execução de civis. A contagem de corpos chegou a 300 mil\n+ O que foi o Estupro de Nanquim?"
+  },
+  {
+    "posicao": 38,
+    "nome": "THAN SHWE",
+    "terra_natal": "Kyaukse, Índia Britânica",
+    "nascimento": "2/2/1933",
+    "morte": "Ainda vivo",
+    "texto": "O governante de Mianmar foi, entre 1992 e 2011, responsável por um dos regimes mais repressivos da atualidade. Por lá, rolou de tudo: trabalhos forçados, tráfico de pessoas, estupros cometidos por forças militares… Nem as crianças escapavam. Muitas sofriam abuso sexual e outras eram sequestradas e obrigadas a servir no Exército"
+  },
+  {
+    "posicao": 39,
+    "nome": "TEODORO OBIANG",
+    "terra_natal": "Acoacán, Guiné Espanhola",
+    "nascimento": "6/6/1942",
+    "morte": "Ainda vivo",
+    "texto": "No controle da Guiné Equatorial de 1979 a 2012, Obiang apelou para uma tática inovadora de intimidação. Ele estimulava rumores de que é canibal! O país sofria (e ainda sofre) com uma das maiores taxas de mortalidade do mundo, em parte por causa da brutalidade das tropas do ditador"
+  },
+  {
+    "posicao": 40,
+    "nome": "POL POT",
+    "terra_natal": "Kampong Thom, antiga Indochina Francesa",
+    "nascimento": "19/5/1925",
+    "morte": "15/4/1998",
+    "texto": "Você usa óculos? Se vivesse no Camboja pós-1975, já estaria na mira de Pot, que perseguiu todo tipo de intelectual (mesmo quem só aparentava ser). Entre outras inúmeras barbáries, matou cerca de 1,5 milhão de pessoas em campos de trabalho forçado e ficou famoso por colecionar crânios de suas vítimas"
+  },
+  {
+    "posicao": 41,
+    "nome": "OSAMA BIN LADEN",
+    "terra_natal": "Riad, Arábia Saudita",
+    "nascimento": "10/3/1957",
+    "morte": "2/5/2011",
+    "texto": "Líder da rede terrorista Al-Qaeda, orquestrou os ataques de 11 de setembro que assassinaram mais de 3 mil pessoas. Sua organização também causou os atentados às embaixadas dos EUA na Tanzânia e no Quênia, que mataram 212 e feriram 4 mil. Entre 2002 e 2004, outros ataques desse tipo fizeram pelo menos 600 vítimas\n+ Teoria da Conspiração: O ataque às Torres Gêmeas em 11 de setembro de 2001 foi uma farsa?"
+  },
+  {
+    "posicao": 42,
+    "nome": "MAXIMILLIEN ROBESPIERRE",
+    "terra_natal": "Arras, França",
+    "nascimento": "6/5/1758",
+    "morte": "28/7/1794",
+    "texto": "Uma das figuras mais influentes da Revolução Francesa, Robespierre ficou conhecido por sua eficiência no que ele próprio chamava de “purificação radical de meus inimigos políticos”. Em outras palavras: guilhotinar qualquer um que fosse um obstáculo a seus ideais. Cerca de 40 mil adversários foram executados ou mortos durante o cárcere"
+  },
+  {
+    "posicao": 43,
+    "nome": "CHIANG KAI-SHEK",
+    "terra_natal": "Fenghua, China",
+    "nascimento": "31/10/1887",
+    "morte": "5/4/1975",
+    "texto": "Você já viu o que Mao Tsé-tung causou na China em nome do comunismo. Esse político e líder militar está no extremo oposto: ele odiava esse sistema político. Rompeu com o governo chinês em 1927, mas perdeu a briga e acabou levando seus exércitos para Taiwan. Lá, instituiu o chamado “Terror Branco”: qualquer um que manifestasse apoio ao comunismo era eliminado sem dó"
+  },
+  {
+    "posicao": 44,
+    "nome": "FRANCISCO PIZARRO",
+    "terra_natal": "Trujillo, Espanha",
+    "nascimento": "Entre 1471 e 1476",
+    "morte": "26/6/1541",
+    "texto": "Depois de duas expedições marítimas sem sucesso, esse conquistador espanhol enfim alcançou seu macabro objetivo: com o apoio do rei Carlos daEspanha, dizimou toda a população inca das Américas, em uma série de batalhas a partir de 1530. Explorou exaustivamente os recursos naturais dessa civilização e até sequestrou o principal regente dela para assegurar o avanço de suas tropas até a capital"
+  },
+  {
+    "posicao": 45,
+    "nome": "TOMÁS DE TORQUEMADA",
+    "terra_natal": "Valladolid, Espanha",
+    "nascimento": "Provavelmente em 1420",
+    "morte": "16/9/1498",
+    "texto": "Inquisidor-geral espanhol entre 1483 e 1498, obcecado em eliminar hereges ou ameaças à\nIgreja Católica\n. Para isso, contava com espiões que manipulavam famílias e amigos a testemunhar uns contra os outros. Judeus eram executados sem julgamento. Muitos outros foram “purificados” por meio de torturas e punições\n+ Retrato Falado: Tomás de Torquemada"
+  },
+  {
+    "posicao": 46,
+    "nome": "IMPERATRIZ WU",
+    "terra_natal": "Lizhou, China",
+    "nascimento": "17/2/624",
+    "morte": "16/12/705",
+    "texto": "“Sadismo” não basta para descrever o reinado dessa chinesa, entre 690 e 705. Ela ordenou o envenenamento e a mutilação de populações inteiras em áreas controladas por seus adversários. Oficiais do governo suspeitos de corrupção eram forçados a se suicidar. Até membros da própria família ela matou"
+  },
+  {
+    "posicao": 47,
+    "nome": "IDI AMIM",
+    "terra_natal": "Koboko, Uganda",
+    "nascimento": "Provavelmente em 1925",
+    "morte": "16/8/2003",
+    "texto": "Declarou-se presidente vitalício da Uganda após um golpe de Estado em 1971. Seu grupo de “conselheiros” (na verdade, uma guarda pessoal com liberdade para matar) despachou mais de 300 mil opositores (reais ou inventados por Idi). A loucura do tirano é tão grande que sua esposa foi encontrada mutilada após tentar fazer um aborto"
+  },
+  {
+    "posicao": 48,
+    "nome": "AIATOLÁ KHOMEINI",
+    "terra_natal": "Condado de Khomein, Pérsia",
+    "nascimento": "24/9/1902",
+    "morte": "3/6/1989",
+    "texto": "Beijar em público: cem chibatadas. Ouvir música: prisão. Roubar: mão decepada. Essas foram algumas das severas punições instituídas por esse líder religioso xiita, que governou o Irã de 1979 a 1989. Além disso, entrou em uma guerra contra o Iraque que matou 2 milhões de pessoas e deixou um rombo na economia nacional"
+  },
+  {
+    "posicao": 49,
+    "nome": "REI MSWATI III",
+    "terra_natal": "Manzini, Suazilândia",
+    "nascimento": "19/4/1968",
+    "morte": "Ainda vivo",
+    "texto": "Na Suazilândia, não há partidos políticos ou liberdade de imprensa e a pena de Morte – pode ser aplicada a qualquer crime. A economia está um caos, a expectativa de vida é de 31 anos e 26,5%da população é soropositiva. E o que Mswati faz? Continua metendo a mão nos fundos reais, viajando pelo mundo e colecionando carrões"
+  },
+  {
+    "posicao": 50,
+    "nome": "VLAD TEPES",
+    "imagem": "https://www.historyonthenet.com/wp-content/uploads/2023/06/Vlad-the-Impaler.jpg",
+    "terra_natal": "Sighisoara, antiga Transilvânia",
+    "nascimento": "1431",
+    "morte": "Entre dezembro de 1476 e janeiro de 1477",
+    "texto": "A sanguinolência desse rei da Valáquia (atual Romênia) inspirou Bram Stoker a criar Drácula. Para intimidar os vizinhos de seu reino, empalava (atravessava com uma estaca) seus inimigos. Em certa ocasião, convidou um grupo de nobres opositores para jantar e, depois da refeição, empalou todos eles\nFONTES\nLivros\nTimelines of History\n, vários autores,\nMilitary History: The Definitive Visual Guide to the Objects of Warfare\n, vários autores,\n2012 Enciclopedia Britannica\ne\nMicrosoft Encarta\n,\nReuters, Forbes, BBC\ne\nNational Geographic\nPublicidade\nMais lidas\n1\nCiência\nAnomalia magnética está ficando maior\n2\nCiência\n3I/ATLAS: objeto interestelar se aproxima da Terra e é fotografado por telescópio Hubble; veja\n3\nSaúde\nChip em estudo restaura visão de pessoas com degeneração causada pela idade\n4\nCiência\nHisashi Ouchi e o balde de urânio\n5\nCiência\nGatos miam duas vezes mais para tutores homens, aponta pesquisa.\nTAGS:\nAdolf Hitler\nátila\naugusto pinochet\nCrimes\nditador\nherodes\nJosef Stálin\nMundo Estranho\nNapoleão Bonaparte\nterrorista\nvilão"
+  }
+]
