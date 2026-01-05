@@ -32,11 +32,11 @@ from fatoshist.handlers.scheduled_handlers.stars import msg_alerta_stars
 # checar data natal/ano novo/ aniversario do canal
 def checar_datas_dia(bot):
     current_date = datetime.now()
-    if current_date.month == '12' and current_date.day == '25':
+    if current_date.month == 12 and current_date.day == 25:
         christmas_message(bot)
-    elif current_date.month == '1' and current_date.day == '1':
+    elif current_date.month == 1 and current_date.day == 1:
         new_year_message(bot)
-    elif current_date.month == '11' and current_date.day == '19':
+    elif current_date.month == 11 and current_date.day == 19:
         agendar_aniversario(bot)
 
 
