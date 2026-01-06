@@ -15,7 +15,7 @@ def send_historical_events_channel_image(bot, CHANNEL):
         day = today.day
         month = today.month
 
-       response = requests.get(
+        response = requests.get(
             f'https://pt.wikipedia.org/api/rest_v1/feed/onthisday/events/{month}/{day}',
             headers={'accept': 'application/json'},
             timeout=10
