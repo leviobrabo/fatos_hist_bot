@@ -1,8 +1,10 @@
 import json
 import logging
 from datetime import datetime
+from io import BytesIO
 
 import pytz
+import requests
 
 from fatoshist.config import CHANNEL
 from fatoshist.database.president_manager import PresidentManager
