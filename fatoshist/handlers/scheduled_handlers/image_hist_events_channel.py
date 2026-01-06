@@ -15,8 +15,27 @@ def send_historical_events_channel_image(bot, CHANNEL):
         day = today.day
         month = today.month
 
-        response = requests.get(f'https://pt.wikipedia.org/api/rest_v1/feed/onthisday/events/{month}/{day}')
-        events = response.json().get('events', [])
+       response = requests.get(
+            f'https://pt.wikipedia.org/api/rest_v1/feed/onthisday/events/{month}/{day}',
+            headers={'accept': 'application/json'},
+            timeout=10
+        )
+        
+        if response.status_code != 200:
+            logging.error(f'Erro Wikipedia: {response.status_code}')
+            return
+        
+        if not response.text or not response.text.strip().startswith('{'):
+            logging.error('Resposta inválida da Wikipedia (HTML ou vazia)')
+            return
+        
+        try:
+            data = response.json()
+        except ValueError:
+            logging.error('Falha ao converter resposta em JSON')
+            return
+        
+        events = data.get('events', [])
         events_with_photo = [event for event in events if event.get('pages') and event['pages'][0].get('thumbnail')]
 
         if not events_with_photo:
