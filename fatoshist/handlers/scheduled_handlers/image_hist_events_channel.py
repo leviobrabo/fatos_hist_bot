@@ -8,6 +8,10 @@ import requests
 from fatoshist.config import CHANNEL
 from fatoshist.utils.month import get_month_name
 
+headers = {
+    "accept": "application/json",
+    "User-Agent": "HistoriaBot/1.0 (https://historiadodia.com; contato@historiadodia.com)"
+}
 
 def send_historical_events_channel_image(bot, CHANNEL):
     try:
@@ -16,8 +20,8 @@ def send_historical_events_channel_image(bot, CHANNEL):
         month = today.month
 
         response = requests.get(
-            f'https://pt.wikipedia.org/api/rest_v1/feed/onthisday/events/{month}/{day}',
-            headers={'accept': 'application/json'},
+            f"https://pt.wikipedia.org/api/rest_v1/feed/onthisday/events/{month}/{day}",
+            headers=headers,
             timeout=10
         )
         
