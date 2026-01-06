@@ -1,14 +1,13 @@
+import os
 import json
 import logging
 from datetime import datetime
-from io import BytesIO
 
 import pytz
 import requests
 
 from fatoshist.config import CHANNEL
 from fatoshist.database.president_manager import PresidentManager
-
 
 president_manager = PresidentManager()
 
@@ -22,6 +21,7 @@ HEADERS = {
         "Chrome/120.0.0.0 Safari/537.36"
     )
 }
+
 
 def enviar_info_pelo_canal(bot, info_presidente):
     try:
@@ -49,24 +49,36 @@ def enviar_info_pelo_canal(bot, info_presidente):
             f'acesse nosso site historiadodia.com.</blockquote>'
         )
 
+        # Criar nome temporário para a imagem
+        filename = "temp_image.jpg"
+
         logging.info('Baixando a foto do presidente...')
-        # Baixando a imagem usando requests com headers
         response = requests.get(foto_url, headers=HEADERS)
         response.raise_for_status()
-        foto_bytes = BytesIO(response.content)
+
+        # Salvar a imagem na pasta local temporariamente
+        with open(filename, 'wb') as f:
+            f.write(response.content)
 
         logging.info('Enviando foto do presidente...')
         bot.send_photo(
             CHANNEL,
-            photo=foto_bytes,
+            photo=open(filename, 'rb'),
             caption=caption,
             parse_mode='HTML'
         )
 
         logging.info('Envio de presidente concluído com sucesso!')
 
+        # Apagar arquivo temporário
+        os.remove(filename)
+
     except Exception as e:
         logging.error(f'Erro ao enviar foto do presidente: {e}')
+        # Garantir que o arquivo temporário seja apagado mesmo em caso de erro
+        if os.path.exists(filename):
+            os.remove(filename)
+
 
 def enviar_foto_presidente(bot):
     try:
