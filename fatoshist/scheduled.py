@@ -109,10 +109,10 @@ def schedule_tasks(bot: TeleBot):
         schedule.every().day.at('08:30').do(lambda: hist_channel_frase(bot))
 
         # Envio dos presidentes no canal
-        schedule.every().day.at('23:10').do(lambda: enviar_foto_presidente(bot))
+        schedule.every().day.at('23:30').do(lambda: enviar_foto_presidente(bot))
 
         # Envio da historia diaria
-        schedule.every().day.at('23:50').do(lambda: hist_channel_history(bot))
+        schedule.every().day.at('01:30').do(lambda: hist_channel_history(bot))
 
         schedule.every().day.at('00:05').do(lambda: checar_datas_dia(bot))
 
