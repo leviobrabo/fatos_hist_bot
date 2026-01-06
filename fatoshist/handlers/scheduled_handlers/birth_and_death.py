@@ -42,29 +42,61 @@ def get_births_and_deaths_of_the_day(bot, CHANNEL):
         death_messages = []
         birth_messages = []
 
-        if len(deaths) > 0:
-            for index, death in enumerate(deaths[:5], start=1):
+        if deaths:
+            index = 1
+            for death in deaths:
+                page = death.get('pages', [{}])[0]
+                thumbnail = page.get('thumbnail', {}).get('source')
+        
+                # 🔴 ignora se não tiver imagem
+                if not thumbnail:
+                    continue
+        
                 name_death = death.get('text', '')
-                photo_url = death.get('pages', [{}])[0].get('originalimage', {}).get('source', '')
-                if photo_url:
-                    name_death = f'<a href="{photo_url}">{name_death}</a>'
-                info = death.get('pages', [{}])[0].get('extract', 'Informações não disponíveis.')
+                name_death = f'<a href="{thumbnail}">{name_death}</a>'
+        
+                info = page.get('extract', 'Informações não disponíveis.')
                 date = death.get('year', 'Data desconhecida.')
-
-                death_message = f'<i>{index}.</i> <b>Nome:</b> {name_death}\n<b>Informações:</b> {info}\n<b>Data da morte:</b> {date}'
+        
+                death_message = (
+                    f'<i>{index}.</i> <b>Nome:</b> {name_death}\n'
+                    f'<b>Informações:</b> {info}\n'
+                    f'<b>Data da morte:</b> {date}'
+                )
+        
                 death_messages.append(death_message)
+        
+                index += 1
+                if index > 5:
+                    break
 
-        if len(births) > 0:
-            for index, birth in enumerate(births[:5], start=1):
+        if births:
+            index = 1
+            for birth in births:
+                page = birth.get('pages', [{}])[0]
+                thumbnail = page.get('thumbnail', {}).get('source')
+        
+                # 🔴 ignora se não tiver imagem
+                if not thumbnail:
+                    continue
+        
                 birth_name = birth.get('text', '')
-                photo_url = birth.get('pages', [{}])[0].get('originalimage', {}).get('source', '')
-                if photo_url:
-                    birth_name = f'<a href="{photo_url}">{birth_name}</a>'
-                info = birth.get('pages', [{}])[0].get('extract', 'Informações não disponíveis.')
+                birth_name = f'<a href="{thumbnail}">{birth_name}</a>'
+        
+                info = page.get('extract', 'Informações não disponíveis.')
                 date = birth.get('year', 'Data desconhecida.')
-
-                birth_message_text = f'<i>{index}.</i> <b>Nome:</b> {birth_name}\n<b>Data de nascimento:</b> {date}\n<b>Informações:</b> {info}'
+        
+                birth_message_text = (
+                    f'<i>{index}.</i> <b>Nome:</b> {birth_name}\n'
+                    f'<b>Data de nascimento:</b> {date}\n'
+                    f'<b>Informações:</b> {info}'
+                )
+        
                 birth_messages.append(birth_message_text)
+        
+                index += 1
+                if index > 5:
+                    break
 
         if death_messages or birth_messages:
             message = '<b>Vida e Legado: Nascimentos e Falecimentos do Dia</b>\n\n'
