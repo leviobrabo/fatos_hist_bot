@@ -16,6 +16,8 @@ HEADERS = {
 
 with open('./fatoshist/data/presidentes.json', 'r', encoding='utf-8') as file:
     presidentes = json.load(file)
+IMAGEM_TEMP = "foto_presidente.jpg"    
+president_manager = PresidentManager()
 
 def baixar_imagem(url: str) -> Path:
     r = requests.get(
