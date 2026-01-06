@@ -31,7 +31,7 @@ def enviar_info_pelo_canal(bot, info_presidente):
         partido = info_presidente.get('partido', '')
         ano_de_mandato = info_presidente.get('ano_de_mandato', '')
         vice_presidente = info_presidente.get('vice_presidente', '')
-        foto = info_presidente.get('foto', '')
+        foto_url = info_presidente.get('foto', '')
 
         logging.info(f'Preparando para enviar informações do presidente: {nome}')
 
@@ -48,14 +48,17 @@ def enviar_info_pelo_canal(bot, info_presidente):
             f'<blockquote>💬 Você sabia? Siga o @historia_br e '
             f'acesse nosso site historiadodia.com.</blockquote>'
         )
+
+        logging.info('Baixando a foto do presidente...')
+        # Baixando a imagem usando requests com headers
         response = requests.get(foto_url, headers=HEADERS)
         response.raise_for_status()
         foto_bytes = BytesIO(response.content)
+
         logging.info('Enviando foto do presidente...')
-      
         bot.send_photo(
             CHANNEL,
-            photo=foto,
+            photo=foto_bytes,
             caption=caption,
             parse_mode='HTML'
         )
@@ -64,7 +67,6 @@ def enviar_info_pelo_canal(bot, info_presidente):
 
     except Exception as e:
         logging.error(f'Erro ao enviar foto do presidente: {e}')
-
 
 def enviar_foto_presidente(bot):
     try:
