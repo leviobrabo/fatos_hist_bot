@@ -1,11 +1,27 @@
 import json
 import logging
 from datetime import datetime
+from pathlib import Path
+import os
+import requests
 
 import pytz
 
 from fatoshist.config import CHANNEL
 from fatoshist.database.president_manager import PresidentManager
+
+def baixar_imagem(url, nome_arquivo="foto_presidente.jpg"):
+    headers = {
+        "User-Agent": "HistoriaBot/1.0"
+    }
+
+    r = requests.get(url, headers=headers, timeout=15)
+    r.raise_for_status()
+
+    with open(nome_arquivo, "wb") as f:
+        f.write(r.content)
+
+    return nome_arquivo
 
 president_manager = PresidentManager()
 
@@ -14,6 +30,8 @@ with open('./fatoshist/data/presidentes.json', 'r', encoding='utf-8') as file:
 
 
 def enviar_info_pelo_canal(bot, info_presidente):
+    caminho_imagem = None
+
     try:
         titulo = info_presidente.get('titulo', '')
         nome = info_presidente.get('nome', '')
@@ -39,11 +57,31 @@ def enviar_info_pelo_canal(bot, info_presidente):
             f'acesse nosso site historiadodia.com.</blockquote>'
         )
 
+        # 🔽 baixa a imagem
+        caminho_imagem = baixar_imagem(foto)
+
         logging.info('Enviando foto do presidente...')
-        bot.send_photo(CHANNEL, photo=foto, caption=caption, parse_mode='HTML')
+        with open(caminho_imagem, "rb") as img:
+            bot.send_photo(
+                CHANNEL,
+                photo=img,
+                caption=caption,
+                parse_mode='HTML'
+            )
+
         logging.info('Envio de presidente concluído com sucesso!')
+
     except Exception as e:
         logging.error(f'Erro ao enviar foto do presidente: {e}')
+
+    finally:
+        # 🧹 apaga o arquivo local
+        if caminho_imagem and caminho_imagem.exists():
+            try:
+                caminho_imagem.unlink()
+                logging.info('Imagem temporária removida com sucesso.')
+            except Exception as e:
+                logging.warning(f'Falha ao remover imagem temporária: {e}')
 
 
 def enviar_foto_presidente(bot):
