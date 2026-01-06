@@ -10,79 +10,87 @@ import pytz
 from fatoshist.config import CHANNEL
 from fatoshist.database.president_manager import PresidentManager
 
-def baixar_imagem(url, nome_arquivo="foto_presidente.jpg"):
-    headers = {
-        "User-Agent": "HistoriaBot/1.0"
-    }
-
-    r = requests.get(url, headers=headers, timeout=15)
-    r.raise_for_status()
-
-    with open(nome_arquivo, "wb") as f:
-        f.write(r.content)
-
-    return nome_arquivo
-
-president_manager = PresidentManager()
+HEADERS = {
+    "User-Agent": "HistoriaBot/1.0 (https://historiadodia.com)"
+}
 
 with open('./fatoshist/data/presidentes.json', 'r', encoding='utf-8') as file:
     presidentes = json.load(file)
 
+def baixar_imagem(url: str) -> Path:
+    r = requests.get(
+        url,
+        headers=HEADERS,
+        timeout=15,
+        allow_redirects=True
+    )
+    r.raise_for_status()
 
-def enviar_info_pelo_canal(bot, info_presidente):
+    content_type = r.headers.get("Content-Type", "")
+    if not content_type.startswith("image/"):
+        raise ValueError(f"Conteúdo inválido (não é imagem): {content_type}")
+
+    caminho = Path(IMAGEM_TEMP)
+    caminho.write_bytes(r.content)
+    return caminho
+
+def enviar_info_pelo_canal(bot, info_presidente: dict):
     caminho_imagem = None
 
+    titulo = info_presidente.get('titulo', '')
+    nome = info_presidente.get('nome', '')
+    posicao = info_presidente.get('posicao', '')
+    partido = info_presidente.get('partido', '')
+    ano_de_mandato = info_presidente.get('ano_de_mandato', '')
+    vice_presidente = info_presidente.get('vice_presidente', '')
+    foto = info_presidente.get('foto', '')
+
+    logging.info(f'Preparando envio: {nome}')
+
+    caption = (
+        f'<b>{titulo}</b>\n\n'
+        f'<b>Nome:</b> {nome}\n'
+        f'<b>Informação:</b> {posicao}° {titulo}\n'
+        f'<b>Partido:</b> {partido}\n'
+        f'<b>Ano de mandato:</b> {ano_de_mandato}\n'
+        f'<b>Vice-Presidente:</b> {vice_presidente}\n\n'
+        f'#presidente #historia #HistóriaMundial\n\n'
+        f'<blockquote>💬 Você sabia? '
+        f'Siga o @historia_br e acesse historiadodia.com</blockquote>'
+    )
+
     try:
-        titulo = info_presidente.get('titulo', '')
-        nome = info_presidente.get('nome', '')
-        posicao = info_presidente.get('posicao', '')
-        partido = info_presidente.get('partido', '')
-        ano_de_mandato = info_presidente.get('ano_de_mandato', '')
-        vice_presidente = info_presidente.get('vice_presidente', '')
-        foto = info_presidente.get('foto', '')
-
-        logging.info(f'Preparando para enviar informações do presidente: {nome}')
-
-        caption = (
-            f'<b>{titulo}</b>\n\n'
-            f'<b>Nome:</b> {nome}\n'
-            f'<b>Informação:</b> {posicao}° {titulo}\n'
-            f'<b>Partido:</b> {partido}\n'
-            f'<b>Ano de mandato:</b> {ano_de_mandato}\n'
-            f'<b>Vice-Presidente:</b> {vice_presidente}\n\n'
-            f'#presidente #historia '
-            f'#HistóriaParaTodos #DivulgueAHistória #CompartilheConhecimento '
-            f'#HistóriaDoBrasil #HistóriaMundial\n\n'
-            f'<blockquote>💬 Você sabia? Siga o @historia_br e '
-            f'acesse nosso site historiadodia.com.</blockquote>'
-        )
-
-        # 🔽 baixa a imagem
+        # 📥 baixa imagem
         caminho_imagem = baixar_imagem(foto)
 
-        logging.info('Enviando foto do presidente...')
-        with open(caminho_imagem, "rb") as img:
+        # 📤 envia imagem
+        with caminho_imagem.open("rb") as img:
             bot.send_photo(
-                CHANNEL,
+                chat_id=CHANNEL,
                 photo=img,
                 caption=caption,
                 parse_mode='HTML'
             )
 
-        logging.info('Envio de presidente concluído com sucesso!')
+        logging.info('Presidente enviado com imagem.')
 
     except Exception as e:
-        logging.error(f'Erro ao enviar foto do presidente: {e}')
+        # 🔁 fallback para texto
+        logging.error(f'Falha ao enviar imagem: {e}')
+        bot.send_message(
+            chat_id=CHANNEL,
+            text=caption,
+            parse_mode='HTML'
+        )
 
     finally:
-        # 🧹 apaga o arquivo local
+        # 🧹 remove imagem temporária
         if caminho_imagem and caminho_imagem.exists():
             try:
                 caminho_imagem.unlink()
-                logging.info('Imagem temporária removida com sucesso.')
+                logging.info('Imagem temporária removida.')
             except Exception as e:
-                logging.warning(f'Falha ao remover imagem temporária: {e}')
-
+                logging.warning(f'Erro ao apagar imagem: {e}')
 
 def enviar_foto_presidente(bot):
     try:
