@@ -5,12 +5,14 @@ from datetime import datetime
 
 import pytz
 import requests
+from bs4 import BeautifulSoup  # Para extrair link direto do Wikipedia
 
 from fatoshist.config import CHANNEL
 from fatoshist.database.president_manager import PresidentManager
 
 president_manager = PresidentManager()
 
+# Carregar JSON de presidentes
 with open('./fatoshist/data/presidentes.json', 'r', encoding='utf-8') as file:
     presidentes = json.load(file)
 
@@ -22,63 +24,75 @@ HEADERS = {
     )
 }
 
-
-def enviar_info_pelo_canal(bot, info_presidente):
+# Função para extrair link direto do Wikipedia
+def wikipedia_direct_link(url):
     try:
-        titulo = info_presidente.get('titulo', '')
-        nome = info_presidente.get('nome', '')
-        posicao = info_presidente.get('posicao', '')
-        partido = info_presidente.get('partido', '')
-        ano_de_mandato = info_presidente.get('ano_de_mandato', '')
-        vice_presidente = info_presidente.get('vice_presidente', '')
-        foto_url = info_presidente.get('foto', '')
+        if "wikipedia.org/wiki/Ficheiro:" not in url:
+            return url  # Não é Wikipedia, retorna a URL original
 
-        logging.info(f'Preparando para enviar informações do presidente: {nome}')
+        response = requests.get(url, headers=HEADERS)
+        response.raise_for_status()
+        soup = BeautifulSoup(response.text, "html.parser")
+        # Procurar o link que termina em .jpg ou .png dentro da página
+        image_tag = soup.find("a", {"class": "internal"})
+        if image_tag:
+            return "https:" + image_tag.get("href") if image_tag.get("href").startswith("//") else image_tag.get("href")
+        return url
+    except Exception as e:
+        logging.error(f"Erro ao pegar link direto do Wikipedia: {e}")
+        return url  # fallback
 
-        caption = (
-            f'<b>{titulo}</b>\n\n'
-            f'<b>Nome:</b> {nome}\n'
-            f'<b>Informação:</b> {posicao}° {titulo}\n'
-            f'<b>Partido:</b> {partido}\n'
-            f'<b>Ano de mandato:</b> {ano_de_mandato}\n'
-            f'<b>Vice-Presidente:</b> {vice_presidente}\n\n'
-            f'#presidente #historia '
-            f'#HistóriaParaTodos #DivulgueAHistória #CompartilheConhecimento '
-            f'#HistóriaDoBrasil #HistóriaMundial\n\n'
-            f'<blockquote>💬 Você sabia? Siga o @historia_br e '
-            f'acesse nosso site historiadodia.com.</blockquote>'
-        )
+# Função para enviar informações e imagem do presidente
+def enviar_info_pelo_canal(bot, info_presidente):
+    titulo = info_presidente.get('titulo', '')
+    nome = info_presidente.get('nome', '')
+    posicao = info_presidente.get('posicao', '')
+    partido = info_presidente.get('partido', '')
+    ano_de_mandato = info_presidente.get('ano_de_mandato', '')
+    vice_presidente = info_presidente.get('vice_presidente', '')
+    foto_url = info_presidente.get('foto', '')
 
-        # Criar nome temporário para a imagem
-        filename = "temp_image.jpg"
+    logging.info(f'Preparando para enviar informações do presidente: {nome}')
 
+    caption = (
+        f'<b>{titulo}</b>\n\n'
+        f'<b>Nome:</b> {nome}\n'
+        f'<b>Informação:</b> {posicao}° {titulo}\n'
+        f'<b>Partido:</b> {partido}\n'
+        f'<b>Ano de mandato:</b> {ano_de_mandato}\n'
+        f'<b>Vice-Presidente:</b> {vice_presidente}\n\n'
+        f'#presidente #historia '
+        f'#HistóriaParaTodos #DivulgueAHistória #CompartilheConhecimento '
+        f'#HistóriaDoBrasil #HistóriaMundial\n\n'
+        f'<blockquote>💬 Você sabia? Siga o @historia_br e '
+        f'acesse nosso site historiadodia.com.</blockquote>'
+    )
+
+    filename = "temp_image.jpg"
+    try:
         logging.info('Baixando a foto do presidente...')
-        response = requests.get(foto_url, headers=HEADERS)
+        # Corrigir URL se for Wikipedia
+        direct_url = wikipedia_direct_link(foto_url)
+
+        response = requests.get(direct_url, headers=HEADERS)
         response.raise_for_status()
 
-        # Salvar a imagem na pasta local temporariamente
+        # Salvar imagem localmente
         with open(filename, 'wb') as f:
             f.write(response.content)
 
         logging.info('Enviando foto do presidente...')
-        bot.send_photo(
-            CHANNEL,
-            photo=open(filename, 'rb'),
-            caption=caption,
-            parse_mode='HTML'
-        )
+        with open(filename, 'rb') as f:
+            bot.send_photo(CHANNEL, photo=f, caption=caption, parse_mode='HTML')
 
         logging.info('Envio de presidente concluído com sucesso!')
 
-        # Apagar arquivo temporário
-        os.remove(filename)
-
     except Exception as e:
         logging.error(f'Erro ao enviar foto do presidente: {e}')
-        # Garantir que o arquivo temporário seja apagado mesmo em caso de erro
+    finally:
+        # Apagar arquivo temporário
         if os.path.exists(filename):
             os.remove(filename)
-
 
 def enviar_foto_presidente(bot):
     try:
