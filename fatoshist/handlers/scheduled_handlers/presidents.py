@@ -11,7 +11,13 @@ from fatoshist.config import CHANNEL
 from fatoshist.database.president_manager import PresidentManager
 
 HEADERS = {
-    "User-Agent": "HistoriaBot/1.0 (https://historiadodia.com)"
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/120.0.0.0 Safari/537.36"
+    ),
+    "Accept": "image/avif,image/webp,image/apng,image/*,*/*;q=0.8",
+    "Referer": "https://google.com"
 }
 
 with open('./fatoshist/data/presidentes.json', 'r', encoding='utf-8') as file:
