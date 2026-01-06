@@ -7,6 +7,11 @@ import requests
 from fatoshist.config import CHANNEL
 from fatoshist.utils.month import get_month_name
 
+HEADERS = {
+    'accept': 'application/json',
+    'User-Agent': 'HistoriaBot/1.0 (contato@historiadodia.com)'
+}
+
 
 def get_births_and_deaths_of_the_day(bot, CHANNEL):
     try:
@@ -16,12 +21,14 @@ def get_births_and_deaths_of_the_day(bot, CHANNEL):
 
         deaths_response = requests.get(
             f'https://pt.wikipedia.org/api/rest_v1/feed/onthisday/deaths/{month}/{day}',
-            headers={'accept': 'application/json; charset=utf-8; profile="https://www.mediawiki.org/wiki/Specs/onthisday/0.3.3"'},
+            headers=HEADERS,
+            timeout=10
         )
-
+        
         births_response = requests.get(
             f'https://pt.wikipedia.org/api/rest_v1/feed/onthisday/births/{month}/{day}',
-            headers={'accept': 'application/json; charset=utf-8; profile="https://www.mediawiki.org/wiki/Specs/onthisday/0.3.3"'},
+            headers=HEADERS,
+            timeout=10
         )
 
         deaths = []
@@ -31,13 +38,20 @@ def get_births_and_deaths_of_the_day(bot, CHANNEL):
             deaths_data = deaths_response.json()
             deaths = deaths_data.get('deaths', [])
         else:
-            logging.warning('Erro ao obter informações (deaths_of_day):', deaths_response.status_code)
+            logging.warning(
+                            'Erro ao obter informações (deaths_of_day): %s',
+                            deaths_response.status_code
+                        )
+
 
         if births_response.status_code == 200:
             births_data = births_response.json()
             births = births_data.get('births', [])
         else:
-            logging.warning('Erro ao obter informações (births_of_day):', births_response.status_code)
+            logging.warning(
+                        'Erro ao obter informações (births_of_day): %s',
+                        births_response.status_code
+                    )
 
         death_messages = []
         birth_messages = []
