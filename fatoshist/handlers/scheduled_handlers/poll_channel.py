@@ -33,7 +33,7 @@ def send_question(bot):
 
         events = json_events[f'{today.month}-{today.day}']
 
-        if current_time.hour == 9 and current_time.minute == 00:
+        if current_time.hour == 10 and current_time.minute == 30:
             send_poll(
                 bot,
                 CHANNEL_POST,
@@ -43,7 +43,7 @@ def send_question(bot):
                 events['pergunta1'].get('explicacao', ''),
             )
 
-        elif current_time.hour == 12 and current_time.minute == 00:
+        elif current_time.hour == 20 and current_time.minute == 30:
             send_poll(
                 bot,
                 CHANNEL_POST,
@@ -53,7 +53,7 @@ def send_question(bot):
                 events['pergunta2'].get('explicacao', ''),
             )
 
-        elif current_time.hour == 15 and current_time.minute == 00:
+        elif current_time.hour == 12 and current_time.minute == 00:
             send_poll(
                 bot,
                 CHANNEL_POST,
@@ -63,7 +63,7 @@ def send_question(bot):
                 events['pergunta3'].get('explicacao', ''),
             )
 
-        elif current_time.hour == 17 and current_time.minute == 30:
+        elif current_time.hour == 16 and current_time.minute == 30:
             send_poll(
                 bot,
                 CHANNEL_POST,
