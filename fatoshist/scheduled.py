@@ -71,7 +71,7 @@ def schedule_tasks(bot: TeleBot):
         schedule.every().day.at('14:00').do(send_question_with_new_channel)
         schedule.every().day.at('16:00').do(send_question_with_new_channel)
         schedule.every().day.at('18:00').do(send_question_with_new_channel)
-        schedule.every().day.at('20:30').do(send_question_with_new_channel)
+        schedule.every().day.at('20:36').do(send_question_with_new_channel)
         schedule.every().day.at('22:00').do(send_question_with_new_channel)
         schedule.every().day.at('23:30').do(send_question_with_new_channel)
 
