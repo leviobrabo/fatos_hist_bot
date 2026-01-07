@@ -1,0 +1,132 @@
+import json
+import logging
+from datetime import datetime
+
+from fatoshist.config import CHANNEL_POST
+
+
+def send_poll(bot, chat_id, question, options, correct_option_id, explanation):
+    try:
+        bot.send_poll(
+            chat_id,
+            question,
+            options,
+            is_anonymous=True,
+            type='quiz',
+            correct_option_id=correct_option_id,
+            explanation=explanation[:200] if explanation else None,
+        )
+
+        logging.info(f'Enviada pergunta para o chat {chat_id}')
+
+    except Exception as e:
+        logging.error(f'Erro ao enviar a pergunta: {e}')
+
+
+def send_question_new_channel(bot):
+    try:
+        today = datetime.now()
+        current_time = today.time()
+
+        with open('./fatoshist/data/perguntas_10.json', 'r', encoding='utf-8') as file:
+            json_events = json.load(file)
+
+        events = json_events[f'{today.month}-{today.day}']
+
+        if current_time.hour == 6 and current_time.minute == 00:
+            send_poll(
+                bot,
+                "-1003612921107",
+                events['pergunta1']['enunciado'],
+                list(events['pergunta1']['alternativas'].values()),
+                list(events['pergunta1']['alternativas']).index(events['pergunta1']['correta']),
+                events['pergunta1'].get('explicacao', ''),
+            )
+
+        elif current_time.hour == 8 and current_time.minute == 00:
+            send_poll(
+                bot,
+                "-1003612921107",
+                events['pergunta2']['enunciado'],
+                list(events['pergunta2']['alternativas'].values()),
+                list(events['pergunta2']['alternativas']).index(events['pergunta2']['correta']),
+                events['pergunta2'].get('explicacao', ''),
+            )
+
+        elif current_time.hour == 10 and current_time.minute == 00:
+            send_poll(
+                bot,
+                "-1003612921107",
+                events['pergunta3']['enunciado'],
+                list(events['pergunta3']['alternativas'].values()),
+                list(events['pergunta3']['alternativas']).index(events['pergunta3']['correta']),
+                events['pergunta3'].get('explicacao', ''),
+            )
+
+        elif current_time.hour == 12 and current_time.minute == 00:
+            send_poll(
+                bot,
+                "-1003612921107",
+                events['pergunta4']['enunciado'],
+                list(events['pergunta4']['alternativas'].values()),
+                list(events['pergunta4']['alternativas']).index(events['pergunta4']['correta']),
+                events['pergunta4'].get('explicacao', ''),
+            )
+        elif current_time.hour == 14 and current_time.minute == 00:
+            send_poll(
+                bot,
+                "-1003612921107",
+                events['pergunta5']['enunciado'],
+                list(events['pergunta5']['alternativas'].values()),
+                list(events['pergunta5']['alternativas']).index(events['pergunta5']['correta']),
+                events['pergunta5'].get('explicacao', ''),
+            )
+
+        elif current_time.hour == 16 and current_time.minute == 00:
+            send_poll(
+                bot,
+                "-1003612921107",
+                events['pergunta6']['enunciado'],
+                list(events['pergunta6']['alternativas'].values()),
+                list(events['pergunta6']['alternativas']).index(events['pergunta6']['correta']),
+                events['pergunta6'].get('explicacao', ''),
+            )
+        elif current_time.hour == 18 and current_time.minute == 00:
+            send_poll(
+                bot,
+                "-1003612921107",
+                events['pergunta7']['enunciado'],
+                list(events['pergunta7']['alternativas'].values()),
+                list(events['pergunta7']['alternativas']).index(events['pergunta7']['correta']),
+                events['pergunta7'].get('explicacao', ''),
+            )
+        elif current_time.hour == 20 and current_time.minute == 00:
+            send_poll(
+                bot,
+                "-1003612921107",
+                events['pergunta8']['enunciado'],
+                list(events['pergunta8']['alternativas'].values()),
+                list(events['pergunta8']['alternativas']).index(events['pergunta8']['correta']),
+                events['pergunta8'].get('explicacao', ''),
+            )
+
+        elif current_time.hour == 22 and current_time.minute == 00:
+            send_poll(
+                bot,
+                "-1003612921107",
+                events['pergunta9']['enunciado'],
+                list(events['pergunta9']['alternativas'].values()),
+                list(events['pergunta9']['alternativas']).index(events['pergunta9']['correta']),
+                events['pergunta9'].get('explicacao', ''),
+            )
+        elif current_time.hour == 23 and current_time.minute == 30:
+            send_poll(
+                bot,
+                "-1003612921107",
+                events['pergunta9']['enunciado'],
+                list(events['pergunta10']['alternativas'].values()),
+                list(events['pergunta10']['alternativas']).index(events['pergunta10']['correta']),
+                events['pergunta10'].get('explicacao', ''),
+            )
+    except Exception as e:
+        logging.error(f'Erro ao enviar a pergunta: {e}')
