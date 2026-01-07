@@ -12,6 +12,10 @@ from fatoshist.utils.month import get_month_name
 
 photo_manager = PhotoManager()
 
+headers = {
+    "accept": "application/json",
+    "User-Agent": "HistoriaBot/1.0 (https://historiadodia.com; contato@historiadodia.com)"
+}
 
 def send_historical_events_CHANNEL_IMG_image(bot, CHANNEL_IMG):
     """Busca um evento histórico com uma imagem e envia para o canal."""
@@ -20,7 +24,11 @@ def send_historical_events_CHANNEL_IMG_image(bot, CHANNEL_IMG):
         day = today.day
         month = today.month
 
-        response = requests.get(f'https://pt.wikipedia.org/api/rest_v1/feed/onthisday/events/{month}/{day}')
+        response = requests.get(
+            f"https://pt.wikipedia.org/api/rest_v1/feed/onthisday/events/{month}/{day}",
+            headers=headers,
+            timeout=10
+        )
         events = response.json().get('events', [])
         events_with_photo = [event for event in events if event.get('pages') and event['pages'][0].get('thumbnail')]
 
