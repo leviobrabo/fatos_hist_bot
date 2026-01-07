@@ -63,7 +63,7 @@ def send_question_new_channel(bot):
                 events['pergunta3'].get('explicacao', ''),
             )
 
-        elif current_time.hour == 12 and current_time.minute == 00:
+        elif current_time.hour == 12 and current_time.minute == 30:
             send_poll(
                 bot,
                 "-1003612921107",
