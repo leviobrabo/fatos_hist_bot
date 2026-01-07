@@ -71,7 +71,7 @@ def schedule_tasks(bot: TeleBot):
         schedule.every().day.at('14:00').do(send_question_with_new_channel)
         schedule.every().day.at('16:00').do(send_question_with_new_channel)
         schedule.every().day.at('18:00').do(send_question_with_new_channel)
-        schedule.every().day.at('20:36').do(send_question_with_new_channel)
+        schedule.every().day.at('20:00').do(send_question_with_new_channel)
         schedule.every().day.at('22:00').do(send_question_with_new_channel)
         schedule.every().day.at('23:30').do(send_question_with_new_channel)
 
@@ -114,7 +114,7 @@ def schedule_tasks(bot: TeleBot):
         schedule.every().day.at('18:30').do(lambda: hist_channel_imgs(bot))
 
         # Envio de imagens historicas no canal de imagem
-        schedule.every(8).hours.do(lambda: hist_channel_imgs_chn(bot))
+        schedule.every(4).hours.do(lambda: hist_channel_imgs_chn(bot))
         # schedule.every(1).minutes.do(hist_channel_imgs_chn, bot)
 
         # Envio de curiosidade no canal
