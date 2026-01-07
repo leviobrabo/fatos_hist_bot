@@ -24,6 +24,7 @@ from fatoshist.handlers.scheduled_handlers.image_hist_events_chat import hist_im
 from fatoshist.handlers.scheduled_handlers.new_year_message import new_year_message
 from fatoshist.handlers.scheduled_handlers.poll_channel import send_question
 from fatoshist.handlers.scheduled_handlers.poll_chats import send_question_chat
+from fatoshist.handlers.scheduled_handlers.poll_channel_new import send_question_new_channel
 from fatoshist.handlers.scheduled_handlers.prase_channel import hist_channel_frase
 from fatoshist.handlers.scheduled_handlers.presidents import enviar_foto_presidente
 from fatoshist.handlers.scheduled_handlers.stars import msg_alerta_stars
@@ -62,12 +63,25 @@ def schedule_tasks(bot: TeleBot):
         schedule.every().day.at('00:00').do(remove_all_url_photo)
 
         # Envio das poll channel
+        send_question_with_new_channel = partial(send_question_new_channel, bot)
+        schedule.every().day.at('06:00').do(send_question_with_new_channel)
+        schedule.every().day.at('08:00').do(send_question_with_new_channel)
+        schedule.every().day.at('10:00').do(send_question_with_new_channel)
+        schedule.every().day.at('12:00').do(send_question_with_new_channel)
+        schedule.every().day.at('14:00').do(send_question_with_new_channel)
+        schedule.every().day.at('16:00').do(send_question_with_new_channel)
+        schedule.every().day.at('18:00').do(send_question_with_new_channel)
+        schedule.every().day.at('20:30').do(send_question_with_new_channel)
+        schedule.every().day.at('22:00').do(send_question_with_new_channel)
+        schedule.every().day.at('23:30').do(send_question_with_new_channel)
+
+        
         send_question_with = partial(send_question, bot)
         schedule.every().day.at('10:30').do(send_question_with)
         schedule.every().day.at('20:30').do(send_question_with)
         schedule.every().day.at('12:00').do(send_question_with)
         schedule.every().day.at('16:30').do(send_question_with)
-
+        
         # Envio das poll chats
         send_question_chat_with_args = partial(send_question_chat, bot)
         schedule.every().day.at('10:30').do(send_question_chat_with_args)
