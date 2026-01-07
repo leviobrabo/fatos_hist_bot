@@ -4,6 +4,11 @@ from datetime import datetime
 
 from fatoshist.config import CHANNEL_POST
 
+CHANNEL_POSTS = [
+    CHANNEL_POST,
+    -1003612921107
+]
+
 
 def send_poll(bot, chat_id, question, options, correct_option_id, explanation):
     try:
@@ -36,7 +41,7 @@ def send_question(bot):
         if current_time.hour == 10 and current_time.minute == 30:
             send_poll(
                 bot,
-                CHANNEL_POST,
+                CHANNEL_POSTS,
                 events['pergunta1']['enunciado'],
                 list(events['pergunta1']['alternativas'].values()),
                 list(events['pergunta1']['alternativas']).index(events['pergunta1']['correta']),
@@ -46,7 +51,7 @@ def send_question(bot):
         elif current_time.hour == 20 and current_time.minute == 30:
             send_poll(
                 bot,
-                CHANNEL_POST,
+                CHANNEL_POSTS,
                 events['pergunta2']['enunciado'],
                 list(events['pergunta2']['alternativas'].values()),
                 list(events['pergunta2']['alternativas']).index(events['pergunta2']['correta']),
@@ -56,7 +61,7 @@ def send_question(bot):
         elif current_time.hour == 12 and current_time.minute == 00:
             send_poll(
                 bot,
-                CHANNEL_POST,
+                CHANNEL_POSTS,
                 events['pergunta3']['enunciado'],
                 list(events['pergunta3']['alternativas'].values()),
                 list(events['pergunta3']['alternativas']).index(events['pergunta3']['correta']),
@@ -66,7 +71,7 @@ def send_question(bot):
         elif current_time.hour == 16 and current_time.minute == 30:
             send_poll(
                 bot,
-                CHANNEL_POST,
+                CHANNEL_POSTS,
                 events['pergunta4']['enunciado'],
                 list(events['pergunta4']['alternativas'].values()),
                 list(events['pergunta4']['alternativas']).index(events['pergunta4']['correta']),
