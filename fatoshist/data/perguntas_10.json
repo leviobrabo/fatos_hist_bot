@@ -78,26 +78,26 @@
       "explicacao": "O evento Guerra das Rosas resultou em significativo conflito militar, moldando a história da região."
     },
     "pergunta8": {
-      "enunciado": "Qual foi o impacto do evento Conquista da Normandia na história?",
+      "enunciado": "Qual foi o principal objetivo das Grandes Navegações europeias nos séculos XV e XVI?",
       "alternativas": {
-        "alt1": "Expansão territorial",
-        "alt2": "Estabilização política",
-        "alt3": "Conflito militar",
-        "alt4": "Progresso econômico"
+        "alt1": "Difundir o feudalismo",
+        "alt2": "Buscar novas rotas comerciais",
+        "alt3": "Expandir o poder da Igreja Ortodoxa",
+        "alt4": "Evitar conflitos militares na Europa"
       },
-      "correta": "alt3",
-      "explicacao": "O evento Conquista da Normandia resultou em significativo conflito militar, moldando a história da região."
+      "correta": "alt2",
+      "explicacao": "As Grandes Navegações tinham como principal objetivo encontrar novas rotas comerciais, especialmente para o comércio de especiarias, evitando intermediários."
     },
     "pergunta9": {
-      "enunciado": "Qual foi o impacto do evento Independência da Índia na história?",
+      "enunciado": "Qual foi uma das principais consequências da Revolução Francesa (1789)?",
       "alternativas": {
-        "alt1": "Expansão territorial",
-        "alt2": "Estabilização política",
-        "alt3": "Conflito militar",
-        "alt4": "Progresso econômico"
+        "alt1": "Fortalecimento do absolutismo",
+        "alt2": "Manutenção dos privilégios da nobreza",
+        "alt3": "Afirmação dos ideais de liberdade e igualdade",
+        "alt4": "Expansão do colonialismo francês na África"
       },
       "correta": "alt3",
-      "explicacao": "O evento Independência da Índia resultou em significativo conflito militar, moldando a história da região."
+      "explicacao": "A Revolução Francesa promoveu ideais de liberdade, igualdade e fraternidade, influenciando movimentos políticos em várias partes do mundo."
     },
     "pergunta10": {
       "enunciado": "Qual foi o impacto do evento Ditadura Militar no Brasil na história?",
