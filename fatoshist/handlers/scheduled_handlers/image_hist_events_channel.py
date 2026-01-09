@@ -64,15 +64,16 @@ def send_historical_events_channel_image(bot, CHANNEL):
         bot.send_photo(CHANNEL, photo_url, caption=caption, **options)
 
         logging.info(f'Evento histórico em foto enviado com sucesso para o canal ID {CHANNEL}.')
-
+        return  
     except Exception as e:
         logging.error(f'Falha ao enviar evento histórico: {e}')
-
+        return  
 
 def hist_channel_imgs(bot):
     try:
         send_historical_events_channel_image(bot, CHANNEL)
         logging.info(f'Mensagem enviada para o canal {CHANNEL}')
-
+        return  
     except Exception as e:
         logging.error(f'Erro ao enviar o trabalho de imagens: {e}')
+        return  
