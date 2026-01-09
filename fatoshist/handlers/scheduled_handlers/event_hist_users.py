@@ -3,6 +3,7 @@ import time
 from datetime import datetime
 
 from telebot import types
+from telebot.apihelper import ApiTelegramException
 
 from fatoshist.database.users import UserManager
 from fatoshist.utils.get_historical import get_historical_events
@@ -39,10 +40,10 @@ def send_historical_events_user(bot, user_id):
             )
 
             logging.warning(f'Nenhum evento histórico para hoje no users {user_id}')
-
+            return  
     except Exception:
         logging.error('Erro ao enviar fatos históricos para os usuários:')
-
+        return  
 
 def hist_user_job(bot):
     try:
@@ -80,3 +81,4 @@ def hist_user_job(bot):
             time.sleep(10)
     except Exception:
         logging.error('Erro ao enviar eventos históricos para os usuários:')
+        return  
