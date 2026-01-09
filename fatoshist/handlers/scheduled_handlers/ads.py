@@ -32,8 +32,10 @@ def ads_message_channel_user(bot, user_id):
         )
 
         bot.send_message(user_id, msg_text, parse_mode='HTML', reply_markup=markup)
+        return  
     except Exception as e:
         logging.error(f'Erro ao preparar a mensagem ADS para os usuários e canais: {e}')
+        return  
 
 
 def ads_msg_job(bot):
@@ -83,6 +85,7 @@ def ads_msg_job(bot):
                 user_manager.update_user(user_id, {'msg_private': 'false'})
 
             time.sleep(1)
-
+            return  
     except Exception as e:
         logging.error(f'Erro ao enviar ADS para os usuários e canais: {e}')
+        return  
