@@ -18,5 +18,7 @@ def msg_alerta_stars(bot):
             bot.send_video(CHANNEL, video, caption=caption, parse_mode='HTML')
             msg_text_owner = 'Mensagem de STARS enviado com sucesso para o canal'
             bot.send_message(OWNER, msg_text_owner)
+            return  
     except Exception as e:
         logging.error(f'Erro ao enviar vídeo com legenda no canal: {e}')
+        return  
