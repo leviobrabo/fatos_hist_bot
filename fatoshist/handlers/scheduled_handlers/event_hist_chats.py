@@ -50,7 +50,7 @@ def send_historical_events_group(bot, chat_id):
             )
 
             logging.warning(f'Nenhum evento histórico para hoje no grupo {chat_id}')
-
+            return  
     except ApiTelegramException as e:
         description = e.result_json.get('description', '')
 
