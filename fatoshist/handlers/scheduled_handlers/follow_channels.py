@@ -22,5 +22,7 @@ def msg_inscricao_canais_historia(bot: TeleBot):
             msg,
             parse_mode='HTML',
         )
+        return  
     except Exception as e:
         logging.error(f'Erro ao enviar mensagens históricas no canal: {e}')
+        return  
