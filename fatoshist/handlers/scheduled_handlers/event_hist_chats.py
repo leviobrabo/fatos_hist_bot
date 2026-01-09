@@ -10,6 +10,10 @@ from fatoshist.utils.get_historical import get_historical_events
 
 group_manager = GroupManager()
 
+IGNORED_CHATS = {
+    GROUP_LOG,
+    -1003612921107,
+}
 
 def send_historical_events_group(bot, chat_id):
     try:
@@ -73,7 +77,7 @@ def hist_chat_job(bot):
         chat_models = group_manager.get_all_chats()
         for chat_model in chat_models:
             chat_id = chat_model['chat_id']
-            if chat_id != GROUP_LOG:
+            if chat_id != IGNORED_CHATS:
                 try:
                     send_historical_events_group(bot, chat_id)
                 except Exception as e:
