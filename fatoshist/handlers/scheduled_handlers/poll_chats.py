@@ -1,6 +1,7 @@
 import json
 import logging
 from datetime import datetime
+from telebot.apihelper import ApiTelegramException
 
 from fatoshist.database.groups import GroupManager
 from fatoshist.database.poll_manager import PollManager
@@ -37,7 +38,36 @@ def send_poll_chat(bot, chat_id, question, options, correct_option_id, explanati
         poll_manager.add_poll(chat_id, poll_id, correct_option_id, current_date)
 
         logging.info(f'Enviada pergunta para o chat {chat_id}')
+        return
 
+    except ApiTelegramException as e:
+        description = e.result_json.get('description', '')
+        # ❌ sem permissão para enviar enquete
+        if 'not enough rights to send polls' in description:
+            logging.warning(
+                f'Sem permissão para enviar polls no chat {chat_id}'
+            )
+
+            # 🔔 tenta avisar o grupo
+            try:
+                bot.send_message(
+                    chat_id=chat_id,
+                    text=(
+                        '⚠️ Permissão necessária\n\n'
+                        'Para que eu possa enviar enquetes neste grupo, '
+                        'é necessário me definir como *administrador* '
+                        'com a permissão *Enviar enquetes* ativada.\n\n'
+                        'Após isso, as perguntas serão enviadas normalmente ✅'
+                    ),
+                    parse_mode='Markdown',
+                    message_thread_id=message_thread_id,
+                )
+            except ApiTelegramException as msg_error:
+                logging.warning(
+                    f'Não foi possível avisar o chat {chat_id}: '
+                    f'{msg_error.result_json.get("description", msg_error)}'
+                )
+            return
     except Exception as e:
         logging.error(f'Erro ao enviar a pergunta: {e}')
 
