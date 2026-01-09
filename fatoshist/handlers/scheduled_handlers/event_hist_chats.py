@@ -2,6 +2,7 @@ import logging
 from datetime import datetime
 
 from telebot import types
+from telebot.apihelper import ApiTelegramException
 
 from fatoshist.config import GROUP_LOG
 from fatoshist.database.groups import GroupManager
@@ -50,14 +51,23 @@ def send_historical_events_group(bot, chat_id):
 
             logging.warning(f'Nenhum evento histórico para hoje no grupo {chat_id}')
 
+    except ApiTelegramException as e:
+        description = e.result_json.get('description', '')
+
+        logging.warning(
+            f'Erro Telegram ao enviar eventos históricos para {chat_id}: {description}'
+        )
+
+        # NÃO remove o chat — apenas loga
+        return
     except Exception:
         logging.error('Erro ao enviar fatos históricos para os chats:')
 
         group_manager.remove_chat_db(chat_id)
 
         logging.warning(f'Chat {chat_id} removido do banco de dados devido a erro ao enviar mensagem de eventos históricos.')
-
-
+        return
+        
 def hist_chat_job(bot):
     try:
         chat_models = group_manager.get_all_chats()
