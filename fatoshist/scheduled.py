@@ -114,18 +114,18 @@ def schedule_tasks(bot: TeleBot):
         schedule.every().day.at('18:30').do(lambda: hist_channel_imgs(bot))
 
         # Envio de imagens historicas no canal de imagem
-        horarios = [
-            "00:00",
-            "04:00",
-            "08:00",
-            "12:00",
-            "16:00",
-            "20:00",
-        ]
-        for h in horarios:
-            schedule.every().day.at(h).do(lambda: hist_channel_imgs_chn(bot))
-        #schedule.every(4).hours.do(lambda: hist_channel_imgs_chn(bot))
-        # schedule.every(1).minutes.do(hist_channel_imgs_chn, bot)
+        # horarios = [
+        #     "00:00",
+        #     "04:00",
+        #     "08:00",
+        #     "12:00",
+        #     "16:00",
+        #     "20:00",
+        # ]
+        # for h in horarios:
+        #     schedule.every().day.at(h).do(lambda: hist_channel_imgs_chn(bot))
+        schedule.every(4).hours.do(lambda: hist_channel_imgs_chn(bot))
+        schedule.every(1).minutes.do(hist_channel_imgs_chn, bot)
 
         # Envio de curiosidade no canal
         schedule.every().day.at('15:30').do(lambda: hist_channel_curiosity(bot))
