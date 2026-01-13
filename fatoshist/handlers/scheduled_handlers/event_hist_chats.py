@@ -77,7 +77,7 @@ def hist_chat_job(bot):
         chat_models = group_manager.get_all_chats()
         for chat_model in chat_models:
             chat_id = chat_model['chat_id']
-            if chat_id != IGNORED_CHATS:
+            if chat_id not in IGNORED_CHATS:
                 try:
                     send_historical_events_group(bot, chat_id)
                 except Exception as e:
