@@ -55,18 +55,21 @@ def enviar_info_pelo_canal(bot, info_presidente):
     logging.info(f'Preparando para enviar informações do presidente: {nome}')
 
     caption = (
-        f'<b>{titulo}</b>\n\n'
-        f'<b>Nome:</b> {nome}\n'
-        f'<b>Informação:</b> {posicao}° {titulo}\n'
-        f'<b>Partido:</b> {partido}\n'
-        f'<b>Ano de mandato:</b> {ano_de_mandato}\n'
-        f'<b>Vice-Presidente:</b> {vice_presidente}\n\n'
-        f'#presidente #historia '
-        f'#HistóriaParaTodos #DivulgueAHistória #CompartilheConhecimento '
-        f'#HistóriaDoBrasil #HistóriaMundial\n\n'
-        f'<blockquote>💬 Você sabia? Siga o @historia_br e '
-        f'acesse nosso site historiadodia.com.</blockquote>'
+        f'⚠️ <b>VOCÊ SE LEMBRA DESSE NOME?</b>\n'
+        f'<i>Um cargo poderoso, um período decisivo e muitas controvérsias.</i>\n\n'
+        f'🏛 <b>{titulo}</b>\n\n'
+        f'<b>👤 Nome:</b> {nome}\n'
+        f'<b>📌 Cargo:</b> {posicao}° {titulo}\n'
+        f'<b>🏳️ Partido:</b> {partido}\n'
+        f'<b>📆 Mandato:</b> {ano_de_mandato}\n'
+        f'<b>🤝 Vice:</b> {vice_presidente}\n\n'
+        f'💬 <b>Você conhecia esse governante?</b>\n'
+        f'👍 Sim  👎 Não\n\n'
+        f'#HistóriaPolítica #HistóriaDoDia #VocêSabia\n'
+        f'#HistóriaParaTodos #LíderesHistóricos\n\n'
+        f'<blockquote>🔔 Siga <b>@historia_br</b> e relembre quem moldou a história.</blockquote>'
     )
+
 
     filename = "temp_image.jpg"
     try:
