@@ -12,6 +12,7 @@ from fatoshist.handlers.scheduled_handlers.channel_creation_message import agend
 from fatoshist.handlers.scheduled_handlers.christmas_message import christmas_message
 from fatoshist.handlers.scheduled_handlers.count_user_channel import get_current_count
 from fatoshist.handlers.scheduled_handlers.curiosity_channel import hist_channel_curiosity
+from fatoshist.handlers.scheduled_handlers.phrase_curiosity import hist_channel_reflexao
 from fatoshist.handlers.scheduled_handlers.event_hist_channel import hist_channel_events
 from fatoshist.handlers.scheduled_handlers.event_hist_chats import hist_chat_job
 from fatoshist.handlers.scheduled_handlers.event_hist_users import hist_user_job
@@ -127,11 +128,15 @@ def schedule_tasks(bot: TeleBot):
         schedule.every(4).hours.do(lambda: hist_channel_imgs_chn(bot))
         # schedule.every(1).minutes.do(hist_channel_imgs_chn, bot)
 
-        # Envio de curiosidade no canal
-        schedule.every().day.at('21:30').do(lambda: hist_channel_curiosity(bot))
+        # # Envio de curiosidade no canal
+        # schedule.every().day.at('21:30').do(lambda: hist_channel_curiosity(bot))
 
         # Envio de frases no canal
-        schedule.every().day.at('08:30').do(lambda: hist_channel_frase(bot))
+
+        # schedule.every().day.at('08:30').do(lambda: hist_channel_frase(bot))
+
+        # citações e curiosidade 
+        schedule.every().day.at('21:30').do(lambda: hist_channel_reflexao(bot))
 
         # Envio dos presidentes no canal
         schedule.every().day.at('23:30').do(lambda: enviar_foto_presidente(bot))
