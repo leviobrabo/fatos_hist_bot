@@ -51,11 +51,16 @@ def send_historical_events_channel_image(bot, CHANNEL):
         event_year = random_event.get('year', '')
 
         caption = (
-            f'<b>🖼 | História ilustrada </b>\n\n'
-            f'Em <b>{day} de {get_month_name(month)} de {event_year}</b>\n\n'
-            f'<code>{event_text}</code>\n\n#fotos_historicas #historia '
-            f'#HistóriaParaTodos #DivulgueAHistória #CompartilheConhecimento #HistóriaDoBrasil #HistóriaMundial\n\n'
-            f'<blockquote>💬 Você sabia? Siga o @historia_br e acesse nosso site historiadodia.com.</blockquote>'
+            f'⚠️ <b>ESTA IMAGEM É UM REGISTRO DA HISTÓRIA</b>\n\n'
+            f'🖼 <b>História ilustrada</b>\n'
+            f'<i>Uma foto, um momento, um impacto que ecoa até hoje.</i>\n\n'
+            f'📅 <b>{day} de {get_month_name(month)} de {event_year}</b>\n\n'
+            f'<code>{event_text}</code>\n\n'
+            f'💬 <b>Você conhecia esse acontecimento?</b>\n'
+            f'🔥 Reaja se essa imagem te fez refletir\n\n'
+            f'#FotosHistoricas #HistóriaDoDia #HistóriaMundial\n'
+            f'#HistóriaParaTodos #CuriosidadesHistóricas\n\n'
+            f'<blockquote>🔔 Siga <b>@historia_br</b> e veja a história como ela realmente foi.</blockquote>'
         )
 
         options = {'parse_mode': 'HTML'}
