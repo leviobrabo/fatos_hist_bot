@@ -34,13 +34,18 @@ def get_history(bot, CHANNEL):
                         # Truncate the caption to fit within the limit
                         truncated_caption = caption[:800] + '... (truncated)'
                         message = (
-                            f'<b>História narrada 📰</b>\n\n'
+                            f'⚠️ <b>LEIA ATÉ O FINAL.</b>\n'
+                            f'<i>Essa parte da história quase nunca é contada.</i>\n\n'
+                            f'📰 <b>História narrada</b>\n\n'
                             f'<code>{truncated_caption}</code>\n\n'
-                            f'#historia #historia_narrada\n'
-                            f'#HistóriaParaTodos #DivulgueAHistória #CompartilheConhecimento\n'
-                            f'#HistóriaDoBrasil #HistóriaMundial\n\n'
-                            f'<blockquote>💬 Você sabia? Siga o @historia_br e acesse nosso site historiadodia.com.</blockquote>'
+                            f'💬 <b>Você conhecia esse episódio?</b>\n'
+                            f'👉 O que mais te chamou atenção nessa história?\n\n'
+                            f'🔥 Reaja se você gosta de histórias reais\n\n'
+                            f'#HistóriaNarrada #HistóriaDoDia #VocêSabia\n'
+                            f'#HistóriaParaTodos #CuriosidadesHistóricas\n\n'
+                            f'<blockquote>🔔 Siga <b>@historia_br</b> e descubra a história além dos livros.</blockquote>'
                         )
+
                         # Notify the owner about the truncation
                         warning_message = f'A legenda da história para o dia {day}/{month} foi truncada ' f'para caber no limite de 1024 caracteres.'
                         bot.send_message(OWNER, warning_message)
