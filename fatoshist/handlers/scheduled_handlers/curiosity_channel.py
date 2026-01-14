@@ -17,12 +17,17 @@ def get_curiosity(bot, CHANNEL):
                 info = curiosidade.get('texto', '')
 
                 message = (
-                    f'<b>📜 | Curiosidades Históricas</b>\n\n'
+                    f'⚠️ <b>POUCA GENTE SABE DISSO…</b>\n'
+                    f'📜 <b>Curiosidades Históricas</b>\n'
+                    f'<i>Um detalhe esquecido que muda a forma de ver a história.</i>\n\n'
                     f'<code>{info}</code>\n\n'
-                    f'#curiosidades_históricas #historia #curiosidade #voce_sabia '
-                    f'#HistóriaParaTodos #DivulgueAHistória #CompartilheConhecimento #HistóriaDoBrasil #HistóriaMundial\n\n'
-                    f'<blockquote>💬 Você sabia? Siga o @historia_br e acesse nosso site historiadodia.com.</blockquote>'
+                    f'💬 <b>Você já sabia disso?</b>\n'
+                    f'🔥 Reaja se essa curiosidade te surpreendeu\n\n'
+                    f'#CuriosidadesHistoricas #HistóriaDoDia #VocêSabia\n'
+                    f'#HistóriaParaTodos #Curiosidades\n\n'
+                    f'<blockquote>🔔 Siga <b>@historia_br</b> e descubra o que os livros não contam.</blockquote>'
                 )
+
                 bot.send_message(CHANNEL, message)
             else:
                 logging.info('Não há informações para o dia de hoje. (curiosity)')
