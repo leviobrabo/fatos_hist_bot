@@ -113,21 +113,37 @@ def get_births_and_deaths_of_the_day(bot, CHANNEL):
                     break
 
         if death_messages or birth_messages:
-            message = '<b>Vida e Legado: Nascimentos e Falecimentos do Dia</b>\n\n'
+            message = (
+                f'⚠️ <b>HOJE A HISTÓRIA LEMBRA…</b>\n'
+                f'Alguns se foram. Outros nasceram.\n'
+                f'<i>Mas todos deixaram marcas no mundo.</i>\n\n'
+            )
 
             if death_messages:
-                message += f'<blockquote expandable><b>⚰️ |  Mortes neste dia: {day} de {get_month_name(month)}</b>\n\n'
-                message += '\n\n'.join(death_messages)
-                message += '</blockquote>\n\n'
-
+                message += (
+                    f'<blockquote expandable>'
+                    f'<b>⚰️ | Quem morreu em {day} de {get_month_name(month)}</b>\n\n'
+                    f'Esses nomes ajudaram a escrever a história — e partiram neste dia:\n\n'
+                    f'{"\n\n".join(death_messages)}'
+                    f'</blockquote>\n\n'
+                )
+        
             if birth_messages:
-                message += f'<blockquote expandable><b>🎂 | Nascimentos neste dia: {day} de {get_month_name(month)}</b>\n\n'
-                message += '\n\n'.join(birth_messages)
-                message += '</blockquote>\n\n'
-
-            message += '#nascimentos_historicos #historia #nascimentos #mortes_historicas #historia #falecimentos #HistóriaParaTodos\n\n'
-            message += '<blockquote>💬 Você sabia? Siga o @historia_br e acesse nosso site historiadodia.com.</blockquote>'
-
+                message += (
+                    f'<blockquote expandable>'
+                    f'<b>🎂 | Quem nasceu em {day} de {get_month_name(month)}</b>\n\n'
+                    f'Nomes que chegaram ao mundo e mudaram (ou mudariam) tudo:\n\n'
+                    f'{"\n\n".join(birth_messages)}'
+                    f'</blockquote>\n\n'
+                )
+        
+            message += (
+                f'💬 <b>Comente:</b> qual desses nomes você conhecia?\n'
+                f'🔥 Reaja se você acha importante lembrar essas pessoas\n\n'
+                f'#NesteDia #NascimentosHistoricos #MortesHistoricas\n'
+                f'#HistóriaDoDia #HistóriaParaTodos\n\n'
+                f'<blockquote>🔔 Siga <b>@historia_br</b> e não perca nenhum momento da história.</blockquote>'
+            )
             bot.send_message(CHANNEL, message, disable_web_page_preview=False)
         else:
             logging.info('Não há informações sobre nascidos ou mortos para o dia atual.')
