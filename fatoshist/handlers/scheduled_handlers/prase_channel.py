@@ -21,10 +21,14 @@ def get_frase(bot, CHANNEL):
                 author = frase.get('author', '')
 
                 message = (
-                    f'<b>💡 Citação para refletir</b>\n\n'
-                    f'<blockquote><i>"{quote}"</i> - <b>{author}</b></blockquote>\n\n'
-                    f'#cultura #historia #citacao #refletir #frases '
-                    f'#HistóriaParaTodos #DivulgueAHistória #CompartilheConhecimento #HistóriaDoBrasil #HistóriaMundial'
+                    f'⚠️ <b>ESSA FRASE AINDA INCOMODA MUITA GENTE…</b>\n\n'
+                    f'💡 <b>Citação para refletir</b>\n\n'
+                    f'<blockquote><i>"{quote}"</i>\n— <b>{author}</b></blockquote>\n\n'
+                    f'💬 <b>Você concorda com essa ideia hoje?</b>\n'
+                    f'👍 Sim  👎 Não\n\n'
+                    f'#CitaçãoDoDia #Reflexão #HistóriaDoDia\n'
+                    f'#Cultura #Pensar #HistóriaParaTodos\n\n'
+                    f'<blockquote>🔔 Siga <b>@historia_br</b> para refletir com a história.</blockquote>'
                 )
                 bot.send_message(CHANNEL, message)
             else:
