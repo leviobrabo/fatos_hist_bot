@@ -16,11 +16,14 @@ def send_historical_events_channel(bot, CHANNEL):
             message = (
                 f'<b>HOJE NA HISTÓRIA</b>\n\n'
                 f'📅 | Acontecimento em <b>{day}/{month}</b>\n\n'
-                f'⚠️ <i>Pelo menos UM desses acontecimentos mudou o mundo.</i>\n'
+                f'❌ Quase ninguém lembra desses fatos…\n'
+                f'⚠️ Mas eles mudaram o rumo da história.\n\n'
                 f'<b>Qual você acha que foi?</b>\n\n'
-                f'{events}\n\n#NesteDia #hoje_na_historia #historia #hoje #historia_do_dia '
-                f'#HistóriaParaTodos #DivulgueAHistória #CompartilheConhecimento #HistóriaDoBrasil #HistóriaMundial\n\n'
-                f'<blockquote>📌 Siga <b>@historia_br</b> para não perder nenhum fato histórico.</blockquote>'
+                f'{events}\n\n'
+                f'<b>💬 Qual deles você não conhecia?</b>\n'
+                f'<b>👇 Responda com o número nos comentários</b>\n\n'
+                f'#NesteDia #HojeNaHistoria #HistóriaDoDia\n\n'
+                f'<blockquote>🔔 Ative as notificações e siga @historia_br</blockquote>'
             )
             bot.send_message(CHANNEL, message)
         else:
