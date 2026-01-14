@@ -78,10 +78,10 @@ def schedule_tasks(bot: TeleBot):
 
         
         send_question_with = partial(send_question, bot)
-        schedule.every().day.at('10:30').do(send_question_with)
-        schedule.every().day.at('20:30').do(send_question_with)
-        schedule.every().day.at('12:00').do(send_question_with)
-        schedule.every().day.at('16:30').do(send_question_with)
+        schedule.every().day.at('11:30').do(send_question_with)
+        # schedule.every().day.at('20:30').do(send_question_with)
+        # schedule.every().day.at('12:00').do(send_question_with)
+        # schedule.every().day.at('21:00').do(send_question_with)
         
         # Envio das poll chats
         send_question_chat_with_args = partial(send_question_chat, bot)
@@ -103,7 +103,7 @@ def schedule_tasks(bot: TeleBot):
         schedule.every().day.at('01:30').do(lambda: hist_channel_events(bot))
 
         # Envio dos nascidos e mortos do dia no canal
-        schedule.every().day.at('21:00').do(lambda: hist_channel_birth_and_death(bot))
+        schedule.every().day.at('05:30').do(lambda: hist_channel_birth_and_death(bot))
 
         # Envio dos feriados brasil e geral do dia no canal
         schedule.every().day.at('03:00').do(lambda: get_holidays_br_and_world_of_the_day(bot))
@@ -112,7 +112,7 @@ def schedule_tasks(bot: TeleBot):
         schedule.every().day.at('16:30').do(lambda: hist_image_chat_job(bot))
 
         # Envio de Fotos históricas no canal
-        schedule.every().day.at('19:00').do(lambda: hist_channel_imgs(bot))
+        schedule.every().day.at('19:30').do(lambda: hist_channel_imgs(bot))
 
         # Envio de imagens historicas no canal de imagem
         # horarios = [
@@ -136,13 +136,13 @@ def schedule_tasks(bot: TeleBot):
         # schedule.every().day.at('08:30').do(lambda: hist_channel_frase(bot))
 
         # citações e curiosidade 
-        schedule.every().day.at('21:30').do(lambda: hist_channel_reflexao(bot))
+        schedule.every().day.at('17:30').do(lambda: hist_channel_reflexao(bot))
 
         # Envio dos presidentes no canal
         schedule.every().day.at('23:30').do(lambda: enviar_foto_presidente(bot))
 
         # Envio da historia diaria
-        schedule.every().day.at('05:30').do(lambda: hist_channel_history(bot))
+        schedule.every().day.at('10:00').do(lambda: hist_channel_history(bot))
 
         schedule.every().day.at('00:05').do(lambda: checar_datas_dia(bot))
 
