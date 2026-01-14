@@ -61,23 +61,40 @@ def get_holidays_br_and_world_of_the_day(bot):
 
         # Montando a mensagem final
         if message_parts or world_holiday_messages:
-            message = f'<b>📅 | Datas comemorativas do dia {day} de {get_month_name(month)}</b>\n\n'
-
-            # Se houver feriados brasileiros
+            message = (
+                f'⚠️ <b>ATENÇÃO!</b>\n'
+                f'Hoje não é um dia comum.\n'
+                f'📅 <b>{day} de {get_month_name(month)}</b> marca datas que muita gente ignora — mas fazem parte da história.\n\n'
+            )
+        
+            # Feriados no Brasil
             if message_parts:
-                message += '<blockquote expandable><b>🎊 | Feriados no Brasil 🇧🇷</b>\n\n'
-                message += '\n'.join(message_parts)
-                message += '</blockquote>\n\n'
-
-            # Se houver feriados mundiais
+                message += (
+                    f'<blockquote expandable>'
+                    f'<b>🎊 | Feriados no Brasil 🇧🇷</b>\n\n'
+                    f'Essas datas impactam diretamente o país:\n\n'
+                    f'{"\n".join(message_parts)}'
+                    f'</blockquote>\n\n'
+                )
+        
+            # Feriados no mundo
             if world_holiday_messages:
-                message += '<blockquote expandable><b>🌍 | Feriados no mundo</b>\n\n'
-                message += '\n\n'.join(world_holiday_messages)
-                message += '</blockquote>\n\n'
-
-            message += '#feriados_brasil #feriados_mundiais #historia #datas_comemorativas #HistóriaParaTodos\n\n'
-            message += '<blockquote>💬 Você sabia? Siga o @historia_br e acesse nosso site historiadodia.com.</blockquote>'
-
+                message += (
+                    f'<blockquote expandable>'
+                    f'<b>🌍 | Feriados pelo mundo</b>\n\n'
+                    f'Enquanto você vive o seu dia, o mundo celebra isso:\n\n'
+                    f'{"\n\n".join(world_holiday_messages)}'
+                    f'</blockquote>\n\n'
+                )
+        
+            message += (
+                f'💬 <b>Comente:</b> você sabia de algum desses feriados?\n'
+                f'🔥 Reaja se você gosta de descobrir datas que quase ninguém lembra\n\n'
+                f'#DatasComemorativas #FeriadosHoje #HistóriaDoDia\n'
+                f'#FeriadosBrasil #FeriadosMundiais #HistóriaParaTodos\n\n'
+                f'<blockquote>🔔 Siga <b>@historia_br</b> e descubra o que este dia representa.</blockquote>'
+            )
+        
             bot.send_message(CHANNEL, message, disable_web_page_preview=False)
         else:
             logging.info('Não há informações sobre feriados para o dia atual.')
