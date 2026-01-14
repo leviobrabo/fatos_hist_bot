@@ -13,7 +13,7 @@ CHANNEL_POSTS = [
 def send_poll(bot, chat_id, question, options, correct_option_id, explanation):
     try:
         bot.send_poll(
-            chat_id,
+            CHANNEL_POSTS,
             question,
             options,
             is_anonymous=True,
