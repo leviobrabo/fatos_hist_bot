@@ -1,5 +1,6 @@
 import logging
-from datetime import datetime
+import random
+from datetime import datetime, timedelta
 from functools import partial
 
 import schedule
@@ -30,7 +31,18 @@ from fatoshist.handlers.scheduled_handlers.prase_channel import hist_channel_fra
 from fatoshist.handlers.scheduled_handlers.presidents import enviar_foto_presidente
 from fatoshist.handlers.scheduled_handlers.stars import msg_alerta_stars
 
+# ================= FUNÇÃO GERAR HORÁRIO RANDOM =================
 
+def random_time(start_hour, end_hour):
+    start = datetime.now().replace(hour=start_hour, minute=0, second=0)
+    end = datetime.now().replace(hour=end_hour, minute=59, second=59)
+
+    delta = int((end - start).total_seconds())
+    random_second = random.randint(0, delta)
+
+    t = start + timedelta(seconds=random_second)
+    return t.strftime("%H:%M")
+    
 # checar data natal/ano novo/ aniversario do canal
 def checar_datas_dia(bot):
     current_date = datetime.now()
@@ -45,16 +57,16 @@ def checar_datas_dia(bot):
 def schedule_tasks(bot: TeleBot):
     try:
         # Alerta de canais
-        schedule.every().friday.at('01:30').do(msg_inscricao_canais_historia, bot)
+        # schedule.every().friday.at('01:30').do(msg_inscricao_canais_historia, bot)
 
         # BOOTS
-        schedule.every().monday.at('02:00').do(lambda: msg_alerta_boost(bot))
+        # schedule.every().monday.at('02:00').do(lambda: msg_alerta_boost(bot))
 
         # STARS
-        schedule.every().wednesday.at('02:00').do(lambda: msg_alerta_stars(bot))
+        # schedule.every().wednesday.at('02:00').do(lambda: msg_alerta_stars(bot))
 
         # ADS
-        schedule.every().saturday.at('02:30').do(lambda: ads_msg_job(bot))
+        # schedule.every().saturday.at('02:30').do(lambda: ads_msg_job(bot))
 
         # Quantidade de usuarios no canal
         # schedule.every(1).days.do(get_current_count)
@@ -98,21 +110,31 @@ def schedule_tasks(bot: TeleBot):
 
         # Envio eventos histórico no users
         schedule.every().day.at('05:30').do(lambda: hist_user_job(bot))
+        
+        # ================= MANHÃ (EVENTOS TODOS OS DIAS) =================
 
         # Envio eventos histórico no channel
-        schedule.every().day.at('01:30').do(lambda: hist_channel_events(bot))
+        morning_time = random_time(8, 11)
+        schedule.every().day.at(morning_time).do(lambda: hist_channel_events(bot))
+        
+        # schedule.every().day.at('01:30').do(lambda: hist_channel_events(bot))
 
         # Envio dos nascidos e mortos do dia no canal
-        schedule.every().day.at('05:30').do(lambda: hist_channel_birth_and_death(bot))
+        #schedule.every().day.at('05:30').do(lambda: hist_channel_birth_and_death(bot))
 
         # Envio dos feriados brasil e geral do dia no canal
-        schedule.every().day.at('03:00').do(lambda: get_holidays_br_and_world_of_the_day(bot))
+        # schedule.every().day.at('03:00').do(lambda: get_holidays_br_and_world_of_the_day(bot))
+         
+        # ================= TARDE (FERIADOS TODOS OS DIAS) =================
+        holidays_time = random_time(14, 17)
+        schedule.every().day.at(holidays_time).do(lambda: get_holidays_br_and_world_of_the_day(bot))
+
 
         # Envio de Fotos históricas no grupo
         schedule.every().day.at('16:30').do(lambda: hist_image_chat_job(bot))
 
         # Envio de Fotos históricas no canal
-        schedule.every().day.at('19:30').do(lambda: hist_channel_imgs(bot))
+        # schedule.every().day.at('19:30').do(lambda: hist_channel_imgs(bot))
 
         # Envio de imagens historicas no canal de imagem
         # horarios = [
@@ -136,15 +158,39 @@ def schedule_tasks(bot: TeleBot):
         # schedule.every().day.at('08:30').do(lambda: hist_channel_frase(bot))
 
         # citações e curiosidade 
-        schedule.every().day.at('17:30').do(lambda: hist_channel_reflexao(bot))
+        #schedule.every().day.at('17:30').do(lambda: hist_channel_reflexao(bot))
 
         # Envio dos presidentes no canal
-        schedule.every().day.at('22:30').do(lambda: enviar_foto_presidente(bot))
+        #schedule.every().day.at('22:30').do(lambda: enviar_foto_presidente(bot))
 
         # Envio da historia diaria
-        schedule.every().day.at('10:00').do(lambda: hist_channel_history(bot))
+        #schedule.every().day.at('10:00').do(lambda: hist_channel_history(bot))
 
         schedule.every().day.at('00:05').do(lambda: checar_datas_dia(bot))
+
+         # ================= NOITE (CONTEÚDO ROTATIVO) =================
+        night_time = random_time(19, 22)
+
+        # Segunda → Fotos históricas
+        schedule.every().monday.at(night_time).do(lambda: hist_channel_imgs(bot))
+    
+        # Terça → Curiosidades e frases
+        schedule.every().tuesday.at(night_time).do(lambda: hist_channel_reflexao(bot))
+    
+        # Quarta → Nascidos e mortes
+        schedule.every().wednesday.at(night_time).do(lambda: hist_channel_birth_and_death(bot))
+    
+        # Quinta → Presidentes
+        schedule.every().thursday.at(night_time).do(lambda: enviar_foto_presidente(bot))
+    
+        # Sexta → Curiosidades e frases
+        schedule.every().friday.at(night_time).do(lambda: hist_channel_reflexao(bot))
+    
+        # Sábado → Fotos históricas
+        schedule.every().saturday.at(night_time).do(lambda: hist_channel_imgs(bot))
+    
+        # Domingo → Nascidos e mortes
+        schedule.every().sunday.at(night_time).do(lambda: hist_channel_birth_and_death(bot))
 
     except Exception as e:
         logging.error(f'Erro ao enviar o trabalho scheduled: {e}')
