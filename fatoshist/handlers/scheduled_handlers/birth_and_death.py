@@ -5,7 +5,7 @@ import pytz
 import requests
 import random
 
-from fatoshist.config import CHANNEL
+from fatoshist.config import CHANNEL, OWNER
 from fatoshist.utils.month import get_month_name
 
 INTRO_TEMPLATES = [
@@ -181,5 +181,9 @@ def hist_channel_birth_and_death(bot):
     try:
         get_births_and_deaths_of_the_day(bot, CHANNEL)
         logging.info(f'Nascimentos e Mortes enviados para o canal {CHANNEL}')
+        bot.send_message(
+                chat_id=OWNER,
+                text=f"✅ VIVO E MORTOS enviado com sucesso: {intro}"
+            )
     except Exception as e:
         logging.error(f'Erro ao enviar o trabalho: {e}')
