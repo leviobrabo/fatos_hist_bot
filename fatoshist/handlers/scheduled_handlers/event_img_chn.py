@@ -1,7 +1,6 @@
 import logging
 import random
 from datetime import datetime
-
 import pytz
 import requests
 from telebot import types
@@ -14,65 +13,106 @@ photo_manager = PhotoManager()
 
 headers = {
     "accept": "application/json",
-    "User-Agent": "HistoriaBot/1.0 (https://historiadodia.com; contato@historiadodia.com)"
+    "User-Agent": "HistoriaBot/1.0"
 }
 
+IMG_HOOKS = [
+    "🖼 Uma imagem que fez história",
+    "📸 Registro histórico deste dia",
+    "🕰️ Foto histórica do dia",
+    "🌍 Um momento capturado na história",
+    "👀 Pouca gente viu essa imagem",
+    "📜 História em imagem",
+]
+
+IMG_INTROS = [
+    "Neste dia,",
+    "No dia de hoje,",
+    "Em {day} de {month_name} de {year},",
+    "Há alguns anos, neste dia,",
+    "Na história, em {day}/{month}/{year},",
+]
+
+IMG_COMMENTS = [
+    "Essa imagem mostra um momento decisivo.",
+    "Um registro raro daquele período.",
+    "Um detalhe visual que mudou a história.",
+    "Poucos sabem o contexto dessa foto.",
+    "Uma cena que entrou para os livros.",
+    "",
+]
+
+IMG_TAGS = [
+    "#FotoHistorica #Historia #HojeNaHistoria",
+    "#HistoriaEmImagens #CuriosidadesHistoricas",
+    "#ImagemHistorica #HistoriaDoMundo",
+    "#HistoriaDoBrasil #HistoriaReal",
+]
+
+
 def send_historical_events_CHANNEL_IMG_image(bot, CHANNEL_IMG):
-    """Busca um evento histórico com uma imagem e envia para o canal."""
     try:
         today = datetime.now(pytz.timezone('America/Sao_Paulo'))
         day = today.day
         month = today.month
+        month_name = get_month_name(month)
 
         response = requests.get(
             f"https://pt.wikipedia.org/api/rest_v1/feed/onthisday/events/{month}/{day}",
             headers=headers,
             timeout=10
         )
+
         events = response.json().get('events', [])
-        events_with_photo = [event for event in events if event.get('pages') and event['pages'][0].get('thumbnail')]
+        events_with_photo = [e for e in events if e.get('pages') and e['pages'][0].get('thumbnail')]
 
         if not events_with_photo:
-            logging.info('Não há eventos com fotos para enviar hoje.')
+            logging.info('Sem fotos históricas hoje.')
             return
 
         random_event = random.choice(events_with_photo)
         photo_url = random_event['pages'][0]['thumbnail']['source']
 
         if photo_manager.db.cphoto.find_one({'photo_url': photo_url}):
-            logging.info(f'Imagem já utilizada: {photo_url}. Buscando outra...')
+            logging.info(f'Foto já usada: {photo_url}')
             return
 
         event_text = random_event.get('text', '')
         event_year = random_event.get('year', '')
-        event_extract = random_event.get('extract', '')
 
-        caption = f'<b>🖼 | História ilustrada </b>\n\nEm <b>{day} de {get_month_name(month)} de {event_year}</b>\n\n<code>{event_text}</code>'
-        if event_extract:
-            caption += f'\n\n\n\n{event_extract}'
-        caption += '\n\n#fotos_historicas #historia #ilustracoes_historia #imagem_historicas'
-        caption += ' #HistóriaParaTodos #DivulgueAHistória #CompartilheConhecimento #HistóriaDoBrasil #HistóriaMundial'
+        hook = random.choice(IMG_HOOKS)
+        intro = random.choice(IMG_INTROS).format(day=day, month=month, year=event_year, month_name=month_name)
+        comment = random.choice(IMG_COMMENTS)
+        tags = random.choice(IMG_TAGS)
+
+        caption = (
+            f"<b>{hook}</b>\n\n"
+            f"{intro}\n"
+            f"<i>{event_text}</i>\n\n"
+            f"{comment}\n\n"
+            f"{tags}\n"
+            f"<blockquote>🔔 Siga @historia_br para mais registros históricos.</blockquote>"
+        )
 
         inline_keyboard = types.InlineKeyboardMarkup()
         inline_keyboard.add(
-            types.InlineKeyboardButton(text='📢 Canal Oficial', url='https://t.me/historia_br'),
-            types.InlineKeyboardButton(text='🔗 Site', url='https://www.historiadodia.com'),
+            types.InlineKeyboardButton("📢 Canal Oficial", url="https://t.me/historia_br"),
+            types.InlineKeyboardButton("🌐 Site", url="https://www.historiadodia.com"),
         )
 
         bot.send_photo(
             CHANNEL_IMG,
             photo_url,
             caption,
-            parse_mode='HTML',
-            reply_markup=inline_keyboard,
+            parse_mode="HTML",
+            reply_markup=inline_keyboard
         )
 
         photo_manager.add_url_photo(photo_url)
-
-        logging.info(f'Evento histórico em foto enviado com sucesso para o canal ID {CHANNEL_IMG}.')
+        logging.info(f'Foto histórica enviada para {CHANNEL_IMG}')
 
     except Exception as e:
-        logging.error(f'Falha ao enviar evento histórico: {e}')
+        logging.error(f'Erro ao enviar foto histórica: {e}')
 
 
 def hist_channel_imgs_chn(bot):
