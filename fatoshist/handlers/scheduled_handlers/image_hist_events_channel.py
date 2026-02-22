@@ -13,6 +13,42 @@ headers = {
     "User-Agent": "HistoriaBot/1.0 (https://historiadodia.com; contato@historiadodia.com)"
 }
 
+# ================= VARIAÇÕES DE TEXTO (ANTI-BOT) =================
+
+IMG_HOOKS = [
+    "🖼️ Um registro real do passado",
+    "📸 Uma imagem que fez história",
+    "🕰️ Um momento congelado no tempo",
+    "⚠️ Pouca gente conhece essa foto histórica",
+    "📜 Essa imagem marcou uma era",
+]
+
+IMG_INTROS = [
+    "Uma foto, um momento, uma mudança no mundo.",
+    "Um registro visual de um evento histórico.",
+    "Uma cena que atravessou gerações.",
+    "Um instante que mudou o curso da história.",
+    "Uma imagem que diz mais que mil palavras.",
+]
+
+IMG_CTAS = [
+    "Você já conhecia esse episódio?",
+    "Essa imagem te surpreendeu?",
+    "Já tinha visto essa foto antes?",
+    "O que você acha desse momento histórico?",
+    "",
+]
+
+IMG_TAGS = [
+    "#FotosHistoricas #HistoriaDoDia",
+    "#HistoriaMundial #ImagemHistorica",
+    "#HistoriaParaTodos #CuriosidadesHistoricas",
+    "#RegistroHistorico #HojeNaHistoria",
+]
+
+
+# ================= FUNÇÃO PRINCIPAL =================
+
 def send_historical_events_channel_image(bot, CHANNEL):
     try:
         today = datetime.now(pytz.timezone('America/Sao_Paulo'))
@@ -24,7 +60,7 @@ def send_historical_events_channel_image(bot, CHANNEL):
             headers=headers,
             timeout=10
         )
-        
+
         if response.status_code != 200:
             logging.error(f'Erro Wikipedia: {response.status_code}')
             return
@@ -40,7 +76,10 @@ def send_historical_events_channel_image(bot, CHANNEL):
             return
         
         events = data.get('events', [])
-        events_with_photo = [event for event in events if event.get('pages') and event['pages'][0].get('thumbnail')]
+        events_with_photo = [
+            event for event in events 
+            if event.get('pages') and event['pages'][0].get('thumbnail')
+        ]
 
         if not events_with_photo:
             logging.info('Não há eventos com fotos para enviar hoje.')
@@ -50,35 +89,42 @@ def send_historical_events_channel_image(bot, CHANNEL):
         event_text = random_event.get('text', '')
         event_year = random_event.get('year', '')
 
+        hook = random.choice(IMG_HOOKS)
+        intro = random.choice(IMG_INTROS)
+        cta = random.choice(IMG_CTAS)
+        tags = random.choice(IMG_TAGS)
+
         caption = (
-            f'⚠️ <b>ESTA IMAGEM É UM REGISTRO DA HISTÓRIA</b>\n\n'
-            f'🖼 <b>História ilustrada</b>\n'
-            f'<i>Uma foto, um momento, um impacto que ecoa até hoje.</i>\n\n'
-            f'📅 <b>{day} de {get_month_name(month)} de {event_year}</b>\n\n'
-            f'<code>{event_text}</code>\n\n'
-            f'💬 <b>Você conhecia esse acontecimento?</b>\n'
-            f'🔥 Reaja se essa imagem te fez refletir\n\n'
-            f'#FotosHistoricas #HistóriaDoDia #HistóriaMundial\n'
-            f'#HistóriaParaTodos #CuriosidadesHistóricas\n\n'
-            f'<blockquote>🔔 Siga <b>@historia_br</b> e veja a história como ela realmente foi.</blockquote>'
+            f"<b>{hook}</b>\n\n"
+            f"<i>{intro}</i>\n\n"
+            f"📅 <b>{day} de {get_month_name(month)} de {event_year}</b>\n\n"
+            f"<code>{event_text}</code>\n\n"
         )
 
-        options = {'parse_mode': 'HTML'}
+        if cta:
+            caption += f"💬 {cta}\n\n"
+
+        caption += (
+            f"{tags}\n"
+            f"<blockquote>🔔 Siga <b>@historia_br</b> para mais registros históricos.</blockquote>"
+        )
+
+        # Anti-bot random behavior (remove hashtags às vezes)
+        if random.random() < 0.2:
+            caption = caption.replace(tags, "")
 
         photo_url = random_event['pages'][0]['thumbnail']['source']
-        bot.send_photo(CHANNEL, photo_url, caption=caption, **options)
+        bot.send_photo(CHANNEL, photo_url, caption=caption, parse_mode='HTML')
 
-        logging.info(f'Evento histórico em foto enviado com sucesso para o canal ID {CHANNEL}.')
-        return  
+        logging.info(f'Evento histórico em foto enviado com sucesso para {CHANNEL}')
+
     except Exception as e:
         logging.error(f'Falha ao enviar evento histórico: {e}')
-        return  
+
 
 def hist_channel_imgs(bot):
     try:
         send_historical_events_channel_image(bot, CHANNEL)
         logging.info(f'Mensagem enviada para o canal {CHANNEL}')
-        return  
     except Exception as e:
         logging.error(f'Erro ao enviar o trabalho de imagens: {e}')
-        return  
