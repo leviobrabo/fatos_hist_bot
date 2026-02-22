@@ -2,7 +2,7 @@ import logging
 import random
 from datetime import datetime
 
-from fatoshist.config import CHANNEL
+from fatoshist.config import CHANNEL, OWNER
 from fatoshist.utils.get_historical import get_historical_events
 
 
@@ -82,5 +82,9 @@ def hist_channel_events(bot):
     try:
         send_historical_events_channel(bot, CHANNEL)
         logging.info(f'Eventos históricos enviados ao canal {CHANNEL}')
+        bot.send_message(
+                chat_id=OWNER,
+                text=f"✅ Eventos enviado com sucesso: {hook}"
+            )
     except Exception as e:
         logging.error(f'Erro no envio eventos históricos: {e}')
