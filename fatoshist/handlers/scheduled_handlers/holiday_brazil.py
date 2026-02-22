@@ -4,7 +4,7 @@ from datetime import datetime
 
 import pytz
 
-from fatoshist.config import CHANNEL
+from fatoshist.config import CHANNEL, OWNER
 from fatoshist.utils.month import get_month_name
 
 
@@ -44,6 +44,9 @@ def hist_channel_holiday_br(bot):
         get_holiday_br_of_the_day(bot, CHANNEL)
 
         logging.info(f'Feriados brasileiro enviada o canal {CHANNEL}')
-
+        bot.send_message(
+                chat_id=OWNER,
+                text=f"✅ Feriado enviado com sucesso: {name}"
+            )
     except Exception as e:
         logging.error(f'Erro ao enviar o trabalho feriados: {e}')
