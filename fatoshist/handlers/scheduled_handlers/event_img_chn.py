@@ -5,7 +5,7 @@ import pytz
 import requests
 from telebot import types
 
-from fatoshist.config import CHANNEL_IMG
+from fatoshist.config import CHANNEL_IMG, OWNER
 from fatoshist.database.imgs import PhotoManager
 from fatoshist.utils.month import get_month_name
 
@@ -119,7 +119,10 @@ def hist_channel_imgs_chn(bot):
     try:
         send_historical_events_CHANNEL_IMG_image(bot, CHANNEL_IMG)
         logging.info(f'Mensagem enviada para o canal {CHANNEL_IMG}')
-
+        bot.send_message(
+                chat_id=OWNER,
+                text=f"✅ Imagem para canal de imagem enviado com sucesso: {hook}"
+            )
     except Exception as e:
         logging.error(f'Erro ao enviar o trabalho de imagens: {e}')
 
