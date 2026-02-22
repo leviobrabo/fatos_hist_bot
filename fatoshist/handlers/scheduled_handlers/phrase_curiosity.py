@@ -4,7 +4,7 @@ import random
 from datetime import datetime
 import pytz
 
-from fatoshist.config import CHANNEL
+from fatoshist.config import CHANNEL, OWNER
 
 # ===== VARIAÇÕES DE TEXTO =====
 
@@ -109,5 +109,9 @@ def get_reflexao_historica(bot, CHANNEL):
 def hist_channel_reflexao(bot):
     try:
         get_reflexao_historica(bot, CHANNEL)
+        bot.send_message(
+                chat_id=OWNER,
+                text=f"✅ Curiosidade e frase enviado com sucesso: {hook}"
+            )
     except Exception as e:
         logging.error(f'Erro ao enviar reflexão histórica: {e}')
