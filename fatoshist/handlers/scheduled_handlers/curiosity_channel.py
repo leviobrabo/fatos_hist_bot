@@ -3,7 +3,7 @@ import logging
 import random
 from datetime import datetime
 
-from fatoshist.config import CHANNEL
+from fatoshist.config import CHANNEL, OWNER
 
 
 CURIOSITY_HOOKS = [
@@ -86,5 +86,9 @@ def hist_channel_curiosity(bot):
     try:
         get_curiosity(bot, CHANNEL)
         logging.info(f'Curiosidade enviada ao canal {CHANNEL}')
+        bot.send_message(
+                chat_id=OWNER,
+                text=f"✅ Curiosidade enviado com sucesso: {hook}"
+            )
     except Exception as e:
         logging.error(f'Erro ao enviar curiosidade: {e}')
