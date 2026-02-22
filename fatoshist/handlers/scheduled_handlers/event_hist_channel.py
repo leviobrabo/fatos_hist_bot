@@ -1,8 +1,47 @@
 import logging
+import random
 from datetime import datetime
 
 from fatoshist.config import CHANNEL
 from fatoshist.utils.get_historical import get_historical_events
+
+
+EVENT_HOOKS = [
+    "📜 HOJE NA HISTÓRIA:",
+    "🕰️ Neste dia, o mundo mudou:",
+    "🌍 A história registrou neste dia:",
+    "⚠️ Fatos que aconteceram hoje na história:",
+    "📅 Eventos históricos que marcaram este dia:",
+    "👀 Pouca gente lembra, mas hoje aconteceu isso:",
+]
+
+EVENT_CTA = [
+    "Qual desses fatos você já conhecia?",
+    "Qual mais te surpreendeu?",
+    "Já ouviu falar de algum desses?",
+    "Qual mudou mais o mundo na sua opinião?",
+    "Qual você acha mais importante?",
+]
+
+EVENT_REACT = [
+    "Comente o número 👇",
+    "Reaja se achou interessante 👇",
+    "Compartilhe com alguém que ama história 👇",
+    "Salve esse post para lembrar depois 📌",
+]
+
+EVENT_TAGS = [
+    "#HojeNaHistoria #HistoriaDoDia #NesteDia",
+    "#FatosHistoricos #HistoriaReal",
+    "#Historia #Conhecimento #VoceSabia",
+    "#CuriosidadesHistoricas #HistoriaParaTodos",
+]
+
+EVENT_FOOTER = [
+    "🔔 Siga @historia_br e não perca os fatos do dia.",
+    "📚 História todo dia sem enrolação.",
+    "🧭 Aqui a história é contada como realmente foi.",
+]
 
 
 def send_historical_events_channel(bot, CHANNEL):
@@ -12,38 +51,36 @@ def send_historical_events_channel(bot, CHANNEL):
         month = today.month
         events = get_historical_events()
 
-        if events:
-            message = (
-                f'<b>HOJE NA HISTÓRIA</b>\n\n'
-                f'📅 | Acontecimento em <b>{day}/{month}</b>\n\n'
-                f'❌ Quase ninguém lembra desses fatos…\n'
-                f'⚠️ Mas eles mudaram o rumo da história.\n\n'
-                f'<b>Qual você acha que foi?</b>\n\n'
-                f'{events}\n\n'
-                f'<b>💬 Qual deles você não conhecia?</b>\n'
-                f'<b>👇 Responda com o número nos comentários</b>\n\n'
-                f'#NesteDia #HojeNaHistoria #HistóriaDoDia\n\n'
-                f'<blockquote>🔔 Ative as notificações e siga @historia_br</blockquote>'
-            )
-            bot.send_message(CHANNEL, message)
-        else:
-            bot.send_message(
-                CHANNEL,
-                '<b>Não há eventos históricos para hoje.</b>',
-                parse_mode='HTML',
-            )
+        if not events:
+            bot.send_message(CHANNEL, "<b>Hoje não encontramos eventos históricos relevantes.</b>")
+            logging.info(f'Nenhum evento histórico para hoje no canal {CHANNEL}')
+            return
 
-            logging.info(f'Nenhum evento histórico para hoje no grupo {CHANNEL}')
+        hook = random.choice(EVENT_HOOKS)
+        cta = random.choice(EVENT_CTA)
+        react = random.choice(EVENT_REACT)
+        tags = random.choice(EVENT_TAGS)
+        footer = random.choice(EVENT_FOOTER)
+
+        message = (
+            f'{hook}\n\n'
+            f'📅 <b>{day}/{month}</b>\n\n'
+            f'{events}\n\n'
+            f'💬 <b>{cta}</b>\n'
+            f'🔥 {react}\n\n'
+            f'{tags}\n\n'
+            f'<blockquote>{footer}</blockquote>'
+        )
+
+        bot.send_message(CHANNEL, message)
 
     except Exception as e:
-        logging.error(f'Erro ao enviar fatos históricos para o canal: {e}')
+        logging.error(f'Erro ao enviar fatos históricos: {e}')
 
 
 def hist_channel_events(bot):
     try:
         send_historical_events_channel(bot, CHANNEL)
-
-        logging.info(f'Eventos históricos enviada o canal {CHANNEL}')
-
+        logging.info(f'Eventos históricos enviados ao canal {CHANNEL}')
     except Exception as e:
-        logging.error(f'Erro no trabalho de enviar fatos hist no canal: {e}')
+        logging.error(f'Erro no envio eventos históricos: {e}')
