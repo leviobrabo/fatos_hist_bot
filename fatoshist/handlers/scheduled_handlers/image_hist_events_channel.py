@@ -5,7 +5,7 @@ from datetime import datetime
 import pytz
 import requests
 
-from fatoshist.config import CHANNEL
+from fatoshist.config import CHANNEL, OWNER
 from fatoshist.utils.month import get_month_name
 
 headers = {
@@ -126,5 +126,9 @@ def hist_channel_imgs(bot):
     try:
         send_historical_events_channel_image(bot, CHANNEL)
         logging.info(f'Mensagem enviada para o canal {CHANNEL}')
+        bot.send_message(
+                chat_id=OWNER,
+                text=f"✅ Imagem enviado com sucesso: {caption}"
+            )
     except Exception as e:
         logging.error(f'Erro ao enviar o trabalho de imagens: {e}')
