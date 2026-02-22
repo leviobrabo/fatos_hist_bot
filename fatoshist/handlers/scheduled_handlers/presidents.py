@@ -2,12 +2,13 @@ import os
 import json
 import logging
 from datetime import datetime
+import random
 
 import pytz
 import requests
 from bs4 import BeautifulSoup  # Para extrair link direto do Wikipedia
 
-from fatoshist.config import CHANNEL
+from fatoshist.config import CHANNEL, OWNER
 from fatoshist.database.president_manager import PresidentManager
 
 president_manager = PresidentManager()
@@ -42,6 +43,38 @@ def wikipedia_direct_link(url):
         logging.error(f"Erro ao pegar link direto do Wikipedia: {e}")
         return url  # fallback
 
+# ===== VARIAÇÕES DE TEXTO =====
+PRESIDENT_HOOKS = [
+    "⚠️ Você lembra desse nome?",
+    "🏛 Um líder que marcou seu tempo",
+    "📜 Um nome importante da política",
+    "🤔 Já ouviu falar desse presidente?",
+    "💡 Um governante que fez história",
+]
+
+PRESIDENT_INTROS = [
+    "Um cargo poderoso, decisões difíceis e muita polêmica.",
+    "Uma figura política que marcou seu período.",
+    "Um nome que influenciou o rumo do país.",
+    "Pouco lembrado, mas importante.",
+    "",
+]
+
+PRESIDENT_CTAS = [
+    "Você conhecia esse governante?",
+    "Já tinha ouvido falar dele?",
+    "Lembra desse nome?",
+    "Esse nome soa familiar?",
+    "",
+]
+
+PRESIDENT_TAGS = [
+    "#HistoriaPolitica #HistoriaDoDia #VoceSabia",
+    "#HistoriaMundial #HistoriaDoBrasil",
+    "#LideresHistoricos #Politica",
+]
+
+
 # Função para enviar informações e imagem do presidente
 def enviar_info_pelo_canal(bot, info_presidente):
     titulo = info_presidente.get('titulo', '')
@@ -54,33 +87,39 @@ def enviar_info_pelo_canal(bot, info_presidente):
 
     logging.info(f'Preparando para enviar informações do presidente: {nome}')
 
+    hook = random.choice(PRESIDENT_HOOKS)
+    intro = random.choice(PRESIDENT_INTROS)
+    cta = random.choice(PRESIDENT_CTAS)
+    tags = random.choice(PRESIDENT_TAGS)
+
     caption = (
-        f'⚠️ <b>VOCÊ SE LEMBRA DESSE NOME?</b>\n'
-        f'<i>Um cargo poderoso, um período decisivo e muitas controvérsias.</i>\n\n'
-        f'🏛 <b>{titulo}</b>\n\n'
-        f'<b>👤 Nome:</b> {nome}\n'
-        f'<b>📌 Cargo:</b> {posicao}° {titulo}\n'
-        f'<b>🏳️ Partido:</b> {partido}\n'
-        f'<b>📆 Mandato:</b> {ano_de_mandato}\n'
-        f'<b>🤝 Vice:</b> {vice_presidente}\n\n'
-        f'💬 <b>Você conhecia esse governante?</b>\n'
-        f'👍 Sim  👎 Não\n\n'
-        f'#HistóriaPolítica #HistóriaDoDia #VocêSabia\n'
-        f'#HistóriaParaTodos #LíderesHistóricos\n\n'
-        f'<blockquote>🔔 Siga <b>@historia_br</b> e relembre quem moldou a história.</blockquote>'
+        f"<b>{hook}</b>\n"
+        f"<i>{intro}</i>\n\n"
+        f"🏛 <b>{titulo}</b>\n\n"
+        f"<b>👤 Nome:</b> {nome}\n"
+        f"<b>📌 Cargo:</b> {posicao}° {titulo}\n"
+        f"<b>🏳️ Partido:</b> {partido}\n"
+        f"<b>📆 Mandato:</b> {ano_de_mandato}\n"
+        f"<b>🤝 Vice:</b> {vice_presidente}\n\n"
     )
 
+    if cta:
+        caption += f"💬 {cta}\n👍 Sim  👎 Não\n\n"
+
+    # Às vezes remove hashtags (parece humano)
+    if random.random() > 0.25:
+        caption += f"{tags}\n\n"
+
+    caption += "<blockquote>🔔 Siga <b>@historia_br</b> e relembre quem moldou a história.</blockquote>"
 
     filename = "temp_image.jpg"
     try:
         logging.info('Baixando a foto do presidente...')
-        # Corrigir URL se for Wikipedia
         direct_url = wikipedia_direct_link(foto_url)
 
         response = requests.get(direct_url, headers=HEADERS)
         response.raise_for_status()
 
-        # Salvar imagem localmente
         with open(filename, 'wb') as f:
             f.write(response.content)
 
@@ -93,10 +132,9 @@ def enviar_info_pelo_canal(bot, info_presidente):
     except Exception as e:
         logging.error(f'Erro ao enviar foto do presidente: {e}')
     finally:
-        # Apagar arquivo temporário
         if os.path.exists(filename):
             os.remove(filename)
-
+            
 def enviar_foto_presidente(bot):
     try:
         count = president_manager.db.presidentes.count_documents({})
@@ -167,6 +205,10 @@ def enviar_foto_presidente(bot):
             else:
                 logging.info('Já existe um presidente registrado para hoje.')
 
+            bot.send_message(
+                chat_id=OWNER,
+                text=f"✅ Presidente enviado com sucesso: {nome}"
+            )
     except Exception as e:
         logging.error(
             f'Ocorreu um erro ao enviar informações do presidente: {str(e)}'
