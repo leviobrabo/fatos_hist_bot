@@ -3,15 +3,48 @@ from datetime import datetime
 
 import pytz
 import requests
+import random
 
 from fatoshist.config import CHANNEL
 from fatoshist.utils.month import get_month_name
+
+INTRO_TEMPLATES = [
+    "📜 Hoje a história registra nomes que marcaram o mundo.",
+    "⏳ Neste dia, grandes nomes nasceram e partiram.",
+    "🌍 O mundo mudou graças a essas pessoas.",
+    "📅 Neste dia, a história ganhou e perdeu figuras importantes.",
+    "⚠️ Pouca gente lembra desses nomes, mas eles mudaram tudo."
+]
+
+DEATH_TITLES = [
+    "⚰️ Quem nos deixou neste dia",
+    "🕯️ Figuras históricas que faleceram hoje",
+    "🕰️ Mortes que marcaram a história neste dia",
+]
+
+BIRTH_TITLES = [
+    "🎂 Quem nasceu neste dia",
+    "🌟 Nascimentos históricos de hoje",
+    "👶 Pessoas que nasceram neste dia e fizeram história",
+]
+
+CTA_TEMPLATES = [
+    "💬 Qual nome você já conhecia?",
+    "👇 Comente o mais famoso dessa lista",
+    "🤔 Algum nome te surpreendeu?",
+    "🔥 Reaja se acha importante lembrar dessas pessoas",
+    "📢 Compartilhe para não deixar a história ser esquecida"
+]
 
 HEADERS = {
     'accept': 'application/json',
     'User-Agent': 'HistoriaBot/1.0 (contato@historiadodia.com)'
 }
 
+intro = random.choice(INTRO_TEMPLATES)
+death_title = random.choice(DEATH_TITLES)
+birth_title = random.choice(BIRTH_TITLES)
+cta = random.choice(CTA_TEMPLATES)
 
 def get_births_and_deaths_of_the_day(bot, CHANNEL):
     try:
@@ -113,17 +146,12 @@ def get_births_and_deaths_of_the_day(bot, CHANNEL):
                     break
 
         if death_messages or birth_messages:
-            message = (
-                f'⚠️ <b>HOJE A HISTÓRIA LEMBRA…</b>\n'
-                f'Alguns se foram. Outros nasceram.\n'
-                f'<i>Mas todos deixaram marcas no mundo.</i>\n\n'
-            )
+            message = f"{intro}\n\n"
 
             if death_messages:
                 message += (
                     f'<blockquote expandable>'
-                    f'<b>⚰️ | Quem morreu em {day} de {get_month_name(month)}</b>\n\n'
-                    f'Esses nomes ajudaram a escrever a história — e partiram neste dia:\n\n'
+                    f'<b>{death_title} - {day} de {get_month_name(month)}</b>\n\n'
                     f'{"\n\n".join(death_messages)}'
                     f'</blockquote>\n\n'
                 )
@@ -131,17 +159,14 @@ def get_births_and_deaths_of_the_day(bot, CHANNEL):
             if birth_messages:
                 message += (
                     f'<blockquote expandable>'
-                    f'<b>🎂 | Quem nasceu em {day} de {get_month_name(month)}</b>\n\n'
-                    f'Nomes que chegaram ao mundo e mudaram (ou mudariam) tudo:\n\n'
+                    f'<b>{death_title} - {day} de {get_month_name(month)}</b>\n\n'
                     f'{"\n\n".join(birth_messages)}'
                     f'</blockquote>\n\n'
                 )
         
             message += (
-                f'💬 <b>Comente:</b> qual desses nomes você conhecia?\n'
-                f'🔥 Reaja se você acha importante lembrar essas pessoas\n\n'
-                f'#NesteDia #NascimentosHistoricos #MortesHistoricas\n'
-                f'#HistóriaDoDia #HistóriaParaTodos\n\n'
+                f'{cta}\n\n'
+                f'#HistóriaDoDia #NascimentosHistoricos #MortesHistoricas\n\n'
                 f'<blockquote>🔔 Siga <b>@historia_br</b> e não perca nenhum momento da história.</blockquote>'
             )
             bot.send_message(CHANNEL, message, disable_web_page_preview=False)
