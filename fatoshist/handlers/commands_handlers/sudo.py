@@ -8,6 +8,7 @@ from telebot import TeleBot, types
 from fatoshist.config import GROUP_LOG, OWNER
 from fatoshist.database.groups import GroupManager
 from fatoshist.database.users import UserManager
+from fatoshist.handlers.scheduled_handlers.bcchannel import queue_bcchannel
 
 user_manager = UserManager()
 group_manager = GroupManager()
@@ -192,11 +193,77 @@ def register(bot: TeleBot):
     @bot.message_handler(commands=['stats'])
     def cmd_stats(message):
         try:
-            if message.from_user.id == OWNER:
-                count_users = len(list(user_manager.get_all_users()))
-                count_groups = len(list(group_manager.get_all_chats()))
-                user_stats = f' ☆ {count_users} usuários\n ☆ {count_groups} Grupos'
-                bot.reply_to(message, f'\n──❑ 「 Bot Stats 」 ❑──\n\n{user_stats}')
+            if message.from_user.id != OWNER:
+                return
+
+            count_users = len(list(user_manager.get_all_users()))
+            count_groups = len(list(group_manager.get_all_chats()))
+            sudo_users = len(list(user_manager.get_all_sudo_users()))
+            users_msg_on = len([u for u in user_manager.get_all_users() if u.get('msg_private') == 'true'])
+
+            cpu = psutil.cpu_percent(1)
+            ram = psutil.virtual_memory()
+
+            text = (
+                f'╭─❑ 「 <b>Bot Stats</b> 」 ❑──\n'
+                f'│\n'
+                f'│ 👥 <b>Usuários:</b> {count_users}\n'
+                f'│ ✅ <b>Msg privada ativa:</b> {users_msg_on}\n'
+                f'│ 🔐 <b>Sudo:</b> {sudo_users}\n'
+                f'│ 💬 <b>Grupos:</b> {count_groups}\n'
+                f'│\n'
+                f'│ 🖥 <b>CPU:</b> {cpu}%\n'
+                f'│ 🧠 <b>RAM:</b> {ram.percent}% ({ram.used // 1024 // 1024}MB / {ram.total // 1024 // 1024}MB)\n'
+                f'╰❑'
+            )
+
+            pages = [text]
+
+            try:
+                from fatoshist.config import CHANNEL
+                chat = bot.get_chat(CHANNEL)
+                members = chat.linked_chat_id if hasattr(chat, 'linked_chat_id') else 'N/A'
+                channel_text = (
+                    f'\n╭─❑ 「 <b>Canal Stats</b> 」 ❑──\n'
+                    f'│ 📺 <b>Canal:</b> {chat.title}\n'
+                    f'│ 👤 <b>Membros:</b> {getattr(chat, "members_count", "N/A")}\n'
+                    f'╰❑'
+                )
+                pages.append(channel_text)
+            except Exception:
+                pass
+
+            full_text = ''.join(pages)
+            chunks = [full_text[i:i+3800] for i in range(0, len(full_text), 3800)]
+
+            if len(chunks) == 1:
+                bot.reply_to(message, chunks[0], parse_mode='HTML')
+            else:
+                def get_markup(idx):
+                    markup = types.InlineKeyboardMarkup()
+                    row = []
+                    if idx > 0:
+                        row.append(types.InlineKeyboardButton('<< Voltar', callback_data=f'stats_pg:{idx-1}'))
+                    if idx < len(chunks) - 1:
+                        row.append(types.InlineKeyboardButton('Próximo >>', callback_data=f'stats_pg:{idx+1}'))
+                    if row:
+                        markup.add(*row)
+                    return markup
+
+                sent = bot.reply_to(message, chunks[0], parse_mode='HTML', reply_markup=get_markup(0))
+
+                @bot.callback_query_handler(func=lambda q: q.data.startswith('stats_pg:'))
+                def stats_page_cb(q):
+                    idx = int(q.data.split(':')[1])
+                    bot.edit_message_text(
+                        chat_id=q.message.chat.id,
+                        message_id=q.message.message_id,
+                        text=chunks[idx],
+                        parse_mode='HTML',
+                        reply_markup=get_markup(idx),
+                    )
+                    bot.answer_callback_query(q.id)
+
         except Exception as e:
             logging.error(f'Erro ao enviar o stats do bot: {e}')
 
@@ -219,29 +286,36 @@ def register(bot: TeleBot):
 
             reply_msg = message.reply_to_message
             ulist = user_manager.get_all_users()
+            total = len(ulist)
             success_br = 0
             block_num = 0
             no_success = 0
+            removed = 0
 
             for user in ulist:
                 try:
-                    bot.send_message(user['user_id'], reply_msg.text)
+                    bot.copy_message(user['user_id'], reply_msg.chat.id, reply_msg.message_id)
                     success_br += 1
                 except telebot.apihelper.ApiException as err:
-                    if err.result.status_code == '403':
+                    status = getattr(err.result, 'status_code', 0)
+                    err_str = str(err).lower()
+                    if status == 403 or 'blocked' in err_str or 'deactivated' in err_str or 'bot was kicked' in err_str:
                         block_num += 1
+                        user_manager.remove_user_db(user['user_id'])
+                        removed += 1
                     else:
                         no_success += 1
+                time.sleep(0.05)
 
             bot.edit_message_text(
                 chat_id=sent_message.chat.id,
                 message_id=sent_message.message_id,
                 text=(
                     f'╭─❑ 「 <b>Broadcast Concluído</b> 」 ❑──\n'
-                    f'│- <b>Total usuários:</b> `{len(ulist)}`\n'
-                    f'│- <b>Ativos:</b> `{success_br}`\n'
-                    f'│- <b>Inativos:</b> `{block_num}`\n'
-                    f'│- <b>Falha:</b> `{no_success}`\n'
+                    f'│- <b>Total usuários:</b> {total}\n'
+                    f'│- <b>Ativos:</b> {success_br}\n'
+                    f'│- <b>Bloqueados/removidos:</b> {block_num}\n'
+                    f'│- <b>Falha:</b> {no_success}\n'
                     f'╰❑'
                 ),
                 parse_mode='HTML',
@@ -263,42 +337,51 @@ def register(bot: TeleBot):
 
             if message.reply_to_message:
                 reply_msg = message.reply_to_message
-                ulist = group_manager.get_all_chats()
+                chats = list(group_manager.get_all_chats())
+                total = len(chats)
                 success_br = 0
                 no_success = 0
                 block_num = 0
+                removed = 0
 
-                for chat in ulist:
+                for chat in chats:
                     try:
-                        if message.text.startswith('/bc'):
-                            bot.forward_message(
-                                chat['chat_id'],
-                                reply_msg.chat.id,
-                                reply_msg.message_id,
-                            )
-                        elif message.text.startswith('/bc'):
-                            bot.send_message(chat['chat_id'], reply_msg.text)
+                        bot.forward_message(
+                            chat['chat_id'],
+                            reply_msg.chat.id,
+                            reply_msg.message_id,
+                        )
                         success_br += 1
                     except telebot.apihelper.ApiException as err:
-                        if err.result.status_code == 403:
+                        status = getattr(err.result, 'status_code', 0)
+                        err_str = str(err).lower()
+                        if status == 403 or 'blocked' in err_str or 'kicked' in err_str or 'not a member' in err_str:
                             block_num += 1
+                            group_manager.remove_chat_db(chat['chat_id'])
+                            removed += 1
                         else:
                             no_success += 1
+                    time.sleep(0.05)
 
-                bot.send_message(
-                    message.chat.id,
-                    f'╭─❑ 「 <b>Broadcast Concluído</b> 」 ❑──\n'
-                    f'│- <b>Total grupos:</b> `{sum(1 for _ in ulist)}`\n'
-                    f'│- <b>Ativos:</b> `{success_br}`\n'
-                    f'│- <b>Inativos:</b> `{block_num}`\n'
-                    f'│- <b>Falha:</b> `{no_success}`\n'
-                    f'╰❑',
+                bot.edit_message_text(
+                    chat_id=sent_message.chat.id,
+                    message_id=sent_message.message_id,
+                    text=(
+                        f'╭─❑ 「 <b>Broadcast Concluído</b> 」 ❑──\n'
+                        f'│- <b>Total grupos:</b> {total}\n'
+                        f'│- <b>Ativos:</b> {success_br}\n'
+                        f'│- <b>Bloqueados/removidos:</b> {block_num}\n'
+                        f'│- <b>Falha:</b> {no_success}\n'
+                        f'╰❑'
+                    ),
+                    parse_mode='HTML',
                 )
             else:
                 if len(command_parts) < 2:
-                    bot.send_message(
-                        message.chat.id,
-                        '<i>I need text to broadcast.</i>',
+                    bot.edit_message_text(
+                        chat_id=sent_message.chat.id,
+                        message_id=sent_message.message_id,
+                        text='<i>Responda a uma mensagem ou forneça texto após /bcgps.</i>',
                         parse_mode='HTML',
                     )
                     return
@@ -306,12 +389,14 @@ def register(bot: TeleBot):
                 query = ' '.join(command_parts[1:])
                 web_preview = query.startswith('-d')
                 query_ = query[2:].strip() if web_preview else query
-                ulist = group_manager.get_all_chats()
+                chats = list(group_manager.get_all_chats())
+                total = len(chats)
                 success_br = 0
                 no_success = 0
                 block_num = 0
+                removed = 0
 
-                for chat in ulist:
+                for chat in chats:
                     try:
                         bot.send_message(
                             chat['chat_id'],
@@ -321,20 +406,25 @@ def register(bot: TeleBot):
                         )
                         success_br += 1
                     except telebot.apihelper.ApiException as err:
-                        if err.result.status_code == 403:
+                        status = getattr(err.result, 'status_code', 0)
+                        err_str = str(err).lower()
+                        if status == 403 or 'blocked' in err_str or 'kicked' in err_str or 'not a member' in err_str:
                             block_num += 1
+                            group_manager.remove_chat_db(chat['chat_id'])
+                            removed += 1
                         else:
                             no_success += 1
+                    time.sleep(0.05)
 
                 bot.edit_message_text(
                     chat_id=sent_message.chat.id,
                     message_id=sent_message.message_id,
                     text=(
                         f'╭─❑ 「 <b>Broadcast Concluído</b> 」 ❑──\n'
-                        f'│- <b>Total grupos:</b> `{sum(1 for _ in ulist)}`\n'
-                        f'│- <b>Ativos:</b> `{success_br}`\n'
-                        f'│- <b>Inativos:</b> `{block_num}`\n'
-                        f'│- <b>Falha:</b> `{no_success}`\n'
+                        f'│- <b>Total grupos:</b> {total}\n'
+                        f'│- <b>Ativos:</b> {success_br}\n'
+                        f'│- <b>Bloqueados/removidos:</b> {block_num}\n'
+                        f'│- <b>Falha:</b> {no_success}\n'
                         f'╰❑'
                     ),
                     parse_mode='HTML',
@@ -409,6 +499,31 @@ def register(bot: TeleBot):
             logging.error(f"Erro ao finalizar mensagem de status do broadcast: {e}")
 
     
+    @bot.message_handler(commands=['bcchannel'])
+    def cmd_bcchannel(message):
+        try:
+            if not user_manager.is_sudo(message.from_user.id) and message.from_user.id != OWNER:
+                return
+
+            if not message.reply_to_message:
+                bot.reply_to(message, '<b>Responda a uma mensagem para encaminhar ao canal.</b>', parse_mode='HTML')
+                return
+
+            reply_msg = message.reply_to_message
+            slot = queue_bcchannel(bot, reply_msg.chat.id, reply_msg.message_id)
+
+            slot_str = slot.strftime('%d/%m/%Y às %H:%M')
+            bot.reply_to(
+                message,
+                f'✅ <b>Post agendado para o canal!</b>\n\n'
+                f'📅 <b>Horário:</b> {slot_str}\n'
+                f'⏰ Seguindo regra de máx {3} posts/dia nos horários de pico (13h, 14h, 22h).',
+                parse_mode='HTML',
+            )
+
+        except Exception as e:
+            logging.error(f'Erro no /bcchannel: {e}')
+
     return [
         types.BotCommand('/add_sudo', 'Elevar usuário'),
         types.BotCommand('/rem_sudo', 'Remover usuário'),
@@ -417,5 +532,6 @@ def register(bot: TeleBot):
         types.BotCommand('/bcusers', 'Broadcast para usuários'),
         types.BotCommand('/bcgps', 'Broadcast para grupos'),
         types.BotCommand('/bc', 'Broadcast para todos users'),
+        types.BotCommand('/bcchannel', 'Encaminhar post ao canal (horário inteligente)'),
         types.BotCommand('/sys', 'Uso do servidor'),
     ]

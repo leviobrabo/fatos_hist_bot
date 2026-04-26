@@ -46,7 +46,7 @@ def hist_channel_holiday_br(bot):
         logging.info(f'Feriados brasileiro enviada o canal {CHANNEL}')
         bot.send_message(
                 chat_id=OWNER,
-                text=f"✅ Feriado enviado com sucesso: {name}"
+                text="✅ Feriados brasileiros enviados com sucesso"
             )
     except Exception as e:
         logging.error(f'Erro ao enviar o trabalho feriados: {e}')

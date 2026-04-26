@@ -10,8 +10,12 @@ from fatoshist.database.users import UserManager
 user_manager = UserManager()
 
 ads_links = [
-    'https://www.cpmrevenuegate.com/aczkcs92r?key=bf57d0551edc1505d3b77aa5cda4bd66',
-    'https://www.cpmrevenuegate.com/n4tz3iaax?key=2a5964f0ee7306247266e686b1cd3934',
+    'https://www.profitablecpmratenetwork.com/djt7wpcj5z?key=3baa748bc0990b4b5c6727d07024a044',
+    'https://www.profitablecpmratenetwork.com/ge7mn5gp?key=bebb7238590df1a541984429b5f12a77',
+    'https://www.profitablecpmratenetwork.com/sjnxjg5x?key=512d296dd7bce4c432e80e070ba62fb9',
+    'https://www.profitablecpmratenetwork.com/tdzhuvh1?key=e3443f5ad0657b7ca27193f9b13aa87e',
+    'https://www.profitablecpmratenetwork.com/cq3hxfki?key=62cf0735cf731bb51245a4898086a824',
+    'https://www.profitablecpmratenetwork.com/sjnxjg5x?key=512d296dd7bce4c432e80e070ba62fb9',
 ]
 
 

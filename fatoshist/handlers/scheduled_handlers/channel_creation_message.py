@@ -1,5 +1,4 @@
 import logging
-import time
 from datetime import datetime
 
 from fatoshist.config import CHANNEL, OWNER
@@ -32,14 +31,4 @@ def enviar_mensagem_aniversario(bot, CHANNEL):
 
 
 def agendar_aniversario(bot):
-    while True:
-        agora = datetime.now()
-        proximo_aniversario = datetime(agora.year, data_criacao.month, data_criacao.day, 0, 0, 0)
-
-        if agora >= proximo_aniversario:
-            proximo_aniversario = datetime(agora.year + 1, data_criacao.month, data_criacao.day, 0, 0, 0)
-
-        espera = (proximo_aniversario - agora).total_seconds()
-        time.sleep(espera)
-
-        enviar_mensagem_aniversario(bot, CHANNEL)
+    enviar_mensagem_aniversario(bot, CHANNEL)

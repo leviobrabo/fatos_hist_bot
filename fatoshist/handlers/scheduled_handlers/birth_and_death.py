@@ -159,7 +159,7 @@ def get_births_and_deaths_of_the_day(bot, CHANNEL):
             if birth_messages:
                 message += (
                     f'<blockquote expandable>'
-                    f'<b>{death_title} - {day} de {get_month_name(month)}</b>\n\n'
+                    f'<b>{birth_title} - {day} de {get_month_name(month)}</b>\n\n'
                     f'{"\n\n".join(birth_messages)}'
                     f'</blockquote>\n\n'
                 )
