@@ -30,6 +30,7 @@ from fatoshist.handlers.scheduled_handlers.poll_channel_new import send_question
 from fatoshist.handlers.scheduled_handlers.prase_channel import hist_channel_frase
 from fatoshist.handlers.scheduled_handlers.presidents import enviar_foto_presidente
 from fatoshist.handlers.scheduled_handlers.stars import msg_alerta_stars
+from fatoshist.handlers.scheduled_handlers.weekly_engagement_poll import send_weekly_engagement_poll
 
 # ================= FUNÇÃO GERAR HORÁRIO RANDOM =================
 
@@ -136,18 +137,9 @@ def schedule_tasks(bot: TeleBot):
         # Envio de Fotos históricas no canal
         # schedule.every().day.at('19:30').do(lambda: hist_channel_imgs(bot))
 
-        # Envio de imagens historicas no canal de imagem
-        # horarios = [
-        #     "00:00",
-        #     "04:00",
-        #     "08:00",
-        #     "12:00",
-        #     "16:00",
-        #     "20:00",
-        # ]
-        # for h in horarios:
-        #     schedule.every().day.at(h).do(lambda: hist_channel_imgs_chn(bot))
-        schedule.every(4).hours.do(lambda: hist_channel_imgs_chn(bot))
+        # Envio de imagens historicas no canal de imagem (horários fixos, sem madrugada)
+        for _h in ["08:30", "12:30", "16:30", "20:30"]:
+            schedule.every().day.at(_h).do(lambda: hist_channel_imgs_chn(bot))
         # schedule.every(1).minutes.do(hist_channel_imgs_chn, bot)
 
         # # Envio de curiosidade no canal
@@ -167,6 +159,9 @@ def schedule_tasks(bot: TeleBot):
         #schedule.every().day.at('10:00').do(lambda: hist_channel_history(bot))
 
         schedule.every().day.at('00:05').do(lambda: checar_datas_dia(bot))
+
+        # Enquete de engajamento semanal (domingo às 14h)
+        schedule.every().sunday.at('14:00').do(lambda: send_weekly_engagement_poll(bot))
 
          # ================= NOITE (CONTEÚDO ROTATIVO) =================
         night_time = random_time(19, 22)

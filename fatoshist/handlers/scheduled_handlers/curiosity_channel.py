@@ -86,9 +86,6 @@ def hist_channel_curiosity(bot):
     try:
         get_curiosity(bot, CHANNEL)
         logging.info(f'Curiosidade enviada ao canal {CHANNEL}')
-        bot.send_message(
-                chat_id=OWNER,
-                text=f"✅ Curiosidade enviado com sucesso: {hook}"
-            )
+        bot.send_message(chat_id=OWNER, text="✅ Curiosidade enviada com sucesso")
     except Exception as e:
         logging.error(f'Erro ao enviar curiosidade: {e}')

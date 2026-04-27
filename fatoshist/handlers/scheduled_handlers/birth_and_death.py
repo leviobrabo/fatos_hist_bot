@@ -7,6 +7,7 @@ import random
 
 from fatoshist.config import CHANNEL, OWNER
 from fatoshist.utils.month import get_month_name
+from fatoshist.utils.post_tracker import can_post, register_post, minutes_until_next
 
 INTRO_TEMPLATES = [
     "📜 Hoje a história registra nomes que marcaram o mundo.",
@@ -170,6 +171,7 @@ def get_births_and_deaths_of_the_day(bot, CHANNEL):
                 f'<blockquote>🔔 Siga <b>@historia_br</b> e não perca nenhum momento da história.</blockquote>'
             )
             bot.send_message(CHANNEL, message, disable_web_page_preview=False)
+            register_post()
         else:
             logging.info('Não há informações sobre nascidos ou mortos para o dia atual.')
 
@@ -179,11 +181,12 @@ def get_births_and_deaths_of_the_day(bot, CHANNEL):
 
 def hist_channel_birth_and_death(bot):
     try:
+        if not can_post():
+            mins = minutes_until_next()
+            logging.info(f'[birth_death] Intervalo mínimo não atingido. Aguardando {mins}min.')
+            return
         get_births_and_deaths_of_the_day(bot, CHANNEL)
         logging.info(f'Nascimentos e Mortes enviados para o canal {CHANNEL}')
-        bot.send_message(
-                chat_id=OWNER,
-                text=f"✅ VIVO E MORTOS enviado com sucesso: {intro}"
-            )
+        bot.send_message(chat_id=OWNER, text="✅ Nascidos e mortos enviados com sucesso")
     except Exception as e:
         logging.error(f'Erro ao enviar o trabalho: {e}')

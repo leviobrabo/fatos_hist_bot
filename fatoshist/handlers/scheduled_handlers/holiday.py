@@ -5,8 +5,9 @@ from datetime import datetime
 import pytz
 import requests
 
-from fatoshist.config import CHANNEL
+from fatoshist.config import CHANNEL, OWNER
 from fatoshist.utils.month import get_month_name
+from fatoshist.utils.post_tracker import can_post, register_post, minutes_until_next
 
 
 def get_holidays_br_and_world_of_the_day(bot):
@@ -96,6 +97,7 @@ def get_holidays_br_and_world_of_the_day(bot):
             )
         
             bot.send_message(CHANNEL, message, disable_web_page_preview=False)
+            register_post()
         else:
             logging.info('Não há informações sobre feriados para o dia atual.')
 
@@ -105,7 +107,12 @@ def get_holidays_br_and_world_of_the_day(bot):
 
 def hist_channel_holiday_br_and_world(bot):
     try:
+        if not can_post():
+            mins = minutes_until_next()
+            logging.info(f'[holiday] Intervalo mínimo não atingido. Aguardando {mins}min.')
+            return
         get_holidays_br_and_world_of_the_day(bot)
         logging.info(f'Feriados brasileiros e mundiais enviados para o canal {CHANNEL}')
+        bot.send_message(chat_id=OWNER, text="✅ Feriados enviados com sucesso")
     except Exception as e:
         logging.error(f'Erro ao enviar o trabalho de feriados: {e}')

@@ -101,9 +101,6 @@ def hist_channel_history(bot):
     try:
         get_history(bot, CHANNEL)
         logging.info(f'História enviada para {CHANNEL}')
-        bot.send_message(
-                chat_id=OWNER,
-                text=f"✅ Historia Narrada enviado com sucesso: {hook}"
-            )
+        bot.send_message(chat_id=OWNER, text="✅ História narrada enviada com sucesso")
     except Exception as e:
         logging.error(f'Erro no envio da história: {e}')

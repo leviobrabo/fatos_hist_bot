@@ -5,6 +5,7 @@ from datetime import datetime
 import pytz
 
 from fatoshist.config import CHANNEL, OWNER
+from fatoshist.utils.post_tracker import can_post, register_post, minutes_until_next
 
 # ===== VARIAÇÕES DE TEXTO =====
 
@@ -95,11 +96,18 @@ def get_reflexao_historica(bot, CHANNEL):
         if random.random() > 0.2:
             message += f"{tags}\n\n"
 
+        share_ctas = [
+            "📢 Encaminhe para alguém que ama história!",
+            "👥 Compartilhe com um amigo curioso.",
+            "🔁 Manda pra aquela pessoa que gosta de pensar diferente.",
+        ]
+        message += f"{random.choice(share_ctas)}\n\n"
         message += (
             "<blockquote>🔔 Siga <b>@historia_br</b> e veja a história com outros olhos.</blockquote>"
         )
 
         bot.send_message(CHANNEL, message, parse_mode="HTML")
+        register_post()
         logging.info(f'Reflexão histórica enviada para {CHANNEL}')
 
     except Exception as e:
@@ -108,10 +116,11 @@ def get_reflexao_historica(bot, CHANNEL):
 
 def hist_channel_reflexao(bot):
     try:
+        if not can_post():
+            mins = minutes_until_next()
+            logging.info(f'[reflexao] Intervalo mínimo não atingido. Aguardando {mins}min.')
+            return
         get_reflexao_historica(bot, CHANNEL)
-        bot.send_message(
-                chat_id=OWNER,
-                text=f"✅ Curiosidade e frase enviado com sucesso: {hook}"
-            )
+        bot.send_message(chat_id=OWNER, text="✅ Reflexão/frase enviada com sucesso")
     except Exception as e:
         logging.error(f'Erro ao enviar reflexão histórica: {e}')

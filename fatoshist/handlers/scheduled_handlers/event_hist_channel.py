@@ -4,6 +4,7 @@ from datetime import datetime
 
 from fatoshist.config import CHANNEL, OWNER
 from fatoshist.utils.get_historical import get_historical_events
+from fatoshist.utils.post_tracker import can_post, register_post, minutes_until_next
 
 
 EVENT_HOOKS = [
@@ -43,6 +44,13 @@ EVENT_FOOTER = [
     "🧭 Aqui a história é contada como realmente foi.",
 ]
 
+EVENT_SHARE_CTA = [
+    "📢 Encaminhe para alguém que ama história!",
+    "👥 Compartilhe com um amigo curioso.",
+    "📤 Manda pra aquela pessoa que adora história.",
+    "🔁 Reencaminhe — a história merece ser lembrada.",
+]
+
 
 def send_historical_events_channel(bot, CHANNEL):
     try:
@@ -61,6 +69,7 @@ def send_historical_events_channel(bot, CHANNEL):
         react = random.choice(EVENT_REACT)
         tags = random.choice(EVENT_TAGS)
         footer = random.choice(EVENT_FOOTER)
+        share_cta = random.choice(EVENT_SHARE_CTA)
 
         message = (
             f'{hook}\n\n'
@@ -68,11 +77,13 @@ def send_historical_events_channel(bot, CHANNEL):
             f'{events}\n\n'
             f'💬 <b>{cta}</b>\n'
             f'🔥 {react}\n\n'
+            f'{share_cta}\n\n'
             f'{tags}\n\n'
             f'<blockquote>{footer}</blockquote>'
         )
 
         bot.send_message(CHANNEL, message)
+        register_post()
 
     except Exception as e:
         logging.error(f'Erro ao enviar fatos históricos: {e}')
@@ -80,11 +91,12 @@ def send_historical_events_channel(bot, CHANNEL):
 
 def hist_channel_events(bot):
     try:
+        if not can_post():
+            mins = minutes_until_next()
+            logging.info(f'[eventos] Intervalo mínimo não atingido. Aguardando {mins}min.')
+            return
         send_historical_events_channel(bot, CHANNEL)
         logging.info(f'Eventos históricos enviados ao canal {CHANNEL}')
-        bot.send_message(
-                chat_id=OWNER,
-                text=f"✅ Eventos enviado com sucesso: {hook}"
-            )
+        bot.send_message(chat_id=OWNER, text="✅ Eventos históricos enviados com sucesso")
     except Exception as e:
         logging.error(f'Erro no envio eventos históricos: {e}')
