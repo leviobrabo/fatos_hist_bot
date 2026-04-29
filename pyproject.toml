@@ -7,7 +7,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "3.12.*"
-pytelegrambotapi = "^4.29.1"
+pytelegrambotapi = "^4.33.0"
 schedule = "^1.2.2"
 pymongo = "^4.15.5"
 pytz = "^2025.2"

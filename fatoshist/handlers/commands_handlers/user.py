@@ -130,7 +130,7 @@ def register(bot: TeleBot):
                 markup = types.InlineKeyboardMarkup()
                 commands = types.InlineKeyboardButton('Lista de comandos', callback_data='commands')
                 support = types.InlineKeyboardButton('Suporte', url='https://t.me/updatehist')
-                projeto = types.InlineKeyboardButton('💰 Doações', callback_data='donate', icon_custom_emoji_id='5318912792428814144')
+                projeto = types.InlineKeyboardButton('Doações', callback_data='donate', icon_custom_emoji_id='5318912792428814144')
 
                 markup.add(commands)
                 markup.add(support, projeto)
