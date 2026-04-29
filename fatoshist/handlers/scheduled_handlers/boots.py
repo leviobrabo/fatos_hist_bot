@@ -21,6 +21,6 @@ def msg_alerta_boost(bot: TeleBot):
 
         bot.send_message(CHANNEL, msg, parse_mode='HTML', reply_markup=markup)
         msg_text_owner = 'Mensagem de Boots de canal enviada com sucesso'
-        bot.send_message(OWNER, msg_text_owner)
+        bot.send_message(OWNER, msg_text_owner, parse_mode="HTML")
     except Exception as e:
         logging.error(f'Erro ao enviar mensagens históricas no canal: {e}')

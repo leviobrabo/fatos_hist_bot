@@ -45,16 +45,16 @@ def get_current_count(bot):
 
                 bot.send_message(GROUP_LOG, message, parse_mode='html', disable_web_page_preview=True)
 
-                bot.send_message(OWNER, message)
+                bot.send_message(OWNER, message, parse_mode="HTML")
 
                 counter_manager.update_last_entry(last_entry['count'], last_entry['date'], current_count, current_date)
-
+        
         else:
             message = '<b>Esta é a primeira verificação da quantidade de membros:</b>\n' f'<b>Usuários:</b> {current_count}'
 
             bot.send_message(GROUP_LOG, message, parse_mode='html', disable_web_page_preview=True)
 
-            bot.send_message(OWNER, message)
+            bot.send_message(OWNER, message, parse_mode="HTML")
 
             counter_manager.count_user_channel(current_count, current_date)
 

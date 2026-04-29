@@ -170,7 +170,7 @@ def get_births_and_deaths_of_the_day(bot, CHANNEL):
                 f'#HistóriaDoDia #NascimentosHistoricos #MortesHistoricas\n\n'
                 f'<blockquote><tg-emoji emoji-id="5458603043203327669">🔔</tg-emoji> Siga <b>@historia_br</b> e não perca nenhum momento da história.</blockquote>'
             )
-            bot.send_message(CHANNEL, message, disable_web_page_preview=False)
+            bot.send_message(CHANNEL, message, parse_mode="HTML", disable_web_page_preview=False)
             register_post()
         else:
             logging.info('Não há informações sobre nascidos ou mortos para o dia atual.')
@@ -187,6 +187,6 @@ def hist_channel_birth_and_death(bot):
             return
         get_births_and_deaths_of_the_day(bot, CHANNEL)
         logging.info(f'Nascimentos e Mortes enviados para o canal {CHANNEL}')
-        bot.send_message(chat_id=OWNER, text="<tg-emoji emoji-id='5429381339851796035'>✅</tg-emoji> Nascidos e mortos enviados com sucesso")
+        bot.send_message(chat_id=OWNER, text="<tg-emoji emoji-id='5429381339851796035'>✅</tg-emoji> Nascidos e mortos enviados com sucesso", parse_mode="HTML")
     except Exception as e:
         logging.error(f'Erro ao enviar o trabalho: {e}')

@@ -60,7 +60,7 @@ def send_historical_events_channel(bot, CHANNEL):
         events = get_historical_events()
 
         if not events:
-            bot.send_message(CHANNEL, "<b>Hoje não encontramos eventos históricos relevantes.</b>")
+            bot.send_message(CHANNEL, "<b>Hoje não encontramos eventos históricos relevantes.</b>", parse_mode="HTML")
             logging.info(f'Nenhum evento histórico para hoje no canal {CHANNEL}')
             return
 
@@ -82,7 +82,7 @@ def send_historical_events_channel(bot, CHANNEL):
             f'<blockquote>{footer}</blockquote>'
         )
 
-        bot.send_message(CHANNEL, message)
+        bot.send_message(CHANNEL, message, parse_mode="HTML")
         register_post()
 
     except Exception as e:
@@ -97,6 +97,6 @@ def hist_channel_events(bot):
             return
         send_historical_events_channel(bot, CHANNEL)
         logging.info(f'Eventos históricos enviados ao canal {CHANNEL}')
-        bot.send_message(chat_id=OWNER, text="<tg-emoji emoji-id='5429381339851796035'>✅</tg-emoji> Eventos históricos enviados com sucesso")
+        bot.send_message(chat_id=OWNER, text="<tg-emoji emoji-id='5429381339851796035'>✅</tg-emoji> Eventos históricos enviados com sucesso", parse_mode="HTML")
     except Exception as e:
         logging.error(f'Erro no envio eventos históricos: {e}')

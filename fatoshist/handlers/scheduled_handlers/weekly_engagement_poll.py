@@ -97,7 +97,7 @@ def send_weekly_engagement_poll(bot):
         )
 
         logging.info(f'Enquete semanal enviada ao canal {CHANNEL}')
-        bot.send_message(chat_id=OWNER, text=f"✅ Enquete semanal enviada: {poll['question']}")
+        bot.send_message(chat_id=OWNER, text=f"✅ Enquete semanal enviada: {poll['question']}", parse_mode="HTML")
 
     except Exception as e:
         logging.error(f'Erro ao enviar enquete semanal: {e}')

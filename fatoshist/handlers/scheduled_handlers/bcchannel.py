@@ -77,10 +77,10 @@ def queue_bcchannel(bot, from_chat_id, message_id):
             bot.forward_message(CHANNEL, item[0], item[1])
             _record_post()
             logging.info(f'[bcchannel] Encaminhado msg {item[1]} para canal {CHANNEL}')
-            bot.send_message(OWNER, f'✅ [bcchannel] Post encaminhado ao canal com sucesso.')
+            bot.send_message(OWNER, f'✅ [bcchannel] Post encaminhado ao canal com sucesso.', parse_mode="HTML")
         except Exception as e:
             logging.error(f'[bcchannel] Erro ao encaminhar para canal: {e}')
-            bot.send_message(OWNER, f'❌ [bcchannel] Erro ao encaminhar post: {e}')
+            bot.send_message(OWNER, f'❌ [bcchannel] Erro ao encaminhar post: {e}', parse_mode="HTML")
 
     timer = threading.Timer(max(delay_seconds, 1), send_when_ready)
     timer.daemon = True

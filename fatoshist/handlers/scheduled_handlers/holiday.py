@@ -96,7 +96,7 @@ def get_holidays_br_and_world_of_the_day(bot):
                 f'<blockquote><tg-emoji emoji-id="5406809207947142040">🔔</tg-emoji>     Siga <b>@historia_br</b> e descubra o que este dia representa.</blockquote>'
             )
         
-            bot.send_message(CHANNEL, message, disable_web_page_preview=False)
+            bot.send_message(CHANNEL, message, parse_mode="HTML", disable_web_page_preview=False)
             register_post()
         else:
             logging.info('Não há informações sobre feriados para o dia atual.')
@@ -113,6 +113,6 @@ def hist_channel_holiday_br_and_world(bot):
             return
         get_holidays_br_and_world_of_the_day(bot)
         logging.info(f'Feriados brasileiros e mundiais enviados para o canal {CHANNEL}')
-        bot.send_message(chat_id=OWNER, text="<tg-emoji emoji-id='5429381339851796035'>✅</tg-emoji> Feriados enviados com sucesso")
+        bot.send_message(chat_id=OWNER, text="<tg-emoji emoji-id='5429381339851796035'>✅</tg-emoji> Feriados enviados com sucesso", parse_mode="HTML")
     except Exception as e:
         logging.error(f'Erro ao enviar o trabalho de feriados: {e}')

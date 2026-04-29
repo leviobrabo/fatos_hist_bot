@@ -30,7 +30,7 @@ def get_frase(bot, CHANNEL):
                     f'#Cultura #Pensar #HistóriaParaTodos\n\n'
                     f'<blockquote><tg-emoji emoji-id="5458603043203327669">🔔</tg-emoji> Siga <b>@historia_br</b> para refletir com a história.</blockquote>'
                 )
-                bot.send_message(CHANNEL, message)
+                bot.send_message(CHANNEL, message, parse_mode="HTML")
             else:
                 logging.info('Não há informações para o dia de hoje. (frase)')
 

@@ -76,7 +76,7 @@ def get_curiosity(bot, CHANNEL):
             f'<blockquote>{footer}</blockquote>'
         )
 
-        bot.send_message(CHANNEL, message)
+        bot.send_message(CHANNEL, message, parse_mode="HTML")
 
     except Exception as e:
         logging.error(f'Erro curiosidade: {e}')
@@ -86,6 +86,6 @@ def hist_channel_curiosity(bot):
     try:
         get_curiosity(bot, CHANNEL)
         logging.info(f'Curiosidade enviada ao canal {CHANNEL}')
-        bot.send_message(chat_id=OWNER, text="<tg-emoji emoji-id=\"5429381339851796035\">✅</tg-emoji> Curiosidade enviada com sucesso")
+        bot.send_message(chat_id=OWNER, text="<tg-emoji emoji-id=\"5429381339851796035\">✅</tg-emoji> Curiosidade enviada com sucesso", parse_mode="HTML")
     except Exception as e:
         logging.error(f'Erro ao enviar curiosidade: {e}')

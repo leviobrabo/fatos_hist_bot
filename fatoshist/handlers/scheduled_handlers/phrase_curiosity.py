@@ -121,6 +121,6 @@ def hist_channel_reflexao(bot):
             logging.info(f'[reflexao] Intervalo mínimo não atingido. Aguardando {mins}min.')
             return
         get_reflexao_historica(bot, CHANNEL)
-        bot.send_message(chat_id=OWNER, text="<tg-emoji emoji-id='5429381339851796035'>✅</tg-emoji> Reflexão/frase enviada com sucesso")
+        bot.send_message(chat_id=OWNER, text="<tg-emoji emoji-id='5429381339851796035'>✅</tg-emoji> Reflexão/frase enviada com sucesso", parse_mode="HTML")
     except Exception as e:
         logging.error(f'Erro ao enviar reflexão histórica: {e}')

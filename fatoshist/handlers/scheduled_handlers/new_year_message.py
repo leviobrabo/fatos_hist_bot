@@ -14,9 +14,9 @@ def new_year_message(bot):
             'E vamos explorar mais sobre a história juntos!\n\n#feliz_ano_novo #ano_novo #historia'
         )
 
-        bot.send_photo(CHANNEL, photo_url, caption=caption)
+        bot.send_photo(CHANNEL, photo_url, caption=caption, parse_mode="HTML")
         msg_text_owner = 'Mensagem de ano novo enviado com sucesso para canal'
-        bot.send_message(OWNER, msg_text_owner)
+        bot.send_message(OWNER, msg_text_owner, parse_mode="HTML")
 
     except Exception as e:
         logging.error(f'Erro ao enviar mensagem de natal: {e}')

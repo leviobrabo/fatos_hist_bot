@@ -61,7 +61,7 @@ def ads_msg_job(bot):
 
             bot.send_message(channel_id, msg_text, parse_mode='HTML', reply_markup=markup)
             msg_text_owner = 'Mensagem de ADS enviado com sucesso para o canal'
-            bot.send_message(OWNER, msg_text_owner)
+            bot.send_message(OWNER, msg_text_owner, parse_mode="HTML")
 
             logging.info(f'Mensagem ADS enviada ao canal {channel_id}')
             time.sleep(1)

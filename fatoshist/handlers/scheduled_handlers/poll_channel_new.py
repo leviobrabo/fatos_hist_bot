@@ -15,6 +15,7 @@ def send_poll(bot, chat_id, question, options, correct_option_id, explanation):
             type='quiz',
             correct_option_id=correct_option_id,
             explanation=explanation[:200] if explanation else None,
+            explanation_parse_mode='HTML',
         )
 
         logging.info(f'Enviada pergunta para o chat {chat_id}')

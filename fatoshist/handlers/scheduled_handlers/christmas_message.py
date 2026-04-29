@@ -14,9 +14,9 @@ def christmas_message(bot):
             'E vamos aprender mais informações sobre a história!\n\n#natal #feliz_natal #historia'
         )
 
-        bot.send_photo(CHANNEL, photo_url, caption=caption)
+        bot.send_photo(CHANNEL, photo_url, caption=caption, parse_mode="HTML")
         msg_text_owner = 'Mensagem de natal de canal enviada com sucesso'
-        bot.send_message(OWNER, msg_text_owner)
+        bot.send_message(OWNER, msg_text_owner, parse_mode="HTML")
 
     except Exception as e:
         logging.error(f'Erro ao enviar mensagem de natal: {e}')

@@ -22,9 +22,9 @@ def enviar_mensagem_aniversario(bot, CHANNEL):
                     f'\n\n#anivesario_do_canal #historia'
                 )
 
-            bot.send_message(CHANNEL, mensagem)
-            msg_text_owner = 'Mensagem de anivesário de canal enviada com sucesso'
-            bot.send_message(OWNER, msg_text_owner)
+            bot.send_message(CHANNEL, mensagem, parse_mode="HTML")
+            msg_text_owner = 'Mensagem de aniversário de canal enviada com sucesso'
+            bot.send_message(OWNER, msg_text_owner, parse_mode="HTML")
 
     except Exception as e:
         logging.error(f'Erro ao enviar mensagem de aniversário: {e}')

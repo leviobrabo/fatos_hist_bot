@@ -140,6 +140,8 @@ def enviar_foto_presidente(bot):
         count = president_manager.db.presidentes.count_documents({})
         logging.info(f'Número de presidentes no banco de dados: {count}')
 
+        nome_presidente = None  # Track nome for success message
+
         if count == 0:
             logging.info('Nenhum presidente no banco de dados. Adicionando o primeiro presidente.')
 
@@ -155,6 +157,7 @@ def enviar_foto_presidente(bot):
 
             president_manager.add_presidentes_db(id_new, date_new)
             enviar_info_pelo_canal(bot, presidente)
+            nome_presidente = presidente.get('nome', 'N/A')
 
         else:
             ultimo_presidente_cursor = (
@@ -196,6 +199,7 @@ def enviar_foto_presidente(bot):
                     )
 
                     enviar_info_pelo_canal(bot, proximo_presidente)
+                    nome_presidente = proximo_presidente.get('nome', 'N/A')
 
                 else:
                     logging.error(
@@ -205,9 +209,11 @@ def enviar_foto_presidente(bot):
             else:
                 logging.info('Já existe um presidente registrado para hoje.')
 
+        if nome_presidente:
             bot.send_message(
                 chat_id=OWNER,
-                text=f"✅ Presidente enviado com sucesso: {nome}"
+                text=f"✅ Presidente enviado com sucesso: {nome_presidente}",
+                parse_mode="HTML"
             )
     except Exception as e:
         logging.error(

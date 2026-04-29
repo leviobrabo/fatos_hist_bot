@@ -121,7 +121,8 @@ def hist_channel_imgs_chn(bot):
         logging.info(f'Mensagem enviada para o canal {CHANNEL_IMG}')
         bot.send_message(
                 chat_id=OWNER,
-                text=f"<tg-emoji emoji-id='5429381339851796035'>✅</tg-emoji> Imagem para canal de imagem enviado com sucesso: {hook}"
+                text=f"<tg-emoji emoji-id='5429381339851796035'>✅</tg-emoji> Imagem para canal de imagem enviado com sucesso",
+                parse_mode="HTML"
             )
     except Exception as e:
         logging.error(f'Erro ao enviar o trabalho de imagens: {e}')

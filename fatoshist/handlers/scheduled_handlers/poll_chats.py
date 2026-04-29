@@ -54,12 +54,12 @@ def send_poll_chat(bot, chat_id, question, options, correct_option_id, explanati
                     chat_id=chat_id,
                     text=(
                         '⚠️ Permissão necessária\n\n'
-                        'Para que eu possa enviar enquetes neste grupo, '
-                        'é necessário me definir como *administrador* '
-                        'com a permissão *Enviar enquetes* ativada.\n\n'
+                        'Para que eu possa enviar enquetas neste grupo, '
+                        'é necessário me definir como <b>administrador</b> '
+                        'com a permissão <b>Enviar enquetas</b> ativada.\n\n'
                         'Após isso, as perguntas serão enviadas normalmente ✅'
                     ),
-                    parse_mode='Markdown',
+                    parse_mode='HTML',
                     message_thread_id=message_thread_id,
                 )
             except ApiTelegramException as msg_error:

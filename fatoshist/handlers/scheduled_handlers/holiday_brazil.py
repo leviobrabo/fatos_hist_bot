@@ -31,7 +31,7 @@ def get_holiday_br_of_the_day(bot, CHANNEL):
                 message += '\n\n#feriados_brasil #historia #feriados'
                 message += ' #HistóriaParaTodos #DivulgueAHistória #CompartilheConhecimento #HistóriaDoBrasil #HistóriaMundial'
                 message += '\n\n<blockquote><tg-emoji emoji-id="5213307977640979750">💬</tg-emoji> Você sabia? Siga o @historia_br e acesse nosso site historiadodia.com.</blockquote>'
-                bot.send_message(CHANNEL, message)
+                bot.send_message(CHANNEL, message, parse_mode="HTML")
             else:
                 logging.warning('Não há informações sobre nascidos hoje.')
 
@@ -46,7 +46,8 @@ def hist_channel_holiday_br(bot):
         logging.info(f'Feriados brasileiro enviada o canal {CHANNEL}')
         bot.send_message(
                 chat_id=OWNER,
-                text="<tg-emoji emoji-id='5429381339851796035'>✅</tg-emoji> Feriados brasileiros enviados com sucesso"
+                text="<tg-emoji emoji-id='5429381339851796035'>✅</tg-emoji> Feriados brasileiros enviados com sucesso",
+                parse_mode="HTML"
             )
     except Exception as e:
         logging.error(f'Erro ao enviar o trabalho feriados: {e}')

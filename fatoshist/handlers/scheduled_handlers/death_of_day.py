@@ -42,7 +42,7 @@ def get_deaths_of_the_day(bot, CHANNEL):
                 message += ' #HistóriaParaTodos #DivulgueAHistória #CompartilheConhecimento #HistóriaDoBrasil #HistóriaMundial'
                 message += '\n\n<blockquote><tg-emoji emoji-id=\"5213307977640979750\">💬</tg-emoji>  Você sabia? Siga o @historia_br e acesse nosso site historiadodia.com.</blockquote>'
 
-                bot.send_message(CHANNEL, message, disable_web_page_preview=False)
+                bot.send_message(CHANNEL, message, parse_mode="HTML", disable_web_page_preview=False)
             else:   
                 logging.info('Não há informações sobre mortos para o dia atual.')
 

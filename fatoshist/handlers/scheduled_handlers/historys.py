@@ -90,7 +90,8 @@ def get_history(bot, CHANNEL):
         if truncated:
             bot.send_message(
                 OWNER,
-                f"⚠️ História {day}/{month} truncada ({len(historia.get('text'))} chars)."
+                f"⚠️ História {day}/{month} truncada ({len(historia.get('text'))} chars).",
+                parse_mode="HTML"
             )
 
     except Exception as e:
@@ -101,6 +102,6 @@ def hist_channel_history(bot):
     try:
         get_history(bot, CHANNEL)
         logging.info(f'História enviada para {CHANNEL}')
-        bot.send_message(chat_id=OWNER, text="<tg-emoji emoji-id='5429381339851796035'>✅</tg-emoji> História narrada enviada com sucesso")
+        bot.send_message(chat_id=OWNER, text="<tg-emoji emoji-id='5429381339851796035'>✅</tg-emoji> História narrada enviada com sucesso", parse_mode="HTML")
     except Exception as e:
         logging.error(f'Erro no envio da história: {e}')
