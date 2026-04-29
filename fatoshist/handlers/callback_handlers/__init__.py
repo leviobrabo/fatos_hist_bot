@@ -55,11 +55,11 @@ def handle_menu_start(bot: TeleBot, call: types.CallbackQuery):
             '✨ Adicione-me em seu grupo',
             url='https://t.me/fatoshistbot?startgroup=true',
         )
-        update_channel = types.InlineKeyboardButton('⚙️ Atualizações do bot', url='https://t.me/updatehist')
-        donate = types.InlineKeyboardButton('💰 Doações', callback_data='donate')
-        channel_ofc = types.InlineKeyboardButton('Canal Oficial 🇧🇷', url='https://t.me/historia_br')
-        how_to_use = types.InlineKeyboardButton('⚠️ Como usar o bot', callback_data='how_to_use')
-        config_pv = types.InlineKeyboardButton('🪪 Sua conta', callback_data='config')
+        update_channel = types.InlineKeyboardButton('Atualizações do bot', url='https://t.me/updatehist', icon_custom_emoji_id="5215327492738392838")
+        donate = types.InlineKeyboardButton('Doações', callback_data='donate', icon_custom_emoji_id="5318912792428814144")
+        channel_ofc = types.InlineKeyboardButton('Canal Oficial 🇧🇷', url='https://t.me/historia_br', icon_custom_emoji_id="5305417940760273444")
+        how_to_use = types.InlineKeyboardButton('Como usar o bot', callback_data='how_to_use', icon_custom_emoji_id="5447644880824181073")
+        config_pv = types.InlineKeyboardButton('Sua conta', callback_data='config', icon_custom_emoji_id="5422683699130933153")
 
         markup.add(add_group)
         markup.add(update_channel, channel_ofc)
@@ -75,7 +75,7 @@ def handle_menu_start(bot: TeleBot, call: types.CallbackQuery):
             f'/sendoff. Se quiser voltar a receber, digite /sendon.\n\n'
             f'<b>A mensagem é enviada todos os dias às 8 horas</b>\n\n'
             f'Adicione-me em seu grupo para receber as mensagens lá.\n\n<b>Comandos:</b> /help\n\n'
-            f'📦<b>Meu código-fonte:</b> '
+            f'<tg-emoji emoji-id="5323375426658124630">📦</tg-emoji> <b>Meu código-fonte:</b> '
             f"<a href='https://github.com/leviobrabo/fatos_hist_bot'>GitHub</a>"
         )
         bot.edit_message_media(
@@ -99,7 +99,7 @@ def handle_menu_help(bot, call):
         markup = types.InlineKeyboardMarkup()
         commands = types.InlineKeyboardButton('Lista de comandos', callback_data='commands')
         support = types.InlineKeyboardButton('Suporte', url='https://t.me/kylorensbot')
-        donate = types.InlineKeyboardButton('💰 Doações', callback_data='donate')
+        donate = types.InlineKeyboardButton('Doações', callback_data='donate', icon_custom_emoji_id="5318912792428814144")
 
         markup.add(commands)
         markup.add(support, donate)
@@ -118,11 +118,11 @@ def handle_donate(bot, call):
     photo = 'https://i.imgur.com/j3H3wvJ.png'
 
     values_btn = types.InlineKeyboardMarkup()
-    btn_50 = types.InlineKeyboardButton('⭐️ 50 Estrelas', callback_data='50_estrelas')
-    btn_100 = types.InlineKeyboardButton('⭐️ 100 Estrelas', callback_data='100_estrelas')
-    btn_200 = types.InlineKeyboardButton('⭐️ 200 Estrelas', callback_data='200_estrelas')
-    btn_500 = types.InlineKeyboardButton('⭐️ 500 Estrelas', callback_data='500_estrelas')
-    btn_1000 = types.InlineKeyboardButton('⭐️ 1000 Estrelas', callback_data='1000_estrelas')
+    btn_50 = types.InlineKeyboardButton('50 Estrelas', callback_data='50_estrelas', icon_custom_emoji_id="5064709487953183440")
+    btn_100 = types.InlineKeyboardButton('100 Estrelas', callback_data='100_estrelas', icon_custom_emoji_id="5064709487953183440")
+    btn_200 = types.InlineKeyboardButton('200 Estrelas', callback_data='200_estrelas', icon_custom_emoji_id="5064709487953183440")
+    btn_500 = types.InlineKeyboardButton('500 Estrelas', callback_data='500_estrelas', icon_custom_emoji_id="5064709487953183440")
+    btn_1000 = types.InlineKeyboardButton('1000 Estrelas', callback_data='1000_estrelas', icon_custom_emoji_id="5064709487953183440")
     btn_cancel = types.InlineKeyboardButton('Cancelar', callback_data='menu_start')
     values_btn.row(btn_50)
     values_btn.row(btn_100)
@@ -156,8 +156,8 @@ def handle_stars_donation(bot, call):
         logging.error(f'Estrelas inválidas selecionadas: {call.data}')
         return
     markup = types.InlineKeyboardMarkup()
-    back_to_pay_again = types.InlineKeyboardButton('↩️ Voltar', callback_data='edit_donate')
-    pay_button = types.InlineKeyboardButton(f'Pagar ⭐{selected_stars}', pay=True)
+    back_to_pay_again = types.InlineKeyboardButton('Voltar', callback_data='edit_donate', icon_custom_emoji_id="5390841868160355895")
+    pay_button = types.InlineKeyboardButton(f'Pagar', pay=True, icon_custom_emoji_id="5318912792428814144")
 
     markup.add(pay_button)
     markup.add(back_to_pay_again)
@@ -181,11 +181,11 @@ def handle_edit_donate(bot, call):
     photo = 'https://i.imgur.com/j3H3wvJ.png'
 
     values_btn = types.InlineKeyboardMarkup()
-    btn_50 = types.InlineKeyboardButton('⭐️ 50 Estrelas', callback_data='50_estrelas')
-    btn_100 = types.InlineKeyboardButton('⭐️ 100 Estrelas', callback_data='100_estrelas')
-    btn_200 = types.InlineKeyboardButton('⭐️ 200 Estrelas', callback_data='200_estrelas')
-    btn_500 = types.InlineKeyboardButton('⭐️ 500 Estrelas', callback_data='500_estrelas')
-    btn_1000 = types.InlineKeyboardButton('⭐️ 1000 Estrelas', callback_data='1000_estrelas')
+    btn_50 = types.InlineKeyboardButton('50 Estrelas', callback_data='50_estrelas', icon_custom_emoji_id="5064709487953183440")
+    btn_100 = types.InlineKeyboardButton('100 Estrelas', callback_data='100_estrelas', icon_custom_emoji_id="5064709487953183440")
+    btn_200 = types.InlineKeyboardButton('200 Estrelas', callback_data='200_estrelas', icon_custom_emoji_id="5064709487953183440")
+    btn_500 = types.InlineKeyboardButton('500 Estrelas', callback_data='500_estrelas', icon_custom_emoji_id="5064709487953183440")
+    btn_1000 = types.InlineKeyboardButton('1000 Estrelas', callback_data='1000_estrelas', icon_custom_emoji_id="5064709487953183440")
     btn_cancel = types.InlineKeyboardButton('Cancelar', callback_data='menu_start')
     values_btn.row(btn_50)
     values_btn.row(btn_100)
@@ -210,20 +210,20 @@ def handle_how_to_use(bot, call):
     back_to_home = types.InlineKeyboardButton('↩️ Voltar', callback_data='menu_start')
     markup.add(back_to_home)
     msg_text = (
-        '🤖 <b>Como usar o bot Fatos Históricos:</b>\n\n'
-        '1️⃣ <b>/start</b> - Inicie a interação com o bot e receba uma mensagem de boas-vindas.\n'
-        '2️⃣ <b>/help</b> - Obtenha informações sobre como usar o bot e veja os comandos disponíveis.\n'
-        '3️⃣ <b>/fotoshist</b> - Envia fotos históricas\n'
-        '4️⃣ <b>/sendon</b> - Para receber mensagens históricas todos os dias às 8 horas.\n'
-        '5️⃣ <b>/sendoff</b> - Não receberá mensagens históricas todos os dias às 8 horas.\n\n'
-        '🌐 O bot funcionará melhor em canais ou grupos, então adicione o bot em um para o melhor aprendizado.\n\n'
-        '❇️ Novidades em breve.\n\n'
-        '📅 <b>Principais Funcionalidades:</b>\n'
+        '<tg-emoji emoji-id="5355051922862653659">🤖</tg-emoji> <b>Como usar o bot Fatos Históricos:</b>\n\n'
+        '<tg-emoji emoji-id="5422459480363247504">1️⃣</tg-emoji> <b>/start</b> - Inicie a interação com o bot e receba uma mensagem de boas-vindas.\n'
+        '<tg-emoji emoji-id="5422441587529493816">2️⃣</tg-emoji> <b>/help</b> - Obtenha informações sobre como usar o bot e veja os comandos disponíveis.\n'
+        '<tg-emoji emoji-id="5422690652682986469">3️⃣</tg-emoji> <b>/fotoshist</b> - Envia fotos históricas\n'
+        '<tg-emoji emoji-id="5422572979169010214">4️⃣</tg-emoji> <b>/sendon</b> - Para receber mensagens históricas todos os dias às 8 horas.\n'
+        '<tg-emoji emoji-id="5425144586542521665">5️⃣</tg-emoji> <b>/sendoff</b> - Não receberá mensagens históricas todos os dias às 8 horas.\n\n'
+        '<tg-emoji emoji-id="5318808961594437445">🌐</tg-emoji> O bot funcionará melhor em canais ou grupos, então adicione o bot em um para o melhor aprendizado.\n\n'
+        '<tg-emoji emoji-id="5888854085024616252">❇️</tg-emoji> Novidades em breve.\n\n'
+        '<tg-emoji emoji-id="5170301632587498188">📅</tg-emoji> <b>Principais Funcionalidades:</b>\n'
         '- Receba fatos históricos diários.\n'
         '- Notificações de feriados e eventos importantes.\n'
         '- Mensagens personalizadas para ocasiões especiais.\n'
         '- Pesquisa histórica e curiosidades.\n\n'
-        '🔧 <b>Utilitários:</b> Anti-spam, dados históricos, boas-vindas automáticas, '
+        '<tg-emoji emoji-id="5823268688874179761">🔧</tg-emoji> <b>Utilitários:</b> Anti-spam, dados históricos, boas-vindas automáticas, '
         'questões diárias e muito mais!'
     )
     photo = 'https://i.imgur.com/j3H3wvJ.png'
@@ -238,7 +238,7 @@ def handle_how_to_use(bot, call):
 def handle_config(bot, call):
     user_id = call.from_user.id
     markup = types.InlineKeyboardMarkup()
-    back_to_home = types.InlineKeyboardButton('↩️ Voltar', callback_data='menu_start')
+    back_to_home = types.InlineKeyboardButton('<tg-emoji emoji-id="5390841868160355895">↩️</tg-emoji> Voltar', callback_data='menu_start')
     markup.add(back_to_home)
 
     user_manager = UserManager()
@@ -277,11 +277,11 @@ def handle_config(bot, call):
 def handle_commands(bot, call):
     user_id = call.from_user.id
     markup = types.InlineKeyboardMarkup()
-    back_to_home = types.InlineKeyboardButton('↩️ Voltar', callback_data='menu_help')
+    back_to_home = types.InlineKeyboardButton('<tg-emoji emoji-id="5390841868160355895">↩️</tg-emoji> Voltar', callback_data='menu_help')
     markup.add(back_to_home)
     msg_text = (
         '<b>Lista de comandos</b>\n\n'
-        '/fotoshist - Fotos de fatos históricos 🙂\n'
+        '/fotoshist - Fotos de fatos históricos <tg-emoji emoji-id="5461117441612462242">🙂</tg-emoji>\n'
         '/sendon - Receberá às 8 horas a mensagem diária\n'
         '/sendoff - Não receberá às 8 horas a mensagem diária\n'
         '/fwdoff - Desativa o encaminhamento no grupo\n'

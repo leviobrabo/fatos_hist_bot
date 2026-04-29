@@ -41,14 +41,15 @@ def register(bot: TeleBot):
 
                 markup = types.InlineKeyboardMarkup()
                 add_group = types.InlineKeyboardButton(
-                    '✨ Adicione-me em seu grupo',
+                    'Adicione-me em seu grupo',
                     url='https://t.me/fatoshistbot?startgroup=true',
+                    icon_custom_emoji_id='5325547803936572038'
                 )
-                update_channel = types.InlineKeyboardButton('⚙️ Atualizações do bot', url='https://t.me/updatehist')
-                donate = types.InlineKeyboardButton('💰 Doações', callback_data='donate')
-                channel_ofc = types.InlineKeyboardButton('Canal Oficial 🇧🇷', url='https://t.me/historia_br')
-                how_to_use = types.InlineKeyboardButton('⚠️ Como usar o bot', callback_data='how_to_use')
-                config_pv = types.InlineKeyboardButton('🪪 Sua conta', callback_data='config')
+                update_channel = types.InlineKeyboardButton('Atualizações do bot', url='https://t.me/updatehist', icon_custom_emoji_id="5215327492738392838")
+                donate = types.InlineKeyboardButton('Doações', callback_data='donate', icon_custom_emoji_id="5318912792428814144")
+                channel_ofc = types.InlineKeyboardButton('Canal Oficial', url='https://t.me/historia_br', icon_custom_emoji_id="5305417940760273444")
+                how_to_use = types.InlineKeyboardButton('Como usar o bot', callback_data='how_to_use', icon_custom_emoji_id="5447644880824181073")
+                config_pv = types.InlineKeyboardButton('Sua conta', callback_data='config', icon_custom_emoji_id="5422683699130933153")
 
                 markup.add(add_group)
                 markup.add(update_channel, channel_ofc)
@@ -67,8 +68,8 @@ def register(bot: TeleBot):
                     '<b>A mensagem é enviada todos os dias às 8 horas</b>\n\n'
                     'Adicione-me em seu grupo para receber as mensagens lá.\n\n'
                     '<b>Comandos:</b> /help\n\n'
-                    "📦<b>Meu código-fonte:</b> <a href='https://github.com/leviobrabo/fatoshisbot'>GitHub</a>\n\n"
-                    "🔗<b>Site:</b> <a href='https://www.historiadodia.com'>Aqui</a>"
+                    f"<tg-emoji emoji-id='5332691919392746259'>📦</tg-emoji> <b>Meu código-fonte:</b> <a href='https://github.com/leviobrabo/fatoshisbot'>GitHub</a>\n\n"
+                    f"<tg-emoji emoji-id='5375129357373165375'>🔗</tg-emoji> <b>Site:</b> <a href='https://www.historiadodia.com'>Aqui</a>"
                 )
 
                 logging.debug('Enviando mensagem de start')
@@ -77,6 +78,7 @@ def register(bot: TeleBot):
                     photo=photo,
                     caption=msg_start,
                     reply_markup=markup,
+                    parse_mode='HTML',
                 )
             else:
                 pass
@@ -85,9 +87,9 @@ def register(bot: TeleBot):
                 if message.text and message.text.startswith(expected_command):
                     if message.chat.type in {'group', 'supergroup', 'channel'}:
                         markup = types.InlineKeyboardMarkup()
-                        channel_ofc = types.InlineKeyboardButton('📢 Canal Oficial', url='https://t.me/historia_br')
-                        report_bugs = types.InlineKeyboardButton('⚠️ Relatar bugs', url='https://t.me/kylorensbot')
-                        web_site = types.InlineKeyboardButton('🔗 WebSite', url='https://www.historiadodia.com/')
+                        channel_ofc = types.InlineKeyboardButton('Canal Oficial', url='https://t.me/historia_br', icon_custom_emoji_id='5305417940760273444')
+                        report_bugs = types.InlineKeyboardButton('Relatar bugs', url='https://t.me/kylorensbot', icon_custom_emoji_id='5447644880824181073')
+                        web_site = types.InlineKeyboardButton('WebSite', url='https://www.historiadodia.com/', icon_custom_emoji_id='5375129357373165375')
                         markup.add(channel_ofc, report_bugs)
                         markup.add(web_site)
                         msg_text = (
@@ -128,7 +130,7 @@ def register(bot: TeleBot):
                 markup = types.InlineKeyboardMarkup()
                 commands = types.InlineKeyboardButton('Lista de comandos', callback_data='commands')
                 support = types.InlineKeyboardButton('Suporte', url='https://t.me/updatehist')
-                projeto = types.InlineKeyboardButton('💰 Doações', callback_data='donate')
+                projeto = types.InlineKeyboardButton('💰 Doações', callback_data='donate', icon_custom_emoji_id='5318912792428814144')
 
                 markup.add(commands)
                 markup.add(support, projeto)

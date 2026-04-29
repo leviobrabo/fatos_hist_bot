@@ -36,14 +36,14 @@ def get_deaths_of_the_day(bot, CHANNEL):
                     death_message = f'<i>{index}.</i> <b>Nome:</b> {name}\n<b>Informações:</b> {info}\n<b>Data da morte:</b> {date}'
                     death_messages.append(death_message)
 
-                message = f'<b>⚰️ |  Mortes neste dia: {day} de {get_month_name(month)}</b>\n\n'
+                message = f'<b><tg-emoji emoji-id=\"5433769525117983603\">⚰️</tg-emoji> |  Mortes neste dia: {day} de {get_month_name(month)}</b>\n\n'
                 message += '\n\n'.join(death_messages)
                 message += '\n\n#mortes_historicas #historia #falecimentos'
                 message += ' #HistóriaParaTodos #DivulgueAHistória #CompartilheConhecimento #HistóriaDoBrasil #HistóriaMundial'
-                message += '\n\n<blockquote>💬 Você sabia? Siga o @historia_br e acesse nosso site historiadodia.com.</blockquote>'
+                message += '\n\n<blockquote><tg-emoji emoji-id=\"5213307977640979750\">💬</tg-emoji>  Você sabia? Siga o @historia_br e acesse nosso site historiadodia.com.</blockquote>'
 
                 bot.send_message(CHANNEL, message, disable_web_page_preview=False)
-            else:
+            else:   
                 logging.info('Não há informações sobre mortos para o dia atual.')
 
         else:

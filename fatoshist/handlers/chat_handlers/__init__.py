@@ -51,9 +51,9 @@ def register(bot):
                 try:
                     if message.chat.type in {'group', 'supergroup', 'channel'}:
                         markup = types.InlineKeyboardMarkup()
-                        channel_ofc = types.InlineKeyboardButton('📢 Canal Oficial', url='https://t.me/historia_br')
-                        report_bugs = types.InlineKeyboardButton('⚠️ Relatar bugs', url='https://t.me/kylorensbot')
-                        web_site = types.InlineKeyboardButton('🔗 WebSite', url='https://www.historiadodia.com/')
+                        channel_ofc = types.InlineKeyboardButton('Canal Oficial', url='https://t.me/historia_br', icon_custom_emoji_id="5305417940760273444")
+                        report_bugs = types.InlineKeyboardButton('Relatar bugs', url='https://t.me/kylorensbot', icon_custom_emoji_id="5447644880824181073")
+                        web_site = types.InlineKeyboardButton('WebSite', url='https://www.historiadodia.com/', icon_custom_emoji_id="5271604874419647061")
                         markup.add(channel_ofc, report_bugs)
                         markup.add(web_site)
                         msg_text = (
@@ -98,9 +98,9 @@ def register(bot):
 
                 try:
                     markup = types.InlineKeyboardMarkup()
-                    channel_ofc = types.InlineKeyboardButton('📢 Canal Oficial', url='https://t.me/historia_br')
-                    report_bugs = types.InlineKeyboardButton('⚠️ Relatar bugs', url='https://t.me/kylorensbot')
-                    web_site = types.InlineKeyboardButton('🔗 WebSite', url='https://www.historiadodia.com/')
+                    channel_ofc = types.InlineKeyboardButton('Canal Oficial', url='https://t.me/historia_br', icon_custom_emoji_id="5305417940760273444")
+                    report_bugs = types.InlineKeyboardButton('Relatar bugs', url='https://t.me/kylorensbot', icon_custom_emoji_id="5447644880824181073")
+                    web_site = types.InlineKeyboardButton('WebSite', url='https://www.historiadodia.com/', icon_custom_emoji_id="5271604874419647061")
                     markup.add(channel_ofc, report_bugs)
                     markup.add(web_site)
                     msg_text = (

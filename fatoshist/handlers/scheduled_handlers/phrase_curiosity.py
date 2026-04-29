@@ -10,11 +10,11 @@ from fatoshist.utils.post_tracker import can_post, register_post, minutes_until_
 # ===== VARIAÇÕES DE TEXTO =====
 
 REFLEXAO_HOOKS = [
-    "⚠️ Pouca gente percebe essa ligação histórica…",
-    "🧠 Uma conexão histórica que quase ninguém comenta",
-    "📜 Um detalhe do passado que explica o presente",
-    "🤔 Já parou para pensar nisso?",
-    "💡 História também é reflexão",
+    "<tg-emoji emoji-id='5447644880824181073'>⚠️</tg-emoji> Pouca gente percebe essa ligação histórica…",
+    "<tg-emoji emoji-id='5380072186126016626'>🧠</tg-emoji> Uma conexão histórica que quase ninguém comenta",
+    "<tg-emoji emoji-id='5373098009640836781'>📜</tg-emoji> Um detalhe do passado que explica o presente",
+    "<tg-emoji emoji-id='5917909521602187613'>🤔</tg-emoji> Já parou para pensar nisso?",
+    "<tg-emoji emoji-id='5422439311196834318'>💡</tg-emoji> História também é reflexão",
 ]
 
 REFLEXAO_INTROS = [
@@ -77,33 +77,33 @@ def get_reflexao_historica(bot, CHANNEL):
         # Curiosidade
         if info:
             message += (
-                f"📜 <b>{intro}</b>\n"
+                f"<tg-emoji emoji-id='5373098009640836781'>📜</tg-emoji>  <b>{intro}</b>\n"
                 f"<code>{info}</code>\n\n"
             )
 
         # Frase
         if quote:
             message += (
-                f"💬 <b>Uma frase para refletir:</b>\n"
+                f"<tg-emoji emoji-id='5213307977640979750'>💬</tg-emoji> <b>Uma frase para refletir:</b>\n"
                 f"<blockquote><i>“{quote}”</i>\n— <b>{author}</b></blockquote>\n\n"
             )
 
         # CTA
         if cta:
-            message += f"🤔 {cta}\n\n"
+            message += f"<tg-emoji emoji-id=\"5917909521602187613\">🤔</tg-emoji> {cta}\n\n"
 
         # Hashtags (às vezes remove para parecer humano)
         if random.random() > 0.2:
             message += f"{tags}\n\n"
 
         share_ctas = [
-            "📢 Encaminhe para alguém que ama história!",
-            "👥 Compartilhe com um amigo curioso.",
-            "🔁 Manda pra aquela pessoa que gosta de pensar diferente.",
+            "<tg-emoji emoji-id=\"5305417940760273444\">📢</tg-emoji> Encaminhe para alguém que ama história!",
+            "<tg-emoji emoji-id=\"5372926953978341366\">👥</tg-emoji> Compartilhe com um amigo curioso.",
+            "<tg-emoji emoji-id=\"5231005841355719459\">🔁</tg-emoji> Manda pra aquela pessoa que gosta de pensar diferente.",
         ]
         message += f"{random.choice(share_ctas)}\n\n"
         message += (
-            "<blockquote>🔔 Siga <b>@historia_br</b> e veja a história com outros olhos.</blockquote>"
+            "<blockquote><tg-emoji emoji-id=\"5458603043203327669\">🔔</tg-emoji> Siga <b>@historia_br</b> e veja a história com outros olhos.</blockquote>"
         )
 
         bot.send_message(CHANNEL, message, parse_mode="HTML")
@@ -121,6 +121,6 @@ def hist_channel_reflexao(bot):
             logging.info(f'[reflexao] Intervalo mínimo não atingido. Aguardando {mins}min.')
             return
         get_reflexao_historica(bot, CHANNEL)
-        bot.send_message(chat_id=OWNER, text="✅ Reflexão/frase enviada com sucesso")
+        bot.send_message(chat_id=OWNER, text="<tg-emoji emoji-id='5429381339851796035'>✅</tg-emoji> Reflexão/frase enviada com sucesso")
     except Exception as e:
         logging.error(f'Erro ao enviar reflexão histórica: {e}')

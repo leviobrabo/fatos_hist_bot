@@ -17,12 +17,12 @@ headers = {
 }
 
 IMG_HOOKS = [
-    "🖼 Uma imagem que fez história",
-    "📸 Registro histórico deste dia",
-    "🕰️ Foto histórica do dia",
-    "🌍 Um momento capturado na história",
-    "👀 Pouca gente viu essa imagem",
-    "📜 História em imagem",
+    "<tg-emoji emoji-id=\"5375074927252621134\">🖼️</tg-emoji> Uma imagem que fez história",
+    "<tg-emoji emoji-id=\"5022056296585626319\">📸</tg-emoji> Registro histórico deste dia",
+    "<tg-emoji emoji-id=\"5325547803936572038\">🕰️</tg-emoji> Foto histórica do dia",
+    "<tg-emoji emoji-id=\"5314361729117855941\">🌍</tg-emoji> Um momento capturado na história",
+    "<tg-emoji emoji-id=\"5424885441100782420\">👀</tg-emoji> Pouca gente viu essa imagem",
+    "<tg-emoji emoji-id=\"5373098009640836781\">📜</tg-emoji> História em imagem",
 ]
 
 IMG_INTROS = [
@@ -89,15 +89,15 @@ def send_historical_events_CHANNEL_IMG_image(bot, CHANNEL_IMG):
             f"<b>{hook}</b>\n\n"
             f"{intro}\n"
             f"<i>{event_text}</i>\n\n"
-            f"{comment}\n\n"
+            f"{comment}\n\n"    
             f"{tags}\n"
-            f"<blockquote>🔔 Siga @historia_br para mais registros históricos.</blockquote>"
+            f"<blockquote><tg-emoji emoji-id='5458603043203327669'>🔔</tg-emoji> Siga @historia_br para mais registros históricos.</blockquote>"
         )
 
         inline_keyboard = types.InlineKeyboardMarkup()
         inline_keyboard.add(
-            types.InlineKeyboardButton("📢 Canal Oficial", url="https://t.me/historia_br"),
-            types.InlineKeyboardButton("🌐 Site", url="https://www.historiadodia.com"),
+            types.InlineKeyboardButton("Canal Oficial", url="https://t.me/historia_br", icon_costum_emoji="5305417940760273444"),
+            types.InlineKeyboardButton("Site", url="https://www.historiadodia.com", icon_costum_emoji="5314361729117855941"),
         )
 
         bot.send_photo(
@@ -121,7 +121,7 @@ def hist_channel_imgs_chn(bot):
         logging.info(f'Mensagem enviada para o canal {CHANNEL_IMG}')
         bot.send_message(
                 chat_id=OWNER,
-                text=f"✅ Imagem para canal de imagem enviado com sucesso: {hook}"
+                text=f"<tg-emoji emoji-id='5429381339851796035'>✅</tg-emoji> Imagem para canal de imagem enviado com sucesso: {hook}"
             )
     except Exception as e:
         logging.error(f'Erro ao enviar o trabalho de imagens: {e}')

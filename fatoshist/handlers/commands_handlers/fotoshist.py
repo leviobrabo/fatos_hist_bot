@@ -35,7 +35,7 @@ def register(bot: TeleBot):
             event_text = random_event.get('text', 'Sem descrição disponível.')
             event_year = random_event.get('year', 'Ano desconhecido')
 
-            caption = f'🖼 | História ilustrada\n\n' f'Em <b>{day} de {get_month_name(month)} de {event_year}</b>\n\n' f'<code>{event_text}</code>'
+            caption = f'<tg-emoji emoji-id="5375074927252621134">🖼</tg-emoji> | História ilustrada\n\n' f'Em <b>{day} de {get_month_name(month)} de {event_year}</b>\n\n' f'<code>{event_text}</code>'
 
             bot.send_photo(
                 message.chat.id,

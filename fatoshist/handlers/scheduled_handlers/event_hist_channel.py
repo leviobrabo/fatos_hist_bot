@@ -8,12 +8,12 @@ from fatoshist.utils.post_tracker import can_post, register_post, minutes_until_
 
 
 EVENT_HOOKS = [
-    "📜 HOJE NA HISTÓRIA:",
-    "🕰️ Neste dia, o mundo mudou:",
-    "🌍 A história registrou neste dia:",
-    "⚠️ Fatos que aconteceram hoje na história:",
-    "📅 Eventos históricos que marcaram este dia:",
-    "👀 Pouca gente lembra, mas hoje aconteceu isso:",
+    "<tg-emoji emoji-id='5373098009640836781'>📜</tg-emoji>  HOJE NA HISTÓRIA:",
+    "<tg-emoji emoji-id='5325547803936572038'>🕰️</tg-emoji>Neste dia, o mundo mudou:",
+    "<tg-emoji emoji-id='5314361729117855941'>🌍</tg-emoji> A história registrou neste dia:",
+    "<tg-emoji emoji-id='5447644880824181073'>⚠️</tg-emoji> Fatos que aconteceram hoje na história:",
+    "<tg-emoji emoji-id='5431897022456145283'>📅</tg-emoji> Eventos históricos que marcaram este dia:",
+    "<tg-emoji emoji-id=\"5424885441100782420\">👀</tg-emoji> Pouca gente lembra, mas hoje aconteceu isso:",
 ]
 
 EVENT_CTA = [
@@ -25,10 +25,10 @@ EVENT_CTA = [
 ]
 
 EVENT_REACT = [
-    "Comente o número 👇",
-    "Reaja se achou interessante 👇",
-    "Compartilhe com alguém que ama história 👇",
-    "Salve esse post para lembrar depois 📌",
+    "Comente o número <tg-emoji emoji-id=\"5470177992950946662\">👇</tg-emoji>",
+    "Reaja se achou interessante <tg-emoji emoji-id=\"5470177992950946662\">👇</tg-emoji>",
+    "Compartilhe com alguém que ama história <tg-emoji emoji-id=\"5470177992950946662\">👇</tg-emoji>",
+    "Salve esse post para lembrar depois <tg-emoji emoji-id=\"5471603600950152486\">📌</tg-emoji>",
 ]
 
 EVENT_TAGS = [
@@ -39,16 +39,16 @@ EVENT_TAGS = [
 ]
 
 EVENT_FOOTER = [
-    "🔔 Siga @historia_br e não perca os fatos do dia.",
-    "📚 História todo dia sem enrolação.",
-    "🧭 Aqui a história é contada como realmente foi.",
+    "<tg-emoji emoji-id='5458603043203327669'>🔔</tg-emoji> Siga @historia_br e não perca os fatos do dia.",
+    "<tg-emoji emoji-id='5373098009640836781'>📚</tg-emoji> História todo dia sem enrolação.",
+    "<tg-emoji emoji-id='5433825729060018456'>🧭</tg-emoji> Aqui a história é contada como realmente foi.",
 ]
 
 EVENT_SHARE_CTA = [
-    "📢 Encaminhe para alguém que ama história!",
-    "👥 Compartilhe com um amigo curioso.",
-    "📤 Manda pra aquela pessoa que adora história.",
-    "🔁 Reencaminhe — a história merece ser lembrada.",
+    "<tg-emoji emoji-id=\"5305417940760273444\">📢</tg-emoji> Encaminhe para alguém que ama história!",
+    "<tg-emoji emoji-id=\"5372926953978341366\">👥</tg-emoji> Compartilhe com um amigo curioso.",
+    "<tg-emoji emoji-id=\"5433614747381538714\">📤</tg-emoji> Manda pra aquela pessoa que adora história.",
+    "<tg-emoji emoji-id=\"5231005841355719459\">🔁</tg-emoji> Reencaminhe — a história merece ser lembrada.",
 ]
 
 
@@ -73,10 +73,10 @@ def send_historical_events_channel(bot, CHANNEL):
 
         message = (
             f'{hook}\n\n'
-            f'📅 <b>{day}/{month}</b>\n\n'
+            f'<tg-emoji emoji-id="5431897022456145283">📅</tg-emoji> <b>{day}/{month}</b>\n\n'
             f'{events}\n\n'
-            f'💬 <b>{cta}</b>\n'
-            f'🔥 {react}\n\n'
+            f'<tg-emoji emoji-id="5213307977640979750">💬</tg-emoji>  <b>{cta}</b>\n'
+            f'<tg-emoji emoji-id="5317058732356542197">🔥</tg-emoji> {react}\n\n'
             f'{share_cta}\n\n'
             f'{tags}\n\n'
             f'<blockquote>{footer}</blockquote>'
@@ -97,6 +97,6 @@ def hist_channel_events(bot):
             return
         send_historical_events_channel(bot, CHANNEL)
         logging.info(f'Eventos históricos enviados ao canal {CHANNEL}')
-        bot.send_message(chat_id=OWNER, text="✅ Eventos históricos enviados com sucesso")
+        bot.send_message(chat_id=OWNER, text="<tg-emoji emoji-id='5429381339851796035'>✅</tg-emoji> Eventos históricos enviados com sucesso")
     except Exception as e:
         logging.error(f'Erro no envio eventos históricos: {e}')

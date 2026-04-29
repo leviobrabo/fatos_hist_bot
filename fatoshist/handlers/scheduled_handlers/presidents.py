@@ -45,11 +45,11 @@ def wikipedia_direct_link(url):
 
 # ===== VARIAÇÕES DE TEXTO =====
 PRESIDENT_HOOKS = [
-    "⚠️ Você lembra desse nome?",
-    "🏛 Um líder que marcou seu tempo",
-    "📜 Um nome importante da política",
-    "🤔 Já ouviu falar desse presidente?",
-    "💡 Um governante que fez história",
+    "<tg-emoji emoji-id='5447644880824181073'>⚠️</tg-emoji> Você lembra desse nome?",
+    "<tg-emoji emoji-id='5359778044745622115'>🏛</tg-emoji> Um líder que marcou seu tempo",
+    "<tg-emoji emoji-id='5373098009640836781'>📜</tg-emoji> Um nome importante da política",
+    "<tg-emoji emoji-id=\"5917909521602187613\">🤔</tg-emoji> Já ouviu falar desse presidente?",
+    "<tg-emoji emoji-id='5177854824840414935'>💡</tg-emoji> Um governante que fez história",
 ]
 
 PRESIDENT_INTROS = [
@@ -95,16 +95,16 @@ def enviar_info_pelo_canal(bot, info_presidente):
     caption = (
         f"<b>{hook}</b>\n"
         f"<i>{intro}</i>\n\n"
-        f"🏛 <b>{titulo}</b>\n\n"
-        f"<b>👤 Nome:</b> {nome}\n"
-        f"<b>📌 Cargo:</b> {posicao}° {titulo}\n"
-        f"<b>🏳️ Partido:</b> {partido}\n"
-        f"<b>📆 Mandato:</b> {ano_de_mandato}\n"
-        f"<b>🤝 Vice:</b> {vice_presidente}\n\n"
+        f"<tg-emoji emoji-id='5359778044745622115'>🏛</tg-emoji> <b>{titulo}</b>\n\n"
+        f"<tg-emoji emoji-id='5373012449597335010'>👤</tg-emoji> <b>Nome:</b> {nome}\n"
+        f"<tg-emoji emoji-id=\"5471603600950152486\">📌</tg-emoji> <b>Cargo:</b> {posicao}° {titulo}\n"
+        f"<tg-emoji emoji-id='5411285332668720752'>🏳️</tg-emoji> <b>Partido:</b> {partido}\n"
+        f"<tg-emoji emoji-id='5431897022456145283'>📆</tg-emoji> <b>Mandato:</b> {ano_de_mandato}\n"
+        f"<tg-emoji emoji-id='5316564471815101759'>🤝</tg-emoji> <b>Vice:</b> {vice_presidente}\n\n"
     )
 
     if cta:
-        caption += f"💬 {cta}\n👍 Sim  👎 Não\n\n"
+        caption += f"<tg-emoji emoji-id='5213307977640979750'>💬</tg-emoji> {cta}\n<tg-emoji emoji-id='5235478122081560535'>👍</tg-emoji> Sim  <tg-emoji emoji-id='5472309400536358507'>👎</tg-emoji> Não\n\n"
 
     # Às vezes remove hashtags (parece humano)
     if random.random() > 0.25:

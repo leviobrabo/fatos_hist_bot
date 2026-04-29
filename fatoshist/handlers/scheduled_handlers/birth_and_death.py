@@ -10,31 +10,31 @@ from fatoshist.utils.month import get_month_name
 from fatoshist.utils.post_tracker import can_post, register_post, minutes_until_next
 
 INTRO_TEMPLATES = [
-    "📜 Hoje a história registra nomes que marcaram o mundo.",
-    "⏳ Neste dia, grandes nomes nasceram e partiram.",
-    "🌍 O mundo mudou graças a essas pessoas.",
-    "📅 Neste dia, a história ganhou e perdeu figuras importantes.",
-    "⚠️ Pouca gente lembra desses nomes, mas eles mudaram tudo."
+    "<tg-emoji emoji-id='5373098009640836781'>📜</tg-emoji> Hoje a história registra nomes que marcaram o mundo.",
+    "<tg-emoji emoji-id='5319190934510904031'>⏳</tg-emoji> Neste dia, grandes nomes nasceram e partiram.",
+    "<tg-emoji emoji-id='5314361729117855941'>🌍</tg-emoji> O mundo mudou graças a essas pessoas.",
+    "<tg-emoji emoji-id='5888854085024616252'>📅</tg-emoji> Neste dia, a história ganhou e perdeu figuras importantes.",
+    "<tg-emoji emoji-id='5447644880824181073'>⚠️</tg-emoji> Pouca gente lembra desses nomes, mas eles mudaram tudo."
 ]
 
 DEATH_TITLES = [
-    "⚰️ Quem nos deixou neste dia",
-    "🕯️ Figuras históricas que faleceram hoje",
-    "🕰️ Mortes que marcaram a história neste dia",
+    "<tg-emoji emoji-id='5433769525117983603'>⚰️</tg-emoji> Quem nos deixou neste dia",
+    "<tg-emoji emoji-id='5350571717922167592'>🕯️</tg-emoji> Figuras históricas que faleceram hoje",
+    "<tg-emoji emoji-id='5325547803936572038'>🕰️</tg-emoji> Mortes que marcaram a história neste dia",
 ]
 
 BIRTH_TITLES = [
-    "🎂 Quem nasceu neste dia",
-    "🌟 Nascimentos históricos de hoje",
-    "👶 Pessoas que nasceram neste dia e fizeram história",
+    "<tg-emoji emoji-id='5370999492914976897'>🎂</tg-emoji> Quem nasceu neste dia",
+    "<tg-emoji emoji-id='5325547803936572038'>🌟</tg-emoji> Nascimentos históricos de hoje",
+    "<tg-emoji emoji-id='5379601719703379510'>👶</tg-emoji> Pessoas que nasceram neste dia e fizeram história",
 ]
 
 CTA_TEMPLATES = [
-    "💬 Qual nome você já conhecia?",
-    "👇 Comente o mais famoso dessa lista",
-    "🤔 Algum nome te surpreendeu?",
-    "🔥 Reaja se acha importante lembrar dessas pessoas",
-    "📢 Compartilhe para não deixar a história ser esquecida"
+    "<tg-emoji emoji-id='5213307977640979750'>💬</tg-emoji> Qual nome você já conhecia?",
+    "<tg-emoji emoji-id='5470177992950946662'>👇</tg-emoji> Comente o mais famoso dessa lista",
+    "<tg-emoji emoji-id='5917909521602187613'>🤔</tg-emoji> Algum nome te surpreendeu?",
+    "<tg-emoji emoji-id='5317058732356542197'>🔥</tg-emoji> Reaja se acha importante lembrar dessas pessoas",
+    "<tg-emoji emoji-id='5305417940760273444'>📢</tg-emoji> Compartilhe para não deixar a história ser esquecida"
 ]
 
 HEADERS = {
@@ -168,7 +168,7 @@ def get_births_and_deaths_of_the_day(bot, CHANNEL):
             message += (
                 f'{cta}\n\n'
                 f'#HistóriaDoDia #NascimentosHistoricos #MortesHistoricas\n\n'
-                f'<blockquote>🔔 Siga <b>@historia_br</b> e não perca nenhum momento da história.</blockquote>'
+                f'<blockquote><tg-emoji emoji-id="5458603043203327669">🔔</tg-emoji> Siga <b>@historia_br</b> e não perca nenhum momento da história.</blockquote>'
             )
             bot.send_message(CHANNEL, message, disable_web_page_preview=False)
             register_post()
@@ -187,6 +187,6 @@ def hist_channel_birth_and_death(bot):
             return
         get_births_and_deaths_of_the_day(bot, CHANNEL)
         logging.info(f'Nascimentos e Mortes enviados para o canal {CHANNEL}')
-        bot.send_message(chat_id=OWNER, text="✅ Nascidos e mortos enviados com sucesso")
+        bot.send_message(chat_id=OWNER, text="<tg-emoji emoji-id='5429381339851796035'>✅</tg-emoji> Nascidos e mortos enviados com sucesso")
     except Exception as e:
         logging.error(f'Erro ao enviar o trabalho: {e}')

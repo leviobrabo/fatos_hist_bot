@@ -19,14 +19,14 @@ def send_historical_events_user(bot, user_id):
         events = get_historical_events()
 
         markup = types.InlineKeyboardMarkup()
-        channel_ofc = types.InlineKeyboardButton('Canal Oficial 🇧🇷', url='https://t.me/historia_br')
-        site = types.InlineKeyboardButton('Nosso site 🔗', url='https://www.historiadodia.com')
+        channel_ofc = types.InlineKeyboardButton('Canal Oficial', url='https://t.me/historia_br', icon_custom_emoji_id='5215391376081954505')
+        site = types.InlineKeyboardButton('Nosso site', url='https://www.historiadodia.com', icon_custom_emoji_id='5395523172059602457')
 
         markup.add(channel_ofc)
         markup.add(site)
 
         if events:
-            message = f'<b>HOJE NA HISTÓRIA</b>\n\n📅 | Acontecimento em <b>{day}/{month}</b>\n\n{events}'
+            message = f'<b>HOJE NA HISTÓRIA</b>\n\n<tg-emoji emoji-id="5431897022456145283">📅</tg-emoji> | Acontecimento em <b>{day}/{month}</b>\n\n{events}'
             sent_message = bot.send_message(user_id, message, parse_mode='HTML', reply_markup=markup)
             message_id = sent_message.message_id
 

@@ -6,11 +6,11 @@ from datetime import datetime
 from fatoshist.config import CHANNEL, OWNER
 
 HISTORY_HOOKS = [
-    "📖 Uma história que poucos conhecem",
-    "🕰️ Um episódio esquecido da história",
-    "📜 História real deste dia",
-    "⚠️ Quase ninguém fala sobre isso",
-    "🌍 Um capítulo pouco contado",
+    "<tg-emoji emoji-id=\"5226512880362332956\">📖</tg-emoji> Uma história que poucos conhecem",
+    "<tg-emoji emoji-id='5325547803936572038'>🕰️</tg-emoji> Um episódio esquecido da história",
+    "<tg-emoji emoji-id='5373098009640836781'>📜</tg-emoji> História real deste dia",
+    "<tg-emoji emoji-id='5447644880824181073'>⚠️</tg-emoji> Quase ninguém fala sobre isso",
+    "<tg-emoji emoji-id='5314361729117855941'>🌍</tg-emoji> Um capítulo pouco contado",
 ]
 
 HISTORY_INTROS = [
@@ -77,11 +77,11 @@ def get_history(bot, CHANNEL):
         )
 
         if cta:
-            message += f"💬 {cta}\n\n"
+            message += f"<tg-emoji emoji-id='5213307977640979750'>💬</tg-emoji> {cta}\n\n"
 
         message += (
             f"{tags}\n"
-            f"<blockquote>🔔 Siga @historia_br para mais histórias reais.</blockquote>"
+            f"<blockquote><tg-emoji emoji-id='5458603043203327669'>🔔</tg-emoji> Siga @historia_br para mais histórias reais.</blockquote>"
         )
 
         bot.send_photo(CHANNEL, photo=photo_url, caption=message, parse_mode='HTML')
@@ -101,6 +101,6 @@ def hist_channel_history(bot):
     try:
         get_history(bot, CHANNEL)
         logging.info(f'História enviada para {CHANNEL}')
-        bot.send_message(chat_id=OWNER, text="✅ História narrada enviada com sucesso")
+        bot.send_message(chat_id=OWNER, text="<tg-emoji emoji-id='5429381339851796035'>✅</tg-emoji> História narrada enviada com sucesso")
     except Exception as e:
         logging.error(f'Erro no envio da história: {e}')

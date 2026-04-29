@@ -38,8 +38,8 @@ def send_historical_events_group_image(bot, chat_id):
             caption = f'<b>Você sabia?</b>\n\nEm <b>{day} de {get_month_name(month)} de {event_year}</b>\n\n<blockquote>{event_text}</blockquote>'
             inline_keyboard = types.InlineKeyboardMarkup()
             inline_keyboard.add(
-                types.InlineKeyboardButton(text='📢 Canal Oficial', url='https://t.me/historia_br'),
-                types.InlineKeyboardButton(text='Nosso site 🔗', url='https://www.historiadodia.com'),
+                types.InlineKeyboardButton(text='Canal Oficial', url='https://t.me/historia_br', icon_costum_emoji_id='530541794076027344'),
+                types.InlineKeyboardButton(text='Nosso site', url='https://www.historiadodia.com', icon_costum_emoji_id='5215391376081954505'),
             )
 
             if photo_url:

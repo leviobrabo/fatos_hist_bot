@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -m py_compile fatoshist/handlers/commands_handlers/sudo.py)",
+      "Bash(python -m py_compile fatoshist/handlers/scheduled_handlers/bcchannel.py fatoshist/handlers/scheduled_handlers/ads.py fatoshist/handlers/scheduled_handlers/holiday_brazil.py fatoshist/handlers/scheduled_handlers/channel_creation_message.py fatoshist/handlers/scheduled_handlers/birth_and_death.py fatoshist/database/users.py)",
+      "Bash(rtk git *)",
+      "Bash(python -m py_compile fatoshist/utils/post_tracker.py fatoshist/handlers/scheduled_handlers/weekly_engagement_poll.py fatoshist/handlers/scheduled_handlers/event_hist_channel.py fatoshist/handlers/scheduled_handlers/birth_and_death.py fatoshist/handlers/scheduled_handlers/holiday.py fatoshist/handlers/scheduled_handlers/phrase_curiosity.py fatoshist/handlers/scheduled_handlers/curiosity_channel.py fatoshist/handlers/scheduled_handlers/historys.py fatoshist/scheduled.py)"
+    ]
+  }
+}

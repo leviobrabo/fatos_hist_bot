@@ -63,16 +63,16 @@ def get_holidays_br_and_world_of_the_day(bot):
         # Montando a mensagem final
         if message_parts or world_holiday_messages:
             message = (
-                f'⚠️ <b>ATENÇÃO!</b>\n'
+                f'<tg-emoji emoji-id="5447644880824181073">⚠️</tg-emoji> <b>ATENÇÃO!</b>\n'
                 f'Hoje não é um dia comum.\n'
-                f'📅 <b>{day} de {get_month_name(month)}</b> marca datas que muita gente ignora — mas fazem parte da história.\n\n'
+                f'<tg-emoji emoji-id="5431897022456145283">📅</tg-emoji> <b>{day} de {get_month_name(month)}</b> marca datas que muita gente ignora — mas fazem parte da história.\n\n'
             )
         
             # Feriados no Brasil
             if message_parts:
                 message += (
                     f'<blockquote expandable>'
-                    f'<b>🎊 | Feriados no Brasil 🇧🇷</b>\n\n'
+                    f'<b><tg-emoji emoji-id="5436040291507247633">🎉</tg-emoji> | Feriados no Brasil 🇧🇷</b>\n\n'
                     f'Essas datas impactam diretamente o país:\n\n'
                     f'{"\n".join(message_parts)}'
                     f'</blockquote>\n\n'
@@ -82,18 +82,18 @@ def get_holidays_br_and_world_of_the_day(bot):
             if world_holiday_messages:
                 message += (
                     f'<blockquote expandable>'
-                    f'<b>🌍 | Feriados pelo mundo</b>\n\n'
+                    f'<b><tg-emoji emoji-id="5314361729117855941">🌍</tg-emoji> | Feriados pelo mundo</b>\n\n'
                     f'Enquanto você vive o seu dia, o mundo celebra isso:\n\n'
                     f'{"\n\n".join(world_holiday_messages)}'
                     f'</blockquote>\n\n'
                 )
         
             message += (
-                f'💬 <b>Comente:</b> você sabia de algum desses feriados?\n'
-                f'🔥 Reaja se você gosta de descobrir datas que quase ninguém lembra\n\n'
+                f'<tg-emoji emoji-id="5213307977640979750">💬</tg-emoji>  <b>Comente:</b> você sabia de algum desses feriados?\n'
+                f'<tg-emoji emoji-id="5317058732356542197">🔥</tg-emoji> Reaja se você gosta de descobrir datas que quase ninguém lembra\n\n'
                 f'#DatasComemorativas #FeriadosHoje #HistóriaDoDia\n'
                 f'#FeriadosBrasil #FeriadosMundiais #HistóriaParaTodos\n\n'
-                f'<blockquote>🔔 Siga <b>@historia_br</b> e descubra o que este dia representa.</blockquote>'
+                f'<blockquote><tg-emoji emoji-id="5406809207947142040">🔔</tg-emoji>     Siga <b>@historia_br</b> e descubra o que este dia representa.</blockquote>'
             )
         
             bot.send_message(CHANNEL, message, disable_web_page_preview=False)
@@ -113,6 +113,6 @@ def hist_channel_holiday_br_and_world(bot):
             return
         get_holidays_br_and_world_of_the_day(bot)
         logging.info(f'Feriados brasileiros e mundiais enviados para o canal {CHANNEL}')
-        bot.send_message(chat_id=OWNER, text="✅ Feriados enviados com sucesso")
+        bot.send_message(chat_id=OWNER, text="<tg-emoji emoji-id='5429381339851796035'>✅</tg-emoji> Feriados enviados com sucesso")
     except Exception as e:
         logging.error(f'Erro ao enviar o trabalho de feriados: {e}')

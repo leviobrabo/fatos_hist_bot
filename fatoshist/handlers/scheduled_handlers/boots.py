@@ -8,7 +8,7 @@ from fatoshist.config import CHANNEL, OWNER
 def msg_alerta_boost(bot: TeleBot):
     try:
         msg = (
-            '🌟 📺 <b>Impulsionem o nosso canal para que possamos começar a postar stories.</b> 📺 🌟\n\n'
+            '<tg-emoji emoji-id="5325547803936572038">  🌟</tg-emoji> <tg-emoji emoji-id="5373330964372004748">📺</tg-emoji> <b>Impulsionem o nosso canal para que possamos começar a postar stories.</b> <tg-emoji emoji-id="5373330964372004748">📺</tg-emoji> <tg-emoji emoji-id="5325547803936572038">🌟</tg-emoji>\n\n'
             'Estamos prontos para trazer conteúdo ainda mais interativo para vocês! Com o impulso de vocês, '
             'podemos liberar novos recursos e começar a postar histórias diariamente. '
             'Clique no botão abaixo e nos ajude a melhorar ainda mais nosso canal!\n\n'

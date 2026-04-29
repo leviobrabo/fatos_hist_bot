@@ -28,7 +28,7 @@ def register(bot: TeleBot):
             photo_paid = 'https://i.imgur.com/Vcwajly.png'
             caption_success = 'Doação bem-sucedida! ' 'Você contribuiu para o projeto História, ' 'ajudando a manter este projeto funcionando.'
             markup = types.InlineKeyboardMarkup()
-            back_to_home = types.InlineKeyboardButton('↩️ Voltar', callback_data='menu_start')
+            back_to_home = types.InlineKeyboardButton('Voltar', callback_data='menu_start', icon_custom_emoji_id='5390841868160355895')
             markup.add(back_to_home)
             bot.send_photo(
                 chat_id=message.from_user.id,

@@ -16,11 +16,11 @@ headers = {
 # ================= VARIAÇÕES DE TEXTO (ANTI-BOT) =================
 
 IMG_HOOKS = [
-    "🖼️ Um registro real do passado",
-    "📸 Uma imagem que fez história",
-    "🕰️ Um momento congelado no tempo",
-    "⚠️ Pouca gente conhece essa foto histórica",
-    "📜 Essa imagem marcou uma era",
+    "<tg-emoji emoji-id=\"5375074927252621134\">🖼</tg-emoji> Um registro real do passado",
+    "<tg-emoji emoji-id=\"5022056296585626319\">📸</tg-emoji> Uma imagem que fez história",
+    "<tg-emoji emoji-id=\"5325547803936572038\">🕰️</tg-emoji> Um momento congelado no tempo",
+    "<tg-emoji emoji-id='5447644880824181073'>⚠️</tg-emoji> Pouca gente conhece essa foto histórica",
+    "<tg-emoji emoji-id='5373098009640836781'>📜</tg-emoji> Essa imagem marcou uma era",
 ]
 
 IMG_INTROS = [
@@ -97,16 +97,16 @@ def send_historical_events_channel_image(bot, CHANNEL):
         caption = (
             f"<b>{hook}</b>\n\n"
             f"<i>{intro}</i>\n\n"
-            f"📅 <b>{day} de {get_month_name(month)} de {event_year}</b>\n\n"
+            f"<tg-emoji emoji-id='5431897022456145283'>📅</tg-emoji> <b>{day} de {get_month_name(month)} de {event_year}</b>\n\n"
             f"<code>{event_text}</code>\n\n"
         )
 
         if cta:
-            caption += f"💬 {cta}\n\n"
+            caption += f"<tg-emoji emoji-id='5213307977640979750'>💬</tg-emoji> {cta}\n\n"
 
         caption += (
             f"{tags}\n"
-            f"<blockquote>🔔 Siga <b>@historia_br</b> para mais registros históricos.</blockquote>"
+            f"<blockquote><tg-emoji emoji-id='5458603043203327669'>🔔</tg-emoji> Siga <b>@historia_br</b> para mais registros históricos.</blockquote>"
         )
 
         # Anti-bot random behavior (remove hashtags às vezes)
@@ -128,7 +128,7 @@ def hist_channel_imgs(bot):
         logging.info(f'Mensagem enviada para o canal {CHANNEL}')
         bot.send_message(
                 chat_id=OWNER,
-                text=f"✅ Imagem enviado com sucesso: {caption}"
+                text=f"<tg-emoji emoji-id='5429381339851796035'>✅</tg-emoji> Imagem enviado com sucesso: {caption}"
             )
     except Exception as e:
         logging.error(f'Erro ao enviar o trabalho de imagens: {e}')

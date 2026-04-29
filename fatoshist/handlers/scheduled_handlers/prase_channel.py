@@ -21,14 +21,14 @@ def get_frase(bot, CHANNEL):
                 author = frase.get('author', '')
 
                 message = (
-                    f'⚠️ <b>ESSA FRASE AINDA INCOMODA MUITA GENTE…</b>\n\n'
-                    f'💡 <b>Citação para refletir</b>\n\n'
+                    f'<tg-emoji emoji-id="5 447644880824181073">⚠️</tg-emoji> <b>ESSA FRASE AINDA INCOMODA MUITA GENTE…</b>\n\n'
+                    f'<tg-emoji emoji-id="5177854824840414935">💡</tg-emoji> <b>Citação para refletir</b>\n\n'
                     f'<blockquote><i>"{quote}"</i>\n— <b>{author}</b></blockquote>\n\n'
-                    f'💬 <b>Você concorda com essa ideia hoje?</b>\n'
-                    f'👍 Sim  👎 Não\n\n'
+                    f'<tg-emoji emoji-id="5213307977640979750">💬</tg-emoji> <b>Você concorda com essa ideia hoje?</b>\n'
+                    f'<tg-emoji emoji-id="5235478122081560535">👍</tg-emoji> Sim  <tg-emoji emoji-id="5472309400536358507">👎</tg-emoji> Não\n\n'
                     f'#CitaçãoDoDia #Reflexão #HistóriaDoDia\n'
                     f'#Cultura #Pensar #HistóriaParaTodos\n\n'
-                    f'<blockquote>🔔 Siga <b>@historia_br</b> para refletir com a história.</blockquote>'
+                    f'<blockquote><tg-emoji emoji-id="5458603043203327669">🔔</tg-emoji> Siga <b>@historia_br</b> para refletir com a história.</blockquote>'
                 )
                 bot.send_message(CHANNEL, message)
             else:

@@ -28,11 +28,11 @@ def ads_message_channel_user(bot, user_id):
         markup.add(channel_ofc)
 
         msg_text = (
-            '🔔 <b>Apoie nosso canal!</b> 🔔\n\n'
-            'Gostou do conteúdo? 🕰️📚 Que tal nos dar uma força? Ao clicar nos anúncios, você nos ajuda a '
-            'continuar trazendo histórias incríveis todos os dias, sem nenhum custo para você! 🚀✨\n\n'
-            'Cada clique faz a diferença e nos permite manter o canal ativo e sempre atualizado. 😊🙏\n\n'
-            '<b>Clique e apoie o canal com apenas um toque!</b> 🙌'
+            '<tg-emoji emoji-id="5458603043203327669">🔔</tg-emoji> <b>Apoie nosso canal!</b> <tg-emoji emoji-id="5458603043203327669">🔔</tg-emoji>\n\n'
+            'Gostou do conteúdo? <tg-emoji emoji-id="6334540900005315791">🕰️</tg-emoji><tg-emoji emoji-id="5373098009640836781">📚</tg-emoji> Que tal nos dar uma força? Ao clicar nos anúncios, você nos ajuda a '
+            'continuar trazendo histórias incríveis todos os dias, sem nenhum custo para você! <tg-emoji emoji-id="5445284980978621387">🚀</tg-emoji><tg-emoji emoji-id="5325547803936572038">✨</tg-emoji>\n\n'
+            'Cada clique faz a diferença e nos permite manter o canal ativo e sempre atualizado. <tg-emoji emoji-id="5348388457196559257">😊</tg-emoji><tg-emoji emoji-id="5235516278571020309">🙏</tg-emoji>\n\n'
+            '<b>Clique e apoie o canal com apenas um toque!</b> <tg-emoji emoji-id="5469645992531862101">🙌</tg-emoji>'
         )
 
         bot.send_message(user_id, msg_text, parse_mode='HTML', reply_markup=markup)
@@ -51,11 +51,11 @@ def ads_msg_job(bot):
             markup.add(channel_ofc)
 
             msg_text = (
-                '🔔 <b>Apoie nosso canal!</b> 🔔\n\n'
-                'Gostou do conteúdo? 🕰️📚 Que tal nos dar uma força? Ao clicar nos anúncios, você nos ajuda a '
-                'continuar trazendo histórias incríveis todos os dias, sem nenhum custo para você! 🚀✨\n\n'
-                'Cada clique faz a diferença e nos permite manter o canal ativo e sempre atualizado. 😊🙏\n\n'
-                '<b>Clique e apoie o canal com apenas um toque!</b> 🙌\n\n'
+                '<tg-emoji emoji-id="5458603043203327669">🔔</tg-emoji> <b>Apoie nosso canal!</b> <tg-emoji emoji-id="5458603043203327669">🔔</tg-emoji>\n\n'
+                'Gostou do conteúdo? <tg-emoji emoji-id="6334540900005315791">🕰️</tg-emoji><tg-emoji emoji-id="5373098009640836781">📚</tg-emoji> Que tal nos dar uma força? Ao clicar nos anúncios, você nos ajuda a '
+                'continuar trazendo histórias incríveis todos os dias, sem nenhum custo para você! <tg-emoji emoji-id="5445284980978621387">🚀</tg-emoji><tg-emoji emoji-id="5325547803936572038">✨</tg-emoji>\n\n'
+                'Cada clique faz a diferença e nos permite manter o canal ativo e sempre atualizado. <tg-emoji emoji-id="5348388457196559257">😊</tg-emoji><tg-emoji emoji-id="5235516278571020309">🙏</tg-emoji>\n\n'
+                '<b>Clique e apoie o canal com apenas um toque!</b> <tg-emoji emoji-id="5469645992531862101">🙌</tg-emoji>\n\n'
                 '#historia #ads #ajude_canal'
             )
 
