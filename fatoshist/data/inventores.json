@@ -1,0 +1,314 @@
+{
+  "1-1": {
+    "titulo": "Leonardo da Vinci",
+    "texto": "Nascido em Vinci, Itália (1452-1519), Leonardo foi o epítome do Homem Renascentista — pintor, escultor, arquiteto, engenheiro e anatomista. Seus cadernos secretos continham esboços de máquinas voadoras, veículos blindados, pontes giratórias e robôs — 300 anos antes de qualquer pessoa construí-los. Suas pinturas Mona Lisa e A Última Ceia são as obras de arte mais famosas do mundo. Realizou dissecações de cadáveres para estudar anatomia humana com precisão inédita.",
+    "link": "https://pt.wikipedia.org/wiki/Leonardo_da_Vinci",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Leonardo_self.jpg/800px-Leonardo_self.jpg"
+  },
+  "1-8": {
+    "titulo": "Nikola Tesla",
+    "texto": "Engenheiro sérvio-americano (1856-1943) que revolucionou a civilização com o sistema de corrente alternada (CA), derrotando a corrente contínua de Edison para se tornar o padrão global de eletricidade. Sem Tesla, o mundo moderno não existiria. Pesquisou transmissão de energia sem fio e ondas de rádio décadas antes de qualquer outro. Morreu sozinho e empobrecido num hotel de Nova York, enquanto Edison e Westinghouse lucravam bilhões com suas descobertas.",
+    "link": "https://pt.wikipedia.org/wiki/Nikola_Tesla",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/N.Tesla.JPG/800px-N.Tesla.JPG"
+  },
+  "1-15": {
+    "titulo": "Marie Curie",
+    "texto": "Física e química polonesa-francesa (1867-1934), primeira mulher a ganhar o Nobel — e a única pessoa na história a ganhar em duas áreas diferentes: Física (1903) e Química (1911). Descobriu os elementos polônio e rádio e fundou a teoria da radioatividade. Na Primeira Guerra criou unidades móveis de raio-X chamadas 'Petites Curies' que salvaram milhares de soldados. Morreu de anemia aplástica causada pela radiação de suas próprias pesquisas.",
+    "link": "https://pt.wikipedia.org/wiki/Marie_Curie",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Marie_Curie_c1920.jpg/800px-Marie_Curie_c1920.jpg"
+  },
+  "1-22": {
+    "titulo": "Isaac Newton",
+    "texto": "Físico e matemático inglês (1643-1727) que formulou a Lei da Gravitação Universal, as três Leis do Movimento e o cálculo diferencial — tudo em dois anos de quarentena durante a Peste Bubônica. Sua obra Principia Mathematica (1687) é o livro científico mais influente já escrito. Descobriu que a luz branca é composta por todas as cores do espectro. Inventou o telescópio refletor. Presidiu a Royal Society por 24 anos.",
+    "link": "https://pt.wikipedia.org/wiki/Isaac_Newton",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Portrait_of_Sir_Isaac_Newton%2C_1689.jpg/800px-Portrait_of_Sir_Isaac_Newton%2C_1689.jpg"
+  },
+  "1-29": {
+    "titulo": "Albert Einstein",
+    "texto": "Físico alemão-americano (1879-1955) que publicou quatro artigos revolucionários em 1905 — seu 'Annus Mirabilis': efeito fotoelétrico (Nobel de 1921), movimento browniano, relatividade especial e E=mc². A relatividade geral (1915) redefiniu gravidade como curvatura do espaço-tempo — confirmada em 1919 por Eddington. Sem Einstein: sem GPS, sem energia nuclear, sem física de partículas. Fugiu da Alemanha nazista para os EUA em 1933.",
+    "link": "https://pt.wikipedia.org/wiki/Albert_Einstein",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Albert_Einstein_Head.jpg/800px-Albert_Einstein_Head.jpg"
+  },
+  "2-5": {
+    "titulo": "Galileu Galilei",
+    "texto": "Astrônomo e físico italiano (1564-1642) considerado o pai da ciência experimental. Aperfeiçoou o telescópio e fez descobertas revolucionárias: luas de Júpiter, fases de Vênus, manchas solares. Confirmou o heliocentrismo de Copérnico e foi condenado pela Inquisição a prisão domiciliar perpétua. Seus estudos sobre queda livre e movimento pendular fundaram a mecânica clássica. Passou seus últimos anos cego, ditando descobertas a filha.",
+    "link": "https://pt.wikipedia.org/wiki/Galileu_Galilei",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Galileo_Galilei_%281564-1642%29_RMG_BHC2812.tiff/lossy-page1-800px-Galileo_Galilei_%281564-1642%29_RMG_BHC2812.tiff.jpg"
+  },
+  "2-12": {
+    "titulo": "Alan Turing",
+    "texto": "Matemático britânico (1912-1954) considerado o pai da computação moderna. Concebeu a 'Máquina de Turing' — modelo teórico de computador universal. Na Segunda Guerra liderou equipe que quebrou o código Enigma nazista, encurtando a guerra em 2 anos e salvando 14 milhões de vidas segundo historiadores. Perseguido pelo governo britânico por ser homossexual, foi submetido à castração química. Morreu de envenenamento por cianeto em 1954.",
+    "link": "https://pt.wikipedia.org/wiki/Alan_Turing",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Alan_Turing_Aged_16.jpg/800px-Alan_Turing_Aged_16.jpg"
+  },
+  "2-19": {
+    "titulo": "Thomas Edison",
+    "texto": "Inventor americano (1847-1931) com 1.093 patentes registradas — o maior número de qualquer pessoa da história. Inventou a lâmpada incandescente prática, o fonógrafo, o cinetoscópio e desenvolveu o sistema de distribuição elétrica em corrente contínua. Criou o primeiro laboratório de pesquisa industrial do mundo em Menlo Park. Perdeu a 'guerra das correntes' para Tesla/Westinghouse, mas seu impacto civilizacional permanece imenso.",
+    "link": "https://pt.wikipedia.org/wiki/Thomas_Edison",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Thomas_Edison2.jpg/800px-Thomas_Edison2.jpg"
+  },
+  "2-26": {
+    "titulo": "Johannes Gutenberg",
+    "texto": "Ourives alemão (c.1400-1468) cuja invenção da imprensa com tipos móveis metálicos em 1440 foi a revolução mais importante da história da comunicação. A Bíblia de Gutenberg (1455) foi o primeiro livro impresso em escala. A imprensa democratizou o conhecimento, tornou possível a Reforma Protestante, acelerou o Renascimento e a Revolução Científica. Sem ela, os séculos seguintes de progresso humano seriam impossíveis.",
+    "link": "https://pt.wikipedia.org/wiki/Johannes_Gutenberg",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Gutenberg.jpg/800px-Gutenberg.jpg"
+  },
+  "3-4": {
+    "titulo": "Arquimedes",
+    "texto": "Matemático e inventor grego (287-212 a.C.) de Siracusa — o maior cientista da Antiguidade. Calculou o valor de Pi com precisão incrível, descobriu o princípio da alavanca ('Dê-me um ponto de apoio e moverei o mundo'), inventou o parafuso de Arquimedes para elevar água, e desenvolveu máquinas de guerra que defenderam Siracusa por dois anos contra Roma. Descobriu o princípio do empuxo enquanto entrava numa banheira — e correu nu pelas ruas gritando 'Eureka!'",
+    "link": "https://pt.wikipedia.org/wiki/Arquimedes",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Domenico-Fetti_Archimedes_1620.jpg/800px-Domenico-Fetti_Archimedes_1620.jpg"
+  },
+  "3-11": {
+    "titulo": "Nicolau Copérnico",
+    "texto": "Astrônomo polonês (1473-1543) que revolucionou a visão humana do cosmos ao propor que o Sol — não a Terra — estava no centro do universo. Seu livro De revolutionibus (1543) foi publicado no dia de sua morte, para evitar a Inquisição. O modelo heliocêntrico derrubou 1.400 anos de dogma ptolomaico e iniciou a Revolução Científica que levaria Galileu ao tribunal e Newton às leis da gravitação.",
+    "link": "https://pt.wikipedia.org/wiki/Nicolau_Cop%C3%A9rnico",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Copernicus.jpg/800px-Copernicus.jpg"
+  },
+  "3-18": {
+    "titulo": "Louis Pasteur",
+    "texto": "Químico e microbiologista francês (1822-1895) que fundou a microbiologia moderna. Descobriu que microrganismos causam doenças (teoria germinal), refutando a geração espontânea. Inventou a pasteurização, que salva bilhões de vidas ao esterilizar alimentos. Desenvolveu vacinas contra a cólera das galinhas, carbúnculo e raiva — a primeira aplicada em humanos em 1885. Transformou completamente a medicina e a saúde pública mundiais.",
+    "link": "https://pt.wikipedia.org/wiki/Louis_Pasteur",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Louis_Pasteur.jpg/800px-Louis_Pasteur.jpg"
+  },
+  "3-25": {
+    "titulo": "Alexander Graham Bell",
+    "texto": "Inventor escocês-americano (1847-1922) que patenteou o telefone em 1876 — uma das disputas de patente mais famosas da história, contra Elisha Gray. Seu primeiro telefonema histórico foi para seu assistente Watson: 'Sr. Watson, venha aqui. Preciso de você.' Cofundou a Bell Telephone Company, que se tornaria a AT&T. Também pesquisou comunicações sem fio, energia solar e técnicas para surdos — sua esposa e mãe eram surdas.",
+    "link": "https://pt.wikipedia.org/wiki/Alexander_Graham_Bell",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Alexander_Graham_Bell.jpg/800px-Alexander_Graham_Bell.jpg"
+  },
+  "4-1": {
+    "titulo": "Michael Faraday",
+    "texto": "Físico e químico inglês (1791-1867) filho de ferreiro, autodidata que se tornou um dos maiores cientistas do século XIX. Descobriu a indução eletromagnética — base de todos os geradores e motores elétricos modernos. Inventou o motor elétrico, o transformador e o gerador. Descobriu o benzeno e inventou o balão de borracha. Suas pesquisas sobre eletricidade e magnetismo foram a base teórica de Maxwell e depois de toda a eletrotécnica moderna.",
+    "link": "https://pt.wikipedia.org/wiki/Michael_Faraday",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Michael_Faraday_001.jpg/800px-Michael_Faraday_001.jpg"
+  },
+  "4-8": {
+    "titulo": "Charles Darwin",
+    "texto": "Naturalista britânico (1809-1882) que desenvolveu a teoria da evolução por seleção natural durante a viagem do HMS Beagle (1831-1836). Seu livro A Origem das Espécies (1859) é o mais influente da biologia. A teoria unificou toda a vida na Terra sob um único processo — e enfureceu a Igreja Vitoriana. Também estudou a formação de corais, minhocas e expressão emocional em animais. Transformou permanentemente nossa compreensão da vida.",
+    "link": "https://pt.wikipedia.org/wiki/Charles_Darwin",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Charles_Darwin_seated_crop.jpg/800px-Charles_Darwin_seated_crop.jpg"
+  },
+  "4-15": {
+    "titulo": "James Watt",
+    "texto": "Inventor escocês (1736-1819) que aperfeiçoou a máquina a vapor de Newcomen, tornando-a praticamente eficiente. Introduziu o condensador separado, o movimento rotativo e o governador centrífugo. Sua máquina a vapor aperfeiçoada impulsionou a Revolução Industrial, transformando a Inglaterra — e depois o mundo — de economia agrária para industrial. A unidade de potência 'watt' foi nomeada em sua homenagem.",
+    "link": "https://pt.wikipedia.org/wiki/James_Watt",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/James_Watt_by_Henry_Howard.jpg/800px-James_Watt_by_Henry_Howard.jpg"
+  },
+  "4-22": {
+    "titulo": "Irmãos Wright",
+    "texto": "Wilbur (1867-1912) e Orville Wright (1871-1948), mecânicos americanos sem formação universitária que realizaram o primeiro voo motorizado sustentado da história em Kitty Hawk, Carolina do Norte, em 17 de dezembro de 1903. O voo durou 12 segundos e percorreu 36 metros — menos que a envergadura de um Boeing 737. Desenvolveram o sistema de controle triaxial que ainda é base de toda a aviação moderna.",
+    "link": "https://pt.wikipedia.org/wiki/Irm%C3%A3os_Wright",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Wright_first_flight.jpg/800px-Wright_first_flight.jpg"
+  },
+  "4-29": {
+    "titulo": "Alexander Fleming",
+    "texto": "Bacteriologista escocês (1881-1955) que descobriu a penicilina em 1928 ao observar que um fungo (Penicillium notatum) havia matado bactérias em uma placa de Petri deixada aberta por acidente. O primeiro antibiótico salvou dezenas de milhões de vidas — especialmente na Segunda Guerra Mundial. Ganhou o Nobel de Medicina em 1945 com Florey e Chain, que desenvolveram a produção industrial da penicilina.",
+    "link": "https://pt.wikipedia.org/wiki/Alexander_Fleming",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Sir_Alexander_Fleming.jpg/800px-Sir_Alexander_Fleming.jpg"
+  },
+  "5-6": {
+    "titulo": "Alberto Santos-Dumont",
+    "texto": "Inventor brasileiro (1873-1932) que demonstrou publicamente o primeiro voo automotor em Paris em 23 de outubro de 1906 com o 14-Bis — sem catapulta, sem vento favorável e diante de uma multidão de testemunhas credenciadas. Também inventou o relógio de pulso (para poder verificar o tempo durante voos) e o dirigível prático. Quando ficou sabendo que aviões eram usados em guerra, ficou tão abalado que se suicidou em 1932.",
+    "link": "https://pt.wikipedia.org/wiki/Alberto_Santos-Dumont",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Santos_Dumont_-_Nadar.jpg/800px-Santos_Dumont_-_Nadar.jpg"
+  },
+  "5-13": {
+    "titulo": "Guglielmo Marconi",
+    "texto": "Inventor italiano (1874-1937) que desenvolveu o sistema de telegrafia sem fio e realizou a primeira transmissão de rádio transatlântica em 1901, entre Cornwall (Inglaterra) e a Terra Nova (Canadá). Fundou a Wireless Telegraph and Signal Company. Ganhou o Nobel de Física em 1909. Seu sistema de rádio tornou possível a comunicação a distância sem cabos — base de todo rádio, TV, Wi-Fi e comunicação sem fio moderna.",
+    "link": "https://pt.wikipedia.org/wiki/Guglielmo_Marconi",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Guglielmo_Marconi.jpg/800px-Guglielmo_Marconi.jpg"
+  },
+  "5-20": {
+    "titulo": "Gregor Mendel",
+    "texto": "Monge e botânico austríaco (1822-1884) cujos experimentos com ervilhas fundaram a genética moderna. Cruzando plantas por 8 anos no jardim de seu mosteiro em Brno, descobriu as leis da herança genética: dominância, segregação e distribuição independente. Publicou seus resultados em 1865 — completamente ignorados. Redescobertos em 1900, tornaram-se a base de toda a biologia molecular, a medicina genética e a biotecnologia.",
+    "link": "https://pt.wikipedia.org/wiki/Gregor_Mendel",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Gregor_Mendel_2.jpg/800px-Gregor_Mendel_2.jpg"
+  },
+  "5-27": {
+    "titulo": "Ada Lovelace",
+    "texto": "Matemática britânica (1815-1852), filha de Lord Byron, considerada a primeira programadora de computadores da história. Colaborou com Charles Babbage na Máquina Analítica e escreveu o primeiro algoritmo planejado para ser executado por uma máquina — 100 anos antes dos computadores modernos. Percebeu que a máquina poderia ir além dos cálculos numéricos e compor música ou produzir gráficos. A linguagem de programação Ada foi nomeada em sua homenagem.",
+    "link": "https://pt.wikipedia.org/wiki/Ada_Lovelace",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Ada_Lovelace_portrait.jpg/800px-Ada_Lovelace_portrait.jpg"
+  },
+  "6-3": {
+    "titulo": "Alessandro Volta",
+    "texto": "Físico italiano (1745-1827) que inventou a pilha elétrica em 1800 — a primeira fonte de corrente elétrica contínua da história. Demonstrou que a eletricidade de Galvani nas rãs era química, não biológica. A pilha de Volta tornou possível todos os experimentos subsequentes em eletroquímica e eletromagnetismo. A unidade elétrica 'volt' foi nomeada em sua homenagem por Napoleão, que o condecorou pessoalmente.",
+    "link": "https://pt.wikipedia.org/wiki/Alessandro_Volta",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Alessandro_Volta.jpeg/800px-Alessandro_Volta.jpeg"
+  },
+  "6-10": {
+    "titulo": "William Harvey",
+    "texto": "Médico inglês (1578-1657) que descobriu a circulação sanguínea em 1628, provando que o coração bomba sangue continuamente pelo corpo em circuito fechado. Derrubou 1.400 anos de medicina galênica que acreditava que o fígado produzia sangue continuamente. Sua obra De Motu Cordis et Sanguinis fundamentou toda a fisiologia e cardiologia modernas. Causou furor na época — muitos médicos recusaram-se a acreditar nele.",
+    "link": "https://pt.wikipedia.org/wiki/William_Harvey",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/William_Harvey_%281578-1657%29_Venner_Collection.jpg/800px-William_Harvey_%281578-1657%29_Venner_Collection.jpg"
+  },
+  "6-17": {
+    "titulo": "Dmitri Mendeleiev",
+    "texto": "Químico russo (1834-1907) que criou a Tabela Periódica dos Elementos em 1869 organizando os 63 elementos então conhecidos por peso atômico e propriedades periódicas. Deixou espaços em branco para elementos ainda não descobertos — e previu com precisão as propriedades do gálio, germânio e escândio, descobertos anos depois. A tabela periódica permanece a organização mais elegante e útil de toda a química.",
+    "link": "https://pt.wikipedia.org/wiki/Dmitri_Mendeleiev",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Dmitry_Mendeleev_-_Crisco_edit.jpg/800px-Dmitry_Mendeleev_-_Crisco_edit.jpg"
+  },
+  "6-24": {
+    "titulo": "Benjamin Franklin",
+    "texto": "Polímata americano (1706-1790) — inventor, estadista, escritor e diplomata. Provou a natureza elétrica dos relâmpagos com o famoso experimento da pipa em 1752 e inventou o para-raios. Inventou também os óculos bifocais, o fogão Franklin e as nadadeiras. Como diplomata, garantiu a aliança francesa que foi decisiva para a independência americana. Fundador dos EUA e rosto da nota de 100 dólares.",
+    "link": "https://pt.wikipedia.org/wiki/Benjamin_Franklin",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/BenFranklinDuplessis.jpg/800px-BenFranklinDuplessis.jpg"
+  },
+  "7-1": {
+    "titulo": "James Clerk Maxwell",
+    "texto": "Físico escocês (1831-1879) cujas equações do eletromagnetismo unificaram eletricidade, magnetismo e luz numa única teoria. Einstein disse que Maxwell realizou 'a mudança mais profunda e fecunda na física desde Newton.' As equações de Maxwell previam a existência de ondas de rádio — confirmadas por Hertz. Também desenvolveu a teoria cinética dos gases e produziu a primeira fotografia colorida da história.",
+    "link": "https://pt.wikipedia.org/wiki/James_Clerk_Maxwell",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/James_Clerk_Maxwell.png/800px-James_Clerk_Maxwell.png"
+  },
+  "7-8": {
+    "titulo": "Max Planck",
+    "texto": "Físico alemão (1858-1947) que fundou a mecânica quântica ao propor em 1900 que a energia é emitida em pacotes discretos chamados 'quanta' — resolvendo o paradoxo da radiação de corpo negro. Einstein usou a ideia de Planck para explicar o efeito fotoelétrico. A constante de Planck (h) é uma das constantes fundamentais do universo. Ganhou o Nobel de Física em 1918. Seu filho Erwin foi executado pelos nazistas em 1944.",
+    "link": "https://pt.wikipedia.org/wiki/Max_Planck",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Bundesarchiv_Bild_183-R57262%2C_Max_Planck.jpg/800px-Bundesarchiv_Bild_183-R57262%2C_Max_Planck.jpg"
+  },
+  "7-15": {
+    "titulo": "Ernest Rutherford",
+    "texto": "Físico neozelandês-britânico (1871-1937) chamado 'o pai da física nuclear'. Descobriu que os átomos têm um núcleo denso e positivo cercado de elétrons (modelo nuclear, 1911) ao bombardear ouro com partículas alfa. Classificou a radioatividade em tipos alfa, beta e gama. Realizou a primeira transmutação artificial de elementos. Ganhou o Nobel de Química em 1908. Seus alunos ganharam 11 Nobeis adicionais.",
+    "link": "https://pt.wikipedia.org/wiki/Ernest_Rutherford",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Ernest_Rutherford_LOC.jpg/800px-Ernest_Rutherford_LOC.jpg"
+  },
+  "7-22": {
+    "titulo": "Antonie van Leeuwenhoek",
+    "texto": "Comerciante holandês autodidata (1632-1723) que aperfeiçoou o microscópio e foi o primeiro humano a observar e descrever bactérias e protozoários, em 1674 — chamando-os de 'animálculos'. Descreveu espermatozoides, glóbulos vermelhos e capilares sanguíneos. Enviou meticulosas descrições à Royal Society de Londres, tornando-se membro honorário. Abriu janela para um mundo microscópico completamente desconhecido até então.",
+    "link": "https://pt.wikipedia.org/wiki/Antonie_van_Leeuwenhoek",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Jan_Verkolje_-_Antonie_van_Leeuwenhoek.jpg/800px-Jan_Verkolje_-_Antonie_van_Leeuwenhoek.jpg"
+  },
+  "7-29": {
+    "titulo": "Charles Babbage",
+    "texto": "Matemático inglês (1791-1871) considerado o pai do computador. Projetou a Máquina Diferencial (1822) — calculadora mecânica movida a vapor — e a revolucionária Máquina Analítica (1837), que tinha os elementos essenciais de um computador moderno: memória, processador, entrada e saída de dados. Nunca completou a construção por falta de financiamento, mas suas ideias foram implementadas com sucesso por engenheiros modernos 150 anos depois.",
+    "link": "https://pt.wikipedia.org/wiki/Charles_Babbage",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Charles_Babbage_-_1860.jpg/800px-Charles_Babbage_-_1860.jpg"
+  },
+  "8-5": {
+    "titulo": "Robert Koch",
+    "texto": "Médico alemão (1843-1910) que identificou as bactérias causadoras da tuberculose (1882), do cólera (1883) e do antraz. Desenvolveu os Postulados de Koch — critérios para provar que um microrganismo causa uma doença específica, ainda usados hoje. Ganhou o Nobel de Medicina em 1905. Seus trabalhos, junto com os de Pasteur, fundaram a microbiologia médica moderna e salvaram incontáveis vidas.",
+    "link": "https://pt.wikipedia.org/wiki/Robert_Koch",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Robert_Koch.jpg/800px-Robert_Koch.jpg"
+  },
+  "8-12": {
+    "titulo": "Carl Linnaeus",
+    "texto": "Naturalista sueco (1707-1778) que criou o sistema de nomenclatura binomial (gênero + espécie) para classificar todos os seres vivos — ainda usado hoje. Sua obra Systema Naturae (1735) organizou o reino animal, vegetal e mineral. Classificou mais de 7.700 plantas e 4.400 animais. Introduziu a ordem nos estudos da natureza que tornaram possível a teoria evolutiva de Darwin um século depois.",
+    "link": "https://pt.wikipedia.org/wiki/Carlos_Lin%C3%A9u",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Carl_von_Linne%27.jpg/800px-Carl_von_Linne%27.jpg"
+  },
+  "8-19": {
+    "titulo": "Francis Crick e James Watson",
+    "texto": "Crick (1916-2004) e Watson (1928-) descobriram a estrutura de dupla hélice do DNA em 1953 usando dados de cristalografia de raios-X produzidos por Rosalind Franklin. A dupla hélice explicou como a informação genética é armazenada e copiada — fundando a biologia molecular moderna. Ganharam o Nobel de Medicina em 1962 (sem Franklin, que havia morrido em 1958). A descoberta abriu caminho para toda a biotecnologia e medicina genômica.",
+    "link": "https://pt.wikipedia.org/wiki/Francis_Crick",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Crick%2C_Watson%2C_and_Wilkins.jpg/800px-Crick%2C_Watson%2C_and_Wilkins.jpg"
+  },
+  "8-26": {
+    "titulo": "Lise Meitner",
+    "texto": "Física austríaca-sueca (1878-1968) que, junto com Otto Hahn, descobriu a fissão nuclear em 1938 — a divisão do átomo de urânio em átomos menores com liberação de energia. Meitner forneceu a explicação teórica do fenômeno, mas foi excluída do Nobel de Química de 1944 concedido apenas a Hahn, por ser mulher e judia. O elemento 109 da tabela periódica, o meitnério, foi nomeado em sua homenagem.",
+    "link": "https://pt.wikipedia.org/wiki/Lise_Meitner",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Lise_Meitner_%281878-1968%29%2C_physicist_%28headshot%29.jpg/800px-Lise_Meitner_%281878-1968%29%2C_physicist_%28headshot%29.jpg"
+  },
+  "9-2": {
+    "titulo": "Antoine Lavoisier",
+    "texto": "Químico francês (1743-1794) chamado 'pai da química moderna'. Descobriu o papel do oxigênio na combustão e respiração, refutando a teoria do flogisto. Formulou a Lei da Conservação da Massa e criou a nomenclatura química moderna. Financiou suas pesquisas sendo cobrador de impostos — o que o levou à guilhotina durante a Revolução Francesa. Um juiz declarou: 'A República não precisa de sábios.' Morreu aos 50 anos.",
+    "link": "https://pt.wikipedia.org/wiki/Antoine_Lavoisier",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Antoine_lavoisier.jpg/800px-Antoine_lavoisier.jpg"
+  },
+  "9-9": {
+    "titulo": "Wilhelm Röntgen",
+    "texto": "Físico alemão (1845-1923) que descobriu os raios X em 1895 ao observar que um tubo de raios catódicos produzia radiação desconhecida que atravessava objetos sólidos. A primeira radiografia da história foi da mão de sua esposa, mostrando os ossos. Recusou-se a patentear sua descoberta para que todos pudessem usá-la. Ganhou o primeiro Nobel de Física em 1901. Os raios X revolucionaram a medicina e a física.",
+    "link": "https://pt.wikipedia.org/wiki/Wilhelm_R%C3%B6ntgen",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Roentgen2.jpg/800px-Roentgen2.jpg"
+  },
+  "9-16": {
+    "titulo": "Blaise Pascal",
+    "texto": "Matemático, físico e filósofo francês (1623-1662). Aos 19 anos criou a primeira calculadora mecânica da história (a Pascalina) para ajudar o pai contador. Fundou a teoria das probabilidades com Fermat. Demonstrou a existência do vácuo e a pressão atmosférica. Suas contribuições à geometria projetiva, hidrodinâmica e filosofia foram enormes. A linguagem de programação Pascal e a unidade de pressão pascal foram nomeadas em sua homenagem.",
+    "link": "https://pt.wikipedia.org/wiki/Blaise_Pascal",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Blaise_Pascal_Versailles.JPG/800px-Blaise_Pascal_Versailles.JPG"
+  },
+  "9-23": {
+    "titulo": "Ivan Pavlov",
+    "texto": "Fisiologista russo (1849-1936) famoso pelo experimento do condicionamento clássico com cães: ao tocar uma campainha antes de dar comida, os cães passaram a salivar apenas com o som — reflexo condicionado. Ganhou o Nobel de Medicina em 1904 por pesquisas sobre digestão. Suas descobertas sobre aprendizagem reflexiva fundaram a psicologia comportamental e influenciaram desde terapias cognitivas até técnicas de publicidade e propaganda.",
+    "link": "https://pt.wikipedia.org/wiki/Ivan_Pavlov",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Ivan_Pavlov_NLM3.jpg/800px-Ivan_Pavlov_NLM3.jpg"
+  },
+  "9-30": {
+    "titulo": "Werner Heisenberg",
+    "texto": "Físico alemão (1901-1976) que formulou o Princípio da Incerteza (1927): é impossível conhecer simultaneamente com precisão a posição e o momento de uma partícula subatômica. Fundou a mecânica matricial — uma das formas matemáticas da mecânica quântica. Ganhou o Nobel de Física em 1932. Durante a Segunda Guerra liderou o programa nuclear nazista, que felizmente nunca produziu uma bomba. O personagem da série Breaking Bad foi nomeado em sua homenagem.",
+    "link": "https://pt.wikipedia.org/wiki/Werner_Heisenberg",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Werner_Heisenberg.jpg/800px-Werner_Heisenberg.jpg"
+  },
+  "10-7": {
+    "titulo": "Oswaldo Cruz",
+    "texto": "Médico sanitarista brasileiro (1872-1917) que erradicou a febre amarela do Rio de Janeiro em 1903-1904, tornando a cidade habitável após décadas de epidemias devastadoras. Sua campanha de vacinação obrigatória contra a varíola gerou a Revolta da Vacina (1904), mas salvou incontáveis vidas. Fundou o Instituto Oswaldo Cruz (Fiocruz), referência mundial em pesquisa médica tropical até hoje. Morreu aos 44 anos por complicações renais.",
+    "link": "https://pt.wikipedia.org/wiki/Oswaldo_Cruz",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Oswaldo_Cruz_-_Foto_Oficial.jpg/800px-Oswaldo_Cruz_-_Foto_Oficial.jpg"
+  },
+  "10-14": {
+    "titulo": "Fritz Haber",
+    "texto": "Químico alemão (1868-1934) que desenvolveu o processo Haber-Bosch de síntese de amônia a partir de nitrogênio atmosférico — possivelmente a inovação mais importante do século XX. Possibilitou a produção em massa de fertilizantes nitrogenados que alimentam metade da humanidade hoje. Paradoxo: o mesmo Haber desenvolveu armas químicas de gás cloro e gás mostarda usadas na Primeira Guerra, matando 100 mil soldados. Ganhou o Nobel em 1918.",
+    "link": "https://pt.wikipedia.org/wiki/Fritz_Haber",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Fritz_Haber.png/800px-Fritz_Haber.png"
+  },
+  "10-21": {
+    "titulo": "Edward Jenner",
+    "texto": "Médico inglês (1749-1823) que desenvolveu a primeira vacina da história em 1796 — contra a varíola. Observou que ordenhadores imunes à varíola haviam contraído varíola bovina (mais branda). Inoculou o menino James Phipps com cowpox e depois expôs ao vírus da varíola — ele ficou imune. A vacinação generalizou-se mundialmente e a varíola foi erradicada em 1980 — única doença humana completamente eliminada da natureza.",
+    "link": "https://pt.wikipedia.org/wiki/Edward_Jenner",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Edward_Jenner.jpg/800px-Edward_Jenner.jpg"
+  },
+  "10-28": {
+    "titulo": "Sigmund Freud",
+    "texto": "Neurologista austríaco (1856-1939) fundador da psicanálise. Desenvolveu conceitos revolucionários: inconsciente, id/ego/superego, complexo de Édipo, mecanismos de defesa, interpretação dos sonhos. Suas teorias transformaram a psicologia, a psiquiatria, a literatura, o cinema e a cultura ocidental do século XX. Embora muitas hipóteses específicas de Freud não tenham resistido ao escrutínio científico, sua contribuição para a compreensão da mente humana foi imensa e permanente.",
+    "link": "https://pt.wikipedia.org/wiki/Sigmund_Freud",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Sigmund_Freud%2C_by_Max_Halberstadt_%281921%29.jpg/800px-Sigmund_Freud%2C_by_Max_Halberstadt_%281921%29.jpg"
+  },
+  "11-4": {
+    "titulo": "Christiaan Huygens",
+    "texto": "Matemático, físico e astrônomo holandês (1629-1695). Descobriu a lua Titã de Saturno e identificou os anéis de Saturno corretamente. Inventou o relógio de pêndulo (1656) — por mais de 300 anos o instrumento de medição de tempo mais preciso. Desenvolveu a teoria ondulatória da luz. Seus trabalhos em probabilidade, ótica e mecânica foram fundamentais para Newton e para toda a física clássica.",
+    "link": "https://pt.wikipedia.org/wiki/Christiaan_Huygens",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Christiaan_Huygens-painting.jpeg/800px-Christiaan_Huygens-painting.jpeg"
+  },
+  "11-11": {
+    "titulo": "Wernher von Braun",
+    "texto": "Engenheiro aeroespacial alemão-americano (1912-1977) que desenvolveu o foguete V-2 para a Alemanha nazista e depois liderou o programa espacial americano. Seu foguete Saturno V levou o homem à Lua na missão Apollo 11 em 1969 — o maior foguete já construído. Trouxido pelos EUA na Operação Paperclip após a guerra, foi diretor técnico da NASA até 1972. É considerado o pai da exploração espacial moderna.",
+    "link": "https://pt.wikipedia.org/wiki/Wernher_von_Braun",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Wernher_von_Braun_1960.jpg/800px-Wernher_von_Braun_1960.jpg"
+  },
+  "11-18": {
+    "titulo": "Tim Berners-Lee",
+    "texto": "Cientista da computação britânico (1955-) que inventou a World Wide Web em 1989 trabalhando no CERN, Genebra. Criou o HTTP (protocolo de transferência), o HTML (linguagem de marcação) e o primeiro servidor web. Recusou-se a patentear a Web, tornando-a disponível para todos gratuitamente. Sem essa decisão, a internet seria fragmentada em redes proprietárias incompatíveis. Fundou o W3C para padronizar a Web. Recebeu o Prêmio Turing em 2016.",
+    "link": "https://pt.wikipedia.org/wiki/Tim_Berners-Lee",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Tim_Berners-Lee_2012.jpg/800px-Tim_Berners-Lee_2012.jpg"
+  },
+  "11-25": {
+    "titulo": "Rosalind Franklin",
+    "texto": "Química e cristalógrafa britânica (1920-1958) cujos dados de raios-X foram fundamentais para descoberta da estrutura do DNA. Sua 'Foto 51' — a melhor imagem de raios-X do DNA já obtida — foi mostrada a Watson e Crick sem seu conhecimento pelo colega Wilkins. Watson e Crick usaram os dados para construir o modelo da dupla hélice e ganharam o Nobel em 1962 sem creditar Franklin, que havia morrido de câncer quatro anos antes.",
+    "link": "https://pt.wikipedia.org/wiki/Rosalind_Franklin",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Rosalind_Franklin.jpg/800px-Rosalind_Franklin.jpg"
+  },
+  "12-2": {
+    "titulo": "Robert Boyle",
+    "texto": "Químico e físico irlandês-britânico (1627-1691) considerado o fundador da química moderna como ciência. Formulou a Lei de Boyle (1662): a pressão e o volume de um gás são inversamente proporcionais a temperatura constante. Separou a química da alquimia ao exigir evidências experimentais. Foi um dos fundadores da Royal Society. Seus experimentos com a bomba de ar demonstraram a existência e pressão do ar.",
+    "link": "https://pt.wikipedia.org/wiki/Robert_Boyle",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Robert_Boyle_0001.jpg/800px-Robert_Boyle_0001.jpg"
+  },
+  "12-9": {
+    "titulo": "Frederick Banting",
+    "texto": "Médico canadense (1891-1941) que descobriu a insulina em 1921 junto com Charles Best — salvando a vida de milhões de diabéticos que antes morriam em poucos meses após o diagnóstico. O primeiro paciente tratado, Leonard Thompson (14 anos), estava à beira da morte em coma diabético quando recebeu a injeção. Ganhou o Nobel de Medicina em 1923. Doou sua parte da patente à Universidade de Toronto por 1 dólar para que a insulina fosse acessível a todos.",
+    "link": "https://pt.wikipedia.org/wiki/Frederick_Banting",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Frederick_Banting_-_National_Galleries_of_Scotland.jpg/800px-Frederick_Banting_-_National_Galleries_of_Scotland.jpg"
+  },
+  "12-16": {
+    "titulo": "Euclides",
+    "texto": "Matemático grego (c.300 a.C.) de Alexandria cujos 13 livros de Os Elementos sistematizaram toda a geometria conhecida a partir de 5 postulados simples. Os Elementos foi o livro mais publicado depois da Bíblia — usado como livro escolar de matemática por 2.000 anos. A geometria euclidiana permanece a base de toda a engenharia, arquitetura e física clássica. Lincoln disse que releu os Elementos para aprender a raciocinar.",
+    "link": "https://pt.wikipedia.org/wiki/Euclides",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Euklid-von-Alexandria_1.jpg/800px-Euklid-von-Alexandria_1.jpg"
+  },
+  "12-23": {
+    "titulo": "Hippocrates",
+    "texto": "Médico grego (c.460-370 a.C.) da ilha de Cós, considerado o 'pai da medicina ocidental'. Separou a medicina da superstição religiosa ao insistir que as doenças têm causas naturais — não punições divinas. Desenvolveu a observação clínica sistemática, o histórico do paciente e a ética médica. O Juramento de Hipócrates ('primum non nocere' — primeiro, não causar dano) é prestado por médicos até hoje, 2.400 anos depois.",
+    "link": "https://pt.wikipedia.org/wiki/Hip%C3%B3crates",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Hippocrates_rubens.jpg/800px-Hippocrates_rubens.jpg"
+  }
+}

@@ -253,7 +253,7 @@
     "terra_natal": "Günzburg, Império Germânico",
     "nascimento": "16/3/1911",
     "morte": "7/2/1979",
-    "texto": "+ Caça aos Nazistas: a aposentadoria de Mengele escondido no Brasil"
+    "texto": "Médico da SS nazista, ficou conhecido como o 'Anjo da Morte' de Auschwitz. Realizava experimentos pseudocientíficos em prisioneiros — especialmente em gêmeos —, sem anestesia: cirurgias, injeções nos olhos para alterar a cor da íris, amputações, infecções forçadas com doenças letais. Selecionava pessoalmente quem ia para as câmaras de gás ao desembarcar dos trens. Fugiu para a América do Sul após a guerra, viveu décadas no Brasil e no Paraguai sem jamais ser julgado, e morreu afogado numa praia em São Paulo em 1979."
   },
   {
     "posicao": 33,
@@ -269,7 +269,7 @@
     "terra_natal": "Munique, Alemanha",
     "nascimento": "7/10/1900",
     "morte": "23/5/1945",
-    "texto": "+ Como funcionavam as câmaras de gás dos campos de concentração nazistas?"
+    "texto": "Chefe da SS e principal arquiteto do Holocausto. Supervisionou a criação e operação de campos de concentração e extermínio onde 6 milhões de judeus foram sistematicamente assassinados, além de poloneses, ciganos, prisioneiros soviéticos e deficientes. Era obcecado com misticismo nórdico e pureza racial ariana. Capturado pelos britânicos em 1945 disfarçado de policial comum, suicidou-se mordendo uma cápsula de cianeto antes de ser levado a Nuremberg."
   },
   {
     "posicao": 35,
@@ -398,6 +398,246 @@
     "terra_natal": "Sighisoara, antiga Transilvânia",
     "nascimento": "1431",
     "morte": "Entre dezembro de 1476 e janeiro de 1477",
-    "texto": "A sanguinolência desse rei da Valáquia (atual Romênia) inspirou Bram Stoker a criar Drácula. Para intimidar os vizinhos de seu reino, empalava (atravessava com uma estaca) seus inimigos. Em certa ocasião, convidou um grupo de nobres opositores para jantar e, depois da refeição, empalou todos eles\nFONTES\nLivros\nTimelines of History\n, vários autores,\nMilitary History: The Definitive Visual Guide to the Objects of Warfare\n, vários autores,\n2012 Enciclopedia Britannica\ne\nMicrosoft Encarta\n,\nReuters, Forbes, BBC\ne\nNational Geographic\nPublicidade\nMais lidas\n1\nCiência\nAnomalia magnética está ficando maior\n2\nCiência\n3I/ATLAS: objeto interestelar se aproxima da Terra e é fotografado por telescópio Hubble; veja\n3\nSaúde\nChip em estudo restaura visão de pessoas com degeneração causada pela idade\n4\nCiência\nHisashi Ouchi e o balde de urânio\n5\nCiência\nGatos miam duas vezes mais para tutores homens, aponta pesquisa.\nTAGS:\nAdolf Hitler\nátila\naugusto pinochet\nCrimes\nditador\nherodes\nJosef Stálin\nMundo Estranho\nNapoleão Bonaparte\nterrorista\nvilão"
+    "texto": "A sanguinolência desse rei da Valáquia (atual Romênia) inspirou Bram Stoker a criar Drácula. Para intimidar os vizinhos de seu reino, empalava (atravessava com uma estaca) seus inimigos. Em certa ocasião, convidou um grupo de nobres opositores para jantar e, depois da refeição, empalou todos eles."
+  },
+  {
+    "posicao": 51,
+    "nome": "KIM JONG-UN",
+    "terra_natal": "Pyongyang, Coreia do Norte",
+    "nascimento": "8/1/1984",
+    "morte": "Ainda vivo",
+    "texto": "Filho de Kim Jong-il, governa a Coreia do Norte desde 2011. Executou seu próprio tio Jang Song-thaek em 2013 na frente de outros oficiais, e mandou assassinar seu irmão Kim Jong-nam com gás nervoso VX num aeroporto da Malásia em 2017. Mantém entre 80 e 120 mil pessoas em campos de reeducação. Desenvolveu mísseis balísticos intercontinentais e testou armas nucleares em desafio à comunidade internacional."
+  },
+  {
+    "posicao": 52,
+    "nome": "RAFAEL TRUJILLO",
+    "terra_natal": "San Cristóbal, República Dominicana",
+    "nascimento": "24/10/1891",
+    "morte": "30/5/1961",
+    "texto": "Ditador da República Dominicana por 31 anos. Em 1937, ordenou o Massacre do Perejil — assassinato de 20 a 30 mil haitianos usando a pronúncia da palavra 'perejil' para identificar estrangeiros. Acumulou 65% da terra arável do país enquanto o povo vivia na miséria. Criou uma rede de espionagem que eliminava opositores no exterior. Foi assassinado em emboscada em 1961, possivelmente com apoio da CIA."
+  },
+  {
+    "posicao": 53,
+    "nome": "ENVER HOXHA",
+    "terra_natal": "Gjirokastër, Albânia",
+    "nascimento": "16/10/1908",
+    "morte": "11/4/1985",
+    "texto": "Ditador stalinista albanês (1944-1985). Isolou a Albânia completamente do mundo — proibiu religião (declarando o país oficialmente ateu em 1967), turismo, carros particulares e contato com estrangeiros. Executou ou encarcerou dezenas de milhares de opositores. Construiu 700 mil bunkers de concreto por toda a Albânia em paranoica preparação para uma invasão que nunca aconteceu."
+  },
+  {
+    "posicao": 54,
+    "nome": "FRANCISCO SOLANO LÓPEZ",
+    "terra_natal": "Assunção, Paraguai",
+    "nascimento": "24/7/1827",
+    "morte": "1/3/1870",
+    "texto": "Ditador paraguaio que arrastou o país para a Guerra da Tríplice Aliança (1864-1870) contra Brasil, Argentina e Uruguai. Ao fim, 60 a 70% da população paraguaia havia morrido, incluindo quase todos os homens adultos. Mandou executar seu próprio irmão e cunhadas acusados de conspiração. Morreu em combate recusando-se a se render — destruiu o Paraguai por pura teimosia."
+  },
+  {
+    "posicao": 55,
+    "nome": "BASHAR AL-ASSAD",
+    "terra_natal": "Damasco, Síria",
+    "nascimento": "11/9/1965",
+    "morte": "Ainda vivo",
+    "texto": "Presidente da Síria desde 2000. Quando protestos pacíficos eclodiram em 2011, respondeu com tanques e prisões. A repressão transformou-se em guerra civil catastrófica: mais de 500 mil mortos e 13 milhões de deslocados — metade da população síria. Usou armas químicas (gás sarín) contra civis em crimes documentados pela ONU. Fugiu para a Rússia em dezembro de 2024 após colapso de seu regime."
+  },
+  {
+    "posicao": 56,
+    "nome": "JEAN-BÉDEL BOKASSA",
+    "terra_natal": "Bobangui, República Centro-Africana",
+    "nascimento": "22/2/1921",
+    "morte": "3/11/1996",
+    "texto": "Autoproclamado Imperador da República Centro-Africana (1976-1979). Gastou um terço do orçamento nacional em sua cerimônia de coroação inspirada em Napoleão. Em 1979, ordenou o massacre de estudantes que protestavam contra o uso obrigatório de uniformes escolares caros — crianças foram mortas por sua própria guarda. Acusado de participar pessoalmente dos assassinatos. Deposto com ajuda militar da França."
+  },
+  {
+    "posicao": 57,
+    "nome": "MENGISTU HAILE MARIAM",
+    "terra_natal": "Etiópia",
+    "nascimento": "1937",
+    "morte": "Ainda vivo",
+    "texto": "Liderou a junta militar etíope Derg (1974-1991). O 'Terror Vermelho' eliminou entre 30 mil e 500 mil opositores. A coletivização forçada de terras agravou a grande fome de 1983-85, que matou até 1 milhão de etíopes. Fugiu para o Zimbábue onde Robert Mugabe o protegeu até hoje. Condenado à morte por genocídio pela Etiópia em 2006, nunca foi extraditado."
+  },
+  {
+    "posicao": 58,
+    "nome": "NICOLAE CEAUȘESCU",
+    "terra_natal": "Scornicești, Romênia",
+    "nascimento": "26/1/1918",
+    "morte": "25/12/1989",
+    "texto": "Ditador da Romênia (1965-1989). Proibiu anticoncepção e aborto, gerando gerações de crianças abandonadas em orfanatos miseráveis. Enquanto o povo passava fome e frio, construía o segundo maior edifício do mundo para si mesmo. Criou culto à personalidade extremo. Capturado na Revolução de 1989, foi julgado em tribunal sumário de 2 horas e fuzilado com sua esposa no próprio Natal."
+  },
+  {
+    "posicao": 59,
+    "nome": "FRANÇOIS DUVALIER (PAPA DOC)",
+    "terra_natal": "Porto Príncipe, Haiti",
+    "nascimento": "14/4/1907",
+    "morte": "21/4/1971",
+    "texto": "Ditador do Haiti (1957-1971). Criou os Tonton Macoutes — milícia paramilitar que aterrorizava a população com assassinatos, torturas e extorsão. Declarou-se presidente vitalício e se autoproclamou reencarnação do deus vodu Baron Samedi. Estima-se que 30 a 60 mil haitianos foram mortos durante seu regime. Passou o poder ao filho Jean-Claude ('Baby Doc'), perpetuando o terror por mais 15 anos."
+  },
+  {
+    "posicao": 60,
+    "nome": "SUHARTO",
+    "terra_natal": "Godean, Java, Indonésia",
+    "nascimento": "8/6/1921",
+    "morte": "27/1/2008",
+    "texto": "General que governou a Indonésia de 1967 a 1998. Sua ascensão ao poder foi marcada pelo massacre de 500 mil a 1 milhão de comunistas (reais e supostos) em 1965-66. Ocupou militarmente o Timor Leste em 1975 e matou um terço da população (200 mil pessoas). Durante seu governo acumulou entre 15 e 35 bilhões de dólares em corrupção — um dos maiores registros da história mundial."
+  },
+  {
+    "posicao": 61,
+    "nome": "HERNÁN CORTÉS",
+    "terra_natal": "Medellín, Espanha",
+    "nascimento": "1485",
+    "morte": "2/12/1547",
+    "texto": "Conquistador espanhol que destruiu o Império Asteca com apenas 500 homens entre 1519 e 1521. Aproveitou alianças com povos inimigos dos astecas e a devastação da varíola — que matou metade da população indígena — para derrubar um império de 25 milhões de pessoas. Tenochtitlan foi destruída e reconstruída como Cidade do México. Inaugurou séculos de colonialismo brutal nas Américas."
+  },
+  {
+    "posicao": 62,
+    "nome": "YAHYA KHAN",
+    "terra_natal": "Peshawar, Índia Britânica",
+    "nascimento": "4/2/1917",
+    "morte": "8/8/1980",
+    "texto": "General paquistanês que ordenou o genocídio do Bangladesh em 1971. Quando o Bangladesh declarou independência, suas forças assassinaram entre 300 mil e 3 milhões de civis. Mulheres foram sistematicamente estupradas como arma de guerra — estimam-se 200 a 400 mil vítimas. O conflito criou 10 milhões de refugiados. A carnificina só terminou com a intervenção militar da Índia."
+  },
+  {
+    "posicao": 63,
+    "nome": "ANTE PAVELIĆ",
+    "terra_natal": "Bradina, Bósnia, Império Austro-Húngaro",
+    "nascimento": "14/7/1889",
+    "morte": "28/12/1959",
+    "texto": "Líder do movimento fascista croata Ustaše. Durante a Segunda Guerra Mundial, seu Estado Independente da Croácia massacrou entre 300 mil e 700 mil sérvios, judeus e ciganos. Os campos de concentração croatas, como Jasenovac, eram tão bárbaros que chocaram os próprios nazistas alemães. Fugiu para a Argentina após a guerra com ajuda da Igreja Católica e morreu impune na Espanha."
+  },
+  {
+    "posicao": 64,
+    "nome": "SHIRŌ ISHII",
+    "terra_natal": "Chiyoda, Japão",
+    "nascimento": "25/6/1892",
+    "morte": "9/10/1959",
+    "texto": "Médico militar japonês que chefiou a Unidade 731, laboratório secreto de armas biológicas na Manchúria (1936-1945). Realizou experimentos em prisioneiros vivos — chineses, russos, coreanos — sem anestesia: infecções com peste, cólera e tifo, frostbite forçado, vivisecções. Estima-se 3 mil mortos nos experimentos. Recebeu imunidade total dos EUA em troca de seus dados científicos após a guerra."
+  },
+  {
+    "posicao": 65,
+    "nome": "ABU BAKR AL-BAGHDADI",
+    "terra_natal": "Samarra, Iraque",
+    "nascimento": "28/7/1971",
+    "morte": "26/10/2019",
+    "texto": "Fundador e líder do Estado Islâmico (ISIS), proclamou um 'califado' sobre vastos territórios na Síria e no Iraque em 2014. Seu grupo executou milhares, escravizou mulheres yazidis, destruiu patrimônio histórico milenar e realizou ataques terroristas em 30 países. Morreu acionando um colete explosivo durante uma operação especial das forças americanas no noroeste da Síria."
+  },
+  {
+    "posicao": 66,
+    "nome": "HENDRIK VERWOERD",
+    "terra_natal": "Amsterdã, Holanda",
+    "nascimento": "8/9/1901",
+    "morte": "6/9/1966",
+    "texto": "Primeiro-ministro da África do Sul (1958-1966), considerado o 'arquiteto do apartheid'. Institucionalizou a segregação racial total: leis que separavam brancos e negros em escolas, hospitais, bairros e transportes. Criou os 'bantustões' — reservas miseráveis para confinamento da população negra. Foi assassinado a facadas no Parlamento por um mestiço em 1966."
+  },
+  {
+    "posicao": 67,
+    "nome": "MURAD IV",
+    "terra_natal": "Constantinopla, Império Otomano",
+    "nascimento": "27/7/1612",
+    "morte": "8/2/1640",
+    "texto": "Sultão otomano (1623-1640) famoso por sua crueldade pessoal. Proibiu café, tabaco e álcool em Istambul sob pena de morte — e cumpria a sentença com suas próprias mãos, decapitando pessoas aleatoriamente à noite disfarçado de civil. Estimam-se 25 mil execuções durante seu reinado. Sua campanha contra a Pérsia foi marcada por massacres em série, incluindo a destruição da cidade de Hamadan."
+  },
+  {
+    "posicao": 68,
+    "nome": "RICHARD III DA INGLATERRA",
+    "terra_natal": "Fotheringhay, Inglaterra",
+    "nascimento": "2/10/1452",
+    "morte": "22/8/1485",
+    "texto": "Rei da Inglaterra (1483-1485), amplamente suspeito de ter mandado assassinar seus dois sobrinhos — Eduardo V e Ricardo, Duque de York ('os Príncipes da Torre') — para usurpar o trono. A peça de Shakespeare o imortalizou como o vilão deformado e maquiavélico por excelência. Foi o último rei inglês a morrer em combate — na Batalha de Bosworth Field em 1485."
+  },
+  {
+    "posicao": 69,
+    "nome": "ENVER PASHA",
+    "terra_natal": "Istambul, Império Otomano",
+    "nascimento": "22/11/1881",
+    "morte": "4/8/1922",
+    "texto": "Ministro da Guerra do Império Otomano durante a Primeira Guerra Mundial. Uma das principais figuras do Genocídio Armênio (1915-1923), que matou entre 600 mil e 1,5 milhão de armênios por deportações em massa, massacres e fome forçada. A Turquia nega até hoje o genocídio. Enver foi assassinado por um agente soviético-armênio durante a guerra civil na Ásia Central em 1922."
+  },
+  {
+    "posicao": 70,
+    "nome": "ALEXANDER LUKASHENKO",
+    "terra_natal": "Kopys, Bielorrússia, URSS",
+    "nascimento": "30/8/1954",
+    "morte": "Ainda vivo",
+    "texto": "Ditador da Belarus desde 1994 — o mais longevo da Europa. Após fraudar as eleições de 2020, desencadeou violência brutal contra manifestantes: milhares presos e torturados. Forçou um avião da Ryanair a pousar em Minsk para prender um jornalista opositor. Aliou a Belarus à Rússia de Putin, permitindo que tropas russas usassem seu território para invadir a Ucrânia em 2022."
+  },
+  {
+    "posicao": 71,
+    "nome": "MOBUTU SESE SEKO",
+    "terra_natal": "Lisala, Congo Belga",
+    "nascimento": "14/10/1930",
+    "morte": "7/9/1997",
+    "texto": "Governou o Congo/Zaire por 32 anos (1965-1997), acumulando até 5 bilhões de dólares em contas estrangeiras enquanto o povo morria de fome num dos países mais ricos em recursos minerais do mundo. Rebatizou-se com um nome que significa 'guerreiro que avança de vitória em vitória sem que nenhum obstáculo possa deter-lhe'. Símbolo máximo da cleptocracia africana."
+  },
+  {
+    "posicao": 72,
+    "nome": "PHILIPPE PÉTAIN",
+    "terra_natal": "Cauchy-à-la-Tour, França",
+    "nascimento": "24/4/1856",
+    "morte": "23/7/1951",
+    "texto": "Herói da Primeira Guerra Mundial que se tornou chefe de Estado colaboracionista da França de Vichy (1940-1944). Colaborou voluntariamente com a ocupação nazista, deportando 77 mil judeus franceses para campos de extermínio. Perseguiu resistentes, comunistas e estrangeiros. Condenado à morte após a guerra — pena comutada para prisão perpétua por De Gaulle em respeito aos seus feitos de 1918."
+  },
+  {
+    "posicao": 73,
+    "nome": "HIDEKI TOJO",
+    "terra_natal": "Tóquio, Japão",
+    "nascimento": "30/12/1884",
+    "morte": "23/12/1948",
+    "texto": "General e primeiro-ministro do Japão durante a Segunda Guerra Mundial (1941-1944). Supervisionou a expansão imperial japonesa marcada por atrocidades: experimentos em prisioneiros (Unidade 731), trabalhos forçados, escravidão sexual ('mulheres de conforto'). Responsável pela decisão de atacar Pearl Harbor. Julgado e enforcado por crimes de guerra em 1948."
+  },
+  {
+    "posicao": 74,
+    "nome": "CHARLES TAYLOR",
+    "terra_natal": "Arthington, Libéria",
+    "nascimento": "28/1/1948",
+    "morte": "Ainda vivo",
+    "texto": "Senhor da guerra e presidente da Libéria (1997-2003). Financiou a guerra civil de Serra Leoa onde rebeldes amputavam membros de civis — incluindo crianças — como tática de terror sistemático. A guerra destruiu ambos os países e matou 250 mil pessoas. Condenado em 2012 pelo Tribunal Especial da ONU — primeiro ex-chefe de Estado condenado por tribunal internacional desde Nuremberg."
+  },
+  {
+    "posicao": 75,
+    "nome": "RATKO MLADIĆ",
+    "terra_natal": "Božanovići, Iugoslávia",
+    "nascimento": "12/3/1943",
+    "morte": "Ainda vivo",
+    "texto": "General sérvio-bósnio apelidado de 'Açougueiro dos Bálcãs'. Em julho de 1995, ordenou o Massacre de Srebrenica — assassinato sistemático de 8 mil homens e meninos muçulmanos em apenas 5 dias. Foi a maior atrocidade na Europa desde o Holocausto. Ficou foragido por 16 anos antes de ser capturado em 2011. Condenado à prisão perpétua pelo Tribunal Penal Internacional."
+  },
+  {
+    "posicao": 76,
+    "nome": "HERMANN GÖRING",
+    "terra_natal": "Rosenheim, Alemanha",
+    "nascimento": "12/1/1893",
+    "morte": "15/10/1946",
+    "texto": "Fundador da Gestapo e braço direito de Hitler — o segundo homem mais poderoso do Reich. Responsável pela Luftwaffe que bombardeou cidades civis: Guernica, Coventry, Londres. Coordenou com Himmler e Heydrich o extermínio dos judeus europeus. Condenado à morte em Nuremberg, suicidou-se engolindo cianeto horas antes da execução, frustando a forca."
+  },
+  {
+    "posicao": 77,
+    "nome": "SAPARMURAT NIYAZOV",
+    "terra_natal": "Kipchak, Turcomenistão, URSS",
+    "nascimento": "19/2/1940",
+    "morte": "21/12/2006",
+    "texto": "Presidente vitalício do Turcomenistão (1990-2006), autodenominado 'Turkmenbashi' (Pai de Todos). Renomeou meses do calendário com seu próprio nome e o da sua mãe, construiu uma estátua de ouro giratória de si mesmo em Ashgabat, proibiu ópera, circo e balé. Também proibiu médicos de usar o juramento de Hipócrates — substituído por um juramento pessoal a ele."
+  },
+  {
+    "posicao": 78,
+    "nome": "FRANCISCO MACÍAS NGUEMA",
+    "terra_natal": "Nsegayong, Guiné Espanhola",
+    "nascimento": "1/1/1924",
+    "morte": "29/9/1979",
+    "texto": "Primeiro presidente da Guiné Equatorial (1968-1979). Autoproclamou-se 'Único Milagre'. Fechou todas as bibliotecas do país, proibiu o uso da palavra 'intelectual' e mandou matar os médicos — o único hospital ficou sem nenhum. Executou cerca de um terço da população — 80 mil pessoas. Foi deposto e fuzilado pelo próprio sobrinho, Teodoro Obiang, que governa o país até hoje."
+  },
+  {
+    "posicao": 79,
+    "nome": "ISLAM KARIMOV",
+    "terra_natal": "Samarcanda, Uzbequistão, URSS",
+    "nascimento": "30/1/1938",
+    "morte": "2/9/2016",
+    "texto": "Presidente do Uzbequistão (1991-2016). Manteve um dos regimes mais repressivos da Ásia Central: tortura sistemática, trabalho infantil forçado nas colheitas de algodão, oposição completamente esmagada. Em 2005, mandou fuzilar centenas de manifestantes em Andijan. Acusações de que prisioneiros foram fervidos vivos nunca foram investigadas. Governou com mão de ferro até sua morte."
+  },
+  {
+    "posicao": 80,
+    "nome": "YAHYA JAMMEH",
+    "terra_natal": "Kanilai, Gâmbia",
+    "nascimento": "25/5/1965",
+    "morte": "Ainda vivo",
+    "texto": "Presidente da Gâmbia (1994-2017). Declarou que poderia curar AIDS com uma poção de ervas, impôs conversões forçadas ao islamismo e ameaçou decapitar homossexuais publicamente. Seu regime sequestrou, torturou e desapareceu com centenas de opositores. Fugiu para exílio na Guiné Equatorial em 2017 levando centenas de milhões de dólares dos cofres públicos."
   }
 ]

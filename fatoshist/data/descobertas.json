@@ -1,0 +1,314 @@
+{
+  "1-1": {
+    "titulo": "Invenção da Escrita Cuneiforme",
+    "texto": "Por volta de 3.500 a.C., os sumérios da Mesopotâmia (atual Iraque) inventaram a escrita cuneiforme — símbolos em forma de cunha pressionados em tábulas de argila. Inicialmente usada para registrar transações comerciais e tributos, evoluiu para registrar leis, literatura e história. Sem escrita, a transmissão de conhecimento entre gerações seria impossível — não existiriam ciência, história, lei ou literatura. É a invenção que separa a pré-história da história.",
+    "link": "https://pt.wikipedia.org/wiki/Escrita_cuneiforme",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Cuneiform_script2.jpg/800px-Cuneiform_script2.jpg"
+  },
+  "1-8": {
+    "titulo": "A Roda",
+    "texto": "Inventada por volta de 3.500 a.C. na Mesopotâmia — primeiro como disco giratório para cerâmica, depois adaptada para transporte em veículos puxados por animais. A roda transformou o comércio, a agricultura e a guerra. Civilizações sem ela — como os povos das Américas pré-colombianas — desenvolveram-se em desvantagem significativa. Simples como parece, a roda requer metalurgia (para o eixo), carpintaria avançada e conceito geométrico abstrato para ser inventada.",
+    "link": "https://pt.wikipedia.org/wiki/Roda",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Roue_primitive.png/800px-Roue_primitive.png"
+  },
+  "1-15": {
+    "titulo": "O Alfabeto Fenício",
+    "texto": "Por volta de 1.050 a.C., os fenícios do Mediterrâneo oriental desenvolveram o primeiro alfabeto da história — 22 letras consonantais que representavam sons, não ideias ou sílabas. Os gregos adaptaram-no adicionando vogais (~800 a.C.), criando o primeiro alfabeto completo. O alfabeto latino (que você usa agora), o árabe, o hebraico e o cirílico derivam todos do fenício. A criação do alfabeto democratizou a escrita — tornou-a acessível a qualquer pessoa, não apenas escribas treinados.",
+    "link": "https://pt.wikipedia.org/wiki/Alfabeto_fen%C3%ADcio",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/PhoenicianB.svg/800px-PhoenicianB.svg"
+  },
+  "1-22": {
+    "titulo": "Geometria de Euclides",
+    "texto": "Por volta de 300 a.C., Euclides de Alexandria sistematizou toda a geometria em 13 livros (Os Elementos) a partir de apenas 5 postulados simples. A geometria euclidiana foi o livro de matemática mais usado por 2.000 anos — Abraham Lincoln o releu do começo ao fim para aprender a raciocinar com clareza. Está na base de toda arquitetura, engenharia, astronomia e física clássica. Newton a usou para formular suas leis. É o sistema matemático mais verificado da história.",
+    "link": "https://pt.wikipedia.org/wiki/Elementos_%28Euclides%29",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Euklid-von-Alexandria_1.jpg/800px-Euklid-von-Alexandria_1.jpg"
+  },
+  "1-29": {
+    "titulo": "Bússola Magnética",
+    "texto": "Inventada pelos chineses durante a Dinastia Han (c.200 a.C.) para fins de geomancia (feng shui), a bússola foi adaptada para navegação marítima por volta do século XI. Os árabes a transmitiram aos europeus, que a usaram nas Grandes Navegações. Sem a bússola, Colombo não chegaria às Américas (1492), nem Vasco da Gama contornaria a África (1498), nem Fernão de Magalhães circum-navegaria o globo (1519-22). A bússola tornou possível a globalização.",
+    "link": "https://pt.wikipedia.org/wiki/B%C3%BAssola",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Simple_compass.jpg/800px-Simple_compass.jpg"
+  },
+  "2-5": {
+    "titulo": "Pólvora",
+    "texto": "Inventada pelos alquimistas chineses em busca do elixir da imortalidade (c.850 d.C.), a pólvora — mistura de salitre, carvão e enxofre — transformou completamente a guerra. Chegou à Europa no século XIII através dos árabes. Canhões tornaram os castelos medievais obsoletos; armas de fogo substituíram a cavalaria pesada; e a pólvora acelerou o colapso da estrutura feudal europeia. Também tornou possível a mineração em larga escala, que financiou a Revolução Industrial.",
+    "link": "https://pt.wikipedia.org/wiki/P%C3%B3lvora",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Saltpeter_and_Sulfur.jpg/800px-Saltpeter_and_Sulfur.jpg"
+  },
+  "2-12": {
+    "titulo": "Imprensa de Gutenberg",
+    "texto": "Johannes Gutenberg inventou a prensa de tipos móveis metálicos em Mainz, Alemanha, por volta de 1440. A Bíblia de Gutenberg (1455) foi o primeiro livro impresso em escala. Em 50 anos, havia mais de 1.000 tipografias na Europa e 15 milhões de livros impressos — mais do que em mil anos de scribes. A imprensa democratizou o conhecimento, possibilitou a Reforma Protestante, acelerou a Revolução Científica e fundou o jornalismo. A internet do século XV.",
+    "link": "https://pt.wikipedia.org/wiki/Imprensa_de_Gutenberg",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Fust_and_Schoeffer.jpg/800px-Fust_and_Schoeffer.jpg"
+  },
+  "2-19": {
+    "titulo": "Heliocentrismo de Copérnico",
+    "texto": "Em 1543, Nicolau Copérnico publicou De revolutionibus orbium coelestium propondo que o Sol, não a Terra, estava no centro do sistema solar. Derrubou 1.400 anos de modelo ptolomaico apoiado pela Igreja. Galileu confirmou o heliocentrismo com telescópio e foi condenado pela Inquisição. Kepler descobriu que as órbitas eram elípticas; Newton explicou a força que as governava. A 'Revolução Copernicana' tornou-se metáfora para qualquer mudança radical de perspectiva.",
+    "link": "https://pt.wikipedia.org/wiki/Heliocentrismo",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Heliocentric.jpg/800px-Heliocentric.jpg"
+  },
+  "2-26": {
+    "titulo": "Circulação Sanguínea (Harvey)",
+    "texto": "Em 1628, o médico inglês William Harvey publicou De Motu Cordis et Sanguinis, provando que o coração bombeia sangue em circuito fechado pelo corpo — derrubando 1.400 anos de medicina galênica, que acreditava que o fígado produzia sangue continuamente. Harvey realizou experimentos quantitativos rigorosos — calculou que em meia hora o coração bombearia mais sangue do que o peso corporal total. Sua descoberta fundou a fisiologia moderna e abriu caminho para toda a cardiologia.",
+    "link": "https://pt.wikipedia.org/wiki/Circula%C3%A7%C3%A3o_sangu%C3%ADnea",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/William_Harvey_%281578-1657%29_Venner_Collection.jpg/800px-William_Harvey_%281578-1657%29_Venner_Collection.jpg"
+  },
+  "3-4": {
+    "titulo": "Lei da Gravitação Universal",
+    "texto": "Em 1687, Isaac Newton publicou os Principia Mathematica com a Lei da Gravitação Universal: todo objeto com massa atrai qualquer outro objeto com massa, com força proporcional ao produto das massas e inversamente proporcional ao quadrado da distância. Unificou a física terrestre e celeste numa única equação. Permitiu prever eclipses, trajectórias de planetas e cometas com precisão perfeita. Sem Newton, não haveria engenharia estrutural, astronomia moderna nem viagem espacial.",
+    "link": "https://pt.wikipedia.org/wiki/Lei_da_gravita%C3%A7%C3%A3o_universal",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Portrait_of_Sir_Isaac_Newton%2C_1689.jpg/800px-Portrait_of_Sir_Isaac_Newton%2C_1689.jpg"
+  },
+  "3-11": {
+    "titulo": "Vacina contra a Varíola",
+    "texto": "Em 1796, Edward Jenner inoculou o menino James Phipps com varíola bovina (cowpox) e depois expôs ao vírus da varíola humana — ele ficou imune. Era a primeira vacina da história. A vacinação em massa erradicou a varíola completamente em 1980 — a única doença infecciosa humana erradicada da natureza até hoje. O conceito de Jenner salvou bilhões de vidas nos séculos seguintes e criou a imunologia moderna.",
+    "link": "https://pt.wikipedia.org/wiki/Vacina%C3%A7%C3%A3o",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Edward_Jenner.jpg/800px-Edward_Jenner.jpg"
+  },
+  "3-18": {
+    "titulo": "Pilha Elétrica de Volta",
+    "texto": "Em 1800, Alessandro Volta demonstrou a pilha elétrica — a primeira fonte de corrente elétrica contínua da história — diante de Napoleão. Empilhou discos alternados de zinco e cobre separados por pano molhado em salmoura. A pilha tornou possível todos os experimentos subsequentes em eletricidade: Humphry Davy isolou metais por eletrólise, Faraday descobriu a indução eletromagnética, e toda a eletrotécnica moderna derivou dessas pesquisas. A unidade 'volt' homenageia Volta.",
+    "link": "https://pt.wikipedia.org/wiki/Pilha_el%C3%A9trica",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Alessandro_Volta.jpeg/800px-Alessandro_Volta.jpeg"
+  },
+  "3-25": {
+    "titulo": "Teoria da Evolução (Darwin)",
+    "texto": "Em 1859, Charles Darwin publicou A Origem das Espécies — o livro científico mais influente já escrito. A teoria da evolução por seleção natural explica como a enorme diversidade da vida surgiu por variações hereditárias e seleção ao longo de gerações. Unificou toda a biologia sob um único princípio. Théodosius Dobzhansky resumiu: 'Nada em biologia faz sentido exceto à luz da evolução.' Transformou permanentemente a biologia, a medicina, a antropologia e nossa compreensão de nós mesmos.",
+    "link": "https://pt.wikipedia.org/wiki/A_Origem_das_Esp%C3%A9cies",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Charles_Darwin_seated_crop.jpg/800px-Charles_Darwin_seated_crop.jpg"
+  },
+  "4-1": {
+    "titulo": "Tabela Periódica dos Elementos",
+    "texto": "Em 1869, Dmitri Mendeleiev organizou os 63 elementos conhecidos numa tabela por peso atômico e propriedades recorrentes — e previu com precisão a existência e propriedades de elementos ainda não descobertos (gálio, germânio, escândio). A Tabela Periódica é a organização mais elegante e útil de toda a química — o mapa fundamental da matéria. Hoje lista 118 elementos; os últimos foram criados artificialmente em aceleradores de partículas.",
+    "link": "https://pt.wikipedia.org/wiki/Tabela_peri%C3%B3dica",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Periodic_table.svg/800px-Periodic_table.svg"
+  },
+  "4-8": {
+    "titulo": "Teoria dos Germes (Pasteur/Koch)",
+    "texto": "Louis Pasteur e Robert Koch, nas décadas de 1860-1880, provaram definitivamente que microorganismos causam doenças infecciosas — derrubando a teoria milenar dos 'humores' e da geração espontânea. Pasteur inventou a pasteurização; Koch identificou as bactérias da tuberculose, cólera e antraz. A teoria germinal fundou a microbiologia médica moderna: higiene hospitalar, antibióticos, vacinas e controle de epidemias — transformando completamente a expectativa de vida humana.",
+    "link": "https://pt.wikipedia.org/wiki/Teoria_microbiana_da_doen%C3%A7a",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Louis_Pasteur.jpg/800px-Louis_Pasteur.jpg"
+  },
+  "4-15": {
+    "titulo": "Raios-X (Röntgen)",
+    "texto": "Em 8 de novembro de 1895, o físico alemão Wilhelm Röntgen observou que um tubo de raios catódicos produzia radiação desconhecida que atravessava objetos sólidos e impressionava películas fotográficas. Chamou-os de raios-X por serem desconhecidos. A primeira radiografia foi da mão de sua esposa, mostrando os ossos. Röntgen se recusou a patentear a descoberta para que todos pudessem usá-la. Ganhou o primeiro Nobel de Física em 1901. Os raios-X revolucionaram a medicina.",
+    "link": "https://pt.wikipedia.org/wiki/Raio-X",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Roentgen2.jpg/800px-Roentgen2.jpg"
+  },
+  "4-22": {
+    "titulo": "Radioatividade (Marie Curie)",
+    "texto": "Em 1898, Marie e Pierre Curie descobriram que certos elementos emitem radiação espontaneamente — cunhando o termo 'radioatividade'. Identificaram dois novos elementos: polônio (em homenagem à Polônia) e rádio. Marie foi a primeira a propor que a radioatividade era uma propriedade dos átomos — base da física nuclear. A radioatividade levou à compreensão da estrutura atômica, à medicina nuclear, à datação por carbono-14 e (tragicamente) às armas nucleares.",
+    "link": "https://pt.wikipedia.org/wiki/Radioatividade",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Marie_Curie_c1920.jpg/800px-Marie_Curie_c1920.jpg"
+  },
+  "4-29": {
+    "titulo": "Teoria da Relatividade (Einstein)",
+    "texto": "Em 1905, Einstein publicou a relatividade especial (E=mc² — massa e energia são equivalentes) e em 1915 a relatividade geral (gravidade é curvatura do espaço-tempo). A relatividade especial explica por que nada pode superar a velocidade da luz. A relatividade geral previu buracos negros, ondas gravitacionais e a expansão do universo — confirmadas décadas depois. Sem GPS corrigindo erros relativísticos, os smartphones errariam posição em quilômetros.",
+    "link": "https://pt.wikipedia.org/wiki/Teoria_da_relatividade",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Albert_Einstein_Head.jpg/800px-Albert_Einstein_Head.jpg"
+  },
+  "5-6": {
+    "titulo": "Penicilina (Fleming)",
+    "texto": "Em setembro de 1928, Alexander Fleming retornou de férias e observou que um fungo (Penicillium notatum) havia invadido uma placa de Petri e matado as bactérias ao redor. A penicilina — primeiro antibiótico — demorou até 1940 para ser produzida em quantidade (por Florey e Chain). Na Segunda Guerra salvou centenas de milhares de soldados que antes morreriam de infecções bacterianas simples. Os três ganharam o Nobel em 1945. Os antibióticos dobraram a expectativa de vida humana.",
+    "link": "https://pt.wikipedia.org/wiki/Penicilina",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Sir_Alexander_Fleming.jpg/800px-Sir_Alexander_Fleming.jpg"
+  },
+  "5-13": {
+    "titulo": "Estrutura do DNA",
+    "texto": "Em 25 de abril de 1953, Watson e Crick publicaram no Nature o modelo de dupla hélice do DNA — usando dados de cristalografia de raios-X produzidos por Rosalind Franklin. A dupla hélice explica como a informação genética é armazenada (sequência de bases ATCG) e replicada com perfeição. Fundou a biologia molecular moderna. Abriu caminho para sequenciamento do genoma humano (2003), engenharia genética, CRISPR e medicina personalizada.",
+    "link": "https://pt.wikipedia.org/wiki/DNA",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/DNA_Structure%2BKey%2BLabelled.pn_NoBB.png/800px-DNA_Structure%2BKey%2BLabelled.pn_NoBB.png"
+  },
+  "5-20": {
+    "titulo": "Fissão Nuclear",
+    "texto": "Em dezembro de 1938, Otto Hahn e Fritz Strassmann demonstraram a fissão do urânio; Lise Meitner e Otto Frisch forneceram a explicação teórica — um átomo pode ser dividido liberando enorme energia (E=mc²). O Projeto Manhattan (1942-45) transformou essa descoberta em bomba atômica. Hiroshima e Nagasaki foram destruídas em agosto de 1945. Mas a fissão também gerou energia elétrica nuclear — que hoje produz 10% da eletricidade mundial com baixíssimas emissões de carbono.",
+    "link": "https://pt.wikipedia.org/wiki/Fiss%C3%A3o_nuclear",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Nuclear_fission.svg/800px-Nuclear_fission.svg"
+  },
+  "5-27": {
+    "titulo": "Vacina contra a Poliomielite",
+    "texto": "Em 1955, Jonas Salk anunciou a primeira vacina eficaz contra a poliomielite — doença que paralisava e matava crianças em todo o mundo. A vacina de Salk (inativada) foi seguida em 1961 pela de Albert Sabin (oral, mais prática). A campanha global de vacinação erradicou a pólio de 125 países. Salk recusou a patentear sua vacina — estimando que pertencia 'ao povo'. Perguntado sobre a patente, respondeu: 'Podemos patentear o Sol?' Salvou dezenas de milhões de crianças.",
+    "link": "https://pt.wikipedia.org/wiki/Vacina_contra_a_poliomielite",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Portrait_of_Jonas_Salk.jpg/800px-Portrait_of_Jonas_Salk.jpg"
+  },
+  "6-3": {
+    "titulo": "Laser",
+    "texto": "Theodore Maiman construiu o primeiro laser funcional em maio de 1960 usando um cristal de rubi. Laser significa 'Light Amplification by Stimulated Emission of Radiation'. A princípio chamado de 'solução em busca de um problema', tornou-se uma das tecnologias mais versáteis da história: leitores de código de barras, CDs/DVDs, fibra ótica (internet), cirurgia ocular a laser, impressoras, scanners médicos, comunicações militares e medição astronômica.",
+    "link": "https://pt.wikipedia.org/wiki/Laser",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Lasercons.jpg/800px-Lasercons.jpg"
+  },
+  "6-10": {
+    "titulo": "Lançamento do Sputnik — Era Espacial",
+    "texto": "4 de outubro de 1957: a URSS lançou o Sputnik 1 — o primeiro satélite artificial da história. Uma esfera de metal de 58 cm que transmitia um simples 'bip-bip' pelo rádio enquanto orbitava a Terra a cada 96 minutos. Causou pânico nos EUA: se os soviéticos podiam colocar objetos em órbita, podiam colocar bombas nucleares. Desencadeou a Corrida Espacial: o NASA foi criado em 1958; Gagarin voou em 1961; Armstrong pousou na Lua em 1969. Tudo começou com um 'bip-bip'.",
+    "link": "https://pt.wikipedia.org/wiki/Sputnik_1",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Sputnik_asm.jpg/800px-Sputnik_asm.jpg"
+  },
+  "6-17": {
+    "titulo": "Chegada à Lua — Apollo 11",
+    "texto": "20 de julho de 1969: Neil Armstrong e Buzz Aldrin pousaram na Lua na missão Apollo 11. Armstrong saiu da nave às 02h56 UTC de 21 de julho e disse: 'Este é um pequeno passo para um homem, mas um salto gigante para a humanidade.' Michael Collins os aguardou em órbita. Foram 12 homens que caminharam na Lua entre 1969 e 1972. A missão Apollo foi o empreendimento tecnológico mais complexo da história — 400 mil engenheiros, US$ 25 bilhões, em apenas 8 anos após Kennedy anunciar o objetivo.",
+    "link": "https://pt.wikipedia.org/wiki/Apollo_11",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Aldrin_Apollo_11_original.jpg/800px-Aldrin_Apollo_11_original.jpg"
+  },
+  "6-24": {
+    "titulo": "Internet — ARPANET",
+    "texto": "29 de outubro de 1969: a primeira mensagem enviada pela ARPANET (precursora da internet) entre UCLA e Stanford. A mensagem era 'lo' — o sistema travou antes de completar 'login'. A ARPANET foi projetada para sobreviver a ataques nucleares — roteamento descentralizado. Tim Berners-Lee inventou a World Wide Web em 1991. A internet hoje conecta 5 bilhões de pessoas. Transformou mais profundamente a humanidade em 30 anos do que qualquer outra tecnologia anterior em mil.",
+    "link": "https://pt.wikipedia.org/wiki/ARPANET",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Arpanet_logical_map%2C_march_1977.png/800px-Arpanet_logical_map%2C_march_1977.png"
+  },
+  "7-1": {
+    "titulo": "Mapeamento do Genoma Humano",
+    "texto": "Em 2003, o Projeto Genoma Humano concluiu o sequenciamento dos 3,2 bilhões de pares de bases do DNA humano — o maior empreendimento científico colaborativo da história. Revelou que humanos têm ~20.500 genes (menos do que um milho!), compartilhamos 98,7% do DNA com chimpanzés e 60% com moscas. Abriu caminho para medicina personalizada, diagnóstico de doenças genéticas, farmacogenômica e a tecnologia CRISPR de edição gênica.",
+    "link": "https://pt.wikipedia.org/wiki/Projeto_Genoma_Humano",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Genome_size.png/800px-Genome_size.png"
+  },
+  "7-8": {
+    "titulo": "CRISPR-Cas9 — Tesoura Genética",
+    "texto": "Em 2012, Jennifer Doudna e Emmanuelle Charpentier descreveram o sistema CRISPR-Cas9 — uma 'tesoura molecular' que edita DNA com precisão cirúrgica. Ganharam o Nobel de Química em 2020. O CRISPR pode corrigir mutações causadoras de doenças genéticas, criar organismos com propriedades específicas e potencialmente curar câncer. O primeiro paciente tratado com CRISPR para anemia falciforme foi curado em 2023. A biotecnologia mais revolucionária desde o DNA recombinante.",
+    "link": "https://pt.wikipedia.org/wiki/CRISPR-Cas9",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/GRNA-Cas9.png/800px-GRNA-Cas9.png"
+  },
+  "7-15": {
+    "titulo": "Descoberta da América",
+    "texto": "12 de outubro de 1492: Cristóvão Colombo desembarcou nas Bahamas após 70 dias navegando pelo Atlântico. Acreditou até morrer que havia chegado à Ásia. A descoberta europeia das Américas iniciou a maior migração, mistura cultural e — tragicamente — o maior genocídio da história: 90% dos ameríndios morreram de doenças europeias nos séculos seguintes. Também conectou definitivamente os dois hemisférios do planeta, dando início à primeira globalização.",
+    "link": "https://pt.wikipedia.org/wiki/Descobrimento_da_Am%C3%A9rica",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Christoph_Kolumbus.jpg/800px-Christoph_Kolumbus.jpg"
+  },
+  "7-22": {
+    "titulo": "Insulina",
+    "texto": "Em 1921, Frederick Banting e Charles Best descobriram a insulina em experimentos com cães diabéticos. O primeiro paciente humano — Leonard Thompson, 14 anos, em coma diabético — recebeu a injeção em janeiro de 1922 e se recuperou completamente. Antes da insulina, diabetes tipo 1 era sentença de morte em meses — dieta de inanição era o único tratamento. Banting doou sua parte da patente à Universidade de Toronto por 1 dólar para que a insulina fosse acessível a todos.",
+    "link": "https://pt.wikipedia.org/wiki/Insulina",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Frederick_Banting_-_National_Galleries_of_Scotland.jpg/800px-Frederick_Banting_-_National_Galleries_of_Scotland.jpg"
+  },
+  "7-29": {
+    "titulo": "Anestesia",
+    "texto": "Antes de 1846, cirurgias eram procedimentos de tortura — pacientes conscientes imobilizados por assistentes. Em 16 de outubro de 1846, o dentista William Morton demonstrou éter como anestesia na primeira cirurgia indolor pública no Massachusetts General Hospital (Boston). O cirurgião John Warren exclamou: 'Senhores, isto não é charlatanismo!' O clorofórmio logo se seguiu. A anestesia transformou a medicina: tornou possíveis cirurgias prolongadas e complexas que antes seriam impossíveis.",
+    "link": "https://pt.wikipedia.org/wiki/Anestesia",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Boston_ether_dome_1846.jpg/800px-Boston_ether_dome_1846.jpg"
+  },
+  "8-5": {
+    "titulo": "Eletricidade — Faraday",
+    "texto": "Em 1831, Michael Faraday descobriu a indução eletromagnética: mover um magneto dentro de uma bobina de fio gera corrente elétrica. Esta descoberta é a base de todos os geradores elétricos e transformadores modernos. Quando o Primeiro-Ministro Gladstone perguntou 'Para que serve isso?', Faraday respondeu: 'Não sei, senhor — mas um dia o senhor vai taxá-lo.' A geração de eletricidade em larga escala transformou mais a civilização humana do que qualquer outra descoberta.",
+    "link": "https://pt.wikipedia.org/wiki/Michael_Faraday",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Michael_Faraday_001.jpg/800px-Michael_Faraday_001.jpg"
+  },
+  "8-12": {
+    "titulo": "Telefone",
+    "texto": "Em 10 de março de 1876, Alexander Graham Bell fez a primeira chamada telefônica da história para seu assistente Watson: 'Sr. Watson, venha aqui — quero vê-lo.' Bell havia patenteado o telefone 3 dias antes, vencendo Elisha Gray por horas numa das disputas de patente mais famosas. Em 10 anos havia 150 mil telefones nos EUA. O telefone transformou comunicação, comércio e relacionamentos. O celular (Motorola DynaTAC, 1973) e depois o smartphone completaram essa revolução.",
+    "link": "https://pt.wikipedia.org/wiki/Telefone",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Alexander_Graham_Bell.jpg/800px-Alexander_Graham_Bell.jpg"
+  },
+  "8-19": {
+    "titulo": "Avião",
+    "texto": "17 de dezembro de 1903: Wilbur e Orville Wright voaram o Flyer I em Kitty Hawk, Carolina do Norte — 12 segundos, 36 metros. Em 1908, o mesmo avião voou por 2 horas. Em 1927, Lindbergh cruzou o Atlântico solo. Em 1969, o Boeing 747 transportou 400 passageiros. Hoje, 100 mil voos diários transportam 4 bilhões de passageiros por ano. A aviação transformou guerra (Segunda Guerra), comércio, turismo e a percepção humana de distância — encolhendo o planeta.",
+    "link": "https://pt.wikipedia.org/wiki/Avi%C3%A3o",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Wright_first_flight.jpg/800px-Wright_first_flight.jpg"
+  },
+  "8-26": {
+    "titulo": "Lâmpada Elétrica",
+    "texto": "Thomas Edison demonstrou a lâmpada incandescente prática em 31 de dezembro de 1879 em Menlo Park — após testar 6.000 materiais diferentes para o filamento. Mas igualmente importante foi o sistema de distribuição elétrica que Edison criou do zero: fios, contadores, fusíveis, interruptores. A primeira estação de energia elétrica comercial do mundo foi ligada em Nova York em 1882 atendendo 59 clientes. A iluminação elétrica estendeu o dia útil humano e transformou a vida noturna.",
+    "link": "https://pt.wikipedia.org/wiki/L%C3%A2mpada_el%C3%A9trica",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/GE_LED_Bulb.jpg/800px-GE_LED_Bulb.jpg"
+  },
+  "9-2": {
+    "titulo": "Computador — Máquina de Turing",
+    "texto": "Em 1936, Alan Turing descreveu matematicamente a 'Máquina de Turing' — um computador teórico universal capaz de executar qualquer algoritmo. Em 1945, von Neumann definiu a arquitetura que ainda usamos em todo computador moderno. O ENIAC (1945) tinha 18 mil válvulas e ocupava uma sala inteira. O transistor (1947) substituiu as válvulas; o microprocessador Intel 4004 (1971) cabia na palma da mão. O iPhone atual é bilhões de vezes mais poderoso que o ENIAC.",
+    "link": "https://pt.wikipedia.org/wiki/M%C3%A1quina_de_Turing",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Alan_Turing_Aged_16.jpg/800px-Alan_Turing_Aged_16.jpg"
+  },
+  "9-9": {
+    "titulo": "Descoberta da América do Sul (Cabral)",
+    "texto": "22 de abril de 1500: Pedro Álvares Cabral chegou ao Brasil com 13 navios a caminho da Índia, desviando do trajeto usual para evitar calmarias. Chamou a terra de Ilha de Vera Cruz, depois Terra de Santa Cruz, depois Brasil (pelo pau-brasil). A descoberta — acidental ou planejada — marcou o início da colonização portuguesa nas Américas e foi decisiva para que o Brasil herdasse a língua portuguesa em vez do espanhol, diferenciando-se do restante da América do Sul.",
+    "link": "https://pt.wikipedia.org/wiki/Pedro_%C3%81lvares_Cabral",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Pedro_%C3%81lvares_Cabral_%28S%C3%A9c._XIX%29.jpg/800px-Pedro_%C3%81lvares_Cabral_%28S%C3%A9c._XIX%29.jpg"
+  },
+  "9-16": {
+    "titulo": "Microscópio e a Descoberta dos Microorganismos",
+    "texto": "Em 1674, Antonie van Leeuwenhoek foi o primeiro humano a ver microorganismos vivos — bactérias e protozoários — usando microscópio com ampliação de 270x que ele mesmo construiu. Chamou-os de 'animálculos'. Revelou um mundo invisível completamente desconhecido. Só dois séculos depois, Pasteur e Koch conectariam esses microorganismos às doenças infecciosas. Sem o microscópio, não haveria microbiologia, bacteriologia, imunologia nem biotecnologia.",
+    "link": "https://pt.wikipedia.org/wiki/Antonie_van_Leeuwenhoek",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Jan_Verkolje_-_Antonie_van_Leeuwenhoek.jpg/800px-Jan_Verkolje_-_Antonie_van_Leeuwenhoek.jpg"
+  },
+  "9-23": {
+    "titulo": "Vapor — Revolução Industrial",
+    "texto": "Em 1769, James Watt patenteou a máquina a vapor aperfeiçoada com condensador separado — tornando-a economicamente viável. Em 1800, havia 500 máquinas Watt nas fábricas britânicas. Em 1830, a locomotiva Rocket de Stephenson atingia 45 km/h. Em 1870, ferrovias cruzavam continentes. A Revolução Industrial — impulsionada pelo vapor — transformou a economia agrária em industrial, criou a classe operária, urbanizou a população e multiplicou a riqueza material por dez em um século.",
+    "link": "https://pt.wikipedia.org/wiki/Revolu%C3%A7%C3%A3o_Industrial",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/James_Watt_by_Henry_Howard.jpg/800px-James_Watt_by_Henry_Howard.jpg"
+  },
+  "9-30": {
+    "titulo": "Rádio e Comunicação Sem Fio",
+    "texto": "Em 12 de dezembro de 1901, Guglielmo Marconi recebeu o sinal 'S' em Morse transmitido da Inglaterra para Terra Nova — a primeira transmissão de rádio transatlântica. O rádio tornou possível comunicação instantânea sem fios entre navios (salvando vidas no Titanic, 1912), depois transmissões para o público em geral (1920), depois TV, Wi-Fi, GPS e comunicação com sondas espaciais a bilhões de km. Tudo da descoberta de que ondas eletromagnéticas viajam pelo espaço vazio.",
+    "link": "https://pt.wikipedia.org/wiki/R%C3%A1dio",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Guglielmo_Marconi.jpg/800px-Guglielmo_Marconi.jpg"
+  },
+  "10-7": {
+    "titulo": "Vacinas de mRNA — COVID-19",
+    "texto": "Em dezembro de 2020, as vacinas de mRNA da BioNTech/Pfizer e Moderna receberam aprovação emergencial — as primeiras vacinas de mRNA aprovadas para uso em humanos. Desenvolvidas em menos de um ano (recorde absoluto), usavam o código genético do vírus para instruir células a produzir a proteína spike e treinar o sistema imune. A tecnologia de mRNA, em desenvolvimento por décadas (Katalin Karikó e Drew Weissman), abre portas para vacinas contra HIV, câncer e outras doenças.",
+    "link": "https://pt.wikipedia.org/wiki/Vacina_de_ARNm",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Syringe_with_vaccine_and_COVID-19_virus_illustration_%281%29.jpg/800px-Syringe_with_vaccine_and_COVID-19_virus_illustration_%281%29.jpg"
+  },
+  "10-14": {
+    "titulo": "Contracepção Hormonal",
+    "texto": "Em 1960, a FDA aprovou a pílula anticoncepcional (Enovid) — desenvolvida por Gregory Pincus, John Rock e Margaret Sanger. A pílula permitiu às mulheres separar sexualidade de reprodução pela primeira vez na história. Transformou o papel da mulher na sociedade: entrada massiva no mercado de trabalho, adiamento da maternidade, planejamento familiar. Em 10 anos, 10 milhões de americanas a usavam. A pílula foi fundamental para o movimento feminista dos anos 1960-70.",
+    "link": "https://pt.wikipedia.org/wiki/Anticoncepcional_oral_combinado",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Gingko_bloba_pill.jpg/800px-Gingko_bloba_pill.jpg"
+  },
+  "10-21": {
+    "titulo": "Mecânica Quântica",
+    "texto": "Entre 1900 e 1930, físicos como Planck, Einstein, Bohr, Heisenberg, Schrödinger e Dirac desenvolveram a mecânica quântica — a teoria que descreve o comportamento de partículas subatômicas. O mundo quântico é radicalmente diferente do cotidiano: partículas existem em superposição (múltiplos estados simultâneos), o observador afeta o observado (princípio da incerteza), e partículas se 'entrelaçam' instantaneamente. Sem mecânica quântica: sem transistores, sem chips, sem lasers, sem MRI.",
+    "link": "https://pt.wikipedia.org/wiki/Mec%C3%A2nica_qu%C3%A2ntica",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Werner_Heisenberg.jpg/800px-Werner_Heisenberg.jpg"
+  },
+  "10-28": {
+    "titulo": "Corrente Alternada — Tesla e a Eletricidade Moderna",
+    "texto": "Em 1887-1893, Nikola Tesla desenvolveu o sistema de corrente alternada (CA) com motor de indução, gerador e transformador. Na 'Guerra das Correntes' contra Edison (que defendia a CC), Tesla/Westinghouse vencem: a CA pode ser transmitida a longas distâncias com perdas mínimas, transformada para qualquer tensão. A Exposição Mundial de Chicago (1893) foi iluminada por CA. As cataratas do Niágara geraram eletricidade em CA em 1895. Todo o sistema elétrico mundial usa CA.",
+    "link": "https://pt.wikipedia.org/wiki/Corrente_alternada",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/N.Tesla.JPG/800px-N.Tesla.JPG"
+  },
+  "11-4": {
+    "titulo": "Transplante de Órgãos",
+    "texto": "Em 23 de dezembro de 1954, o cirurgião Joseph Murray realizou o primeiro transplante de rim bem-sucedido em Boston — entre gêmeos idênticos Richard e Ronald Herrick. Murray ganhou o Nobel de Medicina em 1990. Em 1967, Christiaan Barnard realizou o primeiro transplante de coração na África do Sul. Hoje, coração, pulmão, fígado, rim, pâncreas e intestino são transplantados rotineiramente. O problema atual não é técnico, mas de falta de doadores — por isso campanhas de doação de órgãos são vitais.",
+    "link": "https://pt.wikipedia.org/wiki/Transplante_de_%C3%B3rg%C3%A3os",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Kidney_for_transplant.jpg/800px-Kidney_for_transplant.jpg"
+  },
+  "11-11": {
+    "titulo": "Antibióticos — Revolução Médica",
+    "texto": "Antes dos antibióticos (1940s), uma infecção bacteriana simples podia matar. A penicilina (Fleming, 1928; produção industrial: Florey/Chain, 1940) foi o primeiro de mais de 100 antibióticos desenvolvidos. A expectativa de vida nos EUA saltou de 56 anos (1920) para 76 anos (1970) — principalmente graças ao controle de doenças infecciosas. Hoje o maior perigo é a resistência bacteriana a antibióticos — 'superbactérias' que ameaçam reverter um século de progresso médico.",
+    "link": "https://pt.wikipedia.org/wiki/Antibi%C3%B3tico",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Sir_Alexander_Fleming.jpg/800px-Sir_Alexander_Fleming.jpg"
+  },
+  "11-18": {
+    "titulo": "Termodinâmica e a Segunda Lei",
+    "texto": "A termodinâmica, desenvolvida por Carnot, Clausius, Kelvin e Boltzmann no século XIX, governa toda conversão de energia. A Segunda Lei diz que a entropia (desordem) de um sistema fechado sempre aumenta — o calor flui do quente para o frio, nunca o contrário. Isso explica por que máquinas térmicas têm eficiência limitada, por que o tempo tem direção (passado → futuro), por que o universo caminha para a morte térmica. A termodinâmica é a lei fundamental que governa tudo: da fervura da água ao destino do cosmos.",
+    "link": "https://pt.wikipedia.org/wiki/Segunda_lei_da_termodin%C3%A2mica",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Carnot_heat_engine_2.svg/800px-Carnot_heat_engine_2.svg"
+  },
+  "11-25": {
+    "titulo": "GPS — Sistema de Posicionamento Global",
+    "texto": "O GPS, desenvolvido pelo Departamento de Defesa dos EUA e tornado público em 1983 (após derrubada de avião civil soviético), consiste em 24 satélites que transmitem sinais de tempo precisíssimos. Um receptor no solo calcula sua posição pela diferença de tempo de chegada de 4 sinais. Erro: menos de 1 metro. O GPS transformou navegação marítima, aérea e rodoviária, agricultura de precisão, geologia, arqueologia, logística e — mais visivelmente — os smartphones de bilhões de pessoas.",
+    "link": "https://pt.wikipedia.org/wiki/GPS",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/GPS_Satellite_NASA_art-iif.jpg/800px-GPS_Satellite_NASA_art-iif.jpg"
+  },
+  "12-2": {
+    "titulo": "Processo Haber-Bosch — Síntese do Amônio",
+    "texto": "Em 1909, Fritz Haber descobriu como sintetizar amônia a partir de nitrogênio atmosférico (N₂) e hidrogênio usando catalisador de ferro a alta temperatura e pressão. Carl Bosch escalou o processo industrialmente (BASF, 1913). A amônia é base de fertilizantes nitrogenados que hoje alimentam metade da humanidade — sem o processo Haber-Bosch, a Terra não poderia sustentar 8 bilhões de pessoas. É provavelmente a descoberta que mais vidas salvou na história. E também produz explosivos.",
+    "link": "https://pt.wikipedia.org/wiki/Processo_Haber",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Fritz_Haber.png/800px-Fritz_Haber.png"
+  },
+  "12-9": {
+    "titulo": "Vitaminas",
+    "texto": "Em 1912, o bioquímico polonês Casimir Funk cunhou o termo 'vitamina' (amina vital) para descrever substâncias essenciais em quantidades mínimas para a saúde. Antes: o escorbuto matava marujos (falta de vitamina C); o raquitismo deformava crianças (falta de D); o beribéri matava asiáticos (falta de B1). A descoberta das vitaminas A, B, C, D, E e K entre 1913 e 1948 eliminou doenças carenciais que haviam matado por milênios e fundou a ciência da nutrição moderna.",
+    "link": "https://pt.wikipedia.org/wiki/Vitamina",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Vitamin_supplement_tablets.jpg/800px-Vitamin_supplement_tablets.jpg"
+  },
+  "12-16": {
+    "titulo": "Mecânica Celeste e Previsão do Clima",
+    "texto": "A previsão meteorológica moderna começou com Vilhelm Bjerknes (1904), que propôs que o estado futuro da atmosfera poderia ser calculado a partir do estado presente usando equações físicas. O primeiro modelo numérico rodou em 1950 com o ENIAC. Hoje, modelos com trilhões de cálculos por segundo preveem o tempo com razoável precisão para 10 dias. As previsões de furacões e tempestades severas salvam dezenas de milhares de vidas por ano — uma das aplicações mais diretas da computação científica.",
+    "link": "https://pt.wikipedia.org/wiki/Previs%C3%A3o_do_tempo",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Meteosat-9_satellite_image_-_August_1%2C_2010_%28Aqua-MODIS%29.jpg/800px-Meteosat-9_satellite_image_-_August_1%2C_2010_%28Aqua-MODIS%29.jpg"
+  },
+  "12-23": {
+    "titulo": "Big Bang — Origem do Universo",
+    "texto": "Em 1927, Georges Lemaître propôs que o universo estava se expandindo e que havia começado num ponto singular — o 'átomo primordial'. Hubble confirmou a expansão em 1929. Arno Penzias e Robert Wilson descobriram por acaso a radiação cósmica de fundo em 1965 — o eco do Big Bang 13,8 bilhões de anos atrás. O satélite COBE (1992) mapeou flutuações mínimas nessa radiação — sementes das galáxias. A cosmologia moderna: o universo começou, quente e denso, e se expandiu até hoje.",
+    "link": "https://pt.wikipedia.org/wiki/Big_Bang",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/CMB_Timeline300_no_WMAP.jpg/800px-CMB_Timeline300_no_WMAP.jpg"
+  }
+}
