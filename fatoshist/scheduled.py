@@ -3,6 +3,7 @@ import random
 from datetime import datetime, timedelta
 from functools import partial
 
+import pytz
 import schedule
 from telebot import TeleBot
 
@@ -20,7 +21,8 @@ from fatoshist.handlers.scheduled_handlers.event_hist_users import hist_user_job
 from fatoshist.handlers.scheduled_handlers.event_img_chn import hist_channel_imgs_chn, remove_all_url_photo
 from fatoshist.handlers.scheduled_handlers.follow_channels import msg_inscricao_canais_historia
 from fatoshist.handlers.scheduled_handlers.historys import hist_channel_history
-from fatoshist.handlers.scheduled_handlers.holiday import get_holidays_br_and_world_of_the_day
+from fatoshist.handlers.scheduled_handlers.holiday import hist_channel_holiday_br_and_world
+from fatoshist.handlers.scheduled_handlers.holiday_brazil import hist_channel_holiday_br
 from fatoshist.handlers.scheduled_handlers.image_hist_events_channel import hist_channel_imgs
 from fatoshist.handlers.scheduled_handlers.image_hist_events_chat import hist_image_chat_job
 from fatoshist.handlers.scheduled_handlers.new_year_message import new_year_message
@@ -31,6 +33,8 @@ from fatoshist.handlers.scheduled_handlers.prase_channel import hist_channel_fra
 from fatoshist.handlers.scheduled_handlers.presidents import enviar_foto_presidente
 from fatoshist.handlers.scheduled_handlers.stars import msg_alerta_stars
 from fatoshist.handlers.scheduled_handlers.weekly_engagement_poll import send_weekly_engagement_poll
+
+_TZ = pytz.timezone('America/Sao_Paulo')
 
 # ================= FUNÇÃO GERAR HORÁRIO RANDOM =================
 
@@ -46,7 +50,7 @@ def random_time(start_hour, end_hour):
     
 # checar data natal/ano novo/ aniversario do canal
 def checar_datas_dia(bot):
-    current_date = datetime.now()
+    current_date = datetime.now(_TZ)
     if current_date.month == 12 and current_date.day == 25:
         christmas_message(bot)
     elif current_date.month == 1 and current_date.day == 1:
@@ -128,7 +132,10 @@ def schedule_tasks(bot: TeleBot):
          
         # ================= TARDE (FERIADOS TODOS OS DIAS) =================
         holidays_time = random_time(14, 17)
-        schedule.every().day.at(holidays_time).do(lambda: get_holidays_br_and_world_of_the_day(bot))
+        schedule.every().day.at(holidays_time).do(lambda: hist_channel_holiday_br_and_world(bot))
+
+        # Feriados brasileiros (manhã)
+        schedule.every().day.at('10:30').do(lambda: hist_channel_holiday_br(bot))
 
 
         # Envio de Fotos históricas no grupo

@@ -21,7 +21,7 @@ def register(bot: TeleBot):
             if message.chat.type != 'private' and message.from_user.id != OWNER:
                 return
 
-            if len(message.text.split()) != '2':
+            if len(message.text.split()) != 2:
                 bot.send_message(
                     message.chat.id,
                     'Por favor, forneça um ID de usuário após /add_sudo.',
@@ -76,7 +76,7 @@ def register(bot: TeleBot):
             if message.chat.type != 'private' and message.from_user.id != OWNER:
                 return
 
-            if len(message.text.split()) != '2':
+            if len(message.text.split()) != 2:
                 bot.send_message(
                     message.chat.id,
                     'Por favor, forneça um ID de usuário após /rem_sudo.',
@@ -93,7 +93,7 @@ def register(bot: TeleBot):
                 )
                 return
 
-            result = user_manager.set_user_sudo(user_id)
+            result = user_manager.remove_user_sudo(user_id)
 
             if result.modified_count > 0:
                 username = '@' + message.from_user.username if message.from_user.username else 'Não tem um nome de usuário'

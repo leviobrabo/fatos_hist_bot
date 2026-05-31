@@ -44,11 +44,8 @@ class UserManager:
     # Métodos para Recuperar Todos os Usuários
 
     def get_all_users(self, query=None):
-        """
-        Retorna todos os usuários do banco de dados.
-        Se query for fornecida, será usada para filtrar os resultados.
-        """
-        return list(self.db.users.find({}))
+        """Retorna usuários do banco de dados, opcionalmente filtrados por query."""
+        return list(self.db.users.find(query or {}))
 
     def get_all_sudo_users(self):
         return self.db.users.find({'sudo': 'true'})
@@ -99,36 +96,20 @@ class UserManager:
         return self.db.users.update_one({'user_id': user_id}, {'$set': {'message_id': ''}})
 
     def set_hit_user(self, user_id):
-        """
-        Incrementa o número de acertos (hits) de um usuário em 1.
-        Se o usuário não tiver o campo 'hits', ele será inicializado.
-        """
-        user = self.db.users.find_one({'user_id': user_id})
-        if user:
-            if 'hits' in user:
-                self.db.users.update_one({'user_id': user_id}, {'$inc': {'hits': 1}})
-            else:
-                self.db.users.insert_one({
-                    'user_id': user_id,
-                    'hits': 1,
-                    'questions': 1,
-                })
+        """Incrementa acertos do usuário em 1."""
+        self.db.users.update_one(
+            {'user_id': user_id},
+            {'$inc': {'hits': 1}, '$setOnInsert': {'questions': 0}},
+            upsert=False,
+        )
 
     def set_questions_user(self, user_id):
-        """
-        Incrementa o número de questões respondidas de um usuário em 1.
-        Se o usuário não tiver o campo 'questions', ele será inicializado.
-        """
-        user = self.db.users.find_one({'user_id': user_id})
-        if user:
-            if 'questions' in user:
-                self.db.users.update_one({'user_id': user_id}, {'$inc': {'questions': 1}})
-            else:
-                self.db.users.insert_one({
-                    'user_id': user_id,
-                    'hits': 1,
-                    'questions': 1,
-                })
+        """Incrementa questões respondidas do usuário em 1."""
+        self.db.users.update_one(
+            {'user_id': user_id},
+            {'$inc': {'questions': 1}, '$setOnInsert': {'hits': 0}},
+            upsert=False,
+        )
 
     # Método para Atualizar o Status de Mensagens Privadas
 
