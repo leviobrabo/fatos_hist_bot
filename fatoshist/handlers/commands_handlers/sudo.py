@@ -18,7 +18,7 @@ def register(bot: TeleBot):
     @bot.message_handler(commands=['add_sudo'])
     def cmd_add_sudo(message):
         try:
-            if message.chat.type != 'private' and message.from_user.id != OWNER:
+            if message.from_user.id != OWNER:
                 return
 
             if len(message.text.split()) != 2:
@@ -73,7 +73,7 @@ def register(bot: TeleBot):
     @bot.message_handler(commands=['rem_sudo'])
     def cmd_rem_sudo(message):
         try:
-            if message.chat.type != 'private' and message.from_user.id != OWNER:
+            if message.from_user.id != OWNER:
                 return
 
             if len(message.text.split()) != 2:
@@ -436,12 +436,34 @@ def register(bot: TeleBot):
     def cmd_sys(message: types.Message):
         try:
             if message.from_user.id == OWNER:
+                cpu = psutil.cpu_percent(4)
+                ram = psutil.virtual_memory()
                 bot.reply_to(
                     message,
-                    f'\n──❑ 「 System Stats 」 ❑──\n\n ☆ CPU usage: {psutil.cpu_percent(4)} %\n' f' ☆ RAM usage: {psutil.virtual_memory()[2]} %',
+                    f'\n──❑ 「 System Stats 」 ❑──\n\n'
+                    f' ☆ CPU: {cpu}%\n'
+                    f' ☆ RAM: {ram.percent}% ({ram.used // 1024 // 1024}MB / {ram.total // 1024 // 1024}MB)',
                 )
         except Exception as e:
-            logging.error(f'Erro ao enviar a lista de comandos do sistema: {e}')
+            logging.error(f'Erro ao enviar system stats: {e}')
+
+    @bot.message_handler(commands=['ping'])
+    def cmd_ping(message: types.Message):
+        try:
+            if not user_manager.is_sudo(message.from_user.id) and message.from_user.id != OWNER:
+                return
+            import time as _time
+            start = _time.time()
+            sent = bot.reply_to(message, '🏓 Pong!')
+            elapsed = int((_time.time() - start) * 1000)
+            bot.edit_message_text(
+                chat_id=sent.chat.id,
+                message_id=sent.message_id,
+                text=f'🏓 Pong! <code>{elapsed}ms</code>',
+                parse_mode='HTML',
+            )
+        except Exception as e:
+            logging.error(f'Erro no /ping: {e}')
             
     @bot.message_handler(commands=['bc'])
     def broadcast_handler(message):
@@ -468,15 +490,18 @@ def register(bot: TeleBot):
             except Exception as e:
                 logging.error(f"Erro ao enviar mensagem para {user['user_id']}: {e}")
                 failed_count += 1
-                
-                if "Too Many Requests" in str(e):
-                    retry_after = int(str(e).split('retry after ')[-1].split()[0])
-                    logging.warning(f"Erro 429. Aguardando {retry_after} segundos antes de continuar...")
+                err_str = str(e).lower()
+                if 'too many requests' in err_str:
+                    try:
+                        retry_after = int(str(e).split('retry after ')[-1].split()[0])
+                    except (ValueError, IndexError):
+                        retry_after = 5
+                    logging.warning(f"Erro 429. Aguardando {retry_after}s...")
                     time.sleep(retry_after)
-                else:
+                elif '403' in str(e) or 'blocked' in err_str or 'deactivated' in err_str:
                     user_manager.remove_user_db(user["user_id"])
-                    logging.warning(f"Usuário {user['user_id']} bloqueou o bot e foi removido do banco de dados.")
-            
+                    logging.warning(f"Usuário {user['user_id']} bloqueou o bot — removido.")
+
             if idx % 100 == 0 or idx == len(users) - 1:
                 try:
                     bot.edit_message_text(
@@ -486,8 +511,8 @@ def register(bot: TeleBot):
                     )
                 except Exception as e:
                     logging.error(f"Erro ao atualizar status do broadcast: {e}")
-    
-            time.sleep(2)
+
+            time.sleep(0.05)
     
         try:
             bot.edit_message_text(
@@ -534,4 +559,5 @@ def register(bot: TeleBot):
         types.BotCommand('/bc', 'Broadcast para todos users'),
         types.BotCommand('/bcchannel', 'Encaminhar post ao canal (horário inteligente)'),
         types.BotCommand('/sys', 'Uso do servidor'),
+        types.BotCommand('/ping', 'Verificar latência do bot'),
     ]

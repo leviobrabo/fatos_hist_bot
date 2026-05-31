@@ -2,7 +2,7 @@ import logging
 
 from telebot import TeleBot, types
 
-from fatoshist.config import GROUP_LOG
+from fatoshist.config import GROUP_LOG, LOG_THREAD_ID
 from fatoshist.database.users import UserManager
 
 user_manager = UserManager()
@@ -18,14 +18,13 @@ def register(bot: TeleBot):
                 first_name = message.from_user.first_name
 
                 if not user:
-                    user = user_manager.add_user(
+                    user_manager.add_user(
                         user_id=message.from_user.id,
                         username=message.from_user.username,
                         first_name=message.from_user.first_name,
                     )
-                    logging.info(f'Novo usuário ID: {user["user_id"]} foi criado no banco de dados')
-
                     user = user_manager.get_user(user_id)
+                    logging.info(f'Novo usuário ID: {user["user_id"]} foi criado no banco de dados')
 
                     user_info = (
                         f"<b>#{bot.get_me().username} #New_User</b>\n"
@@ -34,7 +33,7 @@ def register(bot: TeleBot):
                         f"<b>Username</b>: {user['username']}"
                     )
 
-                    bot.send_message(GROUP_LOG, user_info, message_thread_id=38551)
+                    bot.send_message(GROUP_LOG, user_info, message_thread_id=LOG_THREAD_ID)
 
                 if user:
                     pass
@@ -81,8 +80,6 @@ def register(bot: TeleBot):
                     parse_mode='HTML',
                 )
             else:
-                pass
-
                 expected_command = f'/start@{bot.get_me().username}'
                 if message.text and message.text.startswith(expected_command):
                     if message.chat.type in {'group', 'supergroup', 'channel'}:

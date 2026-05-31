@@ -8,9 +8,10 @@ import telebot
 from telebot import types, util
 
 from fatoshist import scheduled
-from fatoshist.config import GROUP_LOG
+from fatoshist.config import GROUP_LOG, LOG_THREAD_ID
 from fatoshist.database.users import UserManager
 from fatoshist.handlers import callback_handlers, chat_handlers, commands_handlers, poll_handlers
+from fatoshist.version import fatoshist_version, python_version, telebot_version
 
 
 class Bot:
@@ -67,10 +68,6 @@ class Bot:
             logging.info('Iniciando Telegram BOT...')
             threading.Thread(target=self.schedule_thread, name='schedule', daemon=True).start()
             self.set_commands_and_register_handlers()
-            python_version = platform.python_version()
-            telebot_version = getattr(telebot, '__version__', 'Versão desconhecida')
-            fatoshist_version = '1.0.0'
-
             self.bot.send_message(
                 GROUP_LOG,
                 (
@@ -79,7 +76,7 @@ class Bot:
                     f'<b>Versão do Python:</b> {python_version}\n'
                     f'<b>Versão da Biblioteca:</b> {telebot_version}'
                 ),
-                message_thread_id=38551,
+                message_thread_id=LOG_THREAD_ID,
                 parse_mode='HTML',
             )
 

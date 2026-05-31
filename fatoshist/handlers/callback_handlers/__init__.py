@@ -39,7 +39,7 @@ def handle_menu_start(bot: TeleBot, call: types.CallbackQuery):
 
         if not user:
             user_manager.add_user(
-                user_id=call.message.from_user.id, username=call.message.from_user.username, first_name=call.message.from_user.first_name
+                user_id=call.from_user.id, username=call.from_user.username, first_name=call.from_user.first_name
             )
             user = user_manager.get_user(user_id)
             user_info = (
