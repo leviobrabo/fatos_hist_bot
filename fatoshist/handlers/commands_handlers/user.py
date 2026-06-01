@@ -17,13 +17,19 @@ def register(bot: TeleBot):
                 user = user_manager.get_user(user_id)
                 first_name = message.from_user.first_name
 
+                parts = message.text.split(maxsplit=1) if message.text else []
+                source = parts[1].strip() if len(parts) > 1 else ''
+
                 if not user:
                     user_manager.add_user(
                         user_id=message.from_user.id,
                         username=message.from_user.username,
                         first_name=message.from_user.first_name,
+                        source=source,
                     )
                     user = user_manager.get_user(user_id)
+                else:
+                    user_manager.update_last_seen(user_id)
                     logging.info(f'Novo usuário ID: {user["user_id"]} foi criado no banco de dados')
 
                     user_info = (

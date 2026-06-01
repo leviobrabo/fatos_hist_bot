@@ -10,6 +10,9 @@ def register(bot: TeleBot):
     @bot.callback_query_handler(func=lambda call: True)
     def callback_handler(call):
         try:
+            from fatoshist.database.users import UserManager as _UM
+            _UM().update_last_seen(call.from_user.id)
+
             if call.data.startswith('menu_start'):
                 handle_menu_start(bot, call)
             elif call.data.startswith('menu_help'):

@@ -196,73 +196,171 @@ def register(bot: TeleBot):
             if message.from_user.id != OWNER:
                 return
 
-            count_users = len(list(user_manager.get_all_users()))
-            count_groups = len(list(group_manager.get_all_chats()))
-            sudo_users = len(list(user_manager.get_all_sudo_users()))
-            users_msg_on = len([u for u in user_manager.get_all_users() if u.get('msg_private') == 'true'])
+            all_users = user_manager.get_all_users()
+            total = len(all_users)
 
-            cpu = psutil.cpu_percent(1)
-            ram = psutil.virtual_memory()
+            # ── Página 1: Usuários ──────────────────────────────────────
+            dau = user_manager.get_dau()
+            wau = user_manager.get_wau()
+            mau = user_manager.get_mau()
+            new_today = user_manager.get_new_users(days=1)
+            new_week = user_manager.get_new_users(days=7)
+            new_month = user_manager.get_new_users(days=30)
+            silent = user_manager.get_silent_users_count()
 
-            text = (
-                f'╭─❑ 「 <b>Bot Stats</b> 」 ❑──\n'
+            dau_pct = round(dau / total * 100, 1) if total else 0
+            wau_pct = round(wau / total * 100, 1) if total else 0
+            mau_pct = round(mau / total * 100, 1) if total else 0
+
+            if wau_pct >= 20:
+                vitalidade = '✅ Boa'
+            elif wau_pct >= 10:
+                vitalidade = '🟡 Moderada'
+            else:
+                vitalidade = '🔴 Baixa'
+
+            page1 = (
+                f'╭─❑ 「 <b>Usuários</b> 」 ❑── 1/5\n'
                 f'│\n'
-                f'│ 👥 <b>Usuários:</b> {count_users}\n'
-                f'│ ✅ <b>Msg privada ativa:</b> {users_msg_on}\n'
-                f'│ 🔐 <b>Sudo:</b> {sudo_users}\n'
-                f'│ 💬 <b>Grupos:</b> {count_groups}\n'
+                f'│ 👥 <b>Total:</b> {total:,}\n'
                 f'│\n'
-                f'│ 🖥 <b>CPU:</b> {cpu}%\n'
-                f'│ 🧠 <b>RAM:</b> {ram.percent}% ({ram.used // 1024 // 1024}MB / {ram.total // 1024 // 1024}MB)\n'
+                f'│ 🟢 <b>DAU</b> (últimas 24h): {dau:,} ({dau_pct}%)\n'
+                f'│ 📅 <b>WAU</b> (últimos 7d):  {wau:,} ({wau_pct}%)\n'
+                f'│ 📆 <b>MAU</b> (últimos 30d): {mau:,} ({mau_pct}%)\n'
+                f'│\n'
+                f'│ 🆕 <b>Hoje:</b> +{new_today}\n'
+                f'│ 🆕 <b>Esta semana:</b> +{new_week}\n'
+                f'│ 🆕 <b>Este mês:</b> +{new_month}\n'
+                f'│\n'
+                f'│ 🔇 <b>Silenciosos</b> (>30d): {silent:,}\n'
+                f'│ 📊 <b>Vitalidade WAU/Total:</b> {wau_pct}% — {vitalidade}\n'
                 f'╰❑'
             )
 
-            pages = [text]
+            # ── Página 2: Retenção ──────────────────────────────────────
+            d1 = user_manager.get_retention_d1()
+            d7 = user_manager.get_retention_d7()
+            d30 = user_manager.get_retention_d30()
+
+            d1_ico = '✅' if d1 >= 30 else ('🟡' if d1 >= 15 else '🔴')
+            d7_ico = '✅' if d7 >= 15 else ('🟡' if d7 >= 7 else '🔴')
+            d30_ico = '✅' if d30 >= 5 else ('🟡' if d30 >= 2 else '🔴')
+
+            d7_note = '' if d7 >= 15 else '\n│ ⚠️ D7 < 15% → bot não cria hábito'
+
+            page2 = (
+                f'╭─❑ 「 <b>Retenção</b> 」 ❑── 2/5\n'
+                f'│\n'
+                f'│ {d1_ico} <b>D1</b>  (voltou no dia seguinte): {d1}%\n'
+                f'│ {d7_ico} <b>D7</b>  (voltou em 7 dias):       {d7}%\n'
+                f'│ {d30_ico} <b>D30</b> (voltou em 30 dias):      {d30}%\n'
+                f'│{d7_note}\n'
+                f'│\n'
+                f'│ 📊 <b>WAU/Total:</b> {wau_pct}%\n'
+                f'│ → Vitalidade real do bot\n'
+                f'╰❑'
+            )
+
+            # ── Página 3: Origem ────────────────────────────────────────
+            sources = user_manager.get_source_stats()
+            src_lines = []
+            for s in sources[:8]:
+                label = s['_id'] if s['_id'] else '(direto/sem origem)'
+                cnt = s['count']
+                pct = round(cnt / total * 100, 1) if total else 0
+                src_lines.append(f'│ <code>{label[:22]}</code>: {cnt:,} ({pct}%)')
+
+            page3 = (
+                f'╭─❑ 「 <b>Origem dos Usuários</b> 」 ❑── 3/5\n'
+                f'│\n'
+                + ('\n'.join(src_lines) if src_lines else '│ (sem dados de origem ainda)') +
+                f'\n╰❑'
+            )
+
+            # ── Página 4: Engajamento ───────────────────────────────────
+            total_questions = sum(u.get('questions', 0) for u in all_users)
+            total_hits = sum(u.get('hits', 0) for u in all_users)
+            acerto_pct = round(total_hits / total_questions * 100, 1) if total_questions else 0
+            users_msg_on = sum(1 for u in all_users if u.get('msg_private') == 'true')
+            sudo_count = sum(1 for u in all_users if u.get('sudo') == 'true')
+
+            top_players = user_manager.get_top_quiz_players(5)
+            player_lines = []
+            for i, p in enumerate(top_players, 1):
+                name = (p.get('first_name') or p.get('username') or str(p['user_id']))[:15]
+                player_lines.append(
+                    f'│ {i}. {name} — {p.get("hits", 0)} acertos / {p.get("questions", 0)} total'
+                )
+
+            page4 = (
+                f'╭─❑ 「 <b>Engajamento</b> 」 ❑── 4/5\n'
+                f'│\n'
+                f'│ 📊 <b>Quiz respondidos:</b> {total_questions:,}\n'
+                f'│ ✅ <b>Acertos:</b> {total_hits:,} ({acerto_pct}%)\n'
+                f'│\n'
+                f'│ ✉️ <b>Msg privada ativa:</b> {users_msg_on:,}\n'
+                f'│ 🔐 <b>Sudo:</b> {sudo_count}\n'
+                f'│\n'
+                f'│ 🏆 <b>Top Jogadores de Quiz:</b>\n'
+                + ('\n'.join(player_lines) if player_lines else '│ (sem dados)') +
+                f'\n╰❑'
+            )
+
+            # ── Página 5: Sistema ───────────────────────────────────────
+            cpu = psutil.cpu_percent(1)
+            ram = psutil.virtual_memory()
+            count_groups = len(list(group_manager.get_all_chats()))
+
+            page5 = (
+                f'╭─❑ 「 <b>Sistema</b> 」 ❑── 5/5\n'
+                f'│\n'
+                f'│ 💬 <b>Grupos:</b> {count_groups:,}\n'
+                f'│ 🖥 <b>CPU:</b> {cpu}%\n'
+                f'│ 🧠 <b>RAM:</b> {ram.percent}% ({ram.used // 1024 // 1024}MB / {ram.total // 1024 // 1024}MB)\n'
+            )
 
             try:
                 from fatoshist.config import CHANNEL
                 chat = bot.get_chat(CHANNEL)
-                members = chat.linked_chat_id if hasattr(chat, 'linked_chat_id') else 'N/A'
-                channel_text = (
-                    f'\n╭─❑ 「 <b>Canal Stats</b> 」 ❑──\n'
+                page5 += (
+                    f'│\n'
                     f'│ 📺 <b>Canal:</b> {chat.title}\n'
-                    f'│ 👤 <b>Membros:</b> {getattr(chat, "members_count", "N/A")}\n'
-                    f'╰❑'
+                    f'│ 👤 <b>Membros canal:</b> {getattr(chat, "members_count", "N/A")}\n'
                 )
-                pages.append(channel_text)
             except Exception:
                 pass
 
-            full_text = ''.join(pages)
-            chunks = [full_text[i:i+3800] for i in range(0, len(full_text), 3800)]
+            page5 += f'╰❑'
 
-            if len(chunks) == 1:
-                bot.reply_to(message, chunks[0], parse_mode='HTML')
-            else:
-                def get_markup(idx):
-                    markup = types.InlineKeyboardMarkup()
-                    row = []
-                    if idx > 0:
-                        row.append(types.InlineKeyboardButton('<< Voltar', callback_data=f'stats_pg:{idx-1}'))
-                    if idx < len(chunks) - 1:
-                        row.append(types.InlineKeyboardButton('Próximo >>', callback_data=f'stats_pg:{idx+1}'))
-                    if row:
-                        markup.add(*row)
-                    return markup
+            pages = [page1, page2, page3, page4, page5]
 
-                sent = bot.reply_to(message, chunks[0], parse_mode='HTML', reply_markup=get_markup(0))
+            def get_markup(idx):
+                markup = types.InlineKeyboardMarkup()
+                row = []
+                if idx > 0:
+                    row.append(types.InlineKeyboardButton('◀️ Voltar', callback_data=f'stats_pg:{idx-1}'))
+                if idx < len(pages) - 1:
+                    row.append(types.InlineKeyboardButton('Próximo ▶️', callback_data=f'stats_pg:{idx+1}'))
+                if row:
+                    markup.add(*row)
+                return markup
 
-                @bot.callback_query_handler(func=lambda q: q.data.startswith('stats_pg:'))
-                def stats_page_cb(q):
-                    idx = int(q.data.split(':')[1])
-                    bot.edit_message_text(
-                        chat_id=q.message.chat.id,
-                        message_id=q.message.message_id,
-                        text=chunks[idx],
-                        parse_mode='HTML',
-                        reply_markup=get_markup(idx),
-                    )
+            bot.reply_to(message, pages[0], parse_mode='HTML', reply_markup=get_markup(0))
+
+            @bot.callback_query_handler(func=lambda q: q.data.startswith('stats_pg:'))
+            def stats_page_cb(q):
+                if q.from_user.id != OWNER:
                     bot.answer_callback_query(q.id)
+                    return
+                idx = int(q.data.split(':')[1])
+                bot.edit_message_text(
+                    chat_id=q.message.chat.id,
+                    message_id=q.message.message_id,
+                    text=pages[idx],
+                    parse_mode='HTML',
+                    reply_markup=get_markup(idx),
+                )
+                bot.answer_callback_query(q.id)
 
         except Exception as e:
             logging.error(f'Erro ao enviar o stats do bot: {e}')

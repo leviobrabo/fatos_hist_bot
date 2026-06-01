@@ -1,4 +1,5 @@
 import logging
+from datetime import datetime, timezone, timedelta
 
 from fatoshist import db_connection
 
@@ -9,7 +10,7 @@ class UserManager:
     def __init__(self):
         self.db = db_connection
 
-    def add_user(self, user_id, username, first_name=''):
+    def add_user(self, user_id, username, first_name='', source=''):
         """
         Adiciona um novo usuário no banco de dados com base em uma mensagem recebida.
         """
@@ -17,6 +18,7 @@ class UserManager:
             logging.warning(f'Usuário com id {user_id} já cadastrado.')
             return None
 
+        now = datetime.now(timezone.utc)
         return self.db.users.insert_one({
             'user_id': user_id,
             'username': username,
@@ -27,6 +29,9 @@ class UserManager:
             'hits': 0,
             'questions': 0,
             'progress': 0,
+            'created_at': now,
+            'last_seen': now,
+            'source': source,
         })
 
     def get_user(self, user_id):
@@ -121,4 +126,72 @@ class UserManager:
         return self.db.users.update_one(
             {'user_id': user_id},
             {'$set': {'msg_private': new_status}},
+        )
+
+    def update_last_seen(self, user_id):
+        self.db.users.update_one(
+            {'user_id': user_id},
+            {'$set': {'last_seen': datetime.now(timezone.utc)}},
+        )
+
+    # ── Analytics ──────────────────────────────────────────────────────
+
+    def _cutoff(self, days=0, hours=0):
+        return datetime.now(timezone.utc) - timedelta(days=days, hours=hours)
+
+    def get_dau(self):
+        return self.db.users.count_documents({'last_seen': {'$gte': self._cutoff(hours=24)}})
+
+    def get_wau(self):
+        return self.db.users.count_documents({'last_seen': {'$gte': self._cutoff(days=7)}})
+
+    def get_mau(self):
+        return self.db.users.count_documents({'last_seen': {'$gte': self._cutoff(days=30)}})
+
+    def get_new_users(self, days=1):
+        return self.db.users.count_documents({'created_at': {'$gte': self._cutoff(days=days)}})
+
+    def get_silent_users_count(self):
+        cutoff = self._cutoff(days=30)
+        return self.db.users.count_documents({
+            '$or': [
+                {'last_seen': {'$lt': cutoff}},
+                {'last_seen': {'$exists': False}},
+            ]
+        })
+
+    def _retention(self, days):
+        now = datetime.now(timezone.utc)
+        eligible = self.db.users.count_documents({'created_at': {'$lt': now - timedelta(days=days)}})
+        if eligible == 0:
+            return 0.0
+        retained = self.db.users.count_documents({
+            'created_at': {'$lt': now - timedelta(days=days)},
+            'last_seen': {'$gte': now - timedelta(days=days)},
+        })
+        return round(retained / eligible * 100, 1)
+
+    def get_retention_d1(self):
+        return self._retention(1)
+
+    def get_retention_d7(self):
+        return self._retention(7)
+
+    def get_retention_d30(self):
+        return self._retention(30)
+
+    def get_source_stats(self):
+        pipeline = [
+            {'$group': {'_id': '$source', 'count': {'$sum': 1}}},
+            {'$sort': {'count': -1}},
+            {'$limit': 10},
+        ]
+        return list(self.db.users.aggregate(pipeline))
+
+    def get_top_quiz_players(self, n=5):
+        return list(
+            self.db.users.find(
+                {'hits': {'$gt': 0}},
+                {'user_id': 1, 'username': 1, 'first_name': 1, 'hits': 1, 'questions': 1},
+            ).sort('hits', -1).limit(n)
         )

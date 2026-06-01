@@ -34,6 +34,8 @@ def register(bot: TeleBot):
             user = user_manager.get_user(user_id)
             if not user:
                 user_manager.add_user(user_id=user_id, username=username, first_name=first_name)
+            else:
+                user_manager.update_last_seen(user_id)
 
             user_manager.set_questions_user(user_id)
 
