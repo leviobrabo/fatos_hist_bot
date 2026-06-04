@@ -8,7 +8,7 @@ import telebot
 from telebot import types, util
 
 from fatoshist import scheduled
-from fatoshist.config import GROUP_LOG, LOG_THREAD_ID
+from fatoshist.config import GROUP_LOG
 from fatoshist.database.users import UserManager
 from fatoshist.handlers import callback_handlers, chat_handlers, commands_handlers, poll_handlers
 from fatoshist.version import fatoshist_version, python_version, telebot_version
@@ -76,7 +76,7 @@ class Bot:
                     f'<b>Versão do Python:</b> {python_version}\n'
                     f'<b>Versão da Biblioteca:</b> {telebot_version}'
                 ),
-                message_thread_id=LOG_THREAD_ID,
+                message_thread_id=None,
                 parse_mode='HTML',
             )
 

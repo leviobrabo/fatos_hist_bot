@@ -7,6 +7,7 @@ from telebot.apihelper import ApiTelegramException
 from fatoshist.config import GROUP_LOG
 from fatoshist.database.groups import GroupManager
 from fatoshist.utils.get_historical import get_historical_events
+from fatoshist.utils.telegram_errors import is_topic_closed_exception
 
 group_manager = GroupManager()
 
@@ -22,7 +23,7 @@ def send_historical_events_group(bot, chat_id):
         month = today.month
 
         chat = group_manager.search_group(chat_id)
-        topic = chat.get('thread_id')
+        topic = chat.get('thread_id') or None
         events = get_historical_events()
 
         markup = types.InlineKeyboardMarkup()
@@ -57,6 +58,11 @@ def send_historical_events_group(bot, chat_id):
             return  
     except ApiTelegramException as e:
         description = e.result_json.get('description', '')
+        if topic and is_topic_closed_exception(e):
+            group_manager.update_thread_id(chat_id, '')
+            logging.warning(
+                f'Topic {topic} from chat {chat_id} is closed. Cleared thread_id from database.'
+            )
 
         logging.warning(
             f'Erro Telegram ao enviar eventos históricos para {chat_id}: {description}'
