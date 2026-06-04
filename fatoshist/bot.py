@@ -5,18 +5,61 @@ from time import sleep
 
 import schedule
 import telebot
+from telebot.apihelper import ApiTelegramException
 from telebot import types, util
 
 from fatoshist import scheduled
 from fatoshist.config import GROUP_LOG
 from fatoshist.database.users import UserManager
 from fatoshist.handlers import callback_handlers, chat_handlers, commands_handlers, poll_handlers
+from fatoshist.utils.telegram_errors import is_topic_closed_exception
 from fatoshist.version import fatoshist_version, python_version, telebot_version
 
 
 class Bot:
     def __init__(self, token: str):
         self.bot = telebot.TeleBot(token, parse_mode='HTML')
+        self.patch_topic_closed_fallback()
+
+    def patch_topic_closed_fallback(self):
+        methods = ('send_message', 'send_photo', 'send_poll', 'reply_to')
+
+        for method_name in methods:
+            original_method = getattr(self.bot, method_name)
+
+            def wrapped(*args, _original_method=original_method, _method_name=method_name, **kwargs):
+                try:
+                    return _original_method(*args, **kwargs)
+                except ApiTelegramException as e:
+                    if not is_topic_closed_exception(e):
+                        raise
+
+                    retry_kwargs = dict(kwargs)
+                    changed = False
+                    for key in ('message_thread_id', 'reply_to_message_id', 'reply_parameters'):
+                        if key in retry_kwargs:
+                            retry_kwargs.pop(key)
+                            changed = True
+
+                    if changed:
+                        logging.warning(
+                            f'Topic closed in {_method_name}. Retrying without topic/reply parameters.'
+                        )
+                        try:
+                            return _original_method(*args, **retry_kwargs)
+                        except ApiTelegramException as retry_error:
+                            if not is_topic_closed_exception(retry_error):
+                                raise
+
+                            logging.warning(
+                                f'Topic closed in {_method_name} fallback. Ignoring Telegram error.'
+                            )
+                            return None
+
+                    logging.warning(f'Topic closed in {_method_name}. Ignoring Telegram error.')
+                    return None
+
+            setattr(self.bot, method_name, wrapped)
 
     def set_commands_and_register_handlers(self):
         try:
