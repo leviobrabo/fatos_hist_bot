@@ -2,7 +2,7 @@ import logging
 
 from telebot import TeleBot, types
 
-from fatoshist.config import GROUP_LOG
+from fatoshist.config import GROUP_LOG, LOG_THREAD_ID
 from fatoshist.database.users import UserManager
 
 user_manager = UserManager()
@@ -39,7 +39,7 @@ def register(bot: TeleBot):
                         f"<b>Username</b>: {user['username']}"
                     )
 
-                    bot.send_message(GROUP_LOG, user_info, message_thread_id=None)
+                    bot.send_message(GROUP_LOG, user_info, message_thread_id=LOG_THREAD_ID)
 
                 if user:
                     pass

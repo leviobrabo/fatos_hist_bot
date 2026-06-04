@@ -2,7 +2,7 @@ import logging
 
 from telebot import TeleBot, types
 
-from fatoshist.config import CHANNEL, CHANNEL_IMG, CHANNEL_POST, GROUP_LOG
+from fatoshist.config import CHANNEL, CHANNEL_IMG, CHANNEL_POST, GROUP_LOG, LOG_THREAD_ID
 from fatoshist.database.groups import GroupManager
 
 group_manager = GroupManager()
@@ -18,7 +18,7 @@ def send_new_group_message(bot: TeleBot, chat):
             f'<b>ID:</b> <code>{chat.id}</code>\n'
             f'<b>Link:</b> {chatusername}',
             parse_mode='html',
-            message_thread_id=None,
+            message_thread_id=LOG_THREAD_ID,
             disable_web_page_preview=True,
         )
     except Exception as e:

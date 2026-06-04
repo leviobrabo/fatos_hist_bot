@@ -9,7 +9,7 @@ from telebot.apihelper import ApiTelegramException
 from telebot import types, util
 
 from fatoshist import scheduled
-from fatoshist.config import GROUP_LOG
+from fatoshist.config import GROUP_LOG, LOG_THREAD_ID
 from fatoshist.database.users import UserManager
 from fatoshist.handlers import callback_handlers, chat_handlers, commands_handlers, poll_handlers
 from fatoshist.utils.telegram_errors import is_topic_closed_exception
@@ -132,7 +132,7 @@ class Bot:
                     f'<b>Versão do Python:</b> {python_version}\n'
                     f'<b>Versão da Biblioteca:</b> {telebot_version}'
                 ),
-                message_thread_id=None,
+                message_thread_id=LOG_THREAD_ID,
                 parse_mode='HTML',
             )
 
