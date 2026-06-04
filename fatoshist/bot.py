@@ -28,6 +28,14 @@ class Bot:
             original_method = getattr(self.bot, method_name)
 
             def wrapped(*args, _original_method=original_method, _method_name=method_name, **kwargs):
+                chat_id = kwargs.get('chat_id')
+                if chat_id is None and args:
+                    if _method_name == 'reply_to':
+                        chat_id = getattr(getattr(args[0], 'chat', None), 'id', None)
+                    else:
+                        chat_id = args[0]
+                thread_id = kwargs.get('message_thread_id')
+
                 try:
                     return _original_method(*args, **kwargs)
                 except ApiTelegramException as e:
@@ -43,7 +51,8 @@ class Bot:
 
                     if changed:
                         logging.warning(
-                            f'Topic closed in {_method_name}. Retrying without topic/reply parameters.'
+                            f'Topic closed in {_method_name} for chat_id={chat_id}, thread_id={thread_id}. '
+                            'Retrying without topic/reply parameters.'
                         )
                         try:
                             return _original_method(*args, **retry_kwargs)
@@ -52,11 +61,15 @@ class Bot:
                                 raise
 
                             logging.warning(
-                                f'Topic closed in {_method_name} fallback. Ignoring Telegram error.'
+                                f'Topic closed in {_method_name} fallback for chat_id={chat_id}, '
+                                f'thread_id={thread_id}. Ignoring Telegram error.'
                             )
                             return None
 
-                    logging.warning(f'Topic closed in {_method_name}. Ignoring Telegram error.')
+                    logging.warning(
+                        f'Topic closed in {_method_name} for chat_id={chat_id}, thread_id={thread_id}. '
+                        'Ignoring Telegram error.'
+                    )
                     return None
 
             setattr(self.bot, method_name, wrapped)
