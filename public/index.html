@@ -30,9 +30,12 @@
 
     <nav class="tabs" aria-label="Seções">
       <button class="tab active" data-view="explore">Explorar</button>
+      <button class="tab" data-view="mission">Missão</button>
+      <button class="tab" data-view="favorites">Meu Museu</button>
       <button class="tab" data-view="passport">Passaporte</button>
       <button class="tab" data-view="ranking">Ranking</button>
       <button class="tab" data-view="preferences">Preferências</button>
+      <button id="adminTab" class="tab" data-view="admin" hidden>Admin</button>
     </nav>
 
     <section id="explore" class="view active">
@@ -46,6 +49,21 @@
         <button>Viajar</button>
       </form>
       <div id="results" class="results" aria-live="polite"></div>
+    </section>
+
+    <section id="mission" class="view">
+      <div class="mission-card">
+        <span class="eyebrow">MISSÃO HISTÓRICA DIÁRIA</span>
+        <h3>Complete sua jornada</h3>
+        <p>Explore um fato, salve no Museu e responda um quiz no bot para receber 25 XP.</p>
+        <div id="missionTasks" class="mission-grid"></div>
+        <div id="missionReward" class="mission-reward"></div>
+      </div>
+    </section>
+
+    <section id="favorites" class="view">
+      <div class="section-heading"><div><span class="eyebrow">ACERVO PESSOAL</span><h3>Meu Museu</h3></div><button id="refreshFavorites" class="secondary">Atualizar</button></div>
+      <div id="favoritesList" class="results"><p class="empty">Seus fatos salvos aparecerão aqui.</p></div>
     </section>
 
     <section id="passport" class="view">
@@ -63,6 +81,15 @@
         <button type="submit">Salvar preferências</button>
         <p id="saveStatus" role="status"></p>
       </form>
+    </section>
+
+    <section id="admin" class="view">
+      <div class="section-heading"><div><span class="eyebrow">OPERAÇÃO</span><h3>Painel administrativo</h3></div><button id="refreshAdmin" class="secondary">Atualizar</button></div>
+      <div id="adminStats" class="admin-stats"></div>
+      <h3 class="admin-title">Sugestões pendentes</h3>
+      <div id="adminSuggestions" class="admin-list"></div>
+      <h3 class="admin-title">Fila editorial</h3>
+      <div id="adminQueue" class="admin-list"></div>
     </section>
   </main>
   <footer>Base curada pelo projeto Fatos Históricos · Verifique as fontes antes de citar.</footer>

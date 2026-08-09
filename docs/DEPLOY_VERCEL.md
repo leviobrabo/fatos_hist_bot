@@ -15,6 +15,7 @@ Configure nos ambientes Production, Preview e Development do projeto Vercel:
 
 - `BOT_TOKEN`: token do BotFather; nunca exponha no frontend.
 - `MONGO_CON`: conexão MongoDB com acesso ao banco `fatoshistbot`.
+- `OWNER_ID`: ID numérico do proprietário, usado para liberar o painel administrativo e preparar sugestões aprovadas.
 
 No processo principal do bot, configure também:
 

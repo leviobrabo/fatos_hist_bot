@@ -27,6 +27,7 @@ BADGES = {
     'quiz_10': '🧠 10 acertos',
     'quiz_50': '🎯 50 acertos',
     'nivel_5': '🏅 Nível 5',
+    'missao_diaria': '🧭 Missão diária',
 }
 
 
@@ -159,6 +160,45 @@ def register(bot: TeleBot):
             lines.append(f'{marker} {html.escape(name)} — <b>{user.get("xp", 0)} XP</b>')
         bot.reply_to(message, '\n'.join(lines), parse_mode='HTML')
 
+    @bot.message_handler(commands=['favoritos'])
+    def cmd_favorites(message):
+        if message.chat.type != 'private':
+            bot.reply_to(message, 'Abra seus favoritos no chat privado do bot.')
+            return
+        markup = types.InlineKeyboardMarkup()
+        if MINI_APP_URL:
+            markup.add(types.InlineKeyboardButton('⭐ Abrir Meu Museu', web_app=types.WebAppInfo(MINI_APP_URL)))
+            bot.reply_to(
+                message,
+                '<b>Meu Museu</b>\n\nSalve fatos e organize sua coleção dentro da Mini App.',
+                parse_mode='HTML',
+                reply_markup=markup,
+            )
+        else:
+            bot.reply_to(message, 'A Mini App ainda não está configurada.')
+
+    @bot.message_handler(commands=['missao'])
+    def cmd_mission(message):
+        user_id = _ensure_user(message)
+        mission = user_manager.get_daily_mission(user_id)
+        actions = set(mission['actions'])
+        tasks = (
+            ('explore', 'Explorar um fato na Mini App'),
+            ('save', 'Salvar um fato no Meu Museu'),
+            ('quiz', 'Responder um quiz'),
+        )
+        lines = [f'{"✅" if key in actions else "⬜"} {label}' for key, label in tasks]
+        status = 'Missão concluída e 25 XP recebidos!' if mission['completed'] else f'{len(actions & set(mission["required"]))}/3 etapas concluídas'
+        markup = types.InlineKeyboardMarkup()
+        if MINI_APP_URL:
+            markup.add(types.InlineKeyboardButton('🧭 Abrir missão', web_app=types.WebAppInfo(MINI_APP_URL)))
+        bot.reply_to(
+            message,
+            '<b>🧭 Missão Histórica Diária</b>\n\n' + '\n'.join(lines) + f'\n\n<b>{status}</b>',
+            parse_mode='HTML',
+            reply_markup=markup,
+        )
+
     @bot.message_handler(commands=['sugerir'])
     def cmd_suggest(message):
         try:
@@ -265,6 +305,8 @@ def register(bot: TeleBot):
     return [
         types.BotCommand('passaporte', 'Seu progresso e medalhas'),
         types.BotCommand('ranking', 'Ranking dos historiadores'),
+        types.BotCommand('favoritos', 'Abrir fatos e coleções salvas'),
+        types.BotCommand('missao', 'Ver a missão histórica diária'),
         types.BotCommand('preferencias', 'Personalizar temas e horário'),
         types.BotCommand('sugerir', 'Sugerir um fato com fonte'),
         types.BotCommand('clube', 'Assinar o Clube Histórico'),

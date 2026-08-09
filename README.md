@@ -19,6 +19,10 @@
 - Sugestões comunitárias com moderação e fila editorial persistente
 - Clube Histórico com assinatura mensal em Telegram Stars
 - Mini App Museu Histórico pronta para Vercel
+- Meu Museu com favoritos e coleções pessoais
+- Missão histórica diária com recompensa de XP
+- Compartilhamento nativo de fatos pelo Telegram
+- Painel administrativo para sugestões e calendário editorial
 
 -   Envia eventos históricos do dia
     -   Chat privado (horário escolhido pelo usuário)

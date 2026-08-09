@@ -42,6 +42,8 @@ def start_text(first_name):
         '• /data 7/9 — visite um dia da História\n'
         '• /historiador Santos Dumont — pesquise a base curada\n'
         '• /passaporte — veja nível, sequência e medalhas\n'
+        '• /missao — complete tarefas e ganhe XP\n'
+        '• /favoritos — abra seu Museu pessoal\n'
         '• /preferencias — escolha temas, frequência e horário\n\n'
         'O envio privado respeita as suas preferências. Use /sendoff para pausar e /sendon para voltar.'
     )
@@ -101,7 +103,7 @@ def register(bot: TeleBot):
         text = (
             '<b>Como explorar o Fatos Históricos</b>\n\n'
             '<b>Pesquisa:</b> /data, /ano, /personagem, /historiador e /surpreenda\n'
-            '<b>Sua jornada:</b> /passaporte, /ranking e /preferencias\n'
+            '<b>Sua jornada:</b> /passaporte, /missao, /favoritos, /ranking e /preferencias\n'
             '<b>Comunidade:</b> /sugerir e /clube\n'
             '<b>Entregas:</b> /sendon e /sendoff\n'
             '<b>Grupos:</b> /fotoshist, /fwdon, /fwdoff, /settopic e /unsettopic\n\n'

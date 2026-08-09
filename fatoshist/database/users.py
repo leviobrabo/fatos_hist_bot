@@ -51,6 +51,11 @@ class UserManager:
                 'expires_at': None,
                 'charge_id': None,
             },
+            'daily_mission': {
+                'date': None,
+                'actions': [],
+                'reward_claimed': False,
+            },
         })
 
     def get_user(self, user_id):
@@ -310,11 +315,84 @@ class UserManager:
         )
         return {'xp': new_xp, 'level': level, 'streak': streak, 'badges': badges}
 
+    def record_daily_mission(self, user_id, action):
+        """Registra uma etapa diária e concede 25 XP uma única vez ao concluir."""
+        allowed = {'explore', 'save', 'quiz', 'share'}
+        if action not in allowed:
+            raise ValueError('Ação de missão inválida')
+        today = datetime.now(ZoneInfo('America/Sao_Paulo')).date().isoformat()
+        user = self.get_user(user_id)
+        if not user:
+            return None
+        mission = user.get('daily_mission') or {}
+        if mission.get('date') != today:
+            self.db.users.update_one(
+                {'user_id': user_id},
+                {'$set': {
+                    'daily_mission.date': today,
+                    'daily_mission.actions': [],
+                    'daily_mission.reward_claimed': False,
+                }},
+            )
+
+        updated = self.db.users.find_one_and_update(
+            {'user_id': user_id, 'daily_mission.date': today},
+            {'$addToSet': {'daily_mission.actions': action}},
+            return_document=ReturnDocument.AFTER,
+        )
+        actions = set((updated or {}).get('daily_mission', {}).get('actions', []))
+        required = {'explore', 'save', 'quiz'}
+        rewarded = False
+        if required.issubset(actions):
+            rewarded_user = self.db.users.find_one_and_update(
+                {
+                    'user_id': user_id,
+                    'daily_mission.date': today,
+                    'daily_mission.reward_claimed': {'$ne': True},
+                },
+                {
+                    '$set': {'daily_mission.reward_claimed': True},
+                    '$inc': {'xp': 25},
+                    '$addToSet': {'badges': 'missao_diaria'},
+                },
+                return_document=ReturnDocument.AFTER,
+            )
+            if rewarded_user:
+                rewarded = True
+                new_xp = int(rewarded_user.get('xp', 0))
+                self.db.users.update_one(
+                    {'user_id': user_id},
+                    {'$set': {'level': 1 + new_xp // 100}},
+                )
+        return {
+            'date': today,
+            'actions': sorted(actions),
+            'completed': required.issubset(actions),
+            'rewarded_now': rewarded,
+        }
+
+    def get_daily_mission(self, user_id):
+        user = self.get_user(user_id) or {}
+        today = datetime.now(ZoneInfo('America/Sao_Paulo')).date().isoformat()
+        mission = user.get('daily_mission') or {}
+        actions = mission.get('actions', []) if mission.get('date') == today else []
+        required = {'explore', 'save', 'quiz'}
+        return {
+            'date': today,
+            'actions': actions,
+            'required': sorted(required),
+            'completed': required.issubset(set(actions)),
+            'reward_claimed': bool(mission.get('reward_claimed') and mission.get('date') == today),
+            'reward_xp': 25,
+        }
+
     def get_passport(self, user_id):
         user = self.get_user(user_id) or {}
         level = int(user.get('level', 1))
         premium = user.get('premium') or {'active': False}
         expires_at = premium.get('expires_at')
+        if isinstance(expires_at, datetime) and expires_at.tzinfo is None:
+            expires_at = expires_at.replace(tzinfo=timezone.utc)
         if premium.get('active') and isinstance(expires_at, datetime) and expires_at <= datetime.now(timezone.utc):
             premium = {**premium, 'active': False}
             self.db.users.update_one({'user_id': user_id}, {'$set': {'premium.active': False}})
@@ -343,6 +421,8 @@ class UserManager:
     def activate_premium(self, user_id, charge_id, period_days=30):
         user = self.get_user(user_id) or {}
         current_expiration = (user.get('premium') or {}).get('expires_at')
+        if isinstance(current_expiration, datetime) and current_expiration.tzinfo is None:
+            current_expiration = current_expiration.replace(tzinfo=timezone.utc)
         now = datetime.now(timezone.utc)
         base = current_expiration if isinstance(current_expiration, datetime) and current_expiration > now else now
         expires_at = base + timedelta(days=period_days)

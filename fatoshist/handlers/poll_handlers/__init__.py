@@ -48,6 +48,12 @@ def register(bot: TeleBot):
             if is_correct:
                 user_manager.set_hit_user(user_id)
             user_manager.record_learning_activity(user_id, xp=15 if is_correct else 3, topic='quiz')
+            mission = user_manager.record_daily_mission(user_id, 'quiz')
+            if mission and mission.get('rewarded_now'):
+                try:
+                    bot.send_message(user_id, '🧭 Missão diária concluída! Você recebeu <b>25 XP</b>.', parse_mode='HTML')
+                except Exception:
+                    logging.info('Missão concluída, mas não foi possível avisar o usuário %s', user_id)
 
         except Exception as e:
             logging.error(f'Erro ao processar a resposta da enquete: {e}')
