@@ -1,12 +1,12 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
   "rewrites": [
-    {"source": "/", "destination": "/public/index.html"},
-    {"source": "/styles.css", "destination": "/public/styles.css"},
-    {"source": "/app.js", "destination": "/public/app.js"}
+    {"source": "/", "destination": "/index.html"}
   ],
   "functions": {
     "api/index.py": {
+      "includeFiles": "fatoshist/data/eventos.json",
       "excludeFiles": "{.git/**,tests/**,docs/**,fatoshist/assets/**,fatoshist/videos/**}"
     }
   },
