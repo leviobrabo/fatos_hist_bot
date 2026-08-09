@@ -11,8 +11,17 @@
 
 ## Funcionalidades
 
+- Máquina do Tempo: `/data`, `/ano`, `/personagem` e `/surpreenda`
+- Historiador assistido com busca na base curada e indicação de fonte
+- Passaporte Histórico com XP, níveis, sequência e medalhas
+- Preferências individuais de temas, frequência e horário
+- Ranking e quizzes sem pontuação duplicada
+- Sugestões comunitárias com moderação e fila editorial persistente
+- Clube Histórico com assinatura mensal em Telegram Stars
+- Mini App Museu Histórico pronta para Vercel
+
 -   Envia eventos históricos do dia
-    -   Chat privado (8h)
+    -   Chat privado (horário escolhido pelo usuário)
     -   Canal (5h3min)
     -   Grupos (8h)
 -   Envia frases históricas
@@ -56,29 +65,34 @@ $ cd fatos_hist_bot
 
 # Instale as dependências
 
-# Usando o pip:
-$ pip3 install -r requirements.txt
+# Usando o Poetry:
+$ poetry install
 
-# altere o nome do conf
+# Copie o arquivo de configuração
 $ cp sample.bot.conf bot.config
 
-# Variáveis ambientes
-$ cd bot.config
-
-# Crie um arquivo com bot.conf com qualquer editor de texto e coloque:
+# Edite bot.config e preencha:
 [FATOSHIST]
 TOKEN=
 HIST_LOG=
 HIST_CHANNEL=
 OWNER_ID=
-HIST_CHANNEL_POST =
+HIST_CHANNEL_POST=
+CHANNEL_IMG=
+LOG_THREAD_ID=
+MINI_APP_URL=
+CLUB_STARS=100
 
 [DB]
 MONGO_CON=
 
 # Execute a aplicação
-$ python3 main.py
+$ poetry run python main.py
 
 ```
+
+### Mini App na Vercel
+
+Consulte [docs/DEPLOY_VERCEL.md](docs/DEPLOY_VERCEL.md). O frontend fica em `public/`, a Function Python em `api/` e os segredos `BOT_TOKEN`/`MONGO_CON` devem ser configurados somente no ambiente da Vercel.
 
 ## Pronto, o bot já estará rodando e uma pasta chamada /log aparecerá na raiz do repositório.

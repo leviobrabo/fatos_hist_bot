@@ -4,6 +4,7 @@ import random
 from datetime import datetime
 
 from fatoshist.config import CHANNEL, OWNER
+from fatoshist.utils.paths import data_path
 
 HISTORY_HOOKS = [
     "<tg-emoji emoji-id=\"5226512880362332956\">📖</tg-emoji> Uma história que poucos conhecem",
@@ -43,7 +44,7 @@ def get_history(bot, CHANNEL):
         day = today.day
         month = today.month
 
-        with open('./fatoshist/data/historia.json', 'r', encoding='utf-8') as file:
+        with data_path('historia.json').open('r', encoding='utf-8') as file:
             json_events = json.load(file)
             historia = json_events.get(f'{month}-{day}', {})
 

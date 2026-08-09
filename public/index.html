@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#17130f">
+  <meta property="og:title" content="Museu Histórico — Fatos Históricos">
+  <meta property="og:description" content="Explore datas, fatos e seu Passaporte Histórico.">
+  <title>Museu Histórico</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+  <div class="grain"></div>
+  <header class="hero">
+    <div class="seal">FH</div>
+    <div><span class="eyebrow">ACERVO DIGITAL</span><h1>Museu Histórico</h1></div>
+    <button id="closeButton" class="icon-button" aria-label="Fechar">×</button>
+  </header>
+
+  <main>
+    <section class="welcome">
+      <p class="eyebrow">SUA JORNADA</p>
+      <h2 id="greeting">Viaje por séculos de história.</h2>
+      <p>Pesquise personagens e acontecimentos, visite uma data ou acompanhe seu passaporte.</p>
+    </section>
+
+    <nav class="tabs" aria-label="Seções">
+      <button class="tab active" data-view="explore">Explorar</button>
+      <button class="tab" data-view="passport">Passaporte</button>
+      <button class="tab" data-view="ranking">Ranking</button>
+      <button class="tab" data-view="preferences">Preferências</button>
+    </nav>
+
+    <section id="explore" class="view active">
+      <form id="searchForm" class="search-card">
+        <label for="searchInput">Quem ou o que você quer encontrar?</label>
+        <div class="search-row"><input id="searchInput" minlength="2" placeholder="Ex.: Santos Dumont" required><button>Buscar</button></div>
+      </form>
+      <form id="dateForm" class="date-card">
+        <div><span class="eyebrow">MÁQUINA DO TEMPO</span><h3>Visite uma data</h3></div>
+        <input id="dateInput" type="text" inputmode="numeric" placeholder="9/8" pattern="[0-9]{1,2}/[0-9]{1,2}" required>
+        <button>Viajar</button>
+      </form>
+      <div id="results" class="results" aria-live="polite"></div>
+    </section>
+
+    <section id="passport" class="view">
+      <div id="passportCard" class="passport-card"><p>Abra esta página pelo Telegram para carregar seu passaporte.</p></div>
+    </section>
+
+    <section id="ranking" class="view"><div id="rankingList" class="ranking-list"></div></section>
+
+    <section id="preferences" class="view">
+      <form id="preferencesForm" class="preferences-card">
+        <h3>Escolha sua jornada</h3>
+        <fieldset><legend>Temas favoritos</legend><div id="topicOptions" class="chips"></div></fieldset>
+        <label>Frequência<select id="frequency"><option value="daily">Diária</option><option value="weekly">Semanal</option></select></label>
+        <label>Horário<select id="deliveryHour"><option>8</option><option>12</option><option>18</option><option>21</option></select></label>
+        <button type="submit">Salvar preferências</button>
+        <p id="saveStatus" role="status"></p>
+      </form>
+    </section>
+  </main>
+  <footer>Base curada pelo projeto Fatos Históricos · Verifique as fontes antes de citar.</footer>
+  <script src="/app.js" defer></script>
+</body>
+</html>

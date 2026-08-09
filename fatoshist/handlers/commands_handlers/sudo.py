@@ -41,10 +41,10 @@ def register(bot: TeleBot):
             result = user_manager.set_user_sudo(user_id)
 
             if result.modified_count > 0:
-                username = '@' + message.from_user.username if message.from_user.username else 'Não tem um nome de usuário'
                 updated_user = user_manager.get_user(user_id)
 
                 if updated_user:
+                    username = '@' + updated_user['username'] if updated_user.get('username') else 'Não tem um nome de usuário'
                     bot.send_message(
                         message.chat.id,
                         f"<b>Novo sudo adicionado com sucesso</b>\n\n"
@@ -96,10 +96,10 @@ def register(bot: TeleBot):
             result = user_manager.remove_user_sudo(user_id)
 
             if result.modified_count > 0:
-                username = '@' + message.from_user.username if message.from_user.username else 'Não tem um nome de usuário'
                 updated_user = user_manager.get_user(user_id)
 
                 if updated_user:
+                    username = '@' + updated_user['username'] if updated_user.get('username') else 'Não tem um nome de usuário'
                     bot.send_message(
                         message.chat.id,
                         f"<b>User sudo removido com sucesso</b>\n\n"
@@ -128,7 +128,7 @@ def register(bot: TeleBot):
     @bot.message_handler(commands=['grupos'])
     def cmd_group(message):
         try:
-            if message.from_user.id != OWNER and message.chat.type != 'private':
+            if message.from_user.id != OWNER or message.chat.type != 'private':
                 return
 
             chats = list(group_manager.get_all_chats().sort('chat_id', 1))
@@ -152,6 +152,10 @@ def register(bot: TeleBot):
 
             if current_chunk:
                 message_chunks.append(current_chunk)
+
+            if not message_chunks:
+                bot.send_message(message.chat.id, 'Nenhum grupo cadastrado.')
+                return
 
             index = 0
 
@@ -368,7 +372,7 @@ def register(bot: TeleBot):
     @bot.message_handler(commands=['bcusers'])
     def cmd_broadcast_pv(message):
         try:
-            if message.from_user.id != OWNER and message.chat.type != 'private':
+            if message.from_user.id != OWNER or message.chat.type != 'private':
                 return
 
             sent_message = bot.send_message(message.chat.id, '<i>Processing...</i>', parse_mode='HTML')
@@ -566,7 +570,7 @@ def register(bot: TeleBot):
     @bot.message_handler(commands=['bc'])
     def broadcast_handler(message):
         """Handler para o comando /bc. Encaminha uma mensagem para todos os usuários com delay e atualização do status."""
-        if not user_manager.is_sudo(message.from_user.id):
+        if not user_manager.is_sudo(message.from_user.id) and message.from_user.id != OWNER:
             bot.reply_to(message, "Você não tem permissão para usar este comando.")
             return
     
@@ -633,7 +637,12 @@ def register(bot: TeleBot):
                 return
 
             reply_msg = message.reply_to_message
-            slot = queue_bcchannel(bot, reply_msg.chat.id, reply_msg.message_id)
+            slot = queue_bcchannel(
+                bot,
+                reply_msg.chat.id,
+                reply_msg.message_id,
+                requested_by=message.from_user.id,
+            )
 
             slot_str = slot.strftime('%d/%m/%Y às %H:%M')
             bot.reply_to(
@@ -648,14 +657,14 @@ def register(bot: TeleBot):
             logging.error(f'Erro no /bcchannel: {e}')
 
     return [
-        types.BotCommand('/add_sudo', 'Elevar usuário'),
-        types.BotCommand('/rem_sudo', 'Remover usuário'),
-        types.BotCommand('/grupos', 'Lista de grupos'),
-        types.BotCommand('/stats', 'Estatística do bot'),
-        types.BotCommand('/bcusers', 'Broadcast para usuários'),
-        types.BotCommand('/bcgps', 'Broadcast para grupos'),
-        types.BotCommand('/bc', 'Broadcast para todos users'),
-        types.BotCommand('/bcchannel', 'Encaminhar post ao canal (horário inteligente)'),
-        types.BotCommand('/sys', 'Uso do servidor'),
-        types.BotCommand('/ping', 'Verificar latência do bot'),
+        types.BotCommand('add_sudo', 'Elevar usuário'),
+        types.BotCommand('rem_sudo', 'Remover usuário'),
+        types.BotCommand('grupos', 'Lista de grupos'),
+        types.BotCommand('stats', 'Estatística do bot'),
+        types.BotCommand('bcusers', 'Broadcast para usuários'),
+        types.BotCommand('bcgps', 'Broadcast para grupos'),
+        types.BotCommand('bc', 'Broadcast para todos users'),
+        types.BotCommand('bcchannel', 'Encaminhar post ao canal (horário inteligente)'),
+        types.BotCommand('sys', 'Uso do servidor'),
+        types.BotCommand('ping', 'Verificar latência do bot'),
     ]

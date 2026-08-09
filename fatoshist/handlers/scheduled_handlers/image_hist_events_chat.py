@@ -22,7 +22,11 @@ def send_historical_events_group_image(bot, chat_id):
         chat = group_manager.search_group(chat_id)
         topic = chat.get('thread_id')
 
-        response = requests.get(f'https://pt.wikipedia.org/api/rest_v1/feed/onthisday/events/{month}/{day}')
+        response = requests.get(
+            f'https://pt.wikipedia.org/api/rest_v1/feed/onthisday/events/{month}/{day}',
+            timeout=10,
+        )
+        response.raise_for_status()
         events = response.json().get('events', [])
 
         if events:
@@ -38,8 +42,8 @@ def send_historical_events_group_image(bot, chat_id):
             caption = f'<b>Você sabia?</b>\n\nEm <b>{day} de {get_month_name(month)} de {event_year}</b>\n\n<blockquote>{event_text}</blockquote>'
             inline_keyboard = types.InlineKeyboardMarkup()
             inline_keyboard.add(
-                types.InlineKeyboardButton(text='Canal Oficial', url='https://t.me/historia_br', icon_costum_emoji_id='530541794076027344'),
-                types.InlineKeyboardButton(text='Nosso site', url='https://www.historiadodia.com', icon_costum_emoji_id='5215391376081954505'),
+                types.InlineKeyboardButton(text='Canal Oficial', url='https://t.me/historia_br', icon_custom_emoji_id='530541794076027344'),
+                types.InlineKeyboardButton(text='Nosso site', url='https://www.historiadodia.com', icon_custom_emoji_id='5215391376081954505'),
             )
 
             if photo_url:
@@ -79,6 +83,6 @@ def hist_image_chat_job(bot):
                     send_historical_events_group_image(bot, chat_id)
                 except Exception as e:
                     logging.error(f'Error sending imgs historical events to group {chat_id}: {str(e)}')
-                    group_manager.update_forwarding_status(chat_id, {'forwarding': 'false'})
+                    group_manager.update_forwarding_status(chat_id, 'false')
     except Exception as e:
         logging.error(f'Erro ao fazer o envio das imagens para chats: {e}')

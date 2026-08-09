@@ -6,6 +6,7 @@ import pytz
 
 from fatoshist.config import CHANNEL, OWNER
 from fatoshist.utils.month import get_month_name
+from fatoshist.utils.paths import data_path
 
 
 def get_holiday_br_of_the_day(bot, CHANNEL):
@@ -14,7 +15,7 @@ def get_holiday_br_of_the_day(bot, CHANNEL):
         day = today.day
         month = today.month
 
-        with open('./fatoshist/data/holidayBr.json', 'r', encoding='utf-8') as file:
+        with data_path('holidayBr.json').open('r', encoding='utf-8') as file:
             json_events = json.load(file)
             births = json_events.get(f'{month}-{day}', {}).get('births', [])
 

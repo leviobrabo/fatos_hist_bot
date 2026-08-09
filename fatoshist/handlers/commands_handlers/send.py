@@ -63,6 +63,6 @@ def register(bot: TeleBot):
             logging.error(f'Erro ao desativar o recebimento dos eventos históricos: {e}')
 
     return [
-        types.BotCommand('/sendon', 'Receber mensagens diárias às 8:00'),
-        types.BotCommand('/sendoff', 'Parar de receber mensagens diárias às 8:00'),
+        types.BotCommand('sendon', 'Receber mensagens diárias às 8:00'),
+        types.BotCommand('sendoff', 'Parar de receber mensagens diárias às 8:00'),
     ]

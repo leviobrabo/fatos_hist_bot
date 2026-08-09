@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "fatoshist"
-version = "2.1.8"
+version = "3.0.0"
 description = ""
 authors = ["leviobrabo <carlosjunior20313@gmail.com>"]
 readme = "README.md"
@@ -11,6 +11,9 @@ pytelegrambotapi = "^4.33.0"
 schedule = "^1.2.2"
 pymongo = "^4.15.5"
 pytz = "^2025.2"
+requests = "^2.32.3"
+psutil = "^7.0.0"
+beautifulsoup4 = "^4.12.3"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -40,7 +43,7 @@ addopts = '-p no:warnings'
 [tool.taskipy.tasks]
 lint = 'ruff check . && ruff check . --diff'
 format = 'ruff check . --fix && ruff format .'
-run = 'fatoshistbot dev fatoshist/main.py'
+run = 'python main.py'
 pre_test = 'task lint'
 test = 'pytest -s -x --cov=fatoshist -vv'
 post_test = 'coverage html'

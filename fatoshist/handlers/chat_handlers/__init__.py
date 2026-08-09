@@ -1,11 +1,14 @@
 import logging
+from datetime import datetime, timezone
 
 from telebot import TeleBot, types
 
 from fatoshist.config import CHANNEL, CHANNEL_IMG, CHANNEL_POST, GROUP_LOG, LOG_THREAD_ID
 from fatoshist.database.groups import GroupManager
+from fatoshist.database.editorial_manager import EditorialManager
 
 group_manager = GroupManager()
+editorial_manager = EditorialManager()
 
 
 def send_new_group_message(bot: TeleBot, chat):
@@ -26,6 +29,24 @@ def send_new_group_message(bot: TeleBot, chat):
 
 
 def register(bot):
+    @bot.channel_post_handler(
+        func=lambda message: message.chat.id == CHANNEL,
+        content_types=['text', 'photo', 'video', 'animation', 'document', 'audio', 'poll'],
+    )
+    def track_channel_post(message):
+        """Registra posts de qualquer origem para evitar colisões, inclusive automações externas."""
+        try:
+            published_at = datetime.fromtimestamp(message.date, tz=timezone.utc)
+            editorial_manager.record_post(
+                message_id=message.message_id,
+                source='channel_observed',
+                post_type=message.content_type,
+                published_at=published_at,
+                metadata={'author_signature': getattr(message, 'author_signature', None)},
+            )
+        except Exception:
+            logging.exception('Erro ao registrar publicação observada no canal')
+
     @bot.my_chat_member_handler()
     def send_group_greeting(message: types.ChatMemberUpdated):
         try:

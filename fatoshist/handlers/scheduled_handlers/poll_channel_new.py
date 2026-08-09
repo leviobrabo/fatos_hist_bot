@@ -3,6 +3,7 @@ import logging
 from datetime import datetime
 
 from fatoshist.config import CHANNEL_POST
+from fatoshist.utils.paths import data_path
 
 
 def send_poll(bot, chat_id, question, options, correct_option_id, explanation):
@@ -29,7 +30,7 @@ def send_question_new_channel(bot):
         today = datetime.now()
         current_time = today.time()
 
-        with open('./fatoshist/data/perguntas_10.json', 'r', encoding='utf-8') as file:
+        with data_path('perguntas_10.json').open('r', encoding='utf-8') as file:
             json_events = json.load(file)
 
         events = json_events[f'{today.month}-{today.day}']
@@ -124,7 +125,7 @@ def send_question_new_channel(bot):
             send_poll(
                 bot,
                 "-1003612921107",
-                events['pergunta9']['enunciado'],
+                events['pergunta10']['enunciado'],
                 list(events['pergunta10']['alternativas'].values()),
                 list(events['pergunta10']['alternativas']).index(events['pergunta10']['correta']),
                 events['pergunta10'].get('explicacao', ''),

@@ -20,6 +20,9 @@ def register(bot: TeleBot):
             username = poll_answer.user.username
 
             poll_id = poll_answer.poll_id
+            if not poll_answer.option_ids:
+                # O Telegram envia uma lista vazia quando o usuário retira o voto.
+                return
             option_id = poll_answer.option_ids[0]
 
             poll_db = poll_manager.search_poll(poll_id)
@@ -37,10 +40,14 @@ def register(bot: TeleBot):
             else:
                 user_manager.update_last_seen(user_id)
 
-            user_manager.set_questions_user(user_id)
+            is_correct = correto is not None and option_id == correto
+            if not poll_manager.register_answer(poll_id, user_id, option_id, is_correct):
+                return
 
-            if correto is not None and option_id == correto:
+            user_manager.set_questions_user(user_id)
+            if is_correct:
                 user_manager.set_hit_user(user_id)
+            user_manager.record_learning_activity(user_id, xp=15 if is_correct else 3, topic='quiz')
 
         except Exception as e:
             logging.error(f'Erro ao processar a resposta da enquete: {e}')

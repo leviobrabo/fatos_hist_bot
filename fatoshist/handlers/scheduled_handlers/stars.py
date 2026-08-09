@@ -1,6 +1,7 @@
 import logging
 
 from fatoshist.config import CHANNEL, OWNER
+from fatoshist.utils.paths import asset_path
 
 
 def msg_alerta_stars(bot):
@@ -13,8 +14,8 @@ def msg_alerta_stars(bot):
             '#historia #ajude_canal #stars #estrelas #doe'
         )
 
-        video_path = r'./fatoshist/assets/stars_video.mp4'
-        with open(video_path, 'rb') as video:
+        video_path = asset_path('stars_video.mp4')
+        with video_path.open('rb') as video:
             bot.send_video(CHANNEL, video, caption=caption, parse_mode='HTML')
             msg_text_owner = 'Mensagem de STARS enviado com sucesso para o canal'
             bot.send_message(OWNER, msg_text_owner, parse_mode="HTML")

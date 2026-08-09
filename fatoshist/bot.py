@@ -11,7 +11,7 @@ from telebot import types, util
 from fatoshist import scheduled
 from fatoshist.config import GROUP_LOG, LOG_THREAD_ID
 from fatoshist.database.users import UserManager
-from fatoshist.handlers import callback_handlers, chat_handlers, commands_handlers, poll_handlers
+from fatoshist.handlers import callback_handlers, chat_handlers, commands_handlers, payment_handlers, poll_handlers
 from fatoshist.utils.telegram_errors import is_topic_closed_exception
 from fatoshist.version import fatoshist_version, python_version, telebot_version
 
@@ -75,48 +75,52 @@ class Bot:
             setattr(self.bot, method_name, wrapped)
 
     def set_commands_and_register_handlers(self):
+        commands = commands_handlers.register_all(self.bot)
+        poll_handlers.register(self.bot)
+        payment_handlers.register(self.bot)
+        callback_handlers.register(self.bot)
+        chat_handlers.register(self.bot)
+
         try:
             self.bot.set_my_commands(
-                [*commands_handlers.register_chat_private(self.bot)],
+                commands['private'],
                 scope=types.BotCommandScopeAllPrivateChats(),
             )
 
             self.bot.set_my_commands(
-                [*commands_handlers.register_chat_group(self.bot)],
+                commands['group'],
                 scope=types.BotCommandScopeAllGroupChats(),
             )
 
             self.bot.set_my_commands(
-                [*commands_handlers.register_admin_chat_group(self.bot)],
+                commands['admin'],
                 scope=types.BotCommandScopeAllChatAdministrators(),
             )
 
             sudo_users = UserManager().get_all_sudo_users()
             for user in sudo_users:
+                user_id = user.get('user_id')
                 try:
-                    user_id = int(user.get('user_id'))
+                    user_id = int(user_id)
                     self.bot.set_my_commands(
-                        [*commands_handlers.register_sudo(self.bot)],
-                        scope=types.BotCommandScopeChat(chat_id=user.get('user_id')),
+                        commands['sudo'],
+                        scope=types.BotCommandScopeChat(chat_id=user_id),
                     )
                 except Exception as e:
                     logging.error(f'Erro ao registrar comandos sudo para o usuário {user_id}: {e}')
 
-            poll_handlers.register(self.bot)
-            callback_handlers.register(self.bot)
-
-            chat_handlers.register(self.bot)
         except Exception as e:
-            logging.error(f'Erro ao registrar comandos e handlers: {e}')
+            # Uma falha ao atualizar o menu do Telegram não pode desativar handlers.
+            logging.error(f'Handlers registrados, mas houve erro ao atualizar os menus: {e}')
 
     def schedule_thread(self):
         scheduled.schedule_tasks(self.bot)
-        try:
-            while True:
+        while True:
+            try:
                 schedule.run_pending()
-                sleep(1)
-        except Exception as e:
-            logging.error(f'Erro em schedule_thread: {e}')
+            except Exception:
+                logging.exception('Erro ao executar tarefas agendadas; o scheduler continuará ativo')
+            sleep(1)
 
     def start(self):
         """Inicia o bot e todas as suas funções."""

@@ -6,8 +6,17 @@ from fatoshist.config import GROUP_LOG
 from fatoshist.database.users import UserManager
 
 
+CALLBACK_PREFIXES = ('menu_start', 'menu_help', 'donate', 'edit_donate', 'how_to_use', 'config', 'commands', 'club_info', 'preferences_info')
+STAR_CALLBACKS = {'50_estrelas', '100_estrelas', '200_estrelas', '500_estrelas', '1000_estrelas'}
+
+
+def _handles_callback(call):
+    data = call.data or ''
+    return data in STAR_CALLBACKS or data.startswith(CALLBACK_PREFIXES)
+
+
 def register(bot: TeleBot):
-    @bot.callback_query_handler(func=lambda call: True)
+    @bot.callback_query_handler(func=_handles_callback)
     def callback_handler(call):
         try:
             from fatoshist.database.users import UserManager as _UM
@@ -21,7 +30,7 @@ def register(bot: TeleBot):
                 handle_donate(bot, call)
             elif call.data.startswith('edit_donate'):
                 handle_edit_donate(bot, call)
-            elif call.data in {'50_estrelas', '100_estrelas', '200_estrelas', '500_estrelas', '1000_estrelas'}:
+            elif call.data in STAR_CALLBACKS:
                 handle_stars_donation(bot, call)
             elif call.data.startswith('how_to_use'):
                 handle_how_to_use(bot, call)
@@ -29,8 +38,17 @@ def register(bot: TeleBot):
                 handle_config(bot, call)
             elif call.data.startswith('commands'):
                 handle_commands(bot, call)
+            elif call.data.startswith('club_info'):
+                bot.send_message(call.from_user.id, 'Use /clube para assinar o Clube Histórico com Telegram Stars.')
+            elif call.data.startswith('preferences_info'):
+                bot.send_message(call.from_user.id, 'Use /preferencias para escolher temas, frequência e horário.')
         except Exception as e:
             logging.error(e)
+        finally:
+            try:
+                bot.answer_callback_query(call.id)
+            except Exception as e:
+                logging.debug(f'Não foi possível confirmar o callback {call.id}: {e}')
 
 
 def handle_menu_start(bot: TeleBot, call: types.CallbackQuery):
@@ -81,6 +99,9 @@ def handle_menu_start(bot: TeleBot, call: types.CallbackQuery):
             f'<tg-emoji emoji-id="5323375426658124630">📦</tg-emoji> <b>Meu código-fonte:</b> '
             f"<a href='https://github.com/leviobrabo/fatos_hist_bot'>GitHub</a>"
         )
+        from fatoshist.handlers.commands_handlers.user import home_markup, start_text
+        markup = home_markup()
+        msg_start = start_text(first_name)
         bot.edit_message_media(
             chat_id=call.message.chat.id,
             message_id=call.message.message_id,
@@ -291,6 +312,23 @@ def handle_commands(bot, call):
         '/fwdon - Ativa o encaminhamento no grupo\n'
         '/settopic - Definir um chat como tópico para receber as mensagens diárias\n'
         '/unsettopic - Remove um chat como tópico para receber as mensagens diárias (retorna para General)\n'
+    )
+    msg_text = (
+        '<b>Lista de comandos</b>\n\n'
+        '<b>Máquina do Tempo</b>\n'
+        '/data 7/9 — acontecimentos de uma data\n'
+        '/ano 1969 — fatos de um ano\n'
+        '/personagem nome — buscar pessoa\n'
+        '/historiador termo — consulta assistida\n'
+        '/surpreenda — fato aleatório\n\n'
+        '<b>Jornada e comunidade</b>\n'
+        '/passaporte — XP, nível e medalhas\n'
+        '/ranking — melhores historiadores\n'
+        '/preferencias — temas e horário\n'
+        '/sugerir fato | https://fonte — enviar sugestão\n'
+        '/clube — assinatura em Telegram Stars\n\n'
+        '<b>Entregas e grupos</b>\n'
+        '/sendon, /sendoff, /fotoshist, /fwdon, /fwdoff, /settopic e /unsettopic'
     )
     photo = 'https://i.imgur.com/j3H3wvJ.png'
     bot.edit_message_media(

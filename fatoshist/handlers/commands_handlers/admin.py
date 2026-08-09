@@ -30,7 +30,7 @@ def register(bot: TeleBot):
                 if not existing_chat:
                     groups_manager.add_chat_db(chat_id, chat_name)
                     send_new_group_message(message.chat)
-                    return
+                    existing_chat = groups_manager.search_group(chat_id)
 
                 if existing_chat.get('forwarding') == 'false':
                     bot.reply_to(
@@ -81,7 +81,7 @@ def register(bot: TeleBot):
                 if not existing_chat:
                     groups_manager.add_chat_db(chat_id, chat_name)
                     send_new_group_message(message.chat)
-                    return
+                    existing_chat = groups_manager.search_group(chat_id)
 
                 if existing_chat.get('forwarding') == 'true':
                     bot.reply_to(
@@ -135,6 +135,8 @@ def register(bot: TeleBot):
                     )
                     return
 
+                if not groups_manager.search_group(chat_id):
+                    groups_manager.add_chat_db(chat_id, message.chat.title)
                 groups_manager.update_thread_id(chat_id, thread_id)
 
                 bot.reply_to(
@@ -189,8 +191,8 @@ def register(bot: TeleBot):
         )
 
     return [
-        types.BotCommand('/fwdoff', 'Desativar encaminhamento no grupo'),
-        types.BotCommand('/fwdon', 'Ativar encaminhamento no grupo'),
-        types.BotCommand('/settopic', 'Definir chat como tópico para mensagens diárias'),
-        types.BotCommand('/unsettopic', 'Remover chat como tópico (retorna para General)'),
+        types.BotCommand('fwdoff', 'Desativar encaminhamento no grupo'),
+        types.BotCommand('fwdon', 'Ativar encaminhamento no grupo'),
+        types.BotCommand('settopic', 'Definir chat como tópico para mensagens diárias'),
+        types.BotCommand('unsettopic', 'Remover chat como tópico (retorna para General)'),
     ]

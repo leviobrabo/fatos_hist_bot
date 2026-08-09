@@ -7,6 +7,7 @@ import requests
 
 from fatoshist.config import CHANNEL, OWNER
 from fatoshist.utils.month import get_month_name
+from fatoshist.utils.paths import data_path
 from fatoshist.utils.post_tracker import can_post, register_post, minutes_until_next
 
 
@@ -17,7 +18,7 @@ def get_holidays_br_and_world_of_the_day(bot):
         month = today.month
 
         # Abrindo o arquivo JSON de feriados brasileiros
-        with open('./fatoshist/data/holidayBr.json', 'r', encoding='utf-8') as file:
+        with data_path('holidayBr.json').open('r', encoding='utf-8') as file:
             json_events = json.load(file)
             births = json_events.get(f'{month}-{day}', {}).get('births', [])  # Voltando para 'births' conforme o original
 
@@ -28,6 +29,7 @@ def get_holidays_br_and_world_of_the_day(bot):
         response = requests.get(
             f'https://pt.wikipedia.org/api/rest_v1/feed/onthisday/holidays/{month}/{day}',
             headers={'accept': 'application/json; charset=utf-8; profile="https://www.mediawiki.org/wiki/Specs/onthisday/0.3.3"'},
+            timeout=10,
         )
 
         world_holidays = []

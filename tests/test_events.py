@@ -1,16 +1,15 @@
 import json
-import os
+from pathlib import Path
 
 FEBRUARY = 2
 FEBRUARY_DAYS = 29
 MONTHS_WITH_30_DAYS = {4, 6, 9, 11}
 MAX_DAYS_30 = 30
 
-current_dir = os.path.dirname(os.path.abspath(__file__))
-json_path = os.path.join(current_dir, 'fatoshist', 'data', 'eventos.json')
+json_path = Path(__file__).resolve().parent.parent / 'fatoshist' / 'data' / 'eventos.json'
 
 try:
-    with open(json_path, 'r', encoding='utf-8') as f:
+    with json_path.open('r', encoding='utf-8') as f:
         events = json.load(f)
 except FileNotFoundError:
     print(f'Erro: Arquivo {json_path} não encontrado.')
@@ -29,18 +28,17 @@ def test_has_all_dates():
             all_dates.append(date_str)
 
     missing_dates = [date for date in all_dates if date not in events]
-    if missing_dates:
-        print(f'Datas ausentes: {missing_dates}')
-    else:
-        print('Todas as datas estão presentes.')
+    assert not missing_dates, f'Datas ausentes: {missing_dates}'
 
 
 def test_no_empty_arrays():
     empty_arrays = [date for date, event_list in events.items() if len(event_list) == 0]
-    if empty_arrays:
-        print(f'Datas com arrays vazios: {empty_arrays}')
-    else:
-        print('Nenhuma data possui arrays vazios.')
+    assert not empty_arrays, f'Datas com arrays vazios: {empty_arrays}'
+
+
+def test_no_duplicate_events_on_same_date():
+    duplicated_dates = [date for date, event_list in events.items() if len(event_list) != len(set(event_list))]
+    assert not duplicated_dates, f'Datas com eventos duplicados: {duplicated_dates}'
 
 
 def run_tests():

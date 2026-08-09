@@ -17,7 +17,10 @@ def register(bot: TeleBot):
             day = today.day
             month = today.month
 
-            response = requests.get(f'https://pt.wikipedia.org/api/rest_v1/feed/onthisday/events/{month}/{day}')
+            response = requests.get(
+                f'https://pt.wikipedia.org/api/rest_v1/feed/onthisday/events/{month}/{day}',
+                timeout=10,
+            )
 
             response.raise_for_status()
 
@@ -47,4 +50,4 @@ def register(bot: TeleBot):
         except Exception as e:
             logging.error(f'Erro ao enviar a imagem histórica: {e}')
 
-    return [types.BotCommand('/fotoshist', 'Fotos históricas 🙂')]
+    return [types.BotCommand('fotoshist', 'Fotos históricas 🙂')]

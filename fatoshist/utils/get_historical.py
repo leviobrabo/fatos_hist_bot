@@ -2,13 +2,15 @@ import json
 import logging
 from datetime import datetime
 
+from fatoshist.utils.paths import data_path
+
 
 def get_historical_events():
     today = datetime.now()
     day = today.day
     month = today.month
     try:
-        with open('./fatoshist/data/eventos.json', 'r', encoding='utf-8') as file:
+        with data_path('eventos.json').open('r', encoding='utf-8') as file:
             json_events = json.load(file)
             events = json_events[f'{month}-{day}']
             if events:

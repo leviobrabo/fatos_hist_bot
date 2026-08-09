@@ -10,11 +10,12 @@ from bs4 import BeautifulSoup  # Para extrair link direto do Wikipedia
 
 from fatoshist.config import CHANNEL, OWNER
 from fatoshist.database.president_manager import PresidentManager
+from fatoshist.utils.paths import data_path
 
 president_manager = PresidentManager()
 
 # Carregar JSON de presidentes
-with open('./fatoshist/data/presidentes.json', 'r', encoding='utf-8') as file:
+with data_path('presidentes.json').open('r', encoding='utf-8') as file:
     presidentes = json.load(file)
 
 HEADERS = {
@@ -31,7 +32,7 @@ def wikipedia_direct_link(url):
         if "wikipedia.org/wiki/Ficheiro:" not in url:
             return url  # Não é Wikipedia, retorna a URL original
 
-        response = requests.get(url, headers=HEADERS)
+        response = requests.get(url, headers=HEADERS, timeout=10)
         response.raise_for_status()
         soup = BeautifulSoup(response.text, "html.parser")
         # Procurar o link que termina em .jpg ou .png dentro da página
@@ -117,7 +118,7 @@ def enviar_info_pelo_canal(bot, info_presidente):
         logging.info('Baixando a foto do presidente...')
         direct_url = wikipedia_direct_link(foto_url)
 
-        response = requests.get(direct_url, headers=HEADERS)
+        response = requests.get(direct_url, headers=HEADERS, timeout=10)
         response.raise_for_status()
 
         with open(filename, 'wb') as f:
@@ -155,7 +156,7 @@ def enviar_foto_presidente(bot):
                 pytz.timezone('America/Sao_Paulo')
             ).strftime('%Y-%m-%d')
 
-            president_manager.add_presidentes_db(id_new, date_new)
+            president_manager.add_presidente(id_new, date_new)
             enviar_info_pelo_canal(bot, presidente)
             nome_presidente = presidente.get('nome', 'N/A')
 

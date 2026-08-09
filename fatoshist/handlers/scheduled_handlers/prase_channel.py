@@ -5,6 +5,7 @@ from datetime import datetime
 import pytz
 
 from fatoshist.config import CHANNEL
+from fatoshist.utils.paths import data_path
 
 
 def get_frase(bot, CHANNEL):
@@ -13,7 +14,7 @@ def get_frase(bot, CHANNEL):
         day = today.day
         month = today.month
 
-        with open('./fatoshist/data/frases.json', 'r', encoding='utf-8') as file:
+        with data_path('frases.json').open('r', encoding='utf-8') as file:
             json_events = json.load(file)
             frase = json_events.get(f'{month}-{day}')
             if frase:

@@ -1,11 +1,11 @@
-import configparser
-
 from fatoshist.bot import Bot
+from fatoshist.config import TOKEN
 
-config = configparser.ConfigParser()
-config.read('bot.config')
 
-TOKEN = config['FATOSHIST']['TOKEN']
+def main():
+    bot = Bot(token=TOKEN)
+    bot.start()
 
-bot = Bot(token=TOKEN)
-bot.start()
+
+if __name__ == '__main__':
+    main()

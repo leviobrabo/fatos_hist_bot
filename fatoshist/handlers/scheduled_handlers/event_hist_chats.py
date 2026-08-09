@@ -17,6 +17,7 @@ IGNORED_CHATS = {
 }
 
 def send_historical_events_group(bot, chat_id):
+    topic = None
     try:
         today = datetime.now()
         day = today.day
@@ -71,16 +72,13 @@ def send_historical_events_group(bot, chat_id):
         # NÃO remove o chat — apenas loga
         return
     except Exception:
-        logging.error('Erro ao enviar fatos históricos para os chats:')
-
-        group_manager.remove_chat_db(chat_id)
-
-        logging.warning(f'Chat {chat_id} removido do banco de dados devido a erro ao enviar mensagem de eventos históricos.')
+        # Erros de rede, dados ou programação não significam que o bot saiu do grupo.
+        logging.exception(f'Erro inesperado ao enviar fatos históricos para o chat {chat_id}')
         return
         
 def hist_chat_job(bot):
     try:
-        chat_models = group_manager.get_all_chats()
+        chat_models = group_manager.get_all_chats({'forwarding': 'true'})
         for chat_model in chat_models:
             chat_id = chat_model['chat_id']
             if chat_id not in IGNORED_CHATS:

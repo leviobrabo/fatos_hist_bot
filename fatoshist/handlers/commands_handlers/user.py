@@ -1,11 +1,60 @@
+import html
 import logging
 
 from telebot import TeleBot, types
 
-from fatoshist.config import GROUP_LOG, LOG_THREAD_ID
+from fatoshist.config import GROUP_LOG, LOG_THREAD_ID, MINI_APP_URL
 from fatoshist.database.users import UserManager
 
+
 user_manager = UserManager()
+PHOTO = 'https://i.imgur.com/j3H3wvJ.png'
+
+
+def home_markup():
+    markup = types.InlineKeyboardMarkup()
+    if MINI_APP_URL:
+        markup.add(types.InlineKeyboardButton('🏛 Abrir Museu Histórico', web_app=types.WebAppInfo(MINI_APP_URL)))
+    markup.row(
+        types.InlineKeyboardButton('🕰 Máquina do Tempo', callback_data='commands'),
+        types.InlineKeyboardButton('🎫 Meu passaporte', callback_data='config'),
+    )
+    markup.row(
+        types.InlineKeyboardButton('⭐ Clube Histórico', callback_data='club_info'),
+        types.InlineKeyboardButton('⚙️ Personalizar', callback_data='preferences_info'),
+    )
+    markup.add(types.InlineKeyboardButton('Adicionar em um grupo', url='https://t.me/fatoshistbot?startgroup=true'))
+    markup.row(
+        types.InlineKeyboardButton('Canal oficial', url='https://t.me/historia_br'),
+        types.InlineKeyboardButton('Como usar', callback_data='how_to_use'),
+    )
+    return markup
+
+
+def start_text(first_name):
+    return (
+        f'Olá, <b>{html.escape(first_name or "Historiador")}</b>! Bem-vindo à nova fase do '
+        '<b>Fatos Históricos</b>. 🏛\n\n'
+        'Agora você pode viajar para qualquer data, pesquisar personagens, acumular XP, '
+        'conquistar medalhas e montar seu próprio Passaporte Histórico.\n\n'
+        '<b>Comece por aqui:</b>\n'
+        '• /surpreenda — receba um fato aleatório\n'
+        '• /data 7/9 — visite um dia da História\n'
+        '• /historiador Santos Dumont — pesquise a base curada\n'
+        '• /passaporte — veja nível, sequência e medalhas\n'
+        '• /preferencias — escolha temas, frequência e horário\n\n'
+        'O envio privado respeita as suas preferências. Use /sendoff para pausar e /sendon para voltar.'
+    )
+
+
+def _ensure_user(message, source=''):
+    user_id = message.from_user.id
+    user = user_manager.get_user(user_id)
+    if user:
+        user_manager.update_last_seen(user_id)
+        return user, False
+    user_manager.add_user(user_id, message.from_user.username, message.from_user.first_name, source=source)
+    return user_manager.get_user(user_id), True
 
 
 def register(bot: TeleBot):
@@ -13,139 +62,75 @@ def register(bot: TeleBot):
     def cmd_start(message: types.Message):
         try:
             if message.chat.type == 'private':
-                user_id = message.from_user.id
-                user = user_manager.get_user(user_id)
-                first_name = message.from_user.first_name
-
-                parts = message.text.split(maxsplit=1) if message.text else []
-                source = parts[1].strip() if len(parts) > 1 else ''
-
-                if not user:
-                    user_manager.add_user(
-                        user_id=message.from_user.id,
-                        username=message.from_user.username,
-                        first_name=message.from_user.first_name,
-                        source=source,
-                    )
-                    user = user_manager.get_user(user_id)
-                else:
-                    user_manager.update_last_seen(user_id)
-                    logging.info(f'Novo usuário ID: {user["user_id"]} foi criado no banco de dados')
-
-                    user_info = (
+                parts = (message.text or '').split(maxsplit=1)
+                source = parts[1].strip()[:100] if len(parts) > 1 else ''
+                user, created = _ensure_user(message, source)
+                if created and user:
+                    username = f"@{user['username']}" if user.get('username') else 'Sem username'
+                    info = (
                         f"<b>#{bot.get_me().username} #New_User</b>\n"
-                        f"<b>User:</b> {user['first_name']}\n"
-                        f"<b>ID:</b> <code>{user['user_id']}</code>\n"
-                        f"<b>Username</b>: {user['username']}"
+                        f"<b>User:</b> {html.escape(user.get('first_name', ''))}\n"
+                        f"<b>ID:</b> <code>{user['user_id']}</code>\n<b>Username:</b> {username}"
                     )
-
-                    bot.send_message(GROUP_LOG, user_info, message_thread_id=LOG_THREAD_ID)
-
-                if user:
-                    pass
-
-                markup = types.InlineKeyboardMarkup()
-                add_group = types.InlineKeyboardButton(
-                    'Adicione-me em seu grupo',
-                    url='https://t.me/fatoshistbot?startgroup=true',
-                    icon_custom_emoji_id='5325547803936572038'
-                )
-                update_channel = types.InlineKeyboardButton('Atualizações do bot', url='https://t.me/updatehist', icon_custom_emoji_id="5215327492738392838")
-                donate = types.InlineKeyboardButton('Doações', callback_data='donate', icon_custom_emoji_id="5318912792428814144")
-                channel_ofc = types.InlineKeyboardButton('Canal Oficial', url='https://t.me/historia_br', icon_custom_emoji_id="5305417940760273444")
-                how_to_use = types.InlineKeyboardButton('Como usar o bot', callback_data='how_to_use', icon_custom_emoji_id="5447644880824181073")
-                config_pv = types.InlineKeyboardButton('Sua conta', callback_data='config', icon_custom_emoji_id="5422683699130933153")
-
-                markup.add(add_group)
-                markup.add(update_channel, channel_ofc)
-                markup.add(donate, how_to_use)
-                markup.add(config_pv)
-
-                photo = 'https://i.imgur.com/j3H3wvJ.png'
-                msg_start = (
-                    f'Olá, <b>{first_name}</b>!\n\n'
-                    'Eu sou <b>Fatos Históricos</b>, sou um bot que envia diariamente '
-                    'mensagens com acontecimentos históricos que ocorreram no dia '
-                    'do envio da mensagem.\n\n'
-                    'O envio da mensagem no chat privado é automático. '
-                    'Se você desejar parar de receber, digite /sendoff. '
-                    'Se quiser voltar a receber, digite /sendon\n\n'
-                    '<b>A mensagem é enviada todos os dias às 8 horas</b>\n\n'
-                    'Adicione-me em seu grupo para receber as mensagens lá.\n\n'
-                    '<b>Comandos:</b> /help\n\n'
-                    f"<tg-emoji emoji-id='5332691919392746259'>📦</tg-emoji> <b>Meu código-fonte:</b> <a href='https://github.com/leviobrabo/fatoshisbot'>GitHub</a>\n\n"
-                    f"<tg-emoji emoji-id='5375129357373165375'>🔗</tg-emoji> <b>Site:</b> <a href='https://www.historiadodia.com'>Aqui</a>"
-                )
-
-                logging.debug('Enviando mensagem de start')
+                    bot.send_message(GROUP_LOG, info, parse_mode='HTML', message_thread_id=LOG_THREAD_ID)
                 bot.send_photo(
                     message.chat.id,
-                    photo=photo,
-                    caption=msg_start,
-                    reply_markup=markup,
+                    PHOTO,
+                    caption=start_text(message.from_user.first_name),
                     parse_mode='HTML',
+                    reply_markup=home_markup(),
                 )
-            else:
-                expected_command = f'/start@{bot.get_me().username}'
-                if message.text and message.text.startswith(expected_command):
-                    if message.chat.type in {'group', 'supergroup', 'channel'}:
-                        markup = types.InlineKeyboardMarkup()
-                        channel_ofc = types.InlineKeyboardButton('Canal Oficial', url='https://t.me/historia_br', icon_custom_emoji_id='5305417940760273444')
-                        report_bugs = types.InlineKeyboardButton('Relatar bugs', url='https://t.me/kylorensbot', icon_custom_emoji_id='5447644880824181073')
-                        web_site = types.InlineKeyboardButton('WebSite', url='https://www.historiadodia.com/', icon_custom_emoji_id='5375129357373165375')
-                        markup.add(channel_ofc, report_bugs)
-                        markup.add(web_site)
-                        msg_text = (
-                            'Olá, meu nome é <b>Fatos Históricos</b>! Obrigado por me adicionar em seu grupo.\n\n'
-                            'Eu enviarei mensagens todos os dias às 8 horas e possuo alguns comandos.\n\n'
-                            'Se quiser receber mais fatos históricos, conceda-me as permissões de administrador para fixar mensagens e '
-                            'convidar usuários via link.'
-                        )
+                return
 
-                        bot.reply_to(
-                            message,
-                            msg_text,
-                            reply_markup=markup,
-                            parse_mode='HTML',
-                        )
-
-                else:
-                    pass
-
-        except Exception as e:
-            logging.error(f'Erro ao enviar o start: {e}')
+            expected = f'/start@{bot.get_me().username}'
+            if message.text and message.text.startswith(expected):
+                markup = types.InlineKeyboardMarkup()
+                markup.add(types.InlineKeyboardButton('Explorar no privado', url=f'https://t.me/{bot.get_me().username}?start=grupo'))
+                bot.reply_to(
+                    message,
+                    '<b>Fatos Históricos está no grupo!</b>\n\nPosso enviar eventos do dia, quizzes e fotos históricas. '
+                    'Use /fotoshist agora ou abra meu chat privado para acessar a Máquina do Tempo e seu passaporte.',
+                    parse_mode='HTML',
+                    reply_markup=markup,
+                )
+        except Exception:
+            logging.exception('Erro ao enviar o start')
 
     @bot.message_handler(commands=['help'])
     def cmd_help(message):
-        try:
-            if message.chat.type == 'private':
-                text = (
-                    'Olá! Eu sou um bot programado para enviar '
-                    'fatos históricos todos os dias '
-                    'nos horários pré-determinados de 8h.\n\n'
-                    'Além disso, tenho comandos'
-                    'incríveis que podem ser úteis para você. '
-                    'Fique à vontade para interagir '
-                    'comigo e descobrir mais sobre o mundo que nos cerca!\n\n'
-                    '<b>Basta clicar em um deles:</b>'
-                )
+        text = (
+            '<b>Como explorar o Fatos Históricos</b>\n\n'
+            '<b>Pesquisa:</b> /data, /ano, /personagem, /historiador e /surpreenda\n'
+            '<b>Sua jornada:</b> /passaporte, /ranking e /preferencias\n'
+            '<b>Comunidade:</b> /sugerir e /clube\n'
+            '<b>Entregas:</b> /sendon e /sendoff\n'
+            '<b>Grupos:</b> /fotoshist, /fwdon, /fwdoff, /settopic e /unsettopic\n\n'
+            'Use o botão “Lista de comandos” para ver exemplos.'
+        )
+        markup = types.InlineKeyboardMarkup()
+        markup.add(types.InlineKeyboardButton('Lista de comandos', callback_data='commands'))
+        if MINI_APP_URL:
+            markup.add(types.InlineKeyboardButton('Abrir Museu Histórico', web_app=types.WebAppInfo(MINI_APP_URL)))
+        markup.row(
+            types.InlineKeyboardButton('Canal oficial', url='https://t.me/historia_br'),
+            types.InlineKeyboardButton('Apoiar', callback_data='donate'),
+        )
+        bot.send_photo(message.chat.id, PHOTO, caption=text, parse_mode='HTML', reply_markup=markup)
 
-                markup = types.InlineKeyboardMarkup()
-                commands = types.InlineKeyboardButton('Lista de comandos', callback_data='commands')
-                support = types.InlineKeyboardButton('Suporte', url='https://t.me/updatehist')
-                projeto = types.InlineKeyboardButton('Doações', callback_data='donate', icon_custom_emoji_id='5318912792428814144')
+    @bot.message_handler(commands=['novidades'])
+    def cmd_news(message):
+        bot.reply_to(
+            message,
+            '<b>Uma nova forma de viver a História chegou.</b> 🏛\n\n'
+            'Máquina do Tempo, Historiador assistido, Passaporte com XP e medalhas, ranking, '
+            'preferências, sugestões da comunidade, Museu Histórico e Clube em Stars.\n\n'
+            'Experimente agora com /surpreenda e /passaporte.',
+            parse_mode='HTML',
+            reply_markup=home_markup(),
+        )
 
-                markup.add(commands)
-                markup.add(support, projeto)
-
-                photo = 'https://i.imgur.com/j3H3wvJ.png'
-                bot.send_photo(
-                    message.chat.id,
-                    photo=photo,
-                    caption=text,
-                    reply_markup=markup,
-                )
-        except Exception as e:
-            logging.error(f'Erro ao enviar o help: {e}')
-
-    return [types.BotCommand('/start', 'Iniciar'), types.BotCommand('/help', 'Ajuda')]
+    return [
+        types.BotCommand('start', 'Iniciar sua jornada'),
+        types.BotCommand('help', 'Ajuda e comandos'),
+        types.BotCommand('novidades', 'Conhecer as novidades'),
+    ]

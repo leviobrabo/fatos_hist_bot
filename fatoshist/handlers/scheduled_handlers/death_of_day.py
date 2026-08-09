@@ -16,6 +16,7 @@ def get_deaths_of_the_day(bot, CHANNEL):
         response = requests.get(
             f'https://pt.wikipedia.org/api/rest_v1/feed/onthisday/deaths/{month}/{day}',
             headers={'accept': 'application/json; charset=utf-8; profile="https://www.mediawiki.org/wiki/Specs/onthisday/0.3.3"'},
+            timeout=10,
         )
 
         if response.status_code == 200:
@@ -28,8 +29,7 @@ def get_deaths_of_the_day(bot, CHANNEL):
                 for index, death in enumerate(deaths[:5], start=1):
                     name_death = death.get('text', '')
                     photo_url = death.get('pages', [{}])[0].get('originalimage', {}).get('source', '')
-                    if photo_url:
-                        name = f'<a href="{photo_url}">{name_death}</a>'
+                    name = f'<a href="{photo_url}">{name_death}</a>' if photo_url else name_death
                     info = death.get('pages', [{}])[0].get('extract', 'Informações não disponíveis.')
                     date = death.get('year', 'Data desconhecida.')
 
@@ -47,7 +47,7 @@ def get_deaths_of_the_day(bot, CHANNEL):
                 logging.info('Não há informações sobre mortos para o dia atual.')
 
         else:
-            logging.warning('Erro ao obter informações (death_of_day):', response.status_code)
+            logging.warning('Erro ao obter informações (death_of_day): %s', response.status_code)
 
     except Exception:
         logging.error('Erro ao enviar mortos para os canal:')

@@ -16,6 +16,7 @@ class DBConnection:
             logging.info('Conexão com o MongoDB estabelecida com sucesso!')
         except Exception as e:
             logging.error(f'Erro ao conectar ao MongoDB: {e}')
+            raise
 
     def get_db(self):
         """Retorna a instância do banco de dados."""

@@ -6,6 +6,7 @@ from telebot.apihelper import ApiTelegramException
 from fatoshist.database.groups import GroupManager
 from fatoshist.database.poll_manager import PollManager
 from fatoshist.database.users import UserManager
+from fatoshist.utils.paths import data_path
 
 group_manager = GroupManager()
 poll_manager = PollManager()
@@ -77,7 +78,7 @@ def send_question_chat(bot):
         today = datetime.now()
         current_time = today.time()
 
-        with open('./fatoshist/data/perguntas.json', 'r', encoding='utf-8') as file:
+        with data_path('perguntas.json').open('r', encoding='utf-8') as file:
             json_events = json.load(file)
 
         events = json_events[f'{today.month}-{today.day}']
@@ -142,6 +143,6 @@ def remove_all_poll():
     try:
         logging.info('Removido as polls do banco de dados!')
 
-        poll_manager.remove_all_poll_db()
+        poll_manager.remove_all_polls()
     except Exception as e:
         logging.error(f'Erro ao processar a resposta da enquete: {e}')

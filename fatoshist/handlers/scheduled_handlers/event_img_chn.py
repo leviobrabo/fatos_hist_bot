@@ -96,8 +96,8 @@ def send_historical_events_CHANNEL_IMG_image(bot, CHANNEL_IMG):
 
         inline_keyboard = types.InlineKeyboardMarkup()
         inline_keyboard.add(
-            types.InlineKeyboardButton("Canal Oficial", url="https://t.me/historia_br", icon_costum_emoji="5305417940760273444"),
-            types.InlineKeyboardButton("Site", url="https://www.historiadodia.com", icon_costum_emoji="5314361729117855941"),
+            types.InlineKeyboardButton("Canal Oficial", url="https://t.me/historia_br", icon_custom_emoji_id="5305417940760273444"),
+            types.InlineKeyboardButton("Site", url="https://www.historiadodia.com", icon_custom_emoji_id="5314361729117855941"),
         )
 
         bot.send_photo(

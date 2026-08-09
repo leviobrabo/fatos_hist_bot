@@ -5,6 +5,7 @@ from datetime import datetime
 import pytz
 
 from fatoshist.config import CHANNEL, OWNER
+from fatoshist.utils.paths import data_path
 from fatoshist.utils.post_tracker import can_post, register_post, minutes_until_next
 
 # ===== VARIAÇÕES DE TEXTO =====
@@ -50,12 +51,12 @@ def get_reflexao_historica(bot, CHANNEL):
         key = f'{month}-{day}'
 
         # FRASE
-        with open('./fatoshist/data/frases.json', 'r', encoding='utf-8') as file:
+        with data_path('frases.json').open('r', encoding='utf-8') as file:
             frases_json = json.load(file)
             frase = frases_json.get(key, {})
 
         # CURIOSIDADE
-        with open('./fatoshist/data/curiosidade.json', 'r', encoding='utf-8') as file:
+        with data_path('curiosidade.json').open('r', encoding='utf-8') as file:
             curiosidades_json = json.load(file)
             curiosidade = curiosidades_json.get(key, {})
 
