@@ -1,3 +1,13 @@
+[project]
+name = "fatoshist-miniapp"
+version = "3.0.0"
+description = "Mini App Museu Histórico para Vercel"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "pymongo==4.15.5",
+]
+
 [tool.poetry]
 name = "fatoshist"
 version = "3.0.0"
