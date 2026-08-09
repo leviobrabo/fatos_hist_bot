@@ -262,7 +262,7 @@ def handle_how_to_use(bot, call):
 def handle_config(bot, call):
     user_id = call.from_user.id
     markup = types.InlineKeyboardMarkup()
-    back_to_home = types.InlineKeyboardButton('<tg-emoji emoji-id="5390841868160355895">↩️</tg-emoji> Voltar', callback_data='menu_start')
+    back_to_home = types.InlineKeyboardButton('↩️ Voltar', callback_data='menu_start')
     markup.add(back_to_home)
 
     user_manager = UserManager()
@@ -301,7 +301,7 @@ def handle_config(bot, call):
 def handle_commands(bot, call):
     user_id = call.from_user.id
     markup = types.InlineKeyboardMarkup()
-    back_to_home = types.InlineKeyboardButton('<tg-emoji emoji-id="5390841868160355895">↩️</tg-emoji> Voltar', callback_data='menu_help')
+    back_to_home = types.InlineKeyboardButton('↩️ Voltar', callback_data='menu_help')
     markup.add(back_to_home)
     msg_text = (
         '<b>Lista de comandos</b>\n\n'

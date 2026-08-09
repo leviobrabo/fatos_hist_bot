@@ -1,5 +1,7 @@
+import ast
 import json
 import importlib
+import re
 from datetime import datetime
 from pathlib import Path
 from types import SimpleNamespace
@@ -52,6 +54,27 @@ def test_registered_bot_commands_have_valid_names():
 
     assert commands
     assert all(not command.command.startswith('/') for command in commands)
+
+
+def test_button_labels_do_not_contain_html_tags():
+    handlers_dir = Path(__file__).resolve().parent.parent / 'fatoshist' / 'handlers'
+    invalid_labels = []
+    for path in handlers_dir.rglob('*.py'):
+        tree = ast.parse(path.read_text(encoding='utf-8'), filename=str(path))
+        for node in ast.walk(tree):
+            if not isinstance(node, ast.Call) or not isinstance(node.func, ast.Attribute):
+                continue
+            if node.func.attr not in {'InlineKeyboardButton', 'KeyboardButton'}:
+                continue
+            label_node = node.args[0] if node.args else next(
+                (item.value for item in node.keywords if item.arg == 'text'),
+                None,
+            )
+            if isinstance(label_node, ast.Constant) and isinstance(label_node.value, str):
+                if re.search(r'</?[A-Za-z][^>]*>', label_node.value):
+                    invalid_labels.append((path.name, label_node.value))
+
+    assert invalid_labels == []
 
 
 def test_importing_main_does_not_start_the_bot(monkeypatch):
