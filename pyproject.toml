@@ -1,5 +1,5 @@
 [project]
-name = "fatoshist-miniapp"
+name = "fatoshist"
 version = "3.0.0"
 description = "Mini App Museu Histórico para Vercel"
 readme = "README.md"
@@ -16,7 +16,7 @@ authors = ["leviobrabo <carlosjunior20313@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "3.12.*"
+python = ">=3.12,<3.13"
 pytelegrambotapi = "^4.33.0"
 schedule = "^1.2.2"
 pymongo = "^4.15.5"
