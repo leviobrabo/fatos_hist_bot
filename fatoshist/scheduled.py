@@ -34,6 +34,7 @@ from fatoshist.handlers.scheduled_handlers.prase_channel import hist_channel_fra
 from fatoshist.handlers.scheduled_handlers.presidents import enviar_foto_presidente
 from fatoshist.handlers.scheduled_handlers.stars import msg_alerta_stars
 from fatoshist.handlers.scheduled_handlers.weekly_engagement_poll import send_weekly_engagement_poll
+from fatoshist.utils.channel_dispatch import dispatch_once_daily
 
 _TZ = pytz.timezone('America/Sao_Paulo')
 
@@ -121,33 +122,34 @@ def schedule_tasks(bot: TeleBot):
         # A rotina roda a cada hora e respeita a preferência individual do usuário.
         schedule.every().hour.at(':00', _TZ.zone).do(lambda: hist_user_job(bot))
         
+        # Horários fixos (America/Sao_Paulo) evitam mudanças a cada reinício.
         # ================= MANHÃ (EVENTOS TODOS OS DIAS) =================
 
         # Envio eventos histórico no channel
-        morning_time = random_time(8, 11)
-        schedule.every().day.at(morning_time, _TZ.zone).do(lambda: hist_channel_events(bot))
+        morning_time = '10:10'
+        schedule.every().day.at(morning_time, _TZ.zone).do(lambda: dispatch_once_daily('events', hist_channel_events, bot))
         
-        # schedule.every().day.at('01:30').do(lambda: hist_channel_events(bot))
+        # schedule.every().day.at('01:30').do(lambda: dispatch_once_daily('events', hist_channel_events, bot))
 
         # Envio dos nascidos e mortos do dia no canal
-        #schedule.every().day.at('05:30').do(lambda: hist_channel_birth_and_death(bot))
+        #schedule.every().day.at('05:30').do(lambda: dispatch_once_daily('night_birth_death', hist_channel_birth_and_death, bot))
 
         # Envio dos feriados brasil e geral do dia no canal
         # schedule.every().day.at('03:00').do(lambda: get_holidays_br_and_world_of_the_day(bot))
          
         # ================= TARDE (FERIADOS TODOS OS DIAS) =================
-        holidays_time = random_time(14, 17)
-        schedule.every().day.at(holidays_time, _TZ.zone).do(lambda: hist_channel_holiday_br_and_world(bot))
+        holidays_time = '14:40'
+        schedule.every().day.at(holidays_time, _TZ.zone).do(lambda: dispatch_once_daily('holidays_world', hist_channel_holiday_br_and_world, bot))
 
         # Feriados brasileiros (manhã)
-        schedule.every().day.at('10:30', _TZ.zone).do(lambda: hist_channel_holiday_br(bot))
+        schedule.every().day.at('09:30', _TZ.zone).do(lambda: dispatch_once_daily('holidays_brazil', hist_channel_holiday_br, bot))
 
 
         # Envio de Fotos históricas no grupo
         schedule.every().day.at('16:30', _TZ.zone).do(lambda: hist_image_chat_job(bot))
 
         # Envio de Fotos históricas no canal
-        # schedule.every().day.at('19:30').do(lambda: hist_channel_imgs(bot))
+        # schedule.every().day.at('19:30').do(lambda: dispatch_once_daily('night_images', hist_channel_imgs, bot))
 
         # Envio de imagens historicas no canal de imagem (horários fixos, sem madrugada)
         for _h in ["08:30", "12:30", "16:30", "20:30"]:
@@ -162,13 +164,12 @@ def schedule_tasks(bot: TeleBot):
         # schedule.every().day.at('08:30').do(lambda: hist_channel_frase(bot))
 
         # citações e curiosidade 
-        #schedule.every().day.at('17:30').do(lambda: hist_channel_reflexao(bot))
+        #schedule.every().day.at('17:30').do(lambda: dispatch_once_daily('night_reflection', hist_channel_reflexao, bot))
 
         # Envio dos presidentes no canal
-        #schedule.every().day.at('22:30').do(lambda: enviar_foto_presidente(bot))
+        #schedule.every().day.at('22:30').do(lambda: dispatch_once_daily('night_presidents', enviar_foto_presidente, bot))
 
-        # Envio da historia diaria
-        #schedule.every().day.at('10:00').do(lambda: hist_channel_history(bot))
+        # História narrada permanece desativada: habilitar só após deduplicação persistente.
 
         schedule.every().day.at('00:05', _TZ.zone).do(lambda: checar_datas_dia(bot))
 
@@ -176,28 +177,28 @@ def schedule_tasks(bot: TeleBot):
         schedule.every().sunday.at('14:00', _TZ.zone).do(lambda: send_weekly_engagement_poll(bot))
 
          # ================= NOITE (CONTEÚDO ROTATIVO) =================
-        night_time = random_time(19, 22)
+        night_time = '20:40'
 
         # Segunda → Fotos históricas
-        schedule.every().monday.at(night_time, _TZ.zone).do(lambda: hist_channel_imgs(bot))
+        schedule.every().monday.at(night_time, _TZ.zone).do(lambda: dispatch_once_daily('night_images', hist_channel_imgs, bot))
     
         # Terça → Curiosidades e frases
-        schedule.every().tuesday.at(night_time, _TZ.zone).do(lambda: hist_channel_reflexao(bot))
+        schedule.every().tuesday.at(night_time, _TZ.zone).do(lambda: dispatch_once_daily('night_reflection', hist_channel_reflexao, bot))
     
         # Quarta → Nascidos e mortes
-        schedule.every().wednesday.at(night_time, _TZ.zone).do(lambda: hist_channel_birth_and_death(bot))
+        schedule.every().wednesday.at(night_time, _TZ.zone).do(lambda: dispatch_once_daily('night_birth_death', hist_channel_birth_and_death, bot))
     
         # Quinta → Presidentes
-        schedule.every().thursday.at(night_time, _TZ.zone).do(lambda: enviar_foto_presidente(bot))
+        schedule.every().thursday.at(night_time, _TZ.zone).do(lambda: dispatch_once_daily('night_presidents', enviar_foto_presidente, bot))
     
         # Sexta → Curiosidades e frases
-        schedule.every().friday.at(night_time, _TZ.zone).do(lambda: hist_channel_reflexao(bot))
+        schedule.every().friday.at(night_time, _TZ.zone).do(lambda: dispatch_once_daily('night_reflection', hist_channel_reflexao, bot))
     
         # Sábado → Fotos históricas
-        schedule.every().saturday.at(night_time, _TZ.zone).do(lambda: hist_channel_imgs(bot))
+        schedule.every().saturday.at(night_time, _TZ.zone).do(lambda: dispatch_once_daily('night_images', hist_channel_imgs, bot))
     
         # Domingo → Nascidos e mortes
-        schedule.every().sunday.at(night_time, _TZ.zone).do(lambda: hist_channel_birth_and_death(bot))
+        schedule.every().sunday.at(night_time, _TZ.zone).do(lambda: dispatch_once_daily('night_birth_death', hist_channel_birth_and_death, bot))
 
     except Exception as e:
         logging.error(f'Erro ao enviar o trabalho scheduled: {e}')

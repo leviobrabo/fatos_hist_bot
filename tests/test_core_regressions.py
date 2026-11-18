@@ -137,3 +137,35 @@ def test_all_active_jobs_use_sao_paulo_timezone():
         assert all(job.at_time_zone and job.at_time_zone.zone == 'America/Sao_Paulo' for job in timed_jobs)
     finally:
         schedule.clear()
+
+
+def test_channel_dispatch_prevents_duplicate_attempts(monkeypatch):
+    from fatoshist.utils import channel_dispatch
+    from pymongo.errors import DuplicateKeyError
+
+    collection = Mock()
+    collection.insert_one.side_effect = [None, DuplicateKeyError('duplicate')]
+    database = SimpleNamespace(scheduled_channel_dispatches=collection)
+    monkeypatch.setattr(channel_dispatch, 'db_connection', database)
+    bot = Mock()
+    callback = Mock(return_value=True)
+
+    assert channel_dispatch.dispatch_once_daily('events', callback, bot) is True
+    assert channel_dispatch.dispatch_once_daily('events', callback, bot) is False
+    callback.assert_called_once_with(bot)
+    assert collection.update_one.call_count == 1
+
+
+def test_channel_dispatch_fails_closed_without_database(monkeypatch):
+    from fatoshist.utils import channel_dispatch
+
+    collection = Mock()
+    collection.insert_one.side_effect = RuntimeError('Mongo unavailable')
+    monkeypatch.setattr(
+        channel_dispatch, 'db_connection',
+        SimpleNamespace(scheduled_channel_dispatches=collection),
+    )
+    callback = Mock()
+
+    assert channel_dispatch.dispatch_once_daily('events', callback, Mock()) is False
+    callback.assert_not_called()
