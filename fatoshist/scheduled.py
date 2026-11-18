@@ -121,10 +121,11 @@ def schedule_tasks(bot: TeleBot):
         # A rotina roda a cada hora e respeita a preferência individual do usuário.
         schedule.every().hour.at(':00', _TZ.zone).do(lambda: hist_user_job(bot))
         
+        # Horários fixos (America/Sao_Paulo) evitam mudanças a cada reinício.
         # ================= MANHÃ (EVENTOS TODOS OS DIAS) =================
 
         # Envio eventos histórico no channel
-        morning_time = random_time(8, 11)
+        morning_time = '10:10'
         schedule.every().day.at(morning_time, _TZ.zone).do(lambda: hist_channel_events(bot))
         
         # schedule.every().day.at('01:30').do(lambda: hist_channel_events(bot))
@@ -136,11 +137,11 @@ def schedule_tasks(bot: TeleBot):
         # schedule.every().day.at('03:00').do(lambda: get_holidays_br_and_world_of_the_day(bot))
          
         # ================= TARDE (FERIADOS TODOS OS DIAS) =================
-        holidays_time = random_time(14, 17)
+        holidays_time = '14:40'
         schedule.every().day.at(holidays_time, _TZ.zone).do(lambda: hist_channel_holiday_br_and_world(bot))
 
         # Feriados brasileiros (manhã)
-        schedule.every().day.at('10:30', _TZ.zone).do(lambda: hist_channel_holiday_br(bot))
+        schedule.every().day.at('09:30', _TZ.zone).do(lambda: hist_channel_holiday_br(bot))
 
 
         # Envio de Fotos históricas no grupo
@@ -167,8 +168,7 @@ def schedule_tasks(bot: TeleBot):
         # Envio dos presidentes no canal
         #schedule.every().day.at('22:30').do(lambda: enviar_foto_presidente(bot))
 
-        # Envio da historia diaria
-        #schedule.every().day.at('10:00').do(lambda: hist_channel_history(bot))
+        # História narrada permanece desativada: habilitar só após deduplicação persistente.
 
         schedule.every().day.at('00:05', _TZ.zone).do(lambda: checar_datas_dia(bot))
 
@@ -176,7 +176,7 @@ def schedule_tasks(bot: TeleBot):
         schedule.every().sunday.at('14:00', _TZ.zone).do(lambda: send_weekly_engagement_poll(bot))
 
          # ================= NOITE (CONTEÚDO ROTATIVO) =================
-        night_time = random_time(19, 22)
+        night_time = '20:40'
 
         # Segunda → Fotos históricas
         schedule.every().monday.at(night_time, _TZ.zone).do(lambda: hist_channel_imgs(bot))
