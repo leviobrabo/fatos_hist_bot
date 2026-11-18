@@ -1,0 +1,20 @@
+name: Channel scheduling checks
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: python -m pip install "pytelegrambotapi>=4.33,<5" "schedule>=1.2,<2" "pymongo>=4.15.5,<5" "pytz>=2025.2" "requests>=2.32.3,<3" "psutil>=6.1.1,<7" "beautifulsoup4>=4.12.3,<5" pytest
+      - name: Compile Python
+        run: python -m compileall -q fatoshist main.py
+      - name: Run regression tests
+        run: pytest -q tests/test_core_regressions.py
