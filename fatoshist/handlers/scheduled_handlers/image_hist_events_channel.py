@@ -1,4 +1,5 @@
 import logging
+from html import escape
 import random
 from datetime import datetime
 
@@ -55,26 +56,27 @@ def send_historical_events_channel_image(bot, CHANNEL):
         day = today.day
         month = today.month
 
-        response = requests.get(
+        urls = [
             f"https://pt.wikipedia.org/api/rest_v1/feed/onthisday/events/{month}/{day}",
-            headers=headers,
-            timeout=10
-        )
+            f"https://api.wikimedia.org/feed/v1/wikipedia/pt/onthisday/events/{month}/{day}",
+        ]
+        data = None
+        for url in urls:
+            try:
+                response = requests.get(url, headers=headers, timeout=10)
+                response.raise_for_status()
+                payload = response.json()
+                if isinstance(payload, dict) and isinstance(payload.get('events'), list):
+                    data = payload
+                    break
+                logging.warning('Wikipedia returned invalid events data from %s', url)
+            except (requests.RequestException, ValueError):
+                logging.warning('Wikipedia events endpoint unavailable: %s', url, exc_info=True)
 
-        if response.status_code != 200:
-            logging.error(f'Erro Wikipedia: {response.status_code}')
+        if data is None:
+            logging.error('No working Wikipedia events endpoint; skipping photo publication')
             return False
-        
-        if not response.text or not response.text.strip().startswith('{'):
-            logging.error('Resposta inválida da Wikipedia (HTML ou vazia)')
-            return False
-        
-        try:
-            data = response.json()
-        except ValueError:
-            logging.error('Falha ao converter resposta em JSON')
-            return False
-        
+
         events = data.get('events', [])
         events_with_photo = [
             event for event in events 
@@ -98,7 +100,7 @@ def send_historical_events_channel_image(bot, CHANNEL):
             f"<b>{hook}</b>\n\n"
             f"<i>{intro}</i>\n\n"
             f"<tg-emoji emoji-id='5431897022456145283'>📅</tg-emoji> <b>{day} de {get_month_name(month)} de {event_year}</b>\n\n"
-            f"<code>{event_text}</code>\n\n"
+            f"<code>{escape(event_text[:550])}</code>\n\n"
         )
 
         if cta:
