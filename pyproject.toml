@@ -6,6 +6,12 @@ readme = "README.md"
 requires-python = ">=3.12,<3.13"
 dependencies = [
     "pymongo==4.15.5",
+    "pytelegrambotapi>=4.33.0,<5.0.0",
+    "schedule>=1.2.2,<2.0.0",
+    "pytz>=2025.2,<2026.0",
+    "requests>=2.32.3,<3.0.0",
+    "psutil>=6.1.1,<7.0.0",
+    "beautifulsoup4>=4.12.3,<5.0.0",
 ]
 
 [tool.poetry]
