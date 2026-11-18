@@ -50,14 +50,14 @@ def get_history(bot, CHANNEL):
 
         if not historia:
             logging.info('Sem história para hoje.')
-            return
+            return False
 
         photo_url = historia.get('photo', '')
         caption = historia.get('text', '')
 
         if not photo_url or not caption:
             logging.info('História incompleta.')
-            return
+            return False
 
         hook = random.choice(HISTORY_HOOKS)
         intro = random.choice(HISTORY_INTROS)
@@ -95,13 +95,16 @@ def get_history(bot, CHANNEL):
                 parse_mode="HTML"
             )
 
-    except Exception as e:
-        logging.error(f'Erro ao enviar história: {e}', exc_info=True)
+        return True
+    except Exception:
+        logging.exception('Erro ao enviar história')
+        return False
 
 
 def hist_channel_history(bot):
     try:
-        get_history(bot, CHANNEL)
+        if not get_history(bot, CHANNEL):
+            return
         logging.info(f'História enviada para {CHANNEL}')
         bot.send_message(chat_id=OWNER, text="<tg-emoji emoji-id='5429381339851796035'>✅</tg-emoji> História narrada enviada com sucesso", parse_mode="HTML")
     except Exception as e:
