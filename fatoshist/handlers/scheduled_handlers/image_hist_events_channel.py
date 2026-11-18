@@ -63,17 +63,17 @@ def send_historical_events_channel_image(bot, CHANNEL):
 
         if response.status_code != 200:
             logging.error(f'Erro Wikipedia: {response.status_code}')
-            return
+            return False
         
         if not response.text or not response.text.strip().startswith('{'):
             logging.error('Resposta inválida da Wikipedia (HTML ou vazia)')
-            return
+            return False
         
         try:
             data = response.json()
         except ValueError:
             logging.error('Falha ao converter resposta em JSON')
-            return
+            return False
         
         events = data.get('events', [])
         events_with_photo = [
@@ -83,7 +83,7 @@ def send_historical_events_channel_image(bot, CHANNEL):
 
         if not events_with_photo:
             logging.info('Não há eventos com fotos para enviar hoje.')
-            return
+            return False
 
         random_event = random.choice(events_with_photo)
         event_text = random_event.get('text', '')
@@ -117,14 +117,17 @@ def send_historical_events_channel_image(bot, CHANNEL):
         bot.send_photo(CHANNEL, photo_url, caption=caption, parse_mode='HTML')
 
         logging.info(f'Evento histórico em foto enviado com sucesso para {CHANNEL}')
+        return True
 
-    except Exception as e:
-        logging.error(f'Falha ao enviar evento histórico: {e}')
+    except Exception:
+        logging.exception('Falha ao enviar evento histórico')
+        return False
 
 
 def hist_channel_imgs(bot):
     try:
-        send_historical_events_channel_image(bot, CHANNEL)
+        if not send_historical_events_channel_image(bot, CHANNEL):
+            return
         logging.info(f'Mensagem enviada para o canal {CHANNEL}')
         bot.send_message(
                 chat_id=OWNER,
